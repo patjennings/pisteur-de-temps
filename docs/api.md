@@ -1,17 +1,35 @@
 ## /users/ ##
 
-### GET ###
+### `GET` ###
 
 ##### Request #####
 
 Query
+``` json
+None 
+```
+
 Header
+``` json
+None 
+```
+
 Body
+``` json
+None 
+```
 
 ##### Response #####
 
 Header
+``` json
+None 
+```
+
 Body
+``` json
+None 
+```
 
 ###### 200 ######
 
@@ -32,7 +50,7 @@ Body
 
 `Error`
 
-### POST ###
+### `POST` ###
 
 ##### Request #####
 
