@@ -1,5 +1,5 @@
 var mongoose    =   require("mongoose");
-mongoose.connect('mongodb://localhost:27017/api', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/time-tracker', { useNewUrlParser: true });
 
 // create instance of Schema
 var mongoSchema = mongoose.Schema;

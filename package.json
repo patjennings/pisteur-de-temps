@@ -1,5 +1,5 @@
 {
-  "name": "timesheet",
+  "name": "time-tracker",
   "version": "1.0.0",
   "description": "Application de gestion personnelle du temps",
   "main": "app.js",
