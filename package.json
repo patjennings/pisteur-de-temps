@@ -1,17 +1,31 @@
 {
-  "name": "time-tracker",
-  "version": "1.0.0",
-  "description": "Application de gestion personnelle du temps",
-  "main": "app.js",
-  "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js"
-  },
-  "author": "Thomas Guesnon",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.19"
-  }
+    "name": "timetracker",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+	"body-parser": "^1.18.3",
+	"express": "^4.16.4",
+	"mongoose": "^5.4.20",
+	"react": "^16.8.5",
+	"react-dom": "^16.8.5",
+	"react-scripts": "2.1.8",
+	"start-concurrently": "^1.0.1"
+    },
+    "scripts": {
+	"start": "start-concurrently",
+	"start-react": "PORT=3001 react-scripts start",
+	"start-server": "node server.js",
+	"build": "react-scripts build",
+	"test": "react-scripts test",
+	"eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+	"extends": "react-app"
+    },
+    "browserslist": [
+	">0.2%",
+	"not dead",
+	"not ie <= 11",
+	"not op_mini all"
+    ]
 }
