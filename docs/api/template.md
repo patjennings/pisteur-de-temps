@@ -1,4 +1,4 @@
-# Structure for API path #
+# Example #
 
 ## `GET` /path/ ##
 
@@ -45,3 +45,33 @@ name `Number`
 #### 400 ####
 
 `Error`
+
+
+# Vide #
+
+## `GET` /path/ ##
+
+Description
+
+### Security ###
+
+### Request ###
+
+##### Query #####
+
+##### Header #####
+
+##### Body #####
+
+### Response ###
+
+#### 200 ####
+
+##### Header #####
+
+##### Body #####
+
+#### 400 ####
+
+`Error`
+

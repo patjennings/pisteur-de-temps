@@ -247,19 +247,103 @@ module.exports = function(app){
 
     // tracked time
     app.get("/projects/:id/trackedtime", function (req, res) {
-	//	
+	var response = {};
+	models.trackedTime.find({ relatedProject : req.params.id },function(err,data){
+	    if(err) {
+		response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		response = {"error" : false, "message" : data };
+	    }
+	    res.json(response);
+	});	
     });
     app.post("/projects/:id/trackedtime", function (req, res) {
-	//	
+	var db = new models.trackedTime(); // on crée ce nouvel objet models pour accéder au schéma
+	var response = {};
+	var d = new Date(); // sert à renseigner la date de post 
+
+	db.task = req.body.task;
+	db.comment = req.body.comment;
+	db.value = req.body.value;
+	db.dateCreation = d.toJSON(); // on convertit en json pour la bdd
+	db.dateUpdate = null; 
+	db.relatedProject = req.params.id;
+	db.relatedUser = req.body.user;
+	
+	db.save(function(err){
+	    // save() will run insert() command of MongoDB.
+	    // it will add new data in collection.
+	    // console.log(data);
+	    if(err) {
+		response = {"error" : true,"message" : "Error adding data"};
+	    } else {
+		response = {"error" : false,"message" : "Data added"};
+	    }
+	    res.json(response);
+	});	
     });
     app.get("/projects/:id/trackedtime/:trackid", function (req, res) {
-	//	
+	var response = {};
+	
+	models.trackedTime.findById(req.params.trackid, function(err,data){
+	    if(err) {
+                response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		response = {"error" : false,"message" : data};
+	    }
+	    res.json(response);
+        });	
     });
     app.put("/projects/:id/trackedtime/:trackid", function (req, res) {
-	//	
+	var response = {};
+	var d = new Date(); // sert à renseigner la date de l'update
+	
+	models.trackedTime.findById(req.params.trackid, function(err,data){
+	    if(err) {
+                response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		if (req.body.task !== undefined) {
+		    data.task = req.body.task;
+		}
+		if (req.body.comment !== undefined) {
+		    data.comment = req.body.comment;
+		}
+		if (req.body.value !== undefined) {
+		    data.value = req.body.value;
+		}
+		if (req.body.user !== undefined) {
+		    data.user = req.body.user;
+		}
+		data.dateUpdate = d.toJSON(); // on remplit le champ update
+		
+		// Save data
+		data.save(function(err){
+                    if(err) {
+                        response = {"error" : true,"message" : "Error updating data"};
+                    } else {
+                        response = {"error" : false,"message" : "Data is updated for "+req.params.trackid};
+                    }
+		    res.json(response);
+		})
+	    }
+        });
     });
     app.delete("/projects/:id/trackedtime/:trackid", function (req, res) {
-	//	
+	var response = {};
+	models.trackedTime.findById(req.params.trackid, function(err,data){
+	    if(err){
+		response = {"error" : true,"message" : "Error retrieving data"};
+	    } else {
+		models.trackedTime.deleteOne({ _id : req.params.trackid}, function(err, obj){
+		    if(err){
+			response = {"error" : true, "message" : "Error while deleting data"};
+		    } else {
+			response = {"error" : false, "message" : "data was removed"};
+		    }
+		});
+	    }
+	    res.send(response);
+        });	
     });
 
     
