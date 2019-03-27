@@ -46,13 +46,13 @@ module.exports = function(app){
             .update(req.body.password)
             .digest('base64');
 	db.relatedProjects = req.body.projects;
-        db.save(function(err){
+        db.save(function(err, db){
             // save() will run insert() command of MongoDB.
             // it will add new data in collection.
             if(err) {
                 response = {"error" : true,"message" : "Error adding data"};
             } else {
-                response = {"error" : false,"message" : "Data added"};
+                response = {"error" : false,"message" : "User added", "data" : db };
             }
             res.json(response);
         });
@@ -93,11 +93,11 @@ module.exports = function(app){
 		    data.relatedProjects = req.body.projects;
 		}
 		// Save data
-		data.save(function(err){
+		data.save(function(err, data){
                     if(err) {
                         response = {"error" : true,"message" : "Error updating data"};
                     } else {
-                        response = {"error" : false,"message" : "Data is updated for "+req.params.id};
+                        response = {"error" : false,"message" : "Data is updated for "+req.params.id, "data" : data};
                     }
 		    res.json(response);
 		})
@@ -114,7 +114,7 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			response = {"error" : false, "message" : "data was removed"};
+			response = {"error" : false, "message" : "User is removed"};
 		    }
 		});
 	    }
@@ -178,14 +178,13 @@ module.exports = function(app){
 	db.name = req.body.name;
 	db.relatedClient = req.body.client;
 	
-	db.save(function(err){
+	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
 	    // it will add new data in collection.
-	    // console.log(data);
 	    if(err) {
-		response = {"error" : true,"message" : "Error adding data"};
+		response = {"error" : true, "message" : "Error adding data"};
 	    } else {
-		response = {"error" : false,"message" : "Data added"};
+		response = {"error" : false, "message" : "Project added", "data" : db};
 	    }
 	    res.json(response);
 	});
@@ -216,11 +215,11 @@ module.exports = function(app){
 		    data.relatedClient = req.body.client;
 		}
 		// Save data
-		data.save(function(err){
+		data.save(function(err, data){
                     if(err) {
                         response = {"error" : true,"message" : "Error updating data"};
                     } else {
-                        response = {"error" : false,"message" : "Data is updated for "+req.params.id};
+                        response = {"error" : false,"message" : "Project is updated for "+req.params.id, "data" : data };
                     }
 		    res.json(response);
 		})
@@ -237,7 +236,7 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			response = {"error" : false, "message" : "data was removed"};
+			response = {"error" : false, "message" : "Project is removed"};
 		    }
 		});
 	    }
@@ -270,14 +269,14 @@ module.exports = function(app){
 	db.relatedProject = req.params.id;
 	db.relatedUser = req.body.user;
 	
-	db.save(function(err){
+	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
 	    // it will add new data in collection.
 	    // console.log(data);
 	    if(err) {
 		response = {"error" : true,"message" : "Error adding data"};
 	    } else {
-		response = {"error" : false,"message" : "Data added"};
+		response = {"error" : false,"message" : "Tracked time added", "data" : db};
 	    }
 	    res.json(response);
 	});	
@@ -289,7 +288,7 @@ module.exports = function(app){
 	    if(err) {
                 response = {"error" : true,"message" : "Error fetching data"};
 	    } else {
-		response = {"error" : false,"message" : data};
+		response = {"error" : false, "message" : data};
 	    }
 	    res.json(response);
         });	
@@ -317,11 +316,11 @@ module.exports = function(app){
 		data.dateUpdate = d.toJSON(); // on remplit le champ update
 		
 		// Save data
-		data.save(function(err){
+		data.save(function(err, data){
                     if(err) {
                         response = {"error" : true,"message" : "Error updating data"};
                     } else {
-                        response = {"error" : false,"message" : "Data is updated for "+req.params.trackid};
+                        response = {"error" : false,"message" : "Tracked time is updated for "+req.params.trackid, "data" : data };
                     }
 		    res.json(response);
 		})
@@ -338,7 +337,7 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			response = {"error" : false, "message" : "data was removed"};
+			response = {"error" : false, "message" : "Tracked time is removed"};
 		    }
 		});
 	    }
@@ -373,14 +372,14 @@ module.exports = function(app){
 
 	db.name = req.body.name;
 	
-	db.save(function(err, data){
+	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
 	    // it will add new data in collection.
 	    // console.log(data);
 	    if(err) {
 		response = {"error" : true,"message" : "Error adding data"};
 	    } else {
-		response = {"error" : false,"message" : "Data added"};
+		response = {"error" : false,"message" : "Client added", "data" : data};
 	    }
 	    res.json(response);
 	});
@@ -407,11 +406,11 @@ module.exports = function(app){
 		    data.name = req.body.name;
 		}
 		// Save data
-		data.save(function(err){
+		data.save(function(err, data){
                     if(err) {
                         response = {"error" : true,"message" : "Error updating data"};
                     } else {
-                        response = {"error" : false,"message" : "Data is updated for "+req.params.id};
+                        response = {"error" : false,"message" : "Data is updated for "+req.params.id, "data" : data};
                     }
 		    res.json(response);
 		})
@@ -428,7 +427,7 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			response = {"error" : false, "message" : "data was removed"};
+			response = {"error" : false, "message" : "Client is removed"};
 		    }
 		});
 	    }
