@@ -1,0 +1,15 @@
+<div class="wrapper">
+  {% assign default_paths = site.pages | map: "path" %}
+  {% assign page_paths = site.header_pages | default: default_paths %}
+  <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><h1>{{ site.title | escape }}</h1></a>
+  
+
+  <ul class="site-nav">
+    {% for item in site.pages %}
+    {% if item.categories != null %}
+    <li><a href="{{ "" | relative_url }}{{ item.url }}" class="nav-link" >{{ item.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+

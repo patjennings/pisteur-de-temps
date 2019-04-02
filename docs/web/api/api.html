@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://localhost/design-system-documentation/dist/css/all.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- <link rel="stylesheet" href="/assets/main.css"> -->
+  <link rel="alternate" type="application/rss+xml" title="Documentation" href="/feed.xml">
+  
+</head>
+
+
+  <body>
+    <div class="docs-sidebar">
+        <div class="wrapper">
+  
+  
+  <a class="site-title" rel="author" href="/"><h1>Documentation</h1></a>
+  
+
+  <ul class="site-nav">
+    
+    
+    
+    
+    <li><a href="/api/api" class="nav-link" >API</a></li>
+    
+    
+    
+    <li><a href="/functions/functions" class="nav-link" >Functions</a></li>
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="/variables/variables" class="nav-link" >Variables</a></li>
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+    <div class="container-fluid docs-main" aria-label="Content">
+        <div class="row docs-main--inner">
+            <div class="col-12">
+                <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">API</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="get-users"><code class="highlighter-rouge">GET</code> /users/</h2>
+
+<p>List all users</p>
+
+<h3 id="security">Security</h3>
+
+<h3 id="request">Request</h3>
+
+<h5 id="query">Query</h5>
+
+<h5 id="header">Header</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{}]</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="body">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{}]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response">Response</h3>
+
+<h4 id="200">200</h4>
+
+<h5 id="header-1">Header</h5>
+
+<h5 id="body-1">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<hr />
+
+<h2 id="post-users"><code class="highlighter-rouge">POST</code> /users/</h2>
+
+<p>Post a user</p>
+
+<h3 id="security-1">Security</h3>
+
+<h3 id="request-1">Request</h3>
+
+<h5 id="query-1">Query</h5>
+
+<h5 id="header-2">Header</h5>
+
+<h5 id="body-2">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response-1">Response</h3>
+
+<h4 id="200-1">200</h4>
+
+<h5 id="header-3">Header</h5>
+
+<h5 id="body-3">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-1">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<h2 id="get-usersnameid"><code class="highlighter-rouge">GET</code> /users/{nameId}</h2>
+
+<h2 id="put-usersnameid"><code class="highlighter-rouge">PUT</code> /users/{nameId}</h2>
+
+<h2 id="delete-usersnameid"><code class="highlighter-rouge">DELETE</code> /users/{nameId}</h2>
+
+<h2 id="get-usersnameidprojects"><code class="highlighter-rouge">GET</code> /users/{nameId}/projects</h2>
+
+<h2 id="get-projects"><code class="highlighter-rouge">GET</code> /projects</h2>
+
+<h2 id="post-projects"><code class="highlighter-rouge">POST</code> /projects/</h2>
+
+<h2 id="get-projectsprojectid"><code class="highlighter-rouge">GET</code> /projects/{projectId}</h2>
+
+<h2 id="put-projectsprojectid"><code class="highlighter-rouge">PUT</code> /projects/{projectId}</h2>
+
+<h2 id="delete-projectsprojectid"><code class="highlighter-rouge">DELETE</code> /projects/{projectId}</h2>
+
+<h2 id="get-projectsprojectidtrackedtime"><code class="highlighter-rouge">GET</code> /projects/{projectId}/trackedtime</h2>
+
+<p>Get all tracked time for this project</p>
+
+<h3 id="security-2">Security</h3>
+
+<h3 id="request-2">Request</h3>
+
+<h5 id="query-2">Query</h5>
+
+<h5 id="header-4">Header</h5>
+
+<h5 id="body-4">Body</h5>
+
+<h3 id="response-2">Response</h3>
+
+<h4 id="200-2">200</h4>
+
+<h5 id="header-5">Header</h5>
+
+<h5 id="body-5">Body</h5>
+
+<p>Array de <code class="highlighter-rouge">trackedTime</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+	</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS structure"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"Comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spent time on configuring webpack"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27 00:00"</span><span class="w">
+	</span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-2">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<h2 id="post-projectsprojectidtrackedtime"><code class="highlighter-rouge">POST</code> /projects/{projectId}/trackedtime</h2>
+
+<p>Add a new trackedTime to the project</p>
+
+<h3 id="security-3">Security</h3>
+
+<h3 id="request-3">Request</h3>
+
+<h5 id="query-3">Query</h5>
+
+<h5 id="header-6">Header</h5>
+
+<h5 id="body-6">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS structure"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spent time on configuring webpack"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="response-3">Response</h3>
+
+<h4 id="200-3">200</h4>
+
+<h5 id="header-7">Header</h5>
+
+<h5 id="body-7">Body</h5>
+
+<p>Objet <code class="highlighter-rouge">trackedTime</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS structure"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spent time on configuring webpack"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27 00:00"</span><span class="w">
+	</span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-3">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<h2 id="get-projectsprojectidtrackedtimetrackid"><code class="highlighter-rouge">GET</code> /projects/{projectId}/trackedtime/{trackId}</h2>
+
+<p>Get a specific trackedTime</p>
+
+<h3 id="security-4">Security</h3>
+
+<h3 id="request-4">Request</h3>
+
+<h5 id="query-4">Query</h5>
+
+<h5 id="header-8">Header</h5>
+
+<h5 id="body-8">Body</h5>
+
+<h3 id="response-4">Response</h3>
+
+<h4 id="200-4">200</h4>
+
+<h5 id="header-9">Header</h5>
+
+<h5 id="body-9">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS structure"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spent time on configuring webpack"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27 00:00"</span><span class="w">
+  </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-4">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<h2 id="put-projectsprojectidtrackedtimetrackid"><code class="highlighter-rouge">PUT</code> /projects/{projectId}/trackedtime/{trackId}</h2>
+
+<h2 id="delete-projectsprojectidtrackedtimetrackid"><code class="highlighter-rouge">DELETE</code> /projects/{projectId}/trackedtime/{trackId}</h2>
+
+<h2 id="get-clients"><code class="highlighter-rouge">GET</code> /clients/</h2>
+
+<h2 id="post-clients"><code class="highlighter-rouge">POST</code> /clients/</h2>
+
+<h2 id="get-clientsclientid"><code class="highlighter-rouge">GET</code> /clients/{clientID}</h2>
+
+<h2 id="put-clientsclientid"><code class="highlighter-rouge">PUT</code> /clients/{clientID}</h2>
+
+<h2 id="delete-clientsclientid"><code class="highlighter-rouge">DELETE</code> /clients/{clientID}</h2>
+
+  </div>
+
+</article>
+
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

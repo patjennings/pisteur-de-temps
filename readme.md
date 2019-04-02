@@ -48,3 +48,7 @@ Créer les collections dans la base `time-tracker`
 > db.createCollection("projects")
 > db.createCollection("trackedTime")
 ```
+
+## todo ##
+
+- ajouter dans les projets : budget, description

@@ -1,40 +1,49 @@
 import React, { Component } from 'react';
-import ProjectList from './components/project-list'
+import ProjectList from './components/project-list';
+import TimePusher from './components/time-pusher';
 
 import axios from 'axios'; // fetch data from API
 
 class App extends Component {
-    state = {
-	projects: []
+    constructor(props){
+	super(props);
+	this.state = {
+	    projects: [],
+	    clients: []
+	};
     }
+    
     componentDidMount() {
 	axios
 	    .get("http://localhost:3000/projects")
 	    .then(response => {
 
-		// create an array of contacts only with relevant data
-		const newProjects = response.data.map(c => {
+		// create an array of projects, only with relevant data
+		const fetchedProjects = response.data.map(p => {
 		    return {
-			id: c._id,
-			name: c.name
+			id: p._id,
+			name: p.name
 		    };
 		});
 
 		// create a new "State" object without mutating 
 		// the original State object. 
 		const newState = Object.assign({}, this.state, {
-		    projects: newProjects
+		    projects: fetchedProjects
 		});
 
 		// store the new state object in the component's state
 		this.setState(newState);
-		// console.log(this.state);
 	    })
 	    .catch(error => console.log(error));
+
     }
     render() {
 	return (
-	    <ProjectList projects={this.state.projects} />
+	    <div>
+		<ProjectList projects={this.state.projects} />
+		<TimePusher/>
+	    </div>
 	);
     }
 }

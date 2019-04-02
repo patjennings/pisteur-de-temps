@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://localhost/design-system-documentation/dist/css/all.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- <link rel="stylesheet" href="/assets/main.css"> -->
+  <link rel="alternate" type="application/rss+xml" title="Documentation" href="/feed.xml">
+  
+</head>
+
+
+  <body>
+    <div class="docs-sidebar">
+        <div class="wrapper">
+  
+  
+  <a class="site-title" rel="author" href="/"><h1>Documentation</h1></a>
+  
+
+  <ul class="site-nav">
+    
+    
+    
+    
+    <li><a href="/api/api" class="nav-link" >API</a></li>
+    
+    
+    
+    <li><a href="/functions/functions" class="nav-link" >Functions</a></li>
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="/variables/variables" class="nav-link" >Variables</a></li>
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+    <div class="container-fluid docs-main" aria-label="Content">
+        <div class="row docs-main--inner">
+            <div class="col-12">
+                <div class="home">
+  
+
+  <h3 id="documentation">Documentation</h3>
+
+<h4 id="node-app">Node app</h4>
+
+<p><code class="highlighter-rouge">app.js</code> -</p>
+
+<p><code class="highlighter-rouge">./routes/routes.js</code> -</p>
+
+<p>require les schémas Mongoose (dans la <code class="highlighter-rouge">var models</code>)</p>
+
+<p>Ensuite, on crée les routes. À chacune correspond une requête dans la base Mongo, avec <code class="highlighter-rouge">models.{collections}.find()</code>, <code class="highlighter-rouge">models.{collections}.findById()</code>, etc…
+Chaque route restourne un résultat sous forme de réponse au format json. Ces réponses sont définies par la spéc de l’API (voir <code class="highlighter-rouge">./docs/api.md</code>).</p>
+
+<h4 id="modèles-mongoose">Modèles Mongoose</h4>
+
+<p><code class="highlighter-rouge">./models/mongo.js</code></p>
+
+<p>Ce sont les modèles Mongoose pour communiquer avec la base Mongo. 
+On crée un modèle par collection, que l’on exporte. On le récupère dans <code class="highlighter-rouge">./routes/routes.js</code></p>
+
+<h4 id="base-de-données">Base de données</h4>
+
+<p>Base MongoDB, avec quatre collections</p>
+
+<ul>
+  <li><code class="highlighter-rouge">users</code> : les utilisateurs, qui sont liés à un ou plusieurs projets</li>
+  <li><code class="highlighter-rouge">clients</code> : les clients, qui seront appelés lors de la création de projets</li>
+  <li><code class="highlighter-rouge">projects</code> : les projets, qui sont liés à un client</li>
+  <li><code class="highlighter-rouge">trackedTime</code> : les slots de temps rentrés dans l’appli. Ils possèdent plusieurs propriétés <code class="highlighter-rouge">value</code>, <code class="highlighter-rouge">comment</code>, <code class="highlighter-rouge">task</code>, et sont liés à un utilisateur et un projet</li>
+</ul>
+
+
+  
+
+</div>
+
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

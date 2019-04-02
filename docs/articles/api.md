@@ -1,3 +1,10 @@
+---
+title: API
+permalink: api/api
+layout: page
+categories: [api]
+---
+
 ## `GET` /users/ ##
 
 List all users
