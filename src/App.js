@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectList from './components/project-list';
 import TimePusher from './components/time-pusher';
+import ProjectSelector from './components/project-selector';
 
 import axios from 'axios'; // fetch data from API
 
@@ -42,7 +43,8 @@ class App extends Component {
 	return (
 	    <div>
 		<ProjectList projects={this.state.projects} />
-		<TimePusher/>
+		<TimePusher />
+		<ProjectSelector />
 	    </div>
 	);
     }
