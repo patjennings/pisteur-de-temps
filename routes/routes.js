@@ -1,13 +1,22 @@
 var models =    require("../models/mongo"); // le modèle mongodb
+var path = require("path");
+var express = require("express");
+
 // console.log(models.base.Mongoose);
 // req > request
 // res > response
 
 module.exports = function(app){
+
+    app.use("/styles", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/css')); 
+
+    app.use("/scripts/bootstrap", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/js'));
+    app.use("/scripts/popper", express.static(path.resolve(".") + '/node_modules/popper.js/dist'));
+    app.use("/scripts/jquery", express.static(path.resolve(".") + '/node_modules/jquery/dist')); 
+    
     app.get("/", function(req, res) {
 	res.json({"error" : false,"message" : "Hello World"});
     });
-
     
     // ------------
     // USERS
