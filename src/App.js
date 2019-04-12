@@ -1,50 +1,52 @@
 import React, { Component } from 'react';
-import ProjectList from './components/project-list';
-import TimePusher from './components/time-pusher';
-import ProjectSelector from './components/project-selector';
+// import MainView from './views/MainView';
+// import NavView from './views/NavView';
 
-import axios from 'axios'; // fetch data from API
+import clientDefinitions from './utils/clientDefinitions';
+// import userDefinitions from './utils/userDefinitions'
+// import projectDefinitions from './utils/projectDefinitions'
+
+import TrackManager from './components/TrackManager';
+import ProjectDetails from './components/ProjectDetails';
+
+let cd = new clientDefinitions();
 
 class App extends Component {
     constructor(props){
 	super(props);
 	this.state = {
 	    projects: [],
-	    clients: []
+	    clients: [],
+	    displayedProject: null,
+	    definitions: {}
 	};
+	this.handleChange = this.handleChange.bind(this);
+
+	cd.getDefinitions().then(value =>{
+	    this.setState({definitions: value});
+	});
+    }
+    handleChange(d){
+	this.setState({displayedProject: d.relatedProject});
     }
     
-    componentDidMount() {
-	axios
-	    .get("http://localhost:3000/projects")
-	    .then(response => {
-
-		// create an array of projects, only with relevant data
-		const fetchedProjects = response.data.map(p => {
-		    return {
-			id: p._id,
-			name: p.name
-		    };
-		});
-
-		// create a new "State" object without mutating 
-		// the original State object. 
-		const newState = Object.assign({}, this.state, {
-		    projects: fetchedProjects
-		});
-
-		// store the new state object in the component's state
-		this.setState(newState);
-	    })
-	    .catch(error => console.log(error));
-
+    componentDidUpdate() {
+	// console.log(this.state.displayedProject);
     }
     render() {
+	// console.log("App.js > "+this.state.displayedProject);
 	return (
-	    <div>
-		<ProjectList projects={this.state.projects} />
-		<TimePusher />
-		<ProjectSelector />
+	    <div className="row">
+	      <div id="main" className="col-9">
+		<div className="row">
+		  <div className="col-6 track-manager">
+		    <TrackManager onChange={this.handleChange} />
+		  </div>
+		  <div className="col-6 project-details">
+		<ProjectDetails project={this.state.displayedProject} defs={this.state.definitions}/>
+		  </div>
+		</div>
+	      </div>
 	    </div>
 	);
     }

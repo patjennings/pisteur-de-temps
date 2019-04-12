@@ -302,6 +302,7 @@ module.exports = function(app){
 	    res.json(response);
         });	
     });
+
     app.put("/projects/:id/trackedtime/:trackid", function (req, res) {
 	var response = {};
 	var d = new Date(); // sert à renseigner la date de l'update
@@ -354,6 +355,20 @@ module.exports = function(app){
         });	
     });
 
+    // obtenir tout le temps tracké pour un user
+     app.get("/users/:userid/trackedtime/", function (req, res) {
+	var response = {};
+
+	 models.trackedTime.find({ relatedUser : req.params.userid },function(err,data){
+	    if(err) {
+		response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		response = {"error" : false, "message" : data };
+	    }
+	    res.json(response);
+	});	
+    });
+    
     
     // ------------
     // CLIENTS
