@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import TrackHistoryItem from "./TrackHistoryItem";
+import TrackInput from "./TrackInput";
 import App from "../App";
+
 import axios from "axios";
+import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
 
 class TrackManager extends Component {
     constructor(props){
 	super(props);
 	this.state = {
 	    userId: "5c9b3912f787951b7e8c9d62",
-	    trackHistory: []
+	    trackHistory: [],
+	    definitions: {},
 	};
 	this.handleClick = this.handleClick.bind(this);
+	this.handleDropdown = this.handleDropdown.bind(this);
+	// this.trackInputAdded = this.trackInputAdded.bind(this);
+	this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     }
 
     handleClick(data, event){
-	// console.log(data);
 	this.props.onChange(data);
     }
     
     componentDidMount() {
+	// console.log("did it mount ?");
+	this.setState({definitions: this.props.defs});
+	// console.log(this.props.defs);
+	this.fetchTrackHistory();
+	
+    }
+
+    fetchTrackHistory(){
 	axios
 	    .get("http://localhost:3000/users/"+this.state.userId+"/trackedTime")
 	    .then(response => {
+		// je remplis un objet pour chaque réponse de la requête...
 		const fetchedHistory = response.data.message.map(t => {
 		    return {
 			id: t._id,
@@ -32,6 +47,7 @@ class TrackManager extends Component {
 			date: t.dateCreation
 		    };
 		});
+		// ... et j'ajoute ensuite chacun au tableau trackHistory[]
 		const newState = Object.assign({}, this.state, {
 		    trackHistory: fetchedHistory
 		});
@@ -39,55 +55,45 @@ class TrackManager extends Component {
 	    })
 	    .catch(error => console.log(error));
     }
-    
+    shouldComponentUpdate(nextProps, nextState){
+	if(nextProps.defs === nextState.definitions){
+	    return true;
+	}
+	else {
+	    this.setState({definitions: nextProps.defs});
+	    return false;
+	}
+    }
+
+    handleDropdown(e){
+
+	let projectId = e.target.getAttribute("id");
+	this.setState({selectedProject: projectId});
+    }
+
+
     render() {
+	console.log(this.state);
 	return (
+	    <div className="card">
 
-	      <div className="card">
+	      {/* --------- */}
+	      {/* New track */}
+	      <TrackInput defs={this.state.definitions} onChange={this.fetchTrackHistory}/>
 
-		{/* --------- */}
-		{/* New track */}
-		<div className="card-header track-new">
-		  <div className="row">
-		    <div className="col">
-		      <label for="track-new--input">Enter time</label>
-		      <input className="form-control form-control-lg w-50" id="track-new--input" type="text" placeholder="Time" aria-label="Search" />
-		    </div>
-		    <div className="col">
-		      <div className="dropdown">
-			<button className="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  Avionics 2020 <span className="text-muted small">&nbsp;&nbsp;Thales</span>
-			</button>
-			<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			  <a className="dropdown-item" href="#">
-			    <p>Project</p>
-			    <p className="text-muted">Client</p>
-			  </a>
-			  <a className="dropdown-item" href="#">
-			    <p>Project</p>
-			    <p className="text-muted">Client</p>
-			  </a>
-			  <a className="dropdown-item" href="#">
-			    <p>Project</p>
-			    <p className="text-muted">Client</p>
-			  </a>
-			</div>
-		      </div>
-
-		    </div>
-		  </div>
-		</div>
-
-		{/* ------------- */}
-		{/* Track history */}
-		<ul className="list-group list-group-flush track-history">
-		    {this.state.trackHistory.map(childData => {
-			return <TrackHistoryItem onClick={e => this.handleClick(childData, e)} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date}/>;
-		      })}
-		  </ul>
-	      </div>
+	      {/* ------------- */}
+	      {/* Track history */}
+	      <ul className="list-group list-group-flush track-history">
+		{this.state.trackHistory.slice(0).reverse().map(childData => {
+		    return <TrackHistoryItem onClick={e => this.handleClick(childData, e)} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date}/>;
+		  })}
+	      </ul>
+	    </div>
 	);
     }
 }
 
 export default TrackManager;
+
+
+// .slice(0).reverse().map( etc.) copy le tableau en entrée, le retourne, et map notre fonction avec !

@@ -9,6 +9,7 @@ class ProjectTrack extends Component {
 	return (
 	    <tr className="track">
 	      <td>{this.props.task}</td>
+	      <td>{this.props.value}</td>
 	      <td>{this.props.comment}</td>
 	      <td>{this.props.username}</td>
 	      <td>{this.props.date}</td>
