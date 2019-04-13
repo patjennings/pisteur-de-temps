@@ -51,14 +51,16 @@ Créer les collections dans la base `time-tracker`
 
 ## todo ##
 
-- ajouter dans les projets : budget, description
-  - impact models mongo
+~~- ajouter dans les projets : budget, description~~
+  - ~~impact models mongo~~
 - webpack
+- ~~ne pas faire trop de requêtes dans projectDetails~~
 - sass and global styles
-- n'afficher project details que quand on en a besoin (au click)
+- ~~n'afficher project details que quand on en a besoin (au click)~~
 - tooltips
-- ajouter du temps sur un projet
-  - configurer dropdown de adda time
+- ~~ajouter du temps sur un projet~~
+  - ~~configurer dropdown de add time~~
+  - ~~rafraichir track history et project details quand temps rentré~~
 - supprimer temps rentré dans track history (actualiser composant)
 - supprimer entrée dans project detail
 - éditer temps rentré (track history et project details)
@@ -68,3 +70,5 @@ Créer les collections dans la base `time-tracker`
 - login
   - gestion des utilisateurs
 - animation au click (affichage du détail de projet)
+- garder le dernier affichage du dropdown en mémoire/cookie
+- ~~track history, inverser l'ordre~~
