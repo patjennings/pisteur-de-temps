@@ -173,6 +173,8 @@ module.exports = function(app){
 		    result = {}
 		    result._id = data[id]._id;
 		    result.name = data[id].name;
+		    result.description = data[id].description;
+		    result.budget = data[id].budget;
 		    result.client = data[id].relatedClient;
 		    response.push(result);
 		}
@@ -206,6 +208,8 @@ module.exports = function(app){
 	    } else {
 		response._id = data._id;
 		response.name = data.name;
+		response.description = data.description;
+		response.budget = data.budget;
 		response.client = data.relatedClient;
 	    }
 	    res.json(response);
@@ -222,6 +226,12 @@ module.exports = function(app){
 		}
 		if (req.body.client !== undefined) {
 		    data.relatedClient = req.body.client;
+		}
+		if (req.body.description !== undefined) {
+		    data.description = req.body.description;
+		}
+		if (req.body.budget !== undefined) {
+		    data.budget = req.body.budget;
 		}
 		// Save data
 		data.save(function(err, data){
@@ -321,7 +331,7 @@ module.exports = function(app){
 		    data.value = req.body.value;
 		}
 		if (req.body.user !== undefined) {
-		    data.user = req.body.user;
+		    data.relatedUser = req.body.user;
 		}
 		data.dateUpdate = d.toJSON(); // on remplit le champ update
 		

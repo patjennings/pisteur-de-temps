@@ -17,6 +17,8 @@ var clientSchema  = {
 };
 var projectSchema  = {
     "name": String,
+    "description": String,
+    "budget": Number,
     "relatedClient": String
 };
 
