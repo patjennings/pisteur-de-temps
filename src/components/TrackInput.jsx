@@ -31,10 +31,9 @@ class TrackInput extends Component {
 	this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
-    componentDidMount() {
-	// console.log("did it mount ?");
+    componentWillMount() {
+
 	this.setState({definitions: this.props.defs});
-	console.log(this.props.defs);
 	
     }
     shouldComponentUpdate(nextProps, nextState){
@@ -63,7 +62,6 @@ class TrackInput extends Component {
 	    if(parserName){
 		const parser = inputParsers[parserName];
 		const parsedValue = parser(data.get(name));
-		// console.log(typeof parsedValue);
 		req.value = parsedValue;
 		// data.set(name, parsedValue);
 	    }
@@ -90,8 +88,7 @@ class TrackInput extends Component {
 		    user: this.state.userId
 		})
 	    	.then(res => {
-	    	    console.log(res);
-	    	    console.log(res.data);
+		    console.log(res);
 		    this.props.onChange(); // on appelle la fonction chez le parent, qui avertit du changement
 	    	})
 		.catch(error => {
@@ -116,13 +113,12 @@ class TrackInput extends Component {
 
 
     render() {
-	console.log(this.state);
 	return (
 	    <div className="card-header track-input">
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
-		    <label HtmlFor="track-input--value">Enter time</label>
+		    <label htmlFor="track-input--value">Enter time</label>
 		    <input className="form-control form-control-lg w-50"
 			   name="value"
 			   id="track-input--input"
@@ -130,14 +126,14 @@ class TrackInput extends Component {
 			   placeholder="Time"
 			   aria-label="Input"
 			   data-parse="number"/>
-		    <label HtmlFor="track-input--task">Task</label>
+		    <label htmlFor="track-input--task">Task</label>
 		    <input className="form-control w-100"
 			   name="task"
 			   id="track-input--input"
 			   type="text"
 			   placeholder="Task description"
 			   aria-label="Input"/>
-		    <label HtmlFor="track-input--comment">Comment</label>
+		    <label htmlFor="track-input--comment">Comment</label>
 		    <textarea className="form-control w-100"
 			   name="comment"
 			   id="track-input--comment"

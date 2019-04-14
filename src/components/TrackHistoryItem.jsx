@@ -14,7 +14,7 @@ class TrackHistoryItem extends Component {
 	};
     }
     
-    async componentDidMount() {
+    async componentWillMount() {
 
 	const getProject = await axios.get("http://localhost:3000/projects/"+this.props.relatedProject);
 	const getClient = await axios.get("http://localhost:3000/clients/"+getProject.data.client);

@@ -25,7 +25,7 @@ class ProjectDetails extends Component {
 	this.getBudgetPercent = this.getBudgetPercent.bind(this);
 	
     }
-    componentDidMount(){
+    componentWillMount(){
 	this.setState({
 	    projectId: this.props.project,
 	    definitions: this.props.defs
@@ -51,6 +51,7 @@ class ProjectDetails extends Component {
 	});
 	return fullTime;
     }
+    
     getBudgetPercent(done, total){
 	let result = done*100/total;
 	return result;

@@ -23,15 +23,14 @@ class TrackManager extends Component {
     }
 
     handleClick(data, event){
-	this.props.onChange(data);
+	this.props.onChange(data.relatedProject);
     }
     
-    componentDidMount() {
+    componentWillMount() {
 	// console.log("did it mount ?");
 	this.setState({definitions: this.props.defs});
 	// console.log(this.props.defs);
-	this.fetchTrackHistory();
-	
+	this.fetchTrackHistory();	
     }
 
     fetchTrackHistory(){
@@ -75,7 +74,7 @@ class TrackManager extends Component {
 
 
     render() {
-	console.log(this.state);
+	console.log(this.state.definitions);
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
