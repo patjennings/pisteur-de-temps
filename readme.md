@@ -53,9 +53,9 @@ Créer les collections dans la base `time-tracker`
 
 ~~- ajouter dans les projets : budget, description~~
   - ~~impact models mongo~~
-- webpack
+- ~~webpack~~
 - ~~ne pas faire trop de requêtes dans projectDetails~~
-- sass and global styles
+- ~~sass and global styles~~
 - ~~n'afficher project details que quand on en a besoin (au click)~~
 - tooltips
 - ~~ajouter du temps sur un projet~~
@@ -71,4 +71,6 @@ Créer les collections dans la base `time-tracker`
   - gestion des utilisateurs
 - animation au click (affichage du détail de projet)
 - garder le dernier affichage du dropdown en mémoire/cookie
+- projectdetails => barre rouge si budget dépassé
+- dans input-track, retrouver automatiquement les tâches déjà entrées
 - ~~track history, inverser l'ordre~~

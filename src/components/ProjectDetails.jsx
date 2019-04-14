@@ -4,6 +4,10 @@ import ProjectTrack from "./ProjectTrack";
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
 
+import "./ProjectDetails.scss";
+
+// import  "../utils/Tooltips.js"; // Js tooltips
+
 class ProjectDetails extends Component {
     constructor(props){
 	super(props);
@@ -101,28 +105,30 @@ class ProjectDetails extends Component {
 	// console.log(this.state);
 
 	return (
-	    <div className="card">
-	      <div className="card-header">
-		<div className="row">
-		  <div className="col-6">
-		    <p>{this.state.clientName}</p>
-		    <h3>{this.state.projectName}</h3>
-		    <p>{this.state.projectDescription}</p>
+	    <div className="col-6 project-details">
+	      <div className="card">
+		<div className="card-header">
+		  <div className="row">
+		    <div className="col-6">
+		      <p>{this.state.clientName}</p>
+		      <h3>{this.state.projectName}</h3>
+		      <p>{this.state.projectDescription}</p>
+		    </div>
+		    <div className="col-6">
+		      <p>Budget</p>
+		      <h4>{this.state.projectBudget}</h4>
+		    </div>
 		  </div>
-		  <div className="col-6">
-		    <p>Budget</p>
-		    <h4>{this.state.projectBudget}</h4>
+		  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.state.fullTime+" days spent"}>
+		    <div className="progress-bar" role="progressbar" style={{width: this.getBudgetPercent(this.state.fullTime, this.state.projectBudget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 		  </div>
 		</div>
-		<div className="progress" data-toggle="tooltip" data-placement="top" title={this.state.fullTime+" days spent"}>
-		  <div className="progress-bar" role="progressbar" style={{width: this.getBudgetPercent(this.state.fullTime, this.state.projectBudget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-		</div>
+		<table className="table project-tracks">
+		  {this.state.trackedTime.slice(0).reverse().map(t => {
+		      return <ProjectTrack task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
+		  })}
+		</table>
 	      </div>
-	      <table className="table project-tracks">
-		{this.state.trackedTime.slice(0).reverse().map(t => {
-		    return <ProjectTrack task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
-		})}
-	      </table>
 	    </div>
 	);
     }

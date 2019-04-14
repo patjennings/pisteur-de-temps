@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {readableDate} from "../utils/readableDate";
+
+import "./ProjectTrack.scss";
 
 class ProjectTrack extends Component {
     constructor(props){
@@ -12,9 +15,9 @@ class ProjectTrack extends Component {
 	      <td>{this.props.value}</td>
 	      <td>{this.props.comment}</td>
 	      <td>{this.props.username}</td>
-	      <td>{this.props.date}</td>
+	      <td>{readableDate(this.props.date)}</td>
 	      <td><a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i className="ico ico-medium">pen</i></a></td>
-	      <td><a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete"><i classclassName="ico ico-medium">trash</i></a></td>
+	      <td><a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete"><i classclassName="ico ico-medium ico-trash">trash</i></a></td>
 	    </tr>
 	);
     }

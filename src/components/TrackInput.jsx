@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
 
+import "./TrackInput.scss";
+
 // des méthodes pour parser ce qui vient des formulaires
 const inputParsers = {
     date(input) {
@@ -116,29 +118,29 @@ class TrackInput extends Component {
     render() {
 	console.log(this.state);
 	return (
-	    <div className="card-header track-new">
+	    <div className="card-header track-input">
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
-		    <label HtmlFor="track-new--value">Enter time</label>
+		    <label HtmlFor="track-input--value">Enter time</label>
 		    <input className="form-control form-control-lg w-50"
 			   name="value"
-			   id="track-new--input"
+			   id="track-input--input"
 			   type="text"
 			   placeholder="Time"
 			   aria-label="Input"
 			   data-parse="number"/>
-		    <label HtmlFor="track-new--task">Task</label>
+		    <label HtmlFor="track-input--task">Task</label>
 		    <input className="form-control w-100"
 			   name="task"
-			   id="track-new--input"
+			   id="track-input--input"
 			   type="text"
 			   placeholder="Task description"
 			   aria-label="Input"/>
-		    <label HtmlFor="track-new--comment">Comment</label>
+		    <label HtmlFor="track-input--comment">Comment</label>
 		    <textarea className="form-control w-100"
 			   name="comment"
-			   id="track-new--comment"
+			   id="track-input--comment"
 			   type="text"
 			   placeholder="Write a comment"
 			   aria-label="Input"/>

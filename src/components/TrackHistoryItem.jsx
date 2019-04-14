@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../assets/styles/main.scss";
+import "./TrackHistoryItem.scss";
+import {readableDate} from "../utils/readableDate";
 
 class TrackHistoryItem extends Component {
     constructor(props){
@@ -41,7 +44,7 @@ class TrackHistoryItem extends Component {
 	      </div>
 	      
 	      <div className="row">
-		<div className="col-2">{this.props.value}</div>
+		<div className="col-2 item-value"><div className="item-value--inner">{this.props.value}</div></div>
 		<div className="col-10">
 		  <h3>{this.props.task}</h3>
 		  <p className="text-muted">{this.props.comment}</p>
@@ -52,7 +55,7 @@ class TrackHistoryItem extends Component {
 		<strong>{this.state.projectName}</strong>  {this.state.clientName}
 		</div>
 		<div className="col-5 text-muted">
-		  {this.props.date}
+		  {readableDate(this.props.date)}
 		</div>
 	      </div>
 
