@@ -3,15 +3,22 @@ import axios from 'axios';
 import "../assets/styles/main.scss";
 import "./TrackHistoryItem.scss";
 import {readableDate} from "../utils/readableDate";
+import TrackDelete from "../crud/TrackDelete";
 
 class TrackHistoryItem extends Component {
     constructor(props){
 	super(props);
 	this.state = {
+	    userId: null,
 	    projectName: "",
 	    clientId: "",
-	    clientName: ""
+	    clientName: "",
+	    isEdited: false
 	};
+
+	this.deleteItem = this.deleteItem.bind(this);
+	this.editItem = this.editItem.bind(this);
+	EditDropdown = EditDropdown.bind(this);
     }
     
     async componentWillMount() {
@@ -20,6 +27,7 @@ class TrackHistoryItem extends Component {
 	const getClient = await axios.get("http://localhost:3000/clients/"+getProject.data.client);
 
 	this.setState({
+	    userId: this.props.user,
 	    projectName: getProject.data.name,
 	    clientId: getProject.data.client,
 	    clientName: getClient.data.name
@@ -28,40 +36,62 @@ class TrackHistoryItem extends Component {
 	// Comment lancer deux requêtes, quand la première dépend du résultat de la première
 	// https://stackoverflow.com/questions/44182951/axios-chaining-multiple-api-requests
     }
+
+    deleteItem(e){
+	const deleteRequest = axios.delete("http://localhost:3000/projects/"+this.props.relatedProject+"/trackedtime/"+this.props.id);
+	deleteRequest.then(res => {
+	    this.props.onChange();
+	});
+    }
+    editItem(e){
+	this.setState({isEdited: true});
+    }
     
     render() {
 	return (
-		<li className="list-group-item track-history--item" id={this.props.id} onClick={this.props.onClick}>
+	    <li className="list-group-item track-history--item" id={this.props.id} onClick={this.props.onClick}>
+	      {this.state.isEdited ? null : <EditDropdown/>}
 
-	      <div className="dropdown item-actions position-absolute">
-		<button className="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  ...
-		</button>
-		<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		  <a className="dropdown-item" href="#">Supprimer</a>
-		  <a className="dropdown-item" href="#">Éditer</a>
-		</div>
-	      </div>
-	      
 	      <div className="row">
 		<div className="col-2 item-value"><div className="item-value--inner">{this.props.value}</div></div>
 		<div className="col-10">
-		  <h3>{this.props.task}</h3>
-		  <p className="text-muted">{this.props.comment}</p>
+		  {this.state.isEdited ?
+		      <input className="form-control w-50" name="task" id="track-input--input" type="text" placeholder={this.props.task}  aria-label="Input"/>
+			  : <h5>{this.props.task}</h5>
+		      }
+		      {this.state.isEdited ? 
+			  <textarea placeholder={this.props.comment}/>
+			      : <p className="text-muted">{this.props.comment}</p>
+			  }
 		</div>
 	      </div>
 	      <div className="row">
 		<div className="offset-2 col-5 text-muted">
-		<strong>{this.state.projectName}</strong>  {this.state.clientName}
+		  <strong>{this.state.projectName}</strong>  {this.state.clientName}
 		</div>
 		<div className="col-5 text-muted">
 		  {readableDate(this.props.date)}
 		</div>
 	      </div>
-
 	    </li>
+
 	);
     }
 }
+
+function EditDropdown(props){
+    return(
+	<div className="dropdown item-actions position-absolute">
+	  <button className="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    <i className="ico ico-dots_v">dots_v</i>
+	  </button>
+	  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	    <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
+	    <a className="dropdown-item" href="#" onClick={this.editItem}>Éditer</a>
+	  </div>
+	</div>
+    );
+}
+
 
 export default TrackHistoryItem;

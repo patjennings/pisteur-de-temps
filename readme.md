@@ -64,9 +64,12 @@ Créer les collections dans la base `time-tracker`
 - supprimer temps rentré dans track history (actualiser composant)
 - supprimer entrée dans project detail
 - éditer temps rentré (track history et project details)
-- éditer projet
+  - en mode editInPlace
 - ajouter un projet (dans un client)
+- éditer projet
 - ajouter un client
+- éditer un client
+
 - login
   - gestion des utilisateurs
 - animation au click (affichage du détail de projet)
@@ -74,3 +77,11 @@ Créer les collections dans la base `time-tracker`
 - projectdetails => barre rouge si budget dépassé
 - dans input-track, retrouver automatiquement les tâches déjà entrées
 - ~~track history, inverser l'ordre~~
+- export csv
+- export json
+- enable toaster pour les notifications (choisissez un projet, etc.)
+
+###### doc api ######
+
+- post/put project : manque champs budget+description
+- checker toutes les méthodes et écrire la doc api

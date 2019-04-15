@@ -15,6 +15,7 @@ class App extends Component {
     constructor(props){
 	super(props);
 	this.state = {
+	    userId: "5c9b3912f787951b7e8c9d62",
 	    projects: [],
 	    clients: [],
 	    showDetails: false,
@@ -54,7 +55,7 @@ class App extends Component {
 		<div id="main" className="col-9">
 		  <div className="row">
 
-		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <TrackManager onChange={this.handleChange} defs={this.state.definitions}/>}
+		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <TrackManager onChange={this.handleChange} defs={this.state.definitions} user={this.state.userId}/>}
 		    {/* On vérifie d'abord qu'il y a qqchose dans state.definitions*/}
 
 		      {this.state.showDetails ?  <ProjectDetails project={this.state.displayedProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      

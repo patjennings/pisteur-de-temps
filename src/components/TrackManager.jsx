@@ -12,7 +12,7 @@ class TrackManager extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    userId: "5c9b3912f787951b7e8c9d62",
+	    userId: null,
 	    trackHistory: [],
 	    definitions: {},
 	};
@@ -28,9 +28,13 @@ class TrackManager extends Component {
     
     componentWillMount() {
 	// console.log("did it mount ?");
-	this.setState({definitions: this.props.defs});
-	// console.log(this.props.defs);
-	this.fetchTrackHistory();	
+	this.setState({
+	    userId: this.props.user,
+	    definitions: this.props.defs
+	});
+    }
+    componentDidMount(){
+	this.fetchTrackHistory();
     }
 
     fetchTrackHistory(){
@@ -81,13 +85,13 @@ class TrackManager extends Component {
 
 		{/* --------- */}
 		{/* New track */}
-		<TrackInput defs={this.state.definitions} onChange={this.fetchTrackHistory}/>
+		<TrackInput defs={this.state.definitions} user={this.state.userId} onChange={this.fetchTrackHistory}/>
 
 		{/* ------------- */}
 		{/* Track history */}
 		<ul className="list-group list-group-flush track-history">
 		  {this.state.trackHistory.slice(0).reverse().map(childData => {
-		      return <TrackHistoryItem onClick={e => this.handleClick(childData, e)} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date}/>;
+		      return <TrackHistoryItem onClick={e => this.handleClick(childData, e)} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date} user={this.state.userId}  onChange={this.fetchTrackHistory}/>;
 		    })}
 		</ul>
 	      </div>

@@ -23,7 +23,7 @@ class TrackInput extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    userId: "5c9b3912f787951b7e8c9d62",
+	    userId: null,
 	    selectedProject: null,
 	    definitions: {},
 	};
@@ -32,8 +32,10 @@ class TrackInput extends Component {
     }
 
     componentWillMount() {
-
-	this.setState({definitions: this.props.defs});
+	this.setState({
+	    userId: this.props.user,
+	    definitions: this.props.defs
+	});
 	
     }
     shouldComponentUpdate(nextProps, nextState){
@@ -72,9 +74,12 @@ class TrackInput extends Component {
 	}
 	req.user = this.state.userId;
 
+	console.log(req);
+
 	if(isNaN(req.value)){
 	    console.log("Renseignez un temps passé");
-	}else if (req.client === null){
+	    console.log(req);
+	}else if (this.state.selectedProject === null){
 	    console.log("Vous devez sélectionner un projet");
 	}else if (req.task === ""){
 	     console.log("Entrez une tâche");
@@ -93,10 +98,8 @@ class TrackInput extends Component {
 	    	})
 		.catch(error => {
 		    console.log(error);
-		})
+		});
 	}
-	// data.set("client", this.state.selectedProject);
-	// console.log(stringifyFormData(data));
     }
     
     handleDropdownChange(e){
