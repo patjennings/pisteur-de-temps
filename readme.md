@@ -81,6 +81,10 @@ Créer les collections dans la base `time-tracker`
 - export json
 - enable toaster pour les notifications (choisissez un projet, etc.)
 
+- meilleure organisation des composants:
+  - https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
+  - https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346#how-it-works
+
 ###### doc api ######
 
 - post/put project : manque champs budget+description
