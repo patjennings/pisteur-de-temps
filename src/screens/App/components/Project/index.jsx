@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Task from "./components/Task";
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
+import {getfullTime, getPercent} from 'utils/budget';
+
+import fetchProject from "utils/fetchProject";
 
 import "./styles.scss";
 
@@ -13,98 +16,45 @@ class Project extends Component {
 	this.state = {
 	    projectId: null,
 	    projectName: null,
+	    projectDescription: null,
+	    projectBudget: null,
 	    clientId: null,
 	    clientName: null,
 	    trackedTime: [],
 	    fullTime: null,
 	    definitions: {}
 	};
-	this.getFullTime = this.getFullTime.bind(this);
-	this.getBudgetPercent = this.getBudgetPercent.bind(this);
+	// this.getFullTime = this.getFullTime.bind(this);
+	// this.getBudgetPercent = this.getBudgetPercent.bind(this);
 	
     }
-    componentWillMount(){
+    async componentWillMount(){
+	
+	const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	
 	this.setState({
-	    projectId: this.props.project,
+	    ...req,
 	    definitions: this.props.defs
-	});
-	this.getProjectInformations(this.props.project);
-	// this.definitions = this.props.defs;
+	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
     }
-    
-    componentWillUpdate(){
+    async shouldComponentUpdate(nextProps, nextState){
+	// console.log(nextProps);
+	// console.log(nextState);
+	// console.log("Update ?");
 
-    }
-
-    componentDidUpdate(){
-	// this.state.definitions = this.props.defs;
-	// console.log("Update de Project");
-    }
-
-    removeItem(item){}
-
-    getFullTime(trackedTime){
-	let fullTime = 0;
-	trackedTime.forEach(t => {
-	    fullTime += t.value;
-	});
-	return fullTime;
-    }
-    
-    getBudgetPercent(done, total){
-	let result = done*100/total;
-	return result;
-    }
-
-    async getProjectInformations(projectId){
-
-	const getProject = await axios.get("http://localhost:3000/projects/"+projectId);
-	const getTrackedTime = await axios.get("http://localhost:3000/projects/"+projectId+"/trackedtime");
-	const trackedList = getTrackedTime.data.message.map(t => {
-	    // console.log(getUserName(this.state.definitions, t.relatedUser));
-	    return {
-		id: t._id,
-		task: t.task,
-		value: t.value,
-		comment: t.comment,
-		relatedProject: t.relatedProject,
-		username: getUserName(this.state.definitions, t.relatedUser),
-		date: t.dateCreation
-	    };
-	    
-	});
-
-	this.setState({
-	    projectName: getProject.data.name,
-	    projectDescription: getProject.data.description,
-	    projectBudget: getProject.data.budget,
-	    clientId: getProject.data.client,
-	    clientName: getClientName(this.state.definitions, getProject.data.client),
-	    trackedTime: trackedList,
-	    fullTime: this.getFullTime(getTrackedTime.data.message)
-	});
+	// const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	
+	// this.setState({
+	//     ...req,
+	//     definitions: this.props.defs
+	// }); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
+	
 	console.log(this.state);
-    }
-    shouldComponentUpdate(nextProps, nextState){
-	console.log("Upade de project ?");
-	console.log(nextProps);
-	if(nextProps.project === nextState.projectId){
-	    return true;
-	    console.log("true");
-	}
-	else {
-	    this.setState({
-		projectId: nextProps.project,
-		definitions: nextProps.defs
-	    });
-	    this.getProjectInformations(nextProps.project);
-	    return false;
-	    console.log("false");
-	}
+	return true;
     }
     
     render() {
-	// console.log("°°°°°° "+this.props.project);
+	// console.log("°°°°°° "+this.props.projectid);
 	// console.log(this.state);
 
 	return (
@@ -123,12 +73,12 @@ class Project extends Component {
 		    </div>
 		  </div>
 		  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.state.fullTime+" days spent"}>
-		    <div className="progress-bar" role="progressbar" style={{width: this.getBudgetPercent(this.state.fullTime, this.state.projectBudget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+		    <div className="progress-bar" role="progressbar" style={{width: getPercent(this.state.fullTime, this.state.projectBudget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 		  </div>
 		</div>
 		<table className="table project-tracks">
 		  {this.state.trackedTime.slice(0).reverse().map(t => {
-		      return <Task task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
+		      return <Task key={t.id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
 		  })}
 		</table>
 	      </div>

@@ -1,3 +1,4 @@
+// get a username from an id and a list of definitions (list of ids+related name)
 export function getUserName(defs, id){
     let result = null;
     const node = defs.usersDefinitions.filter(
@@ -8,6 +9,7 @@ export function getUserName(defs, id){
     });
     return result;
 }
+// get a project name from an id and a list of definitions (list of ids+related name)
 export function getProjectName(defs, id){
     let result = null;
     const node = defs.projectsDefinitions.filter(
@@ -18,6 +20,7 @@ export function getProjectName(defs, id){
     });
     return result;
 }
+// get a client name from an id and a list of definitions (list of ids+related name)
 export function getClientName(defs, id){
     let result = null;
     const node = defs.clientsDefinitions.filter(

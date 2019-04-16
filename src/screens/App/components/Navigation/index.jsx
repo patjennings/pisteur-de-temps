@@ -23,14 +23,13 @@ class Navigation extends Component {
 	this.props.onChange(data._id);
     }
     render() {
-	console.log(this.state.definitions);
 	return (
 	    <div className="row">
 	      <div className="col-12">
 		<input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
 		{this.state.definitions.clientsDefinitions.map(c => {
 		    return (
-			<ListClientProjects name={c.name} id={c._id} defs={this.state.definitions} onChange={this.handleChange}/>
+			<ListClientProjects key={c._id} name={c.name} id={c._id} defs={this.state.definitions} onChange={this.handleChange}/>
 		    );
 		})}
 

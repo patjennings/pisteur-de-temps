@@ -3,7 +3,7 @@ import {readableDate} from "utils/readableDate";
 
 import "./styles.scss";
 
-class ProjectTrack extends Component {
+class Task extends Component {
     constructor(props){
 	super(props);
     }
@@ -22,5 +22,5 @@ class ProjectTrack extends Component {
     }
 }
 
-export default ProjectTrack;
+export default Task;
 

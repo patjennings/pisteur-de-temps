@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
+import Toto from "./components/Toto";
 
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
+
+import fetchPersonalHistory from "utils/fetchPersonalHistory";
 
 import "./styles.scss";
 
@@ -11,68 +14,37 @@ class PersonalManager extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    userId: null,
+	    userId: this.props.user,
 	    trackHistory: [],
-	    definitions: {},
+	    definitions: this.props.defs
 	};
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
 	this.handleDropdown = this.handleDropdown.bind(this);
 	// this.trackInputAdded = this.trackInputAdded.bind(this);
-	this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
+	// this.fetch = this.fetch.bind(this);
     }
     
-    componentWillMount() {
-	// console.log("did it mount ?");
-	this.setState({
-	    userId: this.props.user,
-	    definitions: this.props.defs
-	});
-    }
-    componentDidMount(){
-	this.fetchTrackHistory();
-    }
+    async componentDidMount() {
+	let req = await fetchPersonalHistory(this.props.user);
+	// console.log(req);
 
-    fetchTrackHistory(){
-	axios
-	    .get("http://localhost:3000/users/"+this.state.userId+"/trackedTime")
-	    .then(response => {
-		// je remplis un objet pour chaque réponse de la requête...
-		const fetchedHistory = response.data.message.map(t => {
-		    return {
-			id: t._id,
-			task: t.task,
-			value: t.value,
-			comment: t.comment,
-			relatedProject: t.relatedProject,
-			date: t.dateCreation
-		    };
-		});
-		// ... et j'ajoute ensuite chacun au tableau trackHistory[]
-		const newState = Object.assign({}, this.state, {
-		    trackHistory: fetchedHistory
-		});
-		this.setState(newState);
-	    })
-	    .catch(error => console.log(error));
-    }
-    shouldComponentUpdate(nextProps, nextState){
-	if(nextProps.defs === nextState.definitions){
-	    return true;
-	}
-	else {
-	    this.setState({definitions: nextProps.defs});
-	    return false;
-	}
+	this.setState({
+	    trackHistory: req
+	});
     }
 
     handleClick(data, event){
 	this.props.onChange(data.relatedProject);
     }
 
-    handleChange(data, event){
-	this.props.onChange(data.relatedProject);
-	this.fetchTrackHistory();
+    async handleChange(data, event){
+	data ? this.props.onChange(data.relatedProject) : null;
+	let req = await fetchPersonalHistory(this.props.user);
+	
+	this.setState({
+	    trackHistory: req
+	});
     }
 
     handleDropdown(e){
@@ -82,20 +54,20 @@ class PersonalManager extends Component {
 
 
     render() {
-	console.log(this.state.definitions);
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
 
 		{/* --------- */}
 		{/* New track */}
-		<TaskInput defs={this.state.definitions} user={this.state.userId} onChange={this.fetchTrackHistory}/>
+		<TaskInput defs={this.state.definitions} userid={this.state.userId} onChange={this.handleChange} />
+		{/*<Toto defs={this.state.definitions} userid={this.state.userId} onChange={this.handleChange}/>*/}
 
 		{/* ------------- */}
 		{/* Track history */}
 		<ul className="list-group list-group-flush track-history">
 		  {this.state.trackHistory.slice(0).reverse().map(childData => {
-		      return <Task onClick={e => this.handleClick(childData, e)} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date} user={this.state.userId}  onChange={e => this.handleChange(childData, e)}/>;
+		      return <Task onClick={e => this.handleClick(childData, e)} key={childData.id} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date} user={this.state.userId}  onChange={e => this.handleChange(childData, e)}/>;
 		    })}
 		</ul>
 	      </div>

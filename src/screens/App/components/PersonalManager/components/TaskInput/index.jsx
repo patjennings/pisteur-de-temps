@@ -5,49 +5,18 @@ import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
 import "./styles.scss";
 
-// des méthodes pour parser ce qui vient des formulaires
-const inputParsers = {
-    date(input) {
-	const [month, day, year] = input.split('/');
-	return `${year}-${month}-${day}`;
-    },
-    uppercase(input) {
-	return input.toUpperCase();
-    },
-    number(input) {
-	return parseFloat(input+" zerzer");
-    },
-};
-
 class TaskInput extends Component {
     constructor(props){
 	super(props);
+
 	this.state = {
-	    userId: null,
-	    selectedProject: null,
-	    definitions: {},
+	    userId: this.props.userid,
+    	    definitions: this.props.defs,
+	    selectedProject: null
 	};
 	this.handleSubmit = this.handleSubmit.bind(this);
 	this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
-
-    componentWillMount() {
-	this.setState({
-	    userId: this.props.user,
-	    definitions: this.props.defs
-	});
-	
-    }
-    shouldComponentUpdate(nextProps, nextState){
-	if(nextProps.defs === nextState.definitions){
-	    return true;
-	}
-	else {
-	    this.setState({definitions: nextProps.defs});
-	    return false;
-	}
-    }
-
 
     handleSubmit(e){
 	e.preventDefault();
@@ -74,8 +43,6 @@ class TaskInput extends Component {
 	}
 	req.user = this.state.userId;
 
-	console.log(req);
-
 	if(isNaN(req.value)){
 	    console.log("Renseignez un temps passé");
 	    console.log(req);
@@ -99,6 +66,7 @@ class TaskInput extends Component {
 		.catch(error => {
 		    console.log(error);
 		});
+
 	}
     }
     
@@ -116,6 +84,7 @@ class TaskInput extends Component {
 
 
     render() {
+	console.log(this.state.userId);
 	return (
 	    <div className="card-header track-input">
 	      <form onSubmit={this.handleSubmit}>
@@ -177,10 +146,26 @@ class TaskInput extends Component {
     }
 }
 
+export default TaskInput;
+
+
+// des méthodes pour parser ce qui vient des formulaires
+const inputParsers = {
+    date(input) {
+	const [month, day, year] = input.split('/');
+	return `${year}-${month}-${day}`;
+    },
+    uppercase(input) {
+	return input.toUpperCase();
+    },
+    number(input) {
+	return parseFloat(input+" zerzer");
+    },
+};
+
+
 function stringifyFormData(fd) {
     const data = {};
     fd.forEach((value, key) => {data[key] = value});
     return JSON.stringify(data);
 }
-
-export default TaskInput;

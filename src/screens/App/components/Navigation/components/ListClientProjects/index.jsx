@@ -36,7 +36,7 @@ class ListClientProjects extends Component {
 	      {this.state.definitions.projectsDefinitions.map(p => {
 		  if(p.client === this.props.id){
 		      this.state.hasProject = true;
-		      return <li onClick={e => this.handleClick(p, e)}>{p.name}</li>;
+		      return <li key={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
 		  }
 	      })}
 	      {this.checkNoProject()}

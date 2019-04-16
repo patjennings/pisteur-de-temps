@@ -19,7 +19,7 @@ class App extends Component {
 	    projects: [],
 	    clients: [],
 	    showDetails: false,
-	    displayedProject: null,
+	    activeProject: null,
 	    definitions: {}
 	};
 	this.handleChange = this.handleChange.bind(this);
@@ -34,11 +34,11 @@ class App extends Component {
 	    });
     }
     handleChange(d){
-	console.log("displayedProject");
-	console.log(d);
+	// console.log("activeProject");
+	// console.log(d);
 	
 	this.setState({
-	    displayedProject: d,
+	    activeProject: d,
 	    showDetails: true
 	});
     }
@@ -60,7 +60,7 @@ class App extends Component {
 		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <PersonalManager onChange={this.handleChange} defs={this.state.definitions} user={this.state.userId}/>}
 		    {/* On vérifie d'abord qu'il y a qqchose dans state.definitions*/}
 
-		      {this.state.showDetails ?  <Project project={this.state.displayedProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
+		      {this.state.showDetails ?  <Project key={this.state.activeProject} projectid={this.state.activeProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
 		  </div>
 		</div>
 		<div id="nav" className="col-3">

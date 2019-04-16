@@ -81,6 +81,7 @@ Créer les collections dans la base `time-tracker`
 - export json
 - enable toaster pour les notifications (choisissez un projet, etc.)
 - problème dans l'ordre des task de Personal (e.g. quand on supprime, pb comportement)
+- gérer le problème d'update de Project : mécanique w/ shouldComponentUpdate, componentWillUpdate, etc.
 
 - ~~meilleure organisation des composants~~:
   - https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
