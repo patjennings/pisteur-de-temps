@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Definitions from './utils/Definitions';
+import Definitions from 'utils/definitions';
 
-import TrackManager from './components/TrackManager';
-import ProjectDetails from './components/ProjectDetails';
+import PersonalManager from './components/PersonalManager';
+import Project from './components/Project';
 import Navigation from './components/Navigation';
 import {hot} from "react-hot-loader";
 
-import "./App.scss";
-import "./assets/styles/main.scss";
+import "./styles.scss";
+import "assets/styles/main.scss";
 
 let def = new Definitions();
 
@@ -34,7 +34,9 @@ class App extends Component {
 	    });
     }
     handleChange(d){
+	console.log("displayedProject");
 	console.log(d);
+	
 	this.setState({
 	    displayedProject: d,
 	    showDetails: true
@@ -48,17 +50,17 @@ class App extends Component {
     }
  
     render() {
-	console.log(Object.keys(this.state.definitions).length === 0);
+	// console.log(Object.keys(this.state.definitions).length === 0);
 	return (
 	    <div id="wrapper" className="container-fluid">
 	      <div className="row">
 		<div id="main" className="col-9">
 		  <div className="row">
 
-		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <TrackManager onChange={this.handleChange} defs={this.state.definitions} user={this.state.userId}/>}
+		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <PersonalManager onChange={this.handleChange} defs={this.state.definitions} user={this.state.userId}/>}
 		    {/* On vérifie d'abord qu'il y a qqchose dans state.definitions*/}
 
-		      {this.state.showDetails ?  <ProjectDetails project={this.state.displayedProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
+		      {this.state.showDetails ?  <Project project={this.state.displayedProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
 		  </div>
 		</div>
 		<div id="nav" className="col-3">

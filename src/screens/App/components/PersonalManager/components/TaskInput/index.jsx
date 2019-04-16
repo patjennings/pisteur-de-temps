@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import App from "../App";
 import axios from "axios";
-import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
+import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./TrackInput.scss";
+import "./styles.scss";
 
 // des méthodes pour parser ce qui vient des formulaires
 const inputParsers = {
@@ -19,7 +19,7 @@ const inputParsers = {
     },
 };
 
-class TrackInput extends Component {
+class TaskInput extends Component {
     constructor(props){
 	super(props);
 	this.state = {
@@ -183,4 +183,4 @@ function stringifyFormData(fd) {
     return JSON.stringify(data);
 }
 
-export default TrackInput;
+export default TaskInput;

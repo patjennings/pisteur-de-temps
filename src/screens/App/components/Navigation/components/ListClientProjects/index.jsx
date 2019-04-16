@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
+import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./NavigationGroup.scss";
+import "./styles.scss";
 
-class NavigationGroup extends Component {
+class ListClientProjects extends Component {
     constructor(props){
 	super(props);
 	this.state = {
@@ -46,4 +46,4 @@ class NavigationGroup extends Component {
     }
 }
 
-export default NavigationGroup;
+export default ListClientProjects;

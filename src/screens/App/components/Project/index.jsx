@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 // import clientDefinitions from '../utils/clientDefinitions';
-import ProjectTrack from "./ProjectTrack";
+import Task from "./components/Task";
 import axios from "axios";
-import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
+import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./ProjectDetails.scss";
+import "./styles.scss";
 
-// import  "../utils/Tooltips.js"; // Js tooltips
-
-class ProjectDetails extends Component {
+class Project extends Component {
     constructor(props){
 	super(props);
 	// il faut absolument initialiser l'objet state, avec des valeurs nulles 
@@ -40,6 +38,7 @@ class ProjectDetails extends Component {
 
     componentDidUpdate(){
 	// this.state.definitions = this.props.defs;
+	// console.log("Update de Project");
     }
 
     removeItem(item){}
@@ -87,9 +86,11 @@ class ProjectDetails extends Component {
 	console.log(this.state);
     }
     shouldComponentUpdate(nextProps, nextState){
-	// console.log(nextProps);
+	console.log("Upade de project ?");
+	console.log(nextProps);
 	if(nextProps.project === nextState.projectId){
 	    return true;
+	    console.log("true");
 	}
 	else {
 	    this.setState({
@@ -98,6 +99,7 @@ class ProjectDetails extends Component {
 	    });
 	    this.getProjectInformations(nextProps.project);
 	    return false;
+	    console.log("false");
 	}
     }
     
@@ -126,7 +128,7 @@ class ProjectDetails extends Component {
 		</div>
 		<table className="table project-tracks">
 		  {this.state.trackedTime.slice(0).reverse().map(t => {
-		      return <ProjectTrack task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
+		      return <Task task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
 		  })}
 		</table>
 	      </div>
@@ -135,4 +137,4 @@ class ProjectDetails extends Component {
     }
 }
 
-export default ProjectDetails;
+export default Project;

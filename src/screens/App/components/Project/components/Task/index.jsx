@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {readableDate} from "../utils/readableDate";
+import {readableDate} from "utils/readableDate";
 
-import "./ProjectTrack.scss";
+import "./styles.scss";
 
 class ProjectTrack extends Component {
     constructor(props){

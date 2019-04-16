@@ -75,15 +75,18 @@ Créer les collections dans la base `time-tracker`
 - animation au click (affichage du détail de projet)
 - garder le dernier affichage du dropdown en mémoire/cookie
 - projectdetails => barre rouge si budget dépassé
-- dans input-track, retrouver automatiquement les tâches déjà entrées
+- dans input-track, retrouver automatiquement les tâches déjà entrées (dans le <input /> task)
 - ~~track history, inverser l'ordre~~
 - export csv
 - export json
 - enable toaster pour les notifications (choisissez un projet, etc.)
+- problème dans l'ordre des task de Personal (e.g. quand on supprime, pb comportement)
 
-- meilleure organisation des composants:
+- ~~meilleure organisation des composants~~:
   - https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
   - https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346#how-it-works
+  
+  
 
 ###### doc api ######
 

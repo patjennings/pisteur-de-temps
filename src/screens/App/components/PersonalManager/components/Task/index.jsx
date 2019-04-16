@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "../assets/styles/main.scss";
-import "./TrackHistoryItem.scss";
-import {readableDate} from "../utils/readableDate";
-import TrackDelete from "../crud/TrackDelete";
+import "assets/styles/main.scss";
+import "./styles.scss";
+import {readableDate} from "utils/readableDate";
+import deleteTask from "utils/deleteTask";
 
-class TrackHistoryItem extends Component {
+class Task extends Component {
     constructor(props){
 	super(props);
 	this.state = {
@@ -37,11 +37,9 @@ class TrackHistoryItem extends Component {
 	// https://stackoverflow.com/questions/44182951/axios-chaining-multiple-api-requests
     }
 
-    deleteItem(e){
-	const deleteRequest = axios.delete("http://localhost:3000/projects/"+this.props.relatedProject+"/trackedtime/"+this.props.id);
-	deleteRequest.then(res => {
-	    this.props.onChange();
-	});
+    async deleteItem(e){
+	const req = await deleteTask(this.props.relatedProject, this.props.id); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	this.props.onChange();
     }
     editItem(e){
 	this.setState({isEdited: true});
@@ -94,4 +92,4 @@ function EditDropdown(props){
 }
 
 
-export default TrackHistoryItem;
+export default Task;

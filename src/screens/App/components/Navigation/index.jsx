@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import {getUserName, getProjectName, getClientName} from '../utils/defsConverter';
-import NavigationGroup from "./NavigationGroup";
+import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
+import ListClientProjects from "./components/ListClientProjects";
 
-import "./Navigation.scss";
+import "./styles.scss";
 
 class Navigation extends Component {
     constructor(props){
@@ -30,7 +30,7 @@ class Navigation extends Component {
 		<input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
 		{this.state.definitions.clientsDefinitions.map(c => {
 		    return (
-			<NavigationGroup name={c.name} id={c._id} defs={this.state.definitions} onChange={this.handleChange}/>
+			<ListClientProjects name={c.name} id={c._id} defs={this.state.definitions} onChange={this.handleChange}/>
 		    );
 		})}
 
