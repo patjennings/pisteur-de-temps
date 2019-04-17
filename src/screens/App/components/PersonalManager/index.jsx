@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
-import Toto from "./components/Toto";
 
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
@@ -54,6 +53,7 @@ class PersonalManager extends Component {
 
 
     render() {
+	// console.log(this.state.trackHistory);
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
@@ -67,7 +67,19 @@ class PersonalManager extends Component {
 		{/* Track history */}
 		<ul className="list-group list-group-flush track-history">
 		  {this.state.trackHistory.slice(0).reverse().map(childData => {
-		      return <Task onClick={e => this.handleClick(childData, e)} key={childData.id} id={childData.id} task={childData.task} value={childData.value} comment={childData.comment} relatedProject={childData.relatedProject} date={childData.date} user={this.state.userId}  onChange={e => this.handleChange(childData, e)}/>;
+		      return <Task
+				   onClick={e => this.handleClick(childData, e)}
+			key={childData.id}
+			id={childData.id}
+			task={childData.task}
+			value={childData.value}
+			comment={childData.comment}
+			relatedProject={childData.relatedProject}
+			date={childData.date}
+			user={this.state.userId}
+			onChange={e => this.handleChange(childData, e)}
+			defs={this.props.defs}
+			  />;
 		    })}
 		</ul>
 	      </div>

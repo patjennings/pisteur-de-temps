@@ -330,6 +330,9 @@ module.exports = function(app){
 		if (req.body.value !== undefined) {
 		    data.value = req.body.value;
 		}
+		if (req.body.project !== undefined) {
+		    data.relatedProject = req.body.project;
+		}
 		if (req.body.user !== undefined) {
 		    data.relatedUser = req.body.user;
 		}

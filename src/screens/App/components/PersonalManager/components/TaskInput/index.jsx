@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 // import App from "../App";
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
+import addTask from "utils/addTask";
+import retrieveFormData from "utils/retrieveFormData";
 
+import ProjectsSelector from "../ProjectsSelector";
 import "./styles.scss";
 
 class TaskInput extends Component {
@@ -15,76 +18,26 @@ class TaskInput extends Component {
 	    selectedProject: null
 	};
 	this.handleSubmit = this.handleSubmit.bind(this);
-	this.handleDropdownChange = this.handleDropdownChange.bind(this);
+	this.setActiveProject = this.setActiveProject.bind(this);
     }
 
-    handleSubmit(e){
+    async handleSubmit(e){
 	e.preventDefault();
-
-	const form = e.target;
-	const data = new FormData(form);
-
-	let req = {};
 	
-	for (let name of data.keys()) {
-	    const input = form.elements[name];
-	    const parserName = input.dataset.parse;
-	    
-	    if(parserName){
-		const parser = inputParsers[parserName];
-		const parsedValue = parser(data.get(name));
-		req.value = parsedValue;
-		// data.set(name, parsedValue);
-	    }
-	    else{
-		req[name] = data.get(name);
-	    }
-
-	}
-	req.user = this.state.userId;
-
-	if(isNaN(req.value)){
-	    console.log("Renseignez un temps passé");
-	    console.log(req);
-	}else if (this.state.selectedProject === null){
-	    console.log("Vous devez sélectionner un projet");
-	}else if (req.task === ""){
-	     console.log("Entrez une tâche");
-	}
-	else{
-	    axios
-	    	.post("http://localhost:3000/projects/"+this.state.selectedProject+"/trackedtime", {
-		    task: req.task,
-		    comment: req.comment,
-		    value: req.value,
-		    user: this.state.userId
-		})
-	    	.then(res => {
-		    console.log(res);
-		    this.props.onChange(); // on appelle la fonction chez le parent, qui avertit du changement
-	    	})
-		.catch(error => {
-		    console.log(error);
-		});
-
-	}
+	let fd = retrieveFormData(e.target, this.state.userId);
+	
+	// on lance la requête
+	let req = await addTask(this.state.selectedProject, fd);
+	this.props.onChange();
+	
     }
-    
-    handleDropdownChange(e){
-	e.preventDefault();
 
-	let projectId; // get the id
-	if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
-	    projectId = e.target.parentNode.getAttribute("id");
-	} else {
-	    projectId = e.target.getAttribute("id");
-	}
-	this.setState({selectedProject: projectId});
+    setActiveProject(p){
+	this.setState({selectedProject: p});
     }
 
 
     render() {
-	console.log(this.state.userId);
 	return (
 	    <div className="card-header track-input">
 	      <form onSubmit={this.handleSubmit}>
@@ -107,36 +60,17 @@ class TaskInput extends Component {
 			   aria-label="Input"/>
 		    <label htmlFor="track-input--comment">Comment</label>
 		    <textarea className="form-control w-100"
-			   name="comment"
-			   id="track-input--comment"
-			   type="text"
-			   placeholder="Write a comment"
-			   aria-label="Input"/>
+			      name="comment"
+			      id="track-input--comment"
+			      type="text"
+			      placeholder="Write a comment"
+			      aria-label="Input"/>
 		    
 		    <button
 		      className="btn btn-primary">Submit</button>
 		  </div>
 		  <div className="col">
-		    <div className="dropdown">
-		      <button
-			className="dropdown-toggle btn"
-			data-toggle="dropdown"
-			aria-haspopup="true"
-			aria-expanded="false">
-			{this.state.selectedProject == null ? "Select a project" : getProjectName(this.state.definitions, this.state.selectedProject)}
-		      </button>
-		      
-		      
-		      <div className="dropdown-menu"
-			   aria-labelledby="dropdownMenuButton">
-			{Object.keys(this.state.definitions).length !== 0 &&
-			    this.state.definitions.projectsDefinitions.map(p => {
-				return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p.client}</span></a>;
-			    })
-			}
-		      </div>
-		    </div>
-
+		    <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.selectedProject}/>
 		  </div>
 		</div>
 	      </form>
@@ -147,25 +81,3 @@ class TaskInput extends Component {
 }
 
 export default TaskInput;
-
-
-// des méthodes pour parser ce qui vient des formulaires
-const inputParsers = {
-    date(input) {
-	const [month, day, year] = input.split('/');
-	return `${year}-${month}-${day}`;
-    },
-    uppercase(input) {
-	return input.toUpperCase();
-    },
-    number(input) {
-	return parseFloat(input+" zerzer");
-    },
-};
-
-
-function stringifyFormData(fd) {
-    const data = {};
-    fd.forEach((value, key) => {data[key] = value});
-    return JSON.stringify(data);
-}

@@ -24,12 +24,11 @@ class Project extends Component {
 	    fullTime: null,
 	    definitions: {}
 	};
-	// this.getFullTime = this.getFullTime.bind(this);
+	this.handleChange = this.handleChange.bind(this);
 	// this.getBudgetPercent = this.getBudgetPercent.bind(this);
 	
     }
     async componentWillMount(){
-	
 	const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
 	
 	this.setState({
@@ -37,20 +36,13 @@ class Project extends Component {
 	    definitions: this.props.defs
 	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
     }
-    async shouldComponentUpdate(nextProps, nextState){
-	// console.log(nextProps);
-	// console.log(nextState);
-	// console.log("Update ?");
-
-	// const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+    async handleChange(){
+	const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
 	
-	// this.setState({
-	//     ...req,
-	//     definitions: this.props.defs
-	// }); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
-	
-	console.log(this.state);
-	return true;
+	this.setState({
+	    ...req,
+	    definitions: this.props.defs
+	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
     }
     
     render() {
@@ -78,7 +70,7 @@ class Project extends Component {
 		</div>
 		<table className="table project-tracks">
 		  {this.state.trackedTime.slice(0).reverse().map(t => {
-		      return <Task key={t.id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date}/>;
+		      return <Task key={t.id} taskid={t.id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date} projectid={this.state.projecId} onChange={this.handleChange}/>;
 		  })}
 		</table>
 	      </div>

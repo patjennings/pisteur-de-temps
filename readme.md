@@ -60,15 +60,22 @@ Créer les collections dans la base `time-tracker`
 - tooltips
 - ~~ajouter du temps sur un projet~~
   - ~~configurer dropdown de add time~~
-  - ~~rafraichir track history et project details quand temps rentré~~
-- supprimer temps rentré dans track history (actualiser composant)
-- supprimer entrée dans project detail
+Task
+- rafraichir ~~track history~~ et project details quand temps rentré
+- ~~DELETE supprimer temps rentré dans track history (actualiser composant)~~
+- ~~DELETE supprimer entrée dans project detail~~
 - éditer temps rentré (track history et project details)
-  - en mode editInPlace
-- ajouter un projet (dans un client)
-- éditer projet
-- ajouter un client
-- éditer un client
+  - PUT en mode editInPlace
+
+Projet
+- POST ajouter un projet (dans un client)
+- PUT éditer projet
+- DELETE supprimer projet
+
+Client
+- POST ajouter un client
+- PUT éditer un client
+- DELETE supprimer un client
 
 - login
   - gestion des utilisateurs
@@ -77,6 +84,7 @@ Créer les collections dans la base `time-tracker`
 - projectdetails => barre rouge si budget dépassé
 - dans input-track, retrouver automatiquement les tâches déjà entrées (dans le <input /> task)
 - ~~track history, inverser l'ordre~~
+  - problème de pointage (lors d'une suppression e.g.)
 - export csv
 - export json
 - enable toaster pour les notifications (choisissez un projet, etc.)
@@ -93,3 +101,9 @@ Créer les collections dans la base `time-tracker`
 
 - post/put project : manque champs budget+description
 - checker toutes les méthodes et écrire la doc api
+
+
+- selectedProject > active Project (cohérence générale)
+- faire la liste des besoins de chaque composant, fonction
+- props to state, à chaque fois ? vérifier dans chaque composant
+- tête de fichier, grouper npm, utils, components, styles
