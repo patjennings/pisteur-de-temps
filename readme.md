@@ -60,26 +60,16 @@ Créer les collections dans la base `time-tracker`
 - tooltips
 - ~~ajouter du temps sur un projet~~
   - ~~configurer dropdown de add time~~
-Task
+
+##### Task #####
+
 - rafraichir ~~track history~~ et project details quand temps rentré
 - ~~DELETE supprimer temps rentré dans track history (actualiser composant)~~
 - ~~DELETE supprimer entrée dans project detail~~
 - éditer temps rentré (track history et project details)
   - ~~PUT en mode editInPlace~~
   - le nom du client n'est pas le bon au refresh
-
-Projet
-- POST ajouter un projet (dans un client)
-- PUT éditer projet
-- DELETE supprimer projet
-
-Client
-- POST ajouter un client
-- PUT éditer un client
-- DELETE supprimer un client
-
-- login
-  - gestion des utilisateurs
+- login gestion des utilisateurs
 - animation au click (affichage du détail de projet)
 - garder le dernier affichage du dropdown en mémoire/cookie
 - projectdetails => barre rouge si budget dépassé
@@ -93,20 +83,29 @@ Client
 - gérer le problème d'update de Project : mécanique w/ shouldComponentUpdate, componentWillUpdate, etc.
 - mécanisme pour empêcher de poster une task sans avoir rempli les champs nécessaires.
 - highlight the selected project in the personalManager, when project details displays
-
 - ~~meilleure organisation des composants~~:
   - https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
   - https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346#how-it-works
-  
+- ~~selectedProject > active Project (cohérence générale)~~
+- faire la liste des besoins de chaque composant, fonction
+- props to state, à chaque fois ? vérifier dans chaque composant
+- tête de fichier, grouper npm, utils, components, styles
+
+
+##### Projet #####
+
+- POST ajouter un projet (dans un client)
+- PUT éditer projet
+- DELETE supprimer projet
+
+##### Client #####
+
+- POST ajouter un client
+- PUT éditer un client
+- DELETE supprimer un client  
   
 
 ###### doc api ######
 
 - post/put project : manque champs budget+description
 - checker toutes les méthodes et écrire la doc api
-
-
-- ~~selectedProject > active Project (cohérence générale)~~
-- faire la liste des besoins de chaque composant, fonction
-- props to state, à chaque fois ? vérifier dans chaque composant
-- tête de fichier, grouper npm, utils, components, styles
