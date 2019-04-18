@@ -252,41 +252,103 @@
                 <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Functions</h1>
+    <h1 class="post-title">Personal Manager</h1>
   </header>
 
   <div class="post-content">
-    <p>This part describes functions.</p>
+    <p>This component is used to input a task, related to a project, and displays the history of the tasks input by the active/logged user.</p>
 
-<h4 id="somefunctionnameelemainteger-elembboolean"><code class="highlighter-rouge">someFunctionName(elemA:integer, elemB:boolean)</code></h4>
+<h2 id="props">Props</h2>
 
-<p>Some description</p>
+<ul>
+  <li>userid : the active/logged user id</li>
+  <li>defs : definitions</li>
+  <li>onChange : onChange function</li>
+</ul>
+
+<h2 id="state">State</h2>
+
+<h6 id="userid-string">userId: <code class="highlighter-rouge">String</code></h6>
+
+<p>the id of the currently logged in user</p>
+
+<h6 id="trackhistory-array">trackHistory: <code class="highlighter-rouge">Array</code></h6>
+
+<p>An array of the tracks defined by the logged/active user.</p>
+
+<h6 id="definitions-object">definitions: <code class="highlighter-rouge">Object</code></h6>
+
+<p>the definitions of client, project, task IDs</p>
+
+<h2 id="logic">Logic</h2>
+
+<h4 id="componentwillmount"><code class="highlighter-rouge">componentWillMount()</code></h4>
+
+<blockquote>
+  <p>This is an async function</p>
+</blockquote>
+
+<p>Calls <code class="highlighter-rouge">fetchPersonalHistory()</code>, that returns an array of track input by the user</p>
+
+<p>Then it calls a <code class="highlighter-rouge">setState</code> in order to update <code class="highlighter-rouge">{trackHistory}</code></p>
+
+<h4 id="handlechangedatastring-event-object"><code class="highlighter-rouge">handleChange(data:String, event: Object)</code></h4>
+
+<blockquote>
+  <p>This is an async function</p>
+</blockquote>
+
+<p>If <code class="highlighter-rouge">data</code> arg is not null, it updates parent via <code class="highlighter-rouge">props.onChange</code> (passing a projectid as a parameter)</p>
+
+<p>Calls <code class="highlighter-rouge">fetchPersonalHistory()</code>, that returns an array of track input by the user</p>
+
+<p>Then it calls a <code class="highlighter-rouge">setState</code> in order to update <code class="highlighter-rouge">{trackHistory}</code></p>
 
 <h6 id="parameters">Parameters</h6>
 
 <ul>
-  <li><code class="highlighter-rouge">elemA</code> (integer) : the element to blabla</li>
-  <li><code class="highlighter-rouge">elemB</code> (boolean) : (optional) the element to blabla</li>
+  <li><code class="highlighter-rouge">data</code> : The task updated</li>
+  <li><code class="highlighter-rouge">event</code> : the event object</li>
 </ul>
 
-<h6 id="return">return</h6>
+<h4 id="handleclickdataobject-event-object"><code class="highlighter-rouge">handleClick(data:Object, event: Object)</code></h4>
 
-<p>A boolean</p>
-
-<h4 id="somefunctionnameelemainteger-elembboolean-1"><code class="highlighter-rouge">someFunctionName(elemA:integer, elemB:boolean)</code></h4>
-
-<p>Some description</p>
+<p>Updates parent via <code class="highlighter-rouge">props.onChange</code></p>
 
 <h6 id="parameters-1">Parameters</h6>
 
 <ul>
-  <li><code class="highlighter-rouge">elemA</code> (integer) : the element to blabla</li>
-  <li><code class="highlighter-rouge">elemB</code> (boolean) : (optional) the element to blabla</li>
+  <li><code class="highlighter-rouge">data</code> : The selected project.</li>
+  <li><code class="highlighter-rouge">event</code> : The event object.</li>
 </ul>
 
-<h6 id="return-1">return</h6>
+<h2 id="return">Return</h2>
 
-<p>A boolean</p>
+<p>Render</p>
+
+<h4 id="taskinput">TaskInput</h4>
+<p>Props :</p>
+<ul>
+  <li>definitions</li>
+  <li>handleChange</li>
+  <li>userId</li>
+</ul>
+
+<h4 id="task-in-loop">Task (in loop)</h4>
+<p>Props :</p>
+<ul>
+  <li>key : trackHistory.{item}.id</li>
+  <li>id : trackHistory.{item}.id</li>
+  <li>task : trackHistory.{item}.task</li>
+  <li>value : trackHistory.{item}.value</li>
+  <li>comment : trackHistory.{item}.comment</li>
+  <li>relatedProject : trackHistory.{item}.relatedProject</li>
+  <li>date : trackHistory.{item}.date</li>
+  <li>===========</li>
+  <li>userid : userId</li>
+  <li>onClick : handleChange({item}, event)</li>
+  <li>defs : definitions</li>
+</ul>
 
   </div>
 

@@ -5,7 +5,7 @@ import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import addTask from "utils/addTask";
 import retrieveFormData from "utils/retrieveFormData";
 
-import ProjectsSelector from "../ProjectsSelector";
+import ProjectsSelector from "sharedComponents/ProjectsSelector";
 import "./styles.scss";
 
 class TaskInput extends Component {
@@ -15,25 +15,25 @@ class TaskInput extends Component {
 	this.state = {
 	    userId: this.props.userid,
     	    definitions: this.props.defs,
-	    selectedProject: null
+	    activeProject: null
 	};
 	this.handleSubmit = this.handleSubmit.bind(this);
 	this.setActiveProject = this.setActiveProject.bind(this);
     }
 
-    async handleSubmit(e){
-	e.preventDefault();
+    async handleSubmit(event){
+	event.preventDefault();
 	
-	let fd = retrieveFormData(e.target, this.state.userId);
+	let fd = retrieveFormData(event.target, this.state.userId);
 	
 	// on lance la requête
-	let req = await addTask(this.state.selectedProject, fd);
+	let req = await addTask(this.state.activeProject, fd);
 	this.props.onChange();
 	
     }
 
     setActiveProject(p){
-	this.setState({selectedProject: p});
+	this.setState({activeProject: p});
     }
 
 
@@ -70,7 +70,7 @@ class TaskInput extends Component {
 		      className="btn btn-primary">Submit</button>
 		  </div>
 		  <div className="col">
-		    <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.selectedProject}/>
+		    <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.activeProject}/>
 		  </div>
 		</div>
 	      </form>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import App from "../App";
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import addTask from "utils/addTask";
@@ -10,7 +9,7 @@ class ProjectsSelector extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    selectedProject: this.props.active,
+	    activeProject: this.props.active,
 	    definitions: this.props.defs,
 	};
 	this.handleDropdownChange = this.handleDropdownChange.bind(this);
@@ -25,7 +24,7 @@ class ProjectsSelector extends Component {
 	} else {
 	    projectId = e.target.getAttribute("id");
 	}
-	this.setState({selectedProject: projectId});
+	this.setState({activeProject: projectId});
 	
 	this.props.onChange(projectId);
     }
@@ -39,7 +38,7 @@ class ProjectsSelector extends Component {
 		data-toggle="dropdown"
 		aria-haspopup="true"
 		aria-expanded="false">
-		{this.state.selectedProject == null ? "Select a project" : getProjectName(this.state.definitions, this.state.selectedProject)}
+		{this.state.activeProject == null ? "Select a project" : getProjectName(this.state.definitions, this.state.activeProject)}
 	      </button>
 	      
 	      

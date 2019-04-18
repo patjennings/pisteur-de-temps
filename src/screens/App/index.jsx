@@ -16,14 +16,16 @@ class App extends Component {
 	super(props);
 	this.state = {
 	    userId: "5c9b3912f787951b7e8c9d62",
-	    projects: [],
-	    clients: [],
-	    showDetails: false,
+	    showProject: false,
 	    activeProject: null,
 	    definitions: {}
 	};
 	this.handleChange = this.handleChange.bind(this);
+	this.setDefinitions = this.setDefinitions.bind(this);
+	this.setDefinitions();
 
+    }
+    setDefinitions(){
 	// On récupère les définitions une fois qu'elles sont chargées, et on fait un setState, ça rend à nouveau
 	def.getDefinitions()
 	    .then(value =>{
@@ -34,19 +36,10 @@ class App extends Component {
 	    });
     }
     handleChange(d){
-	// console.log("activeProject");
-	// console.log(d);
-	
 	this.setState({
 	    activeProject: d,
-	    showDetails: true
+	    showProject: true
 	});
-    }
-    componentWillUpdate(){
-	// console.log("will update");
-    }
-    componentDidUpdate() {
-	// console.log("did update");
     }
  
     render() {
@@ -57,10 +50,10 @@ class App extends Component {
 		<div id="main" className="col-9">
 		  <div className="row">
 
-		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <PersonalManager onChange={this.handleChange} defs={this.state.definitions} user={this.state.userId}/>}
+		    {Object.keys(this.state.definitions).length === 0 ? <p>Wait a minute</p> : <PersonalManager onChange={this.handleChange} defs={this.state.definitions} userid={this.state.userId}/>}
 		    {/* On vérifie d'abord qu'il y a qqchose dans state.definitions*/}
 
-		      {this.state.showDetails ?  <Project key={this.state.activeProject} projectid={this.state.activeProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
+		      {this.state.showProject ?  <Project key={this.state.activeProject} projectid={this.state.activeProject} defs={this.state.definitions}/> : <p>Select a project</p>}	      
 		  </div>
 		</div>
 		<div id="nav" className="col-3">

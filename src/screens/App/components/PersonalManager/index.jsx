@@ -13,19 +13,19 @@ class PersonalManager extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    userId: this.props.user,
+	    userId: this.props.userid,
 	    trackHistory: [],
 	    definitions: this.props.defs
 	};
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
-	this.handleDropdown = this.handleDropdown.bind(this);
+	// this.handleDropdown = this.handleDropdown.bind(this);
 	// this.trackInputAdded = this.trackInputAdded.bind(this);
 	// this.fetch = this.fetch.bind(this);
     }
     
-    async componentDidMount() {
-	let req = await fetchPersonalHistory(this.props.user);
+    async componentWillMount() {
+	let req = await fetchPersonalHistory(this.state.userId);
 	// console.log(req);
 
 	this.setState({
@@ -33,23 +33,24 @@ class PersonalManager extends Component {
 	});
     }
 
-    handleClick(data, event){
-	this.props.onChange(data.relatedProject);
-    }
-
     async handleChange(data, event){
+	console.log(data);
 	data ? this.props.onChange(data.relatedProject) : null;
-	let req = await fetchPersonalHistory(this.props.user);
+	let req = await fetchPersonalHistory(this.state.userId);
 	
 	this.setState({
 	    trackHistory: req
 	});
     }
-
-    handleDropdown(e){
-	let projectId = e.target.getAttribute("id");
-	this.setState({selectedProject: projectId});
+    
+    handleClick(data, event){
+	this.props.onChange(data.relatedProject);
     }
+
+    // handleDropdown(event){
+    // 	let projectId = event.target.getAttribute("id");
+    // 	this.setState({selectedProject: projectId});
+    // }
 
 
     render() {
@@ -68,7 +69,7 @@ class PersonalManager extends Component {
 		<ul className="list-group list-group-flush track-history">
 		  {this.state.trackHistory.slice(0).reverse().map(childData => {
 		      return <Task
-				   onClick={e => this.handleClick(childData, e)}
+				   onClick={event => this.handleClick(childData, event)}
 			key={childData.id}
 			id={childData.id}
 			task={childData.task}
@@ -76,8 +77,8 @@ class PersonalManager extends Component {
 			comment={childData.comment}
 			relatedProject={childData.relatedProject}
 			date={childData.date}
-			user={this.state.userId}
-			onChange={e => this.handleChange(childData, e)}
+			userid={this.state.userId}
+			onChange={event => this.handleChange(childData, event)}
 			defs={this.props.defs}
 			  />;
 		    })}

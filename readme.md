@@ -65,7 +65,8 @@ Task
 - ~~DELETE supprimer temps rentré dans track history (actualiser composant)~~
 - ~~DELETE supprimer entrée dans project detail~~
 - éditer temps rentré (track history et project details)
-  - PUT en mode editInPlace
+  - ~~PUT en mode editInPlace~~
+  - le nom du client n'est pas le bon au refresh
 
 Projet
 - POST ajouter un projet (dans un client)
@@ -90,6 +91,8 @@ Client
 - enable toaster pour les notifications (choisissez un projet, etc.)
 - problème dans l'ordre des task de Personal (e.g. quand on supprime, pb comportement)
 - gérer le problème d'update de Project : mécanique w/ shouldComponentUpdate, componentWillUpdate, etc.
+- mécanisme pour empêcher de poster une task sans avoir rempli les champs nécessaires.
+- highlight the selected project in the personalManager, when project details displays
 
 - ~~meilleure organisation des composants~~:
   - https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
@@ -103,7 +106,7 @@ Client
 - checker toutes les méthodes et écrire la doc api
 
 
-- selectedProject > active Project (cohérence générale)
+- ~~selectedProject > active Project (cohérence générale)~~
 - faire la liste des besoins de chaque composant, fonction
 - props to state, à chaque fois ? vérifier dans chaque composant
 - tête de fichier, grouper npm, utils, components, styles

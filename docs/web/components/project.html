@@ -249,49 +249,83 @@
     <div class="container-fluid docs-main" aria-label="Content">
         <div class="row docs-main--inner">
             <div class="col-12">
-                <div class="home">
-  
+                <article class="post">
 
-  <h3 id="documentation">Documentation</h3>
+  <header class="post-header">
+    <h1 class="post-title">Project</h1>
+  </header>
 
-<h4 id="node-app">Node app</h4>
+  <div class="post-content">
+    <h2 id="props">Props</h2>
 
-<p><code class="highlighter-rouge">app.js</code> -</p>
+<p>No props</p>
 
-<p><code class="highlighter-rouge">./routes/routes.js</code> -</p>
+<h2 id="state">State</h2>
 
-<p>require les schémas Mongoose (dans la <code class="highlighter-rouge">var models</code>)</p>
+<h6 id="userid-string">userId: <code class="highlighter-rouge">String</code></h6>
 
-<p>Ensuite, on crée les routes. À chacune correspond une requête dans la base Mongo, avec <code class="highlighter-rouge">models.{collections}.find()</code>, <code class="highlighter-rouge">models.{collections}.findById()</code>, etc…
-Chaque route restourne un résultat sous forme de réponse au format json. Ces réponses sont définies par la spéc de l’API (voir <code class="highlighter-rouge">./docs/api.md</code>).</p>
+<p>the id of the currently logged in user</p>
 
-<h4 id="modèles-mongoose">Modèles Mongoose</h4>
+<h6 id="showproject-boolean">showProject: <code class="highlighter-rouge">Boolean</code></h6>
 
-<p><code class="highlighter-rouge">./models/mongo.js</code></p>
+<p><code class="highlighter-rouge">true</code> if the Project component is displayed. Default : <code class="highlighter-rouge">false</code></p>
 
-<p>Ce sont les modèles Mongoose pour communiquer avec la base Mongo. 
-On crée un modèle par collection, que l’on exporte. On le récupère dans <code class="highlighter-rouge">./routes/routes.js</code></p>
+<h6 id="activeproject-string">activeProject: <code class="highlighter-rouge">String</code></h6>
 
-<h4 id="base-de-données">Base de données</h4>
+<p>Id of the active project</p>
 
-<p>Base MongoDB, avec quatre collections</p>
+<h6 id="definitions-object">definitions: <code class="highlighter-rouge">Object</code></h6>
+
+<p>the definitions of client, project, task IDs</p>
+
+<h2 id="logic">Logic</h2>
+
+<h4 id="setdefinitions"><code class="highlighter-rouge">setDefinitions()</code></h4>
+
+<p>Sets the definitions that will be passed as props to each component. See <code class="highlighter-rouge">shared/utils/definitions.js</code> for details.
+It calls an async <code class="highlighter-rouge">getDefinitions()</code> in the <code class="highlighter-rouge">Definitions</code> class.</p>
+
+<p>Then it calls a <code class="highlighter-rouge">setState</code> in order to update <code class="highlighter-rouge">{definitions}</code></p>
+
+<h4 id="handlechangedstring"><code class="highlighter-rouge">handleChange(d:String)</code></h4>
+
+<p>Updates {showProject} &amp; {activeProject} in the state</p>
+
+<h6 id="parameters">Parameters</h6>
 
 <ul>
-  <li><code class="highlighter-rouge">users</code> : les utilisateurs, qui sont liés à un ou plusieurs projets</li>
-  <li><code class="highlighter-rouge">clients</code> : les clients, qui seront appelés lors de la création de projets</li>
-  <li><code class="highlighter-rouge">projects</code> : les projets, qui sont liés à un client</li>
-  <li><code class="highlighter-rouge">trackedTime</code> : les slots de temps rentrés dans l’appli. Ils possèdent plusieurs propriétés <code class="highlighter-rouge">value</code>, <code class="highlighter-rouge">comment</code>, <code class="highlighter-rouge">task</code>, et sont liés à un utilisateur et un projet</li>
+  <li><code class="highlighter-rouge">d</code> : The selected project.</li>
 </ul>
 
-<h4 id="dépendances">Dépendances</h4>
+<h2 id="return">Return</h2>
+
+<h4 id="personalmanager">PersonalManager</h4>
+<p>Props :</p>
 <ul>
-  <li>Boostrap (dépendances &gt; Popper + JQuery) . Les dossiers sont servis dans <code class="highlighter-rouge">./routes/routes.js</code>, avec <code class="highlighter-rouge">app.use()</code>. On vient taper dans <code class="highlighter-rouge">node_modules</code>, sans montrer le dossier.</li>
+  <li>definitions</li>
+  <li>handleChange</li>
+  <li>userId</li>
+</ul>
+
+<h4 id="project">Project</h4>
+<p>Props :</p>
+<ul>
+  <li>definitions</li>
+  <li>key</li>
+  <li>activeProject</li>
+</ul>
+
+<h4 id="navigation">Navigation</h4>
+<p>Props :</p>
+<ul>
+  <li>definitions</li>
+  <li>handleChange</li>
 </ul>
 
 
-  
+  </div>
 
-</div>
+</article>
 
             </div>
         </div>

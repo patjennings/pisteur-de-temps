@@ -249,49 +249,38 @@
     <div class="container-fluid docs-main" aria-label="Content">
         <div class="row docs-main--inner">
             <div class="col-12">
-                <div class="home">
-  
+                <article class="post">
 
-  <h3 id="documentation">Documentation</h3>
+  <header class="post-header">
+    <h1 class="post-title">fetchPersonalHistory</h1>
+  </header>
 
-<h4 id="node-app">Node app</h4>
+  <div class="post-content">
+    <p>Fetch the track history for a specific user.</p>
 
-<p><code class="highlighter-rouge">app.js</code> -</p>
+<h2 id="fetchpersonalhistoryuseridstring-elembboolean"><code class="highlighter-rouge">fetchPersonalHistory(userId:string, elemB:boolean)</code></h2>
 
-<p><code class="highlighter-rouge">./routes/routes.js</code> -</p>
+<p>Request with <code class="highlighter-rouge">axios</code>. It calls for the tracks defined by the user defined as a parameter.</p>
 
-<p>require les schémas Mongoose (dans la <code class="highlighter-rouge">var models</code>)</p>
-
-<p>Ensuite, on crée les routes. À chacune correspond une requête dans la base Mongo, avec <code class="highlighter-rouge">models.{collections}.find()</code>, <code class="highlighter-rouge">models.{collections}.findById()</code>, etc…
-Chaque route restourne un résultat sous forme de réponse au format json. Ces réponses sont définies par la spéc de l’API (voir <code class="highlighter-rouge">./docs/api.md</code>).</p>
-
-<h4 id="modèles-mongoose">Modèles Mongoose</h4>
-
-<p><code class="highlighter-rouge">./models/mongo.js</code></p>
-
-<p>Ce sont les modèles Mongoose pour communiquer avec la base Mongo. 
-On crée un modèle par collection, que l’on exporte. On le récupère dans <code class="highlighter-rouge">./routes/routes.js</code></p>
-
-<h4 id="base-de-données">Base de données</h4>
-
-<p>Base MongoDB, avec quatre collections</p>
+<h6 id="parameters">Parameters</h6>
 
 <ul>
-  <li><code class="highlighter-rouge">users</code> : les utilisateurs, qui sont liés à un ou plusieurs projets</li>
-  <li><code class="highlighter-rouge">clients</code> : les clients, qui seront appelés lors de la création de projets</li>
-  <li><code class="highlighter-rouge">projects</code> : les projets, qui sont liés à un client</li>
-  <li><code class="highlighter-rouge">trackedTime</code> : les slots de temps rentrés dans l’appli. Ils possèdent plusieurs propriétés <code class="highlighter-rouge">value</code>, <code class="highlighter-rouge">comment</code>, <code class="highlighter-rouge">task</code>, et sont liés à un utilisateur et un projet</li>
+  <li><code class="highlighter-rouge">userId</code> (integer) : the id of the user</li>
 </ul>
 
-<h4 id="dépendances">Dépendances</h4>
-<ul>
-  <li>Boostrap (dépendances &gt; Popper + JQuery) . Les dossiers sont servis dans <code class="highlighter-rouge">./routes/routes.js</code>, avec <code class="highlighter-rouge">app.use()</code>. On vient taper dans <code class="highlighter-rouge">node_modules</code>, sans montrer le dossier.</li>
-</ul>
+<h6 id="return">return</h6>
 
+<p>An array of every track defined by the user</p>
 
-  
+<h2 id="usage">Usage</h2>
 
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">fetchPersonalHistory</span> <span class="k">from</span> <span class="s2">"utils/fetchPersonalHistory"</span> <span class="c1">// import</span>
+<span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">fetchPersonalHistory</span><span class="p">({</span><span class="nx">userId</span><span class="p">})</span> <span class="c1">// usage</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
 
             </div>
         </div>

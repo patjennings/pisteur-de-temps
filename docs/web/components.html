@@ -249,49 +249,44 @@
     <div class="container-fluid docs-main" aria-label="Content">
         <div class="row docs-main--inner">
             <div class="col-12">
-                <div class="home">
-  
+                <article class="post">
 
-  <h3 id="documentation">Documentation</h3>
+  <header class="post-header">
+    <h1 class="post-title">Components tree</h1>
+  </header>
 
-<h4 id="node-app">Node app</h4>
+  <div class="post-content">
+    <p>This part describes the <code class="highlighter-rouge">src</code> folder, which holds React components and modules that handle some logic for them.</p>
 
-<p><code class="highlighter-rouge">app.js</code> -</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── screens
+│   └── App
+│       ├── Navigation
+│       │   └── ListClientProjects
+│       ├── PersonalManager
+│       │   ├── Task
+│       │   └── TaskInput
+│       └── Project
+│           └── Task
+└── shared
+    └── components
+	    ├── ProjectsSelector
+    └── utils
+        ├── addTask.js
+        ├── budget.js
+        ├── definitions.js
+        ├── defsConverter.js
+        ├── deleteTask.js
+        ├── fetchPersonalHistory.js
+        ├── fetchProject.js
+        ├── readableDate.js
+        ├── retrieveFormData.js
+        └── updateTask.js
 
-<p><code class="highlighter-rouge">./routes/routes.js</code> -</p>
+</code></pre></div></div>
 
-<p>require les schémas Mongoose (dans la <code class="highlighter-rouge">var models</code>)</p>
+  </div>
 
-<p>Ensuite, on crée les routes. À chacune correspond une requête dans la base Mongo, avec <code class="highlighter-rouge">models.{collections}.find()</code>, <code class="highlighter-rouge">models.{collections}.findById()</code>, etc…
-Chaque route restourne un résultat sous forme de réponse au format json. Ces réponses sont définies par la spéc de l’API (voir <code class="highlighter-rouge">./docs/api.md</code>).</p>
-
-<h4 id="modèles-mongoose">Modèles Mongoose</h4>
-
-<p><code class="highlighter-rouge">./models/mongo.js</code></p>
-
-<p>Ce sont les modèles Mongoose pour communiquer avec la base Mongo. 
-On crée un modèle par collection, que l’on exporte. On le récupère dans <code class="highlighter-rouge">./routes/routes.js</code></p>
-
-<h4 id="base-de-données">Base de données</h4>
-
-<p>Base MongoDB, avec quatre collections</p>
-
-<ul>
-  <li><code class="highlighter-rouge">users</code> : les utilisateurs, qui sont liés à un ou plusieurs projets</li>
-  <li><code class="highlighter-rouge">clients</code> : les clients, qui seront appelés lors de la création de projets</li>
-  <li><code class="highlighter-rouge">projects</code> : les projets, qui sont liés à un client</li>
-  <li><code class="highlighter-rouge">trackedTime</code> : les slots de temps rentrés dans l’appli. Ils possèdent plusieurs propriétés <code class="highlighter-rouge">value</code>, <code class="highlighter-rouge">comment</code>, <code class="highlighter-rouge">task</code>, et sont liés à un utilisateur et un projet</li>
-</ul>
-
-<h4 id="dépendances">Dépendances</h4>
-<ul>
-  <li>Boostrap (dépendances &gt; Popper + JQuery) . Les dossiers sont servis dans <code class="highlighter-rouge">./routes/routes.js</code>, avec <code class="highlighter-rouge">app.use()</code>. On vient taper dans <code class="highlighter-rouge">node_modules</code>, sans montrer le dossier.</li>
-</ul>
-
-
-  
-
-</div>
+</article>
 
             </div>
         </div>

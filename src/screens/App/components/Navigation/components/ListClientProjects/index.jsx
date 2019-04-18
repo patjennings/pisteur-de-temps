@@ -8,20 +8,17 @@ class ListClientProjects extends Component {
 	super(props);
 	this.state = {
 	    hasProject: false,
-	    definitions: {}
+	    definitions: this.props.defs
 	};
 	this.handleClick = this.handleClick.bind(this);
     }
-    componentWillMount(){
-    	this.setState({
-    	    definitions: this.props.defs
-    	});
-    }
+
     checkNoProject(){
 	if(this.state.hasProject === false){
 	    return <p className="text-muted">No project defined</p>;
 	}
     }
+    
     handleClick(data, event){
 	this.props.onChange(data);
     }

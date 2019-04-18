@@ -9,15 +9,10 @@ class Navigation extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    definitions: {}
+	    definitions: this.props.defs
 	};
 	this.handleChange= this.handleChange.bind(this);
 	
-    }
-    componentWillMount(){
-    	this.setState({
-    	    definitions: this.props.defs
-    	});
     }
     handleChange(data, event){
 	this.props.onChange(data._id);

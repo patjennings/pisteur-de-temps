@@ -6,7 +6,7 @@ import {readableDate} from "utils/readableDate";
 import deleteTask from "utils/deleteTask";
 import updateTask from "utils/updateTask";
 import retrieveFormData from "utils/retrieveFormData";
-import ProjectsSelector from "../ProjectsSelector";
+import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 class Task extends Component {
     constructor(props){
@@ -17,7 +17,7 @@ class Task extends Component {
 	    clientId: "",
 	    clientName: "",
 	    isEdited: false,
-	    selectedProject: this.props.relatedProject,
+	    activeProject: this.props.relatedProject,
 	    definitions: this.props.defs
 	};
 
@@ -32,7 +32,7 @@ class Task extends Component {
 	const getClient = await axios.get("http://localhost:3000/clients/"+getProject.data.client);
 
 	this.setState({
-	    userId: this.props.user,
+	    userId: this.props.userid,
 	    projectName: getProject.data.name,
 	    clientId: getProject.data.client,
 	    clientName: getClient.data.name
@@ -61,7 +61,7 @@ class Task extends Component {
 
 	// console.log(fd);
 	// on lance la requête
-	let req = await updateTask(this.state.selectedProject, this.props.id, fd);
+	let req = await updateTask(this.state.activeProject, this.props.id, fd);
 	this.setState({isEdited: false});
 	this.props.onChange();
 	
@@ -69,7 +69,7 @@ class Task extends Component {
     
     setActiveProject(p){
 	console.log(p);
-	this.setState({selectedProject: p});	
+	this.setState({activeProject: p});	
     }
 
     setValues(){
@@ -82,7 +82,7 @@ class Task extends Component {
     }
 
     render(){
-	console.log(this.state.selectedProject);
+	console.log(this.state.activeProject);
 	if(this.state.isEdited){
 	    return(
 		<li className="list-group-item track-history--item" id={this.props.id}>
@@ -112,7 +112,7 @@ class Task extends Component {
 		    <button
 		      className="btn btn-primary">Update</button>
 		  </form>
-		  <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.selectedProject}/>
+		  <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.activeProject}/>
 		</li>
 	    );
 	}
@@ -166,7 +166,7 @@ export default Task;
  // 		    </div>
  // 		    <div className="row">
  // 		      <div className="offset-2 col-5 text-muted">
- // 			<ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} selectedProject={this.state.selectedProject}/>
+ // 			<ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.activeProject}/>
  // 		      </div>
  // 		      <div className="col-5 text-muted">
  // 			{readableDate(this.props.date)}
