@@ -34,7 +34,7 @@ module.exports = function(app){
 		    result._id = data[id]._id;
 		    result.firstName = data[id].firstName;
 		    result.lastName = data[id].lastName;
-		    result.projects = data[id].relatedProjects;
+		    result.relatedProjects = data[id].relatedProjects;
 		    response.push(result);
 		}
             }
@@ -54,7 +54,7 @@ module.exports = function(app){
             .createHash('sha1')
             .update(req.body.password)
             .digest('base64');
-	db.relatedProjects = req.body.projects;
+	db.relatedProjects = req.body.relatedProjects;
         db.save(function(err, db){
             // save() will run insert() command of MongoDB.
             // it will add new data in collection.
@@ -98,8 +98,21 @@ module.exports = function(app){
 		if (req.body.password !== undefined) {
 		    data.password = req.body.password;
 		}
-		if (req.body.projects !== undefined) {
-		    data.relatedProjects = req.body.projects;
+		if (req.body.relatedProject !== undefined) {
+		    if(req.query.action === "remove"){
+			let index = data.relatedProjects.indexOf(req.body.relatedProject)
+			data.relatedProjects.splice(index, 1)
+		    } else {
+			let isRelated = false;
+			data.relatedProjects.forEach(rp => {
+			    rp === req.body.relatedProject ? isRelated = true : isRelated = false;
+			});
+			if(isRelated){
+		    	    console.log("Project is already related to this user");		    	
+			} else {
+			    data.relatedProjects.push(req.body.relatedProject);
+			}
+		    }
 		}
 		// Save data
 		data.save(function(err, data){
@@ -130,33 +143,33 @@ module.exports = function(app){
 	    res.send(response);
         });
     });
-    app.get("/users/:id/projects", function (req, res) {
-	var response = [];
-	var projectIDs;
+    // app.get("/users/:id/projects", function (req, res) {
+    // 	var response = [];
+    // 	var projectIDs;
 
-	// retrieve project ids associated with the user
-	models.users.findById(req.params.id, function(err,data){
-	    if(err) {
-		response = {"error" : true,"message" : "Error fetching data"};
-	    } else {
-		projectIDs = data.relatedProjects;
+    // 	// retrieve project ids associated with the user
+    // 	models.users.findById(req.params.id, function(err,data){
+    // 	    if(err) {
+    // 		response = {"error" : true,"message" : "Error fetching data"};
+    // 	    } else {
+    // 		projectIDs = data.relatedProjects;
 		
-		models.projects.find({ _id: { $in: projectIDs } }, function(err,data){
-		    if(err) {
-			response = {"error" : true,"message" : "Error fetching data"};
-		    } else {
-			for(id in data){
-			    var result = {}
-			    result._id = data[id]._id;
-			    result.name = data[id].name;
-			    response.push(result);
-			}
-		    }
-		    res.json(response);
-		});
-	    }
-	});	
-    });
+    // 		models.projects.find({ _id: { $in: projectIDs } }, function(err,data){
+    // 		    if(err) {
+    // 			response = {"error" : true,"message" : "Error fetching data"};
+    // 		    } else {
+    // 			for(id in data){
+    // 			    var result = {}
+    // 			    result._id = data[id]._id;
+    // 			    result.name = data[id].name;
+    // 			    response.push(result);
+    // 			}
+    // 		    }
+    // 		    res.json(response);
+    // 		});
+    // 	    }
+    // 	});	
+    // });
 
     
     // ------------

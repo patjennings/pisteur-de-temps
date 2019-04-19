@@ -10,40 +10,37 @@ category: API
 List all users
 
 ### Security ###
+―
 
 ### Request ###
 
 ##### Query #####
+―
 
 ##### Header #####
-
-``` json
-[{}]
-```
+―
 
 ##### Body #####
-
-``` json
-[{}]
-```
+―
 
 ### Response ###
 
 #### 200 ####
 
 ##### Header #####
+―
 
 ##### Body #####
 
 ``` json
 [{
-  "id": "0e8dd830-ad98-11e6-bf2e-47644ada7c0f",
+  "id": "5c9b3912f787951b7e8c9d62f",
   "firstName": "Jean",
   "lastName": "Lechat",
-  "projects": [
-      "0e8cedd0-ad98-11e6-bf2e-47644ada7c0f",
-      "47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"
-      ]
+  "relatedProjects": [
+      "5c9b3912f787951b7e8c9d62f",
+      "5c9b3912f787951b7e8c9d62"
+   ]
 }]
 ```
 
@@ -56,15 +53,20 @@ List all users
 
 ## `POST` /users/ ##
 
-Post a user
+Add a user, with its relative informations.
 
 ### Security ###
+―
 
 ### Request ###
 
 ##### Query #####
+―
 
 ##### Header #####
+``` json
+[{}]
+```
 
 ##### Body #####
 
@@ -73,31 +75,33 @@ Post a user
   "firstName": "Jean",
   "lastName": "Lechat",
   "email": "lechat@fournisseur.fr",
-  "projects": [
-      "0e8cedd0-ad98-11e6-bf2e-47644ada7c0f",
-      "47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"
-      ]
+  "password": "1a5z84e4",
+  "relatedProjects": [
+      "5c9b3912f787951b7e8c9d62f"
+  ]
 }
 ```
 
 ### Response ###
 
 #### 200 ####
+―
 
 ##### Header #####
+―
 
 ##### Body #####
 
 ``` json
 {
-  "id": "0e8dd830-ad98-11e6-bf2e-47644ada7c0f",
+  "id": "5c9b3912f787951b7e8c9d62",
   "firstName": "Jean",
   "lastName": "Lechat",
   "email": "lechat@fournisseur.fr",
-  "projects": [
-      "0e8cedd0-ad98-11e6-bf2e-47644ada7c0f",
-      "47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"
-      ]
+  "relateProjects": [
+      "5c9b3912f787951b7e8c9d62f",
+      "5c9b3912f787951b7e8c9d62"
+  ]
 }
 ```
 
@@ -105,12 +109,176 @@ Post a user
 
 `Error`
 
+--- 
 
 
 ## `GET` /users/{nameId} ##
 
+Get a user with a specific id `{nameId}`.
+
+### Security ###
+―
+
+### Request ###
+
+##### Query #####
+―
+
+##### Header #####
+―
+
+##### Body #####
+―
+
+### Response ###
+
+#### 200 ####
+
+##### Header #####
+―
+
+##### Body #####
+
+``` json
+[{
+  "id": "5c9b3912f787951b7e8c9d62f",
+  "firstName": "Jean",
+  "lastName": "Lechat",
+  "relatedProjects": [
+      "5c9b3912f787951b7e8c9d62f",
+      "5c9b3912f787951b7e8c9d62"
+   ]
+}]
+```
+
+#### 400 ####
+
+`Error`
+
+---
+
 ## `PUT` /users/{nameId} ##
+
+Update a user at a specific id `{nameId}`
+
+### Security ###
+―
+
+### Request ###
+
+##### Query #####
+**removeAction `Boolean`** : if this params is set to true, the project id that will be passed into the body is removed from the
+
+##### Header #####
+―
+
+##### Body #####
+
+``` json
+{
+  "firstName": "Jean",
+  "lastName": "Lechat",
+  "email": "lechat@fournisseur.fr",
+  "relatedProject": "5c9b3912f787951b7e8c9d62f"
+}
+```
+
+Single values are accepted, and will update the user correctly.
+
+``` json
+{
+  "firstName": "Otto"
+}
+```
+
+``` json
+{
+  "lastName": "Munscher"
+}
+```
+
+``` json
+{
+  "password": "diesirae457"
+}
+```
+
+``` json
+{
+  "email": "otto@munscher.de"
+}
+```
+
+
+
+``` json
+{
+  "relatedProject": "5c9b3912f787951b7e8c9d62f"
+}
+```
+
+projects are added through `relatedProject`, one at a time.
+
+### Response ###
+
+#### 200 ####
+
+##### Header #####
+―
+
+##### Body #####
+
+``` json
+{
+  "id": "5c9b3912f787951b7e8c9d62f",
+  "firstName": "Jean",
+  "lastName": "Lechat",
+  "email": "lechat@fournisseur.fr",
+  "relatedProjects: [
+      "5c9b3912f787951b7e8c9d62f",
+      "5c9b3912f787951b7e8c9d62f"
+  ]
+}
+```
+
+#### 400 ####
+
+`Error`
+
+---
 
 ## `DELETE` /users/{nameId} ##
 
-## `GET` /users/{nameId}/projects ##
+Delete a user at a specific id `{nameId}`
+
+### Security ###
+―
+
+### Request ###
+
+##### Query #####
+―
+
+##### Header #####
+―
+
+##### Body #####
+―
+
+### Response ###
+
+#### 200 ####
+
+##### Header #####
+―
+
+##### Body #####
+
+``` json
+{}
+```
+
+#### 400 ####
+
+`Error`
+

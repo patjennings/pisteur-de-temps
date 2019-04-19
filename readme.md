@@ -90,7 +90,7 @@ Créer les collections dans la base `time-tracker`
 - faire la liste des besoins de chaque composant, fonction
 - props to state, à chaque fois ? vérifier dans chaque composant
 - tête de fichier, grouper npm, utils, components, styles
-
+- auto start mongodb, node, react (même host ?)
 
 ##### Projet #####
 
@@ -98,14 +98,25 @@ Créer les collections dans la base `time-tracker`
 - PUT éditer projet
 - DELETE supprimer projet
 
+
 ##### Client #####
 
 - POST ajouter un client
 - PUT éditer un client
-- DELETE supprimer un client  
+- DELETE supprimer un client
+
+
+##### Admin #####
+- remove user from a project
+- user can only post on project he has access to
+- admin can add a client
+- admin can add project to a client
+- everyone can see analytics for project he has access to
+- modify personal informations (user & admin)
   
 
 ###### doc api ######
 
+- ~~User, PUT. Can't add project for the moment~~
 - post/put project : manque champs budget+description
 - checker toutes les méthodes et écrire la doc api

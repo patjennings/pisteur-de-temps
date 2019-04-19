@@ -258,6 +258,53 @@
   <div class="post-content">
     <h2 id="get-projects"><code class="highlighter-rouge">GET</code> /projects</h2>
 
+<p>Retrieve the complete project list</p>
+
+<h3 id="security">Security</h3>
+<p>―</p>
+
+<h3 id="request">Request</h3>
+
+<h5 id="query">Query</h5>
+<p>―</p>
+
+<h5 id="header">Header</h5>
+<p>―</p>
+
+<h5 id="body">Body</h5>
+<p>―</p>
+
+<h3 id="response">Response</h3>
+
+<h4 id="200">200</h4>
+
+<h5 id="header-1">Header</h5>
+<p>―</p>
+
+<h5 id="body-1">Body</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"_id"</span><span class="p">:</span> <span class="s2">"5c9b39b2f787951b7e8c9d67"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Project Alpha"</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Project description"</span><span class="p">,</span>
+        <span class="s2">"budget"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="s2">"client"</span><span class="p">:</span> <span class="s2">"5c9b396df787951b7e8c9d63"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">"_id"</span><span class="p">:</span> <span class="s2">"5c9b4de344a8003118b967cf"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Project Beta"</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"A project description"</span><span class="p">,</span>
+        <span class="s2">"budget"</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+        <span class="s2">"client"</span><span class="p">:</span> <span class="s2">"5c9b3983f787951b7e8c9d65"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<h4 id="400">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
 <h2 id="post-projects"><code class="highlighter-rouge">POST</code> /projects/</h2>
 
 <h2 id="get-projectsprojectid"><code class="highlighter-rouge">GET</code> /projects/{projectId}</h2>
@@ -270,23 +317,23 @@
 
 <p>Get all tracked time for this project</p>
 
-<h3 id="security">Security</h3>
+<h3 id="security-1">Security</h3>
 
-<h3 id="request">Request</h3>
+<h3 id="request-1">Request</h3>
 
-<h5 id="query">Query</h5>
+<h5 id="query-1">Query</h5>
 
-<h5 id="header">Header</h5>
+<h5 id="header-2">Header</h5>
 
-<h5 id="body">Body</h5>
+<h5 id="body-2">Body</h5>
 
-<h3 id="response">Response</h3>
+<h3 id="response-1">Response</h3>
 
-<h4 id="200">200</h4>
+<h4 id="200-1">200</h4>
 
-<h5 id="header-1">Header</h5>
+<h5 id="header-3">Header</h5>
 
-<h5 id="body-1">Body</h5>
+<h5 id="body-3">Body</h5>
 
 <p>Array de <code class="highlighter-rouge">trackedTime</code></p>
 
@@ -303,7 +350,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="400">400</h4>
+<h4 id="400-1">400</h4>
 
 <p><code class="highlighter-rouge">Error</code></p>
 
@@ -311,15 +358,15 @@
 
 <p>Add a new trackedTime to the project</p>
 
-<h3 id="security-1">Security</h3>
+<h3 id="security-2">Security</h3>
 
-<h3 id="request-1">Request</h3>
+<h3 id="request-2">Request</h3>
 
-<h5 id="query-1">Query</h5>
+<h5 id="query-2">Query</h5>
 
-<h5 id="header-2">Header</h5>
+<h5 id="header-4">Header</h5>
 
-<h5 id="body-2">Body</h5>
+<h5 id="body-4">Body</h5>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
 	</span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS structure"</span><span class="p">,</span><span class="w">
@@ -329,13 +376,13 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="response-1">Response</h3>
+<h3 id="response-2">Response</h3>
 
-<h4 id="200-1">200</h4>
+<h4 id="200-2">200</h4>
 
-<h5 id="header-3">Header</h5>
+<h5 id="header-5">Header</h5>
 
-<h5 id="body-3">Body</h5>
+<h5 id="body-5">Body</h5>
 
 <p>Objet <code class="highlighter-rouge">trackedTime</code></p>
 
@@ -350,7 +397,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="400-1">400</h4>
+<h4 id="400-2">400</h4>
 
 <p><code class="highlighter-rouge">Error</code></p>
 
@@ -358,23 +405,23 @@
 
 <p>Get a specific trackedTime</p>
 
-<h3 id="security-2">Security</h3>
+<h3 id="security-3">Security</h3>
 
-<h3 id="request-2">Request</h3>
+<h3 id="request-3">Request</h3>
 
-<h5 id="query-2">Query</h5>
+<h5 id="query-3">Query</h5>
 
-<h5 id="header-4">Header</h5>
+<h5 id="header-6">Header</h5>
 
-<h5 id="body-4">Body</h5>
+<h5 id="body-6">Body</h5>
 
-<h3 id="response-2">Response</h3>
+<h3 id="response-3">Response</h3>
 
-<h4 id="200-2">200</h4>
+<h4 id="200-3">200</h4>
 
-<h5 id="header-5">Header</h5>
+<h5 id="header-7">Header</h5>
 
-<h5 id="body-5">Body</h5>
+<h5 id="body-7">Body</h5>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
@@ -387,7 +434,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="400-2">400</h4>
+<h4 id="400-3">400</h4>
 
 <p><code class="highlighter-rouge">Error</code></p>
 

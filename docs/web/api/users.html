@@ -261,37 +261,36 @@
 <p>List all users</p>
 
 <h3 id="security">Security</h3>
+<p>―</p>
 
 <h3 id="request">Request</h3>
 
 <h5 id="query">Query</h5>
+<p>―</p>
 
 <h5 id="header">Header</h5>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{}]</span><span class="w">
-</span></code></pre></div></div>
+<p>―</p>
 
 <h5 id="body">Body</h5>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{}]</span><span class="w">
-</span></code></pre></div></div>
+<p>―</p>
 
 <h3 id="response">Response</h3>
 
 <h4 id="200">200</h4>
 
 <h5 id="header-1">Header</h5>
+<p>―</p>
 
 <h5 id="body-1">Body</h5>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"relatedProjects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62"</span><span class="w">
+   </span><span class="p">]</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div></div>
 
@@ -303,15 +302,19 @@
 
 <h2 id="post-users"><code class="highlighter-rouge">POST</code> /users/</h2>
 
-<p>Post a user</p>
+<p>Add a user, with its relative informations.</p>
 
 <h3 id="security-1">Security</h3>
+<p>―</p>
 
 <h3 id="request-1">Request</h3>
 
 <h5 id="query-1">Query</h5>
+<p>―</p>
 
 <h5 id="header-2">Header</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{}]</span><span class="w">
+</span></code></pre></div></div>
 
 <h5 id="body-2">Body</h5>
 
@@ -319,30 +322,32 @@
   </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1a5z84e4"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"relatedProjects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="response-1">Response</h3>
 
 <h4 id="200-1">200</h4>
+<p>―</p>
 
 <h5 id="header-3">Header</h5>
+<p>―</p>
 
 <h5 id="body-3">Body</h5>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e8dd830-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"47644ada-7c0f-0e8c-edd0-ad9811e6bf2e"</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"relateProjects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -350,13 +355,167 @@
 
 <p><code class="highlighter-rouge">Error</code></p>
 
+<hr />
+
 <h2 id="get-usersnameid"><code class="highlighter-rouge">GET</code> /users/{nameId}</h2>
+
+<p>Get a user with a specific id <code class="highlighter-rouge">{nameId}</code>.</p>
+
+<h3 id="security-2">Security</h3>
+<p>―</p>
+
+<h3 id="request-2">Request</h3>
+
+<h5 id="query-2">Query</h5>
+<p>―</p>
+
+<h5 id="header-4">Header</h5>
+<p>―</p>
+
+<h5 id="body-4">Body</h5>
+<p>―</p>
+
+<h3 id="response-2">Response</h3>
+
+<h4 id="200-2">200</h4>
+
+<h5 id="header-5">Header</h5>
+<p>―</p>
+
+<h5 id="body-5">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"relatedProjects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5c9b3912f787951b7e8c9d62"</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-2">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<hr />
 
 <h2 id="put-usersnameid"><code class="highlighter-rouge">PUT</code> /users/{nameId}</h2>
 
+<p>Update a user at a specific id <code class="highlighter-rouge">{nameId}</code></p>
+
+<h3 id="security-3">Security</h3>
+<p>―</p>
+
+<h3 id="request-3">Request</h3>
+
+<h5 id="query-3">Query</h5>
+<p><strong>removeAction <code class="highlighter-rouge">Boolean</code></strong> : if this params is set to true, the project id that will be passed into the body is removed from the</p>
+
+<h5 id="header-6">Header</h5>
+<p>―</p>
+
+<h5 id="body-6">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"relatedProject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Single values are accepted, and will update the user correctly.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Otto"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Munscher"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diesirae457"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"otto@munscher.de"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"relatedProject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>projects are added through <code class="highlighter-rouge">relatedProject</code>, one at a time.</p>
+
+<h3 id="response-3">Response</h3>
+
+<h4 id="200-3">200</h4>
+
+<h5 id="header-7">Header</h5>
+<p>―</p>
+
+<h5 id="body-7">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c9b3912f787951b7e8c9d62f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jean"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lechat"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lechat@fournisseur.fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"relatedProjects: [
+      "</span><span class="mi">5</span><span class="err">c</span><span class="mi">9</span><span class="err">b</span><span class="mi">3912</span><span class="err">f</span><span class="mi">787951</span><span class="err">b</span><span class="mi">7e8</span><span class="err">c</span><span class="mi">9</span><span class="err">d</span><span class="mi">62</span><span class="err">f</span><span class="s2">",
+      "</span><span class="mi">5</span><span class="err">c</span><span class="mi">9</span><span class="err">b</span><span class="mi">3912</span><span class="err">f</span><span class="mi">787951</span><span class="err">b</span><span class="mi">7e8</span><span class="err">c</span><span class="mi">9</span><span class="err">d</span><span class="mi">62</span><span class="err">f</span><span class="s2">"
+  ]
+}
+</span></code></pre></div></div>
+
+<h4 id="400-3">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
+<hr />
+
 <h2 id="delete-usersnameid"><code class="highlighter-rouge">DELETE</code> /users/{nameId}</h2>
 
-<h2 id="get-usersnameidprojects"><code class="highlighter-rouge">GET</code> /users/{nameId}/projects</h2>
+<p>Delete a user at a specific id <code class="highlighter-rouge">{nameId}</code></p>
+
+<h3 id="security-4">Security</h3>
+<p>―</p>
+
+<h3 id="request-4">Request</h3>
+
+<h5 id="query-4">Query</h5>
+<p>―</p>
+
+<h5 id="header-8">Header</h5>
+<p>―</p>
+
+<h5 id="body-8">Body</h5>
+<p>―</p>
+
+<h3 id="response-4">Response</h3>
+
+<h4 id="200-4">200</h4>
+
+<h5 id="header-9">Header</h5>
+<p>―</p>
+
+<h5 id="body-9">Body</h5>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="400-4">400</h4>
+
+<p><code class="highlighter-rouge">Error</code></p>
+
 
   </div>
 
