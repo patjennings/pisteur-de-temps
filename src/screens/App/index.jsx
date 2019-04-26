@@ -4,7 +4,7 @@ import Definitions from 'utils/definitions';
 import PersonalManager from './components/PersonalManager';
 import Project from './components/Project';
 import Navigation from './components/Navigation';
-import {hot} from "react-hot-loader";
+// import {hot} from "react-hot-loader";
 
 import "./styles.scss";
 import "assets/styles/main.scss";

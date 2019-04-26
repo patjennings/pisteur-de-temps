@@ -43,7 +43,7 @@ class TaskInput extends Component {
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
-		    <label htmlFor="track-input--value">Enter time</label>
+		    <label htmlFor="track-input--value">Time spent</label>
 		    <input className="form-control form-control-lg w-50"
 			   name="value"
 			   id="track-input--input"

@@ -5,7 +5,8 @@ module.exports = {
     entry: {
 	main: ["@babel/polyfill", "./src/index.js"]
     },
-    mode: "development",
+    mode: 'development',
+    watch: true,
     module: {
 	rules: [
 	    {
@@ -47,13 +48,5 @@ module.exports = {
 	path: path.resolve(__dirname, "dist/"),
 	publicPath: "/dist/",
 	filename: "bundle.js"
-    },
-    devServer: {
-	contentBase: path.join(__dirname, "dist/"),
-	port: 3000,
-	publicPath: "http://localhost:3001/dist/",
-	hotOnly: true
-    },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
-
+    }
 };
