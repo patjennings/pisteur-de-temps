@@ -17,7 +17,7 @@ module.exports = function(app){
     
     app.get("/", function(req, res) {
 	// res.json({"error" : false,"message" : "Hello World"});
-	console.log(req.cookie);
+	// console.log(req.cookie);
 	res.render('app', {title: "App root"});
     });
     

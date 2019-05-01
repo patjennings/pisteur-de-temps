@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import {observable} from "mobx";
 
 class Definitions{
     constructor(){
@@ -17,7 +18,10 @@ class Definitions{
 	this.definitions.projectsDefinitions = projectsDefs.data
 	this.definitions.usersDefinitions = usersDefs.data
 
+	// console.log(typeof this.definitions);
+	
 	return this.definitions
     }
 }
+
 export default Definitions;

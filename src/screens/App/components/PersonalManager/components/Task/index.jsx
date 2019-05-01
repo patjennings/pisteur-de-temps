@@ -2,25 +2,28 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "assets/styles/main.scss";
 import "./styles.scss";
+
+import {observable, action, decorate} from "mobx";
+import {observer} from "mobx-react";
+
 import {readableDate} from "utils/readableDate";
-import deleteTask from "utils/deleteTask";
-import updateTask from "utils/updateTask";
+import deleteTask from "fetch/deleteTask";
+import updateTask from "fetch/updateTask";
 import retrieveFormData from "utils/retrieveFormData";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
-class Task extends Component {
+const Task = observer(class Task extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    userId: null,
 	    projectName: "",
 	    clientId: "",
 	    clientName: "",
 	    isEdited: false,
-	    activeProject: this.props.relatedProject,
-	    definitions: this.props.defs
+	    activeProject: this.props.relatedProject
 	};
 
+	// binds
 	this.deleteItem = this.deleteItem.bind(this);
 	this.editItem = this.editItem.bind(this);
 	this.setActiveProject = this.setActiveProject.bind(this);
@@ -32,7 +35,6 @@ class Task extends Component {
 	const getClient = await axios.get("http://localhost:3000/clients/"+getProject.data.client);
 
 	this.setState({
-	    userId: this.props.userid,
 	    projectName: getProject.data.name,
 	    clientId: getProject.data.client,
 	    clientName: getClient.data.name
@@ -57,18 +59,18 @@ class Task extends Component {
     async handleSubmit(e){
 	e.preventDefault();
 	
-	let fd = retrieveFormData(e.target, this.state.userId);
+	let fd = retrieveFormData(e.target, this.props.store.data.userId);
 
 	// console.log(fd);
 	// on lance la requête
 	let req = await updateTask(this.state.activeProject, this.props.id, fd);
 	this.setState({isEdited: false});
-	this.props.onChange();
+	
+	this.props.onChange(); // actualise le trackHistory dans le parent
 	
     }
     
     setActiveProject(p){
-	console.log(p);
 	this.setState({activeProject: p});	
     }
 
@@ -82,7 +84,6 @@ class Task extends Component {
     }
 
     render(){
-	console.log(this.state.activeProject);
 	if(this.state.isEdited){
 	    return(
 		<li className="list-group-item track-history--item" id={this.props.id}>
@@ -112,7 +113,7 @@ class Task extends Component {
 		    <button
 		      className="btn btn-primary">Update</button>
 		  </form>
-		  <ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.activeProject}/>
+		  <ProjectsSelector store={this.props.store} onChange={this.setActiveProject} active={this.state.activeProject}/>
 		</li>
 	    );
 	}
@@ -150,7 +151,7 @@ class Task extends Component {
 	    );
 	}
     }
-}
+})
 
 
 

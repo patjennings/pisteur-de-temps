@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
-import addTask from "utils/addTask";
+import addTask from "fetch/addTask";
+
+import {observable, action, decorate} from "mobx";
+import {observer} from "mobx-react";
 
 import "./styles.scss";
 
-class ProjectsSelector extends Component {
+const ProjectsSelector = observer(class ProjectsSelector extends Component {
     constructor(props){
 	super(props);
+	
 	this.state = {
-	    activeProject: this.props.active,
-	    definitions: this.props.defs,
+	    activeProject: this.props.store.activeProject
 	};
+
+	// binds
 	this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
@@ -19,13 +24,13 @@ class ProjectsSelector extends Component {
 	e.preventDefault();
 
 	let projectId; // get the id
+	
 	if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
 	    projectId = e.target.parentNode.getAttribute("id");
 	} else {
 	    projectId = e.target.getAttribute("id");
 	}
 	this.setState({activeProject: projectId});
-	
 	this.props.onChange(projectId);
     }
 
@@ -38,14 +43,15 @@ class ProjectsSelector extends Component {
 		data-toggle="dropdown"
 		aria-haspopup="true"
 		aria-expanded="false">
-		{this.state.activeProject == null ? "Select a project" : getProjectName(this.state.definitions, this.state.activeProject)}
+		{this.state.activeProject === null ? "Select a project" : getProjectName(this.props.store.projectsDefinitions, this.state.activeProject)}
 	      </button>
 	      
 	      
 	      <div className="dropdown-menu"
 		   aria-labelledby="dropdownMenuButton">
-		{Object.keys(this.state.definitions).length !== 0 &&
-		    this.state.definitions.projectsDefinitions.map(p => {
+		{
+		    this.props.store.projectsDefinitions.map(p => {
+			console.log(p);
 			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p.client}</span></a>;
 		    })
 		}
@@ -54,6 +60,6 @@ class ProjectsSelector extends Component {
 
 	);
     }
-}
+})
 
 export default ProjectsSelector;

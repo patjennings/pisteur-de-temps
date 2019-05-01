@@ -2,31 +2,30 @@ import React, { Component } from 'react';
 import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
 
-import axios from "axios";
+// import axios from "axios";
+import {observable, action, decorate} from "mobx";
+import {inject, observer} from "mobx-react";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import fetchPersonalHistory from "utils/fetchPersonalHistory";
+import fetchPersonalHistory from "fetch/fetchPersonalHistory";
 
 import "./styles.scss";
 
-class PersonalManager extends Component {
+const PersonalManager = observer(class PersonalManager extends Component {
     constructor(props){
 	super(props);
 	this.state = {
 	    userId: this.props.userid,
-	    trackHistory: [],
-	    definitions: this.props.defs
+	    trackHistory: []
 	};
+
+	// binds
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
-	// this.handleDropdown = this.handleDropdown.bind(this);
-	// this.trackInputAdded = this.trackInputAdded.bind(this);
-	// this.fetch = this.fetch.bind(this);
     }
     
     async componentWillMount() {
-	let req = await fetchPersonalHistory(this.state.userId);
-	// console.log(req);
+	let req = await fetchPersonalHistory(this.props.store.userId);
 
 	this.setState({
 	    trackHistory: req
@@ -34,7 +33,6 @@ class PersonalManager extends Component {
     }
 
     async handleChange(data, event){
-	console.log(data);
 	data ? this.props.onChange(data.relatedProject) : null;
 	let req = await fetchPersonalHistory(this.state.userId);
 	
@@ -44,25 +42,18 @@ class PersonalManager extends Component {
     }
     
     handleClick(data, event){
-	this.props.onChange(data.relatedProject);
+	// this.props.onChange(data.relatedProject);
+	this.props.store.setActiveProject(data.relatedProject);
     }
 
-    // handleDropdown(event){
-    // 	let projectId = event.target.getAttribute("id");
-    // 	this.setState({selectedProject: projectId});
-    // }
-
-
     render() {
-	// console.log(this.state.trackHistory);
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
 
 		{/* --------- */}
 		{/* New track */}
-		<TaskInput defs={this.state.definitions} userid={this.state.userId} onChange={this.handleChange} />
-		{/*<Toto defs={this.state.definitions} userid={this.state.userId} onChange={this.handleChange}/>*/}
+		<TaskInput store={this.props.store} onChange={this.handleChange} />
 
 		{/* ------------- */}
 		{/* Track history */}
@@ -79,7 +70,7 @@ class PersonalManager extends Component {
 			date={childData.date}
 			userid={this.state.userId}
 			onChange={event => this.handleChange(childData, event)}
-			defs={this.props.defs}
+			store={this.props.store}
 			  />;
 		    })}
 		</ul>
@@ -87,7 +78,11 @@ class PersonalManager extends Component {
 	    </div>
 	);
     }
-}
+});
+
+decorate(PersonalManager, {
+    handleClick: action
+})
 
 export default PersonalManager;
 

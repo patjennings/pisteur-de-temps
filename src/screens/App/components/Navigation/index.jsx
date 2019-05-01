@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import ListClientProjects from "./components/ListClientProjects";
+import AddClient from './components/AddClient';
 
 import "./styles.scss";
 
@@ -12,10 +13,13 @@ class Navigation extends Component {
 	    definitions: this.props.defs
 	};
 	this.handleChange= this.handleChange.bind(this);
-	
+	this.handleClick= this.handleClick.bind(this);
     }
     handleChange(data, event){
 	this.props.onChange(data._id);
+    }
+    handleClick(data, event){
+	console.log(data);
     }
     render() {
 	return (
@@ -27,9 +31,9 @@ class Navigation extends Component {
 			<ListClientProjects key={c._id} name={c.name} id={c._id} defs={this.state.definitions} onChange={this.handleChange}/>
 		    );
 		})}
-
+		<AddClient isVisible="false" defs={this.state.definitions} />
 		<div className="footer">
-		<button className="btn btn-primary" type="button">Ajouter un client</button>
+		<button className="btn btn-primary" type="button" onClick={this.handleClick}>Ajouter un client</button>
 		</div>
 		</div>
 		</div>

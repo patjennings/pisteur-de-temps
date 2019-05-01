@@ -5,16 +5,19 @@ import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import {getfullTime, getPercent} from 'utils/budget';
 
-import fetchProject from "utils/fetchProject";
+import {observer} from "mobx-react";
+
+import fetchProject from "fetch/fetchProject";
 
 import "./styles.scss";
 
-class Project extends Component {
+const Project = observer(class Project extends Component {
     constructor(props){
 	super(props);
+	
 	// il faut absolument initialiser l'objet state, avec des valeurs nulles 
 	this.state = {
-	    projectId: null,
+	    projectId: this.props.store.activeProject,
 	    projectName: null,
 	    projectDescription: null,
 	    projectBudget: null,
@@ -22,26 +25,24 @@ class Project extends Component {
 	    clientName: null,
 	    trackedTime: [],
 	    fullTime: null,
-	    definitions: {}
 	};
+	
 	this.handleChange = this.handleChange.bind(this);
 	// this.getBudgetPercent = this.getBudgetPercent.bind(this);
 	
     }
     async componentWillMount(){
-	const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	const req = await fetchProject(this.props.store.activeProject, this.props.store.definitions); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
 	
 	this.setState({
-	    ...req,
-	    definitions: this.props.defs
+	    ...req
 	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
     }
     async handleChange(){
-	const req = await fetchProject(this.props.projectid, this.props.defs); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	const req = await fetchProject(this.props.projectid, this.props.store.definitions); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
 	
 	this.setState({
-	    ...req,
-	    definitions: this.props.defs
+	    ...req
 	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
     }
     
@@ -77,6 +78,6 @@ class Project extends Component {
 	    </div>
 	);
     }
-}
+});
 
 export default Project;
