@@ -1,19 +1,11 @@
 import { observable, computed, action, decorate, configure, runInAction, toJS, get } from "mobx";
-// import { observer } from "mobx-react";
-import Definitions from "fetch/definitions";
+import {getDefinitions, fetchPersonalHistory, taskNew, taskDelete, taskUpdate} from "fetch/agent";
 
 configure({ enforceActions: "observed" });
 
-let defs = new Definitions();
-
 export class MainStore{
     constructor(){
-	// this.data = {
-	//     userId: "5c9b3912f787951b7e8c9d62",
-	//     showProject: false,
-	//     activeProject: null,
-	//     definitions: this.getDefs()
-	// }
+
 	this.isLoading = false;
 	this.userId = "5c9b3912f787951b7e8c9d62"
 	this.showProject = false
@@ -23,14 +15,27 @@ export class MainStore{
 	this.projectsDefinitions = []
 	this.usersDefinitions = []
 
+	this.trackHistory = []
+
 	this.state = "pending"
-	
-	// this.loadDefinitions();
+    }
+
+    loadPersonalHistory(){
+	// this.isLoading = true
+	fetchPersonalHistory(this.userId)
+	     .then(action((history) => {
+		 this.trackHistory = history
+		 console.log(this.trackHistory);
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    .finally(action(() => { this.isLoading = false; }));
     }
 
     loadDefinitions(){
 	this.isLoading = true
-	defs.getDefinitions()
+	getDefinitions()
 	    .then(action((parts) => {
 		this.clientsDefinitions = parts.clientsDefinitions;
 		this.projectsDefinitions = parts.projectsDefinitions;
@@ -42,11 +47,44 @@ export class MainStore{
 	    .finally(action(() => { this.isLoading = false; }));
     }
 
+    
+
     setActiveProject(value){
 	this.activeProject = value;
     }
     setShowProject(value){
 	this.showProject = value;
+    }
+
+    postNewTask(projectId, formData){
+	taskNew(projectId, formData)
+	    .then(action(() => {
+		this.loadPersonalHistory()
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    // .finally(action(() => { this.isLoading = false; }));
+    }
+    deleteTask(projectId, trackId){
+	taskDelete(projectId, trackId)
+	    .then(action(() => {
+		this.loadPersonalHistory()
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    // .finally(action(() => { this.isLoading = false; }));
+    }
+    updateTask(projectId, trackId, formData){
+	taskUpdate(projectId, trackId, formData)
+	    .then(action(() => {
+		this.loadPersonalHistory()
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    // .finally(action(() => { this.isLoading = false; }));
     }
 }
 
@@ -58,10 +96,15 @@ decorate(MainStore, {
     clientsDefinitions: observable,
     projectsDefinitions: observable,
     usersDefinitions: observable,
+    trackHistory: observable,
     state: observable,
+    loadPersonalHistory: action,
     loadDefinitions: action,
     setActiveProject: action,
-    setShowProject: action
+    setShowProject: action,
+    postNewTask: action,
+    updateTask: action,
+    deleteTask: action
 });
 
 

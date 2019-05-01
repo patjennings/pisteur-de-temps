@@ -15,7 +15,6 @@ export default function retrieveFormData(form, userid){
 	else{
 	    reqBody[name] = data.get(name); //là, on récupère comment et task
 	}
-
     }
     reqBody.user = userid; // et là, on récupère le user
     

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {readableDate} from "utils/readableDate";
-import deleteTask from "fetch/deleteTask";
 
 import "./styles.scss";
 

@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
-import addTask from "fetch/addTask";
 
 import {observable, action, decorate} from "mobx";
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 
 import "./styles.scss";
 
-const ProjectsSelector = observer(class ProjectsSelector extends Component {
+const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector extends Component {
     constructor(props){
 	super(props);
 	
 	this.state = {
-	    activeProject: this.props.store.activeProject
+	    activeProject: this.props.mainStore.activeProject
 	};
 
 	// binds
@@ -43,14 +42,14 @@ const ProjectsSelector = observer(class ProjectsSelector extends Component {
 		data-toggle="dropdown"
 		aria-haspopup="true"
 		aria-expanded="false">
-		{this.state.activeProject === null ? "Select a project" : getProjectName(this.props.store.projectsDefinitions, this.state.activeProject)}
+		{this.state.activeProject === null ? "Select a project" : getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
 	      </button>
 	      
 	      
 	      <div className="dropdown-menu"
 		   aria-labelledby="dropdownMenuButton">
 		{
-		    this.props.store.projectsDefinitions.map(p => {
+		    this.props.mainStore.projectsDefinitions.map(p => {
 			console.log(p);
 			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p.client}</span></a>;
 		    })
@@ -60,6 +59,6 @@ const ProjectsSelector = observer(class ProjectsSelector extends Component {
 
 	);
     }
-})
+}));
 
 export default ProjectsSelector;

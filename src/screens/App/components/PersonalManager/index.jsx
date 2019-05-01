@@ -7,58 +7,44 @@ import {observable, action, decorate} from "mobx";
 import {inject, observer} from "mobx-react";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import fetchPersonalHistory from "fetch/fetchPersonalHistory";
-
 import "./styles.scss";
 
-const PersonalManager = observer(class PersonalManager extends Component {
+const PersonalManager = inject("mainStore")(observer(class PersonalManager extends Component {
     constructor(props){
 	super(props);
-	this.state = {
-	    userId: this.props.userid,
-	    trackHistory: []
-	};
-
+	// console.log(this.props.mainStore);
 	// binds
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
     }
     
-    async componentWillMount() {
-	let req = await fetchPersonalHistory(this.props.store.userId);
-
-	this.setState({
-	    trackHistory: req
-	});
+    componentDidMount() {
+	this.props.mainStore.loadPersonalHistory();
     }
 
-    async handleChange(data, event){
+    handleChange(data, event){
 	data ? this.props.onChange(data.relatedProject) : null;
-	let req = await fetchPersonalHistory(this.state.userId);
-	
-	this.setState({
-	    trackHistory: req
-	});
     }
     
     handleClick(data, event){
 	// this.props.onChange(data.relatedProject);
-	this.props.store.setActiveProject(data.relatedProject);
+	this.props.mainStore.setActiveProject(data.relatedProject);
     }
 
     render() {
+	console.log("Personal Manager is rendered");
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
 
 		{/* --------- */}
 		{/* New track */}
-		<TaskInput store={this.props.store} onChange={this.handleChange} />
+		<TaskInput store={this.props.mainStore} onChange={this.handleChange} />
 
 		{/* ------------- */}
 		{/* Track history */}
 		<ul className="list-group list-group-flush track-history">
-		  {this.state.trackHistory.slice(0).reverse().map(childData => {
+		  {this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
 		      return <Task
 				   onClick={event => this.handleClick(childData, event)}
 			key={childData.id}
@@ -68,9 +54,9 @@ const PersonalManager = observer(class PersonalManager extends Component {
 			comment={childData.comment}
 			relatedProject={childData.relatedProject}
 			date={childData.date}
-			userid={this.state.userId}
+			userid={this.props.store.userId}
 			onChange={event => this.handleChange(childData, event)}
-			store={this.props.store}
+			store={this.props.mainStore}
 			  />;
 		    })}
 		</ul>
@@ -78,7 +64,7 @@ const PersonalManager = observer(class PersonalManager extends Component {
 	    </div>
 	);
     }
-});
+}));
 
 decorate(PersonalManager, {
     handleClick: action

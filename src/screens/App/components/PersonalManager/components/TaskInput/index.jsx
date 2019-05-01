@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-// import App from "../App";
-// import axios from "axios";
+
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
-import addTask from "fetch/addTask";
 import retrieveFormData from "utils/retrieveFormData";
 
 import {observable, action, decorate} from "mobx";
-import {observer} from "mobx-react";
+import {inject, observer} from "mobx-react";
 
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 import "./styles.scss";
 
-const TaskInput = observer(class TaskInput extends Component {
+const TaskInput = inject("mainStore")(observer(class TaskInput extends Component {
     constructor(props){
 	super(props);
 
@@ -24,18 +22,11 @@ const TaskInput = observer(class TaskInput extends Component {
 	this.setActiveProject = this.setActiveProject.bind(this);
     }
 
-    async handleSubmit(event){
+    handleSubmit(event){
 	event.preventDefault();
+	let fd = retrieveFormData(event.target, this.props.mainStore.userId);
 	
-	let fd = retrieveFormData(event.target, this.state.userId);
-	
-	// on lance la requête
-	let req = await addTask(this.state.activeProject, fd);
-
-	// on invoque le store
-	
-	this.props.onChange(); // actualise le trackHistory dans le parent
-	
+	this.props.mainStore.postNewTask(this.state.activeProject, fd);
     }
 
     setActiveProject(p){
@@ -76,7 +67,7 @@ const TaskInput = observer(class TaskInput extends Component {
 		      className="btn btn-primary">Submit</button>
 		  </div>
 		  <div className="col">
-		    <ProjectsSelector store={this.props.store} onChange={this.setActiveProject}/>
+		    <ProjectsSelector onChange={this.setActiveProject}/>
 		  </div>
 		</div>
 	      </form>
@@ -84,6 +75,6 @@ const TaskInput = observer(class TaskInput extends Component {
 
 	);
     }
-})
+}));
 
 export default TaskInput;

@@ -4,15 +4,13 @@ import "assets/styles/main.scss";
 import "./styles.scss";
 
 import {observable, action, decorate} from "mobx";
-import {observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 
 import {readableDate} from "utils/readableDate";
-import deleteTask from "fetch/deleteTask";
-import updateTask from "fetch/updateTask";
 import retrieveFormData from "utils/retrieveFormData";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
-const Task = observer(class Task extends Component {
+const Task = inject("mainStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
 	this.state = {
@@ -47,26 +45,27 @@ const Task = observer(class Task extends Component {
 	}
     }
 
-    async deleteItem(e){
-	const req = await deleteTask(this.props.relatedProject, this.props.id); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-	this.props.onChange();
+    deleteItem(e){
+	this.props.mainStore.deleteTask(this.props.relatedProject, this.props.id);
+	// const req = await deleteTask(this.props.relatedProject, this.props.id); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+	//this.props.onChange();
     }
     
     editItem(e){
 	this.setState({isEdited: true});
     }
     
-    async handleSubmit(e){
+    handleSubmit(e){
 	e.preventDefault();
 	
-	let fd = retrieveFormData(e.target, this.props.store.data.userId);
+	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
 
-	// console.log(fd);
 	// on lance la requête
-	let req = await updateTask(this.state.activeProject, this.props.id, fd);
+	this.props.mainStore.updateTask(this.props.relatedProject, this.props.id, fd);
+	// let req = await updateTask(this.state.activeProject, this.props.id, fd);
 	this.setState({isEdited: false});
 	
-	this.props.onChange(); // actualise le trackHistory dans le parent
+	// this.props.onChange(); // actualise le trackHistory dans le parent
 	
     }
     
@@ -78,6 +77,7 @@ const Task = observer(class Task extends Component {
 	let inputValue = document.getElementById("track-input--value-"+this.props.id);
 	let inputComment = document.getElementById("track-input--comment-"+this.props.id);
 	let inputTask = document.getElementById("track-input--task-"+this.props.id);
+	
 	inputValue.value = this.props.value;
 	inputComment.value = this.props.comment;
 	inputTask.value = this.props.task;
@@ -151,7 +151,7 @@ const Task = observer(class Task extends Component {
 	    );
 	}
     }
-})
+}));
 
 
 

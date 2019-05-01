@@ -18,7 +18,6 @@ export function getProjectName(defs, id){
     node.map(r => {
 	result = r.name;
     });
-    console.log("toto");
     return result;
 }
 // get a client name from an id and a list of definitions (list of ids+related name)

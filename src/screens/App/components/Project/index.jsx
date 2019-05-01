@@ -7,8 +7,6 @@ import {getfullTime, getPercent} from 'utils/budget';
 
 import {observer} from "mobx-react";
 
-import fetchProject from "fetch/fetchProject";
-
 import "./styles.scss";
 
 const Project = observer(class Project extends Component {
@@ -24,7 +22,7 @@ const Project = observer(class Project extends Component {
 	    clientId: null,
 	    clientName: null,
 	    trackedTime: [],
-	    fullTime: null,
+	    fullTime: null
 	};
 	
 	this.handleChange = this.handleChange.bind(this);
