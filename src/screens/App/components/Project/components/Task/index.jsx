@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {readableDate} from "utils/readableDate";
 
+import {inject, observer} from "mobx-react";
+
 import "./styles.scss";
 
-class Task extends Component {
+const Task = inject("mainStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
 	this.deleteItem = this.deleteItem.bind(this);
     }
-    async deleteItem(e){
-	const req = await deleteTask(this.props.projectid, this.props.taskid); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-	this.props.onChange();
+    deleteItem(e){
+	this.props.mainStore.deleteTask(this.props.mainStore.activeProject, this.props.taskid);
+    // 	const req = deleteTask(this.props.projectid, this.props.taskid); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+    // 	this.props.onChange();
     }
     render() {
 	return (
@@ -25,7 +28,7 @@ class Task extends Component {
 	    </tr>
 	);
     }
-}
+}));
 
 export default Task;
 

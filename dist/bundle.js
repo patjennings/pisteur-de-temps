@@ -44725,13 +44725,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var utils_readableDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/readableDate */ "./src/shared/utils/readableDate.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Project/components/Task/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Project/components/Task/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -44753,7 +44750,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Task =
+var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_2__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_2__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Task, _Component);
@@ -44770,37 +44767,10 @@ function (_Component) {
 
   _createClass(Task, [{
     key: "deleteItem",
-    value: function () {
-      var _deleteItem = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(e) {
-        var req;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return deleteTask(this.props.projectid, this.props.taskid);
-
-              case 2:
-                req = _context.sent;
-                // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-                this.props.onChange();
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function deleteItem(_x) {
-        return _deleteItem.apply(this, arguments);
-      }
-
-      return deleteItem;
-    }()
+    value: function deleteItem(e) {
+      this.props.mainStore.deleteTask(this.props.mainStore.activeProject, this.props.taskid); // 	const req = deleteTask(this.props.projectid, this.props.taskid); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
+      // 	this.props.onChange();
+    }
   }, {
     key: "render",
     value: function render() {
@@ -44828,8 +44798,7 @@ function (_Component) {
   }]);
 
   return Task;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (Task);
 
 /***/ }),
@@ -45505,6 +45474,7 @@ function () {
     value: function loadProject(id) {
       var _this2 = this;
 
+      console.log("project is loading...");
       this.isLoadingProject = true; // console.log(id);
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"])(id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
@@ -45578,7 +45548,14 @@ function () {
       var _this5 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"])(projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this5.loadPersonalHistory();
+        _this5.loadPersonalHistory(); // relance le chargement de l'historique perso
+
+
+        _this5.loadProject(projectId); // relance le chargement du projet
+
+
+        _this5.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -45589,7 +45566,14 @@ function () {
       var _this6 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"])(projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this6.loadPersonalHistory();
+        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
+
+
+        _this6.loadProject(projectId); // relance le chargement du projet
+
+
+        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -45600,7 +45584,14 @@ function () {
       var _this7 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"])(projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory();
+        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+
+
+        _this7.loadProject(projectId); // relance le chargement du projet
+
+
+        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));

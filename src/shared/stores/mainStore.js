@@ -35,7 +35,7 @@ export class MainStore{
 	fetchPersonalHistory(this.userId)
 	    .then(action((history) => {
 		// console.log(history);
-		this.trackHistory = history
+		this.trackHistory = history;
 	    }))
 	    // .catch(action((error) => {
 	    // 	console.log(error);
@@ -45,6 +45,7 @@ export class MainStore{
     }
 
     loadProject(id){
+	console.log("project is loading...");
 	this.isLoadingProject = true;
 	// console.log(id);
 	fetchProject(id)
@@ -119,7 +120,9 @@ export class MainStore{
     postNewTask(projectId, formData){
 	taskNew(projectId, formData)
 	    .then(action(() => {
-		this.loadPersonalHistory()
+		this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadProject(projectId) // relance le chargement du projet
+		this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -129,7 +132,9 @@ export class MainStore{
     deleteTask(projectId, trackId){
 	taskDelete(projectId, trackId)
 	    .then(action(() => {
-		this.loadPersonalHistory()
+		this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadProject(projectId) // relance le chargement du projet
+		this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -139,7 +144,9 @@ export class MainStore{
     updateTask(projectId, trackId, formData){
 	taskUpdate(projectId, trackId, formData)
 	    .then(action(() => {
-		this.loadPersonalHistory()
+		this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadProject(projectId) // relance le chargement du projet
+		this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
