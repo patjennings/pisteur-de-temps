@@ -14,10 +14,10 @@ const App = inject("mainStore")(observer(class App extends Component {
     constructor(props){
 	super(props);
 	this.handleChange = this.handleChange.bind(this);
-
     }
     componentDidMount(){
-	this.props.mainStore.loadDefinitions();
+	// this.props.mainStore.loadDefinitions();
+	// this.props.mainStore.loadPersonalHistory();
     }
 
     handleChange(d){
@@ -25,7 +25,7 @@ const App = inject("mainStore")(observer(class App extends Component {
     }
     
     render() {
-	console.log("App is rendered");
+	// console.log("App is rendered");
 	return (
 	    <div id="wrapper" className="container-fluid">
 	      <div className="row">

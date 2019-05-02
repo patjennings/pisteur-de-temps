@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import retrieveFormData from "utils/retrieveFormData";
 
-import {observable, action, decorate} from "mobx";
+// import {observable, action, decorate} from "mobx";
 import {inject, observer} from "mobx-react";
 
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
@@ -67,7 +67,7 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 		      className="btn btn-primary">Submit</button>
 		  </div>
 		  <div className="col">
-		    <ProjectsSelector onChange={this.setActiveProject}/>
+		    <ProjectsSelector onChange={this.setActiveProject} />
 		  </div>
 		</div>
 	      </form>

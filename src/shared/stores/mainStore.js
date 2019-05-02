@@ -1,53 +1,77 @@
 import { observable, computed, action, decorate, configure, runInAction, toJS, get } from "mobx";
-import {getDefinitions, fetchPersonalHistory, taskNew, taskDelete, taskUpdate} from "fetch/agent";
+import {fetchClientsDefinitions,fetchProjectsDefinitions,fetchUsersDefinitions, fetchPersonalHistory, taskNew, taskDelete, taskUpdate} from "fetch/agent";
 
 configure({ enforceActions: "observed" });
 
 export class MainStore{
     constructor(){
-
 	this.isLoading = false;
-	this.userId = "5c9b3912f787951b7e8c9d62"
-	this.showProject = false
-	this.activeProject = null
+	this.userId = "5c9b3912f787951b7e8c9d62";
+	this.showProject = false;
+	this.activeProject = null;
 	
-	this.clientsDefinitions = []
-	this.projectsDefinitions = []
-	this.usersDefinitions = []
+	// this.loadPersonalHistory();
+	this.loadDefinitions();
 
-	this.trackHistory = []
+	this.clientsDefinitions = [];
+	this.projectsDefinitions = [];
+	this.usersDefinitions = [];
+	
+	this.trackHistory = [];
 
-	this.state = "pending"
+	this.state = "pending";
     }
 
     loadPersonalHistory(){
-	// this.isLoading = true
+	console.log("loading personal history…");
+	// this.isLoading = true;
+	
 	fetchPersonalHistory(this.userId)
-	     .then(action((history) => {
-		 this.trackHistory = history
-		 console.log(this.trackHistory);
+	    .then(action((history) => {
+		// console.log(history);
+		this.trackHistory = history
 	    }))
-	    .catch(action((error) => {
-		console.log(error);
-	    }))
-	    .finally(action(() => { this.isLoading = false; }));
+	    // .catch(action((error) => {
+	    // 	console.log(error);
+	    // }))
+	    // .finally(action(() => { this.isLoading = false; }));
+	
     }
 
     loadDefinitions(){
-	this.isLoading = true
-	getDefinitions()
-	    .then(action((parts) => {
-		this.clientsDefinitions = parts.clientsDefinitions;
-		this.projectsDefinitions = parts.projectsDefinitions;
-		this.usersDefinitions = parts.usersDefinitions;
+	// this.isLoading = true;
+
+	fetchClientsDefinitions()
+	    .then(action((clients) => {
+		this.clientsDefinitions = clients;
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
 	    }))
-	    .finally(action(() => { this.isLoading = false; }));
+	    .finally(action(() => {
+		console.log("fetch clients over")
+	    }))
+	fetchProjectsDefinitions()
+	    .then(action((projects) => {
+		this.projectsDefinitions = projects;
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    .finally(action(() => {
+		console.log("fetch projects over")
+	    }))
+	fetchUsersDefinitions()
+	    .then(action((users) => {
+		this.usersDefinitions = users;
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    .finally(action(() => {
+		console.log("fetch users over")
+	    }))
     }
-
-    
 
     setActiveProject(value){
 	this.activeProject = value;
@@ -64,7 +88,7 @@ export class MainStore{
 	    .catch(action((error) => {
 		console.log(error);
 	    }))
-	    // .finally(action(() => { this.isLoading = false; }));
+	// .finally(action(() => { this.isLoading = false; }));
     }
     deleteTask(projectId, trackId){
 	taskDelete(projectId, trackId)
@@ -74,7 +98,7 @@ export class MainStore{
 	    .catch(action((error) => {
 		console.log(error);
 	    }))
-	    // .finally(action(() => { this.isLoading = false; }));
+	// .finally(action(() => { this.isLoading = false; }));
     }
     updateTask(projectId, trackId, formData){
 	taskUpdate(projectId, trackId, formData)
@@ -84,7 +108,7 @@ export class MainStore{
 	    .catch(action((error) => {
 		console.log(error);
 	    }))
-	    // .finally(action(() => { this.isLoading = false; }));
+	// .finally(action(() => { this.isLoading = false; }));
     }
 }
 

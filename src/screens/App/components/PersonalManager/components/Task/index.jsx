@@ -3,24 +3,37 @@ import axios from 'axios';
 import "assets/styles/main.scss";
 import "./styles.scss";
 
-import {observable, action, decorate} from "mobx";
+import {toJS} from "mobx";
 import {observer, inject} from "mobx-react";
 
-import {readableDate} from "utils/readableDate";
+import { readableDate } from "utils/readableDate";
+import { getClientName, getProjectName } from "utils/defsConverter";
+
 import retrieveFormData from "utils/retrieveFormData";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 const Task = inject("mainStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
+	// console.log(toJS(this.props.mainStore.projectsDefinitions));
+	const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
 	this.state = {
-	    projectName: "",
-	    clientId: "",
-	    clientName: "",
+	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
+	    clientId: cli,
+	    clientName: getClientName(this.props.mainStore.clientsDefinitions, cli),
 	    isEdited: false,
 	    activeProject: this.props.relatedProject
 	};
 
+	// console.log(toJS(this.props.mainStore.clientsDefinitions));
+	// console.log(this.props.id);
+
+	// this.projectName = getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
+	// this.clientId = null;
+	// this.clientName = this.props.mainStore.userId;
+	// this.isEdited = false;
+	// this.activeProject = this.props.relatedProject;
+	
 	// binds
 	this.deleteItem = this.deleteItem.bind(this);
 	this.editItem = this.editItem.bind(this);
@@ -28,27 +41,29 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    async componentWillMount() {
-	const getProject = await axios.get("http://localhost:3000/projects/"+this.props.relatedProject);
-	const getClient = await axios.get("http://localhost:3000/clients/"+getProject.data.client);
-
-	this.setState({
-	    projectName: getProject.data.name,
-	    clientId: getProject.data.client,
-	    clientName: getClient.data.name
-	});
+    componentDidMount() {
+	
+	// find est une propriété de Mobx, voir > https://mobx.js.org/refguide/array.html
+	// const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	// this.setState({
+	//     projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
+	//     clientId: cli,
+	//     clientName: getClientName(this.props.mainStore.clientsDefinitions, cli)
+	// })
+	
     }
-
     componentDidUpdate(){
 	if(this.state.isEdited){
 	    this.setValues();
 	}
+	// this.props.mainStore.loadPersonalHistory()
+	// console.log(toJS(this.props.mainStore.projectsDefinitions));
+	// getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject)
+	// console.log(toJS(this.props.mainStore));
     }
 
     deleteItem(e){
 	this.props.mainStore.deleteTask(this.props.relatedProject, this.props.id);
-	// const req = await deleteTask(this.props.relatedProject, this.props.id); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-	//this.props.onChange();
     }
     
     editItem(e){
@@ -57,16 +72,17 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     
     handleSubmit(e){
 	e.preventDefault();
-	
 	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
-
 	// on lance la requête
-	this.props.mainStore.updateTask(this.props.relatedProject, this.props.id, fd);
-	// let req = await updateTask(this.state.activeProject, this.props.id, fd);
-	this.setState({isEdited: false});
+	this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
 	
-	// this.props.onChange(); // actualise le trackHistory dans le parent
-	
+	const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
+	this.setState({
+	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject),
+	    clientId: cli,
+	    clientName: getClientName(this.props.mainStore.clientsDefinitions, cli),
+	    isEdited: false
+	});	
     }
     
     setActiveProject(p){
@@ -84,6 +100,9 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     }
 
     render(){
+	console.log("new task render");
+	// console.log(toJS(this.props.mainStore));
+	// console.log(toJS(this.props.mainStore.projectsDefinitions));
 	if(this.state.isEdited){
 	    return(
 		<li className="list-group-item track-history--item" id={this.props.id}>
@@ -113,7 +132,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 		    <button
 		      className="btn btn-primary">Update</button>
 		  </form>
-		  <ProjectsSelector store={this.props.store} onChange={this.setActiveProject} active={this.state.activeProject}/>
+		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
 		</li>
 	    );
 	}
@@ -153,23 +172,4 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     }
 }));
 
-
-
 export default Task;
-
-
- // <div className="row">
- // 		      <div className="col-2 item-value"><div className="item-value--inner"><input type="text" placeholder={this.props.value}/></div></div>
- // 		      <div className="col-10">
- // 			<input className="form-control w-50" name="task" id={"track-input--input-"+this.props.id} type="text" placeholder={this.props.task}  aria-label="Input"/>
- // 			<textarea placeholder={this.props.comment}/>
- // 		      </div>
- // 		    </div>
- // 		    <div className="row">
- // 		      <div className="offset-2 col-5 text-muted">
- // 			<ProjectsSelector defs={this.state.definitions} onChange={this.setActiveProject} active={this.state.activeProject}/>
- // 		      </div>
- // 		      <div className="col-5 text-muted">
- // 			{readableDate(this.props.date)}
- // 		      </div>
- // 		    </div>

@@ -4,22 +4,52 @@ import {getFullTime, getPercent} from 'utils/budget';
 
 const API_ROOT = "http://localhost:3000";
 
-export async function getDefinitions(){
-    let definitions = {
-	clientsDefinitions: null,
-	projectsDefinitions: null,
-	usersDefinitions: null
-    };
+// export async function getDefinitions(){
+//     let definitions = {
+// 	clientsDefinitions: null,
+// 	projectsDefinitions: null,
+// 	usersDefinitions: null
+//     };
     
-    const clientsDefs = await axios.get(`${API_ROOT}/clients`);
-    const projectsDefs = await axios.get(`${API_ROOT}/projects`);
-    const usersDefs = await axios.get(`${API_ROOT}/users`);
+//     const clientsDefs = await axios.get(`${API_ROOT}/clients`);
+//     const projectsDefs = await axios.get(`${API_ROOT}/projects`);
+//     const usersDefs = await axios.get(`${API_ROOT}/users`);
 
-    this.definitions.clientsDefinitions = clientsDefs.data
-    this.definitions.projectsDefinitions = projectsDefs.data
-    this.definitions.usersDefinitions = usersDefs.data
+//     definitions.clientsDefinitions = clientsDefs.data;
+//     definitions.projectsDefinitions = projectsDefs.data;
+//     definitions.usersDefinitions = usersDefs.data;
 
-    return this.definitions
+//     return definitions;
+// }
+
+
+export function fetchClientsDefinitions(){
+    let result = axios
+	.get(`${API_ROOT}/clients`)
+	.then(res => {
+	    return res.data
+	    // console.log(res.data);
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+export function fetchProjectsDefinitions(){
+    let result = axios
+	.get(`${API_ROOT}/projects`)
+	.then(res => {
+	     return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+export function fetchUsersDefinitions(){
+    let result = axios
+	.get(`${API_ROOT}/users`)
+	.then(res => {
+	     return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
 }
 
 export function taskNew(projectId, body){
@@ -46,7 +76,6 @@ export function taskUpdate(projectId, taskid, body){
 	.put(`${API_ROOT}/projects/${projectId}/trackedtime/${taskid}`, body)
 	.then(res => {
 	    result = res
-	    console.log(res);
 	})
 	.catch(error => {
 	    result = error

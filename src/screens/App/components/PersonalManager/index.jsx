@@ -32,7 +32,8 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
     }
 
     render() {
-	console.log("Personal Manager is rendered");
+	// console.log("Personal Manager is rendered");
+	console.log(this.props.mainStore.isLoading);
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
@@ -46,19 +47,18 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
 		<ul className="list-group list-group-flush track-history">
 		  {this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
 		      return <Task
-				   onClick={event => this.handleClick(childData, event)}
-			key={childData.id}
-			id={childData.id}
-			task={childData.task}
-			value={childData.value}
-			comment={childData.comment}
-			relatedProject={childData.relatedProject}
-			date={childData.date}
-			userid={this.props.store.userId}
-			onChange={event => this.handleChange(childData, event)}
-			store={this.props.mainStore}
-			  />;
-		    })}
+				onClick={event => this.handleClick(childData, event)}
+				key={childData.id}
+				id={childData.id}
+				task={childData.task}
+				value={childData.value}
+				comment={childData.comment}
+				relatedProject={childData.relatedProject}
+				date={childData.date}
+				userid={this.props.store.userId}
+				onChange={event => this.handleChange(childData, event)}
+				store={this.props.mainStore} />;
+			    })}
 		</ul>
 	      </div>
 	    </div>

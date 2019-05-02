@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import {observable, action, decorate} from "mobx";
 import {observer, inject} from "mobx-react";
 
 import "./styles.scss";
@@ -10,9 +9,11 @@ import "./styles.scss";
 const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector extends Component {
     constructor(props){
 	super(props);
-	
+
+
+	// console.log(this.props);
 	this.state = {
-	    activeProject: this.props.mainStore.activeProject
+	    activeProject: this.props.activeProject
 	};
 
 	// binds
@@ -42,7 +43,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		data-toggle="dropdown"
 		aria-haspopup="true"
 		aria-expanded="false">
-		{this.state.activeProject === null ? "Select a project" : getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
+		{this.state.activeProject == null ? "Select a project" : getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
 	      </button>
 	      
 	      
@@ -50,8 +51,8 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		   aria-labelledby="dropdownMenuButton">
 		{
 		    this.props.mainStore.projectsDefinitions.map(p => {
-			console.log(p);
-			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p.client}</span></a>;
+			// console.log(p);
+			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p._id}</span></a>;
 		    })
 		}
 	      </div>
