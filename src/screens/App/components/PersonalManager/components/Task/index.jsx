@@ -75,7 +75,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
-	
+
 	const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
 	this.setState({
 	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject),

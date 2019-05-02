@@ -4,25 +4,6 @@ import {getFullTime, getPercent} from 'utils/budget';
 
 const API_ROOT = "http://localhost:3000";
 
-// export async function getDefinitions(){
-//     let definitions = {
-// 	clientsDefinitions: null,
-// 	projectsDefinitions: null,
-// 	usersDefinitions: null
-//     };
-    
-//     const clientsDefs = await axios.get(`${API_ROOT}/clients`);
-//     const projectsDefs = await axios.get(`${API_ROOT}/projects`);
-//     const usersDefs = await axios.get(`${API_ROOT}/users`);
-
-//     definitions.clientsDefinitions = clientsDefs.data;
-//     definitions.projectsDefinitions = projectsDefs.data;
-//     definitions.usersDefinitions = usersDefs.data;
-
-//     return definitions;
-// }
-
-
 export function fetchClientsDefinitions(){
     let result = axios
 	.get(`${API_ROOT}/clients`)
@@ -115,34 +96,22 @@ export function fetchPersonalHistory(userId){
     return result;
 }
 
-export async function fetchProject(projectId, definitions){
-    let result = {};
-    const getProject = await axios.get(`$API_ROOT/projects/${projectId}`);
-    const getTrackedTime = await axios.get(`$API_ROOT/projects/${projectId}/trackedtime`);
-    
-    const trackedList = getTrackedTime.data.message.map(t => {
-    	return {
-    	    id: t._id,
-    	    task: t.task,
-    	    value: t.value,
-    	    comment: t.comment,
-    	    relatedProject: t.relatedProject,
-    	    username: getUserName(definitions, t.relatedUser),
-    	    date: t.dateCreation
-    	};
-	
-    });
-    
-    result = {
-    	projectName: getProject.data.name,
-    	projectDescription: getProject.data.description,
-    	projectBudget: getProject.data.budget,
-    	clientId: getProject.data.client,
-    	clientName: getClientName(definitions, getProject.data.client),
-    	trackedTime: trackedList,
-    	fullTime: getFullTime(getTrackedTime.data.message)
-    };
-    
+export function fetchProject(projectId){
+    let result = axios
+	.get(`${API_ROOT}/projects/${projectId}`)
+	.then(res => {
+	  return res  
+	});
+    return result;
+}
+
+export function fetchProjectTrackedTime(projectId){
+    let result = axios
+	.get(`${API_ROOT}/projects/${projectId}/trackedtime`)
+	.then(res => {
+	  return res  
+	});
+
     return result;
 }
 

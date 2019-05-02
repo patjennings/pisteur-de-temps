@@ -38,9 +38,7 @@ const App = inject("mainStore")(observer(class App extends Component {
 			    }
 			    {/* On vérifie d'abord qu'il y a qqchose dans state.definitions*/}
 
-			    {/*    {store.data.showProject ?  <Project
-								    store={store}
-								/> : <p>Select a project</p>}	       */}	
+			    {this.props.mainStore.showProject ?  <Project /> : <p>Select a project</p>}	       	
 		  </div>
 		</div>
 		<div id="nav" className="col-3">

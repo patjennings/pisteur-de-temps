@@ -1,26 +1,32 @@
-import { observable, computed, action, decorate, configure, runInAction, toJS, get } from "mobx";
-import {fetchClientsDefinitions,fetchProjectsDefinitions,fetchUsersDefinitions, fetchPersonalHistory, taskNew, taskDelete, taskUpdate} from "fetch/agent";
+import { observable, computed, action, decorate, configure, runInAction, toJS, get, trace } from "mobx";
+import {fetchClientsDefinitions,fetchProjectsDefinitions,fetchUsersDefinitions, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, taskNew, taskDelete, taskUpdate} from "fetch/agent";
 
 configure({ enforceActions: "observed" });
 
 export class MainStore{
+
+
     constructor(){
 	this.isLoading = false;
-	this.userId = "5c9b3912f787951b7e8c9d62";
-	this.showProject = false;
-	this.activeProject = null;
+	this.isLoadingProject = false;
+	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
+	this.showProject = false; // un projet est-il affiché ?
+	this.activeProject = null; // le projet actif
 	
-	// this.loadPersonalHistory();
 	this.loadDefinitions();
 
-	this.clientsDefinitions = [];
-	this.projectsDefinitions = [];
-	this.usersDefinitions = [];
+	this.clientsDefinitions = []; // définitions des clients
+	this.projectsDefinitions = []; // ... des projets
+	this.usersDefinitions = []; // ... des users
+
+	this.activeTrackedTime = [];
+	this.activeProjectDetails = {};
 	
-	this.trackHistory = [];
+	this.trackHistory = []; // historique des tracks du user
 
 	this.state = "pending";
     }
+
 
     loadPersonalHistory(){
 	console.log("loading personal history…");
@@ -34,10 +40,37 @@ export class MainStore{
 	    // .catch(action((error) => {
 	    // 	console.log(error);
 	    // }))
-	    // .finally(action(() => { this.isLoading = false; }));
+	    .finally(action(() => { this.isLoading = false; }));
 	
     }
 
+    loadProject(id){
+	this.isLoadingProject = true;
+	// console.log(id);
+	fetchProject(id)
+	    .then(action((project) => {
+		console.log(project.data);
+		this.activeProjectDetails = project.data;
+	    }))
+	    .catch(action((error) => {
+	    	console.log(error);
+	    }))
+	    .finally(action(() => { this.isLoadingProject = false; }));
+    }
+
+    loadTrackedTime(id){
+	this.isLoadingProject = true;
+	// console.log(id);
+	fetchProjectTrackedTime(id)
+	    .then(action((tracked) => {
+		this.activeTrackedTime = tracked.data.message
+	    }))
+	    .catch(action((error) => {
+	    	console.log(error);
+	    }))
+	    .finally(action(() => { this.isLoadingProject = false; }));
+    }
+    
     loadDefinitions(){
 	// this.isLoading = true;
 
@@ -74,6 +107,9 @@ export class MainStore{
     }
 
     setActiveProject(value){
+	console.log("new active project is "+ value);
+	this.loadProject(value);
+	this.loadTrackedTime(value);
 	this.activeProject = value;
     }
     setShowProject(value){
@@ -114,15 +150,20 @@ export class MainStore{
 
 decorate(MainStore, {
     isLoading: observable,
+    isLoadingProject: observable,
     userId: observable,
     showProject: observable,
     activeProject: observable,
+    activeTrackedTime: observable,
+    activeProjectDetails: observable,
     clientsDefinitions: observable,
     projectsDefinitions: observable,
     usersDefinitions: observable,
     trackHistory: observable,
     state: observable,
     loadPersonalHistory: action,
+    loadProject: action,
+    loadTrackedTime: action,
     loadDefinitions: action,
     setActiveProject: action,
     setShowProject: action,

@@ -44632,6 +44632,7 @@ function (_Component) {
     key: "handleClick",
     value: function handleClick(data, event) {
       // this.props.onChange(data.relatedProject);
+      this.props.mainStore.setShowProject(true);
       this.props.mainStore.setActiveProject(data.relatedProject);
     }
   }, {
@@ -44641,6 +44642,7 @@ function (_Component) {
 
       // console.log("Personal Manager is rendered");
       console.log(this.props.mainStore.isLoading);
+      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(this.props.mainStore.projectsDefinitions));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6 track-manager"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -44878,18 +44880,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Project/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var fetch_agent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fetch/agent */ "./src/shared/fetch/agent.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Project/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -44915,7 +44911,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Project = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+
+
+var Project = Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Project, _Component);
@@ -44925,96 +44923,43 @@ function (_Component) {
 
     _classCallCheck(this, Project);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Project).call(this, props)); // il faut absolument initialiser l'objet state, avec des valeurs nulles 
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Project).call(this, props)); // this.state = {}
 
-    _this.state = {
-      projectId: _this.props.store.activeProject,
-      projectName: null,
-      projectDescription: null,
-      projectBudget: null,
-      clientId: null,
-      clientName: null,
-      trackedTime: [],
-      fullTime: null
-    };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this)); // this.getBudgetPercent = this.getBudgetPercent.bind(this);
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this)); // this.stats = this.stats.bind(this);
+    // this.getBudgetPercent = this.getBudgetPercent.bind(this);
 
     return _this;
   }
 
   _createClass(Project, [{
-    key: "componentWillMount",
-    value: function () {
-      var _componentWillMount = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee() {
-        var req;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetchProject(this.props.store.activeProject, this.props.store.definitions);
-
-              case 2:
-                req = _context.sent;
-                // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-                this.setState(_objectSpread({}, req)); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function componentWillMount() {
-        return _componentWillMount.apply(this, arguments);
-      }
-
-      return componentWillMount;
-    }()
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // activeProjectDetails
+      this.props.mainStore.loadProject(this.props.mainStore.activeProject);
+      this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+    }
   }, {
     key: "handleChange",
-    value: function () {
-      var _handleChange = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2() {
-        var req;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return fetchProject(this.props.projectid, this.props.store.definitions);
-
-              case 2:
-                req = _context2.sent;
-                // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-                this.setState(_objectSpread({}, req)); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
-
-              case 4:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function handleChange() {
-        return _handleChange.apply(this, arguments);
-      }
-
-      return handleChange;
-    }()
+    value: function handleChange() {
+      console.log("change");
+    }
+  }, {
+    key: "stats",
+    value: function stats() {
+      var ft = Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getFullTime"])(Object(mobx__WEBPACK_IMPORTED_MODULE_6__["toJS"])(this.props.mainStore.activeTrackedTime));
+      return ft;
+    }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      // console.log("°°°°°° "+this.props.projectid);
-      // console.log(this.state);
+      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_6__["toJS"])(this.props.mainStore.activeProjectDetails));
+      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_6__["toJS"])(this.props.mainStore.activeTrackedTime));
+      console.log("Project render"); // const trackedTime = this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+      // console.log(trackedTime);
+      // console.log(toJS(this.props.mainStore.activeTrackedTime))
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6 project-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -45025,34 +44970,34 @@ function (_Component) {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.clientName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.state.projectName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.projectDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.activeProjectDetails.client), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.mainStore.activeProjectDetails.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.activeProjectDetails.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.projectBudget))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.mainStore.activeProjectDetails.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.stats()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress",
         "data-toggle": "tooltip",
         "data-placement": "top",
-        title: this.state.fullTime + " days spent"
+        title: this.stats()
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress-bar",
         role: "progressbar",
         style: {
-          width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(this.state.fullTime, this.state.projectBudget) + "%"
+          width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(this.stats(), this.props.mainStore.activeProjectDetails.budget) + "%"
         },
         "aria-valuenow": "25",
         "aria-valuemin": "0",
         "aria-valuemax": "100"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table project-tracks"
-      }, this.state.trackedTime.slice(0).reverse().map(function (t) {
+      }, this.props.mainStore.activeTrackedTime.slice(0).reverse().map(function (t) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Task__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: t.id,
-          taskid: t.id,
+          key: t._id,
+          taskid: t._id,
           task: t.task,
           comment: t.comment,
           username: t.username,
           value: t.value,
           date: t.date,
-          projectid: _this2.state.projecId,
+          projectid: _this2.props.mainStore.activeProject,
           onChange: _this2.handleChange
         });
       }))));
@@ -45060,7 +45005,7 @@ function (_Component) {
   }]);
 
   return Project;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (Project);
 
 /***/ }),
@@ -45179,7 +45124,7 @@ function (_Component) {
         className: "row"
       }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_1__["default"], {
         store: this.props.mainStore
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), this.props.mainStore.showProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a project"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "nav",
         className: "col-3"
       })));
@@ -45371,7 +45316,7 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, taskNew, taskUpdate, taskDelete, fetchPersonalHistory, fetchProject */
+/*! exports provided: fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, taskNew, taskUpdate, taskDelete, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45384,14 +45329,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "taskDelete", function() { return taskDelete; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPersonalHistory", function() { return fetchPersonalHistory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProject", function() { return fetchProject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectTrackedTime", function() { return fetchProjectTrackedTime; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -45399,21 +45341,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var API_ROOT = "http://localhost:3000"; // export async function getDefinitions(){
-//     let definitions = {
-// 	clientsDefinitions: null,
-// 	projectsDefinitions: null,
-// 	usersDefinitions: null
-//     };
-//     const clientsDefs = await axios.get(`${API_ROOT}/clients`);
-//     const projectsDefs = await axios.get(`${API_ROOT}/projects`);
-//     const usersDefs = await axios.get(`${API_ROOT}/users`);
-//     definitions.clientsDefinitions = clientsDefs.data;
-//     definitions.projectsDefinitions = projectsDefs.data;
-//     definitions.usersDefinitions = usersDefs.data;
-//     return definitions;
-// }
-
+var API_ROOT = "http://localhost:3000";
 function fetchClientsDefinitions() {
   var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/clients")).then(function (res) {
     return res.data; // console.log(res.data);
@@ -45489,60 +45417,17 @@ function fetchPersonalHistory(userId) {
   });
   return result;
 }
-function fetchProject(_x, _x2) {
-  return _fetchProject.apply(this, arguments);
+function fetchProject(projectId) {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/projects/").concat(projectId)).then(function (res) {
+    return res;
+  });
+  return result;
 }
-
-function _fetchProject() {
-  _fetchProject = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(projectId, definitions) {
-    var result, getProject, getTrackedTime, trackedList;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            result = {};
-            _context.next = 3;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("$API_ROOT/projects/".concat(projectId));
-
-          case 3:
-            getProject = _context.sent;
-            _context.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("$API_ROOT/projects/".concat(projectId, "/trackedtime"));
-
-          case 6:
-            getTrackedTime = _context.sent;
-            trackedList = getTrackedTime.data.message.map(function (t) {
-              return {
-                id: t._id,
-                task: t.task,
-                value: t.value,
-                comment: t.comment,
-                relatedProject: t.relatedProject,
-                username: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__["getUserName"])(definitions, t.relatedUser),
-                date: t.dateCreation
-              };
-            });
-            result = {
-              projectName: getProject.data.name,
-              projectDescription: getProject.data.description,
-              projectBudget: getProject.data.budget,
-              clientId: getProject.data.client,
-              clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__["getClientName"])(definitions, getProject.data.client),
-              trackedTime: trackedList,
-              fullTime: Object(utils_budget__WEBPACK_IMPORTED_MODULE_2__["getFullTime"])(getTrackedTime.data.message)
-            };
-            return _context.abrupt("return", result);
-
-          case 10:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _fetchProject.apply(this, arguments);
+function fetchProjectTrackedTime(projectId) {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/projects/").concat(projectId, "/trackedtime")).then(function (res) {
+    return res;
+  });
+  return result;
 }
 
 /***/ }),
@@ -45577,15 +45462,24 @@ function () {
     _classCallCheck(this, MainStore);
 
     this.isLoading = false;
-    this.userId = "5c9b3912f787951b7e8c9d62";
-    this.showProject = false;
-    this.activeProject = null; // this.loadPersonalHistory();
+    this.isLoadingProject = false;
+    this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
+
+    this.showProject = false; // un projet est-il affiché ?
+
+    this.activeProject = null; // le projet actif
 
     this.loadDefinitions();
-    this.clientsDefinitions = [];
-    this.projectsDefinitions = [];
-    this.usersDefinitions = [];
-    this.trackHistory = [];
+    this.clientsDefinitions = []; // définitions des clients
+
+    this.projectsDefinitions = []; // ... des projets
+
+    this.usersDefinitions = []; // ... des users
+
+    this.activeTrackedTime = [];
+    this.activeProjectDetails = {};
+    this.trackHistory = []; // historique des tracks du user
+
     this.state = "pending";
   }
 
@@ -45599,33 +45493,66 @@ function () {
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"])(this.userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
         // console.log(history);
         _this.trackHistory = history;
-      })); // .catch(action((error) => {
+      })) // .catch(action((error) => {
       // 	console.log(error);
       // }))
-      // .finally(action(() => { this.isLoading = false; }));
+      .finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this.isLoading = false;
+      }));
+    }
+  }, {
+    key: "loadProject",
+    value: function loadProject(id) {
+      var _this2 = this;
+
+      this.isLoadingProject = true; // console.log(id);
+
+      Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"])(id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
+        console.log(project.data);
+        _this2.activeProjectDetails = project.data;
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this2.isLoadingProject = false;
+      }));
+    }
+  }, {
+    key: "loadTrackedTime",
+    value: function loadTrackedTime(id) {
+      var _this3 = this;
+
+      this.isLoadingProject = true; // console.log(id);
+
+      Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"])(id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
+        _this3.activeTrackedTime = tracked.data.message;
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this3.isLoadingProject = false;
+      }));
     }
   }, {
     key: "loadDefinitions",
     value: function loadDefinitions() {
-      var _this2 = this;
+      var _this4 = this;
 
       // this.isLoading = true;
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"])().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
-        _this2.clientsDefinitions = clients;
+        _this4.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch clients over");
       }));
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"])().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this2.projectsDefinitions = projects;
+        _this4.projectsDefinitions = projects;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch projects over");
       }));
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUsersDefinitions"])().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (users) {
-        _this2.usersDefinitions = users;
+        _this4.usersDefinitions = users;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -45635,6 +45562,9 @@ function () {
   }, {
     key: "setActiveProject",
     value: function setActiveProject(value) {
+      console.log("new active project is " + value);
+      this.loadProject(value);
+      this.loadTrackedTime(value);
       this.activeProject = value;
     }
   }, {
@@ -45645,10 +45575,10 @@ function () {
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this3 = this;
+      var _this5 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"])(projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this3.loadPersonalHistory();
+        _this5.loadPersonalHistory();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -45656,10 +45586,10 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this4 = this;
+      var _this6 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"])(projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this4.loadPersonalHistory();
+        _this6.loadPersonalHistory();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -45667,10 +45597,10 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this5 = this;
+      var _this7 = this;
 
       Object(fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"])(projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this5.loadPersonalHistory();
+        _this7.loadPersonalHistory();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -45681,15 +45611,20 @@ function () {
 }();
 Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   isLoading: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  isLoadingProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   userId: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   showProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   activeProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  activeTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  activeProjectDetails: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   clientsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   projectsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   usersDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   trackHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   state: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   loadPersonalHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  loadProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  loadTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setActiveProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setShowProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],

@@ -3,79 +3,77 @@ import React, { Component } from 'react';
 import Task from "./components/Task";
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
-import {getfullTime, getPercent} from 'utils/budget';
+import {getFullTime, getPercent} from 'utils/budget';
+import {fetchProjectTrackedTime} from "fetch/agent";
 
-import {observer} from "mobx-react";
+import {toJS} from "mobx";
+import {observer, inject} from "mobx-react";
 
 import "./styles.scss";
 
-const Project = observer(class Project extends Component {
+const Project = inject("mainStore")(observer(class Project extends Component {
     constructor(props){
 	super(props);
-	
-	// il faut absolument initialiser l'objet state, avec des valeurs nulles 
-	this.state = {
-	    projectId: this.props.store.activeProject,
-	    projectName: null,
-	    projectDescription: null,
-	    projectBudget: null,
-	    clientId: null,
-	    clientName: null,
-	    trackedTime: [],
-	    fullTime: null
-	};
-	
+
+	// this.state = {}
+
 	this.handleChange = this.handleChange.bind(this);
+	// this.stats = this.stats.bind(this);
 	// this.getBudgetPercent = this.getBudgetPercent.bind(this);
 	
     }
-    async componentWillMount(){
-	const req = await fetchProject(this.props.store.activeProject, this.props.store.definitions); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-	
-	this.setState({
-	    ...req
-	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
+    componentDidMount(){
+	// activeProjectDetails
+	this.props.mainStore.loadProject(this.props.mainStore.activeProject);
+	this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
     }
-    async handleChange(){
-	const req = await fetchProject(this.props.projectid, this.props.store.definitions); // on attend que la requête soit bien éxécutée, avant d'avertir du changement
-	
-	this.setState({
-	    ...req
-	}); // on remplit le state avec : - notre réponse de fetchProject - notre liste de définitions
+
+    handleChange(){
+	console.log("change");
+    }
+
+    stats(){
+	var ft = getFullTime(toJS(this.props.mainStore.activeTrackedTime))
+	return ft;
     }
     
     render() {
-	// console.log("°°°°°° "+this.props.projectid);
-	// console.log(this.state);
-
+	console.log(toJS(this.props.mainStore.activeProjectDetails));
+	console.log(toJS(this.props.mainStore.activeTrackedTime));
+	console.log("Project render");
+	// const trackedTime = this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+	// console.log(trackedTime);
+	// console.log(toJS(this.props.mainStore.activeTrackedTime))
+	
 	return (
 	    <div className="col-6 project-details">
 	      <div className="card">
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-6">
-		      <p>{this.state.clientName}</p>
-		      <h3>{this.state.projectName}</h3>
-		      <p>{this.state.projectDescription}</p>
+		      <p>{this.props.mainStore.activeProjectDetails.client}</p>
+		      <h3>{this.props.mainStore.activeProjectDetails.name}</h3>
+		      <p>{this.props.mainStore.activeProjectDetails.description}</p>
 		    </div>
 		    <div className="col-6">
 		      <p>Budget</p>
-		      <h4>{this.state.projectBudget}</h4>
+		      <h4>{this.props.mainStore.activeProjectDetails.budget}</h4>
+		      <p>{this.stats()}</p>
 		    </div>
 		  </div>
-		  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.state.fullTime+" days spent"}>
-		    <div className="progress-bar" role="progressbar" style={{width: getPercent(this.state.fullTime, this.state.projectBudget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+		  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
+		    <div className="progress-bar" role="progressbar" style={{width: getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 		  </div>
 		</div>
 		<table className="table project-tracks">
-		  {this.state.trackedTime.slice(0).reverse().map(t => {
-		      return <Task key={t.id} taskid={t.id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date} projectid={this.state.projecId} onChange={this.handleChange}/>;
+		  {this.props.mainStore.activeTrackedTime.slice(0).reverse().map(t => {
+		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date} projectid={this.props.mainStore.activeProject} onChange={this.handleChange}/>;
 		  })}
 		</table>
 	      </div>
 	    </div>
 	);
     }
-});
+}));
 
 export default Project;

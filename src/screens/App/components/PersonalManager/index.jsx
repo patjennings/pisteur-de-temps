@@ -3,7 +3,7 @@ import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
 
 // import axios from "axios";
-import {observable, action, decorate} from "mobx";
+import {observable, action, decorate, toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
@@ -28,12 +28,14 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
     
     handleClick(data, event){
 	// this.props.onChange(data.relatedProject);
+	this.props.mainStore.setShowProject(true);
 	this.props.mainStore.setActiveProject(data.relatedProject);
     }
 
     render() {
 	// console.log("Personal Manager is rendered");
 	console.log(this.props.mainStore.isLoading);
+	console.log(toJS(this.props.mainStore.projectsDefinitions));
 	return (
 	    <div className="col-6 track-manager">
 	      <div className="card">
