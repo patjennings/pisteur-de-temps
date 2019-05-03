@@ -11,7 +11,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 	super(props);
 
 
-	// console.log(this.props);
+	console.log(this.props.activeProject);
 	this.state = {
 	    activeProject: this.props.activeProject
 	};
@@ -45,7 +45,13 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		data-toggle="dropdown"
 		aria-haspopup="true"
 		aria-expanded="false">
-		{this.state.activeProject == null ? "Select a project" : getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
+		{this.state.activeProject == null ?
+		    "Select a project" :
+		    <div className="">
+			  {getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
+			  <div className="text-muted small">Client Name</div>    
+			</div>
+		    }
 	      </button>
 	      
 	      

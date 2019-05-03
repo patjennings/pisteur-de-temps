@@ -11374,7 +11374,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
 
 
 
@@ -44744,8 +44744,9 @@ function (_Component) {
       taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
       this.state.activeProject == null ? this.state.errorOnProject = true : this.state.errorOnProject = false;
 
-      if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {// let fd = retrieveFormData(event.target, this.props.mainStore.userId);
-        // this.props.mainStore.postNewTask(this.state.activeProject, fd);
+      if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.mainStore.userId);
+        this.props.mainStore.postNewTask(this.state.activeProject, fd);
       }
 
       this.setState({
@@ -45664,8 +45665,8 @@ function (_Component) {
 
     _classCallCheck(this, ProjectsSelector);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProjectsSelector).call(this, props)); // console.log(this.props);
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProjectsSelector).call(this, props));
+    console.log(_this.props.activeProject);
     _this.state = {
       activeProject: _this.props.activeProject
     }; // binds
@@ -45705,7 +45706,11 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.state.activeProject == null ? "Select a project" : Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.activeProject == null ? "Select a project" : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: ""
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-muted small"
+      }, "Client Name"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, this.props.mainStore.projectsDefinitions.map(function (p) {

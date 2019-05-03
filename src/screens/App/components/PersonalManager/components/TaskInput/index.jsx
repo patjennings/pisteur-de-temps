@@ -38,8 +38,8 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 	
 	
 	if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject){
-	    // let fd = retrieveFormData(event.target, this.props.mainStore.userId);
-	    // this.props.mainStore.postNewTask(this.state.activeProject, fd);
+	    let fd = retrieveFormData(event.target, this.props.mainStore.userId);
+	    this.props.mainStore.postNewTask(this.state.activeProject, fd);
 	}
 	
 	this.setState({
