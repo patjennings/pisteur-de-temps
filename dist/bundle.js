@@ -11284,7 +11284,7 @@ exports.push([module.i, "#nav {\n  background: #ebebeb;\n  position: absolute;\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "ul.track-history li.track-history--item .item-actions {\n  right: 0;\n  z-index: 999; }\n\nul.track-history li.track-history--item .row {\n  height: 100%; }\n  ul.track-history li.track-history--item .row .item-value {\n    display: flex;\n    margin-left: -1.25rem; }\n    ul.track-history li.track-history--item .row .item-value .item-value--inner {\n      width: 6rem;\n      margin: auto;\n      color: var(--blue);\n      font-size: 1.5rem;\n      border-left: 3px solid var(--blue);\n      padding-left: 1rem;\n      height: 2.5rem; }\n", ""]);
+exports.push([module.i, "ul.track-history li.track-history--item {\n  cursor: pointer; }\n  ul.track-history li.track-history--item .item-actions {\n    right: 0;\n    z-index: 999; }\n  ul.track-history li.track-history--item .row .item-value {\n    display: flex;\n    margin-left: -1.25rem; }\n    ul.track-history li.track-history--item .row .item-value .item-value--inner {\n      width: 6rem;\n      margin: auto;\n      color: var(--blue);\n      font-size: 1.5rem;\n      border-left: 3px solid var(--blue);\n      padding-left: 1rem;\n      height: 2.5rem; }\n  ul.track-history li.track-history--item:hover {\n    background-color: var(--light); }\n", ""]);
 
 
 
@@ -44622,7 +44622,7 @@ function (_Component) {
           className: "item-value--inner"
         }, this.props.value)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-10"
-        }, this.props.task, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.comment)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.comment))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "offset-2 col-5 text-muted"

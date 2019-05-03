@@ -144,7 +144,8 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 		  <div className="row">
 		    <div className="col-2 item-value"><div className="item-value--inner">{this.props.value}</div></div>
 		    <div className="col-10">
-		      {this.props.task}<br/>{this.props.comment}
+		      <h4>{this.props.task}</h4>
+		      <p>{this.props.comment}</p>
 		    </div>
 		  </div>
 		  <div className="row">
