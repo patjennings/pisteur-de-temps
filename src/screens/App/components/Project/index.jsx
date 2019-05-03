@@ -18,9 +18,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	// this.state = {}
 
 	this.handleChange = this.handleChange.bind(this);
-	// this.stats = this.stats.bind(this);
-	// this.getBudgetPercent = this.getBudgetPercent.bind(this);
-	
+
     }
     componentDidMount(){
 	// activeProjectDetails
@@ -33,17 +31,21 @@ const Project = inject("mainStore")(observer(class Project extends Component {
     }
 
     stats(){
-	var ft = getFullTime(toJS(this.props.mainStore.activeTrackedTime))
+	var ft = getFullTime(toJS(this.props.mainStore.activeTrackedTime));
 	return ft;
     }
     
     render() {
-	console.log(toJS(this.props.mainStore.activeProjectDetails));
-	console.log(toJS(this.props.mainStore.activeTrackedTime));
-	console.log("Project render");
-	// const trackedTime = this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
-	// console.log(trackedTime);
-	// console.log(toJS(this.props.mainStore.activeTrackedTime))
+	const timeConsumed = getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget);
+	const isTimeOver = timeConsumed > 100; // boolean (le budget est-il dépassé ?)
+	const barColor = timeOver ? "bg-danger" : null;
+
+	const timeBasis = Math.pow(100, 2)/timeConsumed;
+	const timeOver = (timeConsumed-100)*100/timeConsumed;
+
+	console.log(timeConsumed+"%");
+	console.log(timeBasis+"/"+timeOver);
+
 	
 	return (
 	    <div className="col-6 project-details">
@@ -51,7 +53,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-6">
-		      <p>{this.props.mainStore.activeProjectDetails.client}</p>
+		      <p>{getClientName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client)}</p>
 		      <h3>{this.props.mainStore.activeProjectDetails.name}</h3>
 		      <p>{this.props.mainStore.activeProjectDetails.description}</p>
 		    </div>
@@ -61,14 +63,26 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		      <p>{this.stats()}</p>
 		    </div>
 		  </div>
-		  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
-		    <div className="progress-bar" role="progressbar" style={{width: getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-		  </div>
+		  
+		  {!isTimeOver ?
+		      <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
+			    <div className="progress-bar" role="progressbar" style={{width: timeConsumed+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			  </div>
+			  :
+			  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
+				<div className="progress-bar bg-warning" role="progressbar" style={{width: timeBasis+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				    <div className="progress-bar bg-danger" role="progressbar" style={{width: timeOver+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			      </div>
+			  }
+		    
+		  
 		</div>
 		<table className="table project-tracks">
+		  <tbody>
 		  {this.props.mainStore.activeTrackedTime.slice(0).reverse().map(t => {
-		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.date} projectid={this.props.mainStore.activeProject} onChange={this.handleChange}/>;
+		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
 		  })}
+		  </tbody>
 		</table>
 	      </div>
 	    </div>

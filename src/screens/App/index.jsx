@@ -42,9 +42,7 @@ const App = inject("mainStore")(observer(class App extends Component {
 		  </div>
 		</div>
 		<div id="nav" className="col-3">
-		  {/* {Object.keys(store.data.definitions).length === 0 ? <p>Wait a minute</p> : <Navigation
-												       store={store}
-												   />} */}
+		   {this.props.mainStore.isLoading == true ? <p>Wait a minute</p> : <Navigation />}
 		</div>
 	      </div>
 	    </div>

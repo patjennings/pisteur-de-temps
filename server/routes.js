@@ -204,6 +204,8 @@ module.exports = function(app){
 
 	db.name = req.body.name;
 	db.relatedClient = req.body.client;
+	db.description = req.body.description;
+	db.budget = req.body.budget;
 	
 	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
@@ -424,6 +426,8 @@ module.exports = function(app){
 	var response = {};
 
 	db.name = req.body.name;
+
+	console.log(db);
 	
 	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
@@ -432,7 +436,7 @@ module.exports = function(app){
 	    if(err) {
 		response = {"error" : true,"message" : "Error adding data"};
 	    } else {
-		response = {"error" : false,"message" : "Client added", "data" : data};
+		response = {"error" : false,"message" : "Client added", "data" : db};
 	    }
 	    res.json(response);
 	});

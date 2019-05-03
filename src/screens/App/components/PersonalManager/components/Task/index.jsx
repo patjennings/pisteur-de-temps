@@ -15,51 +15,32 @@ import ProjectsSelector from "sharedComponents/ProjectsSelector";
 const Task = inject("mainStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
-	// console.log(toJS(this.props.mainStore.projectsDefinitions));
-	const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+
+	// get the client id
+	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
 	this.state = {
 	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
-	    clientId: cli,
-	    clientName: getClientName(this.props.mainStore.clientsDefinitions, cli),
+	    // clientId: clid,
+	    clientName: getClientName(this.props.mainStore.clientsDefinitions, clid),
 	    isEdited: false,
 	    activeProject: this.props.relatedProject
 	};
 
-	// console.log(toJS(this.props.mainStore.clientsDefinitions));
-	// console.log(this.props.id);
-
-	// this.projectName = getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
-	// this.clientId = null;
-	// this.clientName = this.props.mainStore.userId;
-	// this.isEdited = false;
-	// this.activeProject = this.props.relatedProject;
-	
 	// binds
 	this.deleteItem = this.deleteItem.bind(this);
 	this.editItem = this.editItem.bind(this);
+	this.cancelEdit = this.cancelEdit.bind(this);
 	this.setActiveProject = this.setActiveProject.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
     componentDidMount() {
-	
-	// find est une propriété de Mobx, voir > https://mobx.js.org/refguide/array.html
-	// const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
-	// this.setState({
-	//     projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
-	//     clientId: cli,
-	//     clientName: getClientName(this.props.mainStore.clientsDefinitions, cli)
-	// })
-	
+	//
     }
     componentDidUpdate(){
 	if(this.state.isEdited){
-	    this.setValues();
+	    this.populateFields();
 	}
-	// this.props.mainStore.loadPersonalHistory()
-	// console.log(toJS(this.props.mainStore.projectsDefinitions));
-	// getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject)
-	// console.log(toJS(this.props.mainStore));
     }
 
     deleteItem(e){
@@ -68,6 +49,9 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     
     editItem(e){
 	this.setState({isEdited: true});
+    }
+    cancelEdit(){
+	this.setState({isEdited: false});
     }
     
     handleSubmit(e){
@@ -79,7 +63,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
 	this.setState({
 	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject),
-	    clientId: cli,
+	    // clientId: cli,
 	    clientName: getClientName(this.props.mainStore.clientsDefinitions, cli),
 	    isEdited: false
 	});	
@@ -89,7 +73,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	this.setState({activeProject: p});	
     }
 
-    setValues(){
+    populateFields(){
 	let inputValue = document.getElementById("track-input--value-"+this.props.id);
 	let inputComment = document.getElementById("track-input--comment-"+this.props.id);
 	let inputTask = document.getElementById("track-input--task-"+this.props.id);
@@ -101,6 +85,10 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 
     render(){
 	console.log("new task render");
+	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	this.state.projectName = getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
+	this.state.clientName  = getClientName(this.props.mainStore.clientsDefinitions, clid);
+	   
 	// console.log(toJS(this.props.mainStore));
 	// console.log(toJS(this.props.mainStore.projectsDefinitions));
 	if(this.state.isEdited){
@@ -131,6 +119,8 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 			      aria-label="Input"/>
 		    <button
 		      className="btn btn-primary">Update</button>
+		    <button
+		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
 		  </form>
 		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
 		</li>

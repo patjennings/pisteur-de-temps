@@ -22,13 +22,15 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 
     handleDropdownChange(e){
 	e.preventDefault();
+	
+	// on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
 
 	let projectId; // get the id
 	
 	if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
-	    projectId = e.target.parentNode.getAttribute("id");
+	    projectId = e.currentTarget.parentNode.getAttribute("id");
 	} else {
-	    projectId = e.target.getAttribute("id");
+	    projectId = e.currentTarget.getAttribute("id");
 	}
 	this.setState({activeProject: projectId});
 	this.props.onChange(projectId);
@@ -52,7 +54,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		{
 		    this.props.mainStore.projectsDefinitions.map(p => {
 			// console.log(p);
-			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<span className="text-muted small">{p._id}</span></a>;
+			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<div className="text-muted small">{getClientName(this.props.mainStore.clientsDefinitions, p.client)}</div></a>;
 		    })
 		}
 	      </div>

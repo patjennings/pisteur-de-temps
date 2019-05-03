@@ -1,12 +1,10 @@
 import { observable, computed, action, decorate, configure, runInAction, toJS, get, trace } from "mobx";
-import {fetchClientsDefinitions,fetchProjectsDefinitions,fetchUsersDefinitions, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, taskNew, taskDelete, taskUpdate} from "fetch/agent";
+import * as agent from "fetch/agent";
 
 configure({ enforceActions: "observed" });
 
 export class MainStore{
-
-
-    constructor(){
+   constructor(){
 	this.isLoading = false;
 	this.isLoadingProject = false;
 	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
@@ -32,7 +30,7 @@ export class MainStore{
 	console.log("loading personal history…");
 	// this.isLoading = true;
 	
-	fetchPersonalHistory(this.userId)
+	agent.fetchPersonalHistory(this.userId)
 	    .then(action((history) => {
 		// console.log(history);
 		this.trackHistory = history;
@@ -48,7 +46,7 @@ export class MainStore{
 	console.log("project is loading...");
 	this.isLoadingProject = true;
 	// console.log(id);
-	fetchProject(id)
+	agent.fetchProject(id)
 	    .then(action((project) => {
 		console.log(project.data);
 		this.activeProjectDetails = project.data;
@@ -62,7 +60,7 @@ export class MainStore{
     loadTrackedTime(id){
 	this.isLoadingProject = true;
 	// console.log(id);
-	fetchProjectTrackedTime(id)
+	agent.fetchProjectTrackedTime(id)
 	    .then(action((tracked) => {
 		this.activeTrackedTime = tracked.data.message
 	    }))
@@ -75,7 +73,7 @@ export class MainStore{
     loadDefinitions(){
 	// this.isLoading = true;
 
-	fetchClientsDefinitions()
+	agent.fetchClientsDefinitions()
 	    .then(action((clients) => {
 		this.clientsDefinitions = clients;
 	    }))
@@ -85,7 +83,7 @@ export class MainStore{
 	    .finally(action(() => {
 		console.log("fetch clients over")
 	    }))
-	fetchProjectsDefinitions()
+	agent.fetchProjectsDefinitions()
 	    .then(action((projects) => {
 		this.projectsDefinitions = projects;
 	    }))
@@ -95,7 +93,7 @@ export class MainStore{
 	    .finally(action(() => {
 		console.log("fetch projects over")
 	    }))
-	fetchUsersDefinitions()
+	agent.fetchUsersDefinitions()
 	    .then(action((users) => {
 		this.usersDefinitions = users;
 	    }))
@@ -117,8 +115,10 @@ export class MainStore{
 	this.showProject = value;
     }
 
+
+    // tasks
     postNewTask(projectId, formData){
-	taskNew(projectId, formData)
+	agent.taskNew(projectId, formData)
 	    .then(action(() => {
 		this.loadPersonalHistory() // relance le chargement de l'historique perso
 		this.loadProject(projectId) // relance le chargement du projet
@@ -130,7 +130,7 @@ export class MainStore{
 	// .finally(action(() => { this.isLoading = false; }));
     }
     deleteTask(projectId, trackId){
-	taskDelete(projectId, trackId)
+	agent.taskDelete(projectId, trackId)
 	    .then(action(() => {
 		this.loadPersonalHistory() // relance le chargement de l'historique perso
 		this.loadProject(projectId) // relance le chargement du projet
@@ -142,11 +142,36 @@ export class MainStore{
 	// .finally(action(() => { this.isLoading = false; }));
     }
     updateTask(projectId, trackId, formData){
-	taskUpdate(projectId, trackId, formData)
+	agent.taskUpdate(projectId, trackId, formData)
 	    .then(action(() => {
 		this.loadPersonalHistory() // relance le chargement de l'historique perso
 		this.loadProject(projectId) // relance le chargement du projet
 		this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+
+    // clients
+    postNewClient(formData){
+	agent.clientNew(formData)
+	    .then(action(() => {
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+
+    // project
+    postNewProject(formData){
+	agent.projectNew(formData)
+	    .then(action(() => {
+		// console.log(formData);
+		this.loadDefinitions(); 
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -175,6 +200,8 @@ decorate(MainStore, {
     setActiveProject: action,
     setShowProject: action,
     postNewTask: action,
+    postNewClient: action,
+    postNewProject: action,
     updateTask: action,
     deleteTask: action
 });

@@ -24,7 +24,6 @@ export function getProjectName(defs, id){
 }
 // get a client name from an id and a list of definitions (list of ids+related name)
 export function getClientName(defs, id){
-
     let result = null;
     const node = defs.filter(
 	item => {return item._id == id;}
