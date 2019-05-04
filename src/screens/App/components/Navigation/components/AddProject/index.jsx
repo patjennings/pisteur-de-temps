@@ -87,7 +87,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 			 value={this.props.clientId}
 			 aria-label="Input" />
 		  <button
-		    className="btn btn-primary">Update</button>
+		    className="btn btn-primary">Create project</button>
 		  <button
 		    className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
 		</form>

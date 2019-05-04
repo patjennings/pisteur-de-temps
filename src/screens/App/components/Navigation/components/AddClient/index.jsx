@@ -61,7 +61,7 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 			 aria-label="Input" />
 		  {this.state.errorOnName ? <div className="invalid-feedback">Please choose a name.</div> : null }
 		  <button
-		    className="btn btn-primary">Update</button>
+		    className="btn btn-primary">Create client</button>
 		  <button
 		    className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
 		</form>

@@ -39,7 +39,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 
     render() {
 	return (
-	    <div className="dropdown">
+	    <div className="dropdown project-selector">
 	      <button
 		className="dropdown-toggle btn"
 		data-toggle="dropdown"

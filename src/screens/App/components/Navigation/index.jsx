@@ -42,7 +42,7 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
 	    { this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
 	    
 		<div className="footer">
-		<button className="btn btn-primary" type="button" onClick={this.addClient}>Ajouter un client</button>
+		<button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>
 		</div>
 		</div>
 		</div>

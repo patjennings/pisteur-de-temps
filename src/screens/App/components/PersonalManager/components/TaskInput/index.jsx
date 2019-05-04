@@ -15,6 +15,7 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 
 	this.state = {
 	    activeProject: null,
+	    hasErrors: false,
 	    errorOnTime: false,
 	    errorOnTask: false,
 	    errorOnProject: false
@@ -34,15 +35,17 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 	timeField.value == "" ? this.state.errorOnTime = true : this.state.errorOnTime = false;
 	taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
 	this.state.activeProject == null ? this.state.errorOnProject = true : this.state.errorOnProject = false;
-
+	this.state.hasErrors = true;
 	
 	
 	if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject){
+	    this.state.hasErrors = false;
 	    let fd = retrieveFormData(event.target, this.props.mainStore.userId);
 	    this.props.mainStore.postNewTask(this.state.activeProject, fd);
 	}
 	
 	this.setState({
+	    hasErrors: this.state.hasErrors,
 	    errorOnTime: this.state.errorOnTime,
 	    errorOnTask: this.state.errorOnTask,
 	    errorOnProject: this.state.errorOnProject
@@ -60,6 +63,10 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 	
 	return (
 	    <div className="card-header track-input">
+	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
+		    You need {this.state.errorOnTime ? "a time spent, " : null }{ this.state.errorOnTask ? "a task, " : null }{ this.state.errorOnProject ? "a related project " : null  }in order to complete
+	      </div> : null }
+	      
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
@@ -71,7 +78,6 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 			   placeholder="Time"
 			   aria-label="Input"
 			   data-parse="number"/>
-		    {this.state.errorOnTime ? <div className="invalid-feedback">Please Enter a value.</div> : null }
 		    <label htmlFor="track-input--task">Task</label>
 		    <input className={"form-control w-100 "+taskAttr}
 			   name="task"
@@ -79,7 +85,6 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 			   type="text"
 			   placeholder="Task description"
 			   aria-label="Input"/>
-		    {this.state.errorOnTask ? <div className="invalid-feedback">Please Enter a task</div> : null }
 		    <label htmlFor="track-input--comment">Comment</label>
 		    <textarea className="form-control w-100"
 			      name="comment"
@@ -92,7 +97,6 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 		      className="btn btn-primary">Submit</button>
 		  </div>
 		  <div className="col">
-		    {this.state.errorOnProject ? <div className="invalid-feedback">Please select a project</div> : null }
 		    <ProjectsSelector onChange={this.setActiveProject} />
 
 		  </div>

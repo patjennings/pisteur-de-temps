@@ -11374,7 +11374,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
 
 
 
@@ -43851,7 +43851,7 @@ function (_Component) {
         className: "invalid-feedback"
       }, "Please choose a name.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Create client"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
       }, "Cancel"))));
@@ -44031,7 +44031,7 @@ function (_Component) {
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Create project"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
       }, "Cancel"))));
@@ -44342,7 +44342,7 @@ function (_Component) {
         className: "btn btn-primary",
         type: "button",
         onClick: this.addClient
-      }, "Ajouter un client"))));
+      }, "Add a client"))));
     }
   }]);
 
@@ -44724,6 +44724,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TaskInput).call(this, props));
     _this.state = {
       activeProject: null,
+      hasErrors: false,
       errorOnTime: false,
       errorOnTask: false,
       errorOnProject: false
@@ -44743,13 +44744,16 @@ function (_Component) {
       timeField.value == "" ? this.state.errorOnTime = true : this.state.errorOnTime = false;
       taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
       this.state.activeProject == null ? this.state.errorOnProject = true : this.state.errorOnProject = false;
+      this.state.hasErrors = true;
 
       if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {
+        this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.mainStore.userId);
         this.props.mainStore.postNewTask(this.state.activeProject, fd);
       }
 
       this.setState({
+        hasErrors: this.state.hasErrors,
         errorOnTime: this.state.errorOnTime,
         errorOnTask: this.state.errorOnTask,
         errorOnProject: this.state.errorOnProject
@@ -44769,7 +44773,10 @@ function (_Component) {
       var taskAttr = this.state.errorOnTask ? "is-invalid" : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header track-input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, "You need ", this.state.errorOnTime ? "a time spent, " : null, this.state.errorOnTask ? "a task, " : null, this.state.errorOnProject ? "a related project " : null, "in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -44785,9 +44792,7 @@ function (_Component) {
         placeholder: "Time",
         "aria-label": "Input",
         "data-parse": "number"
-      }), this.state.errorOnTime ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please Enter a value.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "track-input--task"
       }, "Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control w-100 " + taskAttr,
@@ -44796,9 +44801,7 @@ function (_Component) {
         type: "text",
         placeholder: "Task description",
         "aria-label": "Input"
-      }), this.state.errorOnTask ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please Enter a task") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "track-input--comment"
       }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "form-control w-100",
@@ -44811,9 +44814,7 @@ function (_Component) {
         className: "btn btn-primary"
       }, "Submit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
-      }, this.state.errorOnProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please select a project") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.setActiveProject
       })))));
     }
@@ -45700,7 +45701,7 @@ function (_Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
+        className: "dropdown project-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "dropdown-toggle btn",
         "data-toggle": "dropdown",
