@@ -4,13 +4,18 @@ import * as agent from "fetch/agent";
 configure({ enforceActions: "observed" });
 
 export class MainStore{
-   constructor(){
+    constructor(){
+	this.pageDisplayed = "dashboard";
+
+	this.isLoggedIn = true;
+	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
+	
 	this.isLoading = false;
 	this.isLoadingProject = false;
-	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
+
 	this.showProject = false; // un projet est-il affiché ?
 	this.activeProject = null; // le projet actif
-	
+	    
 	this.loadDefinitions();
 
 	this.clientsDefinitions = []; // définitions des clients
@@ -26,6 +31,20 @@ export class MainStore{
     }
 
 
+    setActiveProject(value){
+	console.log("new active project is "+ value);
+	this.loadProject(value);
+	this.loadTrackedTime(value);
+	this.activeProject = value;
+    }
+    setShowProject(value){
+	this.showProject = value;
+    }
+    setPageDisplayed(value){
+	this.pageDisplayed = value;
+    }
+
+
     loadPersonalHistory(){
 	console.log("loading personal history…");
 	// this.isLoading = true;
@@ -35,9 +54,9 @@ export class MainStore{
 		// console.log(history);
 		this.trackHistory = history;
 	    }))
-	    // .catch(action((error) => {
-	    // 	console.log(error);
-	    // }))
+	// .catch(action((error) => {
+	// 	console.log(error);
+	// }))
 	    .finally(action(() => { this.isLoading = false; }));
 	
     }
@@ -105,15 +124,7 @@ export class MainStore{
 	    }))
     }
 
-    setActiveProject(value){
-	console.log("new active project is "+ value);
-	this.loadProject(value);
-	this.loadTrackedTime(value);
-	this.activeProject = value;
-    }
-    setShowProject(value){
-	this.showProject = value;
-    }
+   
 
 
     // tasks
@@ -181,9 +192,11 @@ export class MainStore{
 }
 
 decorate(MainStore, {
+    pageDisplayed: observable,
+    isLoggedIn: observable,
+    userId: observable,
     isLoading: observable,
     isLoadingProject: observable,
-    userId: observable,
     showProject: observable,
     activeProject: observable,
     activeTrackedTime: observable,
@@ -193,12 +206,13 @@ decorate(MainStore, {
     usersDefinitions: observable,
     trackHistory: observable,
     state: observable,
+    setPageDisplayed: action,
+    setActiveProject: action,
+    setShowProject: action,
     loadPersonalHistory: action,
     loadProject: action,
     loadTrackedTime: action,
     loadDefinitions: action,
-    setActiveProject: action,
-    setShowProject: action,
     postNewTask: action,
     postNewClient: action,
     postNewProject: action,
