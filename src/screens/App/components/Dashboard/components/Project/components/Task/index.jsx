@@ -88,62 +88,46 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	// console.log(this.props.mainStore.activeProjectDetails._id);
 	if(this.state.isEdited){
 	    return (
-		<tr className="track edited">	  
-		  <td colSpan="7">
-		    <form onSubmit={this.handleSubmit}>
-		      <table>
-			<tbody>
-			<tr>
-			  <td>
-			    <input className="form-control"
-				   name="task"
-				   id={"track-input--task-"+this.props.taskid}
-				   type="text"
-				   placeholder="Task description"
-				   aria-label="Input"/>
-			   
-			  </td>
-			  <td>
-			     <input className="form-control"
-				   name="value"
-				   id={"track-input--value-"+this.props.taskid}
-				   type="text"
-				   placeholder="Time"
-				   aria-label="Input"
-				   data-parse="number"/>
-			  </td>
-			  <td>
-			    <input className="form-control"
-				      name="comment"
-				      id={"track-input--comment-"+this.props.taskid}
-				      type="text"
-				      placeholder="Write a comment"
-				      aria-label="Input"/>
-			  </td>
-			  <td>
-			    <button
-			      className="btn btn-primary btn-sm">Update</button>
-			    <button
-			      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
-			  </td>
-			</tr>
-			</tbody>
-		      </table>
-		    </form>
-		  </td>
-		</tr>
+		<div className="track edited">	  
+		  <form onSubmit={this.handleSubmit}>
+		    <input className="form-control"
+			   name="task"
+			   id={"track-input--task-"+this.props.taskid}
+			   type="text"
+			   placeholder="Task description"
+			   aria-label="Input"/>
+		    
+		    <input className="form-control"
+			   name="value"
+			   id={"track-input--value-"+this.props.taskid}
+			   type="text"
+			   placeholder="Time"
+			   aria-label="Input"
+			   data-parse="number"/>
+		    <input className="form-control"
+			   name="comment"
+			   id={"track-input--comment-"+this.props.taskid}
+			   type="text"
+			   placeholder="Write a comment"
+			   aria-label="Input"/>
+		    <button
+		      className="btn btn-primary btn-sm">Update</button>
+		    <button
+		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+		  </form>
+		</div>
 	    );
 	} else {
 	    return (
-		<tr className="track">
-		  <td>{this.props.task}</td>
-		  <td>{this.props.value}</td>
-		  <td>{this.props.comment}</td>
-		  <td>{this.props.username}</td>
-		  <td>{readableDate(this.props.date)}</td>
-		  <td><a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a></td>
-		  <td><a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a></td>
-		</tr>
+		<div className="track">
+		  {this.props.task}
+		  {this.props.value}
+		  {this.props.comment}
+		  {this.props.username}
+		  {readableDate(this.props.date)}
+		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a>
+		  <a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>
+		</div>
 	    );
 
 	}

@@ -47412,20 +47412,18 @@ function (_Component) {
       // console.log(this.props.date);
       // console.log(this.props.mainStore.activeProjectDetails._id);
       if (this.state.isEdited) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track edited"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          colSpan: "7"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "task",
           id: "track-input--task-" + this.props.taskid,
           type: "text",
           placeholder: "Task description",
           "aria-label": "Input"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "value",
           id: "track-input--value-" + this.props.taskid,
@@ -47433,23 +47431,23 @@ function (_Component) {
           placeholder: "Time",
           "aria-label": "Input",
           "data-parse": "number"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "comment",
           id: "track-input--comment-" + this.props.taskid,
           type: "text",
           placeholder: "Write a comment",
           "aria-label": "Input"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary btn-sm"
         }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light btn-sm",
           onClick: this.cancelEdit
-        }, "Cancel"))))))));
+        }, "Cancel")));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.value), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, this.props.task, this.props.value, this.props.comment, this.props.username, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "track-edit d-flex align-items-center",
           href: "#",
           "data-toggle": "tooltip",
@@ -47458,7 +47456,7 @@ function (_Component) {
           onClick: this.editItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "ico ico-medium"
-        }, "pen"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, "pen")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "track-delete d-flex align-items-center",
           href: "#",
           "data-toggle": "tooltip",
@@ -47467,7 +47465,7 @@ function (_Component) {
           onClick: this.deleteItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "ico ico-medium ico-trash"
-        }, "trash"))));
+        }, "trash")));
       }
     }
   }]);
@@ -47694,10 +47692,9 @@ function (_Component) {
         "aria-valuenow": "25",
         "aria-valuemin": "0",
         "aria-valuemax": "100"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "table project-tracks"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        component: "tbody",
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        component: "div",
+        className: "project-tracks",
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
@@ -47712,7 +47709,7 @@ function (_Component) {
           date: t.dateCreation,
           onChange: _this2.handleChange
         });
-      })))));
+      }))));
     }
   }]);
 

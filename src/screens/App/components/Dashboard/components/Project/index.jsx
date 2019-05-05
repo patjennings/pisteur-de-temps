@@ -80,10 +80,9 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		    
 		  
 		</div>
-		<table className="table project-tracks">
 
 		    <ReactCSSTransitionGroup
-		      component="tbody"
+		      component="div" className="project-tracks"
 		      transitionName="fade"
 		      transitionEnterTimeout={500}
 		      transitionLeaveTimeout={300}>
@@ -91,7 +90,6 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
 		  })}
 		  </ReactCSSTransitionGroup>
-		</table>
 	      </div>
 	    </div>
 	);
