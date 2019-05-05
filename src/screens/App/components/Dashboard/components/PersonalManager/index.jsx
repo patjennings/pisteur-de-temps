@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
 
@@ -37,32 +39,38 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
 	// console.log(this.props.mainStore.isLoading);
 	// console.log(toJS(this.props.mainStore.projectsDefinitions));
 	return (
+	    
 	    <div className="col-6 track-manager">
-	      <div className="card">
+	      
+		<div className="card">
 
-		{/* --------- */}
-		{/* New track */}
-		<TaskInput store={this.props.mainStore} onChange={this.handleChange} />
+		  {/* --------- */}
+		  {/* New track */}
+		  <TaskInput store={this.props.mainStore} onChange={this.handleChange} />
 
-		{/* ------------- */}
-		{/* Track history */}
-		<ul className="list-group list-group-flush track-history">
-		  {this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
-		      return <Task
-				onClick={event => this.handleClick(childData, event)}
-				key={childData.id}
-				id={childData.id}
-				task={childData.task}
-				value={childData.value}
-				comment={childData.comment}
-				relatedProject={childData.relatedProject}
-				date={childData.date}
-				userid={this.props.store.userId}
-				onChange={event => this.handleChange(childData, event)}
-				store={this.props.mainStore} />;
-			    })}
-		</ul>
-	      </div>
+		  {/* ------------- */}
+		  {/* Track history */}
+		    <ReactCSSTransitionGroup
+		      component="ul" className="list-group list-group-flush track-history"
+		      transitionName="fade"
+		      transitionEnterTimeout={500}
+		      transitionLeaveTimeout={300}>
+		      {this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
+			  return <Task
+				       onClick={event => this.handleClick(childData, event)}
+			    key={childData.id}
+			    id={childData.id}
+			    task={childData.task}
+			    value={childData.value}
+			    comment={childData.comment}
+			    relatedProject={childData.relatedProject}
+			    date={childData.date}
+			    userid={this.props.store.userId}
+			    onChange={event => this.handleChange(childData, event)}
+			    store={this.props.mainStore} />;
+			})}
+		    </ReactCSSTransitionGroup>
+		</div>
 	    </div>
 	);
     }

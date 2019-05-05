@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // import Definitions from 'utils/definitions';
 
 import Login from './components/Login';
@@ -20,17 +21,15 @@ const App = inject("mainStore")(observer(class App extends Component {
     render() {
 	// console.log("App is rendered");
 	
-	return (
-	    <div className="app">
+	return (	
+		<div className="app">
+		{!this.props.mainStore.isLoggedIn ? <Login /> : null }
+	    {this.props.mainStore.isLoggedIn ? <Nav /> : null }
+	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "dashboard" ? <Dashboard /> : null }
+	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "synthesis" ? <Synthesis /> : null }
+	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "admin" ? <Admin /> : null }
+		</div>
 
-	      {!this.props.mainStore.isLoggedIn ? <Login /> : null }
-	      {this.props.mainStore.isLoggedIn ? <Nav /> : null }
-	      {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "dashboard" ? <Dashboard /> : null }
-	      {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "synthesis" ? <Synthesis /> : null }
-	      {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "admin" ? <Admin /> : null }
-	  
-	      
-	    </div>
 	);
     }
 }))

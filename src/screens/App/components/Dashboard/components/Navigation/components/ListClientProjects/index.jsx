@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import AddProject from "../AddProject";
 
@@ -47,12 +49,17 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
 	      </h5>
 	      { this.state.isAddingProject ? <AddProject onChange={this.handleChange} clientId={this.props.id}/> : null }
 	      <ul>
+		<ReactCSSTransitionGroup
+		      transitionName="fade"
+		      transitionEnterTimeout={500}
+		      transitionLeaveTimeout={300}>
 		{this.props.mainStore.projectsDefinitions.map(p => {
 		    if(p.client === this.props.id){
 			this.state.hasProject = true;
 			return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
 		    }
 		})}
+		</ReactCSSTransitionGroup>
 		{this.checkNoProject()}
 	      </ul>
 	    </div>

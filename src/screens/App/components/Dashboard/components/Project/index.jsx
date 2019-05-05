@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 // import clientDefinitions from '../utils/clientDefinitions';
 import Task from "./components/Task";
 import axios from "axios";
@@ -49,6 +51,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	
 	return (
 	    <div className="col-6 project-details">
+	      
 	      <div className="card">
 		<div className="card-header">
 		  <div className="row">
@@ -78,11 +81,16 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		  
 		</div>
 		<table className="table project-tracks">
-		  <tbody>
+
+		    <ReactCSSTransitionGroup
+		      component="tbody"
+		      transitionName="fade"
+		      transitionEnterTimeout={500}
+		      transitionLeaveTimeout={300}>
 		  {this.props.mainStore.activeTrackedTime.slice(0).reverse().map(t => {
 		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
 		  })}
-		  </tbody>
+		  </ReactCSSTransitionGroup>
 		</table>
 	      </div>
 	    </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import ListClientProjects from "./components/ListClientProjects";
 import AddClient from './components/AddClient';
@@ -34,11 +35,16 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
 	    <div className="row">
 	      <div className="col-12">
 		<input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
+		<ReactCSSTransitionGroup
+		      transitionName="fade"
+		      transitionEnterTimeout={500}
+		      transitionLeaveTimeout={300}>
 		{this.props.mainStore.clientsDefinitions.map(c => {
 		    return (
 			<ListClientProjects key={c._id} name={c.name} id={c._id}/>
 		    );
 		})}
+	    </ReactCSSTransitionGroup>
 	    { this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
 	    
 		<div className="footer">
