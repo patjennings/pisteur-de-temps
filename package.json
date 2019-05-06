@@ -20,6 +20,7 @@
 						"react-addons-css-transition-group": "^15.6.2",
 						"react-dom": "^16.8.5",
 						"react-hot-loader": "^4.8.3",
+						"react-router-dom": "^5.0.0",
 						"start-concurrently": "^1.0.1"
 			},
 			"scripts": {

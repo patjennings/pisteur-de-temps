@@ -1,12 +1,25 @@
 var models =    require("./models/mongo"); // le modèle mongodb
 var path = require("path");
 var express = require("express");
+var crypto = require("crypto");
+
+var validatePassword = require("./utils/validation").validatePassword;
+var saltAndHash = require("./utils/validation").saltAndHash;
+console.log(validatePassword);
+// var mainStore = require("../src/shared/stores/mainStore");
 
 // console.log(models.base.Mongoose);
 // req > request
 // res > response
 
+// import models from "./models/mongo"; // le modèle mongodb
+// import path from "path";
+// import express from "express";
+// import mainStore from "../src/shared/stores/mainStore";
+// import crypto from "crypto";
+
 module.exports = function(app){
+// export default class app{
 
     app.use("/styles", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/css')); 
     app.use("/dist", express.static(path.resolve(".") + '/dist')); 
@@ -20,6 +33,46 @@ module.exports = function(app){
 	// console.log(req.cookie);
 	res.render('app', {title: "App root"});
     });
+
+    app.get('/overview', function(req, res) {
+	console.log(mainStore);
+	res.render('app', {title: "App root"});
+    });
+    app.get('/synthesis', function(req, res) {
+	res.render('app', {title: "App root"});
+    });
+    app.get('/admin', function(req, res) {
+	res.render('app', {title: "App root"});
+    });
+
+    // ------------
+    // LOGIN
+    // ------------
+    app.get("/login", function (req, res) {
+	// var db = new models.users(); // on créer ce nouvel objet models pour accéder au schéma
+	var response = {};
+	
+	const email = req.query.email;
+	const password = req.query.password;
+
+	models.users.findOne({email: email}, function(err, data){
+	    // console.log(data);
+            if(err || data == null) {
+                response = {"error" : true, "message" : "User not found"};
+            } else {
+		validatePassword(password, data.password, function(err, res) {
+		if (res){
+		    response = {"error" : false, "message" : data.email+" is now connected", "userId" : data._id};
+		} else{
+		   response = {"error" : true, "message" : "Invalid password"};
+		}
+	    });
+            }
+	    res.json(response);
+        });
+    });
+
+    
     
     // ------------
     // USERS
@@ -52,11 +105,12 @@ module.exports = function(app){
 	db.firstName = req.body.firstName;
 	db.lastName = req.body.lastName;
         db.email = req.body.email;
-        // Hash the password using SHA1 algorithm.
-        db.password =  require('crypto')
-            .createHash('sha1')
-            .update(req.body.password)
-            .digest('base64');
+	
+        // Hash the password using SHA1 algorithm, plus the salt
+        saltAndHash(req.body.password, function(hash){
+	    db.password = hash;
+	});
+	
 	db.relatedProjects = req.body.relatedProjects;
         db.save(function(err, db){
             // save() will run insert() command of MongoDB.

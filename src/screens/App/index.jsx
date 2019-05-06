@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // import Definitions from 'utils/definitions';
 
 import Login from './components/Login';
-import Nav from './components/Nav';
 import Dashboard from './components/Dashboard';
 import Synthesis from './components/Synthesis';
 import Admin from './components/Admin';
@@ -21,14 +21,30 @@ const App = inject("mainStore")(observer(class App extends Component {
     render() {
 	// console.log("App is rendered");
 	
-	return (	
-		<div className="app">
-		{!this.props.mainStore.isLoggedIn ? <Login /> : null }
-	    {this.props.mainStore.isLoggedIn ? <Nav /> : null }
-	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "dashboard" ? <Dashboard /> : null }
-	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "synthesis" ? <Synthesis /> : null }
-	    {this.props.mainStore.isLoggedIn && this.props.mainStore.pageDisplayed === "admin" ? <Admin /> : null }
+	return (
+	    <Router>
+	      <div className="app">
+		<Route exact path="/" component={Login} />
+		<Route path="/overview" render={() => (
+		      !this.props.mainStore.isLoggedIn ?
+			<Redirect to="/"/>
+			    :
+			    <Dashboard/>
+		)} />
+		<Route path="/synthesis" render={() => (
+		    !this.props.mainStore.isLoggedIn ?
+			<Redirect to="/"/>
+			:
+			<Synthesis/>
+		)} />
+		<Route path="/admin" render={() => (
+		    !this.props.mainStore.isLoggedIn ?
+			<Redirect to="/"/>
+			:
+			<Admin/>
+		)} />
 		</div>
+	    </Router>
 
 	);
     }

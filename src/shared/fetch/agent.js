@@ -4,6 +4,23 @@ import {getFullTime, getPercent} from 'utils/budget';
 
 const API_ROOT = "http://localhost:3000";
 
+// --------------------
+// Login
+// --------------------
+export function login(em, pwd){
+    console.log(em, pwd);
+    let result = axios
+	.get(`${API_ROOT}/login`, {params: {
+	    email : em,
+	    password : pwd
+	}})
+	.then(res => {
+	    return res.data
+	    // console.log(res.data);
+	})
+	.catch(error => console.log(error));
+    return result;
+}
 
 // --------------------
 // Definitions

@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PersonalManager from './components/PersonalManager';
 import Project from './components/Project';
 import Navigation from './components/Navigation';
+import MainNavigation from 'sharedComponents/MainNavigation';
 
 import {observer, inject} from "mobx-react";
 
@@ -18,7 +19,10 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
     render() {
 	// console.log("Dashboard is rendered");
 	return (
+	    
 	    <div className="dashboard">
+	      <MainNavigation />
+	      
 	      {/* Dashboard */}
 	      <div id="wrapper" className="container-fluid">
 		<div className="row">

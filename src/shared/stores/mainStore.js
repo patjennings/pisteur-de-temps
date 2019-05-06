@@ -7,7 +7,7 @@ export class MainStore{
     constructor(){
 	this.pageDisplayed = "dashboard";
 
-	this.isLoggedIn = true;
+	this.isLoggedIn = false;
 	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
 	
 	this.isLoading = false;
@@ -42,6 +42,15 @@ export class MainStore{
     }
     setPageDisplayed(value){
 	this.pageDisplayed = value;
+    }
+
+    logToApp(formData){
+	console.log(`try to log with ${formData.username} and ${formData.password}`);
+	agent
+	    .login(formData.username, formData.password)
+	    .then(action((res) => {
+		console.log(res.message.userId);
+	    }))
     }
 
 
@@ -206,6 +215,7 @@ decorate(MainStore, {
     usersDefinitions: observable,
     trackHistory: observable,
     state: observable,
+    logToApp: action,
     setPageDisplayed: action,
     setActiveProject: action,
     setShowProject: action,
