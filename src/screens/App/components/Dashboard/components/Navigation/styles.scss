@@ -1,0 +1,19 @@
+#nav{
+    background: #ebebeb;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    .client-name{
+	span{}
+	.project-add{
+	    color: var(--dark);
+	    text-decoration: none;
+
+	    &:hover{
+		text-decoration: none;
+	    }
+	}
+    }
+}

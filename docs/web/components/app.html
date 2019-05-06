@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+  <link rel="alternate" type="application/rss+xml" title="Documentation" href="/feed.xml">
+  
+</head>
+
+
+  <body>
+    <div class="docs-sidebar">
+        <div class="wrapper">
+  
+  
+  <a class="site-title" rel="author" href="/"><h1>Documentation</h1></a>
+  
+  
+  <h4>API</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   <li><a href="/api/clients" class="nav-link" >/clients/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/api/projects" class="nav-link" >/projects/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/api/users" class="nav-link" >/users/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>component</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/components/app" class="nav-link" >App <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-listclientprojects.html" class="nav-link" >ListClientProjects <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-navigation.html" class="nav-link" >Navigation <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-personalmanager.html" class="nav-link" >Personal Manager <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components/project" class="nav-link" >Project <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components.html" class="nav-link" >Components tree <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>function</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/fetchPersonalHistory.html" class="nav-link" >fetchPersonalHistory <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/functions/functions" class="nav-link" >Functions <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>variable</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/variables/variables" class="nav-link" >Variables <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>module</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+
+
+</div>
+
+
+    </div>
+    <div class="container-fluid docs-main" aria-label="Content">
+        <div class="row docs-main--inner">
+            <div class="col-12">
+                <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">App</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="props">Props</h2>
+
+<p>No props</p>
+
+<h2 id="state">State</h2>
+
+<h6 id="userid-string">userId: <code class="highlighter-rouge">String</code></h6>
+
+<p>the id of the currently logged in user</p>
+
+<h6 id="showproject-boolean">showProject: <code class="highlighter-rouge">Boolean</code></h6>
+
+<p><code class="highlighter-rouge">true</code> if the Project component is displayed. Default : <code class="highlighter-rouge">false</code></p>
+
+<h6 id="activeproject-string">activeProject: <code class="highlighter-rouge">String</code></h6>
+
+<p>Id of the active project</p>
+
+<h6 id="definitions-object">definitions: <code class="highlighter-rouge">Object</code></h6>
+
+<p>the definitions of client, project, task IDs</p>
+
+<h2 id="logic">Logic</h2>
+
+<h4 id="setdefinitions"><code class="highlighter-rouge">setDefinitions()</code></h4>
+
+<p>Sets the definitions that will be passed as props to each component. See <code class="highlighter-rouge">shared/utils/definitions.js</code> for details.
+It calls an async <code class="highlighter-rouge">getDefinitions()</code> in the <code class="highlighter-rouge">Definitions</code> class.</p>
+
+<p>Then it calls a <code class="highlighter-rouge">setState</code> in order to update <code class="highlighter-rouge">{definitions}</code></p>
+
+<h4 id="handlechangedstring"><code class="highlighter-rouge">handleChange(d:String)</code></h4>
+
+<p>Updates {showProject} &amp; {activeProject} in the state</p>
+
+<h6 id="parameters">Parameters</h6>
+
+<ul>
+  <li><code class="highlighter-rouge">d</code> : The selected project.</li>
+</ul>
+
+<h2 id="return">Return</h2>
+
+<h4 id="personalmanager">PersonalManager</h4>
+<p>Props :</p>
+<ul>
+  <li><strong>defs</strong>:definitions</li>
+  <li><strong>onChange</strong>:handleChange</li>
+  <li><strong>userid</strong>:userId</li>
+</ul>
+
+<h4 id="project">Project</h4>
+<p>Props :</p>
+<ul>
+  <li><strong>defs</strong>:definitions</li>
+  <li><strong>key</strong>:activeProject</li>
+  <li><strong>projectid</strong>:activeProject</li>
+</ul>
+
+<h4 id="navigation">Navigation</h4>
+<p>Props :</p>
+<ul>
+  <li><strong>defs</strong>:definitions</li>
+  <li><strong>onChange</strong>:handleChange</li>
+</ul>
+
+
+  </div>
+
+</article>
+
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

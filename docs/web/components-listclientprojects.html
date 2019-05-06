@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+  <link rel="alternate" type="application/rss+xml" title="Documentation" href="/feed.xml">
+  
+</head>
+
+
+  <body>
+    <div class="docs-sidebar">
+        <div class="wrapper">
+  
+  
+  <a class="site-title" rel="author" href="/"><h1>Documentation</h1></a>
+  
+  
+  <h4>API</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   <li><a href="/api/clients" class="nav-link" >/clients/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/api/projects" class="nav-link" >/projects/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/api/users" class="nav-link" >/users/ <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>component</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/components/app" class="nav-link" >App <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-listclientprojects.html" class="nav-link" >ListClientProjects <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-navigation.html" class="nav-link" >Navigation <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components-personalmanager.html" class="nav-link" >Personal Manager <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components/project" class="nav-link" >Project <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/components.html" class="nav-link" >Components tree <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>function</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/fetchPersonalHistory.html" class="nav-link" >fetchPersonalHistory <small class="text-muted"></small></a></li>
+  
+   
+  
+   <li><a href="/functions/functions" class="nav-link" >Functions <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>variable</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   <li><a href="/variables/variables" class="nav-link" >Variables <small class="text-muted"></small></a></li>
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+  <h4>module</h4>
+  <ul class="site-nav">
+  
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+   </ul>
+    
+
+
+</div>
+
+
+    </div>
+    <div class="container-fluid docs-main" aria-label="Content">
+        <div class="row docs-main--inner">
+            <div class="col-12">
+                <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">ListClientProjects</h1>
+  </header>
+
+  <div class="post-content">
+    <p>Display a list of projects by a defined client.</p>
+
+<h2 id="props">Props</h2>
+
+<ul>
+  <li>key : the client id</li>
+  <li>name : the client name</li>
+  <li>id : the client id</li>
+  <li>defs : definitions</li>
+  <li>onChange : onChange function</li>
+</ul>
+
+<h2 id="state">State</h2>
+
+<h6 id="hasproject-boolean">hasProject: <code class="highlighter-rouge">Boolean</code></h6>
+
+<p>Return true if the client has project. Default: <code class="highlighter-rouge">false</code></p>
+
+<h6 id="definitions-object">definitions: <code class="highlighter-rouge">Object</code></h6>
+
+<p>the definitions of client, project, task IDs</p>
+
+<h2 id="logic">Logic</h2>
+
+<h4 id="handlechangedataobject-eventobject"><code class="highlighter-rouge">handleChange(data:Object, event:Object)</code></h4>
+
+<p>Call the onChange props</p>
+
+<h6 id="parameters">Parameters</h6>
+
+<ul>
+  <li><code class="highlighter-rouge">data</code> : the project data, based on definitions.ProjectsDefinitions.</li>
+  <li><code class="highlighter-rouge">event</code> : the event object</li>
+</ul>
+
+<h2 id="return">Return</h2>
+
+<p>Rendered object</p>
+
+  </div>
+
+</article>
+
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

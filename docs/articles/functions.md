@@ -2,7 +2,7 @@
 title: Functions
 permalink: functions/functions
 layout: page
-categories: [function]
+category: function
 ---
 
 This part describes functions.
