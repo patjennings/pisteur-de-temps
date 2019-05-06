@@ -2,7 +2,7 @@
 title: Variables
 permalink: variables/variables
 layout: page
-categories: [variable]
+category: variable
 ---
 
 Les variables de l'application
