@@ -36,8 +36,8 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
 
     render() {
 	console.log("Personal Manager is rendered");
-	// console.log(this.props.mainStore.isLoading);
-	// console.log(toJS(this.props.mainStore.projectsDefinitions));
+	console.log(this.props.mainStore.trackHistory);
+
 	return (
 	    
 	    <div className="col-6 track-manager">

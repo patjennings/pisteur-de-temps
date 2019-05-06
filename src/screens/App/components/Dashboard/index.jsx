@@ -27,8 +27,6 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 	      <div id="wrapper" className="container-fluid">
 		<div className="row">
 		  
-		  
-
 		  <div id="main" className="col-9">
 		    {/*<div className="row">*/}
 		      <ReactCSSTransitionGroup

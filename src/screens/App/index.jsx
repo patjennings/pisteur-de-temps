@@ -19,12 +19,17 @@ const App = inject("mainStore")(observer(class App extends Component {
     }
 
     render() {
-	// console.log("App is rendered");
+	console.log("App is rendered");
+	console.log("isLoggedIn : "+this.props.mainStore.isLoggedIn);
 	
 	return (
-	    <Router>
 	      <div className="app">
-		<Route exact path="/" component={Login} />
+		<Route exact path="/" render={() => (
+		      !this.props.mainStore.isLoggedIn ?
+			<Login/>
+			    :
+			    <Redirect to="/overview"/>
+		)} />
 		<Route path="/overview" render={() => (
 		      !this.props.mainStore.isLoggedIn ?
 			<Redirect to="/"/>
@@ -44,7 +49,6 @@ const App = inject("mainStore")(observer(class App extends Component {
 			<Admin/>
 		)} />
 		</div>
-	    </Router>
 
 	);
     }

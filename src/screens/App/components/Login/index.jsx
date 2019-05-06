@@ -73,12 +73,12 @@ const Login = inject("mainStore")(observer(class Login extends Component {
 		      className="btn btn-primary">Sign in</button>
 		    <div className="form-check">
 		      <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-			<label className="form-check-label" for="defaultCheck1">
+			<label className="form-check-label" htmlFor="defaultCheck1">
 			  Remember me
 			</label>
 		    </div>
-		    <a href="#" onClick="">Forgot your password</a>
-		    <a href="#" onClick="">Create an account</a>
+		    <a href="#">Forgot your password</a>
+		    <a href="#">Create an account</a>
 		  </div>
 		</div>
 	      </form>

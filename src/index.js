@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link, Redirect, hashHistory } from "react-router-dom";
 
 import mainStore from "stores/mainStore";
 
@@ -23,9 +24,11 @@ const stores = {
 }
 
 ReactDOM.render(
-	<Provider {...stores}>
+    <Router history={hashHistory}>
+      <Provider {...stores}>
 	<App />
-	</Provider>,
-	
+      </Provider>
+    </Router>,
+    
     document.getElementById('root')
 );

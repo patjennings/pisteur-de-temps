@@ -49029,12 +49029,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var stores_mainStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stores/mainStore */ "./src/shared/stores/mainStore.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _screens_App_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./screens/App/index */ "./src/screens/App/index.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var stores_mainStore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! stores/mainStore */ "./src/shared/stores/mainStore.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _screens_App_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./screens/App/index */ "./src/screens/App/index.jsx");
+
 
 
 
@@ -49048,9 +49050,11 @@ __webpack_require__.r(__webpack_exports__);
 // console.log(mainStore);
 
 var stores = {
-  mainStore: stores_mainStore__WEBPACK_IMPORTED_MODULE_2__["default"]
+  mainStore: stores_mainStore__WEBPACK_IMPORTED_MODULE_3__["default"]
 };
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mobx_react__WEBPACK_IMPORTED_MODULE_4__["Provider"], stores, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_screens_App_index__WEBPACK_IMPORTED_MODULE_6__["default"], null)), document.getElementById('root'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], {
+  history: react_router_dom__WEBPACK_IMPORTED_MODULE_2__["hashHistory"]
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mobx_react__WEBPACK_IMPORTED_MODULE_5__["Provider"], stores, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_screens_App_index__WEBPACK_IMPORTED_MODULE_7__["default"], null))), document.getElementById('root'));
 
 /***/ }),
 
@@ -50391,9 +50395,8 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("Personal Manager is rendered"); // console.log(this.props.mainStore.isLoading);
-      // console.log(toJS(this.props.mainStore.projectsDefinitions));
-
+      console.log("Personal Manager is rendered");
+      console.log(this.props.mainStore.trackHistory);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6 track-manager"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -51203,13 +51206,11 @@ function (_Component) {
         id: "defaultCheck1"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "form-check-label",
-        for: "defaultCheck1"
+        htmlFor: "defaultCheck1"
       }, "Remember me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        onClick: ""
+        href: "#"
       }, "Forgot your password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        onClick: ""
+        href: "#"
       }, "Create an account")))));
     }
   }]);
@@ -51415,13 +51416,18 @@ function (_Component) {
     value: function render() {
       var _this = this;
 
-      // console.log("App is rendered");
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      console.log("App is rendered");
+      console.log("isLoggedIn : " + this.props.mainStore.isLoggedIn);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/",
-        component: _components_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
+        render: function render() {
+          return !_this.props.mainStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Login__WEBPACK_IMPORTED_MODULE_3__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+            to: "/overview"
+          });
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/overview",
         render: function render() {
@@ -51443,7 +51449,7 @@ function (_Component) {
             to: "/"
           }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin__WEBPACK_IMPORTED_MODULE_6__["default"], null);
         }
-      })));
+      }));
     }
   }]);
 
@@ -52079,54 +52085,47 @@ function () {
   }, {
     key: "logToApp",
     value: function logToApp(formData) {
+      var _this = this;
+
       console.log("try to log with ".concat(formData.username, " and ").concat(formData.password));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](formData.username, formData.password).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
-        console.log(res.message.userId);
+        // console.log(res);
+        if (res.error === true) {
+          console.log("error while connecting");
+        } else {
+          _this.userId = res.userId;
+          _this.isLoggedIn = true;
+        }
       }));
     }
   }, {
     key: "loadPersonalHistory",
     value: function loadPersonalHistory() {
-      var _this = this;
+      var _this2 = this;
 
       console.log("loading personal history…"); // this.isLoading = true;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](this.userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
         // console.log(history);
-        _this.trackHistory = history;
+        _this2.trackHistory = history;
       })) // .catch(action((error) => {
       // 	console.log(error);
       // }))
       .finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this.isLoading = false;
+        _this2.isLoading = false;
       }));
     }
   }, {
     key: "loadProject",
     value: function loadProject(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       console.log("project is loading...");
       this.isLoadingProject = true; // console.log(id);
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
         console.log(project.data);
-        _this2.activeProjectDetails = project.data;
-      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
-        console.log(error);
-      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this2.isLoadingProject = false;
-      }));
-    }
-  }, {
-    key: "loadTrackedTime",
-    value: function loadTrackedTime(id) {
-      var _this3 = this;
-
-      this.isLoadingProject = true; // console.log(id);
-
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
-        _this3.activeTrackedTime = tracked.data.message;
+        _this3.activeProjectDetails = project.data;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -52134,27 +52133,42 @@ function () {
       }));
     }
   }, {
+    key: "loadTrackedTime",
+    value: function loadTrackedTime(id) {
+      var _this4 = this;
+
+      this.isLoadingProject = true; // console.log(id);
+
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
+        _this4.activeTrackedTime = tracked.data.message;
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this4.isLoadingProject = false;
+      }));
+    }
+  }, {
     key: "loadDefinitions",
     value: function loadDefinitions() {
-      var _this4 = this;
+      var _this5 = this;
 
       // this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
-        _this4.clientsDefinitions = clients;
+        _this5.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch clients over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this4.projectsDefinitions = projects;
+        _this5.projectsDefinitions = projects;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch projects over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUsersDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (users) {
-        _this4.usersDefinitions = users;
+        _this5.usersDefinitions = users;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -52165,16 +52179,16 @@ function () {
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this5 = this;
+      var _this6 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"](projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this5.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this5.loadProject(projectId); // relance le chargement du projet
+        _this6.loadProject(projectId); // relance le chargement du projet
 
 
-        _this5.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52183,16 +52197,16 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this6 = this;
+      var _this7 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"](projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this6.loadProject(projectId); // relance le chargement du projet
+        _this7.loadProject(projectId); // relance le chargement du projet
 
 
-        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52201,16 +52215,16 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this7 = this;
+      var _this8 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"](projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this7.loadProject(projectId); // relance le chargement du projet
+        _this8.loadProject(projectId); // relance le chargement du projet
 
 
-        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52220,10 +52234,10 @@ function () {
   }, {
     key: "postNewClient",
     value: function postNewClient(formData) {
-      var _this8 = this;
+      var _this9 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this8.loadDefinitions();
+        _this9.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -52232,11 +52246,11 @@ function () {
   }, {
     key: "postNewProject",
     value: function postNewProject(formData) {
-      var _this9 = this;
+      var _this10 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this9.loadDefinitions();
+        _this10.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));

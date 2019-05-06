@@ -49,7 +49,13 @@ export class MainStore{
 	agent
 	    .login(formData.username, formData.password)
 	    .then(action((res) => {
-		console.log(res.message.userId);
+		// console.log(res);
+		if(res.error === true){
+		    console.log("error while connecting");
+		} else {
+		    this.userId = res.userId;
+		    this.isLoggedIn = true;
+		}
 	    }))
     }
 

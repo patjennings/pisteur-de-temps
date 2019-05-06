@@ -5,21 +5,8 @@ var crypto = require("crypto");
 
 var validatePassword = require("./utils/validation").validatePassword;
 var saltAndHash = require("./utils/validation").saltAndHash;
-console.log(validatePassword);
-// var mainStore = require("../src/shared/stores/mainStore");
-
-// console.log(models.base.Mongoose);
-// req > request
-// res > response
-
-// import models from "./models/mongo"; // le modèle mongodb
-// import path from "path";
-// import express from "express";
-// import mainStore from "../src/shared/stores/mainStore";
-// import crypto from "crypto";
 
 module.exports = function(app){
-// export default class app{
 
     app.use("/styles", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/css')); 
     app.use("/dist", express.static(path.resolve(".") + '/dist')); 
@@ -35,7 +22,6 @@ module.exports = function(app){
     });
 
     app.get('/overview', function(req, res) {
-	console.log(mainStore);
 	res.render('app', {title: "App root"});
     });
     app.get('/synthesis', function(req, res) {
