@@ -10,7 +10,10 @@ var userSchema  = {
     "lastName": String,
     "email" : String,
     "password" : String,
-    "relatedProjects" : Array
+    "relatedProjects" : Array,
+    "date": String,
+    "ip": String,
+    "cookie": String
 };
 var clientSchema  = {
     "name": String,

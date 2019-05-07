@@ -1,14 +1,13 @@
 import { observable, computed, action, decorate, configure, runInAction, toJS, get, trace } from "mobx";
 import * as agent from "fetch/agent";
 
+import authStore from "stores/authStore";
+
 configure({ enforceActions: "observed" });
 
 export class MainStore{
     constructor(){
 	this.pageDisplayed = "dashboard";
-
-	this.isLoggedIn = false;
-	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
 	
 	this.isLoading = false;
 	this.isLoadingProject = false;
@@ -44,27 +43,13 @@ export class MainStore{
 	this.pageDisplayed = value;
     }
 
-    logToApp(formData){
-	console.log(`try to log with ${formData.username} and ${formData.password}`);
-	agent
-	    .login(formData.username, formData.password)
-	    .then(action((res) => {
-		// console.log(res);
-		if(res.error === true){
-		    console.log("error while connecting");
-		} else {
-		    this.userId = res.userId;
-		    this.isLoggedIn = true;
-		}
-	    }))
-    }
-
 
     loadPersonalHistory(){
 	console.log("loading personal history…");
+	console.log(authStore.userId);
 	// this.isLoading = true;
 	
-	agent.fetchPersonalHistory(this.userId)
+	agent.fetchPersonalHistory(authStore.userId)
 	    .then(action((history) => {
 		// console.log(history);
 		this.trackHistory = history;
@@ -208,8 +193,6 @@ export class MainStore{
 
 decorate(MainStore, {
     pageDisplayed: observable,
-    isLoggedIn: observable,
-    userId: observable,
     isLoading: observable,
     isLoadingProject: observable,
     showProject: observable,
@@ -221,7 +204,6 @@ decorate(MainStore, {
     usersDefinitions: observable,
     trackHistory: observable,
     state: observable,
-    logToApp: action,
     setPageDisplayed: action,
     setActiveProject: action,
     setShowProject: action,

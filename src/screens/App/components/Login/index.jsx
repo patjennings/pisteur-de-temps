@@ -8,7 +8,7 @@ import retrieveFormData from "utils/retrieveFormData";
 import "./styles.scss";
 import "assets/styles/main.scss";
 
-const Login = inject("mainStore")(observer(class Login extends Component {
+const Login = inject("mainStore", "authStore")(observer(class Login extends Component {
     constructor(props){
 	super(props);
 	this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,7 @@ const Login = inject("mainStore")(observer(class Login extends Component {
 	    hasErrors: false,
 	    errorOnUsername: false,
 	    errorOnPassword: false
-	}
+	};
     }
 
     handleSubmit(event){
@@ -36,7 +36,7 @@ const Login = inject("mainStore")(observer(class Login extends Component {
 	    
 	    let fd = retrieveFormData(event.target);
 	    console.log(fd);
-	    this.props.mainStore.logToApp(fd);
+	    this.props.authStore.logToApp(fd);
 	}
 	
 	this.setState({

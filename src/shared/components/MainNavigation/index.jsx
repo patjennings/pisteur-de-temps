@@ -5,7 +5,7 @@ import {observer, inject} from "mobx-react";
 import "./styles.scss";
 import "assets/styles/main.scss";
 
-const MainNavigation = inject("mainStore")(observer(class MainNavigation extends Component {
+const MainNavigation = inject("mainStore", "authStore", "routingStore")(observer(class MainNavigation extends Component {
     constructor(props){
 	super(props);
 	this.navigate = this.navigate.bind(this);
@@ -18,6 +18,8 @@ const MainNavigation = inject("mainStore")(observer(class MainNavigation extends
     }
 
     render() {
+	const { location, push, goBack } = this.props.routingStore;
+        
 	// console.log("MainNavigation is rendered");
 	return (
 	      <header className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,15 +29,16 @@ const MainNavigation = inject("mainStore")(observer(class MainNavigation extends
 		<div className="collapse navbar-collapse" id="navbarNav">
 		  <ul className="navbar-nav">
 		    <li className="nav-item">
-		      <a className="nav-link" href="/overview" onClick={e => this.navigate(e)} name="dashboard">Dashboard <span className="sr-only">(current)</span></a>
+		      <a className="nav-link" onClick={() => push('/overview')} name="dashboard">Dashboard <span className="sr-only">(current)</span></a>
 		    </li>
 		    <li className="nav-item">
-		      <a className="nav-link" href="/synthesis" onClick={e => this.navigate(e)} name="synthesis">Synthesis <span className="sr-only">(current)</span></a>
+		      <a className="nav-link" onClick={() => push('/synthesis')} name="synthesis">Synthesis <span className="sr-only">(current)</span></a>
 		    </li>
 		    <li className="nav-item">
-		      <a className="nav-link" href="/admin" onClick={e => this.navigate(e)} name="admin">Admin <span className="sr-only">(current)</span></a>
+		      <a className="nav-link" onClick={() => push('/admin')} name="admin">Admin <span className="sr-only">(current)</span></a>
 		    </li>
 		  </ul>
+		  {location.pathname}
 		</div>
 	      </header>
 	);

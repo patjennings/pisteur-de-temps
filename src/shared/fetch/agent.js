@@ -10,13 +10,14 @@ const API_ROOT = "http://localhost:3000";
 export function login(em, pwd){
     console.log(em, pwd);
     let result = axios
-	.get(`${API_ROOT}/login`, {params: {
+	.post(`${API_ROOT}/login`, null, {params: {
 	    email : em,
 	    password : pwd
 	}})
 	.then(res => {
+	    console.log(res);
 	    return res.data
-	    // console.log(res.data);
+
 	})
 	.catch(error => console.log(error));
     return result;

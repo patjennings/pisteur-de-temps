@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Redirect, hashHistory } from "react-router-dom";
+import { Router, Route, Link, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 
 import mainStore from "stores/mainStore";
+import authStore from "stores/authStore";
+
 
 import { observable, action, decorate } from "mobx";
 import { Provider } from 'mobx-react';
@@ -19,16 +23,28 @@ import App from './screens/App/index';
 
 // console.log(mainStore);
 
+const browserHistory = createBrowserHistory();
+const routingStore = new RouterStore();
+
 const stores = {
-    mainStore
+    mainStore,
+    authStore,
+    routingStore
 }
 
+console.log(stores);
+
+const history = syncHistoryWithStore(browserHistory, routingStore);
+
+// console.log(customHistory);
+
 ReactDOM.render(
-    <Router history={hashHistory}>
-      <Provider {...stores}>
+    
+    <Provider {...stores}>
+      <Router history={history}>
 	<App />
-      </Provider>
-    </Router>,
+      </Router>
+    </Provider>,
     
     document.getElementById('root')
 );

@@ -13410,6 +13410,249 @@ function isSlowBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/mobx-react-router/dist/mobx-react-router.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/mobx-react-router/dist/mobx-react-router.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js"));
+	else {}
+})(this, function(__WEBPACK_EXTERNAL_MODULE__0__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external {"root":"Mobx","commonjs2":"mobx","commonjs":"mobx","amd":"mobx"}
+var external_root_Mobx_commonjs2_mobx_commonjs_mobx_amd_mobx_ = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./src/store.js
+var _class, _descriptor, _temp;
+
+function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+
+function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and set to use loose mode. ' + 'To use proposal-class-properties in spec mode with decorators, wait for ' + 'the next major version of decorators in stage 2.'); }
+
+
+var RouterStore = (_class = (_temp =
+/*#__PURE__*/
+function () {
+  function RouterStore() {
+    var _this = this;
+
+    _classCallCheck(this, RouterStore);
+
+    _initializerDefineProperty(this, "location", _descriptor, this);
+
+    this.history = null;
+
+    this.push = function (location) {
+      _this.history.push(location);
+    };
+
+    this.replace = function (location) {
+      _this.history.replace(location);
+    };
+
+    this.go = function (n) {
+      _this.history.go(n);
+    };
+
+    this.goBack = function () {
+      _this.history.goBack();
+    };
+
+    this.goForward = function () {
+      _this.history.goForward();
+    };
+
+    this.push = this.push.bind(this);
+    this.replace = this.replace.bind(this);
+    this.go = this.go.bind(this);
+    this.goBack = this.goBack.bind(this);
+    this.goForward = this.goForward.bind(this);
+  }
+
+  _createClass(RouterStore, [{
+    key: "_updateLocation",
+    value: function _updateLocation(newState) {
+      this.location = newState;
+    }
+    /*
+     * History methods
+     */
+
+  }]);
+
+  return RouterStore;
+}(), _temp), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "location", [external_root_Mobx_commonjs2_mobx_commonjs_mobx_amd_mobx_["observable"]], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: function initializer() {
+    return null;
+  }
+}), _applyDecoratedDescriptor(_class.prototype, "_updateLocation", [external_root_Mobx_commonjs2_mobx_commonjs_mobx_amd_mobx_["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "_updateLocation"), _class.prototype)), _class);
+;
+// CONCATENATED MODULE: ./src/sync.js
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var sync_syncHistoryWithStore = function syncHistoryWithStore(history, store) {
+  // Initialise store
+  store.history = history; // Handle update from history object
+
+  var handleLocationChange = function handleLocationChange(location) {
+    store._updateLocation(location);
+  };
+
+  var unsubscribeFromHistory = history.listen(handleLocationChange);
+  handleLocationChange(history.location);
+
+  var subscribe = function subscribe(listener) {
+    var onStoreChange = function onStoreChange() {
+      var rawLocation = _objectSpread({}, store.location);
+
+      listener(rawLocation, history.action);
+    }; // Listen for changes to location state in store
+
+
+    var unsubscribeFromStore = Object(external_root_Mobx_commonjs2_mobx_commonjs_mobx_amd_mobx_["observe"])(store, 'location', onStoreChange);
+    listener(store.location, history.action);
+    return unsubscribeFromStore;
+  };
+
+  history.subscribe = subscribe;
+  history.unsubscribe = unsubscribeFromHistory;
+  return history;
+};
+// CONCATENATED MODULE: ./index.js
+/* concated harmony reexport RouterStore */__webpack_require__.d(__webpack_exports__, "RouterStore", function() { return RouterStore; });
+/* concated harmony reexport syncHistoryWithStore */__webpack_require__.d(__webpack_exports__, "syncHistoryWithStore", function() { return sync_syncHistoryWithStore; });
+
+
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
 /***/ "./node_modules/mobx-react/index.module.js":
 /*!*************************************************!*\
   !*** ./node_modules/mobx-react/index.module.js ***!
@@ -49030,12 +49273,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var stores_mainStore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! stores/mainStore */ "./src/shared/stores/mainStore.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _screens_App_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./screens/App/index */ "./src/screens/App/index.jsx");
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! history */ "./node_modules/history/esm/history.js");
+/* harmony import */ var mobx_react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react-router */ "./node_modules/mobx-react-router/dist/mobx-react-router.js");
+/* harmony import */ var mobx_react_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(mobx_react_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var stores_mainStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! stores/mainStore */ "./src/shared/stores/mainStore.js");
+/* harmony import */ var stores_authStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! stores/authStore */ "./src/shared/stores/authStore.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _screens_App_index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./screens/App/index */ "./src/screens/App/index.jsx");
+
+
+
 
 
 
@@ -49049,12 +49299,19 @@ __webpack_require__.r(__webpack_exports__);
 // console.log(mainStore);
 // console.log(mainStore);
 
+var browserHistory = Object(history__WEBPACK_IMPORTED_MODULE_3__["createBrowserHistory"])();
+var routingStore = new mobx_react_router__WEBPACK_IMPORTED_MODULE_4__["RouterStore"]();
 var stores = {
-  mainStore: stores_mainStore__WEBPACK_IMPORTED_MODULE_3__["default"]
+  mainStore: stores_mainStore__WEBPACK_IMPORTED_MODULE_5__["default"],
+  authStore: stores_authStore__WEBPACK_IMPORTED_MODULE_6__["default"],
+  routingStore: routingStore
 };
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], {
-  history: react_router_dom__WEBPACK_IMPORTED_MODULE_2__["hashHistory"]
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mobx_react__WEBPACK_IMPORTED_MODULE_5__["Provider"], stores, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_screens_App_index__WEBPACK_IMPORTED_MODULE_7__["default"], null))), document.getElementById('root'));
+console.log(stores);
+var history = Object(mobx_react_router__WEBPACK_IMPORTED_MODULE_4__["syncHistoryWithStore"])(browserHistory, routingStore); // console.log(customHistory);
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mobx_react__WEBPACK_IMPORTED_MODULE_8__["Provider"], stores, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Router"], {
+  history: history
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_screens_App_index__WEBPACK_IMPORTED_MODULE_10__["default"], null))), document.getElementById('root'));
 
 /***/ }),
 
@@ -49885,7 +50142,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Task, _Component);
@@ -49952,7 +50209,7 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__["default"])(e.target, this.props.mainStore.userId); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__["default"])(e.target, this.props.authStore.userId); // on lance la requête
 
       this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
       var cli = Object(mobx__WEBPACK_IMPORTED_MODULE_4__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
@@ -50163,7 +50420,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var TaskInput = Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["observer"])(
+var TaskInput = Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(TaskInput, _Component);
@@ -50200,7 +50457,7 @@ function (_Component) {
 
       if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {
         this.state.hasErrors = false;
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.mainStore.userId);
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.authStore.userId);
         this.props.mainStore.postNewTask(this.state.activeProject, fd);
       }
 
@@ -50355,7 +50612,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var PersonalManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+var PersonalManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(PersonalManager, _Component);
@@ -50365,8 +50622,7 @@ function (_Component) {
 
     _classCallCheck(this, PersonalManager);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PersonalManager).call(this, props)); // console.log(this.props.mainStore);
-    // binds
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PersonalManager).call(this, props)); // binds
 
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -50422,11 +50678,10 @@ function (_Component) {
           comment: childData.comment,
           relatedProject: childData.relatedProject,
           date: childData.date,
-          userid: _this2.props.store.userId,
+          userid: _this2.props.authStore.userId,
           onChange: function onChange(event) {
             return _this2.handleChange(childData, event);
-          },
-          store: _this2.props.mainStore
+          }
         });
       }))));
     }
@@ -50516,7 +50771,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Task, _Component);
@@ -50593,7 +50848,7 @@ function (_Component) {
     value: function handleSubmit(e) {
       console.log("submit");
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.mainStore.userId); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId); // on lance la requête
 
       this.props.mainStore.updateTask(this.state.activeProject, this.props.taskid, fd); // const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
 
@@ -51121,7 +51376,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Login, _Component);
@@ -51155,7 +51410,7 @@ function (_Component) {
         this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
         console.log(fd);
-        this.props.mainStore.logToApp(fd);
+        this.props.authStore.logToApp(fd);
       }
 
       this.setState({
@@ -51400,7 +51655,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var App = Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["observer"])(
+var App = Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(App, _Component);
@@ -51417,35 +51672,35 @@ function (_Component) {
       var _this = this;
 
       console.log("App is rendered");
-      console.log("isLoggedIn : " + this.props.mainStore.isLoggedIn);
+      console.log("isLoggedIn : " + this.props.authStore.isLoggedIn);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/",
         render: function render() {
-          return !_this.props.mainStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Login__WEBPACK_IMPORTED_MODULE_3__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+          return !_this.props.authStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Login__WEBPACK_IMPORTED_MODULE_3__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
             to: "/overview"
           });
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/overview",
         render: function render() {
-          return !_this.props.mainStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+          return !_this.props.authStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
             to: "/"
           }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Dashboard__WEBPACK_IMPORTED_MODULE_4__["default"], null);
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/synthesis",
         render: function render() {
-          return !_this.props.mainStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+          return !_this.props.authStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
             to: "/"
           }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Synthesis__WEBPACK_IMPORTED_MODULE_5__["default"], null);
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/admin",
         render: function render() {
-          return !_this.props.mainStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+          return !_this.props.authStore.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
             to: "/"
           }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin__WEBPACK_IMPORTED_MODULE_6__["default"], null);
         }
@@ -51454,9 +51709,8 @@ function (_Component) {
   }]);
 
   return App;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]))); // export default hot(module)(App);
-
-/* harmony default export */ __webpack_exports__["default"] = (App); // <Navigation defs={this.state.definitions}/>
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -51528,7 +51782,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var MainNavigation = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+var MainNavigation = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(MainNavigation, _Component);
@@ -51553,9 +51807,11 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this$props$routingSt = this.props.routingStore,
+          location = _this$props$routingSt.location,
+          push = _this$props$routingSt.push,
+          goBack = _this$props$routingSt.goBack; // console.log("MainNavigation is rendered");
 
-      // console.log("MainNavigation is rendered");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "navbar navbar-expand-lg navbar-dark bg-dark"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -51577,9 +51833,8 @@ function (_Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
-        href: "/overview",
-        onClick: function onClick(e) {
-          return _this2.navigate(e);
+        onClick: function onClick() {
+          return push('/overview');
         },
         name: "dashboard"
       }, "Dashboard ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -51588,9 +51843,8 @@ function (_Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
-        href: "/synthesis",
-        onClick: function onClick(e) {
-          return _this2.navigate(e);
+        onClick: function onClick() {
+          return push('/synthesis');
         },
         name: "synthesis"
       }, "Synthesis ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -51599,14 +51853,13 @@ function (_Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
-        href: "/admin",
-        onClick: function onClick(e) {
-          return _this2.navigate(e);
+        onClick: function onClick() {
+          return push('/admin');
         },
         name: "admin"
       }, "Admin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
-      }, "(current)"))))));
+      }, "(current)")))), location.pathname));
     }
   }]);
 
@@ -51837,13 +52090,14 @@ var API_ROOT = "http://localhost:3000"; // --------------------
 
 function login(em, pwd) {
   console.log(em, pwd);
-  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/login"), {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(API_ROOT, "/login"), null, {
     params: {
       email: em,
       password: pwd
     }
   }).then(function (res) {
-    return res.data; // console.log(res.data);
+    console.log(res);
+    return res.data;
   }).catch(function (error) {
     return console.log(error);
   });
@@ -52011,6 +52265,78 @@ function clientDelete(clientId) {
 
 /***/ }),
 
+/***/ "./src/shared/stores/authStore.js":
+/*!****************************************!*\
+  !*** ./src/shared/stores/authStore.js ***!
+  \****************************************/
+/*! exports provided: AuthStore, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthStore", function() { return AuthStore; });
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var fetch_agent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fetch/agent */ "./src/shared/fetch/agent.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+ // import {validateLoginKey} from "../../../server/utils/validation";
+
+Object(mobx__WEBPACK_IMPORTED_MODULE_0__["configure"])({
+  enforceActions: "observed"
+});
+var AuthStore =
+/*#__PURE__*/
+function () {
+  function AuthStore() {
+    _classCallCheck(this, AuthStore);
+
+    this.isLoggedIn = false;
+    this.userId = null; // l'utilisateur actif
+  }
+
+  _createClass(AuthStore, [{
+    key: "checkLogged",
+    value: function checkLogged() {// get if there is already a cookie
+      // no return false
+      // yes : get ip and key from the cookie
+      // get if this matchs to something in the db
+      // no return false
+      // yes : retrieve email + password
+      // launch logToApp with these
+    }
+  }, {
+    key: "logToApp",
+    value: function logToApp(formData) {
+      var _this = this;
+
+      console.log("try to log with ".concat(formData.username, " and ").concat(formData.password));
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](formData.username, formData.password).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
+        if (res.error === true) {
+          console.log("error while connecting");
+        } else {
+          _this.userId = res.userId;
+          _this.isLoggedIn = true;
+        }
+      }));
+    }
+  }]);
+
+  return AuthStore;
+}();
+Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(AuthStore, {
+  isLoggedIn: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  userId: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  logToApp: mobx__WEBPACK_IMPORTED_MODULE_0__["action"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (new AuthStore());
+
+/***/ }),
+
 /***/ "./src/shared/stores/mainStore.js":
 /*!****************************************!*\
   !*** ./src/shared/stores/mainStore.js ***!
@@ -52023,11 +52349,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainStore", function() { return MainStore; });
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var fetch_agent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fetch/agent */ "./src/shared/fetch/agent.js");
+/* harmony import */ var stores_authStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stores/authStore */ "./src/shared/stores/authStore.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -52041,9 +52369,6 @@ function () {
     _classCallCheck(this, MainStore);
 
     this.pageDisplayed = "dashboard";
-    this.isLoggedIn = false;
-    this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
-
     this.isLoading = false;
     this.isLoadingProject = false;
     this.showProject = false; // un projet est-il affiché ?
@@ -52083,49 +52408,49 @@ function () {
       this.pageDisplayed = value;
     }
   }, {
-    key: "logToApp",
-    value: function logToApp(formData) {
-      var _this = this;
-
-      console.log("try to log with ".concat(formData.username, " and ").concat(formData.password));
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](formData.username, formData.password).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
-        // console.log(res);
-        if (res.error === true) {
-          console.log("error while connecting");
-        } else {
-          _this.userId = res.userId;
-          _this.isLoggedIn = true;
-        }
-      }));
-    }
-  }, {
     key: "loadPersonalHistory",
     value: function loadPersonalHistory() {
-      var _this2 = this;
+      var _this = this;
 
-      console.log("loading personal history…"); // this.isLoading = true;
+      console.log("loading personal history…");
+      console.log(stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].userId); // this.isLoading = true;
 
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](this.userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
         // console.log(history);
-        _this2.trackHistory = history;
+        _this.trackHistory = history;
       })) // .catch(action((error) => {
       // 	console.log(error);
       // }))
       .finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this2.isLoading = false;
+        _this.isLoading = false;
       }));
     }
   }, {
     key: "loadProject",
     value: function loadProject(id) {
-      var _this3 = this;
+      var _this2 = this;
 
       console.log("project is loading...");
       this.isLoadingProject = true; // console.log(id);
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
         console.log(project.data);
-        _this3.activeProjectDetails = project.data;
+        _this2.activeProjectDetails = project.data;
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this2.isLoadingProject = false;
+      }));
+    }
+  }, {
+    key: "loadTrackedTime",
+    value: function loadTrackedTime(id) {
+      var _this3 = this;
+
+      this.isLoadingProject = true; // console.log(id);
+
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
+        _this3.activeTrackedTime = tracked.data.message;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -52133,42 +52458,27 @@ function () {
       }));
     }
   }, {
-    key: "loadTrackedTime",
-    value: function loadTrackedTime(id) {
-      var _this4 = this;
-
-      this.isLoadingProject = true; // console.log(id);
-
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
-        _this4.activeTrackedTime = tracked.data.message;
-      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
-        console.log(error);
-      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this4.isLoadingProject = false;
-      }));
-    }
-  }, {
     key: "loadDefinitions",
     value: function loadDefinitions() {
-      var _this5 = this;
+      var _this4 = this;
 
       // this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
-        _this5.clientsDefinitions = clients;
+        _this4.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch clients over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this5.projectsDefinitions = projects;
+        _this4.projectsDefinitions = projects;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch projects over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUsersDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (users) {
-        _this5.usersDefinitions = users;
+        _this4.usersDefinitions = users;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -52179,16 +52489,16 @@ function () {
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this6 = this;
+      var _this5 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"](projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this5.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this6.loadProject(projectId); // relance le chargement du projet
+        _this5.loadProject(projectId); // relance le chargement du projet
 
 
-        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this5.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52197,16 +52507,16 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this7 = this;
+      var _this6 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"](projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this7.loadProject(projectId); // relance le chargement du projet
+        _this6.loadProject(projectId); // relance le chargement du projet
 
 
-        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52215,16 +52525,16 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this8 = this;
+      var _this7 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"](projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this8.loadProject(projectId); // relance le chargement du projet
+        _this7.loadProject(projectId); // relance le chargement du projet
 
 
-        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -52234,10 +52544,10 @@ function () {
   }, {
     key: "postNewClient",
     value: function postNewClient(formData) {
-      var _this9 = this;
+      var _this8 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this9.loadDefinitions();
+        _this8.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -52246,11 +52556,11 @@ function () {
   }, {
     key: "postNewProject",
     value: function postNewProject(formData) {
-      var _this10 = this;
+      var _this9 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this10.loadDefinitions();
+        _this9.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -52261,8 +52571,6 @@ function () {
 }();
 Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   pageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
-  isLoggedIn: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
-  userId: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoading: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoadingProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   showProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
@@ -52274,7 +52582,6 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   usersDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   trackHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   state: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
-  logToApp: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setPageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setActiveProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setShowProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
@@ -52411,10 +52718,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function retrieveFormData(form) {
   var userid = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  // console.log("form");
+  console.log("form");
   var data = new FormData(form); // les données du formulaire
-  // console.log(form);
 
+  console.log(form);
+  console.log(userid);
   var reqBody = {};
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;

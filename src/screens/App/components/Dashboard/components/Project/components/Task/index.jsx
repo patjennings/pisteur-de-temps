@@ -10,7 +10,7 @@ import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 import "./styles.scss";
 
-const Task = inject("mainStore")(observer(class Task extends Component {
+const Task = inject("mainStore", "authStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
 
@@ -67,7 +67,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     handleSubmit(e){
 	console.log("submit");
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId);
 	
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.taskid, fd);

@@ -13,37 +13,38 @@ import {observer, inject} from "mobx-react";
 import "./styles.scss";
 import "assets/styles/main.scss";
 
-const App = inject("mainStore")(observer(class App extends Component {
+const App = inject("mainStore", "authStore", "routingStore")(observer(class App extends Component {
     constructor(props){
 	super(props);
     }
 
     render() {
 	console.log("App is rendered");
-	console.log("isLoggedIn : "+this.props.mainStore.isLoggedIn);
+	console.log("isLoggedIn : "+this.props.authStore.isLoggedIn);
 	
 	return (
+	    
 	      <div className="app">
 		<Route exact path="/" render={() => (
-		      !this.props.mainStore.isLoggedIn ?
+		      !this.props.authStore.isLoggedIn ?
 			<Login/>
 			    :
 			    <Redirect to="/overview"/>
 		)} />
 		<Route path="/overview" render={() => (
-		      !this.props.mainStore.isLoggedIn ?
+		      !this.props.authStore.isLoggedIn ?
 			<Redirect to="/"/>
 			    :
 			    <Dashboard/>
 		)} />
 		<Route path="/synthesis" render={() => (
-		    !this.props.mainStore.isLoggedIn ?
+		    !this.props.authStore.isLoggedIn ?
 			<Redirect to="/"/>
 			:
 			<Synthesis/>
 		)} />
 		<Route path="/admin" render={() => (
-		    !this.props.mainStore.isLoggedIn ?
+		    !this.props.authStore.isLoggedIn ?
 			<Redirect to="/"/>
 			:
 			<Admin/>
@@ -52,9 +53,6 @@ const App = inject("mainStore")(observer(class App extends Component {
 
 	);
     }
-}))
+}));
 
-// export default hot(module)(App);
 export default App;
-
-// <Navigation defs={this.state.definitions}/>

@@ -9,7 +9,7 @@ import {inject, observer} from "mobx-react";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 import "./styles.scss";
 
-const TaskInput = inject("mainStore")(observer(class TaskInput extends Component {
+const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput extends Component {
     constructor(props){
 	super(props);
 
@@ -40,7 +40,7 @@ const TaskInput = inject("mainStore")(observer(class TaskInput extends Component
 	
 	if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject){
 	    this.state.hasErrors = false;
-	    let fd = retrieveFormData(event.target, this.props.mainStore.userId);
+	    let fd = retrieveFormData(event.target, this.props.authStore.userId);
 	    this.props.mainStore.postNewTask(this.state.activeProject, fd);
 	}
 	

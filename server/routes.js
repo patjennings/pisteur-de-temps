@@ -1,10 +1,13 @@
-var models =    require("./models/mongo"); // le modèle mongodb
-var path = require("path");
-var express = require("express");
-var crypto = require("crypto");
+var models =       require("./models/mongo"); // le modèle mongodb
+var path =         require("path");
+var express =      require("express");
+var crypto =       require("crypto");
+var cookieParser = require("cookie-parser");
 
 var validatePassword = require("./utils/validation").validatePassword;
-var saltAndHash = require("./utils/validation").saltAndHash;
+var saltAndHash =      require("./utils/validation").saltAndHash;
+
+var generateLoginKey = require("./utils/validation").generateLoginKey;
 
 module.exports = function(app){
 
@@ -14,11 +17,15 @@ module.exports = function(app){
     app.use("/scripts/bootstrap", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/js'));
     app.use("/scripts/popper", express.static(path.resolve(".") + '/node_modules/popper.js/dist'));
     app.use("/scripts/jquery", express.static(path.resolve(".") + '/node_modules/jquery/dist')); 
+
+    console.log(cookieParser);
     
     app.get("/", function(req, res) {
 	// res.json({"error" : false,"message" : "Hello World"});
 	// console.log(req.cookie);
 	res.render('app', {title: "App root"});
+
+	// autologin
     });
 
     app.get('/overview', function(req, res) {
@@ -34,28 +41,54 @@ module.exports = function(app){
     // ------------
     // LOGIN
     // ------------
-    app.get("/login", function (req, res) {
+    app.post("/login", function (req, res) {
 	// var db = new models.users(); // on créer ce nouvel objet models pour accéder au schéma
 	var response = {};
 	
 	const email = req.query.email;
 	const password = req.query.password;
 
+	// console.log(password);
+	console.log('Cookies: ', req.cookies);
+
 	models.users.findOne({email: email}, function(err, data){
 	    // console.log(data);
             if(err || data == null) {
                 response = {"error" : true, "message" : "User not found"};
             } else {
-		validatePassword(password, data.password, function(err, res) {
-		if (res){
-		    response = {"error" : false, "message" : data.email+" is now connected", "userId" : data._id};
-		} else{
-		   response = {"error" : true, "message" : "Invalid password"};
-		}
-	    });
+		console.log(req.session);
+		// req.session.user = data;
+		validatePassword(password, data.password, function(e, o) {
+		    if(o){
+
+			const loginKey = generateLoginKey();
+			res.cookie('login', loginKey, { maxAge: 900000 });
+
+			data.ip = req.ip;
+			data.cookie = loginKey;
+
+			// Save cookie + ip
+			data.save(function(er, d){
+			    
+			    if(err) {
+				response = {"error" : true,"message" : "Error updating data"};
+			    } else {
+				// console.log(d.cookie);
+				response = {"error" : false, "message" : d.email+" is now connected, "+d._id+" updated", "userId" : d._id};
+				// response = {"error" : false,"message" : "Data is updated for "+req.params.id, "data" : data};
+			    }
+			    res.json(response);
+			    
+			})
+
+			// res.status(200).send(o);
+		    } else{
+			response = {"error" : true, "message" : "Invalid password"};
+		    }
+		});
             }
-	    res.json(response);
-        });
+	    
+        })
     });
 
     
@@ -91,6 +124,9 @@ module.exports = function(app){
 	db.firstName = req.body.firstName;
 	db.lastName = req.body.lastName;
         db.email = req.body.email;
+	db.date = new Date();
+	db.ip = null;
+	db.cookie = null;
 	
         // Hash the password using SHA1 algorithm, plus the salt
         saltAndHash(req.body.password, function(hash){
@@ -119,6 +155,7 @@ module.exports = function(app){
 		response.firstName = data.firstName;
 		response.lastName = data.lastName;
 		response.projects = data.relatedProjects;
+		response.date = data.date;
 	    }
 	    res.json(response);
         });
