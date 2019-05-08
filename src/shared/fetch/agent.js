@@ -55,12 +55,40 @@ export function fetchUsersDefinitions(){
     return result;
 }
 
+
+// --------------------
+// User
+// --------------------
+export function fetchUser(id){
+    let result = axios
+	.get(`${API_ROOT}/user/${id}`)
+	.then(res => {
+	     return res
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+// --------------------
+// Cookie
+// --------------------
+export function controlCookie(key, ip){
+    let result = axios
+	.get(`${API_ROOT}/cookie?key=${key}&ip=${ip}`)
+	.then(res => {
+	     return res
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+
 // --------------------
 // Personal history
 // --------------------
 export function fetchPersonalHistory(userId){
     let result = axios
-	.get(`${API_ROOT}/users/${userId}/trackedtime`)
+	.get(`${API_ROOT}/user/${userId}/trackedtime`)
 	.then(response => {
 	    const fetch = response.data.message.map(t => {
     		return {

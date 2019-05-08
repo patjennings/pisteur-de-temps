@@ -17,7 +17,8 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
     }
 
     render() {
-	// console.log("Dashboard is rendered");
+	console.log("Dashboard is rendered");
+	
 	return (
 	    
 	    <div className="dashboard">

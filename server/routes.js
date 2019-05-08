@@ -11,24 +11,29 @@ var generateLoginKey = require("./utils/validation").generateLoginKey;
 
 module.exports = function(app){
 
+    // folders
     app.use("/styles", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/css')); 
     app.use("/dist", express.static(path.resolve(".") + '/dist')); 
 
+    // scripts
     app.use("/scripts/bootstrap", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/js'));
     app.use("/scripts/popper", express.static(path.resolve(".") + '/node_modules/popper.js/dist'));
     app.use("/scripts/jquery", express.static(path.resolve(".") + '/node_modules/jquery/dist')); 
-
-    console.log(cookieParser);
     
     app.get("/", function(req, res) {
-	// res.json({"error" : false,"message" : "Hello World"});
-	// console.log(req.cookie);
+	// req.session.user = "thomas";
+	// on laisse react+mobx s'occuper du check du cookie, pour logger ou pas l'utilisateur
+	// on rend juste la coquille avec le #root
 	res.render('app', {title: "App root"});
-
-	// autologin
     });
 
+    // là pareil, on se contente de rendre le coquille
+    // sur ces urls
+    // reactrouter fait le boulot, ensuite, pour rendre les bons composants.
     app.get('/overview', function(req, res) {
+	res.render('app', {title: "App root"});
+    });
+    app.get('/account', function(req, res) {
 	res.render('app', {title: "App root"});
     });
     app.get('/synthesis', function(req, res) {
@@ -37,61 +42,79 @@ module.exports = function(app){
     app.get('/admin', function(req, res) {
 	res.render('app', {title: "App root"});
     });
+    app.get('/logout', function(req, res) {
+	res.render('app', {title: "App root"});
+    });
+
 
     // ------------
     // LOGIN
     // ------------
+    // On envoie une proposition de login + mdp
+    // si ok avec la base, on retient le record, et on y ajoute la clef du cookie + l'ip
     app.post("/login", function (req, res) {
-	// var db = new models.users(); // on créer ce nouvel objet models pour accéder au schéma
 	var response = {};
 	
 	const email = req.query.email;
 	const password = req.query.password;
 
-	// console.log(password);
-	console.log('Cookies: ', req.cookies);
-
 	models.users.findOne({email: email}, function(err, data){
-	    // console.log(data);
             if(err || data == null) {
                 response = {"error" : true, "message" : "User not found"};
+		res.json(response);
             } else {
-		console.log(req.session);
-		// req.session.user = data;
-		validatePassword(password, data.password, function(e, o) {
-		    if(o){
+		isPasswordValid = validatePassword(password, data.password);
 
-			const loginKey = generateLoginKey();
-			res.cookie('login', loginKey, { maxAge: 900000 });
+		if(isPasswordValid){
+		    
+		    const loginKey = generateLoginKey();
+		    
+		    res.cookie('login', loginKey, { maxAge: 900000 });
+		    
+		    data.ip = req.ip;
+		    data.cookie = loginKey;
 
-			data.ip = req.ip;
-			data.cookie = loginKey;
-
-			// Save cookie + ip
-			data.save(function(er, d){
-			    
-			    if(err) {
-				response = {"error" : true,"message" : "Error updating data"};
-			    } else {
-				// console.log(d.cookie);
-				response = {"error" : false, "message" : d.email+" is now connected, "+d._id+" updated", "userId" : d._id};
-				// response = {"error" : false,"message" : "Data is updated for "+req.params.id, "data" : data};
-			    }
-			    res.json(response);
-			    
-			})
-
-			// res.status(200).send(o);
-		    } else{
-			response = {"error" : true, "message" : "Invalid password"};
-		    }
-		});
+		    // Save cookie + ip
+		    data.save(function(er, d){   
+			if(err) {
+			    response = {"error" : true,"message" : "Error updating data"};
+			} else {
+			    response = {"error" : false, "message" : d.email+" is now connected, "+d._id+" updated", "userId" : d._id};
+			}
+			res.json(response);
+		    });
+		}
+		else {
+		    response = {"error" : true, "message" : "Invalid password"};
+		    res.json(response);
+		}
             }
-	    
         })
     });
 
     
+    // ------------
+    // COOKIES
+    // ------------
+    // checke si un cookie est actif, et retourne l'utilisateur associé
+    app.get("/cookie", function (req, res) {
+	var response = {};
+	
+	const key = req.query.key;
+	const ip = req.query.ip;
+
+	models.users.findOne({cookie: key, ip: ip}, function(err, data){
+            if(err || data == null) {
+                response = {"error" : true, "message" : "Cookie not active"};
+		res.json(response);
+            }
+	    else {
+		response = {"error" : false, "cookie" : true, "data" : data};
+		res.json(response);		
+	    }
+	})
+    });
+
     
     // ------------
     // USERS
@@ -110,6 +133,7 @@ module.exports = function(app){
 		    result.firstName = data[id].firstName;
 		    result.lastName = data[id].lastName;
 		    result.relatedProjects = data[id].relatedProjects;
+		    
 		    response.push(result);
 		}
             }
@@ -121,6 +145,7 @@ module.exports = function(app){
 	var response = {};
         // fetch email and password from REST request.
         // Add strict validation when you use this in Production.
+	
 	db.firstName = req.body.firstName;
 	db.lastName = req.body.lastName;
         db.email = req.body.email;
@@ -129,9 +154,8 @@ module.exports = function(app){
 	db.cookie = null;
 	
         // Hash the password using SHA1 algorithm, plus the salt
-        saltAndHash(req.body.password, function(hash){
-	    db.password = hash;
-	});
+        const hash  = saltAndHash(req.body.password);
+	db.password = hash;
 	
 	db.relatedProjects = req.body.relatedProjects;
         db.save(function(err, db){
@@ -145,7 +169,7 @@ module.exports = function(app){
             res.json(response);
         });
     });
-    app.get("/users/:id", function (req, res) {
+    app.get("/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -156,11 +180,12 @@ module.exports = function(app){
 		response.lastName = data.lastName;
 		response.projects = data.relatedProjects;
 		response.date = data.date;
+		response.email = data.email;
 	    }
 	    res.json(response);
         });
     });
-    app.put("/users/:id", function (req, res) {
+    app.put("/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -206,7 +231,7 @@ module.exports = function(app){
 	    }
         });
     });
-    app.delete("/users/:id", function (req, res) {
+    app.delete("/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err){
@@ -464,7 +489,7 @@ module.exports = function(app){
     });
 
     // obtenir tout le temps tracké pour un user
-     app.get("/users/:userid/trackedtime/", function (req, res) {
+     app.get("/user/:userid/trackedtime/", function (req, res) {
 	var response = {};
 
 	 models.trackedTime.find({ relatedUser : req.params.userid },function(err,data){

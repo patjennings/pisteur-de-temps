@@ -37,6 +37,9 @@ const MainNavigation = inject("mainStore", "authStore", "routingStore")(observer
 		    <li className="nav-item">
 		      <a className="nav-link" onClick={() => push('/admin')} name="admin">Admin <span className="sr-only">(current)</span></a>
 		    </li>
+		    <li className="nav-item">
+		      <a className="nav-link" onClick={() => this.props.authStore.logout() } name="admin">Logout <span className="sr-only">(current)</span></a>
+		    </li>
 		  </ul>
 		  {location.pathname}
 		</div>

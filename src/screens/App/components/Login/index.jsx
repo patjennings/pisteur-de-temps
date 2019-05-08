@@ -35,8 +35,7 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 	    this.state.hasErrors = false;
 	    
 	    let fd = retrieveFormData(event.target);
-	    console.log(fd);
-	    this.props.authStore.logToApp(fd);
+	    this.props.authStore.logToApp(fd.username, fd.password);
 	}
 	
 	this.setState({
@@ -53,6 +52,10 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 	// console.log("Login is rendered");
 	return (
 	    <div className="login logged-out">
+	      {this.props.authStore.hasErrors ? <div className="alert alert-danger" role="alert">
+		    Check your credentials...
+	      </div> : null }
+	      
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
