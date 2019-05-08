@@ -42479,7 +42479,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51301,7 +51301,7 @@ function (_Component) {
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track"
-        }, this.props.task, this.props.value, this.props.comment, this.props.username, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, this.props.task, " -", this.props.value, " -", this.props.comment, " -", Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getUserName"])(this.props.mainStore.usersDefinitions, this.props.user), " -", Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "track-edit d-flex align-items-center",
           href: "#",
           "data-toggle": "tooltip",
@@ -51558,7 +51558,7 @@ function (_Component) {
           taskid: t._id,
           task: t.task,
           comment: t.comment,
-          username: t.username,
+          user: t.relatedUser,
           value: t.value,
           date: t.dateCreation,
           onChange: _this2.handleChange
@@ -51806,7 +51806,7 @@ function (_Component) {
       if (!this.state.errorOnUsername && !this.state.errorOnPassword) {
         this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
-        this.props.authStore.logToApp(fd.username, fd.password);
+        this.props.authStore.logToApp(fd.username, fd.password, true);
       }
 
       this.setState({
@@ -52519,12 +52519,12 @@ var API_ROOT = "http://localhost:3000"; // --------------------
 // Login
 // --------------------
 
-function login(em, pwd) {
-  console.log(em, pwd);
+function login(em, pwd, isCk) {
   var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(API_ROOT, "/login"), null, {
     params: {
       email: em,
-      password: pwd
+      password: pwd,
+      isCookie: isCk
     }
   }).then(function (res) {
     console.log(res);
@@ -52803,12 +52803,12 @@ function () {
     }
   }, {
     key: "logToApp",
-    value: function logToApp(username, password) {
+    value: function logToApp(username, password, isCookieActive) {
       var _this3 = this;
 
       console.log("try to log with ".concat(username, " and ").concat(password));
       this.isLoading = true;
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](username, password).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](username, password, isCookieActive).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
         if (res.error === true) {
           console.log("error while connecting");
           _this3.hasErrors = true;

@@ -35,7 +35,7 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 	    this.state.hasErrors = false;
 	    
 	    let fd = retrieveFormData(event.target);
-	    this.props.authStore.logToApp(fd.username, fd.password);
+	    this.props.authStore.logToApp(fd.username, fd.password, true);
 	}
 	
 	this.setState({

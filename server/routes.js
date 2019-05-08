@@ -57,6 +57,7 @@ module.exports = function(app){
 	
 	const email = req.query.email;
 	const password = req.query.password;
+	const isCookie = req.query.isCookie;
 
 	models.users.findOne({email: email}, function(err, data){
             if(err || data == null) {
@@ -68,11 +69,12 @@ module.exports = function(app){
 		if(isPasswordValid){
 		    
 		    const loginKey = generateLoginKey();
-		    
-		    res.cookie('login', loginKey, { maxAge: 900000 });
-		    
-		    data.ip = req.ip;
-		    data.cookie = loginKey;
+
+		    if(isCookie){
+			res.cookie('login', loginKey, { maxAge: 900000 });
+			data.ip = req.ip;
+			data.cookie = loginKey;
+		    }
 
 		    // Save cookie + ip
 		    data.save(function(er, d){   

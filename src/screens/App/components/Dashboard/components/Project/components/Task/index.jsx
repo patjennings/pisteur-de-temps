@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {readableDate} from "utils/readableDate";
-import { getClientName, getProjectName } from "utils/defsConverter";
+import { getClientName, getProjectName, getUserName } from "utils/defsConverter";
 import retrieveFormData from "utils/retrieveFormData";
 
 import {toJS} from "mobx";
@@ -120,10 +120,10 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	} else {
 	    return (
 		<div className="track">
-		  {this.props.task}
-		  {this.props.value}
-		  {this.props.comment}
-		  {this.props.username}
+		  {this.props.task} -
+		  {this.props.value} -
+		  {this.props.comment} -
+		  {getUserName(this.props.mainStore.usersDefinitions, this.props.user)} - 
 		  {readableDate(this.props.date)}
 		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a>
 		  <a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>

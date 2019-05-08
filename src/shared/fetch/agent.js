@@ -7,12 +7,12 @@ const API_ROOT = "http://localhost:3000";
 // --------------------
 // Login
 // --------------------
-export function login(em, pwd){
-    console.log(em, pwd);
+export function login(em, pwd, isCk){
     let result = axios
 	.post(`${API_ROOT}/login`, null, {params: {
 	    email : em,
-	    password : pwd
+	    password : pwd,
+	    isCookie : isCk
 	}})
 	.then(res => {
 	    console.log(res);

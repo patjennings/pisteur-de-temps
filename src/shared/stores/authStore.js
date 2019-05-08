@@ -57,11 +57,11 @@ export class AuthStore{
 	    }))
     }
 
-    logToApp(username, password){
+    logToApp(username, password, isCookieActive){
 	console.log(`try to log with ${username} and ${password}`);
 	this.isLoading = true;
 	agent
-	    .login(username, password)
+	    .login(username, password, isCookieActive)
 	    .then(action((res) => {
 		if(res.error === true){
 		    console.log("error while connecting");
