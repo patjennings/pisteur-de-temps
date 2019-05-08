@@ -51799,14 +51799,16 @@ function (_Component) {
       event.preventDefault();
       var usernameField = document.getElementById("login--username");
       var passwordField = document.getElementById("login--password");
+      var cookieCheckbox = document.getElementById("cookieCheck");
       usernameField.value == "" ? this.state.errorOnUsername = true : this.state.errorOnUsername = false;
       passwordField.value == "" ? this.state.errorOnPassword = true : this.state.errorOnPassword = false;
+      var cookieChechboxValue = cookieCheckbox.checked;
       this.state.hasErrors = true;
 
       if (!this.state.errorOnUsername && !this.state.errorOnPassword) {
         this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
-        this.props.authStore.logToApp(fd.username, fd.password, true);
+        this.props.authStore.logToApp(fd.username, fd.password, cookieChechboxValue);
       }
 
       this.setState({
@@ -51857,10 +51859,10 @@ function (_Component) {
         className: "form-check-input",
         type: "checkbox",
         value: "",
-        id: "defaultCheck1"
+        id: "cookieCheck"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "form-check-label",
-        htmlFor: "defaultCheck1"
+        htmlFor: "cookieCheck"
       }, "Remember me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "Forgot your password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -52268,27 +52270,31 @@ function (_Component) {
         name: "synthesis"
       }, "Synthesis ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
-      }, "(current)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
+      }, "(current)")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown my-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-secondary dropdown-toggle",
+        type: "button",
+        id: "dropdownMenuButton",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Connected as "), this.props.authStore.user.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "dropdownMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-link",
+        className: "dropdown-item",
         onClick: function onClick() {
           return push('/admin');
-        },
-        name: "admin"
-      }, "Admin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "sr-only"
-      }, "(current)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-link",
+        }
+      }, "Admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-divider"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
         onClick: function onClick() {
           return _this2.props.authStore.logout();
-        },
-        name: "admin"
-      }, "Logout ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "sr-only"
-      }, "(current)")))), location.pathname));
+        }
+      }, "Logout")))));
     }
   }]);
 
@@ -52768,16 +52774,20 @@ function () {
       var _this = this;
 
       var cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-      var ck = cookies.get('login'); // this.isLoading = true;
+      var ck = cookies.get('login');
+      console.log(cookies); // this.isLoading = true;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["controlCookie"](ck, "::ffff:127.0.0.1").then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
         console.log(res);
         res.data.cookie == true ? console.log("cookie active") : console.log("no active cookie");
-        _this.hasErrors = false;
-        _this.userId = res.data.data._id;
-        _this.isLoggedIn = true;
 
-        _this.getUserData(res.data.data._id);
+        if (res.data.cookie) {
+          _this.hasErrors = false;
+          _this.userId = res.data.data._id;
+          _this.isLoggedIn = true;
+
+          _this.getUserData(res.data.data._id);
+        }
 
         _this.isLoading = false;
       }));

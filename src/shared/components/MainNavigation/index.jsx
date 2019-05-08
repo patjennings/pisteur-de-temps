@@ -34,14 +34,18 @@ const MainNavigation = inject("mainStore", "authStore", "routingStore")(observer
 		    <li className="nav-item">
 		      <a className="nav-link" onClick={() => push('/synthesis')} name="synthesis">Synthesis <span className="sr-only">(current)</span></a>
 		    </li>
-		    <li className="nav-item">
-		      <a className="nav-link" onClick={() => push('/admin')} name="admin">Admin <span className="sr-only">(current)</span></a>
-		    </li>
-		    <li className="nav-item">
-		      <a className="nav-link" onClick={() => this.props.authStore.logout() } name="admin">Logout <span className="sr-only">(current)</span></a>
-		    </li>
 		  </ul>
-		  {location.pathname}
+		  
+		  <div className="dropdown my-2">
+		    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      <small>Connected as </small>{this.props.authStore.user.firstName}
+		    </button>
+		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		      <a className="dropdown-item" onClick={() => push('/admin')}>Admin</a>
+		      <div className="dropdown-divider"></div>
+		      <a className="dropdown-item" onClick={() => this.props.authStore.logout() }>Logout</a>
+		    </div>
+		  </div>
 		</div>
 	      </header>
 	);

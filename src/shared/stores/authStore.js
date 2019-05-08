@@ -23,6 +23,7 @@ export class AuthStore{
     checkLogged(){
 	const cookies = new Cookies();
 	const ck = cookies.get('login');
+	console.log(cookies);
 	// this.isLoading = true;
 
 	agent
@@ -31,10 +32,13 @@ export class AuthStore{
 		console.log(res);
 		res.data.cookie == true ? console.log("cookie active") : console.log("no active cookie");
 
-		this.hasErrors = false;
-		this.userId = res.data.data._id;
-		this.isLoggedIn = true;
-		this.getUserData(res.data.data._id);
+		if(res.data.cookie){
+		    this.hasErrors = false;
+		    this.userId = res.data.data._id;
+		    this.isLoggedIn = true;
+		    this.getUserData(res.data.data._id);
+		}
+		
 
 		this.isLoading = false;
 	    }))

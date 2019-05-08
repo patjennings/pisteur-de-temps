@@ -25,9 +25,11 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 
 	const usernameField = document.getElementById("login--username");
 	const passwordField = document.getElementById("login--password");
+	const cookieCheckbox = document.getElementById("cookieCheck");
 
 	usernameField.value == "" ? this.state.errorOnUsername = true : this.state.errorOnUsername = false;
 	passwordField.value == "" ? this.state.errorOnPassword = true : this.state.errorOnPassword = false;
+	const cookieChechboxValue = cookieCheckbox.checked;
 	this.state.hasErrors = true;
 	
 	
@@ -35,7 +37,7 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 	    this.state.hasErrors = false;
 	    
 	    let fd = retrieveFormData(event.target);
-	    this.props.authStore.logToApp(fd.username, fd.password, true);
+	    this.props.authStore.logToApp(fd.username, fd.password, cookieChechboxValue);
 	}
 	
 	this.setState({
@@ -75,8 +77,8 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 		    <button
 		      className="btn btn-primary">Sign in</button>
 		    <div className="form-check">
-		      <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-			<label className="form-check-label" htmlFor="defaultCheck1">
+		      <input className="form-check-input" type="checkbox" value="" id="cookieCheck"/>
+			<label className="form-check-label" htmlFor="cookieCheck">
 			  Remember me
 			</label>
 		    </div>
