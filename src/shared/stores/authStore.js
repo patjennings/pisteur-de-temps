@@ -12,6 +12,9 @@ export class AuthStore{
 	this.userId = localStorage.id; // l'utilisateur actif
 	this.user = {};
 	this.sessionSecret = "g45aze84IHJzf49Ozfrz5FE";
+	this.retrieveKey = null;
+	this.hasRetrievalError = false;
+	this.retrievalErrorMessage = null;
 
 	// on lance des actions si on a un userId
 	this.userId !== undefined && this.getUserData(this.userId);
@@ -50,6 +53,43 @@ export class AuthStore{
 	localStorage.clear();
     }
 
+    setRetrieveKey(key){
+	this.retrieveKey = key;
+    }
+    sendRetrieveMail(email){
+	this.isLoading = true;
+	agent
+	    .lostPassword(email, "::ffff:127.0.0.1")
+	    .then(action((res) => {
+		this.isLoading = false;
+		console.log(res);
+		if(res.error){
+		    this.hasRetrievalError = true;
+		    this.retrievalErrorMessage = res.message;
+		}
+		else {
+		    this.hasRetrievalError = false;
+		    this.retrievalErrorMessage = null;
+		}
+	    }))
+    }
+    
+    setNewPassword(newPassword){
+	// if retrieveKey
+
+	// launch post /reset-password
+	// & set the new password via API
+
+	this.isLoading = true;
+	agent
+	    .resetPassword(newPassword, this.retrieveKey)
+	    .then(action((res) => {
+		this.isLoading = false;
+		console.log(res);
+
+	    }))
+    }
+
     getUserData(uid){
 	this.isLoading = true;
 	console.log("fetch user data");
@@ -86,15 +126,19 @@ export class AuthStore{
 }
 
 decorate(AuthStore, {
+    retrieveKey: observable,
     isLoading: observable,
     hasErrors: observable,
     isLoggedIn: observable,
     userId: observable,
     user: observable,
     sessionSecret: observable,
+    hasRetrievalError: observable,
+    retrievalErrorMessage: observable,
     checkLogged: action,
     logout: action,
-    logToApp: action
+    logToApp: action,
+    setRetrieveKey: action
 });
 
 

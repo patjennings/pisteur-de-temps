@@ -3,11 +3,14 @@ var path =         require("path");
 var express =      require("express");
 var crypto =       require("crypto");
 var cookieParser = require("cookie-parser");
+var emailjs =   require("emailjs/email");
 
 var validatePassword = require("./utils/validation").validatePassword;
 var saltAndHash =      require("./utils/validation").saltAndHash;
 
-var generateLoginKey = require("./utils/validation").generateLoginKey;
+var generateKey = require("./utils/validation").generateKey;
+
+const APP_ROOT = "http://localhost:3000";
 
 module.exports = function(app){
 
@@ -46,6 +49,115 @@ module.exports = function(app){
 	res.render('app', {title: "App root"});
     });
 
+    // -----------------
+    // LOST PASSWORD
+    // -----------------
+    app.get('/lost-password', function(req, res){
+	res.render('app', {title: "App root"});
+    })
+    
+    app.post('/lost-password', function(req, res){
+
+	var response = {};
+
+	const email = req.query.email;
+	const ip = req.query.ip;
+	
+	let pwkey = generateKey();
+
+	// infos pour envoyer l'email
+	var server = emailjs.server.connect({
+	    user:    "bonjour@thomasguesnon.fr",
+	    password:"PNvLwf2okN",
+	    host:    "ssl0.ovh.net",
+	    ssl:     true
+	});
+
+
+	
+	
+	 models.users.findOne({email: email}, function(err, data){
+	    if(err || data == null){
+		response = {"error": true, "message" : "no account with this email"};
+		res.json(response);
+	    } else {
+		data.key = pwkey;
+		data.ip = ip;
+
+		// on sauve dans la base
+		data.save(function(er, d){   
+		    if(err) {
+			response = {"error" : true,"message" : "Error updating data"};
+		    } else {
+			response = {"error" : false, "message" : d._id+"updated with the key "+pwkey, "userId" : d._id};
+		    }
+		    res.json(response);
+		});
+
+		//on envoie le mail
+		server.send({
+		    text:    `This is your link ${APP_ROOT}/reset-password?key=${pwkey}`,
+		    from:    "Thomas from Timetracker <do-not-reply@timetracker.net>",
+		    to:      email,
+		    subject: "Password retrieval"
+		}, function(err, message) {
+		    console.log(err || message);
+		    
+		});
+	    }
+	})
+	
+	
+    })
+
+
+    
+    // -----------------
+    // RESET PASSWORD
+    // -----------------
+    app.get('/reset-password', function(req, res){
+	// console.log(req.query.key);
+	// validate the password key
+	res.render('app', {title: "App root"});
+	// res.json(req.query.key);
+    })
+
+
+    // user clicks on the link
+    // reset-password?key=zaervjrstlkzrktbn
+    // enter new password
+    // find the document with the key
+    // salt+hash the password, and save it in the db
+
+    app.post('/reset-password', function(req, res){
+
+	var response = {};
+
+	const newpassword = req.query.newpassword;
+	const key = req.query.key;
+	
+	models.users.findOne({key: key}, function(err, data){
+	    if(err || data == null){
+		response = {"error": true, "message" : "There is no account with this key."};
+		res.json(response);
+	    } else {
+
+		// Hash the password using SHA1 algorithm, plus the salt
+		const hash  = saltAndHash(newpassword);
+		data.password = hash;
+
+		// on sauve dans la base
+		data.save(function(er, d){   
+		    if(err) {
+			response = {"error" : true,"message" : "Error updating data"};
+		    } else {
+			response = {"error" : false, "message" : "password updated for "+d._id, "userId" : d._id};
+		    }
+		    res.json(response);
+		});
+	    }
+	})
+    })
 
     // ------------
     // LOGIN
@@ -68,7 +180,7 @@ module.exports = function(app){
 
 		if(isPasswordValid){
 		    
-		    const loginKey = generateLoginKey();
+		    const loginKey = generateKey();
 
 		    if(isCookie){
 			res.cookie('login', loginKey, { maxAge: 900000 });

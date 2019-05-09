@@ -8,7 +8,7 @@ import retrieveFormData from "utils/retrieveFormData";
 import "./styles.scss";
 import "assets/styles/main.scss";
 
-const Login = inject("mainStore", "authStore")(observer(class Login extends Component {
+const Login = inject("mainStore", "authStore", "routingStore")(observer(class Login extends Component {
     constructor(props){
 	super(props);
 	this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,6 +51,8 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 	const usernameAttr = this.state.errorOnTime ? "is-invalid" : null;
 	const passwordAttr = this.state.errorOnTask ? "is-invalid" : null;
 	
+	const { location, push, goBack } = this.props.routingStore;
+	
 	// console.log("Login is rendered");
 	return (
 	    <div className="login logged-out">
@@ -82,8 +84,7 @@ const Login = inject("mainStore", "authStore")(observer(class Login extends Comp
 			  Remember me
 			</label>
 		    </div>
-		    <a href="#">Forgot your password</a>
-		    <a href="#">Create an account</a>
+		    <a onClick={() => push('/lost-password')}>Forgot your password</a>
 		  </div>
 		</div>
 	      </form>

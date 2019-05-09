@@ -24,6 +24,38 @@ export function login(em, pwd, isCk){
 }
 
 // --------------------
+// lost, reset password
+// --------------------
+export function lostPassword(em, ip){
+    let result = axios
+	.post(`${API_ROOT}/lost-password`, null, {params: {
+	    email : em,
+	    ip: ip
+	}})
+	.then(res => {
+	    console.log(res);
+	    return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+export function resetPassword(newpass, key){
+    let result = axios
+	.post(`${API_ROOT}/reset-password`, null, {params: {
+	    newpassword : newpass,
+	    key : key
+	}})
+	.then(res => {
+	    console.log(res);
+	    return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+
+// --------------------
 // Definitions
 // --------------------
 export function fetchClientsDefinitions(){

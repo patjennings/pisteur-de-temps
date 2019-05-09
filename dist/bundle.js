@@ -11959,6 +11959,36 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/LostPassword/styles.scss":
+/*!********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/LostPassword/styles.scss ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/ResetPassword/styles.scss":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/ResetPassword/styles.scss ***!
+  \*********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Synthesis/styles.scss":
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Synthesis/styles.scss ***!
@@ -51773,7 +51803,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Login, _Component);
@@ -51821,7 +51851,11 @@ function (_Component) {
     key: "render",
     value: function render() {
       var usernameAttr = this.state.errorOnTime ? "is-invalid" : null;
-      var passwordAttr = this.state.errorOnTask ? "is-invalid" : null; // console.log("Login is rendered");
+      var passwordAttr = this.state.errorOnTask ? "is-invalid" : null;
+      var _this$props$routingSt = this.props.routingStore,
+          location = _this$props$routingSt.location,
+          push = _this$props$routingSt.push,
+          goBack = _this$props$routingSt.goBack; // console.log("Login is rendered");
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login logged-out"
@@ -51864,10 +51898,10 @@ function (_Component) {
         className: "form-check-label",
         htmlFor: "cookieCheck"
       }, "Remember me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, "Forgot your password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, "Create an account")))));
+        onClick: function onClick() {
+          return push('/lost-password');
+        }
+      }, "Forgot your password")))));
     }
   }]);
 
@@ -51886,6 +51920,320 @@ function (_Component) {
 
 
 var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Login/styles.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/screens/App/components/LostPassword/index.jsx":
+/*!***********************************************************!*\
+  !*** ./src/screens/App/components/LostPassword/index.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var utils_parseQuery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/parseQuery */ "./src/shared/utils/parseQuery.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/LostPassword/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var LostPassword = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+/*#__PURE__*/
+function (_Component) {
+  _inherits(LostPassword, _Component);
+
+  function LostPassword(props) {
+    var _this;
+
+    _classCallCheck(this, LostPassword);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LostPassword).call(this, props));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.state = {
+      errorOnEmail: false,
+      emailSent: false
+    };
+    return _this;
+  }
+
+  _createClass(LostPassword, [{
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var _this$props$routingSt = this.props.routingStore,
+          location = _this$props$routingSt.location,
+          push = _this$props$routingSt.push,
+          goBack = _this$props$routingSt.goBack;
+      var emailField = document.getElementById("login--email");
+      emailField.value == "" ? this.state.errorOnEmail = true : this.state.errorOnEmail = false;
+
+      if (!this.state.errorOnEmail) {
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
+        this.props.authStore.sendRetrieveMail(fd.email);
+        this.state.emailSent = true;
+        setTimeout(function () {
+          push("/");
+        }, 3000);
+      }
+
+      this.setState({
+        emailSent: this.state.emailSent,
+        errorOnEmail: this.state.errorOnEmail
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.errorOnEmail ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, "Please enter a valid email") : null, this.props.authStore.hasRetrievalError ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, this.props.authStore.retrievalErrorMessage) : null, !this.props.authStore.hasRetrievalError && this.state.emailSent ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-success",
+        role: "alert"
+      }, "Check your email") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "login--email"
+      }, "Enter your account email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control w-100",
+        name: "email",
+        id: "login--email",
+        type: "text",
+        placeholder: "Your email",
+        "aria-label": "Input"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary"
+      }, "Submit new password")))));
+    }
+  }]);
+
+  return LostPassword;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (LostPassword);
+
+/***/ }),
+
+/***/ "./src/screens/App/components/LostPassword/styles.scss":
+/*!*************************************************************!*\
+  !*** ./src/screens/App/components/LostPassword/styles.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/LostPassword/styles.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/screens/App/components/ResetPassword/index.jsx":
+/*!************************************************************!*\
+  !*** ./src/screens/App/components/ResetPassword/index.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var utils_parseQuery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/parseQuery */ "./src/shared/utils/parseQuery.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/ResetPassword/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var ResetPassword = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ResetPassword, _Component);
+
+  function ResetPassword(props) {
+    var _this;
+
+    _classCallCheck(this, ResetPassword);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ResetPassword).call(this, props));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.state = {
+      errorOnPassword: false,
+      passwordRenewed: false
+    };
+    return _this;
+  }
+
+  _createClass(ResetPassword, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var params = Object(utils_parseQuery__WEBPACK_IMPORTED_MODULE_3__["default"])(this.props.location.search);
+      this.props.authStore.setRetrieveKey(params.key);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var _this$props$routingSt = this.props.routingStore,
+          location = _this$props$routingSt.location,
+          push = _this$props$routingSt.push,
+          goBack = _this$props$routingSt.goBack;
+      var newPasswordField = document.getElementById("login--password");
+      newPasswordField.value == "" ? this.state.errorOnPassword = true : this.state.errorOnPassword = false;
+
+      if (!this.state.errorOnPassword) {
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
+        this.props.authStore.setNewPassword(fd.password);
+        this.state.passwordRenewed = true;
+        this.state.errorOnPassword = false;
+        setTimeout(function () {
+          push("/");
+        }, 3000);
+      }
+
+      this.setState({
+        passwordRenewed: this.state.passwordRenewed,
+        errorOnPassword: this.state.errorOnPassword
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.errorOnPassword ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, "Please enter a password\u2026") : null, !this.state.errorOnPassword && this.state.passwordRenewed ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-success",
+        role: "alert"
+      }, "New password is now active. Go on homepage, ands try it out !") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "login--password"
+      }, "Enter your new password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control w-100",
+        name: "password",
+        id: "login--password",
+        type: "password",
+        placeholder: "New password",
+        "aria-label": "Input"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary"
+      }, "Submit new password")))));
+    }
+  }]);
+
+  return ResetPassword;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (ResetPassword);
+
+/***/ }),
+
+/***/ "./src/screens/App/components/ResetPassword/styles.scss":
+/*!**************************************************************!*\
+  !*** ./src/screens/App/components/ResetPassword/styles.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/ResetPassword/styles.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -52022,11 +52370,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Dashboard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Dashboard */ "./src/screens/App/components/Dashboard/index.jsx");
 /* harmony import */ var _components_Synthesis__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Synthesis */ "./src/screens/App/components/Synthesis/index.jsx");
 /* harmony import */ var _components_Admin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Admin */ "./src/screens/App/components/Admin/index.jsx");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_ResetPassword__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ResetPassword */ "./src/screens/App/components/ResetPassword/index.jsx");
+/* harmony import */ var _components_LostPassword__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/LostPassword */ "./src/screens/App/components/LostPassword/index.jsx");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52055,7 +52405,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var App = Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_7__["observer"])(
+
+
+var App = Object(mobx_react__WEBPACK_IMPORTED_MODULE_9__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_9__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(App, _Component);
@@ -52123,6 +52475,12 @@ function (_Component) {
             to: "/"
           });
         }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/reset-password",
+        component: _components_ResetPassword__WEBPACK_IMPORTED_MODULE_7__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/lost-password",
+        component: _components_LostPassword__WEBPACK_IMPORTED_MODULE_8__["default"]
       }));
     }
   }]);
@@ -52487,12 +52845,14 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: login, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchUser, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
+/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchUser, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lostPassword", function() { return lostPassword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPassword", function() { return resetPassword; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchClientsDefinitions", function() { return fetchClientsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectsDefinitions", function() { return fetchProjectsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersDefinitions", function() { return fetchUsersDefinitions; });
@@ -52531,6 +52891,37 @@ function login(em, pwd, isCk) {
       email: em,
       password: pwd,
       isCookie: isCk
+    }
+  }).then(function (res) {
+    console.log(res);
+    return res.data;
+  }).catch(function (error) {
+    return console.log(error);
+  });
+  return result;
+} // --------------------
+// lost, reset password
+// --------------------
+
+function lostPassword(em, ip) {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(API_ROOT, "/lost-password"), null, {
+    params: {
+      email: em,
+      ip: ip
+    }
+  }).then(function (res) {
+    console.log(res);
+    return res.data;
+  }).catch(function (error) {
+    return console.log(error);
+  });
+  return result;
+}
+function resetPassword(newpass, key) {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(API_ROOT, "/reset-password"), null, {
+    params: {
+      newpassword: newpass,
+      key: key
     }
   }).then(function (res) {
     console.log(res);
@@ -52761,7 +53152,10 @@ function () {
     this.userId = localStorage.id; // l'utilisateur actif
 
     this.user = {};
-    this.sessionSecret = "g45aze84IHJzf49Ozfrz5FE"; // on lance des actions si on a un userId
+    this.sessionSecret = "g45aze84IHJzf49Ozfrz5FE";
+    this.retrieveKey = null;
+    this.hasRetrievalError = false;
+    this.retrievalErrorMessage = null; // on lance des actions si on a un userId
 
     this.userId !== undefined && this.getUserData(this.userId);
     this.checkLogged();
@@ -52800,38 +53194,76 @@ function () {
       localStorage.clear();
     }
   }, {
+    key: "setRetrieveKey",
+    value: function setRetrieveKey(key) {
+      this.retrieveKey = key;
+    }
+  }, {
+    key: "sendRetrieveMail",
+    value: function sendRetrieveMail(email) {
+      var _this2 = this;
+
+      this.isLoading = true;
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["lostPassword"](email, "::ffff:127.0.0.1").then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
+        _this2.isLoading = false;
+        console.log(res);
+
+        if (res.error) {
+          _this2.hasRetrievalError = true;
+          _this2.retrievalErrorMessage = res.message;
+        } else {
+          _this2.hasRetrievalError = false;
+          _this2.retrievalErrorMessage = null;
+        }
+      }));
+    }
+  }, {
+    key: "setNewPassword",
+    value: function setNewPassword(newPassword) {
+      var _this3 = this;
+
+      // if retrieveKey
+      // launch post /reset-password
+      // & set the new password via API
+      this.isLoading = true;
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["resetPassword"](newPassword, this.retrieveKey).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
+        _this3.isLoading = false;
+        console.log(res);
+      }));
+    }
+  }, {
     key: "getUserData",
     value: function getUserData(uid) {
-      var _this2 = this;
+      var _this4 = this;
 
       this.isLoading = true;
       console.log("fetch user data");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUser"](uid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
-        _this2.user = res.data;
-        _this2.isLoading = false;
+        _this4.user = res.data;
+        _this4.isLoading = false;
       }));
     }
   }, {
     key: "logToApp",
     value: function logToApp(username, password, isCookieActive) {
-      var _this3 = this;
+      var _this5 = this;
 
       console.log("try to log with ".concat(username, " and ").concat(password));
       this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](username, password, isCookieActive).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
         if (res.error === true) {
           console.log("error while connecting");
-          _this3.hasErrors = true;
+          _this5.hasErrors = true;
         } else {
-          _this3.hasErrors = false;
-          _this3.userId = res.userId;
-          _this3.isLoggedIn = true;
+          _this5.hasErrors = false;
+          _this5.userId = res.userId;
+          _this5.isLoggedIn = true;
 
-          _this3.getUserData(res.userId);
+          _this5.getUserData(res.userId);
 
-          localStorage.setItem("secret", _this3.sessionSecret);
-          localStorage.setItem("id", _this3.userId);
-          _this3.isLoading = false;
+          localStorage.setItem("secret", _this5.sessionSecret);
+          localStorage.setItem("id", _this5.userId);
+          _this5.isLoading = false;
         }
       }));
     }
@@ -52840,15 +53272,19 @@ function () {
   return AuthStore;
 }();
 Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(AuthStore, {
+  retrieveKey: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoading: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   hasErrors: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoggedIn: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   userId: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   user: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   sessionSecret: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  hasRetrievalError: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  retrievalErrorMessage: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   checkLogged: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   logout: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
-  logToApp: mobx__WEBPACK_IMPORTED_MODULE_0__["action"]
+  logToApp: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  setRetrieveKey: mobx__WEBPACK_IMPORTED_MODULE_0__["action"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (new AuthStore());
 
@@ -53187,6 +53623,30 @@ function getClientName(defs, id) {
     result = r.name;
   });
   return result;
+}
+
+/***/ }),
+
+/***/ "./src/shared/utils/parseQuery.js":
+/*!****************************************!*\
+  !*** ./src/shared/utils/parseQuery.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return parseQuery; });
+function parseQuery(url) {
+  // on prend les paramètre d'une url en entrée
+  var inParams = url.slice(1);
+  inParams = inParams.split("&");
+  var params = {};
+  inParams.forEach(function (i) {
+    var parts = i.split("=");
+    params["".concat(parts[0])] = parts[1];
+  });
+  return params; // on retourne un objet avec tous les arguments
 }
 
 /***/ }),

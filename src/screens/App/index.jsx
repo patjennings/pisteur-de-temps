@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Synthesis from './components/Synthesis';
 import Admin from './components/Admin';
+import ResetPassword from './components/ResetPassword';
+import LostPassword from './components/LostPassword';
 
 import {observer, inject} from "mobx-react";
 
@@ -54,6 +56,8 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 		    this.props.authStore.isLoggedIn || this.props.authStore.sessionSecret == localStorage.secret  ?
 			<Admin/> : <Redirect to="/"/>
 		)} />
+		<Route path="/reset-password" component={ResetPassword} />
+		<Route path="/lost-password" component={LostPassword} />
 		</div>
 	    
 

@@ -13,7 +13,8 @@ var userSchema  = {
     "relatedProjects" : Array,
     "date": String,
     "ip": String,
-    "cookie": String
+    "cookie": String,
+    "key": String
 };
 var clientSchema  = {
     "name": String,
