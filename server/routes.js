@@ -264,6 +264,7 @@ module.exports = function(app){
 	db.lastName = req.body.lastName;
         db.email = req.body.email;
 	db.date = new Date();
+	db.isAdmin = req.body.isAdmin;
 	db.ip = null;
 	db.cookie = null;
 	
@@ -295,6 +296,7 @@ module.exports = function(app){
 		response.projects = data.relatedProjects;
 		response.date = data.date;
 		response.email = data.email;
+		response.isAdmin = data.isAdmin;
 	    }
 	    res.json(response);
         });
@@ -316,6 +318,9 @@ module.exports = function(app){
 		}
 		if (req.body.password !== undefined) {
 		    data.password = req.body.password;
+		}
+		if (req.body.isAdmin !== undefined) {
+		    data.isAdmin = req.body.isAdmin;
 		}
 		if (req.body.relatedProject !== undefined) {
 		    if(req.query.action === "remove"){
@@ -489,11 +494,22 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			response = {"error" : false, "message" : "Project is removed"};
+			// là, on supprime les track qui ont le ce projet en id
+
+			models.trackedTime.remove({relatedProject: req.params.id}, function(err,data){
+			    if(err){
+				response = {"error" : true,"message" : "Error deleting related project data"};
+			    } else {
+		
+				response = {"error" : false, "message" : "Project and related tracks were deleted"};	 
+			    }
+			    res.send(response);
+			});
+
 		    }
 		});
 	    }
-	    res.send(response);
+	    
         });
     });
 

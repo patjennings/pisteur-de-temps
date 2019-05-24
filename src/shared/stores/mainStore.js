@@ -176,10 +176,48 @@ export class MainStore{
 	    }))
 	// .finally(action(() => { this.isLoading = false; }));
     }
+    deleteClient(clientId){
+	agent.clientDelete(clientId)
+	    .then(action(() => {
+		this.loadDefinitions();
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    updateClient(clientId, formData){
+	agent.clientUpdate(clientId, formData)
+	    .then(action(() => {
+		console.log("update client");
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadDefinitions();
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
 
     // project
     postNewProject(formData){
 	agent.projectNew(formData)
+	    .then(action(() => {
+		// console.log(formData);
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    updateProject(projectid, formData){
+	agent.projectUpdate(projectid, formData)
 	    .then(action(() => {
 		// console.log(formData);
 		this.loadDefinitions(); 
@@ -213,7 +251,10 @@ decorate(MainStore, {
     loadDefinitions: action,
     postNewTask: action,
     postNewClient: action,
+    deleteClient: action,
+    updateClient: action,
     postNewProject: action,
+    updateProject: action,
     updateTask: action,
     deleteTask: action
 });
