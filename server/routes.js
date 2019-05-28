@@ -247,6 +247,8 @@ module.exports = function(app){
 		    result.firstName = data[id].firstName;
 		    result.lastName = data[id].lastName;
 		    result.relatedProjects = data[id].relatedProjects;
+		    result.isAdmin = data[id].isAdmin;
+		    result.isFirst = data[id].isFirst;
 		    
 		    response.push(result);
 		}
@@ -259,30 +261,52 @@ module.exports = function(app){
 	var response = {};
         // fetch email and password from REST request.
         // Add strict validation when you use this in Production.
+
+	// si c'est le premier utilisateur, on lui met le flag user0
+	let isFirstUser;
 	
-	db.firstName = req.body.firstName;
-	db.lastName = req.body.lastName;
-        db.email = req.body.email;
-	db.date = new Date();
-	db.isAdmin = req.body.isAdmin;
-	db.ip = null;
-	db.cookie = null;
+	models.users.find({}, function(err, data){
+	    if(err){
+		return null;
+	    } else {
+		if(data.length > 0){
+		    isFirstUser = false;
+		} else {
+		    isFirstUser = true;
+		}
+		saveUser();
+	    }
+	});
+	// console.log(isFirstUser);
+
+	function saveUser(){
+	    db.firstName = req.body.firstName;
+	    db.lastName = req.body.lastName;
+            db.email = req.body.email;
+	    db.date = new Date();
+	    db.isAdmin = req.body.isAdmin;
+	    db.ip = null;
+	    db.cookie = null;
+	    db.isFirst = isFirstUser;
+	    
+            // Hash the password using SHA1 algorithm, plus the salt
+            const hash  = saltAndHash(req.body.password);
+	    db.password = hash;
+	    
+	    db.relatedProjects = req.body.relatedProjects;
+            db.save(function(err, db){
+		// save() will run insert() command of MongoDB.
+		// it will add new data in collection.
+		if(err) {
+                    response = {"error" : true,"message" : "Error adding data"};
+		} else {
+                    response = {"error" : false,"message" : "User added", "data" : db };
+		}
+		res.json(response);
+            });
+	}
 	
-        // Hash the password using SHA1 algorithm, plus the salt
-        const hash  = saltAndHash(req.body.password);
-	db.password = hash;
 	
-	db.relatedProjects = req.body.relatedProjects;
-        db.save(function(err, db){
-            // save() will run insert() command of MongoDB.
-            // it will add new data in collection.
-            if(err) {
-                response = {"error" : true,"message" : "Error adding data"};
-            } else {
-                response = {"error" : false,"message" : "User added", "data" : db };
-            }
-            res.json(response);
-        });
     });
     app.get("/user/:id", function (req, res) {
 	var response = {};
@@ -413,6 +437,7 @@ module.exports = function(app){
 		    result.description = data[id].description;
 		    result.budget = data[id].budget;
 		    result.client = data[id].relatedClient;
+		    result.hasTracks = data[id].hasTracks;
 		    response.push(result);
 		}
 	    }
@@ -427,6 +452,7 @@ module.exports = function(app){
 	db.relatedClient = req.body.client;
 	db.description = req.body.description;
 	db.budget = req.body.budget;
+	db.hasTracks = false;
 	
 	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
@@ -472,6 +498,7 @@ module.exports = function(app){
 		if (req.body.budget !== undefined) {
 		    data.budget = req.body.budget;
 		}
+		data.hasTracks = true;
 		// Save data
 		data.save(function(err, data){
                     if(err) {
@@ -485,6 +512,8 @@ module.exports = function(app){
         });
     });
     app.delete("/projects/:id", function (req, res) {
+
+
 	var response = {};
 	models.projects.findById(req.params.id, function(err,data){
 	    if(err){
@@ -503,14 +532,24 @@ module.exports = function(app){
 		
 				response = {"error" : false, "message" : "Project and related tracks were deleted"};	 
 			    }
-			    res.send(response);
-			});
 
+			});
+			res.send(response);
 		    }
 		});
 	    }
 	    
         });
+
+	// on delete également les tracks related
+	// models.trackedTime.deleteMany({relatedProject : req.params.id}), function(err, data){
+	//     if(err){
+	// 	response = {"error" : true,"message" : "Error deleting related tracked time"};
+	//     } else {
+	// 	response = {"error" : false, "message" : "Related"};	 
+	//     }
+	// }
+	// res.send(response);
     });
 
     // tracked time
@@ -526,6 +565,7 @@ module.exports = function(app){
 	});	
     });
     app.post("/projects/:id/trackedtime", function (req, res) {
+	// var proj = new models.projects();
 	var db = new models.trackedTime(); // on crée ce nouvel objet models pour accéder au schéma
 	var response = {};
 	var d = new Date(); // sert à renseigner la date de post 
@@ -547,9 +587,29 @@ module.exports = function(app){
 	    } else {
 		response = {"error" : false,"message" : "Tracked time added", "data" : db};
 	    }
-	    res.json(response);
-	});	
+	    // res.json(response);
+	});
+
+	// on flag le projet à hasTracks : true
+	models.projects.findById(req.params.id, function(err,data){
+	    if(err) {
+                response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		data.hasTracks = true;
+		// Save data
+		data.save(function(err, data){
+                    if(err) {
+                        response = {"error" : true,"message" : "Error updating data"};
+                    } else {
+                        response = {"error" : false,"message" : "Project is updated for "+req.params.id, "data" : data };
+                    }
+		    
+		})
+	    }
+        });
+	res.json(response);
     });
+    
     app.get("/projects/:id/trackedtime/:trackid", function (req, res) {
 	var response = {};
 	

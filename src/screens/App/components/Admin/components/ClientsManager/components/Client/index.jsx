@@ -104,7 +104,7 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 	    );
 	} else {
 	    return (
-		<div className="track">
+		<div className="client">
 		  {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)} - {projectsNumber} projects
 		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} ><i className="ico ico-medium">pen</i></a>
 		  {projectsNumber < 1 ?

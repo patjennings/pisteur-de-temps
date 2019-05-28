@@ -45,3 +45,15 @@ export function getProjectsNumberForClient(defs, id){
     
     return result;
 }
+export function getTracksNumberForProject(defs, id){
+    let result = 0
+    const list = toJS(defs);
+
+    list.forEach(l => {
+	id == l.client && result++
+	console.log(l.client);
+    })
+    
+    return result;
+}
+

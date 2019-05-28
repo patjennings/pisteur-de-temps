@@ -32,7 +32,7 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 	      <button className="btn btn-primary" type="button" onClick={this.addProject}>Add a project</button>
 	       { this.state.isAddingProject ? <AddProject onChange={this.handleChange} /> : null }
 	      <ul>
-		{this.props.mainStore.projectsDefinitions.map(p => <li><Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget}/></li>)}
+		{this.props.mainStore.projectsDefinitions.map(p => <li key={p._id}><Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/></li>)}
 
 	      </ul>
 	    </div>

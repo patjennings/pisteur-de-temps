@@ -135,6 +135,7 @@ decorate(AuthStore, {
     sessionSecret: observable,
     hasRetrievalError: observable,
     retrievalErrorMessage: observable,
+    getUserData: action,
     checkLogged: action,
     logout: action,
     logToApp: action,

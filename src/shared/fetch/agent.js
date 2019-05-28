@@ -101,6 +101,19 @@ export function fetchUser(id){
     return result;
 }
 
+export function userUpdate(id, body){
+    body = {...body};
+    let result = axios
+	.put(`${API_ROOT}/user/${id}`, body)
+	.then(res => {
+	    result = res
+	})
+	.catch(error => {
+	    result = error
+	});
+    return result;
+}
+
 // --------------------
 // Cookie
 // --------------------

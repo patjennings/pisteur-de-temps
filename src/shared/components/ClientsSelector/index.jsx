@@ -34,7 +34,6 @@ const ClientsSelector = inject("mainStore")(observer(class ClientsSelector exten
 	this.props.onChange(clientId);
     }
 
-
     render() {
 	return (
 	    <div className="dropdown client-selector">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
+import {toJS} from "mobx";
 import {observer, inject} from "mobx-react";
 
 import "./styles.scss";
@@ -38,6 +39,12 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 
 
     render() {
+	// console.log(this.state.activeProject);
+	// const activeClient = this.props.mainStore.projectsDefinitions[0].client;
+	// const activeClient = this.props.mainStore.projectsDefinitions.filter(n => n._id === this.state.activeProject).client;
+	console.log("/////////");
+	// console.log(activeClient);
+	
 	return (
 	    <div className="dropdown project-selector">
 	      <button
@@ -49,7 +56,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		    "Select a project" :
 		    <div className="">
 			  {getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
-			  <div className="text-muted small">Client Name</div>    
+			      <div className="text-muted small">client</div>    
 			</div>
 		    }
 	      </button>

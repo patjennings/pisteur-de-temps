@@ -33,7 +33,7 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
 	      <button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>
 	       { this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
 	      <ul>
-		{this.props.mainStore.clientsDefinitions.map(c => <li><Client key={c._id} clientid={c._id}/></li>)}
+		{this.props.mainStore.clientsDefinitions.map(c => <li key={c._id}><Client key={c._id} clientid={c._id}/></li>)}
 
 	      </ul>
 	    </div>
