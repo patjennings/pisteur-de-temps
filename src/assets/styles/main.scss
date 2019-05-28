@@ -1,4 +1,19 @@
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "variables";
+@import "fonts";
 @import "mixins";
 @import "udwi";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "lato", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

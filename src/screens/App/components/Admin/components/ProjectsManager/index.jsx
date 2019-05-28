@@ -29,13 +29,35 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
     render() {
 	return (
 	    <div>
-	      <button className="btn btn-primary" type="button" onClick={this.addProject}>Add a project</button>
-	       { this.state.isAddingProject ? <AddProject onChange={this.handleChange} /> : null }
-	      <ul>
-		{this.props.mainStore.projectsDefinitions.map(p => <li key={p._id}><Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/></li>)}
+	      <div className="projects-header pane-header">
+		<div className="actions">
+		  <button className="btn btn-primary" type="button" onClick={this.addProject}>Add a project</button>
+		  { this.state.isAddingProject ? <AddProject onChange={this.handleChange} /> : null }
+		</div>
+		<div className="column-name">
+		  <div className="row">
+		    <div className="col-2">
+		      Client
+		    </div>
+		    <div className="col-4">
+		      Project & description
+		    </div>
+		    <div className="col-2">
+		      Budget
+		    </div>
+		    <div className="col-4">
+		      Utilisateurs
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div className="projects-content pane-content">
 
-	      </ul>
-	    </div>
+		<ul>
+		  {this.props.mainStore.projectsDefinitions.map(p => <li key={p._id}><Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/></li>)}
+                </ul>
+	      </div>
+            </div>
 	);
     }
 }));

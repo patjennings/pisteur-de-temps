@@ -105,12 +105,14 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 	} else {
 	    return (
 		<div className="client">
+		  
 		  {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)} - {projectsNumber} projects
 		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} ><i className="ico ico-medium">pen</i></a>
 		  {projectsNumber < 1 ?
-					<a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a> :
-					<a className="track-delete d-flex align-items-center muted" data-toggle="tooltip" data-placement="top" title="Delete"><i className="ico ico-medium ico-trash">trash</i></a>}
-		  
+					<a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>:
+					    <a className="track-delete d-flex align-items-center muted" data-toggle="tooltip" data-placement="top" title="Delete"><i className="ico ico-medium ico-trash">trash</i></a>
+					    }
+					
 		</div>
 	    );
 

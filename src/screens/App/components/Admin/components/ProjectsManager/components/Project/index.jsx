@@ -116,49 +116,84 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 	if(this.state.isEdited){
 	    return (
 		<div className="project edited">
-		  <ClientsSelector onChange={this.setActiveClient} activeClient={this.props.clientid}/>
-		  <form onSubmit={this.handleSubmit}>
-		    <input className="form-control"
-			   name="name"
-			   id={"project-input--project-"+this.props.projectid}
-			   type="text"
-			   aria-label="Input"/>
-		    <input className="form-control"
-			   name="description"
-			   id={"project-input--description-"+this.props.projectid}
-			   type="text"
-			   aria-label="Input"/>
-		    <input className="form-control"
-			   name="budget"
-			   id={"project-input--budget-"+this.props.projectid}
-			   type="text"
-			   aria-label="Input"/>
-		    <input className="form-control"
-			   id="project-input--client"
-			   name="client"
-			   type="hidden"
-			   value=""
-			   aria-label="Input" />
+	          <form onSubmit={this.handleSubmit} className="w100">
+		      <div className="row">  
+  			<div className="col-2">
+  			  <ClientsSelector onChange={this.setActiveClient} activeClient={this.props.clientid}/>
+  			  <input className="form-control"
+  				 id="project-input--client"
+  				 name="client"
+  				 type="hidden"
+  				 value=""
+  				 aria-label="Input" />
+  			</div>
+  			<div className="col-4">
+  			  <input className="form-control"
+  				 name="name"
+  				 id={"project-input--project-"+this.props.projectid}
+  				 type="text"
+  				 aria-label="Input"/>
+  			  <textarea className="form-control"
+  				    name="description"
+  				    id={"project-input--description-"+this.props.projectid}
+  				    type="text"
+  				    aria-label="Input"/>
+  			</div>
+  			<div className="col-2">
+  			  <input className="form-control"
+  				 name="budget"
+  				 id={"project-input--budget-"+this.props.projectid}
+  				 type="text"
+  				 aria-label="Input"/>
+  			</div>
+  			<div className="col-3">
+			  
+  			</div>
+  			<div className="col-1">
+  			  <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
+  			</div>
+			
+  		      </div>
+		  
+		  <div className="row">
+		    <div className="col-6">
+		      {this.props.hasTracks && <div className="alert alert-danger" role="alert">All tracks in this project will be deleted</div> }
+		    </div>
+		    <div className="col-2">
+		      <button className="btn btn-danger" onClick={this.deleteProject}>Delete project</button>
+		    </div>
+		    
+		    <div className="col-4">
+		      <button
+			className="btn btn-primary">Update</button>&nbsp;
 		    <button
-		      className="btn btn-primary btn-sm">Update</button>
-		    <button
-		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+		    </div>
+		  </div>
 		  </form>
-		  {this.props.hasTracks ?
-		      <p>Attention, ce projet a des temps renseignés</p>
-		      : null }
-		      <button className="btn btn-alert btn-sm" onClick={this.deleteProject}>Delete</button>
 		</div>
 	    );
 	} else {
 	    return (
 		<div className="project">
-		  {getProjectName(this.props.mainStore.projectsDefinitions, this.props.projectid)} - 
-		  {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)} - 
-		  {this.props.description} - 
-		  {this.props.budget} - 
-		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} ><i className="ico ico-medium">pen</i></a>
-		  
+		  <div className="row">
+		    <div className="col-2">
+		      {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)}
+		    </div>
+		    <div className="col-4">
+		      {getProjectName(this.props.mainStore.projectsDefinitions, this.props.projectid)}<br/>
+		      <span className="text-muted">{this.props.description}</span>
+		    </div>
+		    <div className="col-2">
+		      {this.props.budget}
+		    </div>
+		    <div className="col-3">
+
+		    </div>
+		    <div className="col-1">
+		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
+		    </div>
+		  </div>
 		</div>
 	    );
 

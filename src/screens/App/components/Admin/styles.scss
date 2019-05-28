@@ -1,0 +1,33 @@
+.personal{
+    
+}
+.manager{
+    #nav-tabContent{
+	.pane-header{
+	    .actions{
+		padding: 1rem 0;
+	    }
+	    .column-name{
+		font-weight: 700;
+		border-bottom: 1px solid #dee2e6;
+		padding: 1rem 0;
+	    }
+	}
+	.pane-content{
+	    ul{
+		margin: 0;
+		padding: 0;
+		
+		li{
+		    list-style-type: none;
+		    border-bottom: 1px solid #dee2e6;
+		    padding: 1rem 0;
+
+		    .row{
+			margin-bottom: 1rem;
+		    }
+		}
+	    }
+	}
+    }
+}
