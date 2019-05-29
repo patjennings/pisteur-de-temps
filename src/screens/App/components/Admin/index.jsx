@@ -77,9 +77,9 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 	   <div className="manager">
 	      <nav>
 	         <div className="nav nav-tabs" id="nav-tab" role="tablist">
-	            <a className="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Clients<br/><span className="text-muted">Gérer les clients</span></a>
-	            <a className="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Projects<br/><span className="text-muted">Gérer et modifier les projets</span></a>
-	            <a className="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Users<br/><span className="text-muted">Modifier le statut des utilisateurs</span></a>
+	            <a className="nav-item nav-link w-25" id="nav-clients-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Clients<br/><span className="text-muted">Gérer les clients</span></a>
+	            <a className="nav-item nav-link w-25 active" id="nav-projects-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Projects<br/><span className="text-muted">Gérer et modifier les projets</span></a>
+	            <a className="nav-item nav-link w-25" id="nav-users-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Users<br/><span className="text-muted">Gérer les utilisateurs</span></a>
 	         </div>
 	       </nav>
 	       <div className="tab-content" id="nav-tabContent">
@@ -126,11 +126,31 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 							 className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
 				 </form>
 			    : 
-				 <div className="personal row">
-				       <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} ><i className="ico ico-medium">pen</i></a>
-					   <h5>{this.props.authStore.user.firstName} {this.props.authStore.user.lastName}</h5>
+				 <div className="personal">
+				       <div className="row">
+				          <div className="col-10">
+					     <h5>{this.props.authStore.user.firstName} {this.props.authStore.user.lastName}</h5>
+					   </div>
+					      <div className="col-2">
+						    <button className="btn btn-light" type="button" onClick={this.editItem}>Edit</button>
+					   </div>
+					</div>
+				       <div className="row">
+				          <div className="col-6">
 				      <p>{this.props.authStore.user.email}</p>
+					   </div>
+
+					   </div>
+				       <div className="row">
+				          <div className="col-6">
 					  <p>{this.props.authStore.user.date}</p>
+					   </div>
+
+					   </div>
+
+
+
+
 					      
 				 </div>}
 			

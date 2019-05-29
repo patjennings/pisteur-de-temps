@@ -4,6 +4,11 @@
     
 }
 .manager{
+    .nav-tabs{
+	.nav-item{
+	    color: $main-font;
+	}
+    }
     #nav-tabContent{
 	background: $box-background;
 	

@@ -11912,7 +11912,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, ".manager .nav-tabs .nav-item {\n  color: #000000; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -51691,8 +51691,8 @@ function (_Component) {
         id: "nav-tab",
         role: "tablist"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-item nav-link",
-        id: "nav-home-tab",
+        className: "nav-item nav-link w-25",
+        id: "nav-clients-tab",
         "data-toggle": "tab",
         href: "#nav-home",
         role: "tab",
@@ -51701,8 +51701,8 @@ function (_Component) {
       }, "Clients", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
       }, "G\xE9rer les clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-item nav-link active",
-        id: "nav-profile-tab",
+        className: "nav-item nav-link w-25 active",
+        id: "nav-projects-tab",
         "data-toggle": "tab",
         href: "#nav-profile",
         role: "tab",
@@ -51711,8 +51711,8 @@ function (_Component) {
       }, "Projects", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
       }, "G\xE9rer et modifier les projets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-item nav-link",
-        id: "nav-contact-tab",
+        className: "nav-item nav-link w-25",
+        id: "nav-users-tab",
         "data-toggle": "tab",
         href: "#nav-contact",
         role: "tab",
@@ -51720,7 +51720,7 @@ function (_Component) {
         "aria-selected": "false"
       }, "Users", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "Modifier le statut des utilisateurs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "G\xE9rer les utilisateurs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-content",
         id: "nav-tabContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -51769,17 +51769,26 @@ function (_Component) {
         className: "btn btn-light btn-sm",
         onClick: this.cancelEdit
       }, "Cancel")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "personal row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "track-edit d-flex align-items-center",
-        href: "#",
-        "data-toggle": "tooltip",
-        "data-placement": "top",
-        title: "Edit",
+        className: "personal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-10"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.authStore.user.firstName, " ", this.props.authStore.user.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-light",
+        type: "button",
         onClick: this.editItem
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "ico ico-medium"
-      }, "pen")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.authStore.user.firstName, " ", this.props.authStore.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.authStore.user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.authStore.user.date)), this.props.authStore.user.isAdmin ? manager : null)));
+      }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.authStore.user.email))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.authStore.user.date)))), this.props.authStore.user.isAdmin ? manager : null)));
     }
   }]);
 
