@@ -147,10 +147,11 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   				 aria-label="Input"/>
   			</div>
   			<div className="col-3">
-			  
+			  <span className="badge badge-info">Task</span>&nbsp;
+			  <span className="badge badge-info">UI</span>
+
   			</div>
   			<div className="col-1">
-  			  <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
   			</div>
 			
   		      </div>
@@ -199,7 +200,8 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      {this.props.budget}
 		    </div>
 		    <div className="col-3">
-
+		      <span className="badge badge-info">Task</span>&nbsp;
+		      <span className="badge badge-info">UI</span>
 		    </div>
 		    <div className="col-1">
 		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>

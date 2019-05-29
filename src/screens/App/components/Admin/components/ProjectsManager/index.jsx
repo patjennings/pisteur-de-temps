@@ -77,7 +77,7 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 		      Budget
 		    </div>
 		    <div className="col-4">
-		      Utilisateurs
+		      Tasks
 		    </div>
 		  </div>
 		</div>

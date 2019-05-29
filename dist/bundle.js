@@ -42648,7 +42648,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50970,16 +50970,13 @@ function (_Component) {
           "aria-label": "Input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-info"
+        }, "Task"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-info"
+        }, "UI")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          className: "btn btn-light btn-sm",
-          "data-toggle": "tooltip",
-          "data-placement": "top",
-          title: "Edit",
-          onClick: this.editItem
-        }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "offset-8 col-4"
@@ -51028,7 +51025,11 @@ function (_Component) {
           className: "col-2"
         }, this.props.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-info"
+        }, "Task"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-info"
+        }, "UI")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-1"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
@@ -51227,7 +51228,7 @@ function (_Component) {
         className: "col-2"
       }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
-      }, "Utilisateurs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tasks")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "new"

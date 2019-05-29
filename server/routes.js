@@ -249,6 +249,8 @@ module.exports = function(app){
 		    result.relatedProjects = data[id].relatedProjects;
 		    result.isAdmin = data[id].isAdmin;
 		    result.isFirst = data[id].isFirst;
+
+		    // console.log(data[id]);
 		    
 		    response.push(result);
 		}
@@ -430,14 +432,20 @@ module.exports = function(app){
 		response = {"error" : true,"message" : "Error fetching data"};
 	    } else {
 		response = [];
+		// console.log(data);
 		for(id in data){
 		    result = {}
+		    
 		    result._id = data[id]._id;
 		    result.name = data[id].name;
 		    result.description = data[id].description;
 		    result.budget = data[id].budget;
 		    result.client = data[id].relatedClient;
 		    result.hasTracks = data[id].hasTracks;
+		    result.tasks = data[id].tasks;
+
+		    console.log(data[id]);
+		    
 		    response.push(result);
 		}
 	    }
@@ -453,6 +461,7 @@ module.exports = function(app){
 	db.description = req.body.description;
 	db.budget = req.body.budget;
 	db.hasTracks = false;
+	db.tasks = [];
 	
 	db.save(function(err, db){
 	    // save() will run insert() command of MongoDB.
@@ -476,6 +485,7 @@ module.exports = function(app){
 		response.description = data.description;
 		response.budget = data.budget;
 		response.client = data.relatedClient;
+		response.tasks = data.tasks;
 	    }
 	    res.json(response);
 	});
@@ -498,7 +508,17 @@ module.exports = function(app){
 		if (req.body.budget !== undefined) {
 		    data.budget = req.body.budget;
 		}
+		if (req.body.task !== undefined) {
+		    data.tasks.push(req.body.task);
+		}
 		data.hasTracks = true;
+		if(req.query.removeTask !== undefined){
+		    index = data.tasks.indexOf(req.query.removeTask)
+		    if(index > -1){
+			data.tasks.splice(index, 1);
+		    }
+
+		}
 		// Save data
 		data.save(function(err, data){
                     if(err) {

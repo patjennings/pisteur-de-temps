@@ -26,7 +26,8 @@ var projectSchema  = {
     "description": String,
     "budget": Number,
     "relatedClient": String,
-    "hasTracks": Boolean
+    "hasTracks": Boolean,
+    "tasks": Array
 };
 
 var trackedTimeSchema = {
