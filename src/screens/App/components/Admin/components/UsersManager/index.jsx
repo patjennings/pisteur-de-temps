@@ -25,7 +25,7 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 		<div className="actions">
 		  <form>
 		    <div className="row">
-		      <div className="col-6">
+		      <div className="col-4">
 			<input className="form-control"
   			       name="search"
   			       id={"user-input--name"}

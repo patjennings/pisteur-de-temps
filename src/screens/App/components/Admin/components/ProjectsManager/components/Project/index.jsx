@@ -132,7 +132,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   				 name="name"
   				 id={"project-input--name-"+this.props.projectid}
   				 type="text"
-  				 aria-label="Input"/>
+  				 aria-label="Input"/><br/>
   			  <textarea className="form-control"
   				    name="description"
   				    id={"project-input--description-"+this.props.projectid}
@@ -156,20 +156,29 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   		      </div>
 		  
 		  <div className="row">
-		    <div className="col-6">
-		      {this.props.hasTracks && <div className="alert alert-danger" role="alert">All tracks in this project will be deleted</div> }
-		    </div>
-		    <div className="col-4">
+		    <div className="offset-8 col-4">
 		      <button
-			className="btn btn-primary">Update</button>&nbsp;
+			className="btn btn-primary">Update</button>&nbsp;&nbsp;
 		    <button
 		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
 		    </div>
 		  </div>
 		  </form>
 		  <div className="row">
-		    <div className="col-6">
-		      <button className="btn btn-danger" onClick={this.deleteProject}>Delete project</button>
+		    
+		    <div className="col-2">
+
+
+		      <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete project
+		    </button>
+		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		      <div className="dropdown-divider"></div>
+		      <a className="dropdown-item" onClick={this.deleteProject }>Sure ?</a>
+		    </div>
+	
+		    </div>
+		    <div className="col-10">
+		      {this.props.hasTracks && <div className="alert alert-danger" role="alert">Be careful, because all time tracked on this will be deleted. <strong>And this can't be undone.</strong></div> }
 		    </div>
 		  </div>
 		  

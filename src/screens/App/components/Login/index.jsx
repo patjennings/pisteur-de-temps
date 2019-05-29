@@ -55,14 +55,25 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	
 	// console.log("Login is rendered");
 	return (
-	    <div className="login logged-out">
-	      {this.props.authStore.hasErrors ? <div className="alert alert-danger" role="alert">
-		    Check your credentials...
-	      </div> : null }
+	    <div className="container">
 	      
+	      <div className="row">
+		<div className="col-md-4 offset-md-4">
+		  <h3>This is a time tracker</h3>
+		  <p>Please login</p>
+		</div>
+	      </div>
+
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
-		  <div className="col">
+		  <div className="col-md-4 offset-md-4">
+		    {this.props.authStore.hasErrors ? <div className="alert alert-danger" role="alert">
+			  Check your credentials...
+		    </div> : null }
+		  </div>
+		</div>
+		<div className="row">
+		  <div className="col-md-4 offset-md-4">
 		    <label htmlFor="login--username">Username</label>
 		    <input className="form-control w-100"
 			   name="username"
@@ -70,25 +81,40 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 			   type="text"
 			   placeholder="Enter your username"
 			   aria-label="Input"/>
+		  </div>
+		</div>
+		<div className="row">
+		  <div className="col-md-4 offset-md-4">
 		    <label htmlFor="login--password">Password</label>
 		    <input className="form-control w-100 "
 			   name="password"
 			   id="login--password"
 			   type="password"
 			   aria-label="Input"/>
+		  </div>
+		</div>
+		<div className="row">
+		  <div className="col-md-4 offset-md-4">
 		    <button
 		      className="btn btn-primary">Sign in</button>
+		  </div>
+		</div>
+		<div className="row">
+		  <div className="col-md-4 offset-md-4">
 		    <div className="form-check">
 		      <input className="form-check-input" type="checkbox" value="" id="cookieCheck"/>
-			<label className="form-check-label" htmlFor="cookieCheck">
-			  Remember me
-			</label>
+		      <label className="form-check-label" htmlFor="cookieCheck">
+			Remember me
+		      </label>
 		    </div>
+		  </div>
+		</div>
+		<div className="row">
+		  <div className="col-md-4 offset-md-4">
 		    <a onClick={() => push('/lost-password')}>Forgot your password</a>
 		  </div>
 		</div>
 	      </form>
-	      
 	    </div>
 	);
     }

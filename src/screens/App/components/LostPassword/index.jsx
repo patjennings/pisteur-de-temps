@@ -65,7 +65,7 @@ const LostPassword = inject("mainStore", "authStore", "routingStore")(observer(c
 			   placeholder="Your email"
 			   aria-label="Input"/>
 		    <button
-		      className="btn btn-primary">Submit new password</button>
+		      className="btn btn-primary">Send email</button>
 		  </div>
 		</div>
 	      </form>

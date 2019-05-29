@@ -12,8 +12,9 @@ import retrieveFormData from "utils/retrieveFormData";
 
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./styles.scss";
 import "assets/styles/main.scss";
+import "./styles.scss";
+
 
 const Admin = inject("mainStore", "authStore")(observer(class Admin extends Component {
     constructor(props){
@@ -104,59 +105,73 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
   	      {this.props.authStore.isLoading == true ? <p>Wait a minute</p> :
 		  <div >
 		  {this.state.isEdited ?
-			     <form onSubmit={this.handleSubmit}>
-				   <input className="form-control"
-					      name="firstName"
-					      id={"user-input--firstname-"+this.props.authStore.userId}
-					      type="text"
-					      aria-label="Input"/>
-				       <input className="form-control"
-						  name="lastName"
-						  id={"user-input--lastname-"+this.props.authStore.userId}
-						  type="text"
-						  aria-label="Input"/>
-					   <input className="form-control"
-						      name="email"
-						      id={"user-input--email-"+this.props.authStore.userId}
-						      type="text"
-						      aria-label="Input"/>
-					       <button
-						     className="btn btn-primary btn-sm">Update</button>
-						   <button
-							 className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
-				 </form>
+			  
+				 <div className="personal edited">
+				       <form onSubmit={this.handleSubmit}>
+				       <div className="row">
+				             <div className="col-4">
+						   <label htmlFor={"user-input--firstname-"+this.props.authStore.userId}>First name</label>
+						  <input className="form-control"
+							     name="firstName"
+							     id={"user-input--firstname-"+this.props.authStore.userId}
+							     type="text"
+							     aria-label="Input"/>
+						 </div>
+						 <div className="col-4">
+						       <label htmlFor={"user-input--lastname-"+this.props.authStore.userId}>Second name</label>
+						       <input className="form-control"
+								  name="lastName"
+								  id={"user-input--lastname-"+this.props.authStore.userId}
+								  type="text"
+								  aria-label="Input"/>
+						     </div>
+					   </div>
+					   <div className="row">
+						 <div className="col-6">
+						       <label htmlFor={"user-input--email-"+this.props.authStore.userId}>Email</label>
+						       <input className="form-control"
+								  name="email"
+								  id={"user-input--email-"+this.props.authStore.userId}
+								  type="text"
+								  aria-label="Input"/>
+						     </div>
+
+					       </div>
+					       <div className="row">
+						     <div className="col-6">
+							   <button
+								 className="btn btn-primary">Update</button>&nbsp;&nbsp;
+							       <button
+								     className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+							 </div>
+
+						   </div>
+					   </form>
+				     </div>
 			    : 
 				 <div className="personal">
 				       <div className="row">
-				          <div className="col-10">
-					     <h5>{this.props.authStore.user.firstName} {this.props.authStore.user.lastName}</h5>
+				             <div className="col-10">
+						   <h3>{this.props.authStore.user.firstName} {this.props.authStore.user.lastName}</h3>
+						 </div>
+						 <div className="col-2">
+						       <button className="btn btn-light" type="button" onClick={this.editItem}>Edit infos</button>
+						     </div>
 					   </div>
-					      <div className="col-2">
-						    <button className="btn btn-light" type="button" onClick={this.editItem}>Edit</button>
-					   </div>
-					</div>
-				       <div className="row">
-				          <div className="col-6">
-				      <p>{this.props.authStore.user.email}</p>
-					   </div>
+					   <div className="row">
+						 <div className="col-6">
+						       <p>{this.props.authStore.user.email}</p>
+						     </div>
 
-					   </div>
-				       <div className="row">
-				          <div className="col-6">
-					  <p>{this.props.authStore.user.date}</p>
-					   </div>
+					       </div>
+					       <div className="row">
+						     <div className="col-6">
+							   <p className="text-muted">Signed on {this.props.authStore.user.date}</p>
+							 </div>
 
-					   </div>
-
-
-
-
-					      
-				 </div>}
-			
-
+						   </div>	   
+				     </div>}
 	       {this.props.authStore.user.isAdmin ? manager : null}
-	       
 	       
 	       </div>
 		  }
