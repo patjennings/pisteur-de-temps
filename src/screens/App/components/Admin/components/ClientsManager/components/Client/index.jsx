@@ -88,32 +88,46 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 	
 	if(this.state.isEdited){
 	    return (
-		<div className="client edited">	  
+		<li className="client edited">	  
 		  <form onSubmit={this.handleSubmit}>
-		    <input className="form-control"
-			   name="name"
-			   id={"name-input--client-"+this.props.clientid}
-			   type="text"
-			   aria-label="Input"/>
-		    <button
-		      className="btn btn-primary btn-sm">Update</button>
-		    <button
-		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+		    <div className="row">
+		      <div className="col-9">
+		      <input className="form-control"
+			     name="name"
+			     id={"name-input--client-"+this.props.clientid}
+			     type="text"
+			     aria-label="Input"/>
+		      </div>
+		      <div className="col-3">
+			<button
+			  className="btn btn-primary btn-sm">Update</button>&nbsp;
+			<button
+			  className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+
+		      </div>
+		    </div>
 		  </form>
-		</div>
+		</li>
 	    );
 	} else {
 	    return (
-		<div className="client">
-		  
-		  {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)} - {projectsNumber} projects
-		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} ><i className="ico ico-medium">pen</i></a>
-		  {projectsNumber < 1 ?
-					<a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>:
-					    <a className="track-delete d-flex align-items-center muted" data-toggle="tooltip" data-placement="top" title="Delete"><i className="ico ico-medium ico-trash">trash</i></a>
-					    }
-					
-		</div>
+		<li className="client">
+		  <div className="row">
+		    <div className="col-9">
+		      {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)}&nbsp;&nbsp;
+		      {projectsNumber < 1 ? <span className="badge badge-light">No active project</span> : <span className="badge badge-warning">{projectsNumber} active projects</span>}
+		    </div>
+		    <div className="col-3">
+		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
+		      {projectsNumber < 1 ? <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} >Delete</button> : <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} disabled>Delete</button>}
+		      
+		    </div>
+		  </div>
+		</li>
+
+
+
+	
 	    );
 
 	}

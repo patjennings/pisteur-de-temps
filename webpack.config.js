@@ -45,7 +45,7 @@ module.exports = {
 	    sharedComponents : path.resolve(__dirname, "src/shared/components/")
 	},
 	// moduleDirectories: ["node_modules", "shared"],
-	extensions: ["*", ".js", ".jsx"]
+	extensions: ["*", ".js", ".jsx", ".scss"]
     },
     output: {
 	path: path.resolve(__dirname, "dist/"),

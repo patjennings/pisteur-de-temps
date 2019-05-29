@@ -29,14 +29,29 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
     
     render() {
 	return (
-	    <div>
-	      <button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>
-	       { this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
-	      <ul>
-		{this.props.mainStore.clientsDefinitions.map(c => <li key={c._id}><Client key={c._id} clientid={c._id}/></li>)}
+	     <div>
+	      <div className="projects-header pane-header">
+		<div className="actions">
+		  <button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>
+		</div>
+		<div className="column-name">
+		  <div className="row">
+		    <div className="col-12">
+		      Client
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div className="projects-content pane-content">
+		<ul>
+		  { this.state.isAddingClient ? <li className="new"><AddClient onChange={this.handleChange} /></li> : null }
+		  {this.props.mainStore.clientsDefinitions.map(c => <Client key={c._id} clientid={c._id}/>)}
+                </ul>
+	      </div>
+            </div>
 
-	      </ul>
-	    </div>
+	    
+	
 	);
     }
 }));

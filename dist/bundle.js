@@ -11912,7 +11912,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".manager #nav-tabContent .pane-header .actions {\n  padding: 1rem 0; }\n\n.manager #nav-tabContent .pane-header .column-name {\n  font-weight: 700;\n  border-bottom: 1px solid #dee2e6;\n  padding: 1rem 0; }\n\n.manager #nav-tabContent .pane-content ul {\n  margin: 0;\n  padding: 0; }\n  .manager #nav-tabContent .pane-content ul li {\n    list-style-type: none;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem 0; }\n    .manager #nav-tabContent .pane-content ul li .row {\n      margin-bottom: 1rem; }\n", ""]);
+exports.push([module.i, ".manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -12137,7 +12137,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".example-enter {\n  opacity: 0.01; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.example-leave {\n  opacity: 1; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n", ""]);
+exports.push([module.i, ".example-enter {\n  opacity: 0.01; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.example-leave {\n  opacity: 1; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n\n.app {\n  background: #f5f5f5; }\n", ""]);
 
 
 
@@ -49990,6 +49990,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddClient).call(this, props));
     _this.state = {
+      hasErrors: false,
       errorOnName: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -50004,8 +50005,10 @@ function (_Component) {
 
       var nameField = document.getElementById("client-input--name");
       nameField.value == "" ? this.state.errorOnName = true : this.state.errorOnName = false;
+      this.state.hasErrors = true;
 
       if (!this.state.errorOnName) {
+        this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target); // on lance la requête
 
         this.props.mainStore.postNewClient(fd);
@@ -50013,7 +50016,8 @@ function (_Component) {
       }
 
       this.setState({
-        errorOnName: this.state.errorOnName
+        errorOnName: this.state.errorOnName,
+        hasErrors: this.state.hasErrors
       });
     }
   }, {
@@ -50026,27 +50030,30 @@ function (_Component) {
       var nameAttr = this.state.errorOnName ? "is-invalid" : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "client--input"
+      }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, "You need ", this.state.errorOnName ? "a name" : null, " in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "client-input--name"
-      }, "Enter client name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control " + nameAttr,
         id: "client-input--name",
         name: "name",
         type: "text",
         placeholder: "Client name",
         "aria-label": "Input"
-      }), this.state.errorOnName ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please choose a name.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
       }, "Create client"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel"))));
+      }, "Cancel")))));
     }
   }]);
 
@@ -50141,6 +50148,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddProject).call(this, props));
     _this.state = {
+      hasErrors: false,
       errorOnName: false,
       errorOnBudget: false,
       errorOnClient: false,
@@ -50162,8 +50170,11 @@ function (_Component) {
       nameField.value == "" ? this.state.errorOnName = true : this.state.errorOnName = false;
       budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
       clientField.value == "" ? this.state.errorOnClient = true : this.state.errorOnClient = false;
+      console.log(this.state.errorOnClient);
+      this.state.hasErrors = true;
 
       if (!this.state.errorOnName && !this.state.errorOnBudget && !this.state.errorOnClient) {
+        this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target);
         console.log(fd); // on lance la requête
 
@@ -50173,7 +50184,8 @@ function (_Component) {
 
       this.setState({
         errorOnName: this.state.errorOnName,
-        errorOnBudget: this.state.errorOnBudget
+        errorOnBudget: this.state.errorOnBudget,
+        errorOnClient: this.state.errorOnClient
       });
     }
   }, {
@@ -50181,9 +50193,8 @@ function (_Component) {
     value: function setActiveClient(c) {
       this.setState({
         activeClient: c
-      });
-      console.log(c);
-      console.log(Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__["getClientName"])(this.props.mainStore.clientsDefinitions, c));
+      }); // console.log(c);
+      // console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
     }
   }, {
     key: "cancelEdit",
@@ -50193,70 +50204,114 @@ function (_Component) {
     key: "render",
     value: function render() {
       var nameAttr = this.state.errorOnName ? "is-invalid" : null;
-      var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null; // console.log(this.state.activeClient);
-      // console.log(this.state);
-
+      var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
+      console.log(this.state.activeClient);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "client--input"
+        className: "project--input"
+      }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger",
+        role: "alert"
+      }, "You need ", this.state.errorOnClient ? "a client, " : null, this.state.errorOnName ? "a name, " : null, this.state.errorOnBudget ? "a budget " : null, "in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "w100"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        onChange: this.setActiveClient
-      }), this.state.errorOnClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please choose a client.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "project-input--name"
-      }, "Project name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form-control " + nameAttr,
-        id: "project-input--name",
-        name: "name",
-        type: "text",
-        placeholder: "Project name",
-        "aria-label": "Input"
-      }), this.state.errorOnName ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please choose a name.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "project-input--description"
-      }, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        className: "form-control",
-        id: "project-input--description",
-        name: "description",
-        type: "text",
-        placeholder: "Enter a description",
-        "aria-label": "Input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "project-input--budget"
-      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form-control " + budgetAttr,
-        id: "project-input--budget",
-        name: "budget",
-        type: "text",
-        placeholder: "Give it a budget",
-        "aria-label": "Input",
-        "data-parse": "number"
-      }), this.state.errorOnBudget ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "invalid-feedback"
-      }, "Please choose a budget.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.setActiveClient,
+        activeClient: this.props.clientid
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         id: "project-input--client",
         name: "client",
         type: "hidden",
         value: this.state.activeClient,
         "aria-label": "Input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control",
+        name: "name",
+        id: "project-input--name",
+        placeholder: "The name",
+        type: "text",
+        "aria-label": "Input"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "form-control",
+        name: "description",
+        id: "project-input--description",
+        placeholder: "Maybe you will nees some details",
+        type: "text",
+        "aria-label": "Input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control",
+        name: "budget",
+        id: "project-input--budget",
+        placeholder: "In days",
+        type: "text",
+        "aria-label": "Input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-3"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Create project"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Create"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel"))));
+      }, "Cancel")))));
     }
   }]);
 
   return AddProject;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
-/* harmony default export */ __webpack_exports__["default"] = (AddProject);
+/* harmony default export */ __webpack_exports__["default"] = (AddProject); // <div className="client--input">
+//   <div className="row">
+// 	<form onSubmit={this.handleSubmit}>
+// 	  <ClientsSelector onChange={this.setActiveClient}/>
+// 	  {this.state.errorOnClient ? <div className="invalid-feedback">Please choose a client.</div> : null }
+// 	  <label htmlFor="project-input--name">Project name</label>
+// 	  <input className={"form-control "+nameAttr}
+// 		 id="project-input--name"
+// 		 name="name"
+// 		 type="text"
+// 		 placeholder="Project name"
+// 		 aria-label="Input" />
+// 	  {this.state.errorOnName ? <div className="invalid-feedback">Please choose a name.</div> : null }
+// 	  <label htmlFor="project-input--description">Description</label>
+// 	  <textarea className="form-control"
+// 		    id="project-input--description"
+// 		    name="description"
+// 		    type="text"
+// 		    placeholder="Enter a description"
+// 		    aria-label="Input" />
+// 	  <label htmlFor="project-input--budget">Budget</label>
+// 	  <input className={"form-control "+budgetAttr}
+// 		 id="project-input--budget"
+// 		 name="budget"
+// 		 type="text"
+// 		 placeholder="Give it a budget"
+// 		 aria-label="Input"
+// 		 data-parse="number"/>
+// 	  {this.state.errorOnBudget ? <div className="invalid-feedback">Please choose a budget.</div> : null }
+// 	  <input className="form-control"
+// 		 id="project-input--client"
+// 		 name="client"
+// 		 type="hidden"
+// 		 value={this.state.activeClient}
+// 		 aria-label="Input" />
+// 	  <button
+// 	    className="btn btn-primary">Create project</button>
+// 	  <button
+// 	    className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+// 	</form>
+//   </div>
+// </div>
 
 /***/ }),
 
@@ -50422,51 +50477,64 @@ function (_Component) {
       var projectsNumber = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectsNumberForClient"])(this.props.mainStore.projectsDefinitions, this.props.clientid);
 
       if (this.state.isEdited) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "client edited"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-9"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "name",
           id: "name-input--client-" + this.props.clientid,
           type: "text",
           "aria-label": "Input"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-3"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary btn-sm"
-        }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Update"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light btn-sm",
           onClick: this.cancelEdit
-        }, "Cancel")));
+        }, "Cancel")))));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "client"
-        }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.clientid), " - ", projectsNumber, " projects", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "track-edit d-flex align-items-center",
-          href: "#",
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-9"
+        }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.clientid), "\xA0\xA0", projectsNumber < 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-light"
+        }, "No active project") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-warning"
+        }, projectsNumber, " active projects")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-3"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          className: "btn btn-light btn-sm",
           "data-toggle": "tooltip",
           "data-placement": "top",
           title: "Edit",
           onClick: this.editItem
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-medium"
-        }, "pen")), projectsNumber < 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "track-delete d-flex align-items-center",
-          href: "#",
+        }, "Edit"), projectsNumber < 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          className: "btn btn-danger btn-sm",
           "data-toggle": "tooltip",
           "data-placement": "top",
           title: "Delete",
           onClick: this.deleteItem
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-medium ico-trash"
-        }, "trash")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "track-delete d-flex align-items-center muted",
+        }, "Delete") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          className: "btn btn-danger btn-sm",
           "data-toggle": "tooltip",
           "data-placement": "top",
-          title: "Delete"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-medium ico-trash"
-        }, "trash")));
+          title: "Delete",
+          onClick: this.deleteItem,
+          disabled: true
+        }, "Delete"))));
       }
     }
   }]);
@@ -50588,20 +50656,32 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "projects-header pane-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary",
         type: "button",
         onClick: this.addClient
-      }, "Add a client"), this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddClient__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Add a client")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "column-name"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, "Client")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "projects-content pane-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "new"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddClient__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: this.handleChange
-      }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.clientsDefinitions.map(function (c) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: c._id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      })) : null, this.props.mainStore.clientsDefinitions.map(function (c) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
           key: c._id,
           clientid: c._id
-        }));
-      })));
+        });
+      }))));
     }
   }]);
 
@@ -50754,7 +50834,7 @@ function (_Component) {
     key: "populateFields",
     value: function populateFields() {
       // console.log("populate fields");
-      var inputName = document.getElementById("project-input--project-" + this.props.projectid);
+      var inputName = document.getElementById("project-input--name-" + this.props.projectid);
       var inputClient = document.getElementById("project-input--client");
       var inputDescription = document.getElementById("project-input--description-" + this.props.projectid);
       var inputBuget = document.getElementById("project-input--budget-" + this.props.projectid);
@@ -50766,7 +50846,7 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      // console.log("submit");
+      console.log("submit");
       e.preventDefault();
       var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId); // console.log(fd);
       // on lance la requête
@@ -50799,7 +50879,7 @@ function (_Component) {
       // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
       // console.log(this.state.projectTracks);
       if (this.state.isEdited) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "project edited"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
@@ -50823,7 +50903,7 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "name",
-          id: "project-input--project-" + this.props.projectid,
+          id: "project-input--name-" + this.props.projectid,
           type: "text",
           "aria-label": "Input"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -50859,20 +50939,22 @@ function (_Component) {
           className: "alert alert-danger",
           role: "alert"
         }, "All tracks in this project will be deleted")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "col-2"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "btn btn-danger",
-          onClick: this.deleteProject
-        }, "Delete project")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-4"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary"
         }, "Update"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")))));
+        }, "Cancel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-6"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-danger",
+          onClick: this.deleteProject
+        }, "Delete project"))));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "project"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
@@ -51025,9 +51107,7 @@ function (_Component) {
         className: "btn btn-primary",
         type: "button",
         onClick: this.addProject
-      }, "Add a project"), this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        onChange: this.handleChange
-      }) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Add a project")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "column-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -51041,17 +51121,19 @@ function (_Component) {
         className: "col-4"
       }, "Utilisateurs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.projectsDefinitions.map(function (p) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: p._id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "new"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onChange: this.handleChange
+      })) : null, this.props.mainStore.projectsDefinitions.map(function (p) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: p._id,
           projectid: p._id,
           clientid: p.client,
           description: p.description,
           budget: p.budget,
           hasTracks: p.hasTracks
-        }));
+        });
       }))));
     }
   }]);
@@ -51244,9 +51326,19 @@ function (_Component) {
     value: function render() {
       // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
       console.log(this.state.isAdmin);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user"
-      }, this.props.firstName, " ", this.props.lastName, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, this.props.firstName, " ", this.props.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
+      }, this.state.isAdmin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "badge badge-info"
+      }, "Admin") : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -51266,9 +51358,7 @@ function (_Component) {
         href: "#",
         onClick: this.changeRole,
         adm: "false"
-      }, "User"))), this.state.isAdmin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "badge badge-info"
-      }, "Admin") : null);
+      }, "User"))))));
     }
   }]);
 
@@ -51336,9 +51426,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -51356,26 +51446,85 @@ function (_Component) {
   _inherits(UsersManager, _Component);
 
   function UsersManager(props) {
+    var _this;
+
     _classCallCheck(this, UsersManager);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(UsersManager).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UsersManager).call(this, props));
+    _this.changeOrder = _this.changeOrder.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(UsersManager, [{
+    key: "changeOrder",
+    value: function changeOrder() {
+      console.log("sort !");
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.usersDefinitions.map(function (u) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: u._id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_User__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "projects-header pane-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control",
+        name: "search",
+        id: "user-input--name",
+        type: "text",
+        "aria-label": "Input",
+        placeholder: "Search"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn btn-light dropdown-toggle",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, "Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#",
+        onClick: this.changeOrder,
+        sort: "name"
+      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#",
+        onClick: this.changeOrder,
+        sort: "date"
+      }, "Date added"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#",
+        onClick: this.changeOrder,
+        sort: "role"
+      }, "Role"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "column-name"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6"
+      }, "User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "projects-content pane-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.usersDefinitions.map(function (u) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_User__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: u._id,
           userid: u._id,
           firstName: u.firstName,
           lastName: u.lastName,
           isAdmin: u.isAdmin,
           isFirst: u.isFirst
-        }));
-      })));
+        });
+      }))));
     }
   }]);
 

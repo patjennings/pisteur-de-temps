@@ -15,7 +15,8 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	super(props);
 
 	this.state = {
-	    errorOnName: false,
+	    hasErrors: false,
+	    errorOnName: false
 	};
 
 	this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,8 +29,10 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	const nameField = document.getElementById("client-input--name");
 
 	nameField.value == "" ? this.state.errorOnName = true : this.state.errorOnName = false;
+	this.state.hasErrors = true;
 	
 	if (!this.state.errorOnName){
+	    this.state.hasErrors = false;
 	    let fd = retrieveFormData(e.target);
 
 	    // on lance la requête
@@ -40,6 +43,7 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	
 	this.setState({
 	    errorOnName: this.state.errorOnName,
+	    hasErrors: this.state.hasErrors
 	});
     }
     cancelEdit(){
@@ -50,22 +54,27 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	
 	return (
 	    <div className="client--input">
-	      <div className="row">
-		<form onSubmit={this.handleSubmit}>
-		  <label htmlFor="client-input--name">Enter client name</label>
+	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
+		    You need {this.state.errorOnName? "a name" : null } in order to complete
+	      </div> : null }
+	      <form onSubmit={this.handleSubmit}>
+		<div className="row">
+		  <div className="col-9">
 		  <input className={"form-control "+nameAttr}
 			 id="client-input--name"
 			 name="name"
 			 type="text"
 			 placeholder="Client name"
 			 aria-label="Input" />
-		  {this.state.errorOnName ? <div className="invalid-feedback">Please choose a name.</div> : null }
-		  <button
-		    className="btn btn-primary">Create client</button>
-		  <button
-		    className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		  </div>
+		  <div className="col-3">
+		    <button
+		      className="btn btn-primary">Create client</button>
+		    <button
+		      className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		  </div>
+		</div>
 		</form>
-	      </div>
 	    </div>
 	);
     }

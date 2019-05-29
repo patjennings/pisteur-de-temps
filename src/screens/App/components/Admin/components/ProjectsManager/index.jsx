@@ -32,7 +32,6 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 	      <div className="projects-header pane-header">
 		<div className="actions">
 		  <button className="btn btn-primary" type="button" onClick={this.addProject}>Add a project</button>
-		  { this.state.isAddingProject ? <AddProject onChange={this.handleChange} /> : null }
 		</div>
 		<div className="column-name">
 		  <div className="row">
@@ -52,9 +51,9 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 		</div>
 	      </div>
 	      <div className="projects-content pane-content">
-
 		<ul>
-		  {this.props.mainStore.projectsDefinitions.map(p => <li key={p._id}><Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/></li>)}
+		  { this.state.isAddingProject ? <li className="new"><AddProject onChange={this.handleChange} /></li>: null }
+		  {this.props.mainStore.projectsDefinitions.map(p => <Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/>)}
                 </ul>
 	      </div>
             </div>

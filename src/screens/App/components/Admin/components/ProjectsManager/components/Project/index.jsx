@@ -64,7 +64,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 
     populateFields(){
 	// console.log("populate fields");
-	let inputName = document.getElementById("project-input--project-"+this.props.projectid);
+	let inputName = document.getElementById("project-input--name-"+this.props.projectid);
 	let inputClient = document.getElementById("project-input--client");
 	let inputDescription = document.getElementById("project-input--description-"+this.props.projectid);
 	let inputBuget = document.getElementById("project-input--budget-"+this.props.projectid);
@@ -76,7 +76,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
     }
     
     handleSubmit(e){
-	// console.log("submit");
+	console.log("submit");
 	e.preventDefault();
 	let fd = retrieveFormData(e.target, this.props.authStore.userId);
 
@@ -115,7 +115,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 	
 	if(this.state.isEdited){
 	    return (
-		<div className="project edited">
+		<li className="project edited">
 	          <form onSubmit={this.handleSubmit} className="w100">
 		      <div className="row">  
   			<div className="col-2">
@@ -130,7 +130,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   			<div className="col-4">
   			  <input className="form-control"
   				 name="name"
-  				 id={"project-input--project-"+this.props.projectid}
+  				 id={"project-input--name-"+this.props.projectid}
   				 type="text"
   				 aria-label="Input"/>
   			  <textarea className="form-control"
@@ -159,10 +159,6 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		    <div className="col-6">
 		      {this.props.hasTracks && <div className="alert alert-danger" role="alert">All tracks in this project will be deleted</div> }
 		    </div>
-		    <div className="col-2">
-		      <button className="btn btn-danger" onClick={this.deleteProject}>Delete project</button>
-		    </div>
-		    
 		    <div className="col-4">
 		      <button
 			className="btn btn-primary">Update</button>&nbsp;
@@ -171,11 +167,17 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		    </div>
 		  </div>
 		  </form>
-		</div>
+		  <div className="row">
+		    <div className="col-6">
+		      <button className="btn btn-danger" onClick={this.deleteProject}>Delete project</button>
+		    </div>
+		  </div>
+		  
+		</li>
 	    );
 	} else {
 	    return (
-		<div className="project">
+		<li className="project">
 		  <div className="row">
 		    <div className="col-2">
 		      {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)}
@@ -194,7 +196,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
 		    </div>
 		  </div>
-		</div>
+		</li>
 	    );
 
 	}

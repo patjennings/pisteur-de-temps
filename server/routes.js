@@ -523,9 +523,9 @@ module.exports = function(app){
 		    if(err){
 			response = {"error" : true, "message" : "Error while deleting data"};
 		    } else {
-			// là, on supprime les track qui ont le ce projet en id
-
-			models.trackedTime.remove({relatedProject: req.params.id}, function(err,data){
+			
+			// puis, on supprime les track qui ont le ce projet en id
+			models.trackedTime.deleteMany({relatedProject: req.params.id}, function(err,data){
 			    if(err){
 				response = {"error" : true,"message" : "Error deleting related project data"};
 			    } else {

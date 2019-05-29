@@ -111,22 +111,30 @@ const User = inject("mainStore", "authStore")(observer(class User extends Compon
 	
 
 	return (
-	    <div className="user">
-	      {this.props.firstName} {this.props.lastName} 
-	      <div className="btn-group">
-		<button type="button" className={this.props.isFirst || this.props.authStore.userId == this.props.userid ? "btn btn-light dropdown-toggle disabled" : "btn btn-light dropdown-toggle" }  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  {this.state.isAdmin ? "Admin" : "User"}
 
-		</button>
-		<div className="dropdown-menu">
-		  <a className="dropdown-item" href="#" onClick={this.changeRole} adm="true">Admin</a>
-		  <a className="dropdown-item" href="#" onClick={this.changeRole} adm="false">User</a>
+	    <li className="user">
+	      <div className="row">
+		<div className="col-4">
+		  {this.props.firstName} {this.props.lastName}
 		</div>
+		<div className="col-2">
+		  {this.state.isAdmin ? <span className="badge badge-info">Admin</span> : null}
+		</div>
+		<div className="col-4">
+		  <div className="btn-group">
+		    <button type="button" className={this.props.isFirst || this.props.authStore.userId == this.props.userid ? "btn btn-light dropdown-toggle disabled" : "btn btn-light dropdown-toggle" }  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      {this.state.isAdmin ? "Admin" : "User"}
+
+		    </button>
+		    <div className="dropdown-menu">
+		      <a className="dropdown-item" href="#" onClick={this.changeRole} adm="true">Admin</a>
+		      <a className="dropdown-item" href="#" onClick={this.changeRole} adm="false">User</a>
+		    </div>
+		  </div>
+		</div>
+		
 	      </div>
-	      {this.state.isAdmin ? <span className="badge badge-info">Admin</span> : null}
-	      
-	      
-	    </div>
+	    </li>
 	);
 
 
