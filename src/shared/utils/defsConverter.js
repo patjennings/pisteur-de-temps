@@ -56,4 +56,14 @@ export function getTracksNumberForProject(defs, id){
     
     return result;
 }
+export function getTasksForProject(defs, id){
+    let result = 0
+    const list = toJS(defs);
+    
+    const node = list.filter(
+    	item => {return item._id == id;}
+    );
 
+    console.log(node)    
+    return result;
+}

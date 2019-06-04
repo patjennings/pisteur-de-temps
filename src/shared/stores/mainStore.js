@@ -14,7 +14,8 @@ export class MainStore{
 
 	this.showProject = false; // un projet est-il affiché ?
 	this.activeProject = null; // le projet actif
-	    
+	this.activeTaskInput = null; // la tâche en train d'être entrée
+	
 	this.loadDefinitions();
 
 	this.clientsDefinitions = []; // définitions des clients
@@ -23,13 +24,16 @@ export class MainStore{
 
 	this.activeTrackedTime = [];
 	this.activeProjectDetails = {};
+
 	
 	this.trackHistory = []; // historique des tracks du user
 
 	this.state = "pending";
     }
 
-
+    setActiveTaskInput(value){
+	this.activeTaskInput = value;
+    }
     setActiveProject(value){
 	// console.log("new active project is "+ value);
 	this.loadProject(value);
@@ -292,6 +296,7 @@ decorate(MainStore, {
     showProject: observable,
     getTrackNumbersForProject: action,
     activeProject: observable,
+    activeTaskInput: observable,
     activeTrackedTime: observable,
     activeProjectDetails: observable,
     clientsDefinitions: observable,
@@ -300,6 +305,7 @@ decorate(MainStore, {
     trackHistory: observable,
     state: observable,
     setPageDisplayed: action,
+    setActiveTaskInput: action,
     setActiveProject: action,
     setShowProject: action,
     loadPersonalHistory: action,

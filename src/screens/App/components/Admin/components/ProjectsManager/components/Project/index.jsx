@@ -112,6 +112,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 
 	// console.log("/////////// "+this.props.mainStore.activeTrackedTime);
 	// console.log(this.state.projectTracks);
+	// console.log(this.props.projectid);
 	
 	if(this.state.isEdited){
 	    return (
@@ -146,12 +147,17 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   				 type="text"
   				 aria-label="Input"/>
   			</div>
-  			<div className="col-3">
-			  <span className="badge badge-info">Task</span>&nbsp;
-			  <span className="badge badge-info">UI</span>
+			<div className="col-3">
+			  {this.props.tasks.map(
+			      t => <div className="btn-group" role="group" aria-label="Basic example">
+				  <button type="button" className="btn btn-info btn-sm">{t}</button>
+		                  <button type="button" className="btn btn-info btn-sm">x</button>
+		                  </div>
+			  )}
 
-  			</div>
-  			<div className="col-1">
+		    
+		        </div>
+			<div className="col-1">
   			</div>
 			
   		      </div>
@@ -200,8 +206,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      {this.props.budget}
 		    </div>
 		    <div className="col-3">
-		      <span className="badge badge-info">Task</span>&nbsp;
-		      <span className="badge badge-info">UI</span>
+		      {this.props.tasks.map(t => <button type="button" className="btn btn-light btn-sm">{t}</button> )}
 		    </div>
 		    <div className="col-1">
 		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>

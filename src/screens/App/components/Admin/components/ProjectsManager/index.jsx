@@ -85,7 +85,7 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 	      <div className="projects-content pane-content">
 		<ul>
 		  { this.state.isAddingProject ? <li className="new"><AddProject onChange={this.handleChange} /></li>: null }
-		  {this.props.mainStore.projectsDefinitions.map(p => <Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks}/>)}
+		  {this.props.mainStore.projectsDefinitions.map(p => <Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks} tasks={p.tasks}/>)}
                 </ul>
 	      </div>
             </div>

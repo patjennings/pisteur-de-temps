@@ -7,6 +7,9 @@ import retrieveFormData from "utils/retrieveFormData";
 import {inject, observer} from "mobx-react";
 
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
+import TaskSelector from "sharedComponents/TaskSelector";
+
+
 import "./styles.scss";
 
 const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput extends Component {
@@ -15,6 +18,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 
 	this.state = {
 	    activeProject: null,
+	    selectedTask: this.props.mainStore.activeTask,
 	    hasErrors: false,
 	    errorOnTime: false,
 	    errorOnTask: false,
@@ -24,6 +28,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	// binds
 	this.handleSubmit = this.handleSubmit.bind(this);
 	this.setActiveProject = this.setActiveProject.bind(this);
+	this.setTask = this.setTask.bind(this);
     }
 
     handleSubmit(event){
@@ -53,14 +58,24 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
     }
 
     setActiveProject(p){
-	this.setState({activeProject: p});
+	// this.setState({activeProject: p});
+	this.setState({activeProject: p }, () => {
+	    console.log(`state: ${this.state}, value: ${p}`); // this is my checking
+	});
+    }
+    setTask(t){
+	this.setState({selectedTask: t});
+	this.setState({selectedTask: t }, () => {
+	    console.log(`state: ${this.state}, value: ${t}`); // this is my checking
+	})
     }
 
 
     render() {
 	const timeAttr = this.state.errorOnTime ? "is-invalid" : null;
 	const taskAttr = this.state.errorOnTask ? "is-invalid" : null;
-	
+	console.log(this.state.selectedTask);
+		
 	return (
 	    <div className="card-header track-input">
 	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
@@ -78,13 +93,21 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 			   placeholder="Time"
 			   aria-label="Input"
 			   data-parse="number"/>
-		    <label htmlFor="track-input--task">Task</label>
+
+		    
+		    <label htmlFor="track-input--task">Tasks</label>
+
+		    <TaskSelector onChange={this.setTask} activeProject={this.state.activeProject} key={this.state.activeProject}/>
+
+		    {/*}
 		    <input className={"form-control w-100 "+taskAttr}
 			   name="task"
 			   id="track-input--task"
 			   type="text"
 			   placeholder="Task description"
 			   aria-label="Input"/>
+		    */}
+		    
 		    <label htmlFor="track-input--comment">Comment</label>
 		    <textarea className="form-control w-100"
 			      name="comment"

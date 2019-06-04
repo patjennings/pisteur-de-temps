@@ -12188,6 +12188,21 @@ exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/shared/components/TaskSelector/styles.scss":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/shared/components/TaskSelector/styles.scss ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -50926,6 +50941,7 @@ function (_Component) {
     value: function render() {
       // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
       // console.log(this.state.projectTracks);
+      // console.log(this.props.projectid);
       if (this.state.isEdited) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "project edited"
@@ -50970,11 +50986,19 @@ function (_Component) {
           "aria-label": "Input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "badge badge-info"
-        }, "Task"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "badge badge-info"
-        }, "UI")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.tasks.map(function (t) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "btn-group",
+            role: "group",
+            "aria-label": "Basic example"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            type: "button",
+            className: "btn btn-info btn-sm"
+          }, t), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            type: "button",
+            className: "btn btn-info btn-sm"
+          }, "x"));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-1"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
@@ -51025,11 +51049,12 @@ function (_Component) {
           className: "col-2"
         }, this.props.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "badge badge-info"
-        }, "Task"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "badge badge-info"
-        }, "UI")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.tasks.map(function (t) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            type: "button",
+            className: "btn btn-light btn-sm"
+          }, t);
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-1"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
@@ -51241,7 +51266,8 @@ function (_Component) {
           clientid: p.client,
           description: p.description,
           budget: p.budget,
-          hasTracks: p.hasTracks
+          hasTracks: p.hasTracks,
+          tasks: p.tasks
         });
       }))));
     }
@@ -52922,8 +52948,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sharedComponents/TaskSelector */ "./src/shared/components/TaskSelector/index.jsx");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52949,6 +52976,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var TaskInput = Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_3__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -52962,6 +52990,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TaskInput).call(this, props));
     _this.state = {
       activeProject: null,
+      selectedTask: _this.props.mainStore.activeTask,
       hasErrors: false,
       errorOnTime: false,
       errorOnTask: false,
@@ -52970,6 +52999,7 @@ function (_Component) {
 
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.setActiveProject = _this.setActiveProject.bind(_assertThisInitialized(_this));
+    _this.setTask = _this.setTask.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -53000,8 +53030,27 @@ function (_Component) {
   }, {
     key: "setActiveProject",
     value: function setActiveProject(p) {
+      var _this2 = this;
+
+      // this.setState({activeProject: p});
       this.setState({
         activeProject: p
+      }, function () {
+        console.log("state: ".concat(_this2.state, ", value: ").concat(p)); // this is my checking
+      });
+    }
+  }, {
+    key: "setTask",
+    value: function setTask(t) {
+      var _this3 = this;
+
+      this.setState({
+        selectedTask: t
+      });
+      this.setState({
+        selectedTask: t
+      }, function () {
+        console.log("state: ".concat(_this3.state, ", value: ").concat(t)); // this is my checking
       });
     }
   }, {
@@ -53009,6 +53058,7 @@ function (_Component) {
     value: function render() {
       var timeAttr = this.state.errorOnTime ? "is-invalid" : null;
       var taskAttr = this.state.errorOnTask ? "is-invalid" : null;
+      console.log(this.state.selectedTask);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header track-input"
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -53032,13 +53082,10 @@ function (_Component) {
         "data-parse": "number"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "track-input--task"
-      }, "Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form-control w-100 " + taskAttr,
-        name: "task",
-        id: "track-input--task",
-        type: "text",
-        placeholder: "Task description",
-        "aria-label": "Input"
+      }, "Tasks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        onChange: this.setTask,
+        activeProject: this.state.activeProject,
+        key: this.state.activeProject
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "track-input--comment"
       }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -55118,6 +55165,147 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/shared/components/TaskSelector/index.jsx":
+/*!******************************************************!*\
+  !*** ./src/shared/components/TaskSelector/index.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/shared/components/TaskSelector/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var TaskSelector = Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["observer"])(
+/*#__PURE__*/
+function (_Component) {
+  _inherits(TaskSelector, _Component);
+
+  function TaskSelector(props) {
+    var _this;
+
+    _classCallCheck(this, TaskSelector);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TaskSelector).call(this, props));
+
+    _this.props.mainStore.setActiveTaskInput(null); // reset la task quand on réinitialise l'objet
+    // ceci est possible grâce à la key posée sur l'appel du composant, qui le remonte donc et relance le constructeur. 
+
+
+    _this.state = {
+      activeProject: _this.props.activeProject,
+      activeTask: null
+    }; // binds
+
+    _this.handleDropdownChange = _this.handleDropdownChange.bind(_assertThisInitialized(_this));
+    return _this;
+  } // componentWillUpdate(){
+  // 	this.props.activeProject !== this.state.activeProject ? console.log("change project") : console.log("same project");
+  // }
+
+
+  _createClass(TaskSelector, [{
+    key: "handleDropdownChange",
+    value: function handleDropdownChange(e) {
+      e.preventDefault();
+      console.log(e); // on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
+      // let projectId; // get the id
+
+      this.props.mainStore.setActiveTaskInput(e.currentTarget.innerText);
+      this.props.onChange(this.state.activeTaskInput);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var buttonClass = "btn btn-secondary dropdown-toggle";
+      var AriaDisabledState = this.props.activeProject == null ? "true" : "false";
+      this.props.activeProject == null ? buttonClass += " disabled" : "";
+      console.log(Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getTasksForProject"])(this.props.mainStore.projectsDefinitions, this.state.activeProject));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: buttonClass,
+        href: "#",
+        role: "button",
+        id: "tasksList",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false",
+        "aria-disabled": AriaDisabledState
+      }, this.props.mainStore.activeTaskInput == null ? "Select task" : this.props.mainStore.activeTaskInput), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "tasksList"
+      }));
+    }
+  }]);
+
+  return TaskSelector;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (TaskSelector);
+
+/***/ }),
+
+/***/ "./src/shared/components/TaskSelector/styles.scss":
+/*!********************************************************!*\
+  !*** ./src/shared/components/TaskSelector/styles.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/shared/components/TaskSelector/styles.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/shared/fetch/agent.js":
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
@@ -55616,6 +55804,8 @@ function () {
 
     this.activeProject = null; // le projet actif
 
+    this.activeTaskInput = null; // la tâche en train d'être entrée
+
     this.loadDefinitions();
     this.clientsDefinitions = []; // définitions des clients
 
@@ -55631,6 +55821,11 @@ function () {
   }
 
   _createClass(MainStore, [{
+    key: "setActiveTaskInput",
+    value: function setActiveTaskInput(value) {
+      this.activeTaskInput = value;
+    }
+  }, {
     key: "setActiveProject",
     value: function setActiveProject(value) {
       // console.log("new active project is "+ value);
@@ -55913,6 +56108,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   showProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   getTrackNumbersForProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   activeProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  activeTaskInput: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   activeTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   activeProjectDetails: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   clientsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
@@ -55921,6 +56117,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   trackHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   state: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   setPageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  setActiveTaskInput: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setActiveProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   setShowProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadPersonalHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
@@ -55971,7 +56168,7 @@ function getPercent(done, total) {
 /*!*******************************************!*\
   !*** ./src/shared/utils/defsConverter.js ***!
   \*******************************************/
-/*! exports provided: getUserName, getProjectName, getClientName, getProjectsNumberForClient, getTracksNumberForProject */
+/*! exports provided: getUserName, getProjectName, getClientName, getProjectsNumberForClient, getTracksNumberForProject, getTasksForProject */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55981,6 +56178,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientName", function() { return getClientName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProjectsNumberForClient", function() { return getProjectsNumberForClient; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTracksNumberForProject", function() { return getTracksNumberForProject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForProject", function() { return getTasksForProject; });
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
  // get a username from an id and a list of definitions (list of ids+related name)
 
@@ -56032,6 +56230,15 @@ function getTracksNumberForProject(defs, id) {
     id == l.client && result++;
     console.log(l.client);
   });
+  return result;
+}
+function getTasksForProject(defs, id) {
+  var result = 0;
+  var list = Object(mobx__WEBPACK_IMPORTED_MODULE_0__["toJS"])(defs);
+  var node = list.filter(function (item) {
+    return item._id == id;
+  });
+  console.log(node);
   return result;
 }
 
