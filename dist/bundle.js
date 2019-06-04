@@ -55248,10 +55248,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var buttonClass = "btn btn-secondary dropdown-toggle";
+      var _this2 = this;
+
+      var buttonClass = "btn btn-light dropdown-toggle";
       var AriaDisabledState = this.props.activeProject == null ? "true" : "false";
       this.props.activeProject == null ? buttonClass += " disabled" : "";
-      console.log(Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getTasksForProject"])(this.props.mainStore.projectsDefinitions, this.state.activeProject));
+      var tasks = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getTasksForProject"])(this.props.mainStore.projectsDefinitions, this.props.activeProject);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -55266,7 +55268,13 @@ function (_Component) {
       }, this.props.mainStore.activeTaskInput == null ? "Select task" : this.props.mainStore.activeTaskInput), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "tasksList"
-      }));
+      }, tasks !== null && tasks.map(function (t) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "dropdown-item",
+          href: "#",
+          onClick: _this2.handleDropdownChange
+        }, t);
+      })));
     }
   }]);
 
@@ -56233,12 +56241,14 @@ function getTracksNumberForProject(defs, id) {
   return result;
 }
 function getTasksForProject(defs, id) {
-  var result = 0;
+  var result = null;
   var list = Object(mobx__WEBPACK_IMPORTED_MODULE_0__["toJS"])(defs);
   var node = list.filter(function (item) {
     return item._id == id;
   });
-  console.log(node);
+  node.map(function (r) {
+    result = r.tasks;
+  });
   return result;
 }
 

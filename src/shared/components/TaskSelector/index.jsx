@@ -43,11 +43,11 @@ const TaskSelector = inject("mainStore")(observer(class TaskSelector extends Com
 
     render() {
 
-	let buttonClass = "btn btn-secondary dropdown-toggle";
+	let buttonClass = "btn btn-light dropdown-toggle";
 	const AriaDisabledState = this.props.activeProject == null ? "true" : "false";
 	this.props.activeProject == null ? buttonClass+=" disabled" : "";
 
-	console.log(getTasksForProject(this.props.mainStore.projectsDefinitions, this.state.activeProject));
+	const tasks = getTasksForProject(this.props.mainStore.projectsDefinitions, this.props.activeProject);
 	
 	return (
 	    <div className="dropdown">
@@ -56,7 +56,7 @@ const TaskSelector = inject("mainStore")(observer(class TaskSelector extends Com
 	      </a>
 
 	      <div className="dropdown-menu" aria-labelledby="tasksList">
-
+		{tasks !== null && tasks.map(t => <a className="dropdown-item" href="#" onClick={this.handleDropdownChange}>{t}</a>)}
 	      </div>
 	    </div>
 	    
