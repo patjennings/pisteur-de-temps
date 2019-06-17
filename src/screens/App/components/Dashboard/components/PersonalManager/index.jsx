@@ -38,10 +38,8 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 	console.log(this.props.mainStore.trackHistory);
 
 	return (
-	    
-	    <div className="col-6 track-manager">
 	      
-		<div className="card">
+		<div className="card track-manager">
 
 		  {/* --------- */}
 		  {/* New track */}
@@ -70,7 +68,6 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 			})}
 		    </ReactCSSTransitionGroup>
 		</div>
-	    </div>
 	);
     }
 }));

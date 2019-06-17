@@ -50,7 +50,7 @@
 	    }
 	    .column-name{
 		font-weight: 700;
-		border-bottom: 1px solid $list-border;
+		border-bottom: 1px solid $border;
 		padding: 1rem;
 	    }
 	}
@@ -61,7 +61,7 @@
 		
 		li{
 		    list-style-type: none;
-		    border-bottom: 1px solid $list-border;
+		    border-bottom: 1px solid $border;
 		    padding: 1rem 1rem 0 1rem;
 
 		    .row{

@@ -206,6 +206,18 @@ export function projectUpdate(projectId, body){
     
     return result;
 }
+export function projectDeleteTask(projectId, task){
+    let result = axios
+	.put(`${API_ROOT}/projects/${projectId}?removeTask=${task}`)
+	.then(res => {
+	    result = res
+	})
+	.catch(error => {
+	    result = error
+	});
+    
+    return result;
+}
 export function projectDelete(projectId){
     let result = axios.delete(`${API_ROOT}/projects/${projectId}`)
 	.then(res => {

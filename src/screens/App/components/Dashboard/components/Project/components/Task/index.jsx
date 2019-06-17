@@ -91,6 +91,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		<div className="track edited">	  
 		  <form onSubmit={this.handleSubmit}>
 		    <input className="form-control"
+			   readOnly
 			   name="task"
 			   id={"track-input--task-"+this.props.taskid}
 			   type="text"

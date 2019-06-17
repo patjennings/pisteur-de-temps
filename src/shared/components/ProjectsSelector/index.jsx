@@ -14,7 +14,8 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 
 	console.log(this.props.activeProject);
 	this.state = {
-	    activeProject: this.props.activeProject
+	    activeProject: this.props.activeProject,
+	    relatedClient: null
 	};
 
 	// binds
@@ -26,14 +27,21 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 	
 	// on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
 
-	let projectId; // get the id
+	const projectId = e.currentTarget.getAttribute("id"); // get the id
+	const clientName = e.currentTarget.querySelector(".related-client").innerText;
+
+	console.log(clientName);
 	
-	if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
-	    projectId = e.currentTarget.parentNode.getAttribute("id");
-	} else {
-	    projectId = e.currentTarget.getAttribute("id");
-	}
-	this.setState({activeProject: projectId});
+	// if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
+	//     projectId = e.currentTarget.parentNode.getAttribute("id");
+	//     // clientName = e.currentTarget
+	// } else {
+	//     projectId = e.currentTarget.getAttribute("id");
+	// }
+	this.setState({
+	    activeProject: projectId,
+	    relatedClient: clientName
+	});
 	this.props.onChange(projectId);
     }
 
@@ -56,7 +64,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		    "Select a project" :
 		    <div className="">
 			  {getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}
-			      <div className="text-muted small">client</div>    
+			      <span className="text-muted small ml-2">{this.state.relatedClient}</span>    
 			</div>
 		    }
 	      </button>
@@ -67,7 +75,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		{
 		    this.props.mainStore.projectsDefinitions.map(p => {
 			// console.log(p);
-			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<div className="text-muted small">{getClientName(this.props.mainStore.clientsDefinitions, p.client)}</div></a>;
+			return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<div className="text-muted small related-client">{getClientName(this.props.mainStore.clientsDefinitions, p.client)}</div></a>;
 		    })
 		}
 	      </div>

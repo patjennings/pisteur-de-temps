@@ -7,8 +7,6 @@ import AddProject from "../AddProject";
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 
-import "./styles.scss";
-
 const ListClientProjects = inject("mainStore")(observer(class ListClientProjects extends Component {
     constructor(props){
 	super(props);

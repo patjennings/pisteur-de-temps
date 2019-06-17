@@ -11777,7 +11777,7 @@ exports.push([module.i, "@font-face {\n  font-family: \"lato\";\n  font-style: n
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  height: 100%; }\n", ""]);
 
 
 
@@ -11918,51 +11918,6 @@ exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss":
-/*!************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss ***!
-  \************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss ***!
-  \*************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss":
-/*!*********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss ***!
-  \*********************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/styles.scss":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/styles.scss ***!
@@ -11972,37 +11927,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#nav {\n  background: #ebebeb;\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0; }\n  #nav .client-name .project-add {\n    color: var(--dark);\n    text-decoration: none; }\n    #nav .client-name .project-add:hover {\n      text-decoration: none; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss":
-/*!************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss ***!
-  \************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "ul.track-history li.track-history--item {\n  cursor: pointer; }\n  ul.track-history li.track-history--item .item-actions {\n    right: 0;\n    z-index: 999; }\n  ul.track-history li.track-history--item .row .item-value {\n    display: flex;\n    margin-left: -1.25rem; }\n    ul.track-history li.track-history--item .row .item-value .item-value--inner {\n      width: 6rem;\n      margin: auto;\n      color: var(--blue);\n      font-size: 1.5rem;\n      border-left: 3px solid var(--blue);\n      padding-left: 1rem;\n      height: 2.5rem; }\n  ul.track-history li.track-history--item:hover {\n    background-color: var(--light); }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss":
-/*!*****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss ***!
-  \*****************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0; }\n  #nav .client-name .project-add {\n    color: var(--dark);\n    text-decoration: none; }\n    #nav .client-name .project-add:hover {\n      text-decoration: none; }\n", ""]);
 
 
 
@@ -12017,7 +11942,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".track-manager .track-input {\n  background-color: #3726bc; }\n  .track-manager .track-input input,\n  .track-manager .track-input textarea,\n  .track-manager .track-input a#tasksList {\n    background: #291c8c;\n    border: none;\n    color: rgba(255, 255, 255, 0.5);\n    transition: 0.25s all ease-in-out; }\n    .track-manager .track-input input:focus,\n    .track-manager .track-input textarea:focus,\n    .track-manager .track-input a#tasksList:focus {\n      background: white;\n      border: 3px solid #ffc107;\n      color: #000000; }\n", ""]);
 
 
 
@@ -12137,7 +12062,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".example-enter {\n  opacity: 0.01; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.example-leave {\n  opacity: 1; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n\n.app {\n  background: #f5f5f5; }\n", ""]);
+exports.push([module.i, ".app {\n  background: #f5f5f5; }\n  .app #wrapper {\n    padding-top: 2rem; }\n", ""]);
 
 
 
@@ -12152,7 +12077,7 @@ exports.push([module.i, ".example-enter {\n  opacity: 0.01; }\n\n.example-enter.
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 
 
@@ -12167,7 +12092,7 @@ exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "#main-navigation {\n  border-bottom: 1px solid #cee6ff; }\n  #main-navigation ul.nav li.nav-item a {\n    padding: 1rem;\n    text-transform: uppercase;\n    letter-spacing: 0.15rem; }\n  #main-navigation .admin {\n    position: absolute;\n    top: 0.5rem;\n    right: 1rem; }\n", ""]);
 
 
 
@@ -12182,7 +12107,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 0.75rem 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
 
 
 
@@ -12197,7 +12122,7 @@ exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+exports.push([module.i, "#track-input--task {\n  width: 100%; }\n", ""]);
 
 
 
@@ -50857,7 +50782,8 @@ function (_Component) {
     _this.cancelEdit = _this.cancelEdit.bind(_assertThisInitialized(_this));
     _this.setActiveClient = _this.setActiveClient.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.deleteProject = _this.deleteProject.bind(_assertThisInitialized(_this)); // this.getTracksNumber = this.getTracksNumber.bind(this);
+    _this.deleteProject = _this.deleteProject.bind(_assertThisInitialized(_this));
+    _this.deleteTask = _this.deleteTask.bind(_assertThisInitialized(_this)); // this.getTracksNumber = this.getTracksNumber.bind(this);
 
     return _this;
   }
@@ -50892,6 +50818,13 @@ function (_Component) {
     value: function deleteProject() {
       // console.log("delete project");
       this.props.mainStore.deleteProject(this.props.projectid);
+    }
+  }, {
+    key: "deleteTask",
+    value: function deleteTask(e) {
+      var elem = e.currentTarget;
+      var task = elem.previousSibling.innerHTML;
+      this.props.mainStore.deleteTaskInProject(this.props.projectid, task);
     }
   }, {
     key: "populateFields",
@@ -50939,6 +50872,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
       // console.log(this.state.projectTracks);
       // console.log(this.props.projectid);
@@ -50996,7 +50931,8 @@ function (_Component) {
             className: "btn btn-info btn-sm"
           }, t), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             type: "button",
-            className: "btn btn-info btn-sm"
+            className: "btn btn-info btn-sm",
+            onClick: _this2.deleteTask
           }, "x"));
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-1"
@@ -52012,8 +51948,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52033,7 +51967,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
  // import axios from "axios";
-
 
 
 
@@ -52117,36 +52050,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss":
-/*!*****************************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddClient/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/index.jsx":
 /*!****************************************************************************************************!*\
   !*** ./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/index.jsx ***!
@@ -52162,8 +52065,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52181,7 +52082,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -52297,36 +52197,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss":
-/*!******************************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/index.jsx":
 /*!************************************************************************************************************!*\
   !*** ./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/index.jsx ***!
@@ -52344,8 +52214,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AddProject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../AddProject */ "./src/screens/App/components/Dashboard/components/Navigation/components/AddProject/index.jsx");
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52363,7 +52231,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -52466,36 +52333,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss":
-/*!**************************************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss ***!
-  \**************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/Navigation/components/ListClientProjects/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./src/screens/App/components/Dashboard/components/Navigation/index.jsx":
 /*!******************************************************************************!*\
   !*** ./src/screens/App/components/Dashboard/components/Navigation/index.jsx ***!
@@ -52580,7 +52417,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -52661,14 +52498,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var utils_readableDate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/readableDate */ "./src/shared/utils/readableDate.js");
-/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var utils_readableDate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! utils/readableDate */ "./src/shared/utils/readableDate.js");
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52696,8 +52531,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Task, _Component);
@@ -52709,13 +52543,13 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Task).call(this, props)); // get the client id
 
-    var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_4__["toJS"])(_this.props.mainStore.projectsDefinitions.find(function (item) {
+    var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(_this.props.mainStore.projectsDefinitions.find(function (item) {
       return item._id == _this.props.relatedProject;
     })).client;
     _this.state = {
-      projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getProjectName"])(_this.props.mainStore.projectsDefinitions, _this.props.relatedProject),
+      projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(_this.props.mainStore.projectsDefinitions, _this.props.relatedProject),
       // clientId: clid,
-      clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getClientName"])(_this.props.mainStore.clientsDefinitions, clid),
+      clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(_this.props.mainStore.clientsDefinitions, clid),
       isEdited: false,
       activeProject: _this.props.relatedProject
     }; // binds
@@ -52764,16 +52598,16 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__["default"])(e.target, this.props.authStore.userId); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__["default"])(e.target, this.props.authStore.userId); // on lance la requête
 
       this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
-      var cli = Object(mobx__WEBPACK_IMPORTED_MODULE_4__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
+      var cli = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
         return item._id == _this2.state.activeProject;
       })).client;
       this.setState({
-        projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject),
+        projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject),
         // clientId: cli,
-        clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getClientName"])(this.props.mainStore.clientsDefinitions, cli),
+        clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(this.props.mainStore.clientsDefinitions, cli),
         isEdited: false
       });
     }
@@ -52800,11 +52634,11 @@ function (_Component) {
       var _this3 = this;
 
       console.log("new task render");
-      var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_4__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
+      var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
         return item._id == _this3.props.relatedProject;
       })).client;
-      this.state.projectName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
-      this.state.clientName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__["getClientName"])(this.props.mainStore.clientsDefinitions, clid); // console.log(toJS(this.props.mainStore));
+      this.state.projectName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
+      this.state.clientName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(this.props.mainStore.clientsDefinitions, clid); // console.log(toJS(this.props.mainStore));
       // console.log(toJS(this.props.mainStore.projectsDefinitions));
 
       if (this.state.isEdited) {
@@ -52827,6 +52661,7 @@ function (_Component) {
           htmlFor: "track-input--task"
         }, "Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control w-100",
+          readOnly: true,
           name: "task",
           id: "track-input--task-" + this.props.id,
           type: "text",
@@ -52846,10 +52681,7 @@ function (_Component) {
         }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          onChange: this.setActiveProject,
-          activeProject: this.state.activeProject
-        }));
+        }, "Cancel")));
       } else {
         // Component on read
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -52892,7 +52724,7 @@ function (_Component) {
           className: "offset-2 col-5 text-muted"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, this.state.projectName), "  ", this.state.clientName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-5 text-muted"
-        }, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_6__["readableDate"])(this.props.date))));
+        }, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_5__["readableDate"])(this.props.date))));
       }
     }
   }]);
@@ -52900,36 +52732,6 @@ function (_Component) {
   return Task;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (Task);
-
-/***/ }),
-
-/***/ "./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss":
-/*!*****************************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -52949,8 +52751,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
 /* harmony import */ var sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sharedComponents/TaskSelector */ "./src/shared/components/TaskSelector/index.jsx");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52972,7 +52772,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import {observable, action, decorate} from "mobx";
-
 
 
 
@@ -53009,14 +52808,17 @@ function (_Component) {
       event.preventDefault();
       var timeField = document.getElementById("track-input--value");
       var taskField = document.getElementById("track-input--task");
-      timeField.value == "" ? this.state.errorOnTime = true : this.state.errorOnTime = false;
-      taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
+      timeField.value == "" ? this.state.errorOnTime = true : this.state.errorOnTime = false; // taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
+
+      this.props.mainStore.activeTaskInput == null ? this.state.errorOnTask = true : this.state.errorOnTask = false;
       this.state.activeProject == null ? this.state.errorOnProject = true : this.state.errorOnProject = false;
       this.state.hasErrors = true;
 
       if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {
         this.state.hasErrors = false;
         var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.authStore.userId);
+        fd.task = this.props.mainStore.activeTaskInput; // console.log(fd);
+
         this.props.mainStore.postNewTask(this.state.activeProject, fd);
       }
 
@@ -53060,84 +52862,64 @@ function (_Component) {
       var taskAttr = this.state.errorOnTask ? "is-invalid" : null;
       console.log(this.state.selectedTask);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header track-input"
+        className: "card-header track-input container pt-3"
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
-      }, "You need ", this.state.errorOnTime ? "a time spent, " : null, this.state.errorOnTask ? "a task, " : null, this.state.errorOnProject ? "a related project " : null, "in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "You need ", this.state.errorOnTime ? "a time spent, " : null, this.state.errorOnTask ? "a task, " : null, this.state.errorOnProject ? "a related project " : null, "in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "track-input--value"
-      }, "Time spent"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form-control form-control-lg w-50 " + timeAttr,
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Add time"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row mb-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control form-control-lg w-100 " + timeAttr,
         name: "value",
         id: "track-input--value",
         type: "text",
         placeholder: "Time",
         "aria-label": "Input",
         "data-parse": "number"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "track-input--task"
-      }, "Tasks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-8"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onChange: this.setActiveProject
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row mb-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
         onChange: this.setTask,
         activeProject: this.state.activeProject,
         key: this.state.activeProject
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "track-input--comment"
-      }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row mb-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "form-control w-100",
         name: "comment",
         id: "track-input--comment",
         type: "text",
         placeholder: "Write a comment",
         "aria-label": "Input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-primary"
-      }, "Submit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        onChange: this.setActiveProject
-      })))));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row mb-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-block"
+      }, "Submit")))));
     }
   }]);
 
   return TaskInput;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (TaskInput);
-
-/***/ }),
-
-/***/ "./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss":
-/*!**********************************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss ***!
-  \**********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/lib/loader.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -53230,9 +53012,7 @@ function (_Component) {
       console.log("Personal Manager is rendered");
       console.log(this.props.mainStore.trackHistory);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-6 track-manager"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
+        className: "card track-manager"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TaskInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
         store: this.props.mainStore,
         onChange: this.handleChange
@@ -53259,7 +53039,7 @@ function (_Component) {
             return _this2.handleChange(childData, event);
           }
         });
-      }))));
+      })));
     }
   }]);
 
@@ -53451,6 +53231,7 @@ function (_Component) {
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
+          readOnly: true,
           name: "task",
           id: "track-input--task-" + this.props.taskid,
           type: "text",
@@ -53677,9 +53458,7 @@ function (_Component) {
       console.log(timeConsumed + "%");
       console.log(timeBasis + "/" + timeOver);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-6 project-details"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
+        className: "card project-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -53742,7 +53521,7 @@ function (_Component) {
           date: t.dateCreation,
           onChange: _this2.handleChange
         });
-      }))));
+      })));
     }
   }]);
 
@@ -53853,26 +53632,35 @@ function (_Component) {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        key: 2
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main",
-        className: "col-9"
+        className: "col-md-10"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         component: "div",
         className: "row",
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
-      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: this.props.mainStore,
         key: 0
-      }), this.props.mainStore.showProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      })), this.props.mainStore.showProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-7"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_3__["default"], {
         key: 1
-      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a project"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "nav",
-        className: "col-3"
-      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        key: 2
-      })))));
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a project")))))))));
     }
   }]);
 
@@ -54909,22 +54697,10 @@ function (_Component) {
           goBack = _this$props$routingSt.goBack; // console.log("MainNavigation is rendered");
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-        className: "navbar navbar-expand-lg navbar-dark bg-dark"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "navbar-toggler",
-        type: "button",
-        "data-toggle": "collapse",
-        "data-target": "#navbarNav",
-        "aria-controls": "navbarNav",
-        "aria-expanded": "false",
-        "aria-label": "Toggle navigation"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "navbar-toggler-icon"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "collapse navbar-collapse",
-        id: "navbarNav"
+        className: "",
+        id: "main-navigation"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "navbar-nav"
+        className: "nav justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -54946,17 +54722,17 @@ function (_Component) {
       }, "Synthesis ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }, "(current)")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown my-2"
+        className: "dropdown admin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-secondary dropdown-toggle",
         type: "button",
-        id: "dropdownMenuButton",
+        id: "adminMenuButton",
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Connected as "), this.props.authStore.user.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
-        "aria-labelledby": "dropdownMenuButton"
+        "aria-labelledby": "adminMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         onClick: function onClick() {
@@ -54969,7 +54745,7 @@ function (_Component) {
         onClick: function onClick() {
           return _this2.props.authStore.logout();
         }
-      }, "Logout")))));
+      }, "Logout"))));
     }
   }]);
 
@@ -55064,7 +54840,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProjectsSelector).call(this, props));
     console.log(_this.props.activeProject);
     _this.state = {
-      activeProject: _this.props.activeProject
+      activeProject: _this.props.activeProject,
+      relatedClient: null
     }; // binds
 
     _this.handleDropdownChange = _this.handleDropdownChange.bind(_assertThisInitialized(_this));
@@ -55076,17 +54853,19 @@ function (_Component) {
     value: function handleDropdownChange(e) {
       e.preventDefault(); // on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
 
-      var projectId; // get the id
+      var projectId = e.currentTarget.getAttribute("id"); // get the id
 
-      if (e.target.nodeName === "SPAN") {
-        // handle case where child is clicked
-        projectId = e.currentTarget.parentNode.getAttribute("id");
-      } else {
-        projectId = e.currentTarget.getAttribute("id");
-      }
+      var clientName = e.currentTarget.querySelector(".related-client").innerText;
+      console.log(clientName); // if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
+      //     projectId = e.currentTarget.parentNode.getAttribute("id");
+      //     // clientName = e.currentTarget
+      // } else {
+      //     projectId = e.currentTarget.getAttribute("id");
+      // }
 
       this.setState({
-        activeProject: projectId
+        activeProject: projectId,
+        relatedClient: clientName
       });
       this.props.onChange(projectId);
     }
@@ -55109,9 +54888,9 @@ function (_Component) {
         "aria-expanded": "false"
       }, this.state.activeProject == null ? "Select a project" : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
-      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "text-muted small"
-      }, "client"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "text-muted small ml-2"
+      }, this.state.relatedClient))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, this.props.mainStore.projectsDefinitions.map(function (p) {
@@ -55123,7 +54902,7 @@ function (_Component) {
           id: p._id,
           onClick: _this2.handleDropdownChange
         }, p.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "text-muted small"
+          className: "text-muted small related-client"
         }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(_this2.props.mainStore.clientsDefinitions, p.client)));
       })));
     }
@@ -55179,10 +54958,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/shared/components/TaskSelector/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/shared/components/TaskSelector/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55207,7 +54987,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var TaskSelector = Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["observer"])(
+
+var TaskSelector = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(TaskSelector, _Component);
@@ -55229,6 +55010,7 @@ function (_Component) {
     }; // binds
 
     _this.handleDropdownChange = _this.handleDropdownChange.bind(_assertThisInitialized(_this));
+    _this.submitNewTask = _this.submitNewTask.bind(_assertThisInitialized(_this));
     return _this;
   } // componentWillUpdate(){
   // 	this.props.activeProject !== this.state.activeProject ? console.log("change project") : console.log("same project");
@@ -55246,16 +55028,34 @@ function (_Component) {
       this.props.onChange(this.state.activeTaskInput);
     }
   }, {
+    key: "submitNewTask",
+    value: function submitNewTask(e) {
+      e.preventDefault();
+      var newTask = document.getElementById("task-input--task").value;
+
+      if (newTask !== "") {
+        var reqBody = {
+          "task": newTask
+        };
+        this.props.mainStore.updateProject(this.props.activeProject, reqBody);
+        this.props.mainStore.setActiveTaskInput(newTask);
+        this.props.onChange(this.state.activeTaskInput);
+      } else {
+        console.log("task is empty. Cannot update");
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var buttonClass = "btn btn-light dropdown-toggle";
+      var buttonClass = "btn btn-info dropdown-toggle btn-block";
       var AriaDisabledState = this.props.activeProject == null ? "true" : "false";
-      this.props.activeProject == null ? buttonClass += " disabled" : "";
+      this.props.activeProject == null ? buttonClass += " disabled" : null;
       var tasks = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getTasksForProject"])(this.props.mainStore.projectsDefinitions, this.props.activeProject);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
+        className: "dropdown",
+        id: "track-input--task"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: buttonClass,
         href: "#",
@@ -55274,7 +55074,20 @@ function (_Component) {
           href: "#",
           onClick: _this2.handleDropdownChange
         }, t);
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-divider"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "task",
+        id: "task-input--task",
+        type: "text",
+        placeholder: "New task",
+        "aria-label": "Input",
+        "data-parse": "number",
+        className: "w-50 ml-3 mr-1"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary",
+        onClick: this.submitNewTask
+      }, "Add")));
     }
   }]);
 
@@ -55318,7 +55131,7 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
+/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55337,6 +55150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectTrackedTime", function() { return fetchProjectTrackedTime; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projectNew", function() { return projectNew; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projectUpdate", function() { return projectUpdate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projectDeleteTask", function() { return projectDeleteTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projectDelete", function() { return projectDelete; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "taskNew", function() { return taskNew; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "taskUpdate", function() { return taskUpdate; });
@@ -55516,6 +55330,14 @@ function projectNew(body) {
 function projectUpdate(projectId, body) {
   body = _objectSpread({}, body);
   var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("".concat(API_ROOT, "/projects/").concat(projectId), body).then(function (res) {
+    result = res;
+  }).catch(function (error) {
+    result = error;
+  });
+  return result;
+}
+function projectDeleteTask(projectId, task) {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("".concat(API_ROOT, "/projects/").concat(projectId, "?removeTask=").concat(task)).then(function (res) {
     result = res;
   }).catch(function (error) {
     result = error;
@@ -56074,7 +55896,6 @@ function () {
       var _this12 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        // console.log(formData);
         _this12.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -56086,8 +55907,18 @@ function () {
       var _this13 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectUpdate"](projectid, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        // console.log(formData);
         _this13.loadDefinitions();
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })); // .finally(action(() => { this.isLoading = false; }));
+    }
+  }, {
+    key: "deleteTaskInProject",
+    value: function deleteTaskInProject(projectid, taskToDelete) {
+      var _this14 = this;
+
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDeleteTask"](projectid, taskToDelete).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this14.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -56095,12 +55926,12 @@ function () {
   }, {
     key: "deleteProject",
     value: function deleteProject(projectid) {
-      var _this14 = this;
+      var _this15 = this;
 
       // console.log("delete proj");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDelete"](projectid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this14.loadDefinitions();
+        _this15.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -56139,6 +55970,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   updateUser: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   updateProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  deleteTaskInProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   deleteProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   updateTask: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   deleteTask: mobx__WEBPACK_IMPORTED_MODULE_0__["action"]

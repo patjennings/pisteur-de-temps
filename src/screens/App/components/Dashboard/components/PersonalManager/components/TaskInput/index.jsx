@@ -9,9 +9,6 @@ import {inject, observer} from "mobx-react";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 import TaskSelector from "sharedComponents/TaskSelector";
 
-
-import "./styles.scss";
-
 const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput extends Component {
     constructor(props){
 	super(props);
@@ -38,7 +35,8 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	const taskField = document.getElementById("track-input--task");
 
 	timeField.value == "" ? this.state.errorOnTime = true : this.state.errorOnTime = false;
-	taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
+	// taskField.value == "" ? this.state.errorOnTask = true : this.state.errorOnTask = false;
+	this.props.mainStore.activeTaskInput == null ? this.state.errorOnTask = true : this.state.errorOnTask = false;
 	this.state.activeProject == null ? this.state.errorOnProject = true : this.state.errorOnProject = false;
 	this.state.hasErrors = true;
 	
@@ -46,6 +44,8 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject){
 	    this.state.hasErrors = false;
 	    let fd = retrieveFormData(event.target, this.props.authStore.userId);
+	    fd.task = this.props.mainStore.activeTaskInput;
+	    // console.log(fd);
 	    this.props.mainStore.postNewTask(this.state.activeProject, fd);
 	}
 	
@@ -77,51 +77,49 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	console.log(this.state.selectedTask);
 		
 	return (
-	    <div className="card-header track-input">
+	    <div className="card-header track-input container pt-3">
 	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
 		    You need {this.state.errorOnTime ? "a time spent, " : null }{ this.state.errorOnTask ? "a task, " : null }{ this.state.errorOnProject ? "a related project " : null  }in order to complete
 	      </div> : null }
-	      
+	      <div className="row">
+		<div className="col-12">
+		  <h6>Add time</h6>
+		</div>
+	      </div>
 	      <form onSubmit={this.handleSubmit}>
-		<div className="row">
-		  <div className="col">
-		    <label htmlFor="track-input--value">Time spent</label>
-		    <input className={"form-control form-control-lg w-50 "+timeAttr}
+		<div className="row mb-3">
+		  <div className="col-4">
+		    <input className={"form-control form-control-lg w-100 "+timeAttr}
 			   name="value"
 			   id="track-input--value"
 			   type="text"
 			   placeholder="Time"
 			   aria-label="Input"
 			   data-parse="number"/>
-
-		    
-		    <label htmlFor="track-input--task">Tasks</label>
-
+		  </div>
+		  <div className="col-8">
+		    <ProjectsSelector onChange={this.setActiveProject} />
+		  </div>
+		</div>
+		<div className="row mb-3">
+		  <div className="col-12">
 		    <TaskSelector onChange={this.setTask} activeProject={this.state.activeProject} key={this.state.activeProject}/>
-
-		    {/*}
-		    <input className={"form-control w-100 "+taskAttr}
-			   name="task"
-			   id="track-input--task"
-			   type="text"
-			   placeholder="Task description"
-			   aria-label="Input"/>
-		    */}
-		    
-		    <label htmlFor="track-input--comment">Comment</label>
+		  </div>
+		</div>
+		<div className="row mb-3">
+		  <div className="col-12">
 		    <textarea className="form-control w-100"
 			      name="comment"
 			      id="track-input--comment"
 			      type="text"
 			      placeholder="Write a comment"
 			      aria-label="Input"/>
-		    
-		    <button
-		      className="btn btn-primary">Submit</button>
 		  </div>
-		  <div className="col">
-		    <ProjectsSelector onChange={this.setActiveProject} />
-
+		</div>
+		<div className="row mb-3">
+		  <div className="col-12">
+		    <button
+		      className="btn btn-primary btn-block">Submit</button>
 		  </div>
 		</div>
 	      </form>

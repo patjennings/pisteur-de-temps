@@ -256,7 +256,6 @@ export class MainStore{
     postNewProject(formData){
 	agent.projectNew(formData)
 	    .then(action(() => {
-		// console.log(formData);
 		this.loadDefinitions(); 
 	    }))
 	    .catch(action((error) => {
@@ -267,7 +266,16 @@ export class MainStore{
     updateProject(projectid, formData){
 	agent.projectUpdate(projectid, formData)
 	    .then(action(() => {
-		// console.log(formData);
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    deleteTaskInProject(projectid, taskToDelete){
+	agent.projectDeleteTask(projectid, taskToDelete)
+	    .then(action(() => {
 		this.loadDefinitions(); 
 	    }))
 	    .catch(action((error) => {
@@ -319,6 +327,7 @@ decorate(MainStore, {
     updateUser: action,
     postNewProject: action,
     updateProject: action,
+    deleteTaskInProject: action,
     deleteProject: action,
     updateTask: action,
     deleteTask: action

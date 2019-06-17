@@ -15,9 +15,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
     constructor(props){
 	super(props);
 
-
 	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.mainStore.activeProject)).client;
-	
 	this.state = {
 	    // projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.mainStore.activeProject),
 	    // clientId: this.props.mainStore.activeProjectDetails.client,
@@ -35,6 +33,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 	this.setActiveClient = this.setActiveClient.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
 	this.deleteProject = this.deleteProject.bind(this);
+	this.deleteTask = this.deleteTask.bind(this);
 	// this.getTracksNumber = this.getTracksNumber.bind(this);
     }
 
@@ -60,6 +59,11 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
     deleteProject(){
 	// console.log("delete project");
 	this.props.mainStore.deleteProject(this.props.projectid);
+    }
+    deleteTask(e){
+	const elem = e.currentTarget;
+	const task = elem.previousSibling.innerHTML;
+	this.props.mainStore.deleteTaskInProject(this.props.projectid, task);
     }
 
     populateFields(){
@@ -151,7 +155,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 			  {this.props.tasks.map(
 			      t => <div className="btn-group" role="group" aria-label="Basic example">
 				  <button type="button" className="btn btn-info btn-sm">{t}</button>
-		                  <button type="button" className="btn btn-info btn-sm">x</button>
+		                      <button type="button" className="btn btn-info btn-sm" onClick={this.deleteTask}>x</button>
 		                  </div>
 			  )}
 
@@ -180,7 +184,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		    </button>
 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		      <div className="dropdown-divider"></div>
-		      <a className="dropdown-item" onClick={this.deleteProject }>Sure ?</a>
+		      <a className="dropdown-item" onClick={this.deleteProject}>Sure ?</a>
 		    </div>
 	
 		    </div>

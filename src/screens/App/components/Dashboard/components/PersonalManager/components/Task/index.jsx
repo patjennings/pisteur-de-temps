@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "assets/styles/main.scss";
-import "./styles.scss";
 
 import {toJS} from "mobx";
 import {observer, inject} from "mobx-react";
@@ -105,6 +104,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 			   data-parse="number"/>
 		    <label htmlFor="track-input--task">Task</label>
 		    <input className="form-control w-100"
+			   readOnly
 			   name="task"
 			   id={"track-input--task-"+this.props.id}
 			   type="text"
@@ -122,7 +122,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		    <button
 		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
 		  </form>
-		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
+		  {/*<ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/> */}
 		</li>
 	    );
 	}

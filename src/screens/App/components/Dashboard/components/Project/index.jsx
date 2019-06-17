@@ -50,9 +50,8 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 
 	
 	return (
-	    <div className="col-6 project-details">
 	      
-	      <div className="card">
+	      <div className="card project-details">
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-6">
@@ -91,7 +90,6 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		  })}
 		  </ReactCSSTransitionGroup>
 	      </div>
-	    </div>
 	);
     }
 }));

@@ -1,0 +1,21 @@
+@import "assets/styles/colors";
+
+#main-navigation{
+    border-bottom: 1px solid $border-dark;
+
+    ul.nav{
+	li.nav-item{
+	    a{
+		padding: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15rem;
+	    }
+	}
+    }
+
+    .admin{
+	position: absolute;
+	top: 0.5rem;
+	right: 1rem;
+    }
+}

@@ -509,6 +509,7 @@ module.exports = function(app){
 		    data.budget = req.body.budget;
 		}
 		if (req.body.task !== undefined) {
+		    // prévenir la présence d'une tâche similaire
 		    data.tasks.push(req.body.task);
 		}
 		data.hasTracks = true;
