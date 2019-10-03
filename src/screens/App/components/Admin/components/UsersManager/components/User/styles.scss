@@ -1,0 +1,26 @@
+.track{
+    .track-edit{
+	color: var(--dark);
+	text-decoration: none;
+
+	&:hover{
+	    text-decoration: none;
+	}
+
+    }
+    .track-delete{
+	color: var(--dark);
+	text-decoration: none;
+
+	&:hover{
+	    text-decoration: none;
+	}
+	&.muted{
+	    color: #999;
+
+	    &:hover{
+		color: #999;
+	    }
+	}
+    }
+}

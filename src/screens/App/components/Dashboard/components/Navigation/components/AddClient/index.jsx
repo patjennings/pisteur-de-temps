@@ -7,9 +7,6 @@ import retrieveFormData from "utils/retrieveFormData";
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 
-
-import "./styles.scss";
-
 const AddClient = inject("mainStore")(observer(class AddClient extends Component {
     constructor(props){
 	super(props);

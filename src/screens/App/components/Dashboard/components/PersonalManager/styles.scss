@@ -1,0 +1,27 @@
+@import "assets/styles/colors";
+
+.track-manager{
+    // width: 416px;
+
+    .track-input{
+	background-color: $track-input-background;
+
+	input,
+	textarea,
+	a#tasksList{
+	    background: $track-input--input;
+	    border: none;
+	    color: rgba(255,255,255, 0.5);
+	    transition: 0.25s all ease-in-out;
+	    
+	    &:focus{
+		background: $track-input--input-focus;
+		border: 3px solid $surround-color;
+		color: $main-font;
+	    }
+	}
+    }
+    .track-history{
+	
+    }
+}

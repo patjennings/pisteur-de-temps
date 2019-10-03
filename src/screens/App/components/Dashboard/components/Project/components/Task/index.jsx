@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {readableDate} from "utils/readableDate";
-import { getClientName, getProjectName } from "utils/defsConverter";
+import { getClientName, getProjectName, getUserName } from "utils/defsConverter";
 import retrieveFormData from "utils/retrieveFormData";
 
 import {toJS} from "mobx";
@@ -10,7 +10,7 @@ import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 import "./styles.scss";
 
-const Task = inject("mainStore")(observer(class Task extends Component {
+const Task = inject("mainStore", "authStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
 
@@ -67,7 +67,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     handleSubmit(e){
 	console.log("submit");
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId);
 	
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.taskid, fd);
@@ -91,6 +91,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 		<div className="track edited">	  
 		  <form onSubmit={this.handleSubmit}>
 		    <input className="form-control"
+			   readOnly
 			   name="task"
 			   id={"track-input--task-"+this.props.taskid}
 			   type="text"
@@ -120,10 +121,10 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 	} else {
 	    return (
 		<div className="track">
-		  {this.props.task}
-		  {this.props.value}
-		  {this.props.comment}
-		  {this.props.username}
+		  {this.props.task} -
+		  {this.props.value} -
+		  {this.props.comment} -
+		  {getUserName(this.props.mainStore.usersDefinitions, this.props.user)} - 
 		  {readableDate(this.props.date)}
 		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a>
 		  <a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>

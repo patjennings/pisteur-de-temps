@@ -11,10 +11,9 @@ import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
 import "./styles.scss";
 
-const PersonalManager = inject("mainStore")(observer(class PersonalManager extends Component {
+const PersonalManager = inject("mainStore", "authStore")(observer(class PersonalManager extends Component {
     constructor(props){
 	super(props);
-	// console.log(this.props.mainStore);
 	// binds
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
@@ -36,13 +35,11 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
 
     render() {
 	console.log("Personal Manager is rendered");
-	// console.log(this.props.mainStore.isLoading);
-	// console.log(toJS(this.props.mainStore.projectsDefinitions));
+	console.log(this.props.mainStore.trackHistory);
+
 	return (
-	    
-	    <div className="col-6 track-manager">
 	      
-		<div className="card">
+		<div className="card track-manager">
 
 		  {/* --------- */}
 		  {/* New track */}
@@ -65,13 +62,12 @@ const PersonalManager = inject("mainStore")(observer(class PersonalManager exten
 			    comment={childData.comment}
 			    relatedProject={childData.relatedProject}
 			    date={childData.date}
-			    userid={this.props.store.userId}
+			    userid={this.props.authStore.userId}
 			    onChange={event => this.handleChange(childData, event)}
-			    store={this.props.mainStore} />;
+			      />;
 			})}
 		    </ReactCSSTransitionGroup>
 		</div>
-	    </div>
 	);
     }
 }));

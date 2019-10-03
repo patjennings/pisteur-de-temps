@@ -1,7 +1,8 @@
 export default function retrieveFormData(form, userid=null){
-    // console.log("form");
+    console.log("form");
     const data = new FormData(form); // les données du formulaire
-    // console.log(form);
+    console.log(form);
+    console.log(userid);
     let reqBody = {};
     
     for (let name of data.keys()) {

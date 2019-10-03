@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "assets/styles/main.scss";
-import "./styles.scss";
 
 import {toJS} from "mobx";
 import {observer, inject} from "mobx-react";
@@ -12,7 +11,7 @@ import { getClientName, getProjectName } from "utils/defsConverter";
 import retrieveFormData from "utils/retrieveFormData";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
-const Task = inject("mainStore")(observer(class Task extends Component {
+const Task = inject("mainStore", "authStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);
 
@@ -56,7 +55,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
     
     handleSubmit(e){
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.mainStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId);
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
 
@@ -105,6 +104,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 			   data-parse="number"/>
 		    <label htmlFor="track-input--task">Task</label>
 		    <input className="form-control w-100"
+			   readOnly
 			   name="task"
 			   id={"track-input--task-"+this.props.id}
 			   type="text"
@@ -122,7 +122,7 @@ const Task = inject("mainStore")(observer(class Task extends Component {
 		    <button
 		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
 		  </form>
-		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
+		  {/*<ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/> */}
 		</li>
 	    );
 	}

@@ -1,21 +1,21 @@
 import { observable, computed, action, decorate, configure, runInAction, toJS, get, trace } from "mobx";
 import * as agent from "fetch/agent";
 
+import authStore from "stores/authStore";
+
 configure({ enforceActions: "observed" });
 
 export class MainStore{
     constructor(){
 	this.pageDisplayed = "dashboard";
-
-	this.isLoggedIn = true;
-	this.userId = "5c9b3912f787951b7e8c9d62"; // l'utilisateur actif
 	
 	this.isLoading = false;
 	this.isLoadingProject = false;
 
 	this.showProject = false; // un projet est-il affiché ?
 	this.activeProject = null; // le projet actif
-	    
+	this.activeTaskInput = null; // la tâche en train d'être entrée
+	
 	this.loadDefinitions();
 
 	this.clientsDefinitions = []; // définitions des clients
@@ -24,15 +24,18 @@ export class MainStore{
 
 	this.activeTrackedTime = [];
 	this.activeProjectDetails = {};
+
 	
 	this.trackHistory = []; // historique des tracks du user
 
 	this.state = "pending";
     }
 
-
+    setActiveTaskInput(value){
+	this.activeTaskInput = value;
+    }
     setActiveProject(value){
-	console.log("new active project is "+ value);
+	// console.log("new active project is "+ value);
 	this.loadProject(value);
 	this.loadTrackedTime(value);
 	this.activeProject = value;
@@ -44,12 +47,12 @@ export class MainStore{
 	this.pageDisplayed = value;
     }
 
-
     loadPersonalHistory(){
-	console.log("loading personal history…");
+	// console.log("loading personal history…");
+	// console.log(authStore.userId);
 	// this.isLoading = true;
 	
-	agent.fetchPersonalHistory(this.userId)
+	agent.fetchPersonalHistory(authStore.userId)
 	    .then(action((history) => {
 		// console.log(history);
 		this.trackHistory = history;
@@ -62,12 +65,12 @@ export class MainStore{
     }
 
     loadProject(id){
-	console.log("project is loading...");
+	// console.log("project is loading...");
 	this.isLoadingProject = true;
 	// console.log(id);
 	agent.fetchProject(id)
 	    .then(action((project) => {
-		console.log(project.data);
+		// console.log(project.data);
 		this.activeProjectDetails = project.data;
 	    }))
 	    .catch(action((error) => {
@@ -78,7 +81,7 @@ export class MainStore{
 
     loadTrackedTime(id){
 	this.isLoadingProject = true;
-	// console.log(id);
+
 	agent.fetchProjectTrackedTime(id)
 	    .then(action((tracked) => {
 		this.activeTrackedTime = tracked.data.message
@@ -88,9 +91,33 @@ export class MainStore{
 	    }))
 	    .finally(action(() => { this.isLoadingProject = false; }));
     }
+
+    // getTrackLengthForProject(){
+    // 	return "ok";
+    // 	// console.log(this.projectsDefinitions);
+    // 	// this.projectsDefinitions.forEach(p => {
+    // 	//     console.log("(((())))"+p._id);
+    // 	//     const node = this.projectsDefinitions.filter(
+    // 	// 	n => {return n._id == p._id;}
+    // 	//     );
+    // 	//     console.log(this.projectsDefinitions[0]);
+    // 	//     agent.fetchProjectTrackedTime(p._id)
+    // 	// 	.then(action((tracked) => {
+    // 	// 	    // console.log(node);
+    // 	// 	    console.log(tracked.data.message.length);
+    // 	// 	    node.tracks = tracked.data.message.length
+    // 	// 	}))
+    // 	// 	.catch(action((error) => {
+    // 	//     	    console.log(error);
+    // 	// 	}))
+    // 	// 	.finally(action(() => { this.isLoadingProject = false; }));
+    // 	// })
+    // 	// agent.loadTrackedTime(p._id)
+    // }
     
     loadDefinitions(){
 	// this.isLoading = true;
+	console.log("ça recharge les defs !!!!!!!!!!!!");
 
 	agent.fetchClientsDefinitions()
 	    .then(action((clients) => {
@@ -105,6 +132,7 @@ export class MainStore{
 	agent.fetchProjectsDefinitions()
 	    .then(action((projects) => {
 		this.projectsDefinitions = projects;
+		// this.getTrackNumbersForProject();
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -134,6 +162,7 @@ export class MainStore{
 		this.loadPersonalHistory() // relance le chargement de l'historique perso
 		this.loadProject(projectId) // relance le chargement du projet
 		this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+		this.loadDefinitions();
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -176,10 +205,87 @@ export class MainStore{
 	    }))
 	// .finally(action(() => { this.isLoading = false; }));
     }
+    deleteClient(clientId){
+	agent.clientDelete(clientId)
+	    .then(action(() => {
+		this.loadDefinitions();
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    updateClient(clientId, formData){
+	agent.clientUpdate(clientId, formData)
+	    .then(action(() => {
+		console.log("update client");
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadDefinitions();
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+
+    //user
+    updateUser(userId, formData, reloadActiveUser){
+	console.log(userId);
+	agent.userUpdate(userId, formData)
+	    .then(action(() => {
+		console.log("update user");
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		this.loadDefinitions();
+		reloadActiveUser && authStore.getUserData(userId);
+		
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
 
     // project
     postNewProject(formData){
 	agent.projectNew(formData)
+	    .then(action(() => {
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    updateProject(projectid, formData){
+	agent.projectUpdate(projectid, formData)
+	    .then(action(() => {
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    deleteTaskInProject(projectid, taskToDelete){
+	agent.projectDeleteTask(projectid, taskToDelete)
+	    .then(action(() => {
+		this.loadDefinitions(); 
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
+    }
+    deleteProject(projectid){
+	// console.log("delete proj");
+	agent.projectDelete(projectid)
 	    .then(action(() => {
 		// console.log(formData);
 		this.loadDefinitions(); 
@@ -193,12 +299,12 @@ export class MainStore{
 
 decorate(MainStore, {
     pageDisplayed: observable,
-    isLoggedIn: observable,
-    userId: observable,
     isLoading: observable,
     isLoadingProject: observable,
     showProject: observable,
+    getTrackNumbersForProject: action,
     activeProject: observable,
+    activeTaskInput: observable,
     activeTrackedTime: observable,
     activeProjectDetails: observable,
     clientsDefinitions: observable,
@@ -207,6 +313,7 @@ decorate(MainStore, {
     trackHistory: observable,
     state: observable,
     setPageDisplayed: action,
+    setActiveTaskInput: action,
     setActiveProject: action,
     setShowProject: action,
     loadPersonalHistory: action,
@@ -215,7 +322,13 @@ decorate(MainStore, {
     loadDefinitions: action,
     postNewTask: action,
     postNewClient: action,
+    deleteClient: action,
+    updateClient: action,
+    updateUser: action,
     postNewProject: action,
+    updateProject: action,
+    deleteTaskInProject: action,
+    deleteProject: action,
     updateTask: action,
     deleteTask: action
 });

@@ -32,20 +32,20 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
 
     render() {
 	return (
-	    <div className="row">
-	      <div className="col-12">
-		<input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
-		<ReactCSSTransitionGroup
-		      transitionName="fade"
-		      transitionEnterTimeout={500}
-		      transitionLeaveTimeout={300}>
-		{this.props.mainStore.clientsDefinitions.map(c => {
-		    return (
-			<ListClientProjects key={c._id} name={c.name} id={c._id}/>
-		    );
-		})}
+	      <div className="row nav">
+		<div className="col-12">
+		  <input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
+		  <ReactCSSTransitionGroup
+		    transitionName="fade"
+		    transitionEnterTimeout={500}
+		    transitionLeaveTimeout={300}>
+		    {this.props.mainStore.clientsDefinitions.map(c => {
+			return (
+			    <ListClientProjects key={c._id} name={c.name} id={c._id}/>
+			);
+		    })}
 	    </ReactCSSTransitionGroup>
-	    { this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
+		{ this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
 	    
 		<div className="footer">
 		<button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>

@@ -50,9 +50,8 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 
 	
 	return (
-	    <div className="col-6 project-details">
 	      
-	      <div className="card">
+	      <div className="card project-details">
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-6">
@@ -87,11 +86,10 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		      transitionEnterTimeout={500}
 		      transitionLeaveTimeout={300}>
 		  {this.props.mainStore.activeTrackedTime.slice(0).reverse().map(t => {
-		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} username={t.username} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
+		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} user={t.relatedUser} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
 		  })}
 		  </ReactCSSTransitionGroup>
 	      </div>
-	    </div>
 	);
     }
 }));

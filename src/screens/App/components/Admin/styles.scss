@@ -1,0 +1,79 @@
+@import "assets/styles/colors";
+@import "assets/styles/_mixins";
+
+.personal{
+    padding: 1rem 0;
+
+    &.edited{
+	background: $box-edit-dark;
+	padding: 1rem;
+	margin: 1rem 0;
+	@include border-radius(3px);
+
+	.row{
+	    margin-bottom: 1rem;
+	}
+    }
+
+    
+}
+.manager{
+    .nav-tabs, .nav-link{
+	
+	border: 0;
+
+	&:hover{
+	    border: 0;
+	    
+	}
+	
+	.nav-item{
+	    color: $main-font;
+
+	    &:hover{
+		background: $box-edit-dark;
+	    }
+	    &.active{
+		&:hover{
+		     background: $box-background;
+		}
+	    }
+	}
+	
+    }
+    #nav-tabContent{
+	background: $box-background;
+	
+	.pane-header{
+	    .actions{
+		padding: 1rem;
+	    }
+	    .column-name{
+		font-weight: 700;
+		border-bottom: 1px solid $border;
+		padding: 1rem;
+	    }
+	}
+	.pane-content{
+	    ul{
+		margin: 0;
+		padding: 0;
+		
+		li{
+		    list-style-type: none;
+		    border-bottom: 1px solid $border;
+		    padding: 1rem 1rem 0 1rem;
+
+		    .row{
+			margin-bottom: 1rem;
+		    }
+
+		    &.new,
+		    &.edited{
+			background: $box-edit;
+		    }
+		}
+	    }
+	}
+    }
+}

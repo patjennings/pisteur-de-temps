@@ -4,6 +4,56 @@ import {getFullTime, getPercent} from 'utils/budget';
 
 const API_ROOT = "http://localhost:3000";
 
+// --------------------
+// Login
+// --------------------
+export function login(em, pwd, isCk){
+    let result = axios
+	.post(`${API_ROOT}/login`, null, {params: {
+	    email : em,
+	    password : pwd,
+	    isCookie : isCk
+	}})
+	.then(res => {
+	    console.log(res);
+	    return res.data
+
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+// --------------------
+// lost, reset password
+// --------------------
+export function lostPassword(em, ip){
+    let result = axios
+	.post(`${API_ROOT}/lost-password`, null, {params: {
+	    email : em,
+	    ip: ip
+	}})
+	.then(res => {
+	    console.log(res);
+	    return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+export function resetPassword(newpass, key){
+    let result = axios
+	.post(`${API_ROOT}/reset-password`, null, {params: {
+	    newpassword : newpass,
+	    key : key
+	}})
+	.then(res => {
+	    console.log(res);
+	    return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
 
 // --------------------
 // Definitions
@@ -37,12 +87,53 @@ export function fetchUsersDefinitions(){
     return result;
 }
 
+
+// --------------------
+// User
+// --------------------
+export function fetchUser(id){
+    let result = axios
+	.get(`${API_ROOT}/user/${id}`)
+	.then(res => {
+	     return res
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+export function userUpdate(id, body){
+    body = {...body};
+    let result = axios
+	.put(`${API_ROOT}/user/${id}`, body)
+	.then(res => {
+	    result = res
+	})
+	.catch(error => {
+	    result = error
+	});
+    return result;
+}
+
+// --------------------
+// Cookie
+// --------------------
+export function controlCookie(key, ip){
+    let result = axios
+	.get(`${API_ROOT}/cookie?key=${key}&ip=${ip}`)
+	.then(res => {
+	     return res
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+
 // --------------------
 // Personal history
 // --------------------
 export function fetchPersonalHistory(userId){
     let result = axios
-	.get(`${API_ROOT}/users/${userId}/trackedtime`)
+	.get(`${API_ROOT}/user/${userId}/trackedtime`)
 	.then(response => {
 	    const fetch = response.data.message.map(t => {
     		return {
@@ -106,6 +197,18 @@ export function projectUpdate(projectId, body){
     body = {...body};
     let result = axios
 	.put(`${API_ROOT}/projects/${projectId}`, body)
+	.then(res => {
+	    result = res
+	})
+	.catch(error => {
+	    result = error
+	});
+    
+    return result;
+}
+export function projectDeleteTask(projectId, task){
+    let result = axios
+	.put(`${API_ROOT}/projects/${projectId}?removeTask=${task}`)
 	.then(res => {
 	    result = res
 	})

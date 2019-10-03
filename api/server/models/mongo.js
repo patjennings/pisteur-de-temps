@@ -10,7 +10,13 @@ var userSchema  = {
     "lastName": String,
     "email" : String,
     "password" : String,
-    "relatedProjects" : Array
+    "isAdmin" : Boolean,
+    "isFirst" : Boolean,
+    "relatedProjects" : Array,
+    "date": String,
+    "ip": String,
+    "cookie": String,
+    "key": String
 };
 var clientSchema  = {
     "name": String,
@@ -19,7 +25,9 @@ var projectSchema  = {
     "name": String,
     "description": String,
     "budget": Number,
-    "relatedClient": String
+    "relatedClient": String,
+    "hasTracks": Boolean,
+    "tasks": Array
 };
 
 var trackedTimeSchema = {
