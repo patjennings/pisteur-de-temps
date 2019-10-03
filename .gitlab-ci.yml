@@ -38,6 +38,7 @@ deploy:
 
   script:
     - ls -R ./build
+    - ls -R ./api
 #    - scp -rp ./public/* patjennings@92.139.41.114:/var/www/timetracker.thomasguesnon.net
   only:
     - master
