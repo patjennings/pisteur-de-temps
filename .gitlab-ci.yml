@@ -41,8 +41,9 @@ deploy:
     - ls -R ./api
     - scp -rp ./build/* patjennings@92.139.41.114:/var/www/timetracker.thomasguesnon.net
     - scp -rp ./api patjennings@92.139.41.114:/var/www/timetracker.thomasguesnon.net
-    - ssh 92.139.41.114
+    - ssh patjennings@92.139.41.114
     - cd /var/www/timetracker.thomasguesnon.net
     - npm install
+
   only:
     - master
