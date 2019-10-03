@@ -31,11 +31,11 @@ const history = syncHistoryWithStore(browserHistory, routingStore);
 // console.log(customHistory);
 
 ReactDOM.render(
-      <Provider {...stores}>
+    <Provider {...stores}>
 	<Router history={history}>
-	  <App />
+	    <App />
 	</Router>
-      </Provider>,
+    </Provider>,
     
     document.getElementById('root')
 );

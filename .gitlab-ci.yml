@@ -37,6 +37,7 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
 
   script:
+    -
 #    - scp -rp ./public/* patjennings@92.139.41.114:/var/www/timetracker.thomasguesnon.net
   only:
     - master
