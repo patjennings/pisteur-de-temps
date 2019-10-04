@@ -16,16 +16,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 
-// var sess = {
-//   secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
-//     proxy: true,
-//     resave: true,
-//     saveUninitialized: true
-// }
+var sess = {
+  secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
+}
 
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
-    session.cookie.secure = true // serve secure cookies
+    sess.cookie.secure = true // serve secure cookies
 }
 
 // app.use(session(sess))
