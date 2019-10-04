@@ -1,8 +1,9 @@
 import axios from "axios";
 import {getUserName, getClientName} from "utils/defsConverter";
 import {getFullTime, getPercent} from 'utils/budget';
+import Config from "Config";
 
-const API_ROOT = "http://localhost:3000";
+const API_ROOT = Config.serverUrl;
 
 // --------------------
 // Login

@@ -11,6 +11,9 @@ module.exports = {
 	main: ["@babel/polyfill", "./src/index.js"]
     },
     mode: 'production',
+    externals: {
+	'Config': JSON.stringify(process.env.NODE_ENV === 'production' ? require('./config.prod.json') : require('./config.dev.json'))
+    },
     module: {
 	rules: [
 	    {
