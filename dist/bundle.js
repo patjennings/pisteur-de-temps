@@ -11487,7 +11487,7 @@ exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager .track-input {\n  background-color: #3726bc; }\n  .track-manager .track-input input,\n  .track-manager .track-input textarea,\n  .track-manager .track-input a#tasksList {\n    background: #291c8c;\n    border: none;\n    color: rgba(255, 255, 255, 0.5);\n    transition: 0.25s all ease-in-out; }\n    .track-manager .track-input input:focus,\n    .track-manager .track-input textarea:focus,\n    .track-manager .track-input a#tasksList:focus {\n      background: white;\n      border: 3px solid #ffc107;\n      color: #000000; }\n", ""]);
+exports.push([module.i, ".track-manager .track-input {\n  background-color: #3726bc;\n  color: white; }\n  .track-manager .track-input input,\n  .track-manager .track-input textarea,\n  .track-manager .track-input a#tasksList {\n    background: #291c8c;\n    border: none;\n    color: rgba(255, 255, 255, 0.5);\n    transition: 0.25s all ease-in-out; }\n    .track-manager .track-input input:focus,\n    .track-manager .track-input textarea:focus,\n    .track-manager .track-input a#tasksList:focus {\n      background: white;\n      border: 3px solid #ffc107;\n      color: #000000; }\n", ""]);
 
 
 
@@ -48940,7 +48940,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
