@@ -12,6 +12,13 @@ var generateKey = require("./utils/validation").generateKey;
 
 const APP_ROOT = "http://localhost:3000";
 
+if (app.get('env') === 'production') {
+    const APP_ROOT = "http://timetracker.thomasguesnon.net";
+} else {
+    const APP_ROOT = "http://localhost:3000";
+}
+
+
 module.exports = function(app){
 
     // folders
