@@ -16,7 +16,8 @@ module.exports = function(app){
 
     // folders
     app.use("/styles", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/css')); 
-    app.use("/dist", express.static(path.resolve(".") + '/dist')); 
+    app.use("/dist", express.static(path.resolve(".") + '/dist'));
+    app.use("/assets", express.static(path.resolve(".") + '/dist/assets')); 
 
     // scripts
     app.use("/scripts/bootstrap", express.static(path.resolve(".") + '/node_modules/bootstrap/dist/js'));
