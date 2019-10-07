@@ -62619,7 +62619,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var API_ROOT = Config__WEBPACK_IMPORTED_MODULE_3___default.a.serverUrl; // --------------------
+var API_ROOT = Config__WEBPACK_IMPORTED_MODULE_3___default.a.APIServerUrl; // --------------------
 // Login
 // --------------------
 
@@ -63693,13 +63693,13 @@ module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 /***/ }),
 
 /***/ "Config":
-/*!************************************************************!*\
-  !*** external "{\"serverUrl\":\"http://localhost:3000\"}" ***!
-  \************************************************************/
+/*!***************************************************************!*\
+  !*** external "{\"APIServerUrl\":\"http://localhost:3000\"}" ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = {"serverUrl":"http://localhost:3000"};
+module.exports = {"APIServerUrl":"http://localhost:3000"};
 
 /***/ })
 
