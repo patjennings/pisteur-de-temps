@@ -1,4 +1,4 @@
 module.exports = {
-    path_api = "http://localhost:3000",
-    path_app = "http://localhost:3000"
+    path_api = "http://buxid.api.thomasguesnon.net",
+    path_app = "http://buxid.thomasguesnon.net"
 }

@@ -14,7 +14,6 @@ import { Provider } from 'mobx-react';
 import './index.scss';
 import App from './screens/App/index';
 
-
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 
