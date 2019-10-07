@@ -10,14 +10,7 @@ var saltAndHash =      require("./utils/validation").saltAndHash;
 
 var generateKey = require("./utils/validation").generateKey;
 
-const APP_ROOT = "http://localhost:3000";
-
-if (app.get('env') === 'production') {
-    const APP_ROOT = "http://timetracker.thomasguesnon.net";
-} else {
-    const APP_ROOT = "http://localhost:3000";
-}
-
+const APP_ROOT = "http://timetracker.thomasguesnon.net";
 
 module.exports = function(app){
 
@@ -31,7 +24,15 @@ module.exports = function(app){
     app.use("/scripts/popper", express.static(path.resolve(".") + '/node_modules/popper.js/dist'));
     app.use("/scripts/jquery", express.static(path.resolve(".") + '/node_modules/jquery/dist')); 
     
-    app.get("/", function(req, res) {
+    function nocache(req, res, next) {
+	console.log("NO CAAAACHE");
+	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+	res.header('Expires', '-1');
+	res.header('Pragma', 'no-cache');
+	next();
+    }
+
+    app.get("/", nocache, function(req, res) {
 	// req.session.user = "thomas";
 	// on laisse react+mobx s'occuper du check du cookie, pour logger ou pas l'utilisateur
 	// on rend juste la coquille avec le #root
@@ -41,30 +42,30 @@ module.exports = function(app){
     // là pareil, on se contente de rendre le coquille
     // sur ces urls
     // reactrouter fait le boulot, ensuite, pour rendre les bons composants.
-    app.get('/overview', function(req, res) {
+    app.get('/overview', nocache, function(req, res) {
 	res.render('app', {title: "App root"});
     });
-    app.get('/account', function(req, res) {
+    app.get('/account', nocache, function(req, res) {
 	res.render('app', {title: "App root"});
     });
-    app.get('/synthesis', function(req, res) {
+    app.get('/synthesis', nocache, function(req, res) {
 	res.render('app', {title: "App root"});
     });
-    app.get('/admin', function(req, res) {
+    app.get('/admin', nocache, function(req, res) {
 	res.render('app', {title: "App root"});
     });
-    app.get('/logout', function(req, res) {
+    app.get('/logout', nocache, function(req, res) {
 	res.render('app', {title: "App root"});
     });
 
     // -----------------
     // LOST PASSWORD
     // -----------------
-    app.get('/lost-password', function(req, res){
+    app.get('/lost-password', nocache, function(req, res){
 	res.render('app', {title: "App root"});
     })
     
-    app.post('/lost-password', function(req, res){
+    app.post('/lost-password',  function(req, res){
 
 	var response = {};
 
@@ -80,9 +81,6 @@ module.exports = function(app){
 	    host:    "ssl0.ovh.net",
 	    ssl:     true
 	});
-
-
-	
 	
 	 models.users.findOne({email: email}, function(err, data){
 	    if(err || data == null){
@@ -123,7 +121,7 @@ module.exports = function(app){
     // -----------------
     // RESET PASSWORD
     // -----------------
-    app.get('/reset-password', function(req, res){
+    app.get('/reset-password', nocache, function(req, res){
 	// console.log(req.query.key);
 	// validate the password key
 	res.render('app', {title: "App root"});

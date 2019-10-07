@@ -56,9 +56,6 @@ module.exports = {
 	    }),
 	]	
     },
-    devServer: {
-	contentBase: './build',
-    },
     resolve: {
 	alias: {
 	    assets : path.resolve(__dirname, "src/assets/"),
