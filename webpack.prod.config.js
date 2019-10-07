@@ -48,6 +48,11 @@ module.exports = {
     	new HtmlWebpackPlugin({
     	    title: 'Production',
     	}),
+	new webpack.DefinePlugin({
+	    "process.env": {
+		NODE_ENV: JSON.stringify("production"),
+	    },
+	}),
     ],
     optimization: {
 	minimizer: [

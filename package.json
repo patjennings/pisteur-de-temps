@@ -1,7 +1,7 @@
 {
-    "name": "timetracker",
+    "name": "Buxid",
     "version": "0.1.0",
-    "description": "TimeTracker is an app that helps vizualisig effort spent on projects",
+    "description": "Buxid is an app that helps vizualisig effort spent on projects",
     "private": true,
     "dependencies": {
 	"@babel/cli": "^7.4.3",
