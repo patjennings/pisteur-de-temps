@@ -63693,13 +63693,13 @@ module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 /***/ }),
 
 /***/ "Config":
-/*!***************************************************************!*\
-  !*** external "{\"APIServerUrl\":\"http://localhost:3000\"}" ***!
-  \***************************************************************/
+/*!****************************************************************************!*\
+  !*** external "{\"APIServerUrl\":\"http://buxid.api.thomasguesnon.net\"}" ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = {"APIServerUrl":"http://localhost:3000"};
+module.exports = {"APIServerUrl":"http://buxid.api.thomasguesnon.net"};
 
 /***/ })
 
