@@ -15902,7 +15902,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #000000; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15932,7 +15932,7 @@ exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager .track-input {\n  background-color: #3726bc;\n  color: white; }\n  .track-manager .track-input input,\n  .track-manager .track-input textarea,\n  .track-manager .track-input a#tasksList {\n    background: #291c8c;\n    border: none;\n    color: rgba(255, 255, 255, 0.5);\n    transition: 0.25s all ease-in-out; }\n    .track-manager .track-input input:focus,\n    .track-manager .track-input textarea:focus,\n    .track-manager .track-input a#tasksList:focus {\n      background: white;\n      border: 3px solid #ffc107;\n      color: #000000; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: none;\n      color: rgba(255, 255, 255, 0.5);\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15962,7 +15962,7 @@ exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-dec
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-details {\n  transition: all 0.5s ease-in-out; }\n", ""]);
+exports.push([module.i, ".project-details {\n  transition: all 0.5s ease-in-out; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n", ""]);
 
 
 
@@ -69250,7 +69250,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80483,8 +80483,12 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "item-value--inner"
         }, this.props.value)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "col-10"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.comment))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-10 item-details"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+          className: "item-details--title"
+        }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "item-details--description"
+        }, this.props.comment))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "offset-2 col-5 text-muted"
@@ -80709,6 +80713,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/styles.scss");
 /* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var helpers_ui__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! helpers/ui */ "./src/shared/helpers/ui.js");
+/* harmony import */ var helpers_ui__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(helpers_ui__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80731,6 +80737,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import axios from "axios";
+
 
 
 
@@ -83187,6 +83194,35 @@ function clientDelete(clientId) {
     result = error;
   });
   return result;
+}
+
+/***/ }),
+
+/***/ "./src/shared/helpers/ui.js":
+/*!**********************************!*\
+  !*** ./src/shared/helpers/ui.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var trackManager;
+var projectDetails;
+
+window.onload = function () {
+  trackManager = document.querySelector('.track-manager');
+  projectDetails = document.querySelector('.project-details');
+  newHeight();
+};
+
+window.onresize = function () {
+  projectDetails = document.querySelector('.project-details');
+  newHeight();
+};
+
+function newHeight() {
+  var newHeight = window.innerHeight - 120;
+  trackManager.setAttribute("style", "height: " + newHeight + "px;");
+  projectDetails.setAttribute("style", "height: " + newHeight + "px;");
 }
 
 /***/ }),

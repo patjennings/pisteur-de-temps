@@ -146,9 +146,9 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 		  <div className="row">
 		    <div className="col-2 item-value"><div className="item-value--inner">{this.props.value}</div></div>
-		    <div className="col-10">
-		      <h4>{this.props.task}</h4>
-		      <p>{this.props.comment}</p>
+		    <div className="col-10 item-details">
+		      <h4 className="item-details--title">{this.props.task}</h4>
+		      <p className="item-details--description">{this.props.comment}</p>
 		    </div>
 		  </div>
 		  <div className="row">

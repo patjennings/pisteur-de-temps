@@ -10,6 +10,7 @@ import {inject, observer} from "mobx-react";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
 import "./styles.scss";
+import "helpers/ui";
 
 const PersonalManager = inject("mainStore", "authStore")(observer(class PersonalManager extends Component {
     constructor(props){
@@ -32,14 +33,14 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 	this.props.mainStore.setShowProject(true);
 	this.props.mainStore.setActiveProject(data.relatedProject);
     }
-
+   
     render() {
 	console.log("Personal Manager is rendered");
 	console.log(this.props.mainStore.trackHistory);
 
 	return (
 	      
-		<div className="card track-manager">
+	    <div className="card track-manager">
 
 		  {/* --------- */}
 		  {/* New track */}

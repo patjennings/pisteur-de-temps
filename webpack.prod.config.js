@@ -69,6 +69,7 @@ module.exports = {
 	alias: {
 	    assets : path.resolve(__dirname, "src/assets/"),
 	    utils : path.resolve(__dirname, "src/shared/utils/"), // pour charger les modules avec un simple utils/{modules}, plutôt que ../../../utils/{modules}
+	    helpers : path.resolve(__dirname, "src/shared/helpers/"),
 	    fetch : path.resolve(__dirname, "src/shared/fetch/"),
 	    stores : path.resolve(__dirname, "src/shared/stores/"),
 	    sharedComponents : path.resolve(__dirname, "src/shared/components/"),

@@ -7,7 +7,6 @@ import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import mainStore from "stores/mainStore";
 import authStore from "stores/authStore";
 
-
 import { observable, action, decorate } from "mobx";
 import { Provider } from 'mobx-react';
 
