@@ -17,6 +17,9 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 	// get the client id
 	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	// ^^^^^^^^^^^^^^^^^^^^^
+	// LÀ, PROBLÈME !!
+
 	this.state = {
 	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
 	    // clientId: clid,

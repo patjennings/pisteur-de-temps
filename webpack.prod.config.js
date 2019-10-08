@@ -20,7 +20,9 @@ module.exports = {
 		test: /\.(js|jsx)$/,
 		exclude: /(node_modules|bower_components)/,
 		loader: "babel-loader",
-		options: { presets: ["@babel/env"] }
+		options: {
+		    presets: ["@babel/env"]
+		}
 	    },
 	    {
 		test: /\.scss$/,
@@ -46,7 +48,9 @@ module.exports = {
     	// new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     	new CleanWebpackPlugin(),
     	new HtmlWebpackPlugin({
-    	    title: 'Production',
+    	    title: 'Buxid - An app for tracking time',
+	    template: 'index.template.ejs',
+	    inject: 'body',
     	}),
 	new webpack.DefinePlugin({
 	    "process.env": {
@@ -67,7 +71,10 @@ module.exports = {
 	    utils : path.resolve(__dirname, "src/shared/utils/"), // pour charger les modules avec un simple utils/{modules}, plutôt que ../../../utils/{modules}
 	    fetch : path.resolve(__dirname, "src/shared/fetch/"),
 	    stores : path.resolve(__dirname, "src/shared/stores/"),
-	    sharedComponents : path.resolve(__dirname, "src/shared/components/")
+	    sharedComponents : path.resolve(__dirname, "src/shared/components/"),
+	    externalJquery : path.resolve(__dirname, "node_modules/jquery/dist"), // les modules externes sont chargés dans src/index.js
+	    externalPopper : path.resolve(__dirname, "node_modules/popper.js/dist"),
+	    externalBootstrap : path.resolve(__dirname, "node_modules/bootstrap/dist/js")
 	},
 	// moduleDirectories: ["node_modules", "shared"],
 	extensions: ["*", ".js", ".jsx", ".scss"]
@@ -75,6 +82,6 @@ module.exports = {
     output: {
 	path: path.resolve(__dirname, "build/"),
 	publicPath: "/",
-	filename: "bundle.js"
+	filename: "bundle-[hash].js"
     }
 };

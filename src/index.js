@@ -14,6 +14,10 @@ import { Provider } from 'mobx-react';
 import './index.scss';
 import App from './screens/App/index';
 
+import JQuery from 'externalJquery/jquery.min.js';
+import Popper from 'externalPopper/umd/popper.js'
+import Bootstrap from 'externalBootstrap/bootstrap.js'
+
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 
