@@ -80757,6 +80757,9 @@ function (_Component) {
 
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.state = {
+      height: window.innerHeight - 120
+    };
     return _this;
   }
 
@@ -80764,6 +80767,15 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.mainStore.loadPersonalHistory();
+      this.handleResize();
+      window.addEventListener('resize', this.handleResize.bind(this));
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 120
+      });
     }
   }, {
     key: "handleChange",
@@ -80785,7 +80797,10 @@ function (_Component) {
       console.log("Personal Manager is rendered");
       console.log(this.props.mainStore.trackHistory);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card track-manager"
+        className: "card track-manager",
+        style: {
+          height: this.state.height + "px"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TaskInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
         store: this.props.mainStore,
         onChange: this.handleChange
@@ -81179,8 +81194,10 @@ function (_Component) {
 
     _classCallCheck(this, Project);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Project).call(this, props)); // this.state = {}
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Project).call(this, props));
+    _this.state = {
+      height: window.innerHeight - 120
+    };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -81191,6 +81208,14 @@ function (_Component) {
       // activeProjectDetails
       this.props.mainStore.loadProject(this.props.mainStore.activeProject);
       this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+      window.addEventListener('resize', this.handleResize.bind(this));
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 120
+      });
     }
   }, {
     key: "handleChange",
@@ -81217,7 +81242,10 @@ function (_Component) {
       console.log(timeConsumed + "%");
       console.log(timeBasis + "/" + timeOver);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card project-details"
+        className: "card project-details",
+        style: {
+          height: this.state.height + "px"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -83191,25 +83219,22 @@ function clientDelete(clientId) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var trackManager;
-var projectDetails;
-
-window.onload = function () {
-  trackManager = document.querySelector('.track-manager');
-  projectDetails = document.querySelector('.project-details');
-  newHeight();
-};
-
-window.onresize = function () {
-  projectDetails = document.querySelector('.project-details');
-  newHeight();
-};
-
-function newHeight() {
-  var newHeight = window.innerHeight - 120;
-  trackManager.setAttribute("style", "height: " + newHeight + "px;");
-  projectDetails.setAttribute("style", "height: " + newHeight + "px;");
-}
+// let trackManager;
+// let projectDetails;
+// window.onload = function(){
+//     trackManager = document.querySelector('.track-manager');
+//     projectDetails = document.querySelector('.project-details');
+//     newHeight();
+// }
+// window.onresize = function(){
+//     projectDetails = document.querySelector('.project-details');
+//     newHeight();
+// }
+// function newHeight(){
+//     let newHeight = window.innerHeight - 120;
+//     trackManager.setAttribute("style", "height: "+newHeight+"px;");
+//     projectDetails.setAttribute("style", "height: "+newHeight+"px;");
+// }
 
 /***/ }),
 

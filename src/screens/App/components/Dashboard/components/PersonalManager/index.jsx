@@ -18,10 +18,22 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 	// binds
 	this.handleClick = this.handleClick.bind(this);
 	this.handleChange = this.handleChange.bind(this);
+
+	this.state = {
+	    height: window.innerHeight - 120
+	};
+	
     }
     
     componentDidMount() {
 	this.props.mainStore.loadPersonalHistory();
+	this.handleResize();
+        window.addEventListener('resize',  this.handleResize.bind(this));
+    }
+    handleResize(){
+	this.setState({
+	    height: window.innerHeight-120
+	})
     }
 
     handleChange(data, event){
@@ -33,42 +45,42 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 	this.props.mainStore.setShowProject(true);
 	this.props.mainStore.setActiveProject(data.relatedProject);
     }
-   
+    
     render() {
 	console.log("Personal Manager is rendered");
 	console.log(this.props.mainStore.trackHistory);
 
 	return (
-	      
-	    <div className="card track-manager">
+	    
+	    <div className="card track-manager" style={{height: this.state.height+"px"}}>
 
-		  {/* --------- */}
-		  {/* New track */}
-		  <TaskInput store={this.props.mainStore} onChange={this.handleChange} />
+	      {/* --------- */}
+	      {/* New track */}
+	      <TaskInput store={this.props.mainStore} onChange={this.handleChange} />
 
-		  {/* ------------- */}
-		  {/* Track history */}
-		    <ReactCSSTransitionGroup
-		      component="ul" className="list-group list-group-flush track-history"
-		      transitionName="fade"
-		      transitionEnterTimeout={500}
-		      transitionLeaveTimeout={300}>
-		      {this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
-			  return <Task
-				       onClick={event => this.handleClick(childData, event)}
-			    key={childData.id}
-			    id={childData.id}
-			    task={childData.task}
-			    value={childData.value}
-			    comment={childData.comment}
-			    relatedProject={childData.relatedProject}
-			    date={childData.date}
-			    userid={this.props.authStore.userId}
-			    onChange={event => this.handleChange(childData, event)}
-			      />;
-			})}
-		    </ReactCSSTransitionGroup>
-		</div>
+	      {/* ------------- */}
+	      {/* Track history */}
+	      <ReactCSSTransitionGroup
+		component="ul" className="list-group list-group-flush track-history"
+		transitionName="fade"
+		transitionEnterTimeout={500}
+		transitionLeaveTimeout={300}>
+		{this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
+		    return <Task
+				 onClick={event => this.handleClick(childData, event)}
+		      key={childData.id}
+		      id={childData.id}
+		      task={childData.task}
+		      value={childData.value}
+		      comment={childData.comment}
+		      relatedProject={childData.relatedProject}
+		      date={childData.date}
+		      userid={this.props.authStore.userId}
+		      onChange={event => this.handleChange(childData, event)}
+			/>;
+		  })}
+	      </ReactCSSTransitionGroup>
+	    </div>
 	);
     }
 }));

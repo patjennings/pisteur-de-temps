@@ -45,7 +45,7 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
 			);
 		    })}
 	    </ReactCSSTransitionGroup>
-		{ this.state.isAddingClient ? <AddClient onChange={this.handleChange} /> : null }
+		{ this.state.isAddingClient ? <AddClient onChange={this.handleChange}/> : null }
 	    
 		<div className="footer">
 		<button className="btn btn-primary" type="button" onClick={this.addClient}>Add a client</button>

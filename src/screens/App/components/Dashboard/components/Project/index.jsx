@@ -17,7 +17,9 @@ const Project = inject("mainStore")(observer(class Project extends Component {
     constructor(props){
 	super(props);
 
-	// this.state = {}
+	this.state = {
+	    height: window.innerHeight - 120
+	};
 
 	this.handleChange = this.handleChange.bind(this);
 
@@ -26,6 +28,13 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	// activeProjectDetails
 	this.props.mainStore.loadProject(this.props.mainStore.activeProject);
 	this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+	window.addEventListener('resize',  this.handleResize.bind(this));
+    }
+
+    handleResize(){
+	this.setState({
+	    height: window.innerHeight-120
+	})
     }
 
     handleChange(){
@@ -51,7 +60,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	
 	return (
 	      
-	      <div className="card project-details">
+	      <div className="card project-details" style={{height: this.state.height+"px"}}>
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-6">
