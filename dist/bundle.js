@@ -15932,7 +15932,7 @@ exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: none;\n      color: rgba(255, 255, 255, 0.5);\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: none;\n      color: rgba(255, 255, 255, 0.5);\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15947,7 +15947,7 @@ exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out; }
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-decoration: none; }\n  .track .track-edit:hover {\n    text-decoration: none; }\n\n.track .track-delete {\n  color: var(--dark);\n  text-decoration: none; }\n  .track .track-delete:hover {\n    text-decoration: none; }\n", ""]);
+exports.push([module.i, ".track {\n  padding: 0.65rem 1rem;\n  border-bottom: 1px solid #dee2e6;\n  color: #797594; }\n  .track .row {\n    margin: 0; }\n    .track .row .track-task {\n      width: 10%;\n      color: #171330; }\n    .track .row .track-value {\n      width: 5%; }\n    .track .row .track-comment {\n      width: 46%; }\n    .track .row .track-user {\n      width: 15%; }\n    .track .row .track-date {\n      width: 16%; }\n    .track .row .track-edit,\n    .track .row .track-delete {\n      color: #797594;\n      text-decoration: none;\n      display: block;\n      width: 4%; }\n      .track .row .track-edit:hover,\n      .track .row .track-delete:hover {\n        text-decoration: none; }\n  .track.edited {\n    background: #f8f9fa; }\n    .track.edited .track-task {\n      width: 15%; }\n    .track.edited .track-value {\n      width: 8%; }\n    .track.edited .track-comment {\n      width: 45%; }\n    .track.edited .track-update {\n      width: 13%; }\n    .track.edited .track-cancel {\n      width: 13%; }\n", ""]);
 
 
 
@@ -81002,6 +81002,10 @@ function (_Component) {
           className: "track edited"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-task mr-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           readOnly: true,
@@ -81010,7 +81014,9 @@ function (_Component) {
           type: "text",
           placeholder: "Task description",
           "aria-label": "Input"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-value mr-2"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "value",
           id: "track-input--value-" + this.props.taskid,
@@ -81018,23 +81024,41 @@ function (_Component) {
           placeholder: "Time",
           "aria-label": "Input",
           "data-parse": "number"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-comment mr-2"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control",
           name: "comment",
           id: "track-input--comment-" + this.props.taskid,
           type: "text",
           placeholder: "Write a comment",
           "aria-label": "Input"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "btn btn-primary btn-sm"
-        }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "btn btn-light btn-sm",
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-update mr-2"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-primary"
+        }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-cancel"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")));
+        }, "Cancel")))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track"
-        }, this.props.task, " -", this.props.value, " -", this.props.comment, " -", Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getUserName"])(this.props.mainStore.usersDefinitions, this.props.user), " -", Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-task"
+        }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-value"
+        }, this.props.value), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-comment"
+        }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-user"
+        }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getUserName"])(this.props.mainStore.usersDefinitions, this.props.user)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "track-date"
+        }, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "track-edit d-flex align-items-center",
           href: "#",
           "data-toggle": "tooltip",
@@ -81042,7 +81066,7 @@ function (_Component) {
           title: "Edit",
           onClick: this.editItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-medium"
+          className: "ico ico-small"
         }, "pen")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "track-delete d-flex align-items-center",
           href: "#",
@@ -81051,53 +81075,15 @@ function (_Component) {
           title: "Delete",
           onClick: this.deleteItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-medium ico-trash"
-        }, "trash")));
+          className: "ico ico-small ico-trash"
+        }, "trash"))));
       }
     }
   }]);
 
   return Task;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
-/* harmony default export */ __webpack_exports__["default"] = (Task); // <div className="edition" id={this.props.taskid}>
-// 		  <form onSubmit={this.handleSubmit}>
-// 		    <div className="row">
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--value" className="small text-muted">Enter time</label>
-// 			<input className="form-control"
-// 			       name="value"
-// 			       id={"track-input--value-"+this.props.taskid}
-// 			       type="text"
-// 			       placeholder="Time"
-// 			       aria-label="Input"
-// 			       data-parse="number"/>
-// 		      </div>
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--task">Task</label>
-// 			<input className="form-control"
-// 			       name="task"
-// 			       id={"track-input--task-"+this.props.taskid}
-// 			       type="text"
-// 			       placeholder="Task description"
-// 			       aria-label="Input"/>
-// 		      </div>
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--comment">Comment</label>
-// 			<textarea className="form-control"
-// 				  name="comment"
-// 				  id={"track-input--comment-"+this.props.taskid}
-// 				  type="text"
-// 				  placeholder="Write a comment"
-// 				  aria-label="Input"/>
-// 		      </div>
-// 		    </div>
-// 		    <button
-// 		      className="btn btn-primary btn-sm">Update</button>
-// 		    <button
-// 		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
-// 		  </form>
-// 		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
-// 		</div>
+/* harmony default export */ __webpack_exports__["default"] = (Task);
 
 /***/ }),
 

@@ -1,22 +1,59 @@
 @import "assets/styles/colors";
 
 .track{
-    .track-edit{
-	color: var(--dark);
-	text-decoration: none;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid $border;
+    color: $main-font-light;
+    
+    .row{
+	margin: 0;
 
-	&:hover{
-	    text-decoration: none;
+	.track-task{
+	    width:10%;
+	    color: $main-font;
 	}
-
-    }
-    .track-delete{
-	color: var(--dark);
-	text-decoration: none;
-
-	&:hover{
-	    text-decoration: none;
+	.track-value{
+	    width:5%;
 	}
-
+	.track-comment{
+	    width:46%;
+	}
+	.track-user{
+	    width:15%;
+	}
+	.track-date{
+	    width:16%;
+	}
+	.track-edit,
+	.track-delete{
+	    color: $main-font-light;
+	    text-decoration: none;
+	    display: block;
+	    width: 4%;
+	    &:hover{
+		text-decoration: none;
+	    }
+	}
     }
+
+    &.edited{
+	background: $box-edit;
+
+	.track-task{
+	    width:15%;
+	}
+	.track-value{
+	    width:8%;
+	}
+	.track-comment{
+	    width:45%;
+	}
+	.track-update{
+	    width:13%;
+	}
+	.track-cancel{
+	    width:13%;
+	}
+    }
+    
 }

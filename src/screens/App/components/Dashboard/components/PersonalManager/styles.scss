@@ -2,6 +2,7 @@
 
 .track-manager{
     transition: all 0.5s ease-in-out;
+    border: none;
     
     .track-input{
 	background-color: $track-input-background;

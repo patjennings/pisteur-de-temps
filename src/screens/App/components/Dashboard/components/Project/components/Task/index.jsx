@@ -90,44 +90,55 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	    return (
 		<div className="track edited">	  
 		  <form onSubmit={this.handleSubmit}>
-		    <input className="form-control"
-			   readOnly
-			   name="task"
-			   id={"track-input--task-"+this.props.taskid}
-			   type="text"
-			   placeholder="Task description"
-			   aria-label="Input"/>
-		    
-		    <input className="form-control"
-			   name="value"
-			   id={"track-input--value-"+this.props.taskid}
-			   type="text"
-			   placeholder="Time"
-			   aria-label="Input"
-			   data-parse="number"/>
-		    <input className="form-control"
-			   name="comment"
-			   id={"track-input--comment-"+this.props.taskid}
-			   type="text"
-			   placeholder="Write a comment"
-			   aria-label="Input"/>
-		    <button
-		      className="btn btn-primary btn-sm">Update</button>
-		    <button
-		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+		    <div className="row">
+     		      <div className="track-task mr-2">
+			<input className="form-control"
+			       readOnly
+			       name="task"
+			       id={"track-input--task-"+this.props.taskid}
+			       type="text"
+			       placeholder="Task description"
+			       aria-label="Input"/>  
+		      </div>
+		      <div className="track-value mr-2">
+			<input className="form-control"
+			       name="value"
+			       id={"track-input--value-"+this.props.taskid}
+			       type="text"
+			       placeholder="Time"
+			       aria-label="Input"
+			       data-parse="number"/>
+		      </div>
+		      <div className="track-comment mr-2">
+			<input className="form-control"
+			       name="comment"
+			       id={"track-input--comment-"+this.props.taskid}
+			       type="text"
+			       placeholder="Write a comment"
+			       aria-label="Input"/>
+		      </div>
+		      <div className="track-update mr-2">
+			<button className="btn btn-primary">Update</button></div>
+		      <div className="track-cancel">
+			<button className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+		      </div>		    
+
+		    </div>
 		  </form>
 		</div>
 	    );
 	} else {
 	    return (
 		<div className="track">
-		  {this.props.task} -
-		  {this.props.value} -
-		  {this.props.comment} -
-		  {getUserName(this.props.mainStore.usersDefinitions, this.props.user)} - 
-		  {readableDate(this.props.date)}
-		  <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a>
-		  <a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a>
+		  <div className="row">
+		    <div className="track-task">{this.props.task}</div>
+		    <div className="track-value">{this.props.value}</div>
+		    <div className="track-comment">{this.props.comment}</div>
+		    <div className="track-user">{getUserName(this.props.mainStore.usersDefinitions, this.props.user)}</div>
+		    <div className="track-date">{readableDate(this.props.date)}</div>		      
+		    <a className="track-edit d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-small">pen</i></a>
+		    <a className="track-delete d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-small ico-trash">trash</i></a>
+		  </div>
 		</div>
 	    );
 
@@ -136,45 +147,3 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 }));
 
 export default Task;
-
-
-// <div className="edition" id={this.props.taskid}>
-// 		  <form onSubmit={this.handleSubmit}>
-// 		    <div className="row">
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--value" className="small text-muted">Enter time</label>
-// 			<input className="form-control"
-// 			       name="value"
-// 			       id={"track-input--value-"+this.props.taskid}
-// 			       type="text"
-// 			       placeholder="Time"
-// 			       aria-label="Input"
-// 			       data-parse="number"/>
-// 		      </div>
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--task">Task</label>
-// 			<input className="form-control"
-// 			       name="task"
-// 			       id={"track-input--task-"+this.props.taskid}
-// 			       type="text"
-// 			       placeholder="Task description"
-// 			       aria-label="Input"/>
-
-// 		      </div>
-// 		      <div className="col-4">
-// 			<label htmlFor="track-input--comment">Comment</label>
-// 			<textarea className="form-control"
-// 				  name="comment"
-// 				  id={"track-input--comment-"+this.props.taskid}
-// 				  type="text"
-// 				  placeholder="Write a comment"
-// 				  aria-label="Input"/>
-// 		      </div>
-// 		    </div>
-// 		    <button
-// 		      className="btn btn-primary btn-sm">Update</button>
-// 		    <button
-// 		      className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
-// 		  </form>
-// 		  <ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/>
-// 		</div>
