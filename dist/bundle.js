@@ -15752,7 +15752,7 @@ var ___CSS_LOADER_URL___3___ = urlEscape(__webpack_require__(/*! ../fonts/Lato-B
 var ___CSS_LOADER_URL___4___ = urlEscape(__webpack_require__(/*! ../fonts/UDiconwebfont-Regular.otf */ "./src/assets/fonts/UDiconwebfont-Regular.otf"));
 
 // Module
-exports.push([module.i, "@font-face {\n  font-family: \"lato\";\n  font-style: normal;\n  font-stretch: normal;\n  font-weight: 400;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___0___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: italic;\n  font-stretch: normal;\n  font-weight: 400;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___1___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: normal;\n  font-stretch: normal;\n  font-weight: 700;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___2___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: italic;\n  font-stretch: normal;\n  font-weight: 700;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___3___ + ") format(\"woff\"); }\n\n/* FUNCTIONS */\n@font-face {\n  font-family: 'fontIcon';\n  src: url(" + ___CSS_LOADER_URL___4___ + ");\n  font-weight: normal;\n  font-style: normal; }\n\n[class^='ico-'], [class*=' ico-'], .ico {\n  display: inline-block;\n  font: normal normal normal 14px/1 'fontIcon';\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  vertical-align: middle; }\n\n.ico-small {\n  font-size: 1rem; }\n\n.ico-medium {\n  font-size: 1.5rem; }\n\n.ico-large {\n  font-size: 2rem; }\n\n.i-bullet_list:before {\n  content: 'bullet_list'; }\n\n.i-plus:before {\n  content: 'plus'; }\n\n.i-minus:before {\n  content: 'minus'; }\n\n.i-arrow_up:before {\n  content: 'arrow_up'; }\n\n.i-arrow_right:before {\n  content: 'arrow_right'; }\n\n.i-arrow_down:before {\n  content: 'arrow_down'; }\n\n.i-arrow_left:before {\n  content: 'arrow_left'; }\n\n.i-cloud:before {\n  content: 'cloud'; }\n\n.i-lightning:before {\n  content: 'lightning'; }\n\n.i-caution:before {\n  content: 'caution'; }\n\n.i-cross:before {\n  content: 'cross'; }\n\n.i-sun:before {\n  content: 'sun'; }\n\n.i-heart:before {\n  content: 'heart'; }\n\n.i-mountain:before {\n  content: 'mountain'; }\n\n.i-pencil:before {\n  content: 'pencil'; }\n\n.i-snow_flake:before {\n  content: 'snow_flake'; }\n\n.i-baby:before {\n  content: 'baby'; }\n\n.i-bell:before {\n  content: 'bell'; }\n\n.i-book:before {\n  content: 'book'; }\n\n.i-bookmark:before {\n  content: 'bookmark'; }\n\n.i-bus:before {\n  content: 'bus'; }\n\n.i-camera:before {\n  content: 'camera'; }\n\n.i-door:before {\n  content: 'door'; }\n\n.i-drop:before {\n  content: 'drop'; }\n\n.i-eye:before {\n  content: 'eye'; }\n\n.i-family:before {\n  content: 'family'; }\n\n.i-folder:before {\n  content: 'folder'; }\n\n.i-hammer:before {\n  content: 'hammer'; }\n\n.i-house:before {\n  content: 'house'; }\n\n.i-key:before {\n  content: 'key'; }\n\n.i-keyboard:before {\n  content: 'keyboard'; }\n\n.i-lock:before {\n  content: 'lock'; }\n\n.i-notebook:before {\n  content: 'notebook'; }\n\n.i-paperclip:before {\n  content: 'paperclip'; }\n\n.i-printer:before {\n  content: 'printer'; }\n\n.i-satellite:before {\n  content: 'satellite'; }\n\n.i-shield:before {\n  content: 'shield'; }\n\n.i-telescope:before {\n  content: 'telescope'; }\n\n.i-thermometer:before {\n  content: 'thermometer'; }\n\n.i-ticket:before {\n  content: 'ticket'; }\n\n.i-train:before {\n  content: 'train'; }\n\n.i-circle_caution:before {\n  content: 'circle_caution'; }\n\n.i-circle_compass:before {\n  content: 'circle_compass'; }\n\n.i-lightning_circle:before {\n  content: 'lightning_circle'; }\n\n.i-cross_circle:before {\n  content: 'cross_circle'; }\n\n.i-heart_beat:before {\n  content: 'heart_beat'; }\n\n.i-battery_full:before {\n  content: 'battery_full'; }\n\n.i-battery_half:before {\n  content: 'battery_half'; }\n\n.i-battery_low:before {\n  content: 'battery_low'; }\n\n.i-battery_quarter:before {\n  content: 'battery_quarter'; }\n\n.i-book_alt:before {\n  content: 'book_alt'; }\n\n.i-book_open:before {\n  content: 'book_open'; }\n\n.i-book_shelf:before {\n  content: 'book_shelf'; }\n\n.i-clipboard_check:before {\n  content: 'clipboard_check'; }\n\n.i-eye_off:before {\n  content: 'eye_off'; }\n\n.i-folder_add:before {\n  content: 'folder_add'; }\n\n.i-man_running:before {\n  content: 'man_running'; }\n\n.i-man_sit:before {\n  content: 'man_sit'; }\n\n.i-man_sleeping:before {\n  content: 'man_sleeping'; }\n\n.i-plus_alt:before {\n  content: 'plus_alt'; }\n\n.i-plus_circle:before {\n  content: 'plus_circle'; }\n\n.i-minus_alt:before {\n  content: 'minus_alt'; }\n\n.i-minus_circle:before {\n  content: 'minus_circle'; }\n\n.i-battery_threequarters:before {\n  content: 'battery_threequarters'; }\n\n.i-lightning_circle_o:before {\n  content: 'lightning_circle_o'; }\n\n.i-sun_o:before {\n  content: 'sun_o'; }\n\n.i-heart_o:before {\n  content: 'heart_o'; }\n\n.i-annotated_screen:before {\n  content: 'annotated_screen'; }\n\n.i-share:before {\n  content: 'share'; }\n\n.i-plane:before {\n  content: 'plane'; }\n\n.i-zoom:before {\n  content: 'zoom'; }\n\n.i-spanner:before {\n  content: 'spanner'; }\n\n.i-rotate:before {\n  content: 'rotate'; }\n\n.i-multiarrows:before {\n  content: 'multiarrows'; }\n\n.i-multiarrows_r:before {\n  content: 'multiarrows_r'; }\n\n.i-refresh:before {\n  content: 'refresh'; }\n\n.i-constrast:before {\n  content: 'constrast'; }\n\n.i-pen:before {\n  content: 'pen'; }\n\n.i-cog:before {\n  content: 'cog'; }\n\n.i-external_link:before {\n  content: 'external_link'; }\n\n.i-full_screen:before {\n  content: 'full_screen'; }\n\n.i-path:before {\n  content: 'path'; }\n\n.i-column_grid:before {\n  content: 'column_grid'; }\n\n.i-unlock:before {\n  content: 'unlock'; }\n\n.i-video:before {\n  content: 'video'; }\n\n.i-flag:before {\n  content: 'flag'; }\n\n.i-user:before {\n  content: 'user'; }\n\n.i-grid:before {\n  content: 'grid'; }\n\n.i-arrow_out:before {\n  content: 'arrow_out'; }\n\n.i-arrow_out_alt:before {\n  content: 'arrow_out_alt'; }\n\n.i-wifi:before {\n  content: 'wifi'; }\n\n.i-waves:before {\n  content: 'waves'; }\n\n.i-star:before {\n  content: 'star'; }\n\n.i-rss:before {\n  content: 'rss'; }\n\n.i-phone:before {\n  content: 'phone'; }\n\n.i-file_duplication_o:before {\n  content: 'file_duplication_o'; }\n\n.i-recorder:before {\n  content: 'recorder'; }\n\n.i-link:before {\n  content: 'link'; }\n\n.i-clock:before {\n  content: 'clock'; }\n\n.i-alarm:before {\n  content: 'alarm'; }\n\n.i-message:before {\n  content: 'message'; }\n\n.i-file:before {\n  content: 'file'; }\n\n.i-letter:before {\n  content: 'letter'; }\n\n.i-letter_o:before {\n  content: 'letter_o'; }\n\n.i-image:before {\n  content: 'image'; }\n\n.i-runway:before {\n  content: 'runway'; }\n\n.i-file_o:before {\n  content: 'file_o'; }\n\n.i-chevron_down:before {\n  content: 'chevron_down'; }\n\n.i-chevron_up:before {\n  content: 'chevron_up'; }\n\n.i-chevron_left:before {\n  content: 'chevron_left'; }\n\n.i-chevron_right:before {\n  content: 'chevron_right'; }\n\n.i-chevron_up_down:before {\n  content: 'chevron_up_down'; }\n\n.i-locate:before {\n  content: 'locate'; }\n\n.i-world:before {\n  content: 'world'; }\n\n.i-direction:before {\n  content: 'direction'; }\n\n.i-iteration:before {\n  content: 'iteration'; }\n\n.i-menu:before {\n  content: 'menu'; }\n\n.i-menu_v:before {\n  content: 'menu_v'; }\n\n.i-exclamation:before {\n  content: 'exclamation'; }\n\n.i-download_o:before {\n  content: 'download_o'; }\n\n.i-text_glyphs:before {\n  content: 'text_glyphs'; }\n\n.i-bold:before {\n  content: 'bold'; }\n\n.i-italic:before {\n  content: 'italic'; }\n\n.i-underline:before {\n  content: 'underline'; }\n\n.i-text:before {\n  content: 'text'; }\n\n.i-align_left:before {\n  content: 'align_left'; }\n\n.i-align_center:before {\n  content: 'align_center'; }\n\n.i-align_right:before {\n  content: 'align_right'; }\n\n.i-layers:before {\n  content: 'layers'; }\n\n.i-image_add:before {\n  content: 'image_add'; }\n\n.i-notes:before {\n  content: 'notes'; }\n\n.i-date:before {\n  content: 'date'; }\n\n.i-agenda:before {\n  content: 'agenda'; }\n\n.i-message_rounded:before {\n  content: 'message_rounded'; }\n\n.i-billing:before {\n  content: 'billing'; }\n\n.i-linkedin:before {\n  content: 'linkedin'; }\n\n.i-facebook:before {\n  content: 'facebook'; }\n\n.i-twitter:before {\n  content: 'twitter'; }\n\n.i-acrobat:before {\n  content: 'acrobat'; }\n\n.i-salesforce:before {\n  content: 'salesforce'; }\n\n.i-microsoft_dynamics:before {\n  content: 'microsoft_dynamics'; }\n\n.i-paper_plane:before {\n  content: 'paper_plane'; }\n\n.i-multiple_user:before {\n  content: 'multiple_user'; }\n\n.i-interrogation_point:before {\n  content: 'interrogation_point'; }\n\n.i-smartphone:before {\n  content: 'smartphone'; }\n\n.i-hand:before {\n  content: 'hand'; }\n\n.i-paris:before {\n  content: 'paris'; }\n\n.i-star_o:before {\n  content: 'star_o'; }\n\n.i-duplicate:before {\n  content: 'duplicate'; }\n\n.i-water:before {\n  content: 'water'; }\n\n.i-latlong:before {\n  content: 'latlong'; }\n\n.i-buildings:before {\n  content: 'buildings'; }\n\n.i-trees:before {\n  content: 'trees'; }\n\n.i-outlet:before {\n  content: 'outlet'; }\n\n.i-binoculars:before {\n  content: 'binoculars'; }\n\n.i-glasses_o:before {\n  content: 'glasses_o'; }\n\n.i-glasses:before {\n  content: 'glasses'; }\n\n.i-glasses_old:before {\n  content: 'glasses_old'; }\n\n.i-wind_stream:before {\n  content: 'wind_stream'; }\n\n.i-lamp:before {\n  content: 'lamp'; }\n\n.i-file_add_o:before {\n  content: 'file_add_o'; }\n\n.i-moon_quarter:before {\n  content: 'moon_quarter'; }\n\n.i-none:before {\n  content: 'none'; }\n\n.i-archive:before {\n  content: 'archive'; }\n\n.i-file_add:before {\n  content: 'file_add'; }\n\n.i-server:before {\n  content: 'server'; }\n\n.i-cane:before {\n  content: 'cane'; }\n\n.i-life_buoy:before {\n  content: 'life_buoy'; }\n\n.i-radar:before {\n  content: 'radar'; }\n\n.i-light_bulb:before {\n  content: 'light_bulb'; }\n\n.i-flame:before {\n  content: 'flame'; }\n\n.i-case:before {\n  content: 'case'; }\n\n.i-megaphone:before {\n  content: 'megaphone'; }\n\n.i-bolt:before {\n  content: 'bolt'; }\n\n.i-tank:before {\n  content: 'tank'; }\n\n.i-barcode:before {\n  content: 'barcode'; }\n\n.i-song_play:before {\n  content: 'song_play'; }\n\n.i-song_pause:before {\n  content: 'song_pause'; }\n\n.i-song_stop:before {\n  content: 'song_stop'; }\n\n.i-song_first:before {\n  content: 'song_first'; }\n\n.i-song_last:before {\n  content: 'song_last'; }\n\n.i-song_previous:before {\n  content: 'song_previous'; }\n\n.i-song_next:before {\n  content: 'song_next'; }\n\n.i-weather_covered:before {\n  content: 'weather_covered'; }\n\n.i-dots:before {\n  content: 'dots'; }\n\n.i-dots_v:before {\n  content: 'dots_v'; }\n\n.i-weather_rain:before {\n  content: 'weather_rain'; }\n\n.i-funnel:before {\n  content: 'funnel'; }\n\n.i-elder:before {\n  content: 'elder'; }\n\n.i-balance:before {\n  content: 'balance'; }\n\n.i-sound:before {\n  content: 'sound'; }\n\n.i-courthouse:before {\n  content: 'courthouse'; }\n\n.i-scanner:before {\n  content: 'scanner'; }\n\n.i-scanner_alt:before {\n  content: 'scanner_alt'; }\n\n.i-eiffel_tower:before {\n  content: 'eiffel_tower'; }\n\n.i-checkbox:before {\n  content: 'checkbox'; }\n\n.i-moutain_alt:before {\n  content: 'moutain_alt'; }\n\n.i-basket_ball:before {\n  content: 'basket_ball'; }\n\n.i-tennis_ball:before {\n  content: 'tennis_ball'; }\n\n.i-foot_ball:before {\n  content: 'foot_ball'; }\n\n.i-megaphone_alt:before {\n  content: 'megaphone_alt'; }\n\n.i-stud:before {\n  content: 'stud'; }\n\n.i-tag_alt:before {\n  content: 'tag_alt'; }\n\n.i-tag:before {\n  content: 'tag'; }\n\n.i-price_tag:before {\n  content: 'price_tag'; }\n\n.i-information_circle:before {\n  content: 'information_circle'; }\n\n.i-interrogation_circle:before {\n  content: 'interrogation_circle'; }\n\n.i-wheel:before {\n  content: 'wheel'; }\n\n.i-car_o:before {\n  content: 'car_o'; }\n\n.i-cardinal_points:before {\n  content: 'cardinal_points'; }\n\n.i-turnsignal_left:before {\n  content: 'turnsignal_left'; }\n\n.i-turnsignal_right:before {\n  content: 'turnsignal_right'; }\n\n.i-speed_limiter:before {\n  content: 'speed_limiter'; }\n\n.i-speed_controller:before {\n  content: 'speed_controller'; }\n\n.i-caret_up_down:before {\n  content: 'caret_up_down'; }\n\n.i-caret_left:before {\n  content: 'caret_left'; }\n\n.i-caret_right:before {\n  content: 'caret_right'; }\n\n.i-caret_down:before {\n  content: 'caret_down'; }\n\n.i-caret_up:before {\n  content: 'caret_up'; }\n\n.i-arrow_right_down:before {\n  content: 'arrow_right_down'; }\n\n.i-arrow_right_up:before {\n  content: 'arrow_right_up'; }\n\n.i-arrow_exchange:before {\n  content: 'arrow_exchange'; }\n\n.i-arrow_turn_back:before {\n  content: 'arrow_turn_back'; }\n\n.i-pin:before {\n  content: 'pin'; }\n\n.i-car_headlight_fog:before {\n  content: 'car_headlight_fog'; }\n\n.i-car_headlight_mid:before {\n  content: 'car_headlight_mid'; }\n\n.i-car_ventilation:before {\n  content: 'car_ventilation'; }\n\n.i-spin:before {\n  content: 'spin'; }\n\n.i-car_ventilation_alt:before {\n  content: 'car_ventilation_alt'; }\n\n.i-check:before {\n  content: 'check'; }\n\n.i-trash:before {\n  content: 'trash'; }\n\n.i-power:before {\n  content: 'power'; }\n\n.i-propeller:before {\n  content: 'propeller'; }\n\n.i-leaf:before {\n  content: 'leaf'; }\n\n.i-history:before {\n  content: 'history'; }\n\n.i-finish:before {\n  content: 'finish'; }\n\n.i-facebook_square:before {\n  content: 'facebook_square'; }\n\n.i-medium:before {\n  content: 'medium'; }\n\n.i-basket:before {\n  content: 'basket'; }\n\n.i-database:before {\n  content: 'database'; }\n\n.i-bluetooth:before {\n  content: 'bluetooth'; }\n\n.i-caddie:before {\n  content: 'caddie'; }\n\n.i-caddie_o:before {\n  content: 'caddie_o'; }\n\n.i-id_card:before {\n  content: 'id_card'; }\n\n.i-translate:before {\n  content: 'translate'; }\n\n.i-database_alt:before {\n  content: 'database_alt'; }\n\n.i-app:before {\n  content: 'app'; }\n\n.i-floor_plan:before {\n  content: 'floor_plan'; }\n\n.i-board:before {\n  content: 'board'; }\n\n.i-phone_transfer:before {\n  content: 'phone_transfer'; }\n\n.i-wine_glass:before {\n  content: 'wine_glass'; }\n\n.i-fork_knife:before {\n  content: 'fork_knife'; }\n\n.i-truck:before {\n  content: 'truck'; }\n\n.i-car:before {\n  content: 'car'; }\n\n.i-bike_alt:before {\n  content: 'bike_alt'; }\n\n.i-bike:before {\n  content: 'bike'; }\n\n.i-dashboard:before {\n  content: 'dashboard'; }\n\n.i-dashboard_screen_o:before {\n  content: 'dashboard_screen_o'; }\n\n.i-heater:before {\n  content: 'heater'; }\n\n.i-window_shutter:before {\n  content: 'window_shutter'; }\n\n.i-garage_door:before {\n  content: 'garage_door'; }\n\n.i-lamp_alt:before {\n  content: 'lamp_alt'; }\n\n.i-big_lamp:before {\n  content: 'big_lamp'; }\n\n.i-outlet_s:before {\n  content: 'outlet_s'; }\n\n.i-switcher:before {\n  content: 'switcher'; }\n\n.i-dimmer:before {\n  content: 'dimmer'; }\n\n.i-assurance_maladie:before {\n  content: 'assurance_maladie'; }\n\n.i-pole_emploi:before {\n  content: 'pole_emploi'; }\n\n.i-caf:before {\n  content: 'caf'; }\n\n.i-finances_publiques:before {\n  content: 'finances_publiques'; }\n\n.i-turn_top_slight_left:before {\n  content: 'turn_top_slight_left'; }\n\n.i-turn_top_slight_right:before {\n  content: 'turn_top_slight_right'; }\n\n.i-turn_bottom_slight_left:before {\n  content: 'turn_bottom_slight_left'; }\n\n.i-turn_bottom_slight_right:before {\n  content: 'turn_bottom_slight_right'; }\n\n.i-alt_way:before {\n  content: 'alt_way'; }\n\n.i-turn_top_hard_right:before {\n  content: 'turn_top_hard_right'; }\n\n.i-turn_top_hard_left:before {\n  content: 'turn_top_hard_left'; }\n\n.i-turn_bottom_hard_right:before {\n  content: 'turn_bottom_hard_right'; }\n\n.i-turn_bottom_hard_left:before {\n  content: 'turn_bottom_hard_left'; }\n\n.i-traffic_circle_right:before {\n  content: 'traffic_circle_right'; }\n\n.i-traffic_circle_left:before {\n  content: 'traffic_circle_left'; }\n\n.i-traffic_circle_straight:before {\n  content: 'traffic_circle_straight'; }\n\n.i-traffic_circle_dotted_right:before {\n  content: 'traffic_circle_dotted_right'; }\n\n.i-traffic_circle_dotted_left:before {\n  content: 'traffic_circle_dotted_left'; }\n\n.i-traffic_circle_dotted_straight:before {\n  content: 'traffic_circle_dotted_straight'; }\n\n.i-turnabout:before {\n  content: 'turnabout'; }\n\n.i-dashboard_screen:before {\n  content: 'dashboard_screen'; }\n\n.i-radar_alt:before {\n  content: 'radar_alt'; }\n\n.i-logic_map:before {\n  content: 'logic_map'; }\n\n.i-computer_screen:before {\n  content: 'computer_screen'; }\n\n.i-target:before {\n  content: 'target'; }\n\n.i-target_reached:before {\n  content: 'target_reached'; }\n\n.i-graph:before {\n  content: 'graph'; }\n\n.i-graph_o:before {\n  content: 'graph_o'; }\n\n.i-graph_pie:before {\n  content: 'graph_pie'; }\n\n.i-graph_bar:before {\n  content: 'graph_bar'; }\n\n.i-click:before {\n  content: 'click'; }\n\n.i-scattering:before {\n  content: 'scattering'; }\n\n.i-shape_haxagon_o:before {\n  content: 'shape_haxagon_o'; }\n\n.i-shape_circle_o:before {\n  content: 'shape_circle_o'; }\n\n.i-shape_square_r_o:before {\n  content: 'shape_square_r_o'; }\n\n.i-shape_square_o:before {\n  content: 'shape_square_o'; }\n\n.i-shape_triangle_up_o:before {\n  content: 'shape_triangle_up_o'; }\n\n.i-shape_bars:before {\n  content: 'shape_bars'; }\n\n.i-shape_bars_v:before {\n  content: 'shape_bars_v'; }\n\n.i-shape_triangle_bottom_o:before {\n  content: 'shape_triangle_bottom_o'; }\n\n.i-shape_arc_line:before {\n  content: 'shape_arc_line'; }\n\n.i-shape_broken_circle_o:before {\n  content: 'shape_broken_circle_o'; }\n\n.i-shape_chevron_line:before {\n  content: 'shape_chevron_line'; }\n\n.i-shape_octogon_o:before {\n  content: 'shape_octogon_o'; }\n\n.i-shape_octogon_alt:before {\n  content: 'shape_octogon_alt'; }\n\n.i-shape_hexagon_light_o:before {\n  content: 'shape_hexagon_light_o'; }\n\n.i-shape_circle_light_o:before {\n  content: 'shape_circle_light_o'; }\n\n.i-shape_square_r_light_o:before {\n  content: 'shape_square_r_light_o'; }\n\n.i-shape_square_light_o:before {\n  content: 'shape_square_light_o'; }\n\n.i-shape_triangle_up_light_o:before {\n  content: 'shape_triangle_up_light_o'; }\n\n.i-shape_bars_light:before {\n  content: 'shape_bars_light'; }\n\n.i-shape_bar_s_v_light_o:before {\n  content: 'shape_bar_s_v_light_o'; }\n\n.i-shape_triangle_bottom_light_o:before {\n  content: 'shape_triangle_bottom_light_o'; }\n\n.i-shape_broken_circle_light:before {\n  content: 'shape_broken_circle_light'; }\n\n.i-shape_chevron_line_light:before {\n  content: 'shape_chevron_line_light'; }\n\n.i-shape_octogon_light_o:before {\n  content: 'shape_octogon_light_o'; }\n\n.i-shape_octogon_alt_light:before {\n  content: 'shape_octogon_alt_light'; }\n\n.i-people:before {\n  content: 'people'; }\n\n.i-stage_audience:before {\n  content: 'stage_audience'; }\n\n.i-balls_connected:before {\n  content: 'balls_connected'; }\n\n.i-connection:before {\n  content: 'connection'; }\n\n.i-content:before {\n  content: 'content'; }\n\n.i-content_o:before {\n  content: 'content_o'; }\n\n.i-app_illustrator:before {\n  content: 'app_illustrator'; }\n\n.i-app_photoshop:before {\n  content: 'app_photoshop'; }\n\n.i-app_aftereffects:before {\n  content: 'app_aftereffects'; }\n\n.i-app_indesign:before {\n  content: 'app_indesign'; }\n\n.i-app_word:before {\n  content: 'app_word'; }\n\n.i-app_excel:before {\n  content: 'app_excel'; }\n\n.i-app_powerpoint:before {\n  content: 'app_powerpoint'; }\n\n.i-app_sketch:before {\n  content: 'app_sketch'; }\n\n.i-file_zip_o:before {\n  content: 'file_zip_o'; }\n\n.i-file_zip:before {\n  content: 'file_zip'; }\n\n.i-caravel_logo:before {\n  content: 'caravel_logo'; }\n\n.i-usedesign_logo:before {\n  content: 'usedesign_logo'; }\n\n.i-dialpad:before {\n  content: 'dialpad'; }\n\n.i-videocall:before {\n  content: 'videocall'; }\n\n.i-computer_screen_o:before {\n  content: 'computer_screen_o'; }\n\n.i-user_circle_o:before {\n  content: 'user_circle_o'; }\n\n.i-user_circle:before {\n  content: 'user_circle'; }\n\n.i-user_add:before {\n  content: 'user_add'; }\n\n.i-thumb_up_o:before {\n  content: 'thumb_up_o'; }\n\n.i-thumb_down_o:before {\n  content: 'thumb_down_o'; }\n\n.i-emoticon_smile:before {\n  content: 'emoticon_smile'; }\n\n.i-emoticon_smile_simple:before {\n  content: 'emoticon_smile_simple'; }\n\n.i-emoticon_sad:before {\n  content: 'emoticon_sad'; }\n\n.i-emoticon_smile_o:before {\n  content: 'emoticon_smile_o'; }\n\n.i-emoticon_smile_simple_o:before {\n  content: 'emoticon_smile_simple_o'; }\n\n.i-emoticon_sad_o:before {\n  content: 'emoticon_sad_o'; }\n\n.i-mic:before {\n  content: 'mic'; }\n\n.i-mic_off:before {\n  content: 'mic_off'; }\n\n.i-sound_off:before {\n  content: 'sound_off'; }\n\n.i-app_gimp:before {\n  content: 'app_gimp'; }\n\n.i-app_inkscape:before {\n  content: 'app_inkscape'; }\n\n.i-app_scribus:before {\n  content: 'app_scribus'; }\n\n.i-app_libreoffice:before {\n  content: 'app_libreoffice'; }\n\n.i-app_openoffice:before {\n  content: 'app_openoffice'; }\n\n.i-app_blender:before {\n  content: 'app_blender'; }\n\n.i-message_conversation:before {\n  content: 'message_conversation'; }\n\n.i-message_sms:before {\n  content: 'message_sms'; }\n\n.i-thumb_up:before {\n  content: 'thumb_up'; }\n\n.i-thumb_down:before {\n  content: 'thumb_down'; }\n\n.i-user_admin:before {\n  content: 'user_admin'; }\n\n.i-full_screen_off:before {\n  content: 'full_screen_off'; }\n\n.i-emoticon_question_o:before {\n  content: 'emoticon_question_o'; }\n\n.i-emoticon_question:before {\n  content: 'emoticon_question'; }\n\n.i-shape_cross_r:before {\n  content: 'shape_cross_r'; }\n\n.i-shape_cross:before {\n  content: 'shape_cross'; }\n\n.i-shape_rectangle_rounded_o:before {\n  content: 'shape_rectangle_rounded_o'; }\n\n.i-shape_rectangle_rounded_v_o:before {\n  content: 'shape_rectangle_rounded_v_o'; }\n\n.i-emoticon_confused_o:before {\n  content: 'emoticon_confused_o'; }\n\n.i-shape_square_rounded_o:before {\n  content: 'shape_square_rounded_o'; }\n\n.i-shape_rectangle_rounded:before {\n  content: 'shape_rectangle_rounded'; }\n\n.i-shape_rectangle_rounded_v:before {\n  content: 'shape_rectangle_rounded_v'; }\n\n.i-shape_circle:before {\n  content: 'shape_circle'; }\n\n.i-shape_square_rounded:before {\n  content: 'shape_square_rounded'; }\n\n.i-shape_triangle_up_rounded:before {\n  content: 'shape_triangle_up_rounded'; }\n\n.i-emoticon_lost_o:before {\n  content: 'emoticon_lost_o'; }\n\n.i-emoticon_confused:before {\n  content: 'emoticon_confused'; }\n\n.i-emoticon_lost:before {\n  content: 'emoticon_lost'; }\n\n.i-sharp:before {\n  content: 'sharp'; }\n\n.i-magic_wand_spark:before {\n  content: 'magic_wand_spark'; }\n\n.i-magic_wand:before {\n  content: 'magic_wand'; }\n\n.i-phone_hang_up:before {\n  content: 'phone_hang_up'; }\n\n.i-drop_curved:before {\n  content: 'drop_curved'; }\n\n.i-erlenmeyer_bubble:before {\n  content: 'erlenmeyer_bubble'; }\n\n.i-water_outlet:before {\n  content: 'water_outlet'; }\n\n.i-flowmeter:before {\n  content: 'flowmeter'; }\n\n.i-pression_probe:before {\n  content: 'pression_probe'; }\n\n.i-erlenmeyer_chlore:before {\n  content: 'erlenmeyer_chlore'; }\n\n.i-test_tube_boiling:before {\n  content: 'test_tube_boiling'; }\n\n.i-test_tube_slanted_boiling:before {\n  content: 'test_tube_slanted_boiling'; }\n\n.i-test_tube:before {\n  content: 'test_tube'; }\n\n.i-test_tube_slanted:before {\n  content: 'test_tube_slanted'; }\n\n.i-valve:before {\n  content: 'valve'; }\n\n.i-rainy_cloud:before {\n  content: 'rainy_cloud'; }\n\n.i-water_tank:before {\n  content: 'water_tank'; }\n\n.i-adp_data:before {\n  content: 'adp_data'; }\n\n.i-conductivity_low:before {\n  content: 'conductivity_low'; }\n\n.i-lifting_screw:before {\n  content: 'lifting_screw'; }\n\n.i-audio_spectrum:before {\n  content: 'audio_spectrum'; }\n\n.i-water_outlet_alt:before {\n  content: 'water_outlet_alt'; }\n\n.i-plant:before {\n  content: 'plant'; }\n\n.i-plant_o:before {\n  content: 'plant_o'; }\n\n.i-well:before {\n  content: 'well'; }\n\n.i-well_drilling:before {\n  content: 'well_drilling'; }\n\n.i-bacteries:before {\n  content: 'bacteries'; }\n\n.i-troubled_water:before {\n  content: 'troubled_water'; }\n\n.i-speedmeter:before {\n  content: 'speedmeter'; }\n\n.i-lightbulb_flash:before {\n  content: 'lightbulb_flash'; }\n\n.i-erlenmeyer:before {\n  content: 'erlenmeyer'; }\n\n.i-water_level:before {\n  content: 'water_level'; }\n\n.i-arrow_bottom_curved:before {\n  content: 'arrow_bottom_curved'; }\n\n.i-quality_seal:before {\n  content: 'quality_seal'; }\n\n.i-monitoring_pie_screen_o:before {\n  content: 'monitoring_pie_screen_o'; }\n\n.i-monitoring_line_screen_o:before {\n  content: 'monitoring_line_screen_o'; }\n\n.i-monitoring_pie_screen:before {\n  content: 'monitoring_pie_screen'; }\n\n.i-monitoring_line_screen:before {\n  content: 'monitoring_line_screen'; }\n\n.i-back_level_up:before {\n  content: 'back_level_up'; }\n\n.i-back_level_up_inverted:before {\n  content: 'back_level_up_inverted'; }\n\n.i-monitoring_map_screen_o:before {\n  content: 'monitoring_map_screen_o'; }\n\n.i-monitoring_map_screen:before {\n  content: 'monitoring_map_screen'; }\n\n.i-erlenmeyer_trouble:before {\n  content: 'erlenmeyer_trouble'; }\n\n.i-cup_water:before {\n  content: 'cup_water'; }\n\n.i-save_o:before {\n  content: 'save_o'; }\n\n.i-branches:before {\n  content: 'branches'; }\n\n.i-car_headlight_full:before {\n  content: 'car_headlight_full'; }\n\n.i-shape_arc_line_light:before {\n  content: 'shape_arc_line_light'; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: \"lato\", \"Helvetica Neue\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background: #f5f5f5; }\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\", monospace; }\n\ni {\n  margin-top: -4px; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"lato\";\n  font-style: normal;\n  font-stretch: normal;\n  font-weight: 400;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___0___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: italic;\n  font-stretch: normal;\n  font-weight: 400;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___1___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: normal;\n  font-stretch: normal;\n  font-weight: 700;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___2___ + ") format(\"woff\"); }\n\n@font-face {\n  font-family: \"lato\";\n  font-style: italic;\n  font-stretch: normal;\n  font-weight: 700;\n  src: local(\"Lato\"), url(" + ___CSS_LOADER_URL___3___ + ") format(\"woff\"); }\n\n/* FUNCTIONS */\n@font-face {\n  font-family: 'fontIcon';\n  src: url(" + ___CSS_LOADER_URL___4___ + ");\n  font-weight: normal;\n  font-style: normal; }\n\n[class^='ico-'], [class*=' ico-'], .ico {\n  display: inline-block;\n  font: normal normal normal 14px/1 'fontIcon';\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  vertical-align: middle; }\n\n.ico-small {\n  font-size: 1rem; }\n\n.ico-medium {\n  font-size: 1.5rem; }\n\n.ico-large {\n  font-size: 2rem; }\n\n.i-bullet_list:before {\n  content: 'bullet_list'; }\n\n.i-plus:before {\n  content: 'plus'; }\n\n.i-minus:before {\n  content: 'minus'; }\n\n.i-arrow_up:before {\n  content: 'arrow_up'; }\n\n.i-arrow_right:before {\n  content: 'arrow_right'; }\n\n.i-arrow_down:before {\n  content: 'arrow_down'; }\n\n.i-arrow_left:before {\n  content: 'arrow_left'; }\n\n.i-cloud:before {\n  content: 'cloud'; }\n\n.i-lightning:before {\n  content: 'lightning'; }\n\n.i-caution:before {\n  content: 'caution'; }\n\n.i-cross:before {\n  content: 'cross'; }\n\n.i-sun:before {\n  content: 'sun'; }\n\n.i-heart:before {\n  content: 'heart'; }\n\n.i-mountain:before {\n  content: 'mountain'; }\n\n.i-pencil:before {\n  content: 'pencil'; }\n\n.i-snow_flake:before {\n  content: 'snow_flake'; }\n\n.i-baby:before {\n  content: 'baby'; }\n\n.i-bell:before {\n  content: 'bell'; }\n\n.i-book:before {\n  content: 'book'; }\n\n.i-bookmark:before {\n  content: 'bookmark'; }\n\n.i-bus:before {\n  content: 'bus'; }\n\n.i-camera:before {\n  content: 'camera'; }\n\n.i-door:before {\n  content: 'door'; }\n\n.i-drop:before {\n  content: 'drop'; }\n\n.i-eye:before {\n  content: 'eye'; }\n\n.i-family:before {\n  content: 'family'; }\n\n.i-folder:before {\n  content: 'folder'; }\n\n.i-hammer:before {\n  content: 'hammer'; }\n\n.i-house:before {\n  content: 'house'; }\n\n.i-key:before {\n  content: 'key'; }\n\n.i-keyboard:before {\n  content: 'keyboard'; }\n\n.i-lock:before {\n  content: 'lock'; }\n\n.i-notebook:before {\n  content: 'notebook'; }\n\n.i-paperclip:before {\n  content: 'paperclip'; }\n\n.i-printer:before {\n  content: 'printer'; }\n\n.i-satellite:before {\n  content: 'satellite'; }\n\n.i-shield:before {\n  content: 'shield'; }\n\n.i-telescope:before {\n  content: 'telescope'; }\n\n.i-thermometer:before {\n  content: 'thermometer'; }\n\n.i-ticket:before {\n  content: 'ticket'; }\n\n.i-train:before {\n  content: 'train'; }\n\n.i-circle_caution:before {\n  content: 'circle_caution'; }\n\n.i-circle_compass:before {\n  content: 'circle_compass'; }\n\n.i-lightning_circle:before {\n  content: 'lightning_circle'; }\n\n.i-cross_circle:before {\n  content: 'cross_circle'; }\n\n.i-heart_beat:before {\n  content: 'heart_beat'; }\n\n.i-battery_full:before {\n  content: 'battery_full'; }\n\n.i-battery_half:before {\n  content: 'battery_half'; }\n\n.i-battery_low:before {\n  content: 'battery_low'; }\n\n.i-battery_quarter:before {\n  content: 'battery_quarter'; }\n\n.i-book_alt:before {\n  content: 'book_alt'; }\n\n.i-book_open:before {\n  content: 'book_open'; }\n\n.i-book_shelf:before {\n  content: 'book_shelf'; }\n\n.i-clipboard_check:before {\n  content: 'clipboard_check'; }\n\n.i-eye_off:before {\n  content: 'eye_off'; }\n\n.i-folder_add:before {\n  content: 'folder_add'; }\n\n.i-man_running:before {\n  content: 'man_running'; }\n\n.i-man_sit:before {\n  content: 'man_sit'; }\n\n.i-man_sleeping:before {\n  content: 'man_sleeping'; }\n\n.i-plus_alt:before {\n  content: 'plus_alt'; }\n\n.i-plus_circle:before {\n  content: 'plus_circle'; }\n\n.i-minus_alt:before {\n  content: 'minus_alt'; }\n\n.i-minus_circle:before {\n  content: 'minus_circle'; }\n\n.i-battery_threequarters:before {\n  content: 'battery_threequarters'; }\n\n.i-lightning_circle_o:before {\n  content: 'lightning_circle_o'; }\n\n.i-sun_o:before {\n  content: 'sun_o'; }\n\n.i-heart_o:before {\n  content: 'heart_o'; }\n\n.i-annotated_screen:before {\n  content: 'annotated_screen'; }\n\n.i-share:before {\n  content: 'share'; }\n\n.i-plane:before {\n  content: 'plane'; }\n\n.i-zoom:before {\n  content: 'zoom'; }\n\n.i-spanner:before {\n  content: 'spanner'; }\n\n.i-rotate:before {\n  content: 'rotate'; }\n\n.i-multiarrows:before {\n  content: 'multiarrows'; }\n\n.i-multiarrows_r:before {\n  content: 'multiarrows_r'; }\n\n.i-refresh:before {\n  content: 'refresh'; }\n\n.i-constrast:before {\n  content: 'constrast'; }\n\n.i-pen:before {\n  content: 'pen'; }\n\n.i-cog:before {\n  content: 'cog'; }\n\n.i-external_link:before {\n  content: 'external_link'; }\n\n.i-full_screen:before {\n  content: 'full_screen'; }\n\n.i-path:before {\n  content: 'path'; }\n\n.i-column_grid:before {\n  content: 'column_grid'; }\n\n.i-unlock:before {\n  content: 'unlock'; }\n\n.i-video:before {\n  content: 'video'; }\n\n.i-flag:before {\n  content: 'flag'; }\n\n.i-user:before {\n  content: 'user'; }\n\n.i-grid:before {\n  content: 'grid'; }\n\n.i-arrow_out:before {\n  content: 'arrow_out'; }\n\n.i-arrow_out_alt:before {\n  content: 'arrow_out_alt'; }\n\n.i-wifi:before {\n  content: 'wifi'; }\n\n.i-waves:before {\n  content: 'waves'; }\n\n.i-star:before {\n  content: 'star'; }\n\n.i-rss:before {\n  content: 'rss'; }\n\n.i-phone:before {\n  content: 'phone'; }\n\n.i-file_duplication_o:before {\n  content: 'file_duplication_o'; }\n\n.i-recorder:before {\n  content: 'recorder'; }\n\n.i-link:before {\n  content: 'link'; }\n\n.i-clock:before {\n  content: 'clock'; }\n\n.i-alarm:before {\n  content: 'alarm'; }\n\n.i-message:before {\n  content: 'message'; }\n\n.i-file:before {\n  content: 'file'; }\n\n.i-letter:before {\n  content: 'letter'; }\n\n.i-letter_o:before {\n  content: 'letter_o'; }\n\n.i-image:before {\n  content: 'image'; }\n\n.i-runway:before {\n  content: 'runway'; }\n\n.i-file_o:before {\n  content: 'file_o'; }\n\n.i-chevron_down:before {\n  content: 'chevron_down'; }\n\n.i-chevron_up:before {\n  content: 'chevron_up'; }\n\n.i-chevron_left:before {\n  content: 'chevron_left'; }\n\n.i-chevron_right:before {\n  content: 'chevron_right'; }\n\n.i-chevron_up_down:before {\n  content: 'chevron_up_down'; }\n\n.i-locate:before {\n  content: 'locate'; }\n\n.i-world:before {\n  content: 'world'; }\n\n.i-direction:before {\n  content: 'direction'; }\n\n.i-iteration:before {\n  content: 'iteration'; }\n\n.i-menu:before {\n  content: 'menu'; }\n\n.i-menu_v:before {\n  content: 'menu_v'; }\n\n.i-exclamation:before {\n  content: 'exclamation'; }\n\n.i-download_o:before {\n  content: 'download_o'; }\n\n.i-text_glyphs:before {\n  content: 'text_glyphs'; }\n\n.i-bold:before {\n  content: 'bold'; }\n\n.i-italic:before {\n  content: 'italic'; }\n\n.i-underline:before {\n  content: 'underline'; }\n\n.i-text:before {\n  content: 'text'; }\n\n.i-align_left:before {\n  content: 'align_left'; }\n\n.i-align_center:before {\n  content: 'align_center'; }\n\n.i-align_right:before {\n  content: 'align_right'; }\n\n.i-layers:before {\n  content: 'layers'; }\n\n.i-image_add:before {\n  content: 'image_add'; }\n\n.i-notes:before {\n  content: 'notes'; }\n\n.i-date:before {\n  content: 'date'; }\n\n.i-agenda:before {\n  content: 'agenda'; }\n\n.i-message_rounded:before {\n  content: 'message_rounded'; }\n\n.i-billing:before {\n  content: 'billing'; }\n\n.i-linkedin:before {\n  content: 'linkedin'; }\n\n.i-facebook:before {\n  content: 'facebook'; }\n\n.i-twitter:before {\n  content: 'twitter'; }\n\n.i-acrobat:before {\n  content: 'acrobat'; }\n\n.i-salesforce:before {\n  content: 'salesforce'; }\n\n.i-microsoft_dynamics:before {\n  content: 'microsoft_dynamics'; }\n\n.i-paper_plane:before {\n  content: 'paper_plane'; }\n\n.i-multiple_user:before {\n  content: 'multiple_user'; }\n\n.i-interrogation_point:before {\n  content: 'interrogation_point'; }\n\n.i-smartphone:before {\n  content: 'smartphone'; }\n\n.i-hand:before {\n  content: 'hand'; }\n\n.i-paris:before {\n  content: 'paris'; }\n\n.i-star_o:before {\n  content: 'star_o'; }\n\n.i-duplicate:before {\n  content: 'duplicate'; }\n\n.i-water:before {\n  content: 'water'; }\n\n.i-latlong:before {\n  content: 'latlong'; }\n\n.i-buildings:before {\n  content: 'buildings'; }\n\n.i-trees:before {\n  content: 'trees'; }\n\n.i-outlet:before {\n  content: 'outlet'; }\n\n.i-binoculars:before {\n  content: 'binoculars'; }\n\n.i-glasses_o:before {\n  content: 'glasses_o'; }\n\n.i-glasses:before {\n  content: 'glasses'; }\n\n.i-glasses_old:before {\n  content: 'glasses_old'; }\n\n.i-wind_stream:before {\n  content: 'wind_stream'; }\n\n.i-lamp:before {\n  content: 'lamp'; }\n\n.i-file_add_o:before {\n  content: 'file_add_o'; }\n\n.i-moon_quarter:before {\n  content: 'moon_quarter'; }\n\n.i-none:before {\n  content: 'none'; }\n\n.i-archive:before {\n  content: 'archive'; }\n\n.i-file_add:before {\n  content: 'file_add'; }\n\n.i-server:before {\n  content: 'server'; }\n\n.i-cane:before {\n  content: 'cane'; }\n\n.i-life_buoy:before {\n  content: 'life_buoy'; }\n\n.i-radar:before {\n  content: 'radar'; }\n\n.i-light_bulb:before {\n  content: 'light_bulb'; }\n\n.i-flame:before {\n  content: 'flame'; }\n\n.i-case:before {\n  content: 'case'; }\n\n.i-megaphone:before {\n  content: 'megaphone'; }\n\n.i-bolt:before {\n  content: 'bolt'; }\n\n.i-tank:before {\n  content: 'tank'; }\n\n.i-barcode:before {\n  content: 'barcode'; }\n\n.i-song_play:before {\n  content: 'song_play'; }\n\n.i-song_pause:before {\n  content: 'song_pause'; }\n\n.i-song_stop:before {\n  content: 'song_stop'; }\n\n.i-song_first:before {\n  content: 'song_first'; }\n\n.i-song_last:before {\n  content: 'song_last'; }\n\n.i-song_previous:before {\n  content: 'song_previous'; }\n\n.i-song_next:before {\n  content: 'song_next'; }\n\n.i-weather_covered:before {\n  content: 'weather_covered'; }\n\n.i-dots:before {\n  content: 'dots'; }\n\n.i-dots_v:before {\n  content: 'dots_v'; }\n\n.i-weather_rain:before {\n  content: 'weather_rain'; }\n\n.i-funnel:before {\n  content: 'funnel'; }\n\n.i-elder:before {\n  content: 'elder'; }\n\n.i-balance:before {\n  content: 'balance'; }\n\n.i-sound:before {\n  content: 'sound'; }\n\n.i-courthouse:before {\n  content: 'courthouse'; }\n\n.i-scanner:before {\n  content: 'scanner'; }\n\n.i-scanner_alt:before {\n  content: 'scanner_alt'; }\n\n.i-eiffel_tower:before {\n  content: 'eiffel_tower'; }\n\n.i-checkbox:before {\n  content: 'checkbox'; }\n\n.i-moutain_alt:before {\n  content: 'moutain_alt'; }\n\n.i-basket_ball:before {\n  content: 'basket_ball'; }\n\n.i-tennis_ball:before {\n  content: 'tennis_ball'; }\n\n.i-foot_ball:before {\n  content: 'foot_ball'; }\n\n.i-megaphone_alt:before {\n  content: 'megaphone_alt'; }\n\n.i-stud:before {\n  content: 'stud'; }\n\n.i-tag_alt:before {\n  content: 'tag_alt'; }\n\n.i-tag:before {\n  content: 'tag'; }\n\n.i-price_tag:before {\n  content: 'price_tag'; }\n\n.i-information_circle:before {\n  content: 'information_circle'; }\n\n.i-interrogation_circle:before {\n  content: 'interrogation_circle'; }\n\n.i-wheel:before {\n  content: 'wheel'; }\n\n.i-car_o:before {\n  content: 'car_o'; }\n\n.i-cardinal_points:before {\n  content: 'cardinal_points'; }\n\n.i-turnsignal_left:before {\n  content: 'turnsignal_left'; }\n\n.i-turnsignal_right:before {\n  content: 'turnsignal_right'; }\n\n.i-speed_limiter:before {\n  content: 'speed_limiter'; }\n\n.i-speed_controller:before {\n  content: 'speed_controller'; }\n\n.i-caret_up_down:before {\n  content: 'caret_up_down'; }\n\n.i-caret_left:before {\n  content: 'caret_left'; }\n\n.i-caret_right:before {\n  content: 'caret_right'; }\n\n.i-caret_down:before {\n  content: 'caret_down'; }\n\n.i-caret_up:before {\n  content: 'caret_up'; }\n\n.i-arrow_right_down:before {\n  content: 'arrow_right_down'; }\n\n.i-arrow_right_up:before {\n  content: 'arrow_right_up'; }\n\n.i-arrow_exchange:before {\n  content: 'arrow_exchange'; }\n\n.i-arrow_turn_back:before {\n  content: 'arrow_turn_back'; }\n\n.i-pin:before {\n  content: 'pin'; }\n\n.i-car_headlight_fog:before {\n  content: 'car_headlight_fog'; }\n\n.i-car_headlight_mid:before {\n  content: 'car_headlight_mid'; }\n\n.i-car_ventilation:before {\n  content: 'car_ventilation'; }\n\n.i-spin:before {\n  content: 'spin'; }\n\n.i-car_ventilation_alt:before {\n  content: 'car_ventilation_alt'; }\n\n.i-check:before {\n  content: 'check'; }\n\n.i-trash:before {\n  content: 'trash'; }\n\n.i-power:before {\n  content: 'power'; }\n\n.i-propeller:before {\n  content: 'propeller'; }\n\n.i-leaf:before {\n  content: 'leaf'; }\n\n.i-history:before {\n  content: 'history'; }\n\n.i-finish:before {\n  content: 'finish'; }\n\n.i-facebook_square:before {\n  content: 'facebook_square'; }\n\n.i-medium:before {\n  content: 'medium'; }\n\n.i-basket:before {\n  content: 'basket'; }\n\n.i-database:before {\n  content: 'database'; }\n\n.i-bluetooth:before {\n  content: 'bluetooth'; }\n\n.i-caddie:before {\n  content: 'caddie'; }\n\n.i-caddie_o:before {\n  content: 'caddie_o'; }\n\n.i-id_card:before {\n  content: 'id_card'; }\n\n.i-translate:before {\n  content: 'translate'; }\n\n.i-database_alt:before {\n  content: 'database_alt'; }\n\n.i-app:before {\n  content: 'app'; }\n\n.i-floor_plan:before {\n  content: 'floor_plan'; }\n\n.i-board:before {\n  content: 'board'; }\n\n.i-phone_transfer:before {\n  content: 'phone_transfer'; }\n\n.i-wine_glass:before {\n  content: 'wine_glass'; }\n\n.i-fork_knife:before {\n  content: 'fork_knife'; }\n\n.i-truck:before {\n  content: 'truck'; }\n\n.i-car:before {\n  content: 'car'; }\n\n.i-bike_alt:before {\n  content: 'bike_alt'; }\n\n.i-bike:before {\n  content: 'bike'; }\n\n.i-dashboard:before {\n  content: 'dashboard'; }\n\n.i-dashboard_screen_o:before {\n  content: 'dashboard_screen_o'; }\n\n.i-heater:before {\n  content: 'heater'; }\n\n.i-window_shutter:before {\n  content: 'window_shutter'; }\n\n.i-garage_door:before {\n  content: 'garage_door'; }\n\n.i-lamp_alt:before {\n  content: 'lamp_alt'; }\n\n.i-big_lamp:before {\n  content: 'big_lamp'; }\n\n.i-outlet_s:before {\n  content: 'outlet_s'; }\n\n.i-switcher:before {\n  content: 'switcher'; }\n\n.i-dimmer:before {\n  content: 'dimmer'; }\n\n.i-assurance_maladie:before {\n  content: 'assurance_maladie'; }\n\n.i-pole_emploi:before {\n  content: 'pole_emploi'; }\n\n.i-caf:before {\n  content: 'caf'; }\n\n.i-finances_publiques:before {\n  content: 'finances_publiques'; }\n\n.i-turn_top_slight_left:before {\n  content: 'turn_top_slight_left'; }\n\n.i-turn_top_slight_right:before {\n  content: 'turn_top_slight_right'; }\n\n.i-turn_bottom_slight_left:before {\n  content: 'turn_bottom_slight_left'; }\n\n.i-turn_bottom_slight_right:before {\n  content: 'turn_bottom_slight_right'; }\n\n.i-alt_way:before {\n  content: 'alt_way'; }\n\n.i-turn_top_hard_right:before {\n  content: 'turn_top_hard_right'; }\n\n.i-turn_top_hard_left:before {\n  content: 'turn_top_hard_left'; }\n\n.i-turn_bottom_hard_right:before {\n  content: 'turn_bottom_hard_right'; }\n\n.i-turn_bottom_hard_left:before {\n  content: 'turn_bottom_hard_left'; }\n\n.i-traffic_circle_right:before {\n  content: 'traffic_circle_right'; }\n\n.i-traffic_circle_left:before {\n  content: 'traffic_circle_left'; }\n\n.i-traffic_circle_straight:before {\n  content: 'traffic_circle_straight'; }\n\n.i-traffic_circle_dotted_right:before {\n  content: 'traffic_circle_dotted_right'; }\n\n.i-traffic_circle_dotted_left:before {\n  content: 'traffic_circle_dotted_left'; }\n\n.i-traffic_circle_dotted_straight:before {\n  content: 'traffic_circle_dotted_straight'; }\n\n.i-turnabout:before {\n  content: 'turnabout'; }\n\n.i-dashboard_screen:before {\n  content: 'dashboard_screen'; }\n\n.i-radar_alt:before {\n  content: 'radar_alt'; }\n\n.i-logic_map:before {\n  content: 'logic_map'; }\n\n.i-computer_screen:before {\n  content: 'computer_screen'; }\n\n.i-target:before {\n  content: 'target'; }\n\n.i-target_reached:before {\n  content: 'target_reached'; }\n\n.i-graph:before {\n  content: 'graph'; }\n\n.i-graph_o:before {\n  content: 'graph_o'; }\n\n.i-graph_pie:before {\n  content: 'graph_pie'; }\n\n.i-graph_bar:before {\n  content: 'graph_bar'; }\n\n.i-click:before {\n  content: 'click'; }\n\n.i-scattering:before {\n  content: 'scattering'; }\n\n.i-shape_haxagon_o:before {\n  content: 'shape_haxagon_o'; }\n\n.i-shape_circle_o:before {\n  content: 'shape_circle_o'; }\n\n.i-shape_square_r_o:before {\n  content: 'shape_square_r_o'; }\n\n.i-shape_square_o:before {\n  content: 'shape_square_o'; }\n\n.i-shape_triangle_up_o:before {\n  content: 'shape_triangle_up_o'; }\n\n.i-shape_bars:before {\n  content: 'shape_bars'; }\n\n.i-shape_bars_v:before {\n  content: 'shape_bars_v'; }\n\n.i-shape_triangle_bottom_o:before {\n  content: 'shape_triangle_bottom_o'; }\n\n.i-shape_arc_line:before {\n  content: 'shape_arc_line'; }\n\n.i-shape_broken_circle_o:before {\n  content: 'shape_broken_circle_o'; }\n\n.i-shape_chevron_line:before {\n  content: 'shape_chevron_line'; }\n\n.i-shape_octogon_o:before {\n  content: 'shape_octogon_o'; }\n\n.i-shape_octogon_alt:before {\n  content: 'shape_octogon_alt'; }\n\n.i-shape_hexagon_light_o:before {\n  content: 'shape_hexagon_light_o'; }\n\n.i-shape_circle_light_o:before {\n  content: 'shape_circle_light_o'; }\n\n.i-shape_square_r_light_o:before {\n  content: 'shape_square_r_light_o'; }\n\n.i-shape_square_light_o:before {\n  content: 'shape_square_light_o'; }\n\n.i-shape_triangle_up_light_o:before {\n  content: 'shape_triangle_up_light_o'; }\n\n.i-shape_bars_light:before {\n  content: 'shape_bars_light'; }\n\n.i-shape_bar_s_v_light_o:before {\n  content: 'shape_bar_s_v_light_o'; }\n\n.i-shape_triangle_bottom_light_o:before {\n  content: 'shape_triangle_bottom_light_o'; }\n\n.i-shape_broken_circle_light:before {\n  content: 'shape_broken_circle_light'; }\n\n.i-shape_chevron_line_light:before {\n  content: 'shape_chevron_line_light'; }\n\n.i-shape_octogon_light_o:before {\n  content: 'shape_octogon_light_o'; }\n\n.i-shape_octogon_alt_light:before {\n  content: 'shape_octogon_alt_light'; }\n\n.i-people:before {\n  content: 'people'; }\n\n.i-stage_audience:before {\n  content: 'stage_audience'; }\n\n.i-balls_connected:before {\n  content: 'balls_connected'; }\n\n.i-connection:before {\n  content: 'connection'; }\n\n.i-content:before {\n  content: 'content'; }\n\n.i-content_o:before {\n  content: 'content_o'; }\n\n.i-app_illustrator:before {\n  content: 'app_illustrator'; }\n\n.i-app_photoshop:before {\n  content: 'app_photoshop'; }\n\n.i-app_aftereffects:before {\n  content: 'app_aftereffects'; }\n\n.i-app_indesign:before {\n  content: 'app_indesign'; }\n\n.i-app_word:before {\n  content: 'app_word'; }\n\n.i-app_excel:before {\n  content: 'app_excel'; }\n\n.i-app_powerpoint:before {\n  content: 'app_powerpoint'; }\n\n.i-app_sketch:before {\n  content: 'app_sketch'; }\n\n.i-file_zip_o:before {\n  content: 'file_zip_o'; }\n\n.i-file_zip:before {\n  content: 'file_zip'; }\n\n.i-caravel_logo:before {\n  content: 'caravel_logo'; }\n\n.i-usedesign_logo:before {\n  content: 'usedesign_logo'; }\n\n.i-dialpad:before {\n  content: 'dialpad'; }\n\n.i-videocall:before {\n  content: 'videocall'; }\n\n.i-computer_screen_o:before {\n  content: 'computer_screen_o'; }\n\n.i-user_circle_o:before {\n  content: 'user_circle_o'; }\n\n.i-user_circle:before {\n  content: 'user_circle'; }\n\n.i-user_add:before {\n  content: 'user_add'; }\n\n.i-thumb_up_o:before {\n  content: 'thumb_up_o'; }\n\n.i-thumb_down_o:before {\n  content: 'thumb_down_o'; }\n\n.i-emoticon_smile:before {\n  content: 'emoticon_smile'; }\n\n.i-emoticon_smile_simple:before {\n  content: 'emoticon_smile_simple'; }\n\n.i-emoticon_sad:before {\n  content: 'emoticon_sad'; }\n\n.i-emoticon_smile_o:before {\n  content: 'emoticon_smile_o'; }\n\n.i-emoticon_smile_simple_o:before {\n  content: 'emoticon_smile_simple_o'; }\n\n.i-emoticon_sad_o:before {\n  content: 'emoticon_sad_o'; }\n\n.i-mic:before {\n  content: 'mic'; }\n\n.i-mic_off:before {\n  content: 'mic_off'; }\n\n.i-sound_off:before {\n  content: 'sound_off'; }\n\n.i-app_gimp:before {\n  content: 'app_gimp'; }\n\n.i-app_inkscape:before {\n  content: 'app_inkscape'; }\n\n.i-app_scribus:before {\n  content: 'app_scribus'; }\n\n.i-app_libreoffice:before {\n  content: 'app_libreoffice'; }\n\n.i-app_openoffice:before {\n  content: 'app_openoffice'; }\n\n.i-app_blender:before {\n  content: 'app_blender'; }\n\n.i-message_conversation:before {\n  content: 'message_conversation'; }\n\n.i-message_sms:before {\n  content: 'message_sms'; }\n\n.i-thumb_up:before {\n  content: 'thumb_up'; }\n\n.i-thumb_down:before {\n  content: 'thumb_down'; }\n\n.i-user_admin:before {\n  content: 'user_admin'; }\n\n.i-full_screen_off:before {\n  content: 'full_screen_off'; }\n\n.i-emoticon_question_o:before {\n  content: 'emoticon_question_o'; }\n\n.i-emoticon_question:before {\n  content: 'emoticon_question'; }\n\n.i-shape_cross_r:before {\n  content: 'shape_cross_r'; }\n\n.i-shape_cross:before {\n  content: 'shape_cross'; }\n\n.i-shape_rectangle_rounded_o:before {\n  content: 'shape_rectangle_rounded_o'; }\n\n.i-shape_rectangle_rounded_v_o:before {\n  content: 'shape_rectangle_rounded_v_o'; }\n\n.i-emoticon_confused_o:before {\n  content: 'emoticon_confused_o'; }\n\n.i-shape_square_rounded_o:before {\n  content: 'shape_square_rounded_o'; }\n\n.i-shape_rectangle_rounded:before {\n  content: 'shape_rectangle_rounded'; }\n\n.i-shape_rectangle_rounded_v:before {\n  content: 'shape_rectangle_rounded_v'; }\n\n.i-shape_circle:before {\n  content: 'shape_circle'; }\n\n.i-shape_square_rounded:before {\n  content: 'shape_square_rounded'; }\n\n.i-shape_triangle_up_rounded:before {\n  content: 'shape_triangle_up_rounded'; }\n\n.i-emoticon_lost_o:before {\n  content: 'emoticon_lost_o'; }\n\n.i-emoticon_confused:before {\n  content: 'emoticon_confused'; }\n\n.i-emoticon_lost:before {\n  content: 'emoticon_lost'; }\n\n.i-sharp:before {\n  content: 'sharp'; }\n\n.i-magic_wand_spark:before {\n  content: 'magic_wand_spark'; }\n\n.i-magic_wand:before {\n  content: 'magic_wand'; }\n\n.i-phone_hang_up:before {\n  content: 'phone_hang_up'; }\n\n.i-drop_curved:before {\n  content: 'drop_curved'; }\n\n.i-erlenmeyer_bubble:before {\n  content: 'erlenmeyer_bubble'; }\n\n.i-water_outlet:before {\n  content: 'water_outlet'; }\n\n.i-flowmeter:before {\n  content: 'flowmeter'; }\n\n.i-pression_probe:before {\n  content: 'pression_probe'; }\n\n.i-erlenmeyer_chlore:before {\n  content: 'erlenmeyer_chlore'; }\n\n.i-test_tube_boiling:before {\n  content: 'test_tube_boiling'; }\n\n.i-test_tube_slanted_boiling:before {\n  content: 'test_tube_slanted_boiling'; }\n\n.i-test_tube:before {\n  content: 'test_tube'; }\n\n.i-test_tube_slanted:before {\n  content: 'test_tube_slanted'; }\n\n.i-valve:before {\n  content: 'valve'; }\n\n.i-rainy_cloud:before {\n  content: 'rainy_cloud'; }\n\n.i-water_tank:before {\n  content: 'water_tank'; }\n\n.i-adp_data:before {\n  content: 'adp_data'; }\n\n.i-conductivity_low:before {\n  content: 'conductivity_low'; }\n\n.i-lifting_screw:before {\n  content: 'lifting_screw'; }\n\n.i-audio_spectrum:before {\n  content: 'audio_spectrum'; }\n\n.i-water_outlet_alt:before {\n  content: 'water_outlet_alt'; }\n\n.i-plant:before {\n  content: 'plant'; }\n\n.i-plant_o:before {\n  content: 'plant_o'; }\n\n.i-well:before {\n  content: 'well'; }\n\n.i-well_drilling:before {\n  content: 'well_drilling'; }\n\n.i-bacteries:before {\n  content: 'bacteries'; }\n\n.i-troubled_water:before {\n  content: 'troubled_water'; }\n\n.i-speedmeter:before {\n  content: 'speedmeter'; }\n\n.i-lightbulb_flash:before {\n  content: 'lightbulb_flash'; }\n\n.i-erlenmeyer:before {\n  content: 'erlenmeyer'; }\n\n.i-water_level:before {\n  content: 'water_level'; }\n\n.i-arrow_bottom_curved:before {\n  content: 'arrow_bottom_curved'; }\n\n.i-quality_seal:before {\n  content: 'quality_seal'; }\n\n.i-monitoring_pie_screen_o:before {\n  content: 'monitoring_pie_screen_o'; }\n\n.i-monitoring_line_screen_o:before {\n  content: 'monitoring_line_screen_o'; }\n\n.i-monitoring_pie_screen:before {\n  content: 'monitoring_pie_screen'; }\n\n.i-monitoring_line_screen:before {\n  content: 'monitoring_line_screen'; }\n\n.i-back_level_up:before {\n  content: 'back_level_up'; }\n\n.i-back_level_up_inverted:before {\n  content: 'back_level_up_inverted'; }\n\n.i-monitoring_map_screen_o:before {\n  content: 'monitoring_map_screen_o'; }\n\n.i-monitoring_map_screen:before {\n  content: 'monitoring_map_screen'; }\n\n.i-erlenmeyer_trouble:before {\n  content: 'erlenmeyer_trouble'; }\n\n.i-cup_water:before {\n  content: 'cup_water'; }\n\n.i-save_o:before {\n  content: 'save_o'; }\n\n.i-branches:before {\n  content: 'branches'; }\n\n.i-car_headlight_full:before {\n  content: 'car_headlight_full'; }\n\n.i-shape_arc_line_light:before {\n  content: 'shape_arc_line_light'; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: \"lato\", \"Helvetica Neue\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background: #e6f9fc; }\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\", monospace; }\n\ni {\n  margin-top: -4px; }\n", ""]);
 
 
 
@@ -15902,7 +15902,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #dee2e6;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #dee2e6;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #efeff0;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #efeff0;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15917,7 +15917,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0; }\n  #nav .client-name .project-add {\n    color: var(--dark);\n    text-decoration: none; }\n    #nav .client-name .project-add:hover {\n      text-decoration: none; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0; }\n  .nav .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    left: 310px;\n    cursor: pointer; }\n  .nav h5.client-name {\n    margin-left: 1rem; }\n    .nav h5.client-name span {\n      text-transform: uppercase;\n      font-size: 1rem;\n      letter-spacing: 1px;\n      color: #3726bc;\n      font-weight: 700; }\n    .nav h5.client-name .project-add {\n      color: #3726bc;\n      text-decoration: none; }\n      .nav h5.client-name .project-add:hover {\n        text-decoration: none; }\n  .nav ul.projects-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    margin-bottom: 1.25rem; }\n    .nav ul.projects-list li {\n      -webkit-transition: all 0.2s ease-in-out;\n      -moz-transition: all 0.2s ease-in-out;\n      -o-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      padding: 0.35rem 1rem;\n      -moz-border-radius: 3px;\n      -webkit-border-radius: 3px;\n      -ms-border-radius: 3px;\n      -o-border-radius: 3px;\n      -khtml-border-radius: 3px;\n      border-radius: 3px;\n      cursor: pointer;\n      color: #797594; }\n      .nav ul.projects-list li:hover {\n        background: #ffffff; }\n  .nav .project--input,\n  .nav .client--input {\n    position: absolute;\n    z-index: 999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav .project--input h5,\n    .nav .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav .project--input label,\n    .nav .client--input label {\n      color: #797594; }\n    .nav .project--input input, .nav .project--input textarea,\n    .nav .client--input input,\n    .nav .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav .project--input button,\n    .nav .client--input button {\n      margin-right: 0.5rem; }\n  .nav .project--input {\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav .client--input {\n    left: 16px;\n    margin-top: 48px;\n    width: 320px; }\n", ""]);
 
 
 
@@ -15932,22 +15932,7 @@ exports.push([module.i, "#nav {\n  position: relative;\n  right: 0;\n  bottom: 0
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: none;\n      color: rgba(255, 255, 255, 0.5);\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss ***!
-  \**************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".track {\n  padding: 0.65rem 1rem;\n  border-bottom: 1px solid #dee2e6;\n  color: #797594; }\n  .track .row {\n    margin: 0; }\n    .track .row .track-task {\n      width: 10%;\n      color: #171330; }\n    .track .row .track-value {\n      width: 5%; }\n    .track .row .track-comment {\n      width: 46%; }\n    .track .row .track-user {\n      width: 15%; }\n    .track .row .track-date {\n      width: 16%; }\n    .track .row .track-edit,\n    .track .row .track-delete {\n      color: #797594;\n      text-decoration: none;\n      display: block;\n      width: 4%; }\n      .track .row .track-edit:hover,\n      .track .row .track-delete:hover {\n        text-decoration: none; }\n  .track.edited {\n    background: #f8f9fa; }\n    .track.edited .track-task {\n      width: 15%; }\n    .track.edited .track-value {\n      width: 8%; }\n    .track.edited .track-comment {\n      width: 45%; }\n    .track.edited .track-update {\n      width: 13%; }\n    .track.edited .track-cancel {\n      width: 13%; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15962,7 +15947,7 @@ exports.push([module.i, ".track {\n  padding: 0.65rem 1rem;\n  border-bottom: 1p
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-details {\n  transition: all 0.5s ease-in-out; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks .track {\n      padding: 0.65rem 1rem;\n      border-bottom: 1px solid #efeff0;\n      color: #797594; }\n      .project-details .project-tracks .track .row {\n        margin: 0; }\n        .project-details .project-tracks .track .row .track-task {\n          width: 10%;\n          color: #171330; }\n        .project-details .project-tracks .track .row .track-value {\n          width: 5%; }\n        .project-details .project-tracks .track .row .track-comment {\n          width: 46%; }\n        .project-details .project-tracks .track .row .track-user {\n          width: 15%; }\n        .project-details .project-tracks .track .row .track-date {\n          width: 16%; }\n        .project-details .project-tracks .track .row .track-edit,\n        .project-details .project-tracks .track .row .track-delete {\n          color: #797594;\n          text-decoration: none;\n          display: block;\n          width: 4%; }\n          .project-details .project-tracks .track .row .track-edit:hover,\n          .project-details .project-tracks .track .row .track-delete:hover {\n            text-decoration: none; }\n      .project-details .project-tracks .track.edited {\n        background: #f8f9fa; }\n        .project-details .project-tracks .track.edited .track-task {\n          width: 15%; }\n        .project-details .project-tracks .track.edited .track-value {\n          width: 8%; }\n        .project-details .project-tracks .track.edited .track-comment {\n          width: 45%; }\n        .project-details .project-tracks .track.edited .track-update {\n          width: 13%; }\n        .project-details .project-tracks .track.edited .track-cancel {\n          width: 13%; }\n", ""]);
 
 
 
@@ -15977,7 +15962,7 @@ exports.push([module.i, ".project-details {\n  transition: all 0.5s ease-in-out;
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".fade-enter {\n  opacity: 0; }\n\n.fade-enter.fade-enter-active {\n  opacity: 1;\n  transition: opacity 250ms ease-in; }\n\n.fade-leave {\n  opacity: 1; }\n\n.fade-leave.fade-leave-active {\n  opacity: 0;\n  transition: opacity 125ms ease-in; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.fade-enter {\n  opacity: 0; }\n\n.fade-enter.fade-enter-active {\n  opacity: 1;\n  -webkit-transition: opacity 250ms ease-in;\n  -moz-transition: opacity 250ms ease-in;\n  -o-transition: opacity 250ms ease-in;\n  transition: opacity 250ms ease-in; }\n\n.fade-leave {\n  opacity: 1; }\n\n.fade-leave.fade-leave-active {\n  opacity: 0;\n  -webkit-transition: opacity 125ms ease-in;\n  -moz-transition: opacity 125ms ease-in;\n  -o-transition: opacity 125ms ease-in;\n  transition: opacity 125ms ease-in; }\n", ""]);
 
 
 
@@ -16052,7 +16037,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".app {\n  background: #f5f5f5; }\n  .app #wrapper {\n    padding-top: 2rem; }\n", ""]);
+exports.push([module.i, ".app {\n  background: #e6f9fc; }\n  .app #wrapper {\n    padding-top: 2rem; }\n", ""]);
 
 
 
@@ -16097,7 +16082,7 @@ exports.push([module.i, "#main-navigation {\n  border-bottom: 1px solid #cee6ff;
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  border: 1px solid #00000033;\n  padding: 0.75rem 1rem; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 8px;\n    top: 50%; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.project-selector .dropdown-toggle {\n  width: 100%;\n  text-align: left;\n  padding: 0.5rem 0.75rem; }\n  .project-selector .dropdown-toggle .project-placeholder {\n    margin-top: 12px;\n    margin-bottom: 12px;\n    margin-left: 8px; }\n  .project-selector .dropdown-toggle::after {\n    position: absolute;\n    right: 12px;\n    top: 50%; }\n\n.dark-mode {\n  color: #fff; }\n  .dark-mode .dropdown-toggle {\n    border: 1px solid rgba(255, 255, 255, 0.35);\n    color: #fff; }\n    .dark-mode .dropdown-toggle .project-name {\n      margin-bottom: 0; }\n    .dark-mode .dropdown-toggle .client-name {\n      opacity: 0.5;\n      margin-bottom: 0; }\n", ""]);
 
 
 
@@ -78335,7 +78320,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ClientsManager).call(this, props));
     _this.state = {
-      isAddingClient: false
+      isAddingClient: false,
+      search: ''
     };
     _this.addClient = _this.addClient.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -78358,14 +78344,19 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      console.log("reset navigation");
+      // console.log("reset navigation");
       this.setState({
         isAddingClient: false
+      });
+      this.setState({
+        search: e.target.value
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-header pane-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -78380,8 +78371,13 @@ function (_Component) {
         id: "user-input--name",
         type: "text",
         "aria-label": "Input",
-        placeholder: "Search"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        placeholder: "Search",
+        onChange: this.handleChange
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-reset"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "ico "
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group"
@@ -78429,10 +78425,18 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddClient__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: this.handleChange
       })) : null, this.props.mainStore.clientsDefinitions.map(function (c) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          key: c._id,
-          clientid: c._id
-        });
+        var cn = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__["getClientName"])(_this2.props.mainStore.clientsDefinitions, c._id);
+        var cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var sr = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i"));
+
+        if (sr !== -1 || srNoAccent !== -1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Client__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            key: c._id,
+            clientid: c._id
+          });
+        }
       }))));
     }
   }]);
@@ -78860,7 +78864,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProjectsManager).call(this, props));
     _this.state = {
-      isAddingProject: false
+      isAddingProject: false,
+      search: ''
     };
     _this.addProject = _this.addProject.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -78883,14 +78888,18 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      // console.log("reset navigation");
       this.setState({
         isAddingProject: false
+      });
+      this.setState({
+        search: e.target.value
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-header pane-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -78905,7 +78914,8 @@ function (_Component) {
         id: "user-input--name",
         type: "text",
         "aria-label": "Input",
-        placeholder: "Search"
+        placeholder: "Search",
+        onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -78960,15 +78970,32 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onChange: this.handleChange
       })) : null, this.props.mainStore.projectsDefinitions.map(function (p) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          key: p._id,
-          projectid: p._id,
-          clientid: p.client,
-          description: p.description,
-          budget: p.budget,
-          hasTracks: p.hasTracks,
-          tasks: p.tasks
-        });
+        var pn = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__["getProjectName"])(_this2.props.mainStore.projectsDefinitions, p._id);
+        var pnNoAccent = pn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var cn = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__["getClientName"])(_this2.props.mainStore.clientsDefinitions, p.client);
+        var cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var srProject = pn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srProjectNoAccent = pnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srClient = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srClientNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        console.log(srProjectNoAccent); // console.log(sr);
+
+        if (srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            key: p._id,
+            projectid: p._id,
+            clientid: p.client,
+            description: p.description,
+            budget: p.budget,
+            hasTracks: p.hasTracks,
+            tasks: p.tasks,
+            currentSearch: _this2.state.search
+          });
+        }
       }))));
     }
   }]);
@@ -79287,6 +79314,10 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UsersManager).call(this, props));
     _this.changeOrder = _this.changeOrder.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.state = {
+      search: ''
+    };
     return _this;
   }
 
@@ -79296,8 +79327,18 @@ function (_Component) {
       console.log("sort !");
     }
   }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        search: e.target.value
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      console.log(this.state.search);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-header pane-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79312,7 +79353,8 @@ function (_Component) {
         id: "user-input--name",
         type: "text",
         "aria-label": "Input",
-        placeholder: "Search"
+        placeholder: "Search",
+        onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79351,14 +79393,26 @@ function (_Component) {
       }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.usersDefinitions.map(function (u) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_User__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          key: u._id,
-          userid: u._id,
-          firstName: u.firstName,
-          lastName: u.lastName,
-          isAdmin: u.isAdmin,
-          isFirst: u.isFirst
-        });
+        var fn = u.firstName;
+        var ln = u.lastName;
+        var fnNoAccent = fn.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // le normalize + replace sert à ne pas prendre en compte les accents pour chercher
+
+        var lnNoAccent = ln.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var srf = fn.search(new RegExp(_this2.state.search, "i"));
+        var srl = ln.search(new RegExp(_this2.state.search, "i"));
+        var srfNoAccent = fnNoAccent.search(new RegExp(_this2.state.search, "i"));
+        var srlNoAccent = lnNoAccent.search(new RegExp(_this2.state.search, "i"));
+
+        if (srf !== -1 || srl !== -1 || srfNoAccent !== -1 || srlNoAccent !== -1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_User__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            key: u._id,
+            userid: u._id,
+            firstName: u.firstName,
+            lastName: u.lastName,
+            isAdmin: u.isAdmin,
+            isFirst: u.isFirst
+          });
+        }
       }))));
     }
   }]);
@@ -79785,7 +79839,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "client--input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -79826,9 +79880,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-addons-css-transition-group */ "./node_modules/react-addons-css-transition-group/index.js");
+/* harmony import */ var react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79852,7 +79908,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["observer"])(
+
+var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(AddProject, _Component);
@@ -79882,7 +79939,7 @@ function (_Component) {
       budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 
       if (!this.state.errorOnName && !this.state.errorOnBudget) {
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target); // on lance la requête
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target); // on lance la requête
 
         this.props.mainStore.postNewProject(fd);
         this.props.onChange();
@@ -79903,9 +79960,9 @@ function (_Component) {
       var nameAttr = this.state.errorOnName ? "is-invalid" : null;
       var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "client--input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "project--input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Add a project to ", this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -80057,7 +80114,12 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      console.log(this.props.currentSearch);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        transitionName: "fade",
+        transitionEnterTimeout: 500,
+        transitionLeaveTimeout: 300
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "client-name d-flex justify-content-between align-items-center "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "project-add d-flex align-items-center",
@@ -80069,15 +80131,22 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "ico",
         onClick: this.addProject
-      }, "plus_circle"))), this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        onChange: this.handleChange,
-        clientId: this.props.id
-      }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      }, "plus_circle"))), this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onChange: this.handleChange,
+        clientId: this.props.id,
+        name: this.props.name,
+        key: this.props.id
+      })) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "projects-list"
       }, this.props.mainStore.projectsDefinitions.map(function (p) {
-        if (p.client === _this2.props.id) {
+        var sr = p.name.search(new RegExp(_this2.props.currentSearch, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        if (p.client === _this2.props.id && sr !== -1) {
+          console.log(sr);
           _this2.state.hasProject = true;
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
             key: p._id,
@@ -80087,7 +80156,7 @@ function (_Component) {
             }
           }, p.name);
         }
-      })), this.checkNoProject()));
+      }), this.checkNoProject())));
     }
   }]);
 
@@ -80155,10 +80224,13 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Navigation).call(this, props));
     _this.state = {
-      isAddingClient: false
+      isAddingClient: false,
+      search: '',
+      isSearching: false
     };
     _this.addClient = _this.addClient.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.resetSearch = _this.resetSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -80172,23 +80244,45 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      console.log("reset navigation");
+      // console.log("reset navigation");
       this.setState({
         isAddingClient: false
+      });
+      this.setState({
+        search: e.target.value,
+        isSearching: true
+      }); // console.log(e.target.value);
+    }
+  }, {
+    key: "resetSearch",
+    value: function resetSearch() {
+      var searchInput = document.querySelector(".form-control");
+      searchInput.value = '';
+      this.setState({
+        search: '',
+        isSearching: false
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form-control form-control-dark w-100 mb-3",
+      }, this.state.isSearching ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search--reset",
+        onClick: this.resetSearch
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "ico ico-medium"
+      }, "cross_circle")) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control form-control-dark w-100 mb-4",
         type: "text",
         placeholder: "Search",
-        "aria-label": "Search"
+        "aria-label": "Search",
+        onChange: this.handleChange
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         transitionName: "fade",
         transitionEnterTimeout: 500,
@@ -80197,7 +80291,8 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ListClientProjects__WEBPACK_IMPORTED_MODULE_3__["default"], {
           key: c._id,
           name: c.name,
-          id: c._id
+          id: c._id,
+          currentSearch: _this2.state.search
         });
       })), this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AddClient__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.handleChange
@@ -80632,7 +80727,7 @@ function (_Component) {
       var taskAttr = this.state.errorOnTask ? "is-invalid" : null;
       console.log(this.state.selectedTask);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header track-input container pt-3"
+        className: "card-header track-input container"
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
@@ -80645,7 +80740,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row mb-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-4"
+        className: "col-4 pr-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control form-control-lg w-100 " + timeAttr,
         name: "value",
@@ -80657,7 +80752,8 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        onChange: this.setActiveProject
+        onChange: this.setActiveProject,
+        darkMode: "true"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row mb-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80682,7 +80778,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-primary btn-block"
+        className: "btn btn-primary btn-block track-input--submit"
       }, "Submit")))));
     }
   }]);
@@ -80713,8 +80809,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/styles.scss");
 /* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var helpers_ui__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! helpers/ui */ "./src/shared/helpers/ui.js");
-/* harmony import */ var helpers_ui__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(helpers_ui__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80737,7 +80831,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import axios from "axios";
-
 
 
 
@@ -80887,8 +80980,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80906,7 +80997,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -81102,36 +81192,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss":
-/*!*********************************************************************************************!*\
-  !*** ./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../../node_modules/sass-loader/dist/cjs.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Dashboard/components/Project/components/Task/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./src/screens/App/components/Dashboard/components/Project/index.jsx":
 /*!***************************************************************************!*\
   !*** ./src/screens/App/components/Dashboard/components/Project/index.jsx ***!
@@ -81251,10 +81311,20 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.mainStore.activeProjectDetails.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.activeProjectDetails.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.mainStore.activeProjectDetails.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.stats()))), !isTimeOver ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "project-details--client"
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "project-details--name"
+      }, this.props.mainStore.activeProjectDetails.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "project-details--description"
+      }, this.props.mainStore.activeProjectDetails.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "project-details--budget-label"
+      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "project-details--budget"
+      }, this.props.mainStore.activeProjectDetails.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null))), !isTimeOver ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress",
         "data-toggle": "tooltip",
         "data-placement": "top",
@@ -82632,6 +82702,7 @@ function (_Component) {
     }; // binds
 
     _this.handleDropdownChange = _this.handleDropdownChange.bind(_assertThisInitialized(_this));
+    _this.checkDarkMode = _this.checkDarkMode.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -82657,6 +82728,13 @@ function (_Component) {
       this.props.onChange(projectId);
     }
   }, {
+    key: "checkDarkMode",
+    value: function checkDarkMode() {
+      if (this.props.darkMode == "true") {// return "dark-mode";
+      } else {// return null;
+        }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -82664,19 +82742,33 @@ function (_Component) {
       // console.log(this.state.activeProject);
       // const activeClient = this.props.mainStore.projectsDefinitions[0].client;
       // const activeClient = this.props.mainStore.projectsDefinitions.filter(n => n._id === this.state.activeProject).client;
-      console.log("/////////"); // console.log(activeClient);
+      console.log("/////////");
+      var darkClass;
+
+      if (this.props.darkMode == "true") {
+        darkClass = "dark-mode";
+      } else {
+        darkClass = "light-mode";
+      } // console.log(activeClient);
+
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: darkClass
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown project-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "dropdown-toggle btn",
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.state.activeProject == null ? "Select a project" : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.activeProject == null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "project-placeholder"
+      }, "Select a project") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
-      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "text-muted small ml-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "project-name"
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "client-name"
       }, this.state.relatedClient))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
@@ -82691,7 +82783,7 @@ function (_Component) {
         }, p.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "text-muted small related-client"
         }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(_this2.props.mainStore.clientsDefinitions, p.client)));
-      })));
+      }))));
     }
   }]);
 
@@ -83209,32 +83301,6 @@ function clientDelete(clientId) {
   });
   return result;
 }
-
-/***/ }),
-
-/***/ "./src/shared/helpers/ui.js":
-/*!**********************************!*\
-  !*** ./src/shared/helpers/ui.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// let trackManager;
-// let projectDetails;
-// window.onload = function(){
-//     trackManager = document.querySelector('.track-manager');
-//     projectDetails = document.querySelector('.project-details');
-//     newHeight();
-// }
-// window.onresize = function(){
-//     projectDetails = document.querySelector('.project-details');
-//     newHeight();
-// }
-// function newHeight(){
-//     let newHeight = window.innerHeight - 120;
-//     trackManager.setAttribute("style", "height: "+newHeight+"px;");
-//     projectDetails.setAttribute("style", "height: "+newHeight+"px;");
-// }
 
 /***/ }),
 

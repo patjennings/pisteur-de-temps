@@ -15,33 +15,52 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
     constructor(props){
 	super(props);
 	this.state = {
-	    isAddingClient: false
+	    isAddingClient: false,
+	    search: '',
+	    isSearching: false
 	};
 	this.addClient = this.addClient.bind(this);
 	this.handleChange = this.handleChange.bind(this);
+	this.resetSearch = this.resetSearch.bind(this);
     }
-
+    
     addClient(){
 	this.setState({isAddingClient: true});
     }
 
     handleChange(e){
-	console.log("reset navigation");
+	// console.log("reset navigation");
 	this.setState({isAddingClient: false});
+	this.setState({
+	    search: e.target.value,
+	    isSearching: true
+	});
+	// console.log(e.target.value);
+    }
+    resetSearch(){
+	const searchInput = document.querySelector(".form-control");
+	searchInput.value = '';
+	this.setState({
+	    search: '',
+	    isSearching: false
+	})
     }
 
     render() {
+	
+	
 	return (
 	      <div className="row nav">
 		<div className="col-12">
-		  <input className="form-control form-control-dark w-100 mb-3" type="text" placeholder="Search" aria-label="Search"/>
+		  {this.state.isSearching ? <div className="search--reset" onClick={this.resetSearch}><i className="ico ico-medium">cross_circle</i></div> : null }
+		  <input className="form-control form-control-dark w-100 mb-4" type="text" placeholder="Search" aria-label="Search" onChange={this.handleChange}/>
 		  <ReactCSSTransitionGroup
 		    transitionName="fade"
 		    transitionEnterTimeout={500}
 		    transitionLeaveTimeout={300}>
 		    {this.props.mainStore.clientsDefinitions.map(c => {
 			return (
-			    <ListClientProjects key={c._id} name={c.name} id={c._id}/>
+			    <ListClientProjects key={c._id} name={c.name} id={c._id} currentSearch={this.state.search}/>
 			);
 		    })}
 	    </ReactCSSTransitionGroup>

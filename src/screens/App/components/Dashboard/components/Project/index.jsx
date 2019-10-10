@@ -63,15 +63,15 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	      <div className="card project-details" style={{height: this.state.height+"px"}}>
 		<div className="card-header">
 		  <div className="row">
-		    <div className="col-6">
-		      <p>{getClientName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client)}</p>
-		      <h3>{this.props.mainStore.activeProjectDetails.name}</h3>
-		      <p>{this.props.mainStore.activeProjectDetails.description}</p>
+		    <div className="col-9">
+		      <p className="project-details--client">{getClientName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client)}</p>
+		      <h3 className="project-details--name">{this.props.mainStore.activeProjectDetails.name}</h3>
+		      <p className="project-details--description">{this.props.mainStore.activeProjectDetails.description}</p>
 		    </div>
-		    <div className="col-6">
-		      <p>Budget</p>
-		      <h4>{this.props.mainStore.activeProjectDetails.budget}</h4>
-		      <p>{this.stats()}</p>
+		    <div className="col-3">
+		      <p className="project-details--budget-label">Budget</p>
+		      <h4 className="project-details--budget">{this.props.mainStore.activeProjectDetails.budget}</h4>
+		      <p>{/*{this.stats()}*/}</p>
 		    </div>
 		  </div>
 		  

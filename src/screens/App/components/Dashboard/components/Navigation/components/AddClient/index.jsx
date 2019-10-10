@@ -47,7 +47,7 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	
 	return (
 	    <div className="client--input">
-	      <div className="row">
+	      <div className="">
 		<form onSubmit={this.handleSubmit}>
 		  <label htmlFor="client-input--name">Enter client name</label>
 		  <input className={"form-control "+nameAttr}

@@ -12,7 +12,8 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
     constructor(props){
 	super(props);
 	this.state = {
-	    isAddingClient: false
+	    isAddingClient: false,
+	    search: ''
 	};
 	this.addClient = this.addClient.bind(this);
 	this.handleChange = this.handleChange.bind(this);
@@ -27,8 +28,11 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
     }
 
     handleChange(e){
-	console.log("reset navigation");
+	// console.log("reset navigation");
 	this.setState({isAddingClient: false});
+	this.setState({
+	    search: e.target.value
+	});
     }
     
     render() {
@@ -44,7 +48,9 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
   			       id={"user-input--name"}
   			       type="text"
   			       aria-label="Input"
-			       placeholder="Search"/>
+			       placeholder="Search"
+			       onChange={this.handleChange}/>
+			<div className="search-reset"><i className="ico "/></div>
 		      </div>
 		      <div className="col-5">
 			<div className="btn-group">
@@ -76,8 +82,18 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
 	      </div>
 	      <div className="projects-content pane-content">
 		<ul>
-		  { this.state.isAddingClient ? <li className="new"><AddClient onChange={this.handleChange} /></li> : null }
-		  {this.props.mainStore.clientsDefinitions.map(c => <Client key={c._id} clientid={c._id}/>)}
+		  {this.state.isAddingClient ? <li className="new"><AddClient onChange={this.handleChange} /></li> : null }
+		  {this.props.mainStore.clientsDefinitions.map(c => {
+		      const cn = getClientName(this.props.mainStore.clientsDefinitions, c._id);
+		      const cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+		      const sr = cn.search(new RegExp(this.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+		      const srNoAccent = cnNoAccent.search(new RegExp(this.state.search, "i"));
+		      if(sr !== -1 || srNoAccent !== -1){
+			  return  <Client key={c._id} clientid={c._id}/>
+		      }
+
+			  
+		  })}
                 </ul>
 	      </div>
             </div>

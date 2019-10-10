@@ -1,16 +1,39 @@
+@import "assets/styles/colors";
+@import "assets/styles/_mixins";
+
 .project-selector{
+    // @include border-radius(3px);
     .dropdown-toggle{
 	width: 100%;
 	text-align: left;
-	border: 1px solid #00000033;
-	padding: 0.75rem 1rem;
-	// height: 56px;
+	padding: 0.5rem 0.75rem;
+
+	.project-placeholder{
+	    margin-top: 12px;
+	    margin-bottom: 12px;
+	    margin-left: 8px;
+	}
 
 	&::after{
 	    position: absolute;
-	    right: 8px;
+	    right: 12px;
 	    top: 50%;
 	}
     }
     
+}
+.dark-mode{
+     color: #fff;
+    .dropdown-toggle{
+	border: 1px solid rgba(255,255,255,0.35);
+	color: #fff;
+	
+	.project-name{
+	    margin-bottom: 0;
+	}
+	.client-name{
+	    opacity: 0.5;
+	    margin-bottom: 0;
+	}
+    }
 }

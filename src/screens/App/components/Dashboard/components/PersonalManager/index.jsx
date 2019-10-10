@@ -10,7 +10,6 @@ import {inject, observer} from "mobx-react";
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
 import "./styles.scss";
-import "helpers/ui";
 
 const PersonalManager = inject("mainStore", "authStore")(observer(class PersonalManager extends Component {
     constructor(props){

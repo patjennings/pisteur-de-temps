@@ -39,28 +39,43 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
     }
     
     render() {
+	console.log(this.props.currentSearch);
+	
 	return (
-	    <div>
-	      <h5 className="client-name d-flex justify-content-between align-items-center ">
-		<span>{this.props.name}</span>
-		<a className="project-add d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add a project"><i className="ico" onClick={this.addProject}>plus_circle</i></a>
-	      </h5>
-	      { this.state.isAddingProject ? <AddProject onChange={this.handleChange} clientId={this.props.id}/> : null }
-	      <ul>
-		<ReactCSSTransitionGroup
-		      transitionName="fade"
-		      transitionEnterTimeout={500}
-		      transitionLeaveTimeout={300}>
-		{this.props.mainStore.projectsDefinitions.map(p => {
-		    if(p.client === this.props.id){
-			this.state.hasProject = true;
-			return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
-		    }
-		})}
-		</ReactCSSTransitionGroup>
-		{this.checkNoProject()}
-	      </ul>
-	    </div>
+	    <ReactCSSTransitionGroup
+	      transitionName="fade"
+	      transitionEnterTimeout={500}
+	      transitionLeaveTimeout={300}>
+	      <div>
+		<h5 className="client-name d-flex justify-content-between align-items-center ">
+		  <span>{this.props.name}</span>
+		  <a className="project-add d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add a project"><i className="ico" onClick={this.addProject}>plus_circle</i></a>
+		</h5>
+		
+		{ this.state.isAddingProject ?
+		    <ReactCSSTransitionGroup
+			  transitionName="fade"
+			  transitionEnterTimeout={500}
+			  transitionLeaveTimeout={300}>
+			  <AddProject onChange={this.handleChange} clientId={this.props.id} name={this.props.name} key={this.props.id}/>
+			</ReactCSSTransitionGroup>
+		    : null }
+		    <ul className="projects-list">
+		      
+		      {this.props.mainStore.projectsDefinitions.map(p => {
+			  const sr = p.name.search(new RegExp(this.props.currentSearch, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+			  if(p.client === this.props.id && sr !== -1){
+
+			      console.log(sr);
+			      this.state.hasProject = true;
+			      return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
+			  }
+		      })}
+		      
+		      {this.checkNoProject()}
+		    </ul>
+	      </div>
+	    </ReactCSSTransitionGroup>
 	);
     }
 }));

@@ -55,3 +55,9 @@
   -khtml-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin box-shadow($h, $v, $radius, $spread, $color){
+    -webkit-box-shadow: $h $v $radius $spread $color;
+    -moz-box-shadow: $h $v $radius $spread $color;
+    box-shadow: $h $v $radius $spread $color;
+}

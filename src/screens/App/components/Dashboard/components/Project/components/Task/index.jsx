@@ -8,8 +8,6 @@ import {inject, observer} from "mobx-react";
 
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
-import "./styles.scss";
-
 const Task = inject("mainStore", "authStore")(observer(class Task extends Component {
     constructor(props){
 	super(props);

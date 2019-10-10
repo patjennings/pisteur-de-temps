@@ -1,13 +1,112 @@
 @import "assets/styles/colors";
+@import "assets/styles/_mixins";
 
 .project-details{
     transition: all 0.5s ease-in-out;
+    border: none;
 
     .card-header{
-	
+	background: $box-background;
+	padding-top: 1.5rem;
+
+	.row{
+	    margin-bottom: 1.5rem;
+	    
+	    .project-details--client{
+		color: $main-font-light;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	    }
+	    .project-details--name{
+		color: $accent-color;
+		font-size: 2rem;
+	    }
+	    .project-details--description{
+		color: $main-font-light;
+	    }
+	    .project-details--budget-label{
+		color: $main-font-light;
+		margin-bottom: 0.5rem;
+	    }
+	    .project-details--budget{
+		color: $accent-color;
+		font-size: 2.5rem;
+	    }
+	}
+
+	.progress{
+	    height: 0.5rem;
+
+	    .progress-bar{
+		@include border-radius(0.25rem);
+	    }
+	}
+
     }
     .project-tracks{
 	min-height: 40%;
 	overflow-y: auto;
+	
+	.track{
+	    padding: 0.65rem 1rem;
+	    border-bottom: 1px solid $border;
+	    color: $main-font-light;
+	    
+	    .row{
+		margin: 0;
+
+		.track-task{
+		    width:10%;
+		    color: $main-font;
+		}
+		.track-value{
+		    width:5%;
+		}
+		.track-comment{
+		    width:46%;
+		}
+		.track-user{
+		    width:15%;
+		}
+		.track-date{
+		    width:16%;
+		}
+		.track-edit,
+		.track-delete{
+		    color: $main-font-light;
+		    text-decoration: none;
+		    display: block;
+		    width: 4%;
+		    &:hover{
+			text-decoration: none;
+		    }
+		}
+	    }
+
+	    &.edited{
+		background: $box-edit;
+
+		.track-task{
+		    width:15%;
+		}
+		.track-value{
+		    width:8%;
+		}
+		.track-comment{
+		    width:45%;
+		}
+		.track-update{
+		    width:13%;
+		}
+		.track-cancel{
+		    width:13%;
+		}
+	    }
+	    
+	}
+
     }
 }

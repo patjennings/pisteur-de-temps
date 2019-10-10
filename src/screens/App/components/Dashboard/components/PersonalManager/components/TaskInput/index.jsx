@@ -77,7 +77,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	console.log(this.state.selectedTask);
 		
 	return (
-	    <div className="card-header track-input container pt-3">
+	    <div className="card-header track-input container">
 	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
 		    You need {this.state.errorOnTime ? "a time spent, " : null }{ this.state.errorOnTask ? "a task, " : null }{ this.state.errorOnProject ? "a related project " : null  }in order to complete
 	      </div> : null }
@@ -88,7 +88,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	      </div>
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row mb-3">
-		  <div className="col-4">
+		  <div className="col-4 pr-0">
 		    <input className={"form-control form-control-lg w-100 "+timeAttr}
 			   name="value"
 			   id="track-input--value"
@@ -98,7 +98,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 			   data-parse="number"/>
 		  </div>
 		  <div className="col-8">
-		    <ProjectsSelector onChange={this.setActiveProject} />
+		    <ProjectsSelector onChange={this.setActiveProject} darkMode="true"/>
 		  </div>
 		</div>
 		<div className="row mb-3">
@@ -119,7 +119,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 		<div className="row mb-3">
 		  <div className="col-12">
 		    <button
-		      className="btn btn-primary btn-block">Submit</button>
+		      className="btn btn-primary btn-block track-input--submit">Submit</button>
 		  </div>
 		</div>
 	      </form>

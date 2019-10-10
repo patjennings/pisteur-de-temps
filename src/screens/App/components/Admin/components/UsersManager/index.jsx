@@ -11,14 +11,23 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
     constructor(props){
 	super(props);
 	this.changeOrder = this.changeOrder.bind(this);
+	this.handleChange = this.handleChange.bind(this);
+	this.state = {
+	    search: ''
+	}
     }
     changeOrder(){
 	console.log("sort !");
     }
+    handleChange(e){
+	this.setState({
+	    search: e.target.value
+	});
+    }
 
     render() {
+	console.log(this.state.search);
 	return (
-	   
 
 	    <div>
 	      <div className="projects-header pane-header">
@@ -31,7 +40,8 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
   			       id={"user-input--name"}
   			       type="text"
   			       aria-label="Input"
-			       placeholder="Search"/>
+			       placeholder="Search"
+			       onChange={this.handleChange}/>
 		      </div>
 		      <div className="col-6">
 			<div className="btn-group">
@@ -62,7 +72,24 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 	      </div>
 	      <div className="projects-content pane-content">
 		<ul>
-		  {this.props.mainStore.usersDefinitions.map(u => <User key={u._id} userid={u._id} firstName={u.firstName} lastName={u.lastName} isAdmin={u.isAdmin} isFirst={u.isFirst}/>)}
+		  {this.props.mainStore.usersDefinitions.map(u => {
+		      const fn = u.firstName;
+		      const ln = u.lastName;
+		      const fnNoAccent = fn.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // le normalize + replace sert à ne pas prendre en compte les accents pour chercher
+		      const lnNoAccent = ln.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+
+		      const srf = fn.search(new RegExp(this.state.search, "i"));
+		      const srl = ln.search(new RegExp(this.state.search, "i"));
+		      const srfNoAccent = fnNoAccent.search(new RegExp(this.state.search, "i"));
+		      const srlNoAccent = lnNoAccent.search(new RegExp(this.state.search, "i"));
+		      
+		      if(srf !== -1 || srl !== -1 || srfNoAccent !== -1 || srlNoAccent !== -1){
+			  return <User key={u._id} userid={u._id} firstName={u.firstName} lastName={u.lastName} isAdmin={u.isAdmin} isFirst={u.isFirst}/>			  
+		      }
+
+			  
+		  })}
                 </ul>
 	      </div>
             </div>
