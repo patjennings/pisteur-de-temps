@@ -50,63 +50,61 @@
 	min-height: 40%;
 	overflow-y: auto;
 	
-	.track{
-	    padding: 0.65rem 1rem;
-	    border-bottom: 1px solid $border;
+	tr.track{
+	    // 	margin: 0;
+	    // 	padding: 0.65rem 1rem;
+	    // border-bottom: 1px solid $border;
 	    color: $main-font-light;
-	    
-	    .row{
-		margin: 0;
 
-		.track-task{
-		    width:10%;
-		    color: $main-font;
-		}
-		.track-value{
-		    width:5%;
-		}
-		.track-comment{
-		    width:46%;
-		}
-		.track-user{
-		    width:15%;
-		}
-		.track-date{
-		    width:16%;
-		}
-		.track-edit,
-		.track-delete{
-		    color: $main-font-light;
+	    .track-task{
+		// width:10%;
+		color: $main-font;
+	    }
+	    .track-value{
+		width:5%;
+	    }
+	    .track-comment{
+		width:46%;
+	    }
+	    .track-user{
+		width:15%;
+	    }
+	    .track-date{
+		width:16%;
+	    }
+	    .track-edit,
+	    .track-delete{
+		color: $main-font-light;
+		text-decoration: none;
+		display: inline-block;
+		width: 4%;
+		
+		&:hover{
 		    text-decoration: none;
-		    display: block;
-		    width: 4%;
-		    &:hover{
-			text-decoration: none;
-		    }
 		}
 	    }
-
-	    &.edited{
-		background: $box-edit;
-
-		.track-task{
-		    width:15%;
-		}
-		.track-value{
-		    width:8%;
-		}
-		.track-comment{
-		    width:45%;
-		}
-		.track-update{
-		    width:13%;
-		}
-		.track-cancel{
-		    width:13%;
-		}
+	    .track-delete{
+		left: 24px;
 	    }
-	    
 	}
+	tr.edited{
+	    background: $box-edit;
 
+	    .track-task{
+		width:15%;
+	    }
+	    .track-value{
+		width:8%;
+	    }
+	    .track-comment{
+		width:45%;
+	    }
+	    .track-update{
+		width:13%;
+	    }
+	    .track-cancel{
+		width:13%;
+	    }
+	}
     }
 }

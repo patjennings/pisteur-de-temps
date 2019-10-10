@@ -15947,7 +15947,7 @@ exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks .track {\n      padding: 0.65rem 1rem;\n      border-bottom: 1px solid #efeff0;\n      color: #797594; }\n      .project-details .project-tracks .track .row {\n        margin: 0; }\n        .project-details .project-tracks .track .row .track-task {\n          width: 10%;\n          color: #171330; }\n        .project-details .project-tracks .track .row .track-value {\n          width: 5%; }\n        .project-details .project-tracks .track .row .track-comment {\n          width: 46%; }\n        .project-details .project-tracks .track .row .track-user {\n          width: 15%; }\n        .project-details .project-tracks .track .row .track-date {\n          width: 16%; }\n        .project-details .project-tracks .track .row .track-edit,\n        .project-details .project-tracks .track .row .track-delete {\n          color: #797594;\n          text-decoration: none;\n          display: block;\n          width: 4%; }\n          .project-details .project-tracks .track .row .track-edit:hover,\n          .project-details .project-tracks .track .row .track-delete:hover {\n            text-decoration: none; }\n      .project-details .project-tracks .track.edited {\n        background: #f8f9fa; }\n        .project-details .project-tracks .track.edited .track-task {\n          width: 15%; }\n        .project-details .project-tracks .track.edited .track-value {\n          width: 8%; }\n        .project-details .project-tracks .track.edited .track-comment {\n          width: 45%; }\n        .project-details .project-tracks .track.edited .track-update {\n          width: 13%; }\n        .project-details .project-tracks .track.edited .track-cancel {\n          width: 13%; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks tr.track {\n      color: #797594; }\n      .project-details .project-tracks tr.track .track-task {\n        color: #171330; }\n      .project-details .project-tracks tr.track .track-value {\n        width: 5%; }\n      .project-details .project-tracks tr.track .track-comment {\n        width: 46%; }\n      .project-details .project-tracks tr.track .track-user {\n        width: 15%; }\n      .project-details .project-tracks tr.track .track-date {\n        width: 16%; }\n      .project-details .project-tracks tr.track .track-edit,\n      .project-details .project-tracks tr.track .track-delete {\n        color: #797594;\n        text-decoration: none;\n        display: inline-block;\n        width: 4%; }\n        .project-details .project-tracks tr.track .track-edit:hover,\n        .project-details .project-tracks tr.track .track-delete:hover {\n          text-decoration: none; }\n      .project-details .project-tracks tr.track .track-delete {\n        left: 24px; }\n    .project-details .project-tracks tr.edited {\n      background: #f8f9fa; }\n      .project-details .project-tracks tr.edited .track-task {\n        width: 15%; }\n      .project-details .project-tracks tr.edited .track-value {\n        width: 8%; }\n      .project-details .project-tracks tr.edited .track-comment {\n        width: 45%; }\n      .project-details .project-tracks tr.edited .track-update {\n        width: 13%; }\n      .project-details .project-tracks tr.edited .track-cancel {\n        width: 13%; }\n", ""]);
 
 
 
@@ -81103,10 +81103,14 @@ function (_Component) {
       // console.log(this.props.date);
       // console.log(this.props.mainStore.activeProjectDetails._id);
       if (this.state.isEdited) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           className: "track edited"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          colspan: "6"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "container-fluid"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81147,41 +81151,41 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")))));
+        }, "Cancel")))))));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           className: "track"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "row"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-task"
-        }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-value"
-        }, this.props.value), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.value), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-comment"
-        }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-user"
-        }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getUserName"])(this.props.mainStore.usersDefinitions, this.props.user)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getUserName"])(this.props.mainStore.usersDefinitions, this.props.user)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-date"
-        }, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "track-edit d-flex align-items-center",
+        }, Object(utils_readableDate__WEBPACK_IMPORTED_MODULE_1__["readableDate"])(this.props.date)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "track-actions"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "track-edit",
           href: "#",
           "data-toggle": "tooltip",
           "data-placement": "top",
           title: "Edit",
           onClick: this.editItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-small"
-        }, "pen")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "track-delete d-flex align-items-center",
+          className: "ico ico-medium"
+        }, "pen"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "track-delete",
           href: "#",
           "data-toggle": "tooltip",
           "data-placement": "top",
           title: "Delete",
           onClick: this.deleteItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "ico ico-small ico-trash"
-        }, "trash"))));
+          className: "ico ico-medium ico-trash"
+        }, "trash")))));
       }
     }
   }]);
@@ -81367,7 +81371,9 @@ function (_Component) {
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
-      }, this.props.mainStore.activeTrackedTime.slice(0).reverse().map(function (t) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.props.mainStore.activeTrackedTime.slice(0).reverse().map(function (t) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Task__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: t._id,
           taskid: t._id,
@@ -81378,7 +81384,7 @@ function (_Component) {
           date: t.dateCreation,
           onChange: _this2.handleChange
         });
-      })));
+      })))));
     }
   }]);
 

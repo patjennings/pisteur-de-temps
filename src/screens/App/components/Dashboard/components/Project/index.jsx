@@ -94,9 +94,13 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		      transitionName="fade"
 		      transitionEnterTimeout={500}
 		      transitionLeaveTimeout={300}>
+		      <table className="table">
+			<tbody>
 		  {this.props.mainStore.activeTrackedTime.slice(0).reverse().map(t => {
 		      return <Task key={t._id} taskid={t._id} task={t.task} comment={t.comment} user={t.relatedUser} value={t.value} date={t.dateCreation} onChange={this.handleChange}/>;
 		  })}
+			</tbody>
+		      </table>
 		  </ReactCSSTransitionGroup>
 	      </div>
 	);
