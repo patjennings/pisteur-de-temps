@@ -31,6 +31,7 @@
 	.track-input--submit{
 	    background: $surround-color;
 	    color: $accent-color;
+	    border: 0;
 
 	    &:hover{
 		background: $surround-color--hover;

@@ -65,14 +65,12 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
 		      {this.props.mainStore.projectsDefinitions.map(p => {
 			  const sr = p.name.search(new RegExp(this.props.currentSearch, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 			  if(p.client === this.props.id && sr !== -1){
-
-			      console.log(sr);
 			      this.state.hasProject = true;
 			      return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
 			  }
 		      })}
 		      
-		      {this.checkNoProject()}
+		      {/*this.checkNoProject()*/}
 		    </ul>
 	      </div>
 	    </ReactCSSTransitionGroup>
