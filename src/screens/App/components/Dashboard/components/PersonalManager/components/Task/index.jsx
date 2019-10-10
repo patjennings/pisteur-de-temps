@@ -34,6 +34,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	this.cancelEdit = this.cancelEdit.bind(this);
 	this.setActiveProject = this.setActiveProject.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
+	this.formatValue = this.formatValue.bind(this);
     }
 
     componentDidMount() {
@@ -85,6 +86,19 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	inputTask.value = this.props.task;
     }
 
+    formatValue(value){
+	const val = value.toString();
+	let valFormat = val;
+	
+	if(val % 1 !== 0){ // si c'est un nombre flottant
+	    const valSplit = val.split(".");
+	    valFormat =  <span className="value--float">{valSplit[0]}<span className="value--decimal">.{valSplit[1]}</span></span>;
+	} 
+	
+	return valFormat;
+    }
+
+    
     render(){
 	console.log("new task render");
 	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
@@ -139,13 +153,13 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		      <i className="ico ico-dots_v">dots_v</i>
 		    </button>
 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
 		      <a className="dropdown-item" href="#" onClick={this.editItem}>Éditer</a>
+		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
 		    </div>
 		  </div>
 
 		  <div className="row">
-		    <div className="col-2 item-value"><div className="item-value--inner">{this.props.value}</div></div>
+		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(this.props.value)}</div></div>
 		    <div className="col-10 item-details">
 		      <h4 className="item-details--title">{this.props.task}</h4>
 		      <p className="item-details--description">{this.props.comment}</p>

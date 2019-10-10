@@ -144,6 +144,8 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		  <td className="track-date">{readableDate(this.props.date)}</td>
 		  <td className="track-actions">
 		    <span><a className="track-edit" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a></span>
+		  </td>
+		  <td className="track-actions">
 		    <span><a className="track-delete" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a></span>
 		  </td>
 		  

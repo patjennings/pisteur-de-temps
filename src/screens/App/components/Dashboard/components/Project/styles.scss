@@ -56,9 +56,16 @@
 	    // border-bottom: 1px solid $border;
 	    color: $main-font-light;
 
+	    td:first-child{
+		padding-left: 1rem;
+	    }
+	    td:last-child{
+		padding-right: 1rem;
+	    }
 	    .track-task{
 		// width:10%;
 		color: $main-font;
+		white-space: nowrap;
 	    }
 	    .track-value{
 		width:5%;
@@ -68,9 +75,11 @@
 	    }
 	    .track-user{
 		width:15%;
+		white-space: nowrap;
 	    }
 	    .track-date{
 		width:16%;
+		white-space: nowrap;
 	    }
 	    .track-edit,
 	    .track-delete{
@@ -85,6 +94,10 @@
 	    }
 	    .track-delete{
 		left: 24px;
+	    }
+	    .track-actions{
+		padding-left:0.25rem;
+		padding-right:0.25rem;
 	    }
 	}
 	tr.edited{

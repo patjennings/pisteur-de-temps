@@ -35,7 +35,7 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 		      }
 		  
 		  <div id="main" className="col-md-10">
-		    <div className="container">
+		    <div className="container-fluid">
 		      <div className="row">
 			<div className="col-12">
 			  <ReactCSSTransitionGroup
@@ -44,12 +44,12 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 			    transitionEnterTimeout={500}
 			    transitionLeaveTimeout={300}>
 			    {this.props.mainStore.isLoading == true ? <p>Wait a minute</p> :
-				<div className="col-md-5">
+				<div className="col-md-4">
 				      <PersonalManager store={this.props.mainStore} key={0}/>
 				    </div>
 				}
 				{this.props.mainStore.showProject ?
-				    <div className="col-md-7">
+				    <div className="col-md-8">
 					  <Project key={1}/>
 					</div>
 					      :

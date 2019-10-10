@@ -59,9 +59,15 @@
 		    border-left: 3px solid $accent-color;
 		    height: 2rem;
 		    margin: auto; // pour centrer en hauteur
+		    white-space: nowrap;
 		    
 		    .item-value--inner{
 			margin-top: -5px;
+
+			.value--decimal{
+			    font-size: 1.35rem;
+			    font-weight: 700;
+			}
 		    }
 		}
 		.item-details{
