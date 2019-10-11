@@ -20,6 +20,7 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 	super(props);
 	this.loggerOut = this.loggerOut.bind(this);
     }
+    
 
     loggerOut(){
 	this.props.authStore.logout();
@@ -27,6 +28,8 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 
     render() {
 	console.log("App is rendered");
+
+	
 	
 	console.log("isLoggedIn : "+this.props.authStore.isLoggedIn);
 	// console.log("secret : "+this.props.authStore.sessionSecret);

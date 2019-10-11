@@ -15917,7 +15917,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0; }\n  .nav .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav h5.client-name {\n    margin-left: 1rem; }\n    .nav h5.client-name span {\n      text-transform: uppercase;\n      font-size: 1rem;\n      letter-spacing: 1px;\n      color: #3726bc;\n      font-weight: 700; }\n    .nav h5.client-name .project-add {\n      color: #3726bc;\n      text-decoration: none; }\n      .nav h5.client-name .project-add:hover {\n        text-decoration: none; }\n  .nav ul.projects-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    margin-bottom: 1.25rem; }\n    .nav ul.projects-list li {\n      -webkit-transition: all 0.2s ease-in-out;\n      -moz-transition: all 0.2s ease-in-out;\n      -o-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      padding: 0.35rem 1rem;\n      -moz-border-radius: 3px;\n      -webkit-border-radius: 3px;\n      -ms-border-radius: 3px;\n      -o-border-radius: 3px;\n      -khtml-border-radius: 3px;\n      border-radius: 3px;\n      cursor: pointer;\n      color: #797594; }\n      .nav ul.projects-list li:hover {\n        background: #ffffff; }\n  .nav .project--input,\n  .nav .client--input {\n    position: absolute;\n    z-index: 999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav .project--input h5,\n    .nav .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav .project--input label,\n    .nav .client--input label {\n      color: #797594; }\n    .nav .project--input input, .nav .project--input textarea,\n    .nav .client--input input,\n    .nav .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav .project--input button,\n    .nav .client--input button {\n      margin-right: 0.5rem; }\n  .nav .project--input {\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav .client--input {\n    left: 16px;\n    margin-top: 48px;\n    width: 320px; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  width: 320px;\n  padding: 0 1rem; }\n  .nav .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav .nav--lists {\n    width: 100%;\n    height: 80vh;\n    overflow-y: auto; }\n    .nav .nav--lists h5.client-name {\n      margin-left: 1rem; }\n      .nav .nav--lists h5.client-name span {\n        text-transform: uppercase;\n        font-size: 1rem;\n        letter-spacing: 1px;\n        color: #3726bc;\n        font-weight: 700; }\n      .nav .nav--lists h5.client-name .project-add {\n        color: #3726bc;\n        text-decoration: none; }\n        .nav .nav--lists h5.client-name .project-add:hover {\n          text-decoration: none; }\n    .nav .nav--lists ul.projects-list {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      margin-bottom: 1.25rem; }\n      .nav .nav--lists ul.projects-list li {\n        -webkit-transition: all 0.2s ease-in-out;\n        -moz-transition: all 0.2s ease-in-out;\n        -o-transition: all 0.2s ease-in-out;\n        transition: all 0.2s ease-in-out;\n        padding: 0.35rem 1rem;\n        -moz-border-radius: 3px;\n        -webkit-border-radius: 3px;\n        -ms-border-radius: 3px;\n        -o-border-radius: 3px;\n        -khtml-border-radius: 3px;\n        border-radius: 3px;\n        cursor: pointer;\n        color: #797594; }\n        .nav .nav--lists ul.projects-list li:hover {\n          background: #ffffff; }\n        .nav .nav--lists ul.projects-list li .search-result .search-result--project {\n          color: #171330; }\n        .nav .nav--lists ul.projects-list li .search-result .search-result--client {\n          padding-left: 0.5rem;\n          font-size: 0.875rem; }\n  .nav .footer {\n    position: fixed;\n    bottom: 1rem;\n    left: 1rem;\n    width: 288px; }\n    .nav .footer button {\n      width: 100%; }\n  .nav .project--input,\n  .nav .client--input {\n    z-index: 9999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav .project--input h5,\n    .nav .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav .project--input label,\n    .nav .client--input label {\n      color: #797594; }\n    .nav .project--input input, .nav .project--input textarea,\n    .nav .client--input input,\n    .nav .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav .project--input button,\n    .nav .client--input button {\n      margin-right: 0.5rem; }\n  .nav .project--input {\n    position: absolute;\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav .client--input {\n    position: fixed;\n    left: 1rem;\n    bottom: 3.75rem;\n    width: 288px; }\n", ""]);
 
 
 
@@ -15932,7 +15932,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.nav {\n  position: relative;\n  right
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: scroll; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: auto; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15947,7 +15947,7 @@ exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks tr.track {\n      color: #797594; }\n      .project-details .project-tracks tr.track td:first-child {\n        padding-left: 1rem; }\n      .project-details .project-tracks tr.track td:last-child {\n        padding-right: 1rem; }\n      .project-details .project-tracks tr.track .track-task {\n        color: #171330;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-value {\n        width: 5%; }\n      .project-details .project-tracks tr.track .track-comment {\n        width: 46%; }\n      .project-details .project-tracks tr.track .track-user {\n        width: 15%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-date {\n        width: 16%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-edit,\n      .project-details .project-tracks tr.track .track-delete {\n        color: #797594;\n        text-decoration: none;\n        display: inline-block;\n        width: 4%; }\n        .project-details .project-tracks tr.track .track-edit:hover,\n        .project-details .project-tracks tr.track .track-delete:hover {\n          text-decoration: none; }\n      .project-details .project-tracks tr.track .track-delete {\n        left: 24px; }\n      .project-details .project-tracks tr.track .track-actions {\n        padding-left: 0.25rem;\n        padding-right: 0.25rem; }\n    .project-details .project-tracks tr.edited {\n      background: #f8f9fa; }\n      .project-details .project-tracks tr.edited .track-task {\n        width: 15%; }\n      .project-details .project-tracks tr.edited .track-value {\n        width: 8%; }\n      .project-details .project-tracks tr.edited .track-comment {\n        width: 45%; }\n      .project-details .project-tracks tr.edited .track-update {\n        width: 13%; }\n      .project-details .project-tracks tr.edited .track-cancel {\n        width: 13%; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks tr.track {\n      color: #797594; }\n      .project-details .project-tracks tr.track td:first-child {\n        padding-left: 1rem; }\n      .project-details .project-tracks tr.track td:last-child {\n        padding-right: 1rem; }\n      .project-details .project-tracks tr.track .track-task {\n        color: #171330;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-value {\n        width: 5%; }\n      .project-details .project-tracks tr.track .track-comment {\n        width: 46%; }\n      .project-details .project-tracks tr.track .track-user {\n        width: 15%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-date {\n        width: 16%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-edit,\n      .project-details .project-tracks tr.track .track-delete {\n        color: #797594;\n        text-decoration: none;\n        display: inline-block;\n        width: 4%; }\n        .project-details .project-tracks tr.track .track-edit:hover,\n        .project-details .project-tracks tr.track .track-delete:hover {\n          text-decoration: none; }\n      .project-details .project-tracks tr.track .track-delete {\n        left: 24px; }\n      .project-details .project-tracks tr.track .track-actions {\n        padding-left: 0.25rem;\n        padding-right: 0.25rem; }\n    .project-details .project-tracks tr.edited {\n      background: #f8f9fa; }\n      .project-details .project-tracks tr.edited .track-task {\n        width: 15%; }\n      .project-details .project-tracks tr.edited .track-value {\n        width: 8%; }\n      .project-details .project-tracks tr.edited .track-comment {\n        width: 45%; }\n", ""]);
 
 
 
@@ -16022,7 +16022,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-card {\n  width: 560px;\n  border: none;\n  margin-left: 1rem;\n  margin-bottom: 1rem;\n  color: #ffffff; }\n  .synthesis .synthesis-card .card-header {\n    padding-top: 1.5rem;\n    background: #291aa4;\n    border: none; }\n    .synthesis .synthesis-card .card-header .synthesis-card--client {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--name {\n      font-size: 1.75rem; }\n    .synthesis .synthesis-card .card-header .synthesis-card--description {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--budget {\n      color: #07c3eb;\n      font-size: 2.5rem;\n      position: relative;\n      top: 16px; }\n      .synthesis .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n        font-size: 1rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-body {\n    background: #3726bc;\n    border: none; }\n    .synthesis .synthesis-card .card-body .row .task-percentage {\n      padding-top: 1rem; }\n      .synthesis .synthesis-card .card-body .row .task-percentage .progress {\n        height: 8px;\n        background: #291aa4;\n        border: 0; }\n        .synthesis .synthesis-card .card-body .row .task-percentage .progress .progress-bar {\n          height: 8px;\n          -moz-border-radius: 4px;\n          -webkit-border-radius: 4px;\n          -ms-border-radius: 4px;\n          -o-border-radius: 4px;\n          -khtml-border-radius: 4px;\n          border-radius: 4px; }\n    .synthesis .synthesis-card .card-body .row .task-name {\n      padding-top: 0.5rem; }\n      .synthesis .synthesis-card .card-body .row .task-name .task-spent {\n        margin-left: 0.5rem;\n        color: #07c3eb;\n        font-size: 0.875rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-footer {\n    background: #4e3dcf;\n    border: none; }\n", ""]);
 
 
 
@@ -16067,7 +16067,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#main-navigation {\n  border-bottom: 1px solid #cee6ff; }\n  #main-navigation ul.nav li.nav-item a {\n    padding: 1rem;\n    text-transform: uppercase;\n    letter-spacing: 0.15rem; }\n  #main-navigation .admin {\n    position: absolute;\n    top: 0.5rem;\n    right: 1rem; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n#main-navigation {\n  border-bottom: 1px solid #cee6ff; }\n  #main-navigation ul.main-nav {\n    color: #171330;\n    display: flex;\n    flex-wrap: wrap;\n    padding-left: 0;\n    margin-bottom: 0;\n    list-style: none;\n    cursor: pointer; }\n    #main-navigation ul.main-nav li.main-nav-item a.main-nav-link {\n      display: block;\n      padding: 1rem;\n      text-transform: uppercase;\n      letter-spacing: 0.15rem;\n      -webkit-transition: all 0.15s ease-in-out;\n      -moz-transition: all 0.15s ease-in-out;\n      -o-transition: all 0.15s ease-in-out;\n      transition: all 0.15s ease-in-out; }\n      #main-navigation ul.main-nav li.main-nav-item a.main-nav-link:hover {\n        color: #797594; }\n  #main-navigation .admin {\n    position: absolute;\n    top: 0.5rem;\n    right: 1rem; }\n", ""]);
 
 
 
@@ -80115,11 +80115,12 @@ function (_Component) {
       var _this2 = this;
 
       console.log(this.props.currentSearch);
+      var isSearching = this.props.currentSearch.length > 0;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !isSearching ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "client-name d-flex justify-content-between align-items-center "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "project-add d-flex align-items-center",
@@ -80131,7 +80132,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "ico",
         onClick: this.addProject
-      }, "plus_circle"))), this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      }, "plus_circle"))) : null, this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
@@ -80153,7 +80154,13 @@ function (_Component) {
             onClick: function onClick(e) {
               return _this2.handleClick(p, e);
             }
-          }, p.name);
+          }, isSearching ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "search-result"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "search-result--project"
+          }, p.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "search-result--client"
+          }, _this2.props.name)) : p.name);
         }
       }))));
     }
@@ -80269,8 +80276,6 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-12"
       }, this.state.isSearching ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search--reset",
         onClick: this.resetSearch
@@ -80285,7 +80290,10 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
         transitionName: "fade",
         transitionEnterTimeout: 500,
-        transitionLeaveTimeout: 300
+        transitionLeaveTimeout: 300,
+        className: "nav--lists"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav--lists--inner"
       }, this.props.mainStore.clientsDefinitions.map(function (c) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ListClientProjects__WEBPACK_IMPORTED_MODULE_3__["default"], {
           key: c._id,
@@ -80293,7 +80301,7 @@ function (_Component) {
           id: c._id,
           currentSearch: _this2.state.search
         });
-      })), this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AddClient__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }))), this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AddClient__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.handleChange
       }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer"
@@ -80301,7 +80309,7 @@ function (_Component) {
         className: "btn btn-primary",
         type: "button",
         onClick: this.addClient
-      }, "Add a client"))));
+      }, "Add a client")));
     }
   }]);
 
@@ -81124,7 +81132,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           className: "track edited"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          colspan: "6"
+          colspan: "7"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81523,7 +81531,7 @@ function (_Component) {
         id: "main",
         className: "col-md-10"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container-fluid"
+        className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81535,12 +81543,12 @@ function (_Component) {
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
       }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4"
+        className: "col-md-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: this.props.mainStore,
         key: 0
       })), this.props.mainStore.showProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-8"
+        className: "col-md-7"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_3__["default"], {
         key: 1
       })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a project")))))))));
@@ -82099,6 +82107,168 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/screens/App/components/Synthesis/components/Card/index.jsx":
+/*!************************************************************************!*\
+  !*** ./src/screens/App/components/Synthesis/components/Card/index.jsx ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Card = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Card, _Component);
+
+  function Card(props) {
+    var _this;
+
+    _classCallCheck(this, Card);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
+    _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this));
+    _this.getProjectPercentage = _this.getProjectPercentage.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Card, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {//
+    }
+  }, {
+    key: "listProjectsTasks",
+    value: function listProjectsTasks() {
+      var _this2 = this;
+
+      // console.log("//////------> "+this.props.mainStore.tracksDefinitions.length);
+      var res = {};
+      this.props.mainStore.tracksDefinitions.map(function (t) {
+        if (t._id == _this2.props.id) {
+          t.message.map(function (m) {
+            if (res[m.task] !== undefined) {
+              res[m.task] += m.value;
+            } else {
+              var task = _defineProperty({}, m.task, m.value);
+
+              Object.assign(res, task);
+            }
+          });
+        }
+      });
+      console.log(res); // console.log(this.props.mainStore.tracksDefinitions[i]._id);
+
+      return res;
+    }
+  }, {
+    key: "getProjectPercentage",
+    value: function getProjectPercentage(value) {
+      var pc = value * 100 / this.props.budget;
+      return pc;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var tasks = this.listProjectsTasks();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "synthesis-card card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-8"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synthesis-card--client"
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.client)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: "synthesis-card--name"
+      }, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synthesis-card--description"
+      }, this.props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synthesis-card--budget"
+      }, this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "budget-unit"
+      }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, Object.keys(tasks).map(function (t) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-md-6"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "task-percentage"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "progress"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "progress-bar bg-success",
+          role: "progressbar",
+          style: {
+            width: _this3.getProjectPercentage(tasks[t]) + "%"
+          },
+          "aria-valuenow": "25",
+          "aria-valuemin": "0",
+          "aria-valuemax": "100"
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-md-6"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "task-name"
+        }, t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "task-spent"
+        }, tasks[t], " jours"))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-footer"
+      }));
+    }
+  }]);
+
+  return Card;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (Card); // {this.props.mainStore.tracksDefinitions.map(p => {
+// console.log(p.message);
+// if(p._id == this.props.id){
+// 	console.log(p);
+// 	// p.message.map(t => {
+// 	//     <p key={t._id}>{t.task}</p>
+// 	// });
+// }
+// return <p key={t._id}>{t._id}</p>
+// })}
+
+/***/ }),
+
 /***/ "./src/screens/App/components/Synthesis/index.jsx":
 /*!********************************************************!*\
   !*** ./src/screens/App/components/Synthesis/index.jsx ***!
@@ -82111,11 +82281,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sharedComponents/MainNavigation */ "./src/shared/components/MainNavigation/index.jsx");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Synthesis/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sharedComponents/MainNavigation */ "./src/shared/components/MainNavigation/index.jsx");
+/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Card */ "./src/screens/App/components/Synthesis/components/Card/index.jsx");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Synthesis/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -82126,13 +82299,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
 
 
 
@@ -82145,18 +82321,94 @@ function (_Component) {
   _inherits(Synthesis, _Component);
 
   function Synthesis(props) {
+    var _this;
+
     _classCallCheck(this, Synthesis);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Synthesis).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Synthesis).call(this, props));
+    _this.state = {
+      search: '',
+      isSearching: false
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.resetSearch = _this.resetSearch.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Synthesis, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var tt = this.props.mainStore.loadTrackedTime(this.props.id);
+      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_5__["toJS"])(tt));
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        search: e.target.value,
+        isSearching: true
+      }); // console.log(e.target.value);
+    }
+  }, {
+    key: "resetSearch",
+    value: function resetSearch() {
+      var searchInput = document.querySelector(".form-control");
+      searchInput.value = '';
+      this.setState({
+        search: '',
+        isSearching: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      // console.log("Synthesis is rendered");
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "admin logged-in"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is the synthesis..."));
+        className: "synthesis logged-in"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2 offset-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control form-control-dark w-100 mb-4 mt-4",
+        type: "text",
+        placeholder: "Search",
+        "aria-label": "Search",
+        onChange: this.handleChange
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, this.props.mainStore.projectsDefinitions.map(function (p) {
+        var pn = p.name;
+        var pnNoAccent = pn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var cn = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(_this2.props.mainStore.clientsDefinitions, p.client);
+        var cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var srProject = pn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srProjectNoAccent = pnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srClient = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        var srClientNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
+
+        console.log(srProjectNoAccent); // console.log(sr);
+
+        if (srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            key: p._id,
+            name: p.name,
+            id: p._id,
+            client: p.client,
+            description: p.description,
+            budget: p.budget,
+            currentSearch: _this2.state.search
+          });
+        }
+      })))));
     }
   }]);
 
@@ -82583,11 +82835,11 @@ function (_Component) {
         className: "",
         id: "main-navigation"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "nav justify-content-center"
+        className: "main-nav justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
+        className: "main-nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-link",
+        className: "main-nav-link",
         onClick: function onClick() {
           return push('/overview');
         },
@@ -82595,9 +82847,9 @@ function (_Component) {
       }, "Dashboard ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }, "(current)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
+        className: "main-nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-link",
+        className: "main-nav-link",
         onClick: function onClick() {
           return push('/synthesis');
         },
@@ -83036,7 +83288,7 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
+/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchTracksDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83047,6 +83299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchClientsDefinitions", function() { return fetchClientsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectsDefinitions", function() { return fetchProjectsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersDefinitions", function() { return fetchUsersDefinitions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTracksDefinitions", function() { return fetchTracksDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userUpdate", function() { return userUpdate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "controlCookie", function() { return controlCookie; });
@@ -83074,6 +83327,10 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
@@ -83155,9 +83412,53 @@ function fetchUsersDefinitions() {
     return console.log(error);
   });
   return result;
+}
+function fetchTracksDefinitions(_x) {
+  return _fetchTracksDefinitions.apply(this, arguments);
 } // --------------------
 // User
 // --------------------
+
+function _fetchTracksDefinitions() {
+  _fetchTracksDefinitions = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(projects) {
+    var arr, result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            // console.log(ids);
+            arr = [];
+            projects.forEach(function (p) {
+              var id = p._id;
+              arr.push(axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/projects/").concat(id, "/trackedTime")).then(function (res) {
+                var tracksId = {
+                  _id: id
+                };
+                var tracksData = res.data;
+
+                var r = _objectSpread({}, tracksData, {}, tracksId);
+
+                return r;
+              }));
+            });
+            _context.next = 4;
+            return axios__WEBPACK_IMPORTED_MODULE_0___default.a.all(arr);
+
+          case 4:
+            result = _context.sent;
+            return _context.abrupt("return", result);
+
+          case 6:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _fetchTracksDefinitions.apply(this, arguments);
+}
 
 function fetchUser(id) {
   var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/user/").concat(id)).then(function (res) {
@@ -83546,15 +83847,19 @@ function () {
 
     this.activeTaskInput = null; // la tâche en train d'être entrée
 
-    this.loadDefinitions();
+    this.loadDefinitions(); // this.loadTracks();
+
     this.clientsDefinitions = []; // définitions des clients
 
     this.projectsDefinitions = []; // ... des projets
 
     this.usersDefinitions = []; // ... des users
 
+    this.tracksDefinitions = []; // ... des users
+
     this.activeTrackedTime = [];
-    this.activeProjectDetails = {};
+    this.activeProjectDetails = {}; // this.allTracks = [];
+
     this.trackHistory = []; // historique des tracks du user
 
     this.state = "pending";
@@ -83660,7 +83965,7 @@ function () {
       var _this4 = this;
 
       // this.isLoading = true;
-      console.log("ça recharge les defs !!!!!!!!!!!!");
+      // console.log("ça recharge les defs !!!!!!!!!!!!");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
         _this4.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
@@ -83669,7 +83974,9 @@ function () {
         console.log("fetch clients over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this4.projectsDefinitions = projects; // this.getTrackNumbersForProject();
+        _this4.projectsDefinitions = projects;
+
+        _this4.loadTracks(projects);
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -83682,24 +83989,37 @@ function () {
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch users over");
       }));
+    }
+  }, {
+    key: "loadTracks",
+    value: function loadTracks(projects) {
+      var _this5 = this;
+
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchTracksDefinitions"](projects).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracks) {
+        _this5.tracksDefinitions = tracks;
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        console.log("fetch tracks over");
+      }));
     } // tasks
 
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this5 = this;
+      var _this6 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"](projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this5.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this5.loadProject(projectId); // relance le chargement du projet
+        _this6.loadProject(projectId); // relance le chargement du projet
 
 
-        _this5.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
 
-        _this5.loadDefinitions();
+        _this6.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83707,16 +84027,16 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this6 = this;
+      var _this7 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"](projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this6.loadProject(projectId); // relance le chargement du projet
+        _this7.loadProject(projectId); // relance le chargement du projet
 
 
-        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -83725,16 +84045,16 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this7 = this;
+      var _this8 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"](projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this7.loadProject(projectId); // relance le chargement du projet
+        _this8.loadProject(projectId); // relance le chargement du projet
 
 
-        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -83744,10 +84064,10 @@ function () {
   }, {
     key: "postNewClient",
     value: function postNewClient(formData) {
-      var _this8 = this;
+      var _this9 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this8.loadDefinitions();
+        _this9.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83755,10 +84075,10 @@ function () {
   }, {
     key: "deleteClient",
     value: function deleteClient(clientId) {
-      var _this9 = this;
+      var _this10 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientDelete"](clientId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this9.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
+        _this10.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
         // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
 
@@ -83769,12 +84089,12 @@ function () {
   }, {
     key: "updateClient",
     value: function updateClient(clientId, formData) {
-      var _this10 = this;
+      var _this11 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientUpdate"](clientId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update client"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this10.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
+        _this11.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
@@ -83785,13 +84105,13 @@ function () {
   }, {
     key: "updateUser",
     value: function updateUser(userId, formData, reloadActiveUser) {
-      var _this11 = this;
+      var _this12 = this;
 
       console.log(userId);
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["userUpdate"](userId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update user"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this11.loadDefinitions();
+        _this12.loadDefinitions();
 
         reloadActiveUser && stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].getUserData(userId); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
@@ -83803,10 +84123,10 @@ function () {
   }, {
     key: "postNewProject",
     value: function postNewProject(formData) {
-      var _this12 = this;
+      var _this13 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this12.loadDefinitions();
+        _this13.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83814,10 +84134,10 @@ function () {
   }, {
     key: "updateProject",
     value: function updateProject(projectid, formData) {
-      var _this13 = this;
+      var _this14 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectUpdate"](projectid, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this13.loadDefinitions();
+        _this14.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83825,10 +84145,10 @@ function () {
   }, {
     key: "deleteTaskInProject",
     value: function deleteTaskInProject(projectid, taskToDelete) {
-      var _this14 = this;
+      var _this15 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDeleteTask"](projectid, taskToDelete).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this14.loadDefinitions();
+        _this15.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83836,12 +84156,12 @@ function () {
   }, {
     key: "deleteProject",
     value: function deleteProject(projectid) {
-      var _this15 = this;
+      var _this16 = this;
 
       // console.log("delete proj");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDelete"](projectid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this15.loadDefinitions();
+        _this16.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83863,6 +84183,8 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   clientsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   projectsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   usersDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  tracksDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  // allTracks: observable,
   trackHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   state: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   setPageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
@@ -83873,6 +84195,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   loadProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  loadTracks: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewTask: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewClient: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   deleteClient: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],

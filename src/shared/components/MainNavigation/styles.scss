@@ -1,14 +1,29 @@
 @import "assets/styles/colors";
+@import "assets/styles/_mixins";
 
 #main-navigation{
     border-bottom: 1px solid $border-dark;
 
-    ul.nav{
-	li.nav-item{
-	    a{
+    ul.main-nav{
+	color: $main-font;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	cursor: pointer;
+
+	li.main-nav-item{    
+	    a.main-nav-link{
+		display: block;
 		padding: 1rem;
 		text-transform: uppercase;
 		letter-spacing: 0.15rem;
+		@include transition(all, 0.15s, ease-in-out);
+		
+		&:hover{
+		    color: $main-font-light;
+		}
 	    }
 	}
     }

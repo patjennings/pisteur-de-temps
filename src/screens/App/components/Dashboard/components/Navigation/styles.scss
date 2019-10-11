@@ -8,6 +8,8 @@
     right: 0;
     bottom: 0;
     top: 0;
+    width: 320px;
+    padding: 0 1rem;
 
     .search--reset{
 	color: $main-font-light;
@@ -16,48 +18,76 @@
 	right: 24px;
 	cursor: pointer;
     }
-    
-    h5.client-name{
-	margin-left: 1rem;
-	span{
-	    text-transform: uppercase;
-	    font-size: 1rem;
-	    letter-spacing: 1px;
-	    color: $accent-color;
-	    font-weight: 700;
-	}
-	.project-add{
-	    color: $accent-color;
-	    text-decoration: none;
-
-	    &:hover{
+    .nav--lists{
+	width: 100%;
+	height: 80vh;
+	overflow-y: auto;
+	
+	h5.client-name{
+	    margin-left: 1rem;
+	    span{
+		text-transform: uppercase;
+		font-size: 1rem;
+		letter-spacing: 1px;
+		color: $accent-color;
+		font-weight: 700;
+	    }
+	    .project-add{
+		color: $accent-color;
 		text-decoration: none;
-	    }
-	}
-    }
-    ul.projects-list{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 1.25rem;
 
-	li{
-	    @include transition(all, 0.2s, ease-in-out)
-	    padding: 0.35rem 1rem;
-	    @include border-radius(3px);
-	    cursor: pointer;
-	    color: $main-font-light;
-	    
-	    &:hover{
-		background: $box-background;
+		&:hover{
+		    text-decoration: none;
+		}
 	    }
 	}
+	ul.projects-list{
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    margin-bottom: 1.25rem;
+
+	    li{
+		@include transition(all, 0.2s, ease-in-out)
+		padding: 0.35rem 1rem;
+		@include border-radius(3px);
+		cursor: pointer;
+		color: $main-font-light;
+		
+		&:hover{
+		    background: $box-background;
+		}
+		.search-result{
+		    .search-result--project{
+			color: $main-font;
+		    }
+		    .search-result--client{
+			padding-left: 0.5rem;
+			font-size: 0.875rem;
+			
+		    }
+		}
+
+	    }
+	}
+	
     }
+    .footer{
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	width: 288px;
+
+	button{
+	    width: 100%;
+	}
+    }
+    
     
     .project--input,
     .client--input{
-	position: absolute;
-	z-index: 999;
+	
+	z-index: 9999;
 	background: $box-background;
 	padding: 1rem;
 	@include border-radius(3px);
@@ -79,16 +109,17 @@
 	} 
     }
     .project--input{
-	
+	position: absolute;
 	left: 256px;
 	margin-top: 8px;
 	width: 320px;
 	
     }
     .client--input{
-	left: 16px;
-	margin-top: 48px;
-	width: 320px;
+	position: fixed;
+	left: 1rem;
+	bottom: 3.75rem;
+	width: 288px;
 
     }
 }

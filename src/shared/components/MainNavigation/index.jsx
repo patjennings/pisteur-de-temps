@@ -30,12 +30,12 @@ const MainNavigation = inject("mainStore", "authStore", "routingStore")(observer
 
 		
 
-		  <ul className="nav justify-content-center">
-		    <li className="nav-item">
-		      <a className="nav-link" onClick={() => push('/overview')} name="dashboard">Dashboard <span className="sr-only">(current)</span></a>
+		  <ul className="main-nav justify-content-center">
+		    <li className="main-nav-item">
+		      <a className="main-nav-link" onClick={() => push('/overview')} name="dashboard">Dashboard <span className="sr-only">(current)</span></a>
 		    </li>
-		    <li className="nav-item">
-		      <a className="nav-link" onClick={() => push('/synthesis')} name="synthesis">Synthesis <span className="sr-only">(current)</span></a>
+		    <li className="main-nav-item">
+		      <a className="main-nav-link" onClick={() => push('/synthesis')} name="synthesis">Synthesis <span className="sr-only">(current)</span></a>
 		    </li>
 		  </ul>
 

@@ -17,15 +17,17 @@ export class MainStore{
 	this.activeTaskInput = null; // la tâche en train d'être entrée
 	
 	this.loadDefinitions();
+	// this.loadTracks();
 
 	this.clientsDefinitions = []; // définitions des clients
 	this.projectsDefinitions = []; // ... des projets
 	this.usersDefinitions = []; // ... des users
+	this.tracksDefinitions = []; // ... des users
 
 	this.activeTrackedTime = [];
 	this.activeProjectDetails = {};
 
-	
+	// this.allTracks = [];
 	this.trackHistory = []; // historique des tracks du user
 
 	this.state = "pending";
@@ -117,7 +119,7 @@ export class MainStore{
     
     loadDefinitions(){
 	// this.isLoading = true;
-	console.log("ça recharge les defs !!!!!!!!!!!!");
+	// console.log("ça recharge les defs !!!!!!!!!!!!");
 
 	agent.fetchClientsDefinitions()
 	    .then(action((clients) => {
@@ -132,7 +134,7 @@ export class MainStore{
 	agent.fetchProjectsDefinitions()
 	    .then(action((projects) => {
 		this.projectsDefinitions = projects;
-		// this.getTrackNumbersForProject();
+		this.loadTracks(projects);
 	    }))
 	    .catch(action((error) => {
 		console.log(error);
@@ -150,9 +152,21 @@ export class MainStore{
 	    .finally(action(() => {
 		console.log("fetch users over")
 	    }))
+	
     }
 
-   
+    loadTracks(projects){
+	agent.fetchTracksDefinitions(projects)
+	    .then(action((tracks) => {
+		this.tracksDefinitions = tracks;
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	    .finally(action(() => {
+		console.log("fetch tracks over")
+	    }))
+    }
 
 
     // tasks
@@ -310,6 +324,8 @@ decorate(MainStore, {
     clientsDefinitions: observable,
     projectsDefinitions: observable,
     usersDefinitions: observable,
+    tracksDefinitions: observable,
+    // allTracks: observable,
     trackHistory: observable,
     state: observable,
     setPageDisplayed: action,
@@ -320,6 +336,7 @@ decorate(MainStore, {
     loadProject: action,
     loadTrackedTime: action,
     loadDefinitions: action,
+    loadTracks: action,
     postNewTask: action,
     postNewClient: action,
     deleteClient: action,

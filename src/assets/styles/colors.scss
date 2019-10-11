@@ -7,6 +7,8 @@ $track-input-background: #3726bc;
 
 $main-font: #171330;
 $main-font-light: #797594;
+$main-font-inverted: #ffffff; // négatif
+$main-font-inverted-light: #07c3eb;
 
 $border: #efeff0;
 $border-dark: #cee6ff;
@@ -15,6 +17,8 @@ $track-input--input: #291c8c;
 $track-input--input-focus: white;
 $track-input--placeholder: #7a6fcf;
 
-$surround-color: #ffc107;
+$surround-color: #ffc107; // le jaune, par touches
 $surround-color--hover: #e8ba00;
-$accent-color: #3726bc;
+$accent-color: #3726bc; // le bleu;
+$accent-color-light: #4e3dcf; 
+$accent-color-dark: #291aa4; 

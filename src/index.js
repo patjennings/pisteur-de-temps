@@ -26,6 +26,7 @@ const stores = {
     routingStore
 }
 
+
 console.log(stores);
 
 const history = syncHistoryWithStore(browserHistory, routingStore);

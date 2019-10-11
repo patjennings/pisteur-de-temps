@@ -89,7 +89,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 
 		<tr className="track edited">
-		  <td colspan="6">
+		  <td colspan="7">
 		    <form onSubmit={this.handleSubmit}>
 		      <div className="container-fluid">
 			<div className="row">

@@ -1,0 +1,82 @@
+@import "assets/styles/colors";
+@import "assets/styles/_mixins";
+
+.synthesis{
+    
+    .synthesis-card{
+	width: 560px;
+	border: none;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	color: $main-font-inverted;
+
+
+	.card-header{
+	    padding-top: 1.5rem;
+	    background: $accent-color-dark;
+	    border: none;
+	    
+	    .synthesis-card--client{
+		color: $main-font-inverted-light;
+	    }
+	    .synthesis-card--name{
+		font-size: 1.75rem;
+	    }
+	    .synthesis-card--description{
+		color: $main-font-inverted-light;
+	    }
+	    .synthesis-card--budget{
+		color: $main-font-inverted-light;
+		font-size: 2.5rem;
+
+		position: relative;
+		top: 16px;
+		
+		.budget-unit{
+		    font-size: 1rem;
+		    font-weight: 700;
+		}
+	    }
+
+	    
+	    
+	}
+	.card-body{
+	    background: $accent-color;
+	    border: none;
+	    .row{
+		.task-percentage{
+		    padding-top: 1rem;
+		    
+		    .progress{
+			height: 8px;
+			background: $accent-color-dark;
+			border: 0;
+
+			.progress-bar{
+			    height: 8px;
+			    @include border-radius(4px);
+			}
+		    }
+		    
+		}
+		.task-name{
+		    padding-top: 0.5rem;
+
+		    .task-spent{
+			margin-left: 0.5rem;
+			color: $main-font-inverted-light;
+			font-size: 0.875rem;
+			font-weight: 700;
+		    }
+		}
+	    }
+	    
+	}
+	.card-footer{
+	    background: $accent-color-light;
+	    border: none;
+	}
+    }
+
+}

@@ -72,8 +72,8 @@ export function fetchClientsDefinitions(){
 export function fetchProjectsDefinitions(){
     let result = axios
 	.get(`${API_ROOT}/projects`)
-	.then(res => {
-	     return res.data
+	.then(res => {		    
+	    return res.data
 	})
 	.catch(error => console.log(error));
     return result;
@@ -82,12 +82,52 @@ export function fetchUsersDefinitions(){
     let result = axios
 	.get(`${API_ROOT}/users`)
 	.then(res => {
-	     return res.data
+	    return res.data
 	})
 	.catch(error => console.log(error));
     return result;
 }
+export async function fetchTracksDefinitions(projects){
+    // console.log(ids);
+    let arr = [];
 
+    projects.forEach((p) => {
+	let id = p._id;
+	arr.push(axios
+		 .get(`${API_ROOT}/projects/${id}/trackedTime`)
+		 .then(res => {
+		     const tracksId = {
+			 _id : id
+		     }
+		     const tracksData = res.data
+		     const r = {...tracksData, ...tracksId}
+		     return r
+		 })
+		);
+    });
+    
+    let result = await axios.all(arr);
+    return result;
+
+    // let result = await axios.all(arr);
+    // console.log(res);
+    
+    //     projects.forEach((p) => {
+    //     	let id = p._id;
+
+    //     	// return ids;
+    //     	let result = axios.all(`${API_ROOT}/projects/${id}/trackedTime`)
+    //     	    .then(res => {
+    // 		console.log(res.data);
+    //     		resultGlobal += res.data
+
+    //     	    })
+    //     	    .catch(error => console.log(error));
+    
+    //     })
+    //     console.log(resultGlobal);
+    //     return resultGlobal;
+}
 
 // --------------------
 // User
@@ -96,7 +136,7 @@ export function fetchUser(id){
     let result = axios
 	.get(`${API_ROOT}/user/${id}`)
 	.then(res => {
-	     return res
+	    return res
 	})
 	.catch(error => console.log(error));
     return result;
@@ -122,7 +162,7 @@ export function controlCookie(key, ip){
     let result = axios
 	.get(`${API_ROOT}/cookie?key=${key}&ip=${ip}`)
 	.then(res => {
-	     return res
+	    return res
 	})
 	.catch(error => console.log(error));
     return result;
@@ -160,7 +200,7 @@ export function fetchProject(projectId){
     let result = axios
 	.get(`${API_ROOT}/projects/${projectId}`)
 	.then(res => {
-	  return res  
+	    return res  
 	});
     return result;
 }
@@ -169,7 +209,7 @@ export function fetchProjectTrackedTime(projectId){
     let result = axios
 	.get(`${API_ROOT}/projects/${projectId}/trackedtime`)
 	.then(res => {
-	  return res  
+	    return res  
 	});
 
     return result;

@@ -40,6 +40,7 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
     
     render() {
 	console.log(this.props.currentSearch);
+	const isSearching = this.props.currentSearch.length > 0;
 	
 	return (
 	    <ReactCSSTransitionGroup
@@ -47,10 +48,14 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
 	      transitionEnterTimeout={500}
 	      transitionLeaveTimeout={300}>
 	      <div>
-		<h5 className="client-name d-flex justify-content-between align-items-center ">
+		{!isSearching ?
+		    <h5 className="client-name d-flex justify-content-between align-items-center ">
 		  <span>{this.props.name}</span>
 		  <a className="project-add d-flex align-items-center" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add a project"><i className="ico" onClick={this.addProject}>plus_circle</i></a>
-		</h5>
+			</h5> : null
+		    
+		}
+		
 		
 		{ this.state.isAddingProject ?
 		    <ReactCSSTransitionGroup
@@ -66,7 +71,10 @@ const ListClientProjects = inject("mainStore")(observer(class ListClientProjects
 			  const sr = p.name.search(new RegExp(this.props.currentSearch, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 			  if(p.client === this.props.id && sr !== -1){
 			      this.state.hasProject = true;
-			      return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>{p.name}</li>;
+			      return <li key={p._id} id={p._id} onClick={e => this.handleClick(p, e)}>
+				  
+			      {isSearching ? <div className="search-result"><span className="search-result--project">{p.name}</span><span className="search-result--client">{this.props.name}</span></div> : p.name}
+			      </li>;
 			  }
 		      })}
 		      
