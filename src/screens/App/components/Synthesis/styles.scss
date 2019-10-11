@@ -49,13 +49,14 @@
 		    padding-top: 1rem;
 		    
 		    .progress{
-			height: 8px;
+			height: 10px;
 			background: $accent-color-dark;
 			border: 0;
+			@include border-radius(5px);
 
 			.progress-bar{
-			    height: 8px;
-			    @include border-radius(4px);
+			    height: 10px;
+			    @include border-radius(5px);
 			}
 		    }
 		    

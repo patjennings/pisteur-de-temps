@@ -49,7 +49,7 @@ const Navigation = inject("mainStore")(observer(class Navigation extends Compone
 	
 	
 	return (
-	    <div className="row nav">
+	    <div className="row nav-projects">
 
 	      {this.state.isSearching ? <div className="search--reset" onClick={this.resetSearch}><i className="ico ico-medium">cross_circle</i></div> : null }
 	      <input className="form-control form-control-dark w-100 mb-4" type="text" placeholder="Search" aria-label="Search" onChange={this.handleChange}/>

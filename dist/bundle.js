@@ -15917,7 +15917,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.nav {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  width: 320px;\n  padding: 0 1rem; }\n  .nav .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav .nav--lists {\n    width: 100%;\n    height: 80vh;\n    overflow-y: auto; }\n    .nav .nav--lists h5.client-name {\n      margin-left: 1rem; }\n      .nav .nav--lists h5.client-name span {\n        text-transform: uppercase;\n        font-size: 1rem;\n        letter-spacing: 1px;\n        color: #3726bc;\n        font-weight: 700; }\n      .nav .nav--lists h5.client-name .project-add {\n        color: #3726bc;\n        text-decoration: none; }\n        .nav .nav--lists h5.client-name .project-add:hover {\n          text-decoration: none; }\n    .nav .nav--lists ul.projects-list {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      margin-bottom: 1.25rem; }\n      .nav .nav--lists ul.projects-list li {\n        -webkit-transition: all 0.2s ease-in-out;\n        -moz-transition: all 0.2s ease-in-out;\n        -o-transition: all 0.2s ease-in-out;\n        transition: all 0.2s ease-in-out;\n        padding: 0.35rem 1rem;\n        -moz-border-radius: 3px;\n        -webkit-border-radius: 3px;\n        -ms-border-radius: 3px;\n        -o-border-radius: 3px;\n        -khtml-border-radius: 3px;\n        border-radius: 3px;\n        cursor: pointer;\n        color: #797594; }\n        .nav .nav--lists ul.projects-list li:hover {\n          background: #ffffff; }\n        .nav .nav--lists ul.projects-list li .search-result .search-result--project {\n          color: #171330; }\n        .nav .nav--lists ul.projects-list li .search-result .search-result--client {\n          padding-left: 0.5rem;\n          font-size: 0.875rem; }\n  .nav .footer {\n    position: fixed;\n    bottom: 1rem;\n    left: 1rem;\n    width: 288px; }\n    .nav .footer button {\n      width: 100%; }\n  .nav .project--input,\n  .nav .client--input {\n    z-index: 9999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav .project--input h5,\n    .nav .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav .project--input label,\n    .nav .client--input label {\n      color: #797594; }\n    .nav .project--input input, .nav .project--input textarea,\n    .nav .client--input input,\n    .nav .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav .project--input button,\n    .nav .client--input button {\n      margin-right: 0.5rem; }\n  .nav .project--input {\n    position: absolute;\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav .client--input {\n    position: fixed;\n    left: 1rem;\n    bottom: 3.75rem;\n    width: 288px; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.nav-projects {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  width: 320px;\n  padding: 0 1rem; }\n  .nav-projects .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav-projects .nav--lists {\n    width: 100%;\n    height: 80vh;\n    overflow-y: auto; }\n    .nav-projects .nav--lists h5.client-name {\n      margin-left: 1rem; }\n      .nav-projects .nav--lists h5.client-name span {\n        text-transform: uppercase;\n        font-size: 1rem;\n        letter-spacing: 1px;\n        color: #3726bc;\n        font-weight: 700; }\n      .nav-projects .nav--lists h5.client-name .project-add {\n        color: #3726bc;\n        text-decoration: none; }\n        .nav-projects .nav--lists h5.client-name .project-add:hover {\n          text-decoration: none; }\n    .nav-projects .nav--lists ul.projects-list {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      margin-bottom: 1.25rem; }\n      .nav-projects .nav--lists ul.projects-list li {\n        -webkit-transition: all 0.2s ease-in-out;\n        -moz-transition: all 0.2s ease-in-out;\n        -o-transition: all 0.2s ease-in-out;\n        transition: all 0.2s ease-in-out;\n        padding: 0.35rem 1rem;\n        -moz-border-radius: 3px;\n        -webkit-border-radius: 3px;\n        -ms-border-radius: 3px;\n        -o-border-radius: 3px;\n        -khtml-border-radius: 3px;\n        border-radius: 3px;\n        cursor: pointer;\n        color: #797594; }\n        .nav-projects .nav--lists ul.projects-list li:hover {\n          background: #ffffff; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--project {\n          color: #171330; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--client {\n          padding-left: 0.5rem;\n          font-size: 0.875rem; }\n  .nav-projects .footer {\n    position: fixed;\n    bottom: 1rem;\n    left: 1rem;\n    width: 288px; }\n    .nav-projects .footer button {\n      width: 100%; }\n  .nav-projects .project--input,\n  .nav-projects .client--input {\n    z-index: 9999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav-projects .project--input h5,\n    .nav-projects .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input label,\n    .nav-projects .client--input label {\n      color: #797594; }\n    .nav-projects .project--input input, .nav-projects .project--input textarea,\n    .nav-projects .client--input input,\n    .nav-projects .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input button,\n    .nav-projects .client--input button {\n      margin-right: 0.5rem; }\n  .nav-projects .project--input {\n    position: absolute;\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav-projects .client--input {\n    position: fixed;\n    left: 1rem;\n    bottom: 3.75rem;\n    width: 288px; }\n", ""]);
 
 
 
@@ -16022,7 +16022,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-card {\n  width: 560px;\n  border: none;\n  margin-left: 1rem;\n  margin-bottom: 1rem;\n  color: #ffffff; }\n  .synthesis .synthesis-card .card-header {\n    padding-top: 1.5rem;\n    background: #291aa4;\n    border: none; }\n    .synthesis .synthesis-card .card-header .synthesis-card--client {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--name {\n      font-size: 1.75rem; }\n    .synthesis .synthesis-card .card-header .synthesis-card--description {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--budget {\n      color: #07c3eb;\n      font-size: 2.5rem;\n      position: relative;\n      top: 16px; }\n      .synthesis .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n        font-size: 1rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-body {\n    background: #3726bc;\n    border: none; }\n    .synthesis .synthesis-card .card-body .row .task-percentage {\n      padding-top: 1rem; }\n      .synthesis .synthesis-card .card-body .row .task-percentage .progress {\n        height: 8px;\n        background: #291aa4;\n        border: 0; }\n        .synthesis .synthesis-card .card-body .row .task-percentage .progress .progress-bar {\n          height: 8px;\n          -moz-border-radius: 4px;\n          -webkit-border-radius: 4px;\n          -ms-border-radius: 4px;\n          -o-border-radius: 4px;\n          -khtml-border-radius: 4px;\n          border-radius: 4px; }\n    .synthesis .synthesis-card .card-body .row .task-name {\n      padding-top: 0.5rem; }\n      .synthesis .synthesis-card .card-body .row .task-name .task-spent {\n        margin-left: 0.5rem;\n        color: #07c3eb;\n        font-size: 0.875rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-footer {\n    background: #4e3dcf;\n    border: none; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-card {\n  width: 560px;\n  border: none;\n  margin-left: 1rem;\n  margin-bottom: 1rem;\n  color: #ffffff; }\n  .synthesis .synthesis-card .card-header {\n    padding-top: 1.5rem;\n    background: #291aa4;\n    border: none; }\n    .synthesis .synthesis-card .card-header .synthesis-card--client {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--name {\n      font-size: 1.75rem; }\n    .synthesis .synthesis-card .card-header .synthesis-card--description {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--budget {\n      color: #07c3eb;\n      font-size: 2.5rem;\n      position: relative;\n      top: 16px; }\n      .synthesis .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n        font-size: 1rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-body {\n    background: #3726bc;\n    border: none; }\n    .synthesis .synthesis-card .card-body .row .task-percentage {\n      padding-top: 1rem; }\n      .synthesis .synthesis-card .card-body .row .task-percentage .progress {\n        height: 10px;\n        background: #291aa4;\n        border: 0;\n        -moz-border-radius: 5px;\n        -webkit-border-radius: 5px;\n        -ms-border-radius: 5px;\n        -o-border-radius: 5px;\n        -khtml-border-radius: 5px;\n        border-radius: 5px; }\n        .synthesis .synthesis-card .card-body .row .task-percentage .progress .progress-bar {\n          height: 10px;\n          -moz-border-radius: 5px;\n          -webkit-border-radius: 5px;\n          -ms-border-radius: 5px;\n          -o-border-radius: 5px;\n          -khtml-border-radius: 5px;\n          border-radius: 5px; }\n    .synthesis .synthesis-card .card-body .row .task-name {\n      padding-top: 0.5rem; }\n      .synthesis .synthesis-card .card-body .row .task-name .task-spent {\n        margin-left: 0.5rem;\n        color: #07c3eb;\n        font-size: 0.875rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-footer {\n    background: #4e3dcf;\n    border: none; }\n", ""]);
 
 
 
@@ -80275,7 +80275,7 @@ function (_Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row nav"
+        className: "row nav-projects"
       }, this.state.isSearching ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search--reset",
         onClick: this.resetSearch
@@ -82172,6 +82172,7 @@ function (_Component) {
 
       // console.log("//////------> "+this.props.mainStore.tracksDefinitions.length);
       var res = {};
+      var offset = 0;
       this.props.mainStore.tracksDefinitions.map(function (t) {
         if (t._id == _this2.props.id) {
           t.message.map(function (m) {
@@ -82192,7 +82193,7 @@ function (_Component) {
   }, {
     key: "getProjectPercentage",
     value: function getProjectPercentage(value) {
-      var pc = value * 100 / this.props.budget;
+      var pc = Math.floor(value * 100 / this.props.budget);
       return pc;
     }
   }, {
@@ -82200,7 +82201,8 @@ function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var tasks = this.listProjectsTasks();
+      var tasks = this.listProjectsTasks(); // let offset = 0;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "synthesis-card card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82224,6 +82226,7 @@ function (_Component) {
       }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, Object.keys(tasks).map(function (t) {
+        // offset += this.getProjectPercentage(tasks[t]);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82245,7 +82248,9 @@ function (_Component) {
           className: "col-md-6"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "task-name"
-        }, t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-primary mr-2"
+        }, _this3.getProjectPercentage(tasks[t]) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
         }, tasks[t], " jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

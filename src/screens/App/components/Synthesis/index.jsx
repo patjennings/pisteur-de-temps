@@ -73,7 +73,7 @@ const Synthesis = inject("mainStore")(observer(class Synthesis extends Component
 			    return <Card key={p._id} name={p.name} id={p._id} client={p.client} description={p.description} budget={p.budget} currentSearch={this.state.search}/>
 			}
 		
-			
+			 
 			
 		    })}
 	    </div>
