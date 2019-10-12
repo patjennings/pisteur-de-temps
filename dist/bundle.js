@@ -69235,7 +69235,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82156,8 +82156,11 @@ function (_Component) {
     _classCallCheck(this, Card);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
-    _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this));
-    _this.getProjectPercentage = _this.getProjectPercentage.bind(_assertThisInitialized(_this));
+    _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this)); // this.getProjectPercentage = this.getProjectPercentage.bind(this);
+
+    _this.state = {
+      timeSpent: 0
+    };
     return _this;
   }
 
@@ -82170,7 +82173,6 @@ function (_Component) {
     value: function listProjectsTasks() {
       var _this2 = this;
 
-      // console.log("//////------> "+this.props.mainStore.tracksDefinitions.length);
       var res = {};
       var offset = 0;
       this.props.mainStore.tracksDefinitions.map(function (t) {
@@ -82183,18 +82185,14 @@ function (_Component) {
 
               Object.assign(res, task);
             }
+
+            _this2.state.timeSpent += m.value;
           });
         }
-      });
-      console.log(res); // console.log(this.props.mainStore.tracksDefinitions[i]._id);
+      }); // console.log(res);
+      // console.log(this.props.mainStore.tracksDefinitions[i]._id);
 
       return res;
-    }
-  }, {
-    key: "getProjectPercentage",
-    value: function getProjectPercentage(value) {
-      var pc = Math.floor(value * 100 / this.props.budget);
-      return pc;
     }
   }, {
     key: "render",
@@ -82223,6 +82221,10 @@ function (_Component) {
         className: "synthesis-card--budget"
       }, this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
+      }, "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synthesis-card--spent"
+      }, this.state.timeSpent, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "budget-unit"
       }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, Object.keys(tasks).map(function (t) {
@@ -82239,7 +82241,7 @@ function (_Component) {
           className: "progress-bar bg-success",
           role: "progressbar",
           style: {
-            width: _this3.getProjectPercentage(tasks[t]) + "%"
+            width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_3__["getPercent"])(tasks[t], _this3.props.budget) + "%"
           },
           "aria-valuenow": "25",
           "aria-valuemin": "0",
@@ -82250,7 +82252,7 @@ function (_Component) {
           className: "task-name"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "badge badge-primary mr-2"
-        }, _this3.getProjectPercentage(tasks[t]) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_3__["getPercent"])(tasks[t], _this3.props.budget) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
         }, tasks[t], " jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

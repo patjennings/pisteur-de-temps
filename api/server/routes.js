@@ -77,12 +77,12 @@ module.exports = function(app){
 	// infos pour envoyer l'email
 	var server = emailjs.server.connect({
 	    user:    "bonjour@thomasguesnon.fr",
-	    password:"PNvLwf2okN",
+	    password:"xxxxxxxx",
 	    host:    "ssl0.ovh.net",
 	    ssl:     true
 	});
 	
-	 models.users.findOne({email: email}, function(err, data){
+	models.users.findOne({email: email}, function(err, data){
 	    if(err || data == null){
 		response = {"error": true, "message" : "no account with this email"};
 		res.json(response);
@@ -233,6 +233,53 @@ module.exports = function(app){
 		res.json(response);		
 	    }
 	})
+    });
+
+    // ------------
+    // PARAMS
+    // ------------
+    app.get("/params", function (req, res) {
+	var response = {};
+	// console.log("config");
+	models.params.find({}, function(err,data){
+	    console.log(data);
+	    if(err) {
+                response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		response = data;
+		// response.unit = data.unit;
+	    }
+	    res.json(response);
+        });
+    });
+    app.put("/params", function (req, res) {
+	var response = {};
+	
+	for(var prop in req.body){
+	    console.log(prop);
+	}
+	
+	// if (req.body.unit !== undefined) {
+	//     data.unit = req.body.unit;
+
+	//     models.params.findById("unit", function(err,data){
+	// 	if(err) {
+        //             response = {"error" : true,"message" : "Error fetching data"};
+	// 	} else {
+	// 	    data.unit = req.body.unit;
+
+	// 	    // Save data
+	// 	    data.save(function(err, data){
+	// 		if(err) {
+        //                     response = {"error" : true,"message" : "Error updating data"};
+	// 		} else {
+        //                     response = {"error" : false,"message" : "Data is updated for unit", "data" : data};
+	// 		}
+	// 		res.json(response);
+	// 	    })
+	// 	}
+        //     });
+	// }
     });
 
     
@@ -409,7 +456,7 @@ module.exports = function(app){
     // 		response = {"error" : true,"message" : "Error fetching data"};
     // 	    } else {
     // 		projectIDs = data.relatedProjects;
-		
+    
     // 		models.projects.find({ _id: { $in: projectIDs } }, function(err,data){
     // 		    if(err) {
     // 			response = {"error" : true,"message" : "Error fetching data"};
@@ -556,7 +603,7 @@ module.exports = function(app){
 			    if(err){
 				response = {"error" : true,"message" : "Error deleting related project data"};
 			    } else {
-		
+				
 				response = {"error" : false, "message" : "Project and related tracks were deleted"};	 
 			    }
 
@@ -706,10 +753,10 @@ module.exports = function(app){
     });
 
     // obtenir tout le temps tracké pour un user
-     app.get("/user/:userid/trackedtime/", function (req, res) {
+    app.get("/user/:userid/trackedtime/", function (req, res) {
 	var response = {};
 
-	 models.trackedTime.find({ relatedUser : req.params.userid },function(err,data){
+	models.trackedTime.find({ relatedUser : req.params.userid },function(err,data){
 	    if(err) {
 		response = {"error" : true,"message" : "Error fetching data"};
 	    } else {

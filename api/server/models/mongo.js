@@ -5,6 +5,11 @@ mongoose.connect('mongodb://localhost:27017/time-tracker', { useNewUrlParser: tr
 var mongoSchema = mongoose.Schema;
 
 // create schemas
+var paramsSchema = {
+    "_id": String,
+    "value": String
+}
+
 var userSchema  = {
     "firstName": String,
     "lastName": String,
@@ -42,12 +47,14 @@ var trackedTimeSchema = {
 
 // create model if not exists.
 // Le premier paramètre est le nom de la collection, le deuxième, le schéma utilisé
+var params = mongoose.model('params', paramsSchema);
 var users = mongoose.model('users', userSchema);
 var clients = mongoose.model('clients', clientSchema);
 var projects = mongoose.model('projects', projectSchema);
 var trackedTime = mongoose.model('trackedTime', trackedTimeSchema, 'trackedTime' ); // On évite que Mongoose nous ajoute un s à la collection, et travaille avec cette version
 
 // then exports models, so it can be used somewhere else
+exports.params = params;
 exports.users = users;
 exports.clients = clients;
 exports.projects = projects;

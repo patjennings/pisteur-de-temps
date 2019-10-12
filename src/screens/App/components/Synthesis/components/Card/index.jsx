@@ -8,14 +8,17 @@ const Card = inject("mainStore")(observer(class Card extends Component {
     constructor(props){
 	super(props);
 	this.listProjectsTasks = this.listProjectsTasks.bind(this);
-	this.getProjectPercentage = this.getProjectPercentage.bind(this);
+	// this.getProjectPercentage = this.getProjectPercentage.bind(this);
+
+	this.state = {
+	    timeSpent: 0
+	};
     }
 
     componentDidMount(){
 	//
     }
     listProjectsTasks(){
-	// console.log("//////------> "+this.props.mainStore.tracksDefinitions.length);
 	let res = {};
 	let offset = 0;
 	
@@ -28,18 +31,14 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 		    	let task = {[m.task] : m.value};
 		    	Object.assign(res, task);
 		    }
-
+		    this.state.timeSpent += m.value;
 		});
 	    }
 	});
 
-	console.log(res);
+	// console.log(res);
 	// console.log(this.props.mainStore.tracksDefinitions[i]._id);
 	return res;
-    }
-    getProjectPercentage(value){
-	let pc = Math.floor(value*100/this.props.budget);
-	return pc;
     }
     render() {
 	const tasks = this.listProjectsTasks();
@@ -56,6 +55,7 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 		  </div>
 		  <div className="col-md-4">
 		    <p className="synthesis-card--budget">{this.props.budget} <span className="budget-unit">jours</span></p>
+		    <p className="synthesis-card--spent">{this.state.timeSpent} <span className="budget-unit">jours</span></p>
 		  </div>
 		</div>
 	      </div>
@@ -67,12 +67,12 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 			      <div className="task-percentage">
 				    
 				    <div className="progress">
-					  <div className="progress-bar bg-success" role="progressbar" style={{width: this.getProjectPercentage(tasks[t])+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+					  <div className="progress-bar bg-success" role="progressbar" style={{width: getPercent(tasks[t], this.props.budget)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				  </div>
 			    </div>
 		            <div className="col-md-6">
-				  <div className="task-name"><span className="badge badge-primary mr-2">{this.getProjectPercentage(tasks[t])+"%"}</span>{t}<span className="task-spent">{tasks[t]} jours</span></div>
+				  <div className="task-name"><span className="badge badge-primary mr-2">{getPercent(tasks[t], this.props.budget)+"%"}</span>{t}<span className="task-spent">{tasks[t]} jours</span></div>
 				</div>
 			</div>;
 		})}
