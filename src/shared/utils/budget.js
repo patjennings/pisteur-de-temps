@@ -6,7 +6,10 @@ export function getFullTime(trackedTime){
     return fullTime;
 }
 
-export function getPercent(done, total){
+export function getPercent(done, total, floor = false){
     let result = done*100/total;
-    return result;
+    let formattedResult;
+    floor ? formattedResult = Math.floor(result) : formattedResult = result;
+
+    return formattedResult;
 }

@@ -16,14 +16,14 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	super(props);
 
 	// get the client id
-	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
 	// ^^^^^^^^^^^^^^^^^^^^^
 	// LÀ, PROBLÈME !!
 
 	this.state = {
 	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
-	    // clientId: clid,
-	    clientName: getClientName(this.props.mainStore.clientsDefinitions, clid),
+	    clientId: toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client,
+	    clientName: getClientName(this.props.mainStore.clientsDefinitions, this.clientId),
 	    isEdited: false,
 	    activeProject: this.props.relatedProject
 	};
@@ -38,7 +38,13 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
     }
 
     componentDidMount() {
-	//
+	// console.log("///////:::::::::::::: "+this.props.mainStore.projectsDefinitions);
+	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	// this.setState({
+	//     clientId: clid,
+	//     clientName: getClientName(this.props.mainStore.clientsDefinitions, clid)
+	// })
+	    
     }
     componentDidUpdate(){
 	if(this.state.isEdited){

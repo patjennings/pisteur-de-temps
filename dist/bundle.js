@@ -16022,7 +16022,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-card {\n  width: 560px;\n  border: none;\n  margin-left: 1rem;\n  margin-bottom: 1rem;\n  color: #ffffff; }\n  .synthesis .synthesis-card .card-header {\n    padding-top: 1.5rem;\n    background: #291aa4;\n    border: none; }\n    .synthesis .synthesis-card .card-header .synthesis-card--client {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--name {\n      font-size: 1.75rem; }\n    .synthesis .synthesis-card .card-header .synthesis-card--description {\n      color: #07c3eb; }\n    .synthesis .synthesis-card .card-header .synthesis-card--budget {\n      color: #07c3eb;\n      font-size: 2.5rem;\n      position: relative;\n      top: 16px; }\n      .synthesis .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n        font-size: 1rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-body {\n    background: #3726bc;\n    border: none; }\n    .synthesis .synthesis-card .card-body .row .task-percentage {\n      padding-top: 1rem; }\n      .synthesis .synthesis-card .card-body .row .task-percentage .progress {\n        height: 10px;\n        background: #291aa4;\n        border: 0;\n        -moz-border-radius: 5px;\n        -webkit-border-radius: 5px;\n        -ms-border-radius: 5px;\n        -o-border-radius: 5px;\n        -khtml-border-radius: 5px;\n        border-radius: 5px; }\n        .synthesis .synthesis-card .card-body .row .task-percentage .progress .progress-bar {\n          height: 10px;\n          -moz-border-radius: 5px;\n          -webkit-border-radius: 5px;\n          -ms-border-radius: 5px;\n          -o-border-radius: 5px;\n          -khtml-border-radius: 5px;\n          border-radius: 5px; }\n    .synthesis .synthesis-card .card-body .row .task-name {\n      padding-top: 0.5rem; }\n      .synthesis .synthesis-card .card-body .row .task-name .task-spent {\n        margin-left: 0.5rem;\n        color: #07c3eb;\n        font-size: 0.875rem;\n        font-weight: 700; }\n  .synthesis .synthesis-card .card-footer {\n    background: #4e3dcf;\n    border: none; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-inner {\n  padding: 0 0 5rem 0; }\n  .synthesis .synthesis-inner .synthesis-cards {\n    overflow-y: auto; }\n    .synthesis .synthesis-inner .synthesis-cards .synthesis-card {\n      width: 560px;\n      border: none;\n      margin-left: 1rem;\n      margin-bottom: 1rem;\n      color: #ffffff; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header {\n        padding-top: 1.5rem;\n        background: #291aa4;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--client {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--name {\n          font-size: 1.75rem; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--description {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent {\n          color: #07c3eb;\n          font-size: 2.5rem;\n          position: relative;\n          top: 16px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget {\n          color: #07c3eb;\n          font-size: 1.35rem;\n          font-weight: 700;\n          position: relative;\n          top: -8px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body {\n        background: #3726bc;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress {\n          padding-top: 1rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress {\n            height: 10px;\n            background: #291aa4;\n            border: 0;\n            -moz-border-radius: 5px;\n            -webkit-border-radius: 5px;\n            -ms-border-radius: 5px;\n            -o-border-radius: 5px;\n            -khtml-border-radius: 5px;\n            border-radius: 5px; }\n            .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress .progress-bar {\n              height: 10px;\n              background: #ffffff;\n              -moz-border-radius: 5px;\n              -webkit-border-radius: 5px;\n              -ms-border-radius: 5px;\n              -o-border-radius: 5px;\n              -khtml-border-radius: 5px;\n              border-radius: 5px; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name {\n          padding-top: 0.5rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-percentage {\n            background: #4e3dcf; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-spent {\n            margin-left: 0.5rem;\n            color: #07c3eb;\n            font-size: 0.875rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-footer {\n        background: #4e3dcf;\n        border: none; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header {\n        background: #611581; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--client {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--description {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--spent {\n          color: #ff2323; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--budget {\n          color: #ffffff; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body {\n        background: #6e1e94; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress {\n          background: #611581; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress .progress-bar {\n            background: #ff2323; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-percentage {\n          background: #a60000; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-spent {\n          color: #bc98ce; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-footer {\n        background: #7e28a2; }\n", ""]);
 
 
 
@@ -69235,7 +69235,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80408,16 +80408,16 @@ function (_Component) {
     _classCallCheck(this, Task);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Task).call(this, props)); // get the client id
-
-    var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(_this.props.mainStore.projectsDefinitions.find(function (item) {
-      return item._id == _this.props.relatedProject;
-    })).client; // ^^^^^^^^^^^^^^^^^^^^^
+    // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+    // ^^^^^^^^^^^^^^^^^^^^^
     // LÀ, PROBLÈME !!
 
     _this.state = {
       projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(_this.props.mainStore.projectsDefinitions, _this.props.relatedProject),
-      // clientId: clid,
-      clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(_this.props.mainStore.clientsDefinitions, clid),
+      clientId: Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(_this.props.mainStore.projectsDefinitions.find(function (item) {
+        return item._id == _this.props.relatedProject;
+      })).client,
+      clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(_this.props.mainStore.clientsDefinitions, _this.clientId),
       isEdited: false,
       activeProject: _this.props.relatedProject
     }; // binds
@@ -80433,7 +80433,12 @@ function (_Component) {
 
   _createClass(Task, [{
     key: "componentDidMount",
-    value: function componentDidMount() {//
+    value: function componentDidMount() {// console.log("///////:::::::::::::: "+this.props.mainStore.projectsDefinitions);
+      // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+      // this.setState({
+      //     clientId: clid,
+      //     clientName: getClientName(this.props.mainStore.clientsDefinitions, clid)
+      // })
     }
   }, {
     key: "componentDidUpdate",
@@ -82119,8 +82124,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -82145,6 +82151,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Card = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -82159,7 +82166,9 @@ function (_Component) {
     _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this)); // this.getProjectPercentage = this.getProjectPercentage.bind(this);
 
     _this.state = {
-      timeSpent: 0
+      timeSpent: 0,
+      timeTotal: _this.props.budget,
+      timeOverflow: false
     };
     return _this;
   }
@@ -82169,14 +82178,20 @@ function (_Component) {
     value: function componentDidMount() {//
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.state.timeSpent = 0; // console.log("toto");
+    }
+  }, {
     key: "listProjectsTasks",
     value: function listProjectsTasks() {
       var _this2 = this;
 
-      var res = {};
-      var offset = 0;
+      var res = {}; // let offset = 0;
+
       this.props.mainStore.tracksDefinitions.map(function (t) {
         if (t._id == _this2.props.id) {
+          console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_2__["toJS"])(t.message));
           t.message.map(function (m) {
             if (res[m.task] !== undefined) {
               res[m.task] += m.value;
@@ -82189,7 +82204,14 @@ function (_Component) {
             _this2.state.timeSpent += m.value;
           });
         }
-      }); // console.log(res);
+      });
+
+      if (this.state.timeSpent > this.state.timeTotal) {
+        this.state.timeTotal = this.state.timeSpent;
+        this.state.timeOverflow = true;
+      }
+
+      console.log("************** " + this.state.timeSpent); // console.log(res);
       // console.log(this.props.mainStore.tracksDefinitions[i]._id);
 
       return res;
@@ -82199,10 +82221,9 @@ function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var tasks = this.listProjectsTasks(); // let offset = 0;
-
+      var tasks = this.listProjectsTasks();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "synthesis-card card"
+        className: "synthesis-card card " + (this.state.timeOverflow ? "time-overflow" : "")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82211,21 +82232,21 @@ function (_Component) {
         className: "col-md-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--client"
-      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.client)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_3__["getClientName"])(this.props.mainStore.clientsDefinitions, this.props.client)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
         className: "synthesis-card--name"
       }, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--description"
       }, this.props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "synthesis-card--budget"
-      }, this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "budget-unit"
-      }, "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--spent"
       }, this.state.timeSpent, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
-      }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "synthesis-card--budget"
+      }, "sur ", this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "budget-unit"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, Object.keys(tasks).map(function (t) {
         // offset += this.getProjectPercentage(tasks[t]);
@@ -82234,14 +82255,14 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-md-6"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "task-percentage"
+          className: "task-progress"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "progress"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "progress-bar bg-success",
+          className: "progress-bar",
           role: "progressbar",
           style: {
-            width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_3__["getPercent"])(tasks[t], _this3.props.budget) + "%"
+            width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(tasks[t], _this3.state.timeTotal, true) + "%"
           },
           "aria-valuenow": "25",
           "aria-valuemin": "0",
@@ -82251,8 +82272,8 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "task-name"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "badge badge-primary mr-2"
-        }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_3__["getPercent"])(tasks[t], _this3.props.budget) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge task-percentage mr-2"
+        }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
         }, tasks[t], " jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82335,9 +82356,11 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Synthesis).call(this, props));
     _this.state = {
       search: '',
-      isSearching: false
+      isSearching: false,
+      height: window.innerHeight - 163
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
     _this.resetSearch = _this.resetSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -82346,7 +82369,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var tt = this.props.mainStore.loadTrackedTime(this.props.id);
-      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_5__["toJS"])(tt));
+      this.handleResize(); // console.log(toJS(tt));
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 163
+      });
     }
   }, {
     key: "handleChange",
@@ -82376,9 +82406,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-12"
+        className: "col-12 synthesis-inner"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row synthesis-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2 offset-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -82388,7 +82418,10 @@ function (_Component) {
         "aria-label": "Search",
         onChange: this.handleChange
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row synthesis-cards",
+        style: {
+          height: this.state.height + "px"
+        }
       }, this.props.mainStore.projectsDefinitions.map(function (p) {
         var pn = p.name;
         var pnNoAccent = pn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -84191,7 +84224,6 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   projectsDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   usersDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   tracksDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
-  // allTracks: observable,
   trackHistory: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   state: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   setPageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
@@ -84238,8 +84270,11 @@ function getFullTime(trackedTime) {
   return fullTime;
 }
 function getPercent(done, total) {
+  var floor = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var result = done * 100 / total;
-  return result;
+  var formattedResult;
+  floor ? formattedResult = Math.floor(result) : formattedResult = result;
+  return formattedResult;
 }
 
 /***/ }),

@@ -325,7 +325,6 @@ decorate(MainStore, {
     projectsDefinitions: observable,
     usersDefinitions: observable,
     tracksDefinitions: observable,
-    // allTracks: observable,
     trackHistory: observable,
     state: observable,
     setPageDisplayed: action,

@@ -18,14 +18,22 @@ const Synthesis = inject("mainStore")(observer(class Synthesis extends Component
 
 	this.state = {
 	    search: '',
-	    isSearching: false
+	    isSearching: false,
+	    height: window.innerHeight - 163
 	};
 	this.handleChange = this.handleChange.bind(this);
+	this.handleResize = this.handleResize.bind(this);
 	this.resetSearch = this.resetSearch.bind(this);
     }
     componentDidMount(){
 	const tt = this.props.mainStore.loadTrackedTime(this.props.id);
-	console.log(toJS(tt));
+	this.handleResize();
+	// console.log(toJS(tt));
+    }
+    handleResize(){
+	this.setState({
+	    height: window.innerHeight-163
+	})
     }
     handleChange(e){
 	this.setState({
@@ -47,15 +55,14 @@ const Synthesis = inject("mainStore")(observer(class Synthesis extends Component
 	    <div className="synthesis logged-in">
 	      <MainNavigation />
 	      <div className="container-fluid">
-		<div className="col-12">
-		  <div className="row">
+		<div className="col-12 synthesis-inner">
+		  <div className="row synthesis-search">
 		    <div className="col-2 offset-5">
 		      <input className="form-control form-control-dark w-100 mb-4 mt-4" type="text" placeholder="Search" aria-label="Search" onChange={this.handleChange}/>
 		    </div>
 		  </div>
-		  <div className="row">
+		  <div className="row synthesis-cards" style={{height: this.state.height+"px"}}>
 		    {this.props.mainStore.projectsDefinitions.map(p => {
-
 			const pn = p.name;
 			const pnNoAccent = pn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 			const cn = getClientName(this.props.mainStore.clientsDefinitions, p.client);

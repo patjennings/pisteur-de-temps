@@ -3,82 +3,153 @@
 
 .synthesis{
     // overflow-y: auto;
-    
-    .synthesis-card{
-	width: 560px;
-	border: none;
-	margin-left: 1rem;
-	margin-bottom: 1rem;
-	color: $main-font-inverted;
+    .synthesis-inner{
+	padding: 0 0 5rem 0;
 
-
-	.card-header{
-	    padding-top: 1.5rem;
-	    background: $accent-color-dark;
-	    border: none;
-	    
-	    .synthesis-card--client{
-		color: $main-font-inverted-light;
-	    }
-	    .synthesis-card--name{
-		font-size: 1.75rem;
-	    }
-	    .synthesis-card--description{
-		color: $main-font-inverted-light;
-	    }
-	    .synthesis-card--budget{
-		color: $main-font-inverted-light;
-		font-size: 2.5rem;
-
-		position: relative;
-		top: 16px;
-		
-		.budget-unit{
-		    font-size: 1rem;
-		    font-weight: 700;
-		}
-	    }
-
-	    
+	.synthesis-search{
 	    
 	}
-	.card-body{
-	    background: $accent-color;
-	    border: none;
-	    .row{
-		.task-percentage{
-		    padding-top: 1rem;
-		    
-		    .progress{
-			height: 10px;
-			background: $accent-color-dark;
-			border: 0;
-			@include border-radius(5px);
+	.synthesis-cards{
+	    overflow-y: auto;
+	    
+	    .synthesis-card{
+		width: 560px;
+		border: none;
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+		color: $main-font-inverted;
 
-			.progress-bar{
-			    height: 10px;
-			    @include border-radius(5px);
+		.card-header{
+		    padding-top: 1.5rem;
+		    background: $accent-color-dark;
+		    border: none;
+		    
+		    .synthesis-card--client{
+			color: $main-font-inverted-light;
+		    }
+		    .synthesis-card--name{
+			font-size: 1.75rem;
+		    }
+		    .synthesis-card--description{
+			color: $main-font-inverted-light;
+		    }
+		    .synthesis-card--spent{
+			color: $main-font-inverted-light;
+			font-size: 2.5rem;
+
+			position: relative;
+			top: 16px;
+			
+			.budget-unit{
+			    font-size: 1rem;
+			    font-weight: 700;
 			}
 		    }
-		    
-		}
-		.task-name{
-		    padding-top: 0.5rem;
-
-		    .task-spent{
-			margin-left: 0.5rem;
+		    .synthesis-card--budget{
 			color: $main-font-inverted-light;
-			font-size: 0.875rem;
+			font-size: 1.35rem;
 			font-weight: 700;
+
+			position: relative;
+			top: -8px;
+			
+			.budget-unit{
+			    font-size: 1rem;
+			    font-weight: 700;
+			}
 		    }
 		}
-	    }
-	    
-	}
-	.card-footer{
-	    background: $accent-color-light;
-	    border: none;
+		.card-body{
+		    background: $accent-color;
+		    border: none;
+		    .row{
+			.task-progress{
+			    padding-top: 1rem;
+			    
+			    .progress{
+				height: 10px;
+				background: $accent-color-dark;
+				border: 0;
+				@include border-radius(5px);
+
+				.progress-bar{
+				    height: 10px;
+				    background: $main-font-inverted;
+				    @include border-radius(5px);
+				}
+			    }
+			    
+			}
+			.task-name{
+			    padding-top: 0.5rem;
+
+			    .task-percentage{
+				background: $accent-color-light;
+			    }
+
+			    .task-spent{
+				margin-left: 0.5rem;
+				color: $main-font-inverted-light;
+				font-size: 0.875rem;
+				font-weight: 700;
+			    }
+			}
+		    }	
+		}
+		.card-footer{
+		    background: $accent-color-light;
+		    border: none;
+		}
+
+		&.time-overflow{
+		    .card-header{
+			background: $overflow-color-dark;
+			
+			.synthesis-card--client{
+			    color: $main-font-inverted-light--overflow;
+			}
+			.synthesis-card--name{			   
+			}
+			.synthesis-card--description{
+			    color: $main-font-inverted-light--overflow;
+			}
+			.synthesis-card--spent{
+			    color: $alert;
+			}
+			.synthesis-card--budget{
+			    color: $main-font-inverted;
+			}
+		    }
+		    .card-body{
+			background: $overflow-color;
+			.row{
+			    .task-progress{
+				
+				.progress{
+				    background: $overflow-color-dark;
+
+				    .progress-bar{
+					background: $alert;
+				    }
+				}
+				
+			    }
+			    .task-name{
+				.task-percentage{
+				    background: $alert-dark;
+				}
+
+				.task-spent{
+				    color: $main-font-inverted-light--overflow;
+				}
+			    }
+			}	
+		    }
+		    .card-footer{
+			background: $overflow-color-light;
+		    }
+		}
+	    }	
 	}
     }
-
 }

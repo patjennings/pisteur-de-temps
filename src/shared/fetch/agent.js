@@ -72,7 +72,7 @@ export function fetchClientsDefinitions(){
 export function fetchProjectsDefinitions(){
     let result = axios
 	.get(`${API_ROOT}/projects`)
-	.then(res => {		    
+	.then(res => {
 	    return res.data
 	})
 	.catch(error => console.log(error));
