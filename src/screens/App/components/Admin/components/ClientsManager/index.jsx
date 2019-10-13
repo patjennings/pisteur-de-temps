@@ -5,7 +5,6 @@ import Client from "./components/Client";
 
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./styles.scss";
 import "assets/styles/main.scss";
 
 const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsManager extends Component {
@@ -13,10 +12,12 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
 	super(props);
 	this.state = {
 	    isAddingClient: false,
-	    search: ''
+	    search: '',
+	    height: window.innerHeight - 420
 	};
 	this.addClient = this.addClient.bind(this);
 	this.handleChange = this.handleChange.bind(this);
+	this.handleResize = this.handleResize.bind(this);
 	this.changeOrder = this.changeOrder.bind(this);
     }
     changeOrder(){
@@ -26,7 +27,11 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
     addClient(){
 	this.setState({isAddingClient: true});
     }
-
+handleResize(){
+	this.setState({
+	    height: window.innerHeight - 420
+	})
+    }
     handleChange(e){
 	// console.log("reset navigation");
 	this.setState({isAddingClient: false});
@@ -50,7 +55,6 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
   			       aria-label="Input"
 			       placeholder="Search"
 			       onChange={this.handleChange}/>
-			<div className="search-reset"><i className="ico "/></div>
 		      </div>
 		      <div className="col-5">
 			<div className="btn-group">
@@ -80,7 +84,7 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
 		  </div>
 		</div>
 	      </div>
-	      <div className="projects-content pane-content">
+	      <div className="projects-content pane-content" style={{height: this.state.height+"px"}}>
 		<ul>
 		  {this.state.isAddingClient ? <li className="new"><AddClient onChange={this.handleChange} /></li> : null }
 		  {this.props.mainStore.clientsDefinitions.map(c => {

@@ -108,16 +108,17 @@
 			.synthesis-card--client{
 			    color: $main-font-inverted-light--overflow;
 			}
-			.synthesis-card--name{			   
+			.synthesis-card--name{
+			    color: $alert-lighter;
 			}
 			.synthesis-card--description{
 			    color: $main-font-inverted-light--overflow;
 			}
 			.synthesis-card--spent{
-			    color: $alert;
+			    color: $alert-lighter;
 			}
 			.synthesis-card--budget{
-			    color: $main-font-inverted;
+			    color: $alert-lighter;
 			}
 		    }
 		    .card-body{
@@ -129,14 +130,14 @@
 				    background: $overflow-color-dark;
 
 				    .progress-bar{
-					background: $alert;
+					background: $alert-lighter;
 				    }
 				}
 				
 			    }
 			    .task-name{
 				.task-percentage{
-				    background: $alert-dark;
+				    background: $overflow-color-light;
 				}
 
 				.task-spent{

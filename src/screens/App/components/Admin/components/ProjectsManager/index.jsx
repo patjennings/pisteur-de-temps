@@ -6,7 +6,6 @@ import AddProject from "../AddProject";
 
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./styles.scss";
 import "assets/styles/main.scss";
 
 const ProjectsManager = inject("mainStore", "authStore")(observer(class ProjectsManager extends Component {
@@ -14,10 +13,12 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 	super(props);
 	this.state = {
 	    isAddingProject: false,
-	    search: ''
+	    search: '',
+	    height: window.innerHeight - 420
 	};
 	this.addProject = this.addProject.bind(this);
 	this.handleChange = this.handleChange.bind(this);
+	this.handleResize = this.handleResize.bind(this);
 	this.changeOrder = this.changeOrder.bind(this);
     }
     changeOrder(){
@@ -26,7 +27,11 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
     addProject(){
 	this.setState({isAddingProject: true});
     }
-
+handleResize(){
+	this.setState({
+	    height: window.innerHeight - 420
+	})
+    }
     handleChange(e){
 	this.setState({isAddingProject: false});
 	this.setState({
@@ -87,7 +92,7 @@ const ProjectsManager = inject("mainStore", "authStore")(observer(class Projects
 		  </div>
 		</div>
 	      </div>
-	      <div className="projects-content pane-content">
+	      <div className="projects-content pane-content" style={{height: this.state.height+"px"}}>
 		<ul>
 		  { this.state.isAddingProject ? <li className="new"><AddProject onChange={this.handleChange} /></li>: null }
 		  {this.props.mainStore.projectsDefinitions.map(p => {

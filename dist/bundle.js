@@ -15818,21 +15818,6 @@ exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-dec
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ClientsManager/styles.scss":
-/*!*************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ClientsManager/styles.scss ***!
-  \*************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ProjectsManager/components/Project/styles.scss":
 /*!*********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ProjectsManager/components/Project/styles.scss ***!
@@ -15843,21 +15828,6 @@ exports.push([module.i, "", ""]);
 exports = module.exports = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-decoration: none; }\n  .track .track-edit:hover {\n    text-decoration: none; }\n\n.track .track-delete {\n  color: var(--dark);\n  text-decoration: none; }\n  .track .track-delete:hover {\n    text-decoration: none; }\n  .track .track-delete.muted {\n    color: #999; }\n    .track .track-delete.muted:hover {\n      color: #999; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ProjectsManager/styles.scss":
-/*!**************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ProjectsManager/styles.scss ***!
-  \**************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
 
 
 
@@ -15878,21 +15848,6 @@ exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-dec
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/UsersManager/styles.scss":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/UsersManager/styles.scss ***!
-  \***********************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "", ""]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/styles.scss":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/styles.scss ***!
@@ -15902,7 +15857,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #efeff0;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content ul {\n    margin: 0;\n    padding: 0; }\n    .manager #nav-tabContent .pane-content ul li {\n      list-style-type: none;\n      border-bottom: 1px solid #efeff0;\n      padding: 1rem 1rem 0 1rem; }\n      .manager #nav-tabContent .pane-content ul li .row {\n        margin-bottom: 1rem; }\n      .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #efeff0;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content {\n    overflow-y: auto; }\n    .manager #nav-tabContent .pane-content ul {\n      margin: 0;\n      padding: 0; }\n      .manager #nav-tabContent .pane-content ul li {\n        list-style-type: none;\n        border-bottom: 1px solid #efeff0;\n        padding: 1rem 1rem 0 1rem; }\n        .manager #nav-tabContent .pane-content ul li .row {\n          margin-bottom: 1rem; }\n        .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n          background: #f8f9fa; }\n", ""]);
 
 
 
@@ -16022,7 +15977,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-inner {\n  padding: 0 0 5rem 0; }\n  .synthesis .synthesis-inner .synthesis-cards {\n    overflow-y: auto; }\n    .synthesis .synthesis-inner .synthesis-cards .synthesis-card {\n      width: 560px;\n      border: none;\n      margin-left: 1rem;\n      margin-bottom: 1rem;\n      color: #ffffff; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header {\n        padding-top: 1.5rem;\n        background: #291aa4;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--client {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--name {\n          font-size: 1.75rem; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--description {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent {\n          color: #07c3eb;\n          font-size: 2.5rem;\n          position: relative;\n          top: 16px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget {\n          color: #07c3eb;\n          font-size: 1.35rem;\n          font-weight: 700;\n          position: relative;\n          top: -8px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body {\n        background: #3726bc;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress {\n          padding-top: 1rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress {\n            height: 10px;\n            background: #291aa4;\n            border: 0;\n            -moz-border-radius: 5px;\n            -webkit-border-radius: 5px;\n            -ms-border-radius: 5px;\n            -o-border-radius: 5px;\n            -khtml-border-radius: 5px;\n            border-radius: 5px; }\n            .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress .progress-bar {\n              height: 10px;\n              background: #ffffff;\n              -moz-border-radius: 5px;\n              -webkit-border-radius: 5px;\n              -ms-border-radius: 5px;\n              -o-border-radius: 5px;\n              -khtml-border-radius: 5px;\n              border-radius: 5px; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name {\n          padding-top: 0.5rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-percentage {\n            background: #4e3dcf; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-spent {\n            margin-left: 0.5rem;\n            color: #07c3eb;\n            font-size: 0.875rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-footer {\n        background: #4e3dcf;\n        border: none; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header {\n        background: #611581; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--client {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--description {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--spent {\n          color: #ff2323; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--budget {\n          color: #ffffff; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body {\n        background: #6e1e94; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress {\n          background: #611581; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress .progress-bar {\n            background: #ff2323; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-percentage {\n          background: #a60000; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-spent {\n          color: #bc98ce; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-footer {\n        background: #7e28a2; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.synthesis .synthesis-inner {\n  padding: 0 0 5rem 0; }\n  .synthesis .synthesis-inner .synthesis-cards {\n    overflow-y: auto; }\n    .synthesis .synthesis-inner .synthesis-cards .synthesis-card {\n      width: 560px;\n      border: none;\n      margin-left: 1rem;\n      margin-bottom: 1rem;\n      color: #ffffff; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header {\n        padding-top: 1.5rem;\n        background: #291aa4;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--client {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--name {\n          font-size: 1.75rem; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--description {\n          color: #07c3eb; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent {\n          color: #07c3eb;\n          font-size: 2.5rem;\n          position: relative;\n          top: 16px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--spent .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget {\n          color: #07c3eb;\n          font-size: 1.35rem;\n          font-weight: 700;\n          position: relative;\n          top: -8px; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-header .synthesis-card--budget .budget-unit {\n            font-size: 1rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body {\n        background: #3726bc;\n        border: none; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress {\n          padding-top: 1rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress {\n            height: 10px;\n            background: #291aa4;\n            border: 0;\n            -moz-border-radius: 5px;\n            -webkit-border-radius: 5px;\n            -ms-border-radius: 5px;\n            -o-border-radius: 5px;\n            -khtml-border-radius: 5px;\n            border-radius: 5px; }\n            .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-progress .progress .progress-bar {\n              height: 10px;\n              background: #ffffff;\n              -moz-border-radius: 5px;\n              -webkit-border-radius: 5px;\n              -ms-border-radius: 5px;\n              -o-border-radius: 5px;\n              -khtml-border-radius: 5px;\n              border-radius: 5px; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name {\n          padding-top: 0.5rem; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-percentage {\n            background: #4e3dcf; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-body .row .task-name .task-spent {\n            margin-left: 0.5rem;\n            color: #07c3eb;\n            font-size: 0.875rem;\n            font-weight: 700; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card .card-footer {\n        background: #4e3dcf;\n        border: none; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header {\n        background: #611581; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--client {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--name {\n          color: #f98b8b; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--description {\n          color: #bc98ce; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--spent {\n          color: #f98b8b; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-header .synthesis-card--budget {\n          color: #f98b8b; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body {\n        background: #6e1e94; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress {\n          background: #611581; }\n          .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-progress .progress .progress-bar {\n            background: #f98b8b; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-percentage {\n          background: #7e28a2; }\n        .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-body .row .task-name .task-spent {\n          color: #bc98ce; }\n      .synthesis .synthesis-inner .synthesis-cards .synthesis-card.time-overflow .card-footer {\n        background: #7e28a2; }\n", ""]);
 
 
 
@@ -78279,10 +78234,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AddClient__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../AddClient */ "./src/screens/App/components/Admin/components/AddClient/index.jsx");
 /* harmony import */ var _components_Client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Client */ "./src/screens/App/components/Admin/components/ClientsManager/components/Client/index.jsx");
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/ClientsManager/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78307,7 +78260,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var ClientsManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -78321,10 +78273,12 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ClientsManager).call(this, props));
     _this.state = {
       isAddingClient: false,
-      search: ''
+      search: '',
+      height: window.innerHeight - 420
     };
     _this.addClient = _this.addClient.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
     _this.changeOrder = _this.changeOrder.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -78339,6 +78293,13 @@ function (_Component) {
     value: function addClient() {
       this.setState({
         isAddingClient: true
+      });
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 420
       });
     }
   }, {
@@ -78373,11 +78334,7 @@ function (_Component) {
         "aria-label": "Input",
         placeholder: "Search",
         onChange: this.handleChange
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-reset"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "ico "
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group"
@@ -78419,7 +78376,10 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
       }, "Client")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "projects-content pane-content"
+        className: "projects-content pane-content",
+        style: {
+          height: this.state.height + "px"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.isAddingClient ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddClient__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -78444,36 +78404,6 @@ function (_Component) {
   return ClientsManager;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (ClientsManager);
-
-/***/ }),
-
-/***/ "./src/screens/App/components/Admin/components/ClientsManager/styles.scss":
-/*!********************************************************************************!*\
-  !*** ./src/screens/App/components/Admin/components/ClientsManager/styles.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/sass-loader/dist/cjs.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ClientsManager/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -78823,10 +78753,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Project */ "./src/screens/App/components/Admin/components/ProjectsManager/components/Project/index.jsx");
 /* harmony import */ var _AddProject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../AddProject */ "./src/screens/App/components/Admin/components/AddProject/index.jsx");
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/ProjectsManager/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78851,7 +78779,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var ProjectsManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -78865,10 +78792,12 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProjectsManager).call(this, props));
     _this.state = {
       isAddingProject: false,
-      search: ''
+      search: '',
+      height: window.innerHeight - 420
     };
     _this.addProject = _this.addProject.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
     _this.changeOrder = _this.changeOrder.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -78883,6 +78812,13 @@ function (_Component) {
     value: function addProject() {
       this.setState({
         isAddingProject: true
+      });
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 420
       });
     }
   }, {
@@ -78964,7 +78900,10 @@ function (_Component) {
       }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
       }, "Tasks")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "projects-content pane-content"
+        className: "projects-content pane-content",
+        style: {
+          height: this.state.height + "px"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.isAddingProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddProject__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -79003,36 +78942,6 @@ function (_Component) {
   return ProjectsManager;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (ProjectsManager);
-
-/***/ }),
-
-/***/ "./src/screens/App/components/Admin/components/ProjectsManager/styles.scss":
-/*!*********************************************************************************!*\
-  !*** ./src/screens/App/components/Admin/components/ProjectsManager/styles.scss ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/sass-loader/dist/cjs.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/ProjectsManager/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -79274,10 +79183,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var _components_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/User */ "./src/screens/App/components/Admin/components/UsersManager/components/User/index.jsx");
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/UsersManager/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79301,7 +79208,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var UsersManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -79315,8 +79221,10 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UsersManager).call(this, props));
     _this.changeOrder = _this.changeOrder.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
     _this.state = {
-      search: ''
+      search: '',
+      height: window.innerHeight - 420
     };
     return _this;
   }
@@ -79325,6 +79233,13 @@ function (_Component) {
     key: "changeOrder",
     value: function changeOrder() {
       console.log("sort !");
+    }
+  }, {
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 420
+      });
     }
   }, {
     key: "handleChange",
@@ -79391,7 +79306,10 @@ function (_Component) {
       }, "User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
       }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "projects-content pane-content"
+        className: "projects-content pane-content",
+        style: {
+          height: this.state.height + "px"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.mainStore.usersDefinitions.map(function (u) {
         var fn = u.firstName;
         var ln = u.lastName;
@@ -79420,36 +79338,6 @@ function (_Component) {
   return UsersManager;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
 /* harmony default export */ __webpack_exports__["default"] = (UsersManager);
-
-/***/ }),
-
-/***/ "./src/screens/App/components/Admin/components/UsersManager/styles.scss":
-/*!******************************************************************************!*\
-  !*** ./src/screens/App/components/Admin/components/UsersManager/styles.scss ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/sass-loader/dist/cjs.js!./styles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/screens/App/components/Admin/components/UsersManager/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -82163,32 +82051,31 @@ function (_Component) {
     _classCallCheck(this, Card);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
-    _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this)); // this.getProjectPercentage = this.getProjectPercentage.bind(this);
-
+    _this.listProjectsTasks = _this.listProjectsTasks.bind(_assertThisInitialized(_this));
     _this.state = {
       timeSpent: 0,
       timeTotal: _this.props.budget,
-      timeOverflow: false
+      timeOverflow: false,
+      tasks: {}
     };
     return _this;
   }
 
   _createClass(Card, [{
     key: "componentDidMount",
-    value: function componentDidMount() {//
-    }
+    value: function componentDidMount() {}
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      this.state.timeSpent = 0; // console.log("toto");
+      this.state.timeSpent = 0; // this.state.tasks = this.listProjectsTasks();
+      // this.state.timeOverflow = false;
     }
   }, {
     key: "listProjectsTasks",
     value: function listProjectsTasks() {
       var _this2 = this;
 
-      var res = {}; // let offset = 0;
-
+      var res = {};
       this.props.mainStore.tracksDefinitions.map(function (t) {
         if (t._id == _this2.props.id) {
           console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_2__["toJS"])(t.message));
@@ -82209,10 +82096,10 @@ function (_Component) {
       if (this.state.timeSpent > this.state.timeTotal) {
         this.state.timeTotal = this.state.timeSpent;
         this.state.timeOverflow = true;
+      } else {
+        this.state.timeTotal = this.props.budget;
+        this.state.timeOverflow = false;
       }
-
-      console.log("************** " + this.state.timeSpent); // console.log(res);
-      // console.log(this.props.mainStore.tracksDefinitions[i]._id);
 
       return res;
     }
@@ -82221,7 +82108,8 @@ function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var tasks = this.listProjectsTasks();
+      // const tasks = this.listProjectsTasks();
+      this.state.tasks = this.listProjectsTasks();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "synthesis-card card " + (this.state.timeOverflow ? "time-overflow" : "")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82248,8 +82136,8 @@ function (_Component) {
         className: "budget-unit"
       }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, Object.keys(tasks).map(function (t) {
-        // offset += this.getProjectPercentage(tasks[t]);
+      }, Object.keys(this.state.tasks).map(function (t) {
+        // offset += this.getProjectPercentage(this.state.tasks[t]);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82262,7 +82150,7 @@ function (_Component) {
           className: "progress-bar",
           role: "progressbar",
           style: {
-            width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(tasks[t], _this3.state.timeTotal, true) + "%"
+            width: Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(_this3.state.tasks[t], _this3.state.timeTotal, true) + "%"
           },
           "aria-valuenow": "25",
           "aria-valuemin": "0",
@@ -82273,9 +82161,9 @@ function (_Component) {
           className: "task-name"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "badge task-percentage mr-2"
-        }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(_this3.state.tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
-        }, tasks[t], " jours"))));
+        }, _this3.state.tasks[t], " jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
       }));

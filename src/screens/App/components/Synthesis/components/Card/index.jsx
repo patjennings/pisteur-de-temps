@@ -10,25 +10,25 @@ const Card = inject("mainStore")(observer(class Card extends Component {
     constructor(props){
 	super(props);
 	this.listProjectsTasks = this.listProjectsTasks.bind(this);
-	// this.getProjectPercentage = this.getProjectPercentage.bind(this);
 
 	this.state = {
 	    timeSpent: 0,
 	    timeTotal: this.props.budget,
-	    timeOverflow: false
+	    timeOverflow: false,
+	    tasks: {}
 	};
     }
 
     componentDidMount(){
-	//
+	
     }
     componentDidUpdate(){
 	this.state.timeSpent = 0;
-	// console.log("toto");
+	// this.state.tasks = this.listProjectsTasks();
+	// this.state.timeOverflow = false;
     }
     listProjectsTasks(){
 	let res = {};
-	// let offset = 0;
 	
 	this.props.mainStore.tracksDefinitions.map(t => {
 	    if(t._id == this.props.id){
@@ -48,14 +48,16 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 	if(this.state.timeSpent > this.state.timeTotal){
 	    this.state.timeTotal = this.state.timeSpent;
 	    this.state.timeOverflow = true;
+	} else {
+	    this.state.timeTotal = this.props.budget;
+	    this.state.timeOverflow = false;
 	}
-	console.log("************** "+this.state.timeSpent);
-	// console.log(res);
-	// console.log(this.props.mainStore.tracksDefinitions[i]._id);
+
 	return res;
     }
     render() {
-	const tasks = this.listProjectsTasks();
+	// const tasks = this.listProjectsTasks();
+	this.state.tasks = this.listProjectsTasks();
 	
 	return (
 	    <div className={"synthesis-card card "+(this.state.timeOverflow ? "time-overflow" : "")}>
@@ -73,19 +75,19 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 		</div>
 	      </div>
 	      <div className="card-body">
-		{Object.keys(tasks).map(t => {
-		    // offset += this.getProjectPercentage(tasks[t]);
+		{Object.keys(this.state.tasks).map(t => {
+		    // offset += this.getProjectPercentage(this.state.tasks[t]);
 		    return <div className="row">
 			<div className="col-md-6">
 			      <div className="task-progress">
 				    
 				    <div className="progress">
-					  <div className="progress-bar" role="progressbar" style={{width: getPercent(tasks[t], this.state.timeTotal, true)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+					  <div className="progress-bar" role="progressbar" style={{width: getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				  </div>
 			    </div>
 		            <div className="col-md-6">
-				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{tasks[t]} jours</span></div>
+				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{this.state.tasks[t]} jours</span></div>
 				</div>
 			</div>;
 		})}

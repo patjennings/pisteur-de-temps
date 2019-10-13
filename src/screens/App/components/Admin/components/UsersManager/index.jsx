@@ -4,7 +4,6 @@ import User from "./components/User";
 
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 
-import "./styles.scss";
 import "assets/styles/main.scss";
 
 const UsersManager = inject("mainStore", "authStore")(observer(class UsersManager extends Component {
@@ -12,12 +11,19 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 	super(props);
 	this.changeOrder = this.changeOrder.bind(this);
 	this.handleChange = this.handleChange.bind(this);
+	this.handleResize = this.handleResize.bind(this);
 	this.state = {
-	    search: ''
+	    search: '',
+	    height: window.innerHeight - 420
 	}
     }
     changeOrder(){
 	console.log("sort !");
+    }
+    handleResize(){
+	this.setState({
+	    height: window.innerHeight - 420
+	})
     }
     handleChange(e){
 	this.setState({
@@ -70,7 +76,7 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 		  </div>
 		</div>
 	      </div>
-	      <div className="projects-content pane-content">
+	      <div className="projects-content pane-content" style={{height: this.state.height+"px"}}>
 		<ul>
 		  {this.props.mainStore.usersDefinitions.map(u => {
 		      const fn = u.firstName;
