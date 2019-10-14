@@ -29,10 +29,12 @@ const Card = inject("mainStore")(observer(class Card extends Component {
     }
     listProjectsTasks(){
 	let res = {};
+	this.state.timeTotal = this.props.budget;
+	this.state.timeSpent = 0;
+	this.state.timeOverflow = false;
 	
 	this.props.mainStore.tracksDefinitions.map(t => {
 	    if(t._id == this.props.id){
-		console.log(toJS(t.message));
 		t.message.map(m => {
 		    if(res[m.task] !== undefined){
 		    	res[m.task] += m.value;
@@ -58,6 +60,8 @@ const Card = inject("mainStore")(observer(class Card extends Component {
     render() {
 	// const tasks = this.listProjectsTasks();
 	this.state.tasks = this.listProjectsTasks();
+	console.log("timeSpent: "+this.state.timeSpent);
+	console.log("timeTotal: "+this.state.timeTotal);
 	
 	return (
 	    <div className={"synthesis-card card "+(this.state.timeOverflow ? "time-overflow" : "")}>

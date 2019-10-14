@@ -12,10 +12,14 @@ export class MainStore{
 	this.isLoading = false;
 	this.isLoadingProject = false;
 
+	this.unit = "hours";
+	this.lang = "FR";
+
 	this.showProject = false; // un projet est-il affiché ?
 	this.activeProject = null; // le projet actif
 	this.activeTaskInput = null; // la tâche en train d'être entrée
-	
+
+	this.loadParameters();
 	this.loadDefinitions();
 	// this.loadTracks();
 
@@ -49,6 +53,20 @@ export class MainStore{
 	this.pageDisplayed = value;
     }
 
+    loadParameters(){
+	agent.fetchParameters()
+	    .then(action((parameters) => {
+		console.log(parameters);
+		// console.log(history);
+		this.unit = parameters.find(item => item._id == "unit").value;
+		this.lang = parameters.find(item => item._id == "lang").value;
+	    }))
+	// .catch(action((error) => {
+	// 	console.log(error);
+	// }))
+	    .finally(action(() => { this.isLoading = false; }))
+    }
+    
     loadPersonalHistory(){
 	// console.log("loading personal history…");
 	// console.log(authStore.userId);
@@ -315,6 +333,8 @@ decorate(MainStore, {
     pageDisplayed: observable,
     isLoading: observable,
     isLoadingProject: observable,
+    unit: observable,
+    lang: observable,
     showProject: observable,
     getTrackNumbersForProject: action,
     activeProject: observable,
@@ -335,6 +355,7 @@ decorate(MainStore, {
     loadProject: action,
     loadTrackedTime: action,
     loadDefinitions: action,
+    loadParameters: action,
     loadTracks: action,
     postNewTask: action,
     postNewClient: action,

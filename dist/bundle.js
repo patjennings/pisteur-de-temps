@@ -82076,9 +82076,11 @@ function (_Component) {
       var _this2 = this;
 
       var res = {};
+      this.state.timeTotal = this.props.budget;
+      this.state.timeSpent = 0;
+      this.state.timeOverflow = false;
       this.props.mainStore.tracksDefinitions.map(function (t) {
         if (t._id == _this2.props.id) {
-          console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_2__["toJS"])(t.message));
           t.message.map(function (m) {
             if (res[m.task] !== undefined) {
               res[m.task] += m.value;
@@ -82110,6 +82112,8 @@ function (_Component) {
 
       // const tasks = this.listProjectsTasks();
       this.state.tasks = this.listProjectsTasks();
+      console.log("timeSpent: " + this.state.timeSpent);
+      console.log("timeTotal: " + this.state.timeTotal);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "synthesis-card card " + (this.state.timeOverflow ? "time-overflow" : "")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82289,6 +82293,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      // const ms = this.props.mainStore;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "synthesis logged-in"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82314,7 +82319,8 @@ function (_Component) {
         var pn = p.name;
         var pnNoAccent = pn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         var cn = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(_this2.props.mainStore.clientsDefinitions, p.client);
-        var cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var cnNoAccent = cn.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // let pTracks;
+
         var srProject = pn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 
         var srProjectNoAccent = pnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
@@ -82322,8 +82328,16 @@ function (_Component) {
         var srClient = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 
         var srClientNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
-
-        console.log(srProjectNoAccent); // console.log(sr);
+        // console.log(this);
+        // const pTracks = ms.tracksDefinitions.find(item => item._id == p._id).message;
+        // this.props.mainStore.tracksDefinitions.map(item => {
+        //     // console.log(item);
+        //     if(item._id == p._id || item.message.length > 0){
+        // 	pTracks = item.message;
+        //     }
+        // });
+        // console.log(this.props.mainStore.tracksDefinitions);
+        // console.log(sr);
 
         if (srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -83216,7 +83230,7 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: login, lostPassword, resetPassword, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchTracksDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
+/*! exports provided: login, lostPassword, resetPassword, fetchParameters, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchTracksDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83224,6 +83238,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lostPassword", function() { return lostPassword; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPassword", function() { return resetPassword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchParameters", function() { return fetchParameters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchClientsDefinitions", function() { return fetchClientsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectsDefinitions", function() { return fetchProjectsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersDefinitions", function() { return fetchUsersDefinitions; });
@@ -83308,6 +83323,17 @@ function resetPassword(newpass, key) {
     }
   }).then(function (res) {
     console.log(res);
+    return res.data;
+  }).catch(function (error) {
+    return console.log(error);
+  });
+  return result;
+} // --------------------
+// Params
+// --------------------
+
+function fetchParameters() {
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(API_ROOT, "/params")).then(function (res) {
     return res.data;
   }).catch(function (error) {
     return console.log(error);
@@ -83769,12 +83795,15 @@ function () {
     this.pageDisplayed = "dashboard";
     this.isLoading = false;
     this.isLoadingProject = false;
+    this.unit = "hours";
+    this.lang = "FR";
     this.showProject = false; // un projet est-il affiché ?
 
     this.activeProject = null; // le projet actif
 
     this.activeTaskInput = null; // la tâche en train d'être entrée
 
+    this.loadParameters();
     this.loadDefinitions(); // this.loadTracks();
 
     this.clientsDefinitions = []; // définitions des clients
@@ -83817,16 +83846,19 @@ function () {
       this.pageDisplayed = value;
     }
   }, {
-    key: "loadPersonalHistory",
-    value: function loadPersonalHistory() {
+    key: "loadParameters",
+    value: function loadParameters() {
       var _this = this;
 
-      // console.log("loading personal history…");
-      // console.log(authStore.userId);
-      // this.isLoading = true;
-      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
-        // console.log(history);
-        _this.trackHistory = history;
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchParameters"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (parameters) {
+        console.log(parameters); // console.log(history);
+
+        _this.unit = parameters.find(function (item) {
+          return item._id == "unit";
+        }).value;
+        _this.lang = parameters.find(function (item) {
+          return item._id == "lang";
+        }).value;
       })) // .catch(action((error) => {
       // 	console.log(error);
       // }))
@@ -83835,34 +83867,52 @@ function () {
       }));
     }
   }, {
+    key: "loadPersonalHistory",
+    value: function loadPersonalHistory() {
+      var _this2 = this;
+
+      // console.log("loading personal history…");
+      // console.log(authStore.userId);
+      // this.isLoading = true;
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
+        // console.log(history);
+        _this2.trackHistory = history;
+      })) // .catch(action((error) => {
+      // 	console.log(error);
+      // }))
+      .finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this2.isLoading = false;
+      }));
+    }
+  }, {
     key: "loadProject",
     value: function loadProject(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       // console.log("project is loading...");
       this.isLoadingProject = true; // console.log(id);
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
         // console.log(project.data);
-        _this2.activeProjectDetails = project.data;
+        _this3.activeProjectDetails = project.data;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this2.isLoadingProject = false;
+        _this3.isLoadingProject = false;
       }));
     }
   }, {
     key: "loadTrackedTime",
     value: function loadTrackedTime(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.isLoadingProject = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
-        _this3.activeTrackedTime = tracked.data.message;
+        _this4.activeTrackedTime = tracked.data.message;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this3.isLoadingProject = false;
+        _this4.isLoadingProject = false;
       }));
     } // getTrackLengthForProject(){
     // 	return "ok";
@@ -83890,28 +83940,28 @@ function () {
   }, {
     key: "loadDefinitions",
     value: function loadDefinitions() {
-      var _this4 = this;
+      var _this5 = this;
 
       // this.isLoading = true;
       // console.log("ça recharge les defs !!!!!!!!!!!!");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
-        _this4.clientsDefinitions = clients;
+        _this5.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch clients over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this4.projectsDefinitions = projects;
+        _this5.projectsDefinitions = projects;
 
-        _this4.loadTracks(projects);
+        _this5.loadTracks(projects);
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch projects over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUsersDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (users) {
-        _this4.usersDefinitions = users;
+        _this5.usersDefinitions = users;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -83921,10 +83971,10 @@ function () {
   }, {
     key: "loadTracks",
     value: function loadTracks(projects) {
-      var _this5 = this;
+      var _this6 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchTracksDefinitions"](projects).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracks) {
-        _this5.tracksDefinitions = tracks;
+        _this6.tracksDefinitions = tracks;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -83935,19 +83985,19 @@ function () {
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this6 = this;
+      var _this7 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"](projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this6.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this6.loadProject(projectId); // relance le chargement du projet
+        _this7.loadProject(projectId); // relance le chargement du projet
 
 
-        _this6.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
 
-        _this6.loadDefinitions();
+        _this7.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -83955,16 +84005,16 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this7 = this;
+      var _this8 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"](projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this7.loadProject(projectId); // relance le chargement du projet
+        _this8.loadProject(projectId); // relance le chargement du projet
 
 
-        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -83973,16 +84023,16 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this8 = this;
+      var _this9 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"](projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this9.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this8.loadProject(projectId); // relance le chargement du projet
+        _this9.loadProject(projectId); // relance le chargement du projet
 
 
-        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this9.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -83992,10 +84042,10 @@ function () {
   }, {
     key: "postNewClient",
     value: function postNewClient(formData) {
-      var _this9 = this;
+      var _this10 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this9.loadDefinitions();
+        _this10.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84003,10 +84053,10 @@ function () {
   }, {
     key: "deleteClient",
     value: function deleteClient(clientId) {
-      var _this10 = this;
+      var _this11 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientDelete"](clientId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this10.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
+        _this11.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
         // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
 
@@ -84017,12 +84067,12 @@ function () {
   }, {
     key: "updateClient",
     value: function updateClient(clientId, formData) {
-      var _this11 = this;
+      var _this12 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientUpdate"](clientId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update client"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this11.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
+        _this12.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
@@ -84033,13 +84083,13 @@ function () {
   }, {
     key: "updateUser",
     value: function updateUser(userId, formData, reloadActiveUser) {
-      var _this12 = this;
+      var _this13 = this;
 
       console.log(userId);
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["userUpdate"](userId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update user"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this12.loadDefinitions();
+        _this13.loadDefinitions();
 
         reloadActiveUser && stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].getUserData(userId); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
@@ -84051,10 +84101,10 @@ function () {
   }, {
     key: "postNewProject",
     value: function postNewProject(formData) {
-      var _this13 = this;
+      var _this14 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this13.loadDefinitions();
+        _this14.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84062,10 +84112,10 @@ function () {
   }, {
     key: "updateProject",
     value: function updateProject(projectid, formData) {
-      var _this14 = this;
+      var _this15 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectUpdate"](projectid, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this14.loadDefinitions();
+        _this15.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84073,10 +84123,10 @@ function () {
   }, {
     key: "deleteTaskInProject",
     value: function deleteTaskInProject(projectid, taskToDelete) {
-      var _this15 = this;
+      var _this16 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDeleteTask"](projectid, taskToDelete).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this15.loadDefinitions();
+        _this16.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84084,12 +84134,12 @@ function () {
   }, {
     key: "deleteProject",
     value: function deleteProject(projectid) {
-      var _this16 = this;
+      var _this17 = this;
 
       // console.log("delete proj");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDelete"](projectid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this16.loadDefinitions();
+        _this17.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84102,6 +84152,8 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   pageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoading: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoadingProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  unit: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  lang: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   showProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   getTrackNumbersForProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   activeProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
@@ -84122,6 +84174,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   loadProject: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  loadParameters: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadTracks: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewTask: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewClient: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],

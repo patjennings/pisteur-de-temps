@@ -247,39 +247,30 @@ module.exports = function(app){
                 response = {"error" : true,"message" : "Error fetching data"};
 	    } else {
 		response = data;
-		// response.unit = data.unit;
 	    }
 	    res.json(response);
         });
     });
-    app.put("/params", function (req, res) {
+    app.put("/params/:id", function (req, res) {
 	var response = {};
 	
-	for(var prop in req.body){
-	    console.log(prop);
-	}
-	
-	// if (req.body.unit !== undefined) {
-	//     data.unit = req.body.unit;
+	models.params.findById(req.params.id, function(err,data){
+	    if(err) {
+                response = {"error" : true,"message" : "Error fetching data"};
+	    } else {
+		data.value = req.body.value;
 
-	//     models.params.findById("unit", function(err,data){
-	// 	if(err) {
-        //             response = {"error" : true,"message" : "Error fetching data"};
-	// 	} else {
-	// 	    data.unit = req.body.unit;
-
-	// 	    // Save data
-	// 	    data.save(function(err, data){
-	// 		if(err) {
-        //                     response = {"error" : true,"message" : "Error updating data"};
-	// 		} else {
-        //                     response = {"error" : false,"message" : "Data is updated for unit", "data" : data};
-	// 		}
-	// 		res.json(response);
-	// 	    })
-	// 	}
-        //     });
-	// }
+		// Save data
+		data.save(function(err, data){
+		    if(err) {
+                        response = {"error" : true,"message" : "Error updating data"};
+		    } else {
+                        response = {"error" : false,"message" : "Data is updated for unit", "data" : data};
+		    }
+		    res.json(response);
+		})
+	    }
+        });
     });
 
     

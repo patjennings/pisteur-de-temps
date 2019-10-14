@@ -57,9 +57,22 @@ export function resetPassword(newpass, key){
 
 
 // --------------------
+// Params
+// --------------------
+export function fetchParameters(){
+    let result = axios
+	.get(`${API_ROOT}/params`)
+	.then(res => {
+	    return res.data
+	})
+	.catch(error => console.log(error));
+    return result;
+}
+
+// --------------------
 // Definitions
 // --------------------
-export function fetchClientsDefinitions(){
+ export function fetchClientsDefinitions(){
     let result = axios
 	.get(`${API_ROOT}/clients`)
 	.then(res => {
