@@ -70,7 +70,7 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 		      key={childData.id}
 		      id={childData.id}
 		      task={childData.task}
-		      value={childData.value}
+		      value={this.props.mainStore.unit == "hours" ? childData.value : (childData.value)/7}
 		      comment={childData.comment}
 		      relatedProject={childData.relatedProject}
 		      date={childData.date}

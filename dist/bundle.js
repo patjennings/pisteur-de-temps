@@ -15857,7 +15857,7 @@ exports.push([module.i, ".track .track-edit {\n  color: var(--dark);\n  text-dec
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #efeff0;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content {\n    overflow-y: auto; }\n    .manager #nav-tabContent .pane-content ul {\n      margin: 0;\n      padding: 0; }\n      .manager #nav-tabContent .pane-content ul li {\n        list-style-type: none;\n        border-bottom: 1px solid #efeff0;\n        padding: 1rem 1rem 0 1rem; }\n        .manager #nav-tabContent .pane-content ul li .row {\n          margin-bottom: 1rem; }\n        .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n          background: #f8f9fa; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .personal.edited {\n    background: #ebebed;\n    padding: 1rem;\n    margin: 1rem 0;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    .personal.edited .row {\n      margin-bottom: 1rem; }\n\n.manager .nav-tabs, .manager .nav-link {\n  border: 0; }\n  .manager .nav-tabs:hover, .manager .nav-link:hover {\n    border: 0; }\n  .manager .nav-tabs .nav-item, .manager .nav-link .nav-item {\n    color: #171330; }\n    .manager .nav-tabs .nav-item:hover, .manager .nav-link .nav-item:hover {\n      background: #ebebed; }\n    .manager .nav-tabs .nav-item.active:hover, .manager .nav-link .nav-item.active:hover {\n      background: #ffffff; }\n\n.manager #nav-tabContent {\n  background: #ffffff; }\n  .manager #nav-tabContent .pane-header .actions {\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-header .column-name {\n    font-weight: 700;\n    border-bottom: 1px solid #efeff0;\n    padding: 1rem; }\n  .manager #nav-tabContent .pane-content {\n    overflow-y: auto; }\n    .manager #nav-tabContent .pane-content ul {\n      margin: 0;\n      padding: 0; }\n      .manager #nav-tabContent .pane-content ul li {\n        list-style-type: none;\n        border-bottom: 1px solid #efeff0;\n        padding: 1rem 1rem 0 1rem; }\n        .manager #nav-tabContent .pane-content ul li .row {\n          margin-bottom: 1rem; }\n        .manager #nav-tabContent .pane-content ul li.new, .manager #nav-tabContent .pane-content ul li.edited {\n          background: #f8f9fa; }\n    .manager #nav-tabContent .pane-content.params-content .row {\n      padding: 1rem;\n      border-bottom: 1px solid #efeff0; }\n", ""]);
 
 
 
@@ -15887,7 +15887,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.nav-projects {\n  position: relative;
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: auto; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: auto; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--unit {\n            font-size: 1.125rem;\n            font-weight: 700; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -78407,6 +78407,152 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./src/screens/App/components/Admin/components/ParamsManager/index.jsx":
+/*!*****************************************************************************!*\
+  !*** ./src/screens/App/components/Admin/components/ParamsManager/index.jsx ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+ // import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
+
+
+var ParamsManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ParamsManager, _Component);
+
+  function ParamsManager(props) {
+    var _this;
+
+    _classCallCheck(this, ParamsManager);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ParamsManager).call(this, props));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
+    _this.state = {
+      search: '',
+      height: window.innerHeight - 420
+    };
+    return _this;
+  }
+
+  _createClass(ParamsManager, [{
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        height: window.innerHeight - 420
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        search: e.target.value
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // console.log(this.state.search);
+      console.log("Paramètres chargés");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "params-content pane-content",
+        style: {
+          height: this.state.height + "px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "mb-0"
+      }, "Unit\xE9s de temps"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "text-muted"
+      }, "L'application indique par d\xE9faut les temps en heures. Vous pouvez modifier cette option et indiquer les temps en jours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-light dropdown-toggle",
+        type: "button",
+        id: "select-unit",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, "heures"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "dropdownMenuButton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#"
+      }, "heures"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#"
+      }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "mb-0"
+      }, "Langue"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "text-muted"
+      }, "La langue utilis\xE9e dans l'application")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-light dropdown-toggle",
+        type: "button",
+        id: "select-lang",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, "Fran\xE7ais"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "dropdownMenuButton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item",
+        href: "#"
+      }, "Fran\xE7ais"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "dropdown-item disabled",
+        href: "#"
+      }, "English")))))));
+    }
+  }]);
+
+  return ParamsManager;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
+/* harmony default export */ __webpack_exports__["default"] = (ParamsManager);
+
+/***/ }),
+
 /***/ "./src/screens/App/components/Admin/components/ProjectsManager/components/Project/index.jsx":
 /*!**************************************************************************************************!*\
   !*** ./src/screens/App/components/Admin/components/ProjectsManager/components/Project/index.jsx ***!
@@ -78681,7 +78827,7 @@ function (_Component) {
           className: "text-muted"
         }, this.props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-2"
-        }, this.props.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.budget, " ", this.props.mainStore.unit == "hours" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
         }, this.props.tasks.map(function (t) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -79357,12 +79503,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ClientsManager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ClientsManager */ "./src/screens/App/components/Admin/components/ClientsManager/index.jsx");
 /* harmony import */ var _components_ProjectsManager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ProjectsManager */ "./src/screens/App/components/Admin/components/ProjectsManager/index.jsx");
 /* harmony import */ var _components_UsersManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/UsersManager */ "./src/screens/App/components/Admin/components/UsersManager/index.jsx");
-/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_ParamsManager__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ParamsManager */ "./src/screens/App/components/Admin/components/ParamsManager/index.jsx");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79380,6 +79527,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -79449,7 +79597,7 @@ function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_6__["default"])(e.target, this.props.authStore.userId);
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__["default"])(e.target, this.props.authStore.userId);
       console.log(fd); // on lance la requête
 
       this.props.mainStore.updateUser(this.props.authStore.userId, fd, true);
@@ -79471,9 +79619,9 @@ function (_Component) {
         className: "nav-item nav-link w-25",
         id: "nav-clients-tab",
         "data-toggle": "tab",
-        href: "#nav-home",
+        href: "#nav-clients",
         role: "tab",
-        "aria-controls": "nav-home",
+        "aria-controls": "nav-clients",
         "aria-selected": "false"
       }, "Clients", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
@@ -79481,9 +79629,9 @@ function (_Component) {
         className: "nav-item nav-link w-25 active",
         id: "nav-projects-tab",
         "data-toggle": "tab",
-        href: "#nav-profile",
+        href: "#nav-projects",
         role: "tab",
-        "aria-controls": "nav-profile",
+        "aria-controls": "nav-projects",
         "aria-selected": "true"
       }, "Projects", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
@@ -79491,31 +79639,46 @@ function (_Component) {
         className: "nav-item nav-link w-25",
         id: "nav-users-tab",
         "data-toggle": "tab",
-        href: "#nav-contact",
+        href: "#nav-users",
         role: "tab",
-        "aria-controls": "nav-contact",
+        "aria-controls": "nav-users",
         "aria-selected": "false"
       }, "Users", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "G\xE9rer les utilisateurs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "G\xE9rer les utilisateurs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-item nav-link w-25",
+        id: "nav-params-tab",
+        "data-toggle": "tab",
+        href: "#nav-params",
+        role: "tab",
+        "aria-controls": "nav-params",
+        "aria-selected": "false"
+      }, "Param\xE8tres", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "text-muted"
+      }, "R\xE9glages de l'application")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-content",
         id: "nav-tabContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-pane fade clients-manager",
-        id: "nav-home",
+        id: "nav-clients",
         role: "tabpanel",
-        "aria-labelledby": "nav-home-tab"
+        "aria-labelledby": "nav-clients-tab"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ClientsManager__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-pane fade projects-manager show active",
-        id: "nav-profile",
+        id: "nav-projects",
         role: "tabpanel",
-        "aria-labelledby": "nav-profile-tab"
+        "aria-labelledby": "nav-projects-tab"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProjectsManager__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-pane fade users-manager",
-        id: "nav-contact",
+        id: "nav-users",
         role: "tabpanel",
-        "aria-labelledby": "nav-contact-tab"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UsersManager__WEBPACK_IMPORTED_MODULE_5__["default"], null))));
+        "aria-labelledby": "nav-users-tab"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UsersManager__WEBPACK_IMPORTED_MODULE_5__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "tab-pane fade params-manager",
+        id: "nav-params",
+        role: "tabpanel",
+        "aria-labelledby": "nav-params-tab"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ParamsManager__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-in"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80397,7 +80560,7 @@ function (_Component) {
       var valFormat = val;
 
       if (val % 1 !== 0) {
-        // si c'est un nombre flottant
+        // si c'est un nombre flottant, on applique un format particulier à la décimale
         var valSplit = val.split(".");
         valFormat = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "value--float"
@@ -80496,7 +80659,9 @@ function (_Component) {
           className: "col-2 item-value"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "item-value--inner"
-        }, this.formatValue(this.props.value))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.formatValue(this.props.value), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "item-value--unit"
+        }, this.props.mainStore.unit == "hours" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-10 item-details"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "item-details--title"
@@ -80830,7 +80995,7 @@ function (_Component) {
           key: childData.id,
           id: childData.id,
           task: childData.task,
-          value: childData.value,
+          value: _this2.props.mainStore.unit == "hours" ? childData.value : childData.value / 7,
           comment: childData.comment,
           relatedProject: childData.relatedProject,
           date: childData.date,
@@ -81078,7 +81243,7 @@ function (_Component) {
           className: "track-task"
         }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-value"
-        }, this.props.value), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        }, this.props.value, "\xA0", this.props.mainStore.unit == "hours" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-comment"
         }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-user"
@@ -82134,7 +82299,7 @@ function (_Component) {
         className: "synthesis-card--spent"
       }, this.state.timeSpent, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
-      }, "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.mainStore.unit == "hours" ? "heures" : "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--budget"
       }, "sur ", this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
@@ -82167,7 +82332,7 @@ function (_Component) {
           className: "badge task-percentage mr-2"
         }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(_this3.state.tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
-        }, _this3.state.tasks[t], " jours"))));
+        }, _this3.state.tasks[t], " ", _this3.props.mainStore.unit == "hours" ? "heures" : "jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
       }));

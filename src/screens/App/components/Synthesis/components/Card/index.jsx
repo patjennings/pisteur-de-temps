@@ -73,7 +73,7 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 		    <p className="synthesis-card--description">{this.props.description}</p>
 		  </div>
 		  <div className="col-md-4">
-		    <p className="synthesis-card--spent">{this.state.timeSpent} <span className="budget-unit">jours</span></p>
+		    <p className="synthesis-card--spent">{this.state.timeSpent} <span className="budget-unit">{this.props.mainStore.unit == "hours" ? "heures" : "jours" }</span></p>
 		    <p className="synthesis-card--budget">sur {this.props.budget} <span className="budget-unit"></span></p>
 		  </div>
 		</div>
@@ -91,7 +91,7 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 				  </div>
 			    </div>
 		            <div className="col-md-6">
-				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{this.state.tasks[t]} jours</span></div>
+				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{this.state.tasks[t]} {this.props.mainStore.unit == "hours" ? "heures" : "jours" }</span></div>
 				</div>
 			</div>;
 		})}

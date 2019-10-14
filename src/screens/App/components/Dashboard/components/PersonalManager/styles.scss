@@ -58,6 +58,11 @@
 		    height: 2rem;
 		    margin: auto; // pour centrer en hauteur
 		    white-space: nowrap;
+
+		    .item-value--unit{
+			font-size: 1.125rem;
+			font-weight: 700;
+		    }
 		    
 		    .item-value--inner{
 			margin-top: -5px;

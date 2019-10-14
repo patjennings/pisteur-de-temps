@@ -96,7 +96,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	const val = value.toString();
 	let valFormat = val;
 	
-	if(val % 1 !== 0){ // si c'est un nombre flottant
+	if(val % 1 !== 0){ // si c'est un nombre flottant, on applique un format particulier à la décimale
 	    const valSplit = val.split(".");
 	    valFormat =  <span className="value--float">{valSplit[0]}<span className="value--decimal">.{valSplit[1]}</span></span>;
 	} 
@@ -165,7 +165,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		  </div>
 
 		  <div className="row">
-		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(this.props.value)}</div></div>
+		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(this.props.value)} <span className="item-value--unit">{this.props.mainStore.unit == "hours" ? "h." : "j." }</span></div></div>
 		    <div className="col-10 item-details">
 		      <h4 className="item-details--title">{this.props.task}</h4>
 		      <p className="item-details--description">{this.props.comment}</p>

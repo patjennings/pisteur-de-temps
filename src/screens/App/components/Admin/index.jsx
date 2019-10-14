@@ -7,6 +7,7 @@ import MainNavigation from 'sharedComponents/MainNavigation';
 import ClientsManager from './components/ClientsManager';
 import ProjectsManager from './components/ProjectsManager';
 import UsersManager from './components/UsersManager';
+import ParamsManager from './components/ParamsManager';
 
 import retrieveFormData from "utils/retrieveFormData";
 
@@ -78,20 +79,24 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 	   <div className="manager">
 	      <nav>
 	         <div className="nav nav-tabs" id="nav-tab" role="tablist">
-	            <a className="nav-item nav-link w-25" id="nav-clients-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Clients<br/><span className="text-muted">Gérer les clients</span></a>
-	            <a className="nav-item nav-link w-25 active" id="nav-projects-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Projects<br/><span className="text-muted">Gérer et modifier les projets</span></a>
-	            <a className="nav-item nav-link w-25" id="nav-users-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Users<br/><span className="text-muted">Gérer les utilisateurs</span></a>
+	            <a className="nav-item nav-link w-25" id="nav-clients-tab" data-toggle="tab" href="#nav-clients" role="tab" aria-controls="nav-clients" aria-selected="false">Clients<br/><span className="text-muted">Gérer les clients</span></a>
+	            <a className="nav-item nav-link w-25 active" id="nav-projects-tab" data-toggle="tab" href="#nav-projects" role="tab" aria-controls="nav-projects" aria-selected="true">Projects<br/><span className="text-muted">Gérer et modifier les projets</span></a>
+	      <a className="nav-item nav-link w-25" id="nav-users-tab" data-toggle="tab" href="#nav-users" role="tab" aria-controls="nav-users" aria-selected="false">Users<br/><span className="text-muted">Gérer les utilisateurs</span></a>
+	      <a className="nav-item nav-link w-25" id="nav-params-tab" data-toggle="tab" href="#nav-params" role="tab" aria-controls="nav-params" aria-selected="false">Paramètres<br/><span className="text-muted">Réglages de l'application</span></a>
 	         </div>
 	       </nav>
 	       <div className="tab-content" id="nav-tabContent">
-	          <div className="tab-pane fade clients-manager" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+	          <div className="tab-pane fade clients-manager" id="nav-clients" role="tabpanel" aria-labelledby="nav-clients-tab">
 	             <ClientsManager/>
 	          </div>
-	          <div className="tab-pane fade projects-manager show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+	          <div className="tab-pane fade projects-manager show active" id="nav-projects" role="tabpanel" aria-labelledby="nav-projects-tab">
 	             <ProjectsManager/>
 	          </div>
-	          <div className="tab-pane fade users-manager" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+	          <div className="tab-pane fade users-manager" id="nav-users" role="tabpanel" aria-labelledby="nav-users-tab">
 	             <UsersManager/>
+	          </div>
+	          <div className="tab-pane fade params-manager" id="nav-params" role="tabpanel" aria-labelledby="nav-params-tab">
+	             <ParamsManager/>
 	          </div>
 	       </div>
 	   </div>;

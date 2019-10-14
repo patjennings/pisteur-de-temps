@@ -138,7 +138,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 		<tr className="track">
 		  <td className="track-task">{this.props.task}</td>
-		  <td className="track-value">{this.props.value}</td>
+		  <td className="track-value">{this.props.value}&nbsp;{this.props.mainStore.unit == "hours" ? "h." : "j." }</td>
 		  <td className="track-comment">{this.props.comment}</td>
 		  <td className="track-user">{getUserName(this.props.mainStore.usersDefinitions, this.props.user)}</td>
 		  <td className="track-date">{readableDate(this.props.date)}</td>

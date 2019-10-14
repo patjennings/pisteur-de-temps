@@ -207,7 +207,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      <span className="text-muted">{this.props.description}</span>
 		    </div>
 		    <div className="col-2">
-		      {this.props.budget}
+		      {this.props.budget} {this.props.mainStore.unit == "hours" ? "h." : "j." }
 		    </div>
 		    <div className="col-3">
 		      {this.props.tasks.map(t => <button type="button" className="btn btn-light btn-sm">{t}</button> )}
