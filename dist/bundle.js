@@ -77750,11 +77750,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sharedComponents/ClientsSelector */ "./src/shared/components/ClientsSelector/index.jsx");
-/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/AddProject/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var sharedComponents_ErrorBoundary__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sharedComponents/ErrorBoundary */ "./src/shared/components/ErrorBoundary/index.jsx");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/AddProject/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -77780,7 +77781,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+
+var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(AddProject, _Component);
@@ -77818,7 +77820,7 @@ function (_Component) {
 
       if (!this.state.errorOnName && !this.state.errorOnBudget && !this.state.errorOnClient) {
         this.state.hasErrors = false;
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target); // on lance la requête
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // on lance la requête
 
         this.props.mainStore.postNewProject(fd);
         this.props.onChange();
@@ -77846,7 +77848,7 @@ function (_Component) {
     value: function render() {
       var nameAttr = this.state.errorOnName ? "is-invalid" : null;
       var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
-      console.log(this.state.activeClient);
+      console.log(this.props.clientId);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "project--input"
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -77859,10 +77861,10 @@ function (_Component) {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ErrorBoundary__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: this.setActiveClient,
         activeClient: this.props.clientid
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         id: "project-input--client",
         name: "client",
@@ -80003,7 +80005,7 @@ function (_Component) {
       budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 
       if (!this.state.errorOnName && !this.state.errorOnBudget) {
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target); // on lance la requête
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // on lance la requête
 
         this.props.mainStore.postNewProject(fd);
         this.props.onChange();
@@ -83919,15 +83921,41 @@ function Strings() {
           "select_task": "",
           "new_task": "",
           "add": ""
+        },
+        "add_project": {
+          "title": "",
+          "name_label": "",
+          "name_placeholder": "",
+          "desc_label": "",
+          "desc_placeholder": "",
+          "budget_label": "",
+          "budget_placeholder": "",
+          "create_project": "",
+          "cancel": ""
+        },
+        "add_client": {
+          "name_label": "",
+          "name_placeholder": "",
+          "create_client": "",
+          "cancel": ""
         }
+      },
+      "login": {
+        "title": "",
+        "please_login": "",
+        "username": "",
+        "password": "",
+        "sign_in": "",
+        "remember_me": "",
+        "forgot_password": ""
       },
       "navigation": {
         "dashboard": "Vue d'ensemble",
         "synthesis": "Synthèse",
         "user": {
-          "connected_as": "",
-          "admin": "",
-          "logout": ""
+          "connected_as": "Connecté sous ",
+          "admin": "Paramètres",
+          "logout": "Se déconnecter"
         }
       },
       "admin": {
@@ -83943,88 +83971,85 @@ function Strings() {
           }
         },
         "clients": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Clients",
+          "description": "Créer & gérer les clients",
+          "search": "Rechercher",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filtrer",
+            "filter_name": "Nom",
+            "filter_date_added": "Date d'ajout",
+            "filter_role": "Role"
           },
-          "add_client": "",
+          "add_client": "Ajouter un client",
           "headers": {
-            "client": ""
+            "client": "Client"
           },
-          "active_project": "",
-          "edit": "",
-          "delete": ""
+          "active_project": "Project actif",
+          "edit": "Modifier",
+          "delete": "Supprimer"
         },
         "projects": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Projets",
+          "description": "Créer & modifier les projets",
+          "search": "Rechercher",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filtrer",
+            "filter_name": "Nom",
+            "filter_date_added": "Date d'ajout",
+            "filter_role": "Role"
           },
-          "add_project": "",
+          "add_project": "Ajouter un projet",
           "headers": {
-            "client": "",
-            "project_desc": "",
-            "budget": "",
-            "tasks": ""
+            "client": "Client",
+            "project_desc": "Description du projet",
+            "budget": "Budget",
+            "tasks": "Tâches"
           },
-          "active_project": "",
-          "edit": "",
-          "delete": "",
+          "edit": "Modifier",
+          "delete": "Supprimer",
           "edition": {
-            "update": "",
-            "cancel": "",
-            "delete_project": "",
-            "caution_message": ""
+            "update": "Mettre à jour",
+            "cancel": "Annuler",
+            "delete_project": "Supprimer le projet",
+            "caution_message": "Soyez prudent, car tout le temps enregistré sur ce projet sera effacé. Cette action ne peut pas être annulée."
           }
         },
         "users": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Utilisateurs",
+          "description": "Gérer vos utilisateurs",
+          "search": "Rechercher",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filtrer",
+            "filter_name": "Nom",
+            "filter_date_added": "Date d'ajout",
+            "filter_role": "Rôle"
           },
-          "add_project": "",
           "headers": {
-            "user": "",
-            "role": ""
+            "user": "Utilisateur",
+            "role": "Rôle"
           },
-          "active_project": "",
           "select": {
-            "admin": "",
-            "user": ""
+            "admin": "Administrateur",
+            "user": "utilisateur"
           }
         },
         "params": {
-          "name": "",
-          "description": "",
+          "name": "Options",
+          "description": "Les réglages de l'application",
           "unit": {
-            "name": "",
-            "description": "",
+            "name": "Unités de temps",
+            "description": "L'application indique par défaut les temps en heures. Vous pouvez modifier cette option et indiquer les temps en jours.",
             "select": {
-              "day": "",
-              "hour": ""
+              "day": "jour",
+              "hour": "heure"
             }
           },
           "lang": {
-            "name": "",
-            "description": "",
+            "name": "Langue",
+            "description": "La langue utilisée dans l'application",
             "select": {
-              "fr": "",
-              "en": ""
+              "fr": "Français",
+              "en": "English"
             }
           }
         }
@@ -84076,16 +84101,40 @@ function Strings() {
           "new_task": "",
           "add": ""
         },
-        "add_project": {},
-        "add_client": {}
+        "add_project": {
+          "title": "",
+          "name_label": "",
+          "name_placeholder": "",
+          "desc_label": "",
+          "desc_placeholder": "",
+          "budget_label": "",
+          "budget_placeholder": "",
+          "create_project": "",
+          "cancel": ""
+        },
+        "add_client": {
+          "name_label": "",
+          "name_placeholder": "",
+          "create_client": "",
+          "cancel": ""
+        }
+      },
+      "login": {
+        "title": "",
+        "please_login": "",
+        "username": "",
+        "password": "",
+        "sign_in": "",
+        "remember_me": "",
+        "forgot_password": ""
       },
       "navigation": {
         "dashboard": "Dashboard",
         "synthesis": "Synthesis",
         "user": {
-          "connected_as": "",
-          "admin": "",
-          "logout": ""
+          "connected_as": "Connected as",
+          "admin": "Settings",
+          "logout": "Logout"
         }
       },
       "admin": {
@@ -84101,88 +84150,85 @@ function Strings() {
           }
         },
         "clients": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Clients",
+          "description": "Create & manage clients",
+          "search": "Search",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filter",
+            "filter_name": "Name",
+            "filter_date_added": "Date added",
+            "filter_role": "Role"
           },
-          "add_client": "",
+          "add_client": "Add a client",
           "headers": {
-            "client": ""
+            "client": "Client"
           },
-          "active_project": "",
-          "edit": "",
-          "delete": ""
+          "active_project": "active project",
+          "edit": "Edit",
+          "delete": "Delete"
         },
         "projects": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Projects",
+          "description": "Create & manage projects",
+          "search": "Search",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filter",
+            "filter_name": "Name",
+            "filter_date_added": "Date added",
+            "filter_role": "Role"
           },
-          "add_project": "",
+          "add_project": "Add a project",
           "headers": {
-            "client": "",
-            "project_desc": "",
-            "budget": "",
-            "tasks": ""
+            "client": "Client",
+            "project_desc": "Project & description",
+            "budget": "Budget",
+            "tasks": "Tasks"
           },
-          "active_project": "",
-          "edit": "",
-          "delete": "",
+          "edit": "Edit",
+          "delete": "Delete",
           "edition": {
-            "update": "",
-            "cancel": "",
-            "delete_project": "",
-            "caution_message": ""
+            "update": "Update",
+            "cancel": "Cancel",
+            "delete_project": "Delete project",
+            "caution_message": "Be careful, because all time tracked on this will be deleted. And this can't be undone."
           }
         },
         "users": {
-          "name": "",
-          "description": "",
-          "search": "",
+          "name": "Users",
+          "description": "Manage users",
+          "search": "Search",
           "filter": {
-            "name": "filter",
-            "filter_name": "",
-            "filter_date_added": "",
-            "filter_role": ""
+            "name": "Filter",
+            "filter_name": "Name",
+            "filter_date_added": "Date added",
+            "filter_role": "Role"
           },
-          "add_project": "",
           "headers": {
-            "user": "",
-            "role": ""
+            "user": "User",
+            "role": "Role"
           },
-          "active_project": "",
           "select": {
-            "admin": "",
-            "user": ""
+            "admin": "Admin",
+            "user": "User"
           }
         },
         "params": {
-          "name": "",
-          "description": "",
+          "name": "Settings",
+          "description": "Manage application settings",
           "unit": {
-            "name": "",
-            "description": "",
+            "name": "Time unit",
+            "description": "Time is set in hour, by default. You can modify this, and see time entered on a day basis",
             "select": {
-              "day": "",
-              "hour": ""
+              "day": "Day",
+              "hour": "Hour"
             }
           },
           "lang": {
-            "name": "",
-            "description": "",
+            "name": "Language",
+            "description": "The language used in this application",
             "select": {
-              "fr": "",
-              "en": ""
+              "fr": "Français",
+              "en": "English"
             }
           }
         }

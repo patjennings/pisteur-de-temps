@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import ClientsSelector from "sharedComponents/ClientsSelector";
+import ErrorBoundary from "sharedComponents/ErrorBoundary";
 import retrieveFormData from "utils/retrieveFormData";
 
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 
 import "./styles.scss";
+
 
 const AddProject = inject("mainStore")(observer(class AddProject extends Component {
     constructor(props){
@@ -39,7 +41,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 
 	if (!this.state.errorOnName && !this.state.errorOnBudget && !this.state.errorOnClient){
 	    this.state.hasErrors = false;
-	    let fd = retrieveFormData(e.target);
+	    let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 
 	    // on lance la requête
 	    this.props.mainStore.postNewProject(fd);
@@ -63,7 +65,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	const nameAttr = this.state.errorOnName ? "is-invalid" : null;
 	const budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
 
-	console.log(this.state.activeClient);
+	console.log(this.props.clientId);
 	
 	return (
 
@@ -75,7 +77,9 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	          <form onSubmit={this.handleSubmit} className="w100">
 		      <div className="row">  
   			<div className="col-2">
-  			  <ClientsSelector onChange={this.setActiveClient} activeClient={this.props.clientid}/>
+			  <ErrorBoundary>
+  			    <ClientsSelector onChange={this.setActiveClient} activeClient={this.props.clientid}/>
+			  </ErrorBoundary>
   			  <input className="form-control"
   				 id="project-input--client"
   				 name="client"

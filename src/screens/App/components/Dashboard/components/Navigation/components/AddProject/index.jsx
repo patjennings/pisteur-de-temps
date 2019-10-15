@@ -29,7 +29,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 	
 	if (!this.state.errorOnName && !this.state.errorOnBudget){
-	    let fd = retrieveFormData(e.target);
+	    let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 	    
 	    // on lance la requête
 	    this.props.mainStore.postNewProject(fd);
