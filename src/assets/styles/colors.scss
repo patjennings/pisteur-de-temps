@@ -6,7 +6,8 @@ $box-edit-dark: #ebebed;
 $track-input-background: #3726bc;
 
 $main-font: #171330;
-$main-font-light: #797594;
+// $main-font-light: #797594;
+$main-font-light: rgba(0,0,0,0.5);
 $main-font-inverted: #ffffff; // négatif
 $main-font-inverted-light: #07c3eb;
 
@@ -26,6 +27,7 @@ $accent-color-dark: #291aa4;
 $alert: #ff2323;
 $alert-light: #ff5d5d;
 $alert-lighter: #f98b8b;
+$alert-lightest: #fef8f9;
 $alert-dark: #a60000;
 
 $overflow-color: #6e1e94; // le bleu;

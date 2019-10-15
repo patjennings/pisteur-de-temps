@@ -10,9 +10,12 @@ const ParamsManager = inject("mainStore", "authStore")(observer(class ParamsMana
 	super(props);
 	this.handleChange = this.handleChange.bind(this);
 	this.handleResize = this.handleResize.bind(this);
+	this.handleDropdownChange = this.handleDropdownChange.bind(this);
 	this.state = {
 	    search: '',
-	    height: window.innerHeight - 420
+	    height: window.innerHeight - 420,
+	    unit: this.props.mainStore.unit,
+	    lang: this.props.mainStore.lang
 	};
     }
  
@@ -25,6 +28,16 @@ const ParamsManager = inject("mainStore", "authStore")(observer(class ParamsMana
 	this.setState({
 	    search: e.target.value
 	});
+    }
+    handleDropdownChange(e){
+	e.preventDefault();
+	this.props.mainStore.updateParameters("unit", "day");
+
+	const paramKey = e.currentTarget.parentNode.parentNode.getAttribute("id");
+	const paramValue = e.currentTarget.getAttribute("id");
+
+	console.log(paramKey+" : "+paramValue);
+	this.props.mainStore.updateParameters(paramKey, paramValue);
     }
 
     render() {
@@ -40,13 +53,13 @@ const ParamsManager = inject("mainStore", "authStore")(observer(class ParamsMana
 		    <p className="text-muted">L'application indique par défaut les temps en heures. Vous pouvez modifier cette option et indiquer les temps en jours.</p>
 		  </div>
 		  <div className="col-2">
-		    <div className="dropdown">
+		    <div className="dropdown" id="unit">
 		      <button className="btn btn-light dropdown-toggle" type="button" id="select-unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			heures
+			{this.props.mainStore.unit == "hour" ? "heures" : "jours"}
 		      </button>
 		      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a className="dropdown-item" href="#">heures</a>
-			<a className="dropdown-item" href="#">jours</a>
+			<a className="dropdown-item" href="#" onClick={this.handleDropdownChange} id="hour">heures</a>
+			<a className="dropdown-item" href="#" onClick={this.handleDropdownChange} id="day" >jours</a>
 		      </div>
 		    </div>
 		  </div>
@@ -57,13 +70,13 @@ const ParamsManager = inject("mainStore", "authStore")(observer(class ParamsMana
 		    <p className="text-muted">La langue utilisée dans l'application</p>
 		  </div>
 		  <div className="col-2">
-		    <div className="dropdown">
+		    <div className="dropdown" id="lang">
 		      <button className="btn btn-light dropdown-toggle" type="button" id="select-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Français
+			{this.props.mainStore.lang == "fr" ? "Français" : "English"}
 		      </button>
 		      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a className="dropdown-item" href="#">Français</a>
-			<a className="dropdown-item disabled" href="#">English</a>
+			<a className="dropdown-item" href="#" onClick={this.handleDropdownChange} id="fr">Français</a>
+			<a className="dropdown-item" href="#" onClick={this.handleDropdownChange} id="en">English</a>
 		      </div>
 		    </div>
 		  </div>

@@ -35,6 +35,7 @@ const ClientsSelector = inject("mainStore")(observer(class ClientsSelector exten
     }
 
     render() {
+	
 	return (
 	    <div className="dropdown client-selector">
 	      <button
@@ -43,7 +44,7 @@ const ClientsSelector = inject("mainStore")(observer(class ClientsSelector exten
 		aria-haspopup="true"
 		aria-expanded="false">
 		{this.state.activeClient == null ?
-		    "Select a client" :
+		    this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector :
 		    <div className="">
 			  {getClientName(this.props.mainStore.clientsDefinitions, this.state.activeClient)}
 			</div>

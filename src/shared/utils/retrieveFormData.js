@@ -1,18 +1,20 @@
-export default function retrieveFormData(form, userid=null){
-    console.log("form");
+import {convertToUnitValue} from "utils/time";
+
+export default function retrieveFormData(form, userid=null, unit){
     const data = new FormData(form); // les données du formulaire
-    console.log(form);
-    console.log(userid);
+    // console.log(form);
     let reqBody = {};
     
     for (let name of data.keys()) {
 	const input = form.elements[name];
 	const parserName = input.dataset.parse;
 
+	console.log(name);
+
 	if(parserName){
 	    const parser = inputParsers[parserName];
 	    const parsedValue = parser(data.get(name));
-	    reqBody[name] = parsedValue; // la value
+	    unit == "hour" ? reqBody[name] = parsedValue : reqBody[name] = parsedValue*7; // la value
 	}
 	else{
 	    reqBody[name] = data.get(name); //là, on récupère comment et task

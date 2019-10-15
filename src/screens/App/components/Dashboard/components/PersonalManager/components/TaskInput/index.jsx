@@ -9,6 +9,8 @@ import {inject, observer} from "mobx-react";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 import TaskSelector from "sharedComponents/TaskSelector";
 
+import { convertToUnitValue } from "utils/time";
+
 const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput extends Component {
     constructor(props){
 	super(props);
@@ -43,7 +45,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	
 	if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject){
 	    this.state.hasErrors = false;
-	    let fd = retrieveFormData(event.target, this.props.authStore.userId);
+	    let fd = retrieveFormData(event.target, this.props.authStore.userId, this.props.mainStore.unit);
 	    fd.task = this.props.mainStore.activeTaskInput;
 	    // console.log(fd);
 	    this.props.mainStore.postNewTask(this.state.activeProject, fd);
@@ -88,7 +90,7 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	      </div>
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row mb-3">
-		  <div className="col-4 pr-0">
+		  <div className="col-3 pr-0">
 		    <input className={"form-control form-control-lg w-100 "+timeAttr}
 			   name="value"
 			   id="track-input--value"
@@ -97,7 +99,10 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 			   aria-label="Input"
 			   data-parse="number"/>
 		  </div>
-		  <div className="col-8">
+		  <div className="col-2">
+		    <span className="track-input--unit"><h5>{this.props.mainStore.unit == "hour" ? "h." : "j." }</h5></span>
+		  </div>
+		  <div className="col-7">
 		    <ProjectsSelector onChange={this.setActiveProject} darkMode="true"/>
 		  </div>
 		</div>

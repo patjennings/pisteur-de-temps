@@ -34,6 +34,11 @@
 	    .project-details--budget{
 		color: $accent-color;
 		font-size: 2.5rem;
+
+		.project-details--budget--unit{
+		    font-size: 1.25rem;
+		    margin-left: 0.25rem;
+		}
 	    }
 	}
 
@@ -117,6 +122,41 @@
 	    }
 	    .track-cancel{
 		// width:13%;
+	    }
+	}
+    }
+
+    &.time-overflow{
+	.card-header{
+	    background: $alert-lightest;
+
+	    .row{
+		.project-details--client{
+		    color: $main-font-light;
+		    
+		}
+		.project-details--name{
+		    color: $alert;
+		}
+		.project-details--description{
+		    color: $main-font-light;
+		}
+		.project-details--budget-label{
+		    color: $main-font-light;
+		}
+		.project-details--budget{
+		    color: $alert;
+		}
+	    }
+	    .progress{
+		.progress-bar{
+		    &.time-basis{
+			background: $surround-color;
+		    }
+		    &.time-over{
+			background: $alert;
+		    }
+		}
 	    }
 	}
     }

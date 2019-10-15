@@ -8,6 +8,8 @@ import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import {getFullTime, getPercent} from 'utils/budget';
 import {fetchProjectTrackedTime} from "fetch/agent";
 
+import {convertToUnitValue} from "utils/time";
+
 import {toJS} from "mobx";
 import {observer, inject} from "mobx-react";
 
@@ -18,6 +20,10 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	super(props);
 
 	this.state = {
+	    timeSpent: 0,
+	    timeTotal: this.props.budget,
+	    percentageConsumed: 0,
+	    timeOverflow: false,
 	    height: window.innerHeight - 120
 	};
 
@@ -28,6 +34,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 	// activeProjectDetails
 	this.props.mainStore.loadProject(this.props.mainStore.activeProject);
 	this.props.mainStore.loadTrackedTime(this.props.mainStore.activeProject);
+	
 	window.addEventListener('resize',  this.handleResize.bind(this));
     }
 
@@ -38,7 +45,7 @@ const Project = inject("mainStore")(observer(class Project extends Component {
     }
 
     handleChange(){
-	console.log("change");
+	// console.log("change");
     }
 
     stats(){
@@ -47,20 +54,23 @@ const Project = inject("mainStore")(observer(class Project extends Component {
     }
     
     render() {
-	const timeConsumed = getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget);
-	const isTimeOver = timeConsumed > 100; // boolean (le budget est-il dépassé ?)
-	const barColor = timeOver ? "bg-danger" : null;
+	// const timeConsumed = getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget);
+	// const isTimeOver = timeConsumed > 100; // boolean (le budget est-il dépassé ?)
+	this.state.percentageConsumed = getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget);
+	this.state.timeOverflow = this.state.percentageConsumed > 100 ? true : false;
+	const barColor = this.state.timeOverflow ? "bg-danger" : null;
 
-	const timeBasis = Math.pow(100, 2)/timeConsumed;
-	const timeOver = (timeConsumed-100)*100/timeConsumed;
+	const timeBasis = Math.pow(100, 2)/this.state.percentageConsumed;
+	const timeOver = (this.state.percentageConsumed-100)*100/this.state.percentageConsumed;
 
-	console.log(timeConsumed+"%");
-	console.log(timeBasis+"/"+timeOver);
+	console.log(this.state.percentageConsumed);
 
+	// console.log(timeConsumed+"%");
+	// console.log(timeBasis+"/"+timeOver);
 	
 	return (
 	      
-	      <div className="card project-details" style={{height: this.state.height+"px"}}>
+	    <div className={"card project-details "+(this.state.timeOverflow ? "time-overflow" : "")} style={{height: this.state.height+"px"}}>
 		<div className="card-header">
 		  <div className="row">
 		    <div className="col-9">
@@ -70,19 +80,19 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		    </div>
 		    <div className="col-3">
 		      <p className="project-details--budget-label">Budget</p>
-		      <h4 className="project-details--budget">{this.props.mainStore.activeProjectDetails.budget}</h4>
+		      <h4 className="project-details--budget">{convertToUnitValue(this.props.mainStore.activeProjectDetails.budget, this.props.mainStore.unit)}<span className="project-details--budget--unit">{this.props.mainStore.unit == "hour" ? "h." : "j."}</span></h4>
 		      <p>{/*{this.stats()}*/}</p>
 		    </div>
 		  </div>
 		  
-		  {!isTimeOver ?
+		  {!this.state.timeOverflow ?
 		      <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
-			    <div className="progress-bar" role="progressbar" style={{width: timeConsumed+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			    <div className="progress-bar" role="progressbar" style={{width: this.state.percentageConsumed+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 			  </div>
 			  :
 			  <div className="progress" data-toggle="tooltip" data-placement="top" title={this.stats()}>
-				<div className="progress-bar bg-warning" role="progressbar" style={{width: timeBasis+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-				    <div className="progress-bar bg-danger" role="progressbar" style={{width: timeOver+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				<div className="progress-bar time-basis" role="progressbar" style={{width: timeBasis+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				    <div className="progress-bar time-over" role="progressbar" style={{width: timeOver+"%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 			      </div>
 			  }
 		    

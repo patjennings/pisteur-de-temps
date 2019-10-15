@@ -7,6 +7,8 @@ import ClientsSelector from "sharedComponents/ClientsSelector";
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 
+import {convertToUnitValue} from "utils/time";
+
 // import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 import "./styles.scss";
@@ -71,18 +73,18 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 	let inputName = document.getElementById("project-input--name-"+this.props.projectid);
 	let inputClient = document.getElementById("project-input--client");
 	let inputDescription = document.getElementById("project-input--description-"+this.props.projectid);
-	let inputBuget = document.getElementById("project-input--budget-"+this.props.projectid);
+	let inputBudget = document.getElementById("project-input--budget-"+this.props.projectid);
 	
 	inputName.value = getProjectName(this.props.mainStore.projectsDefinitions, this.props.projectid);
 	inputClient.value = this.state.activeClient;
 	inputDescription.value = this.props.description;
-	inputBuget.value = this.props.budget;
+	inputBudget.value = convertToUnitValue(this.props.budget, this.props.mainStore.unit).toFixed(2);
     }
     
     handleSubmit(e){
 	console.log("submit");
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.authStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 
 	// console.log(fd);
 	
@@ -149,7 +151,8 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
   				 name="budget"
   				 id={"project-input--budget-"+this.props.projectid}
   				 type="text"
-  				 aria-label="Input"/>
+  				 aria-label="Input"
+				 data-parse="number"/>
   			</div>
 			<div className="col-3">
 			  {this.props.tasks.map(
@@ -207,7 +210,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      <span className="text-muted">{this.props.description}</span>
 		    </div>
 		    <div className="col-2">
-		      {this.props.budget} {this.props.mainStore.unit == "hours" ? "h." : "j." }
+		      {convertToUnitValue(this.props.budget, this.props.mainStore.unit).toFixed(2)} {this.props.mainStore.unit == "hour" ? "h." : "j." }
 		    </div>
 		    <div className="col-3">
 		      {this.props.tasks.map(t => <button type="button" className="btn btn-light btn-sm">{t}</button> )}

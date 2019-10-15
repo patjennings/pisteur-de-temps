@@ -7,6 +7,7 @@ import {observer, inject} from "mobx-react";
 
 import { readableDate } from "utils/readableDate";
 import { getClientName, getProjectName } from "utils/defsConverter";
+import { convertToUnitValue } from "utils/time";
 
 import retrieveFormData from "utils/retrieveFormData";
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
@@ -16,14 +17,14 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	super(props);
 
 	// get the client id
-	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+	// const clid = this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject).client;
 	// ^^^^^^^^^^^^^^^^^^^^^
 	// LÀ, PROBLÈME !!
 
 	this.state = {
-	    projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject),
-	    clientId: toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client,
-	    clientName: getClientName(this.props.mainStore.clientsDefinitions, this.clientId),
+	    projectName: "…",
+	    clientId: "5d9e452ede629f58d3e09f14",
+	    clientName: "…",
 	    isEdited: false,
 	    activeProject: this.props.relatedProject
 	};
@@ -38,12 +39,15 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
     }
 
     componentDidMount() {
-	// console.log("///////:::::::::::::: "+this.props.mainStore.projectsDefinitions);
-	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
-	// this.setState({
-	//     clientId: clid,
-	//     clientName: getClientName(this.props.mainStore.clientsDefinitions, clid)
-	// })
+	let clid = this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject).client;
+	let pr = getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
+	let cl = getClientName(this.props.mainStore.clientsDefinitions, clid);
+	
+	this.setState({
+	    projectName: pr,
+	    clientId: clid,
+	    clientName: cl
+	});
 	    
     }
     componentDidUpdate(){
@@ -65,7 +69,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
     
     handleSubmit(e){
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.authStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
 
@@ -87,32 +91,27 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	let inputComment = document.getElementById("track-input--comment-"+this.props.id);
 	let inputTask = document.getElementById("track-input--task-"+this.props.id);
 	
-	inputValue.value = this.props.value;
+	inputValue.value = convertToUnitValue(this.props.value, this.props.mainStore.unit).toFixed(2);
 	inputComment.value = this.props.comment;
 	inputTask.value = this.props.task;
     }
 
     formatValue(value){
-	const val = value.toString();
-	let valFormat = val;
+	let valFormat = value;
 	
-	if(val % 1 !== 0){ // si c'est un nombre flottant, on applique un format particulier à la décimale
+	if(value % 1 !== 0){ // si c'est un nombre flottant, on applique un format particulier à la décimale
+	    const val = value.toFixed(2);
 	    const valSplit = val.split(".");
 	    valFormat =  <span className="value--float">{valSplit[0]}<span className="value--decimal">.{valSplit[1]}</span></span>;
 	} 
 	
 	return valFormat;
     }
-
     
     render(){
 	console.log("new task render");
-	const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
-	this.state.projectName = getProjectName(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
-	this.state.clientName  = getClientName(this.props.mainStore.clientsDefinitions, clid);
-	   
-	// console.log(toJS(this.props.mainStore));
-	// console.log(toJS(this.props.mainStore.projectsDefinitions));
+	const taskValue = convertToUnitValue(this.props.value, this.props.mainStore.unit); // convertit le temps de la task à l'unité courante (jour ou heure)
+
 	if(this.state.isEdited){
 	    return(
 		<li className="list-group-item track-history--item" id={this.props.id}>
@@ -165,7 +164,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		  </div>
 
 		  <div className="row">
-		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(this.props.value)} <span className="item-value--unit">{this.props.mainStore.unit == "hours" ? "h." : "j." }</span></div></div>
+		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(taskValue)} <span className="item-value--unit">{this.props.mainStore.unit == "hour" ? "h." : "j." }</span></div></div>
 		    <div className="col-10 item-details">
 		      <h4 className="item-details--title">{this.props.task}</h4>
 		      <p className="item-details--description">{this.props.comment}</p>
@@ -179,6 +178,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		      {readableDate(this.props.date)}
 		    </div>
 		  </div>
+
 		</li>
 
 	    );
@@ -187,3 +187,29 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 }));
 
 export default Task;
+
+// <div className="dropdown item-actions position-absolute">
+// 		    <button className="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+// 		      <i className="ico ico-dots_v">dots_v</i>
+// 		    </button>
+// 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+// 		      <a className="dropdown-item" href="#" onClick={this.editItem}>Éditer</a>
+// 		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
+// 		    </div>
+// 		  </div>
+
+// 		  <div className="row">
+// 		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(taskValue)} <span className="item-value--unit">{this.props.mainStore.unit == "hour" ? "h." : "j." }</span></div></div>
+// 		    <div className="col-10 item-details">
+// 		      <h4 className="item-details--title">{this.props.task}</h4>
+// 		      <p className="item-details--description">{this.props.comment}</p>
+// 		    </div>
+// 		  </div>
+// 		  <div className="row">
+// 		    <div className="offset-2 col-5 text-muted">
+// 		      <strong>{this.state.projectName}</strong>  {this.state.clientName}
+// 		    </div>
+// 		    <div className="col-5 text-muted">
+// 		      {readableDate(this.props.date)}
+// 		    </div>
+// 		  </div>

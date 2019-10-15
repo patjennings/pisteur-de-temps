@@ -4,6 +4,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Task from "./components/Task";
 import TaskInput from "./components/TaskInput";
 
+import ErrorBoundary from "sharedComponents/ErrorBoundary";
+
 // import axios from "axios";
 import {observable, action, decorate, toJS} from "mobx";
 import {inject, observer} from "mobx-react";
@@ -65,18 +67,19 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
 		transitionEnterTimeout={500}
 		transitionLeaveTimeout={300}>
 		{this.props.mainStore.trackHistory.slice(0).reverse().map(childData => {
-		    return <Task
+		    return <ErrorBoundary key={childData.id}>
+			<Task
 				 onClick={event => this.handleClick(childData, event)}
 		      key={childData.id}
 		      id={childData.id}
 		      task={childData.task}
-		      value={this.props.mainStore.unit == "hours" ? childData.value : (childData.value)/7}
+		      value={childData.value}
 		      comment={childData.comment}
 		      relatedProject={childData.relatedProject}
 		      date={childData.date}
 		      userid={this.props.authStore.userId}
 		      onChange={event => this.handleChange(childData, event)}
-			/>;
+			/></ErrorBoundary>;
 		  })}
 	      </ReactCSSTransitionGroup>
 	    </div>

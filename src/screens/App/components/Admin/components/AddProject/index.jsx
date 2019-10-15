@@ -35,16 +35,12 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 	clientField.value == "" ? this.state.errorOnClient = true : this.state.errorOnClient = false;
 
-	console.log(this.state.errorOnClient);
-
 	this.state.hasErrors = true;
 
 	if (!this.state.errorOnName && !this.state.errorOnBudget && !this.state.errorOnClient){
 	    this.state.hasErrors = false;
 	    let fd = retrieveFormData(e.target);
 
-	    console.log(fd);
-	    
 	    // on lance la requête
 	    this.props.mainStore.postNewProject(fd);
 	    this.props.onChange();
@@ -59,8 +55,6 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
     }
     setActiveClient(c){
 	this.setState({activeClient: c});
-	// console.log(c);
-	// console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
     }
     cancelEdit(){
 	//
@@ -92,7 +86,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
   			<div className="col-4">
   			  <input className="form-control"
   				 name="name"
-  				 id={"project-input--name"}
+  				 id="project-input--name"
 				 placeholder="The name"
   				 type="text"
   				 aria-label="Input"/>

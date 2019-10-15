@@ -32,7 +32,7 @@ const TaskSelector = inject("mainStore", "authStore")(observer(class TaskSelecto
     handleDropdownChange(e){
 	e.preventDefault();
 
-	console.log(e);
+	// console.log(e);
 	
 	// on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
 
@@ -66,7 +66,7 @@ const TaskSelector = inject("mainStore", "authStore")(observer(class TaskSelecto
 	return (
 	    <div className="dropdown" id="track-input--task">
 	      <a className={buttonClass} href="#" role="button" id="tasksList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-disabled={AriaDisabledState}>
-		{this.props.mainStore.activeTaskInput == null ? "Select task" : this.props.mainStore.activeTaskInput }
+		{this.props.mainStore.activeTaskInput == null ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.new_task : this.props.mainStore.activeTaskInput }
 	      </a>
 
 	      <div className="dropdown-menu" aria-labelledby="tasksList">
@@ -79,14 +79,14 @@ const TaskSelector = inject("mainStore", "authStore")(observer(class TaskSelecto
 	    name="task"
 	    id="task-input--task"
 	    type="text"
-	    placeholder="New task"
+	    placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.new_task}
 	    aria-label="Input"
 	    data-parse="number"
 	    className="w-50 ml-3 mr-1"/>
 		
 	    
 		<button
-	    className="btn btn-primary" onClick={this.submitNewTask}>Add</button>
+	    className="btn btn-primary" onClick={this.submitNewTask}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.add}</button>
 		</div>
 		</div>
 		

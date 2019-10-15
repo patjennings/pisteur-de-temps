@@ -11,7 +11,12 @@
 
 	input#track-input--value{
 	    font-size: 1.5rem;
-	    padding: 31px 19px;
+	    padding: 31px 12px;
+	}
+
+	.track-input--unit{
+	    display: block;
+	    padding-top: 1.25rem;
 	}
 	
 	input,

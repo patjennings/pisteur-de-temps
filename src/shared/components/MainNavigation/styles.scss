@@ -32,5 +32,12 @@
 	position: absolute;
 	top: 0.5rem;
 	right: 1rem;
+
+	background-color: $accent-color;
+	@include border-radius(3px);
+
+	.btn{
+	   color: $main-font-inverted; 
+	}
     }
 }

@@ -68,6 +68,18 @@ export function fetchParameters(){
 	.catch(error => console.log(error));
     return result;
 }
+export function parametersUpdate(id, value){
+    const body = {"value": value};
+    let result = axios
+	.put(`${API_ROOT}/params/${id}`, body)
+	.then(res => {
+	    result = res
+	})
+	.catch(error => {
+	    result = error
+	});
+    return result;
+}
 
 // --------------------
 // Definitions

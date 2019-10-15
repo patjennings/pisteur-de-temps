@@ -3,6 +3,8 @@ import * as agent from "fetch/agent";
 
 import authStore from "stores/authStore";
 
+import Strings from "localisation/Strings";
+
 configure({ enforceActions: "observed" });
 
 export class MainStore{
@@ -12,8 +14,10 @@ export class MainStore{
 	this.isLoading = false;
 	this.isLoadingProject = false;
 
-	this.unit = "hours";
-	this.lang = "FR";
+	this.unit = "hour";
+	this.lang = "fr";
+
+	this.appStrings = Strings();
 
 	this.showProject = false; // un projet est-il affiché ?
 	this.activeProject = null; // le projet actif
@@ -65,6 +69,20 @@ export class MainStore{
 	// 	console.log(error);
 	// }))
 	    .finally(action(() => { this.isLoading = false; }))
+    }
+    updateParameters(paramId, value){
+	agent.parametersUpdate(paramId, value)
+	    .then(action(() => {
+		this.loadParameters();
+		console.log("param updated");
+		// this.loadPersonalHistory() // relance le chargement de l'historique perso
+		// this.loadProject(projectId) // relance le chargement du projet
+		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+	    }))
+	    .catch(action((error) => {
+		console.log(error);
+	    }))
+	// .finally(action(() => { this.isLoading = false; }));
     }
     
     loadPersonalHistory(){
@@ -333,6 +351,7 @@ decorate(MainStore, {
     pageDisplayed: observable,
     isLoading: observable,
     isLoadingProject: observable,
+    appStrings: observable,
     unit: observable,
     lang: observable,
     showProject: observable,
@@ -356,6 +375,7 @@ decorate(MainStore, {
     loadTrackedTime: action,
     loadDefinitions: action,
     loadParameters: action,
+    updateParameters: action,
     loadTracks: action,
     postNewTask: action,
     postNewClient: action,

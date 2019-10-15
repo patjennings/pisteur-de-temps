@@ -15872,7 +15872,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.personal {\n  padding: 1rem 0; }\n  .
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.nav-projects {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  width: 320px;\n  padding: 0 1rem; }\n  .nav-projects .search--reset {\n    color: #797594;\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav-projects .nav--lists {\n    width: 100%;\n    height: 80vh;\n    overflow-y: auto; }\n    .nav-projects .nav--lists h5.client-name {\n      margin-left: 1rem; }\n      .nav-projects .nav--lists h5.client-name span {\n        text-transform: uppercase;\n        font-size: 1rem;\n        letter-spacing: 1px;\n        color: #3726bc;\n        font-weight: 700; }\n      .nav-projects .nav--lists h5.client-name .project-add {\n        color: #3726bc;\n        text-decoration: none; }\n        .nav-projects .nav--lists h5.client-name .project-add:hover {\n          text-decoration: none; }\n    .nav-projects .nav--lists ul.projects-list {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      margin-bottom: 1.25rem; }\n      .nav-projects .nav--lists ul.projects-list li {\n        -webkit-transition: all 0.2s ease-in-out;\n        -moz-transition: all 0.2s ease-in-out;\n        -o-transition: all 0.2s ease-in-out;\n        transition: all 0.2s ease-in-out;\n        padding: 0.35rem 1rem;\n        -moz-border-radius: 3px;\n        -webkit-border-radius: 3px;\n        -ms-border-radius: 3px;\n        -o-border-radius: 3px;\n        -khtml-border-radius: 3px;\n        border-radius: 3px;\n        cursor: pointer;\n        color: #797594; }\n        .nav-projects .nav--lists ul.projects-list li:hover {\n          background: #ffffff; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--project {\n          color: #171330; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--client {\n          padding-left: 0.5rem;\n          font-size: 0.875rem; }\n  .nav-projects .footer {\n    position: fixed;\n    bottom: 1rem;\n    left: 1rem;\n    width: 288px; }\n    .nav-projects .footer button {\n      width: 100%; }\n  .nav-projects .project--input,\n  .nav-projects .client--input {\n    z-index: 9999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav-projects .project--input h5,\n    .nav-projects .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input label,\n    .nav-projects .client--input label {\n      color: #797594; }\n    .nav-projects .project--input input, .nav-projects .project--input textarea,\n    .nav-projects .client--input input,\n    .nav-projects .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input button,\n    .nav-projects .client--input button {\n      margin-right: 0.5rem; }\n  .nav-projects .project--input {\n    position: absolute;\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav-projects .client--input {\n    position: fixed;\n    left: 1rem;\n    bottom: 3.75rem;\n    width: 288px; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.nav-projects {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  padding: 0 1rem; }\n  .nav-projects .search--reset {\n    color: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    top: 6px;\n    right: 24px;\n    cursor: pointer; }\n  .nav-projects .nav--lists {\n    width: 100%;\n    height: 80vh;\n    overflow-y: auto; }\n    .nav-projects .nav--lists h5.client-name {\n      margin-left: 1rem; }\n      .nav-projects .nav--lists h5.client-name span {\n        text-transform: uppercase;\n        font-size: 1rem;\n        letter-spacing: 1px;\n        color: #3726bc;\n        font-weight: 700; }\n      .nav-projects .nav--lists h5.client-name .project-add {\n        color: #3726bc;\n        text-decoration: none; }\n        .nav-projects .nav--lists h5.client-name .project-add:hover {\n          text-decoration: none; }\n    .nav-projects .nav--lists ul.projects-list {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      margin-bottom: 1.25rem; }\n      .nav-projects .nav--lists ul.projects-list li {\n        -webkit-transition: all 0.2s ease-in-out;\n        -moz-transition: all 0.2s ease-in-out;\n        -o-transition: all 0.2s ease-in-out;\n        transition: all 0.2s ease-in-out;\n        padding: 0.35rem 1rem;\n        -moz-border-radius: 3px;\n        -webkit-border-radius: 3px;\n        -ms-border-radius: 3px;\n        -o-border-radius: 3px;\n        -khtml-border-radius: 3px;\n        border-radius: 3px;\n        cursor: pointer;\n        color: rgba(0, 0, 0, 0.5); }\n        .nav-projects .nav--lists ul.projects-list li:hover {\n          background: #ffffff; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--project {\n          color: #171330; }\n        .nav-projects .nav--lists ul.projects-list li .search-result .search-result--client {\n          padding-left: 0.5rem;\n          font-size: 0.875rem; }\n  .nav-projects .footer {\n    position: fixed;\n    bottom: 1rem;\n    left: 1rem;\n    width: 288px; }\n    .nav-projects .footer button {\n      width: 100%;\n      background-color: #3726bc; }\n  .nav-projects .project--input,\n  .nav-projects .client--input {\n    z-index: 9999;\n    background: #ffffff;\n    padding: 1rem;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);\n    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }\n    .nav-projects .project--input h5,\n    .nav-projects .client--input h5 {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input label,\n    .nav-projects .client--input label {\n      color: rgba(0, 0, 0, 0.5); }\n    .nav-projects .project--input input, .nav-projects .project--input textarea,\n    .nav-projects .client--input input,\n    .nav-projects .client--input textarea {\n      margin-bottom: 0.75rem; }\n    .nav-projects .project--input button,\n    .nav-projects .client--input button {\n      margin-right: 0.5rem; }\n  .nav-projects .project--input {\n    position: absolute;\n    left: 256px;\n    margin-top: 8px;\n    width: 320px; }\n  .nav-projects .client--input {\n    position: fixed;\n    left: 1rem;\n    bottom: 3.75rem;\n    width: 288px; }\n", ""]);
 
 
 
@@ -15887,7 +15887,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.nav-projects {\n  position: relative;
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 19px; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: auto; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--unit {\n            font-size: 1.125rem;\n            font-weight: 700; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
+exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .track-manager .track-input {\n    background-color: #3726bc;\n    color: white;\n    padding-top: 1.75rem; }\n    .track-manager .track-input input#track-input--value {\n      font-size: 1.5rem;\n      padding: 31px 12px; }\n    .track-manager .track-input .track-input--unit {\n      display: block;\n      padding-top: 1.25rem; }\n    .track-manager .track-input input,\n    .track-manager .track-input textarea,\n    .track-manager .track-input a#tasksList {\n      background: #291c8c;\n      border: 3px solid #291c8c;\n      color: #7a6fcf;\n      transition: 0.25s all ease-in-out; }\n      .track-manager .track-input input:focus,\n      .track-manager .track-input textarea:focus,\n      .track-manager .track-input a#tasksList:focus {\n        background: white;\n        border: 3px solid #ffc107;\n        color: #171330; }\n    .track-manager .track-input .track-input--submit {\n      background: #ffc107;\n      color: #3726bc;\n      border: 0; }\n      .track-manager .track-input .track-input--submit:hover {\n        background: #e8ba00; }\n  .track-manager .track-history {\n    min-height: 40%;\n    overflow-y: auto; }\n    .track-manager .track-history .track-history--item {\n      transition: all 0.15s ease-in-out;\n      cursor: pointer;\n      border: 1px solid #efeff0; }\n      .track-manager .track-history .track-history--item .row {\n        margin-left: -20px; }\n        .track-manager .track-history .track-history--item .row .item-value {\n          font-size: 1.75rem;\n          color: #3726bc;\n          border-left: 3px solid #3726bc;\n          height: 2rem;\n          margin: auto;\n          white-space: nowrap; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--unit {\n            font-size: 1.125rem;\n            font-weight: 700; }\n          .track-manager .track-history .track-history--item .row .item-value .item-value--inner {\n            margin-top: -5px; }\n            .track-manager .track-history .track-history--item .row .item-value .item-value--inner .value--decimal {\n              font-size: 1.35rem;\n              font-weight: 700; }\n        .track-manager .track-history .track-history--item .row .item-details h4.item-details--title {\n          font-size: 1.125rem;\n          color: #3726bc;\n          margin-bottom: 0.25rem; }\n        .track-manager .track-history .track-history--item .row .item-details p.item-details--description {\n          line-height: 1.25rem; }\n      .track-manager .track-history .track-history--item .item-actions {\n        right: 0;\n        z-index: 999;\n        color: #171330; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle i.ico {\n          font-size: 1.25rem; }\n        .track-manager .track-history .track-history--item .item-actions .dropdown-toggle::after {\n          display: none; }\n      .track-manager .track-history .track-history--item:hover {\n        background: #f8f9fa; }\n", ""]);
 
 
 
@@ -15902,7 +15902,7 @@ exports.push([module.i, ".track-manager {\n  transition: all 0.5s ease-in-out;\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: #797594;\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: #797594; }\n      .project-details .card-header .row .project-details--budget-label {\n        color: #797594;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks tr.track {\n      color: #797594; }\n      .project-details .project-tracks tr.track td:first-child {\n        padding-left: 1rem; }\n      .project-details .project-tracks tr.track td:last-child {\n        padding-right: 1rem; }\n      .project-details .project-tracks tr.track .track-task {\n        color: #171330;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-value {\n        width: 5%; }\n      .project-details .project-tracks tr.track .track-comment {\n        width: 46%; }\n      .project-details .project-tracks tr.track .track-user {\n        width: 15%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-date {\n        width: 16%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-edit,\n      .project-details .project-tracks tr.track .track-delete {\n        color: #797594;\n        text-decoration: none;\n        display: inline-block;\n        width: 4%; }\n        .project-details .project-tracks tr.track .track-edit:hover,\n        .project-details .project-tracks tr.track .track-delete:hover {\n          text-decoration: none; }\n      .project-details .project-tracks tr.track .track-delete {\n        left: 24px; }\n      .project-details .project-tracks tr.track .track-actions {\n        padding-left: 0.25rem;\n        padding-right: 0.25rem; }\n    .project-details .project-tracks tr.edited {\n      background: #f8f9fa; }\n      .project-details .project-tracks tr.edited .track-task {\n        width: 15%; }\n      .project-details .project-tracks tr.edited .track-value {\n        width: 8%; }\n      .project-details .project-tracks tr.edited .track-comment {\n        width: 45%; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.project-details {\n  transition: all 0.5s ease-in-out;\n  border: none; }\n  .project-details .card-header {\n    background: #ffffff;\n    padding-top: 1.5rem; }\n    .project-details .card-header .row {\n      margin-bottom: 1.5rem; }\n      .project-details .card-header .row .project-details--client {\n        color: rgba(0, 0, 0, 0.5);\n        font-size: 1rem;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n        font-weight: 700;\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--name {\n        color: #3726bc;\n        font-size: 2rem; }\n      .project-details .card-header .row .project-details--description {\n        color: rgba(0, 0, 0, 0.5); }\n      .project-details .card-header .row .project-details--budget-label {\n        color: rgba(0, 0, 0, 0.5);\n        margin-bottom: 0.5rem; }\n      .project-details .card-header .row .project-details--budget {\n        color: #3726bc;\n        font-size: 2.5rem; }\n        .project-details .card-header .row .project-details--budget .project-details--budget--unit {\n          font-size: 1.25rem;\n          margin-left: 0.25rem; }\n    .project-details .card-header .progress {\n      height: 0.5rem; }\n      .project-details .card-header .progress .progress-bar {\n        -moz-border-radius: 0.25rem;\n        -webkit-border-radius: 0.25rem;\n        -ms-border-radius: 0.25rem;\n        -o-border-radius: 0.25rem;\n        -khtml-border-radius: 0.25rem;\n        border-radius: 0.25rem; }\n  .project-details .project-tracks {\n    min-height: 40%;\n    overflow-y: auto; }\n    .project-details .project-tracks tr.track {\n      color: rgba(0, 0, 0, 0.5); }\n      .project-details .project-tracks tr.track td:first-child {\n        padding-left: 1rem; }\n      .project-details .project-tracks tr.track td:last-child {\n        padding-right: 1rem; }\n      .project-details .project-tracks tr.track .track-task {\n        color: #171330;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-value {\n        width: 5%; }\n      .project-details .project-tracks tr.track .track-comment {\n        width: 46%; }\n      .project-details .project-tracks tr.track .track-user {\n        width: 15%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-date {\n        width: 16%;\n        white-space: nowrap; }\n      .project-details .project-tracks tr.track .track-edit,\n      .project-details .project-tracks tr.track .track-delete {\n        color: rgba(0, 0, 0, 0.5);\n        text-decoration: none;\n        display: inline-block;\n        width: 4%; }\n        .project-details .project-tracks tr.track .track-edit:hover,\n        .project-details .project-tracks tr.track .track-delete:hover {\n          text-decoration: none; }\n      .project-details .project-tracks tr.track .track-delete {\n        left: 24px; }\n      .project-details .project-tracks tr.track .track-actions {\n        padding-left: 0.25rem;\n        padding-right: 0.25rem; }\n    .project-details .project-tracks tr.edited {\n      background: #f8f9fa; }\n      .project-details .project-tracks tr.edited .track-task {\n        width: 15%; }\n      .project-details .project-tracks tr.edited .track-value {\n        width: 8%; }\n      .project-details .project-tracks tr.edited .track-comment {\n        width: 45%; }\n  .project-details.time-overflow .card-header {\n    background: #fef8f9; }\n    .project-details.time-overflow .card-header .row .project-details--client {\n      color: rgba(0, 0, 0, 0.5); }\n    .project-details.time-overflow .card-header .row .project-details--name {\n      color: #ff2323; }\n    .project-details.time-overflow .card-header .row .project-details--description {\n      color: rgba(0, 0, 0, 0.5); }\n    .project-details.time-overflow .card-header .row .project-details--budget-label {\n      color: rgba(0, 0, 0, 0.5); }\n    .project-details.time-overflow .card-header .row .project-details--budget {\n      color: #ff2323; }\n    .project-details.time-overflow .card-header .progress .progress-bar.time-basis {\n      background: #ffc107; }\n    .project-details.time-overflow .card-header .progress .progress-bar.time-over {\n      background: #ff2323; }\n", ""]);
 
 
 
@@ -16022,7 +16022,7 @@ exports.push([module.i, "", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* FUNCTIONS */\n#main-navigation {\n  border-bottom: 1px solid #cee6ff; }\n  #main-navigation ul.main-nav {\n    color: #171330;\n    display: flex;\n    flex-wrap: wrap;\n    padding-left: 0;\n    margin-bottom: 0;\n    list-style: none;\n    cursor: pointer; }\n    #main-navigation ul.main-nav li.main-nav-item a.main-nav-link {\n      display: block;\n      padding: 1rem;\n      text-transform: uppercase;\n      letter-spacing: 0.15rem;\n      -webkit-transition: all 0.15s ease-in-out;\n      -moz-transition: all 0.15s ease-in-out;\n      -o-transition: all 0.15s ease-in-out;\n      transition: all 0.15s ease-in-out; }\n      #main-navigation ul.main-nav li.main-nav-item a.main-nav-link:hover {\n        color: #797594; }\n  #main-navigation .admin {\n    position: absolute;\n    top: 0.5rem;\n    right: 1rem; }\n", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n#main-navigation {\n  border-bottom: 1px solid #cee6ff; }\n  #main-navigation ul.main-nav {\n    color: #171330;\n    display: flex;\n    flex-wrap: wrap;\n    padding-left: 0;\n    margin-bottom: 0;\n    list-style: none;\n    cursor: pointer; }\n    #main-navigation ul.main-nav li.main-nav-item a.main-nav-link {\n      display: block;\n      padding: 1rem;\n      text-transform: uppercase;\n      letter-spacing: 0.15rem;\n      -webkit-transition: all 0.15s ease-in-out;\n      -moz-transition: all 0.15s ease-in-out;\n      -o-transition: all 0.15s ease-in-out;\n      transition: all 0.15s ease-in-out; }\n      #main-navigation ul.main-nav li.main-nav-item a.main-nav-link:hover {\n        color: rgba(0, 0, 0, 0.5); }\n  #main-navigation .admin {\n    position: absolute;\n    top: 0.5rem;\n    right: 1rem;\n    background-color: #3726bc;\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    -ms-border-radius: 3px;\n    -o-border-radius: 3px;\n    -khtml-border-radius: 3px;\n    border-radius: 3px; }\n    #main-navigation .admin .btn {\n      color: #ffffff; }\n", ""]);
 
 
 
@@ -77814,13 +77814,11 @@ function (_Component) {
       nameField.value == "" ? this.state.errorOnName = true : this.state.errorOnName = false;
       budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
       clientField.value == "" ? this.state.errorOnClient = true : this.state.errorOnClient = false;
-      console.log(this.state.errorOnClient);
       this.state.hasErrors = true;
 
       if (!this.state.errorOnName && !this.state.errorOnBudget && !this.state.errorOnClient) {
         this.state.hasErrors = false;
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target);
-        console.log(fd); // on lance la requête
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target); // on lance la requête
 
         this.props.mainStore.postNewProject(fd);
         this.props.onChange();
@@ -77837,8 +77835,7 @@ function (_Component) {
     value: function setActiveClient(c) {
       this.setState({
         activeClient: c
-      }); // console.log(c);
-      // console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
+      });
     }
   }, {
     key: "cancelEdit",
@@ -78456,9 +78453,12 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ParamsManager).call(this, props));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
+    _this.handleDropdownChange = _this.handleDropdownChange.bind(_assertThisInitialized(_this));
     _this.state = {
       search: '',
-      height: window.innerHeight - 420
+      height: window.innerHeight - 420,
+      unit: _this.props.mainStore.unit,
+      lang: _this.props.mainStore.lang
     };
     return _this;
   }
@@ -78476,6 +78476,16 @@ function (_Component) {
       this.setState({
         search: e.target.value
       });
+    }
+  }, {
+    key: "handleDropdownChange",
+    value: function handleDropdownChange(e) {
+      e.preventDefault();
+      this.props.mainStore.updateParameters("unit", "day");
+      var paramKey = e.currentTarget.parentNode.parentNode.getAttribute("id");
+      var paramValue = e.currentTarget.getAttribute("id");
+      console.log(paramKey + " : " + paramValue);
+      this.props.mainStore.updateParameters(paramKey, paramValue);
     }
   }, {
     key: "render",
@@ -78498,7 +78508,8 @@ function (_Component) {
       }, "L'application indique par d\xE9faut les temps en heures. Vous pouvez modifier cette option et indiquer les temps en jours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
+        className: "dropdown",
+        id: "unit"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light dropdown-toggle",
         type: "button",
@@ -78506,15 +78517,19 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, "heures"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.unit == "hour" ? "heures" : "jours"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
-        href: "#"
+        href: "#",
+        onClick: this.handleDropdownChange,
+        id: "hour"
       }, "heures"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
-        href: "#"
+        href: "#",
+        onClick: this.handleDropdownChange,
+        id: "day"
       }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -78526,7 +78541,8 @@ function (_Component) {
       }, "La langue utilis\xE9e dans l'application")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
+        className: "dropdown",
+        id: "lang"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light dropdown-toggle",
         type: "button",
@@ -78534,15 +78550,19 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, "Fran\xE7ais"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.lang == "fr" ? "Français" : "English"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
-        href: "#"
+        href: "#",
+        onClick: this.handleDropdownChange,
+        id: "fr"
       }, "Fran\xE7ais"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "dropdown-item disabled",
-        href: "#"
+        className: "dropdown-item",
+        href: "#",
+        onClick: this.handleDropdownChange,
+        id: "en"
       }, "English")))))));
     }
   }]);
@@ -78570,8 +78590,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sharedComponents/ClientsSelector */ "./src/shared/components/ClientsSelector/index.jsx");
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/ProjectsManager/components/Project/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Admin/components/ProjectsManager/components/Project/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78589,6 +78610,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -78677,18 +78699,18 @@ function (_Component) {
       var inputName = document.getElementById("project-input--name-" + this.props.projectid);
       var inputClient = document.getElementById("project-input--client");
       var inputDescription = document.getElementById("project-input--description-" + this.props.projectid);
-      var inputBuget = document.getElementById("project-input--budget-" + this.props.projectid);
+      var inputBudget = document.getElementById("project-input--budget-" + this.props.projectid);
       inputName.value = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.props.projectid);
       inputClient.value = this.state.activeClient;
       inputDescription.value = this.props.description;
-      inputBuget.value = this.props.budget;
+      inputBudget.value = Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.budget, this.props.mainStore.unit).toFixed(2);
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       console.log("submit");
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId); // console.log(fd);
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // console.log(fd);
       // on lance la requête
 
       this.props.mainStore.updateProject(this.props.projectid, fd); // const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
@@ -78762,7 +78784,8 @@ function (_Component) {
           name: "budget",
           id: "project-input--budget-" + this.props.projectid,
           type: "text",
-          "aria-label": "Input"
+          "aria-label": "Input",
+          "data-parse": "number"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
         }, this.props.tasks.map(function (t) {
@@ -78827,7 +78850,7 @@ function (_Component) {
           className: "text-muted"
         }, this.props.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-2"
-        }, this.props.budget, " ", this.props.mainStore.unit == "hours" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.budget, this.props.mainStore.unit).toFixed(2), " ", this.props.mainStore.unit == "hour" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
         }, this.props.tasks.map(function (t) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -79623,9 +79646,9 @@ function (_Component) {
         role: "tab",
         "aria-controls": "nav-clients",
         "aria-selected": "false"
-      }, "Clients", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "G\xE9rer les clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-item nav-link w-25 active",
         id: "nav-projects-tab",
         "data-toggle": "tab",
@@ -79633,9 +79656,9 @@ function (_Component) {
         role: "tab",
         "aria-controls": "nav-projects",
         "aria-selected": "true"
-      }, "Projects", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "G\xE9rer et modifier les projets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-item nav-link w-25",
         id: "nav-users-tab",
         "data-toggle": "tab",
@@ -79643,9 +79666,9 @@ function (_Component) {
         role: "tab",
         "aria-controls": "nav-users",
         "aria-selected": "false"
-      }, "Users", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "G\xE9rer les utilisateurs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-item nav-link w-25",
         id: "nav-params-tab",
         "data-toggle": "tab",
@@ -79653,9 +79676,9 @@ function (_Component) {
         role: "tab",
         "aria-controls": "nav-params",
         "aria-selected": "false"
-      }, "Param\xE8tres", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "text-muted"
-      }, "R\xE9glages de l'application")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.description)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tab-content",
         id: "nav-tabContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79693,7 +79716,7 @@ function (_Component) {
         className: "col-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "user-input--firstname-" + this.props.authStore.userId
-      }, "First name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "firstName",
         id: "user-input--firstname-" + this.props.authStore.userId,
@@ -79703,7 +79726,7 @@ function (_Component) {
         className: "col-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "user-input--lastname-" + this.props.authStore.userId
-      }, "Second name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "lastName",
         id: "user-input--lastname-" + this.props.authStore.userId,
@@ -79715,7 +79738,7 @@ function (_Component) {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "user-input--email-" + this.props.authStore.userId
-      }, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "email",
         id: "user-input--email-" + this.props.authStore.userId,
@@ -79727,10 +79750,10 @@ function (_Component) {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Update"), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.update), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.cancelEdit
-      }, "Cancel"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_cancel))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "personal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -79742,7 +79765,7 @@ function (_Component) {
         className: "btn btn-light",
         type: "button",
         onClick: this.editItem
-      }, "Edit infos"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit_infos))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
@@ -79752,23 +79775,13 @@ function (_Component) {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-muted"
-      }, "Signed on ", this.props.authStore.user.date)))), this.props.authStore.user.isAdmin ? manager : null)));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.sign_date, " ", this.props.authStore.user.date)))), this.props.authStore.user.isAdmin ? manager : null)));
     }
   }]);
 
   return Admin;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
-
-function adminData() {}
-
-/* harmony default export */ __webpack_exports__["default"] = (Admin); // <p>{this.props.authStore.user.firstName}</p>
-// 	      <p>{this.props.authStore.user.lastName}</p>
-// 	      <h3>Related projects</h3>     
-// 	      <ul>
-// 	      	{this.props.authStore.user.projects.map(p => {
-// 	      	    return <li>{getProjectName(this.props.mainStore.projectsDefinitions, p)}</li>;
-// 	      	})}
-// 	      </ul>
+/* harmony default export */ __webpack_exports__["default"] = (Admin);
 
 /***/ }),
 
@@ -80419,8 +80432,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var utils_readableDate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! utils/readableDate */ "./src/shared/utils/readableDate.js");
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
+/* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
+/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80448,6 +80462,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Task = Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_4__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -80459,16 +80474,14 @@ function (_Component) {
     _classCallCheck(this, Task);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Task).call(this, props)); // get the client id
-    // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
+    // const clid = this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject).client;
     // ^^^^^^^^^^^^^^^^^^^^^
     // LÀ, PROBLÈME !!
 
     _this.state = {
-      projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(_this.props.mainStore.projectsDefinitions, _this.props.relatedProject),
-      clientId: Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(_this.props.mainStore.projectsDefinitions.find(function (item) {
-        return item._id == _this.props.relatedProject;
-      })).client,
-      clientName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(_this.props.mainStore.clientsDefinitions, _this.clientId),
+      projectName: "…",
+      clientId: "5d9e452ede629f58d3e09f14",
+      clientName: "…",
       isEdited: false,
       activeProject: _this.props.relatedProject
     }; // binds
@@ -80484,12 +80497,19 @@ function (_Component) {
 
   _createClass(Task, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// console.log("///////:::::::::::::: "+this.props.mainStore.projectsDefinitions);
-      // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.relatedProject)).client;
-      // this.setState({
-      //     clientId: clid,
-      //     clientName: getClientName(this.props.mainStore.clientsDefinitions, clid)
-      // })
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var clid = this.props.mainStore.projectsDefinitions.find(function (item) {
+        return item._id == _this2.props.relatedProject;
+      }).client;
+      var pr = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
+      var cl = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(this.props.mainStore.clientsDefinitions, clid);
+      this.setState({
+        projectName: pr,
+        clientId: clid,
+        clientName: cl
+      });
     }
   }, {
     key: "componentDidUpdate",
@@ -80520,14 +80540,14 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this2 = this;
+      var _this3 = this;
 
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_7__["default"])(e.target, this.props.authStore.userId); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_8__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // on lance la requête
 
       this.props.mainStore.updateTask(this.state.activeProject, this.props.id, fd);
       var cli = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
-        return item._id == _this2.state.activeProject;
+        return item._id == _this3.state.activeProject;
       })).client;
       this.setState({
         projectName: Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.state.activeProject),
@@ -80549,18 +80569,18 @@ function (_Component) {
       var inputValue = document.getElementById("track-input--value-" + this.props.id);
       var inputComment = document.getElementById("track-input--comment-" + this.props.id);
       var inputTask = document.getElementById("track-input--task-" + this.props.id);
-      inputValue.value = this.props.value;
+      inputValue.value = Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit).toFixed(2);
       inputComment.value = this.props.comment;
       inputTask.value = this.props.task;
     }
   }, {
     key: "formatValue",
     value: function formatValue(value) {
-      var val = value.toString();
-      var valFormat = val;
+      var valFormat = value;
 
-      if (val % 1 !== 0) {
+      if (value % 1 !== 0) {
         // si c'est un nombre flottant, on applique un format particulier à la décimale
+        var val = value.toFixed(2);
         var valSplit = val.split(".");
         valFormat = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "value--float"
@@ -80574,15 +80594,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       console.log("new task render");
-      var clid = Object(mobx__WEBPACK_IMPORTED_MODULE_3__["toJS"])(this.props.mainStore.projectsDefinitions.find(function (item) {
-        return item._id == _this3.props.relatedProject;
-      })).client;
-      this.state.projectName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getProjectName"])(this.props.mainStore.projectsDefinitions, this.props.relatedProject);
-      this.state.clientName = Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__["getClientName"])(this.props.mainStore.clientsDefinitions, clid); // console.log(toJS(this.props.mainStore));
-      // console.log(toJS(this.props.mainStore.projectsDefinitions));
+      var taskValue = Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit); // convertit le temps de la task à l'unité courante (jour ou heure)
 
       if (this.state.isEdited) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -80659,9 +80672,9 @@ function (_Component) {
           className: "col-2 item-value"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "item-value--inner"
-        }, this.formatValue(this.props.value), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, this.formatValue(taskValue), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "item-value--unit"
-        }, this.props.mainStore.unit == "hours" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.unit == "hour" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-10 item-details"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "item-details--title"
@@ -80680,7 +80693,30 @@ function (_Component) {
 
   return Task;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
-/* harmony default export */ __webpack_exports__["default"] = (Task);
+/* harmony default export */ __webpack_exports__["default"] = (Task); // <div className="dropdown item-actions position-absolute">
+// 		    <button className="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+// 		      <i className="ico ico-dots_v">dots_v</i>
+// 		    </button>
+// 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+// 		      <a className="dropdown-item" href="#" onClick={this.editItem}>Éditer</a>
+// 		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
+// 		    </div>
+// 		  </div>
+// 		  <div className="row">
+// 		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(taskValue)} <span className="item-value--unit">{this.props.mainStore.unit == "hour" ? "h." : "j." }</span></div></div>
+// 		    <div className="col-10 item-details">
+// 		      <h4 className="item-details--title">{this.props.task}</h4>
+// 		      <p className="item-details--description">{this.props.comment}</p>
+// 		    </div>
+// 		  </div>
+// 		  <div className="row">
+// 		    <div className="offset-2 col-5 text-muted">
+// 		      <strong>{this.state.projectName}</strong>  {this.state.clientName}
+// 		    </div>
+// 		    <div className="col-5 text-muted">
+// 		      {readableDate(this.props.date)}
+// 		    </div>
+// 		  </div>
 
 /***/ }),
 
@@ -80700,6 +80736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
 /* harmony import */ var sharedComponents_TaskSelector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sharedComponents/TaskSelector */ "./src/shared/components/TaskSelector/index.jsx");
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80721,6 +80758,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import {observable, action, decorate} from "mobx";
+
 
 
 
@@ -80765,7 +80803,7 @@ function (_Component) {
 
       if (!this.state.errorOnTime && !this.state.errorOnTask && !this.state.errorOnProject) {
         this.state.hasErrors = false;
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.authStore.userId);
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, this.props.authStore.userId, this.props.mainStore.unit);
         fd.task = this.props.mainStore.activeTaskInput; // console.log(fd);
 
         this.props.mainStore.postNewTask(this.state.activeProject, fd);
@@ -80824,7 +80862,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row mb-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-4 pr-0"
+        className: "col-3 pr-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control form-control-lg w-100 " + timeAttr,
         name: "value",
@@ -80834,7 +80872,11 @@ function (_Component) {
         "aria-label": "Input",
         "data-parse": "number"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-8"
+        className: "col-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "track-input--unit"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.mainStore.unit == "hour" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-7"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.setActiveProject,
         darkMode: "true"
@@ -80888,11 +80930,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Task */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/Task/index.jsx");
 /* harmony import */ var _components_TaskInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TaskInput */ "./src/screens/App/components/Dashboard/components/PersonalManager/components/TaskInput/index.jsx");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var sharedComponents_ErrorBoundary__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sharedComponents/ErrorBoundary */ "./src/shared/components/ErrorBoundary/index.jsx");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/PersonalManager/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80914,13 +80957,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
  // import axios from "axios";
 
 
 
 
 
-var PersonalManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_5__["observer"])(
+var PersonalManager = Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(PersonalManager, _Component);
@@ -80988,14 +81032,16 @@ function (_Component) {
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
       }, this.props.mainStore.trackHistory.slice(0).reverse().map(function (childData) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Task__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ErrorBoundary__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          key: childData.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Task__WEBPACK_IMPORTED_MODULE_2__["default"], {
           onClick: function onClick(event) {
             return _this2.handleClick(childData, event);
           },
           key: childData.id,
           id: childData.id,
           task: childData.task,
-          value: _this2.props.mainStore.unit == "hours" ? childData.value : childData.value / 7,
+          value: childData.value,
           comment: childData.comment,
           relatedProject: childData.relatedProject,
           date: childData.date,
@@ -81003,15 +81049,15 @@ function (_Component) {
           onChange: function onChange(event) {
             return _this2.handleChange(childData, event);
           }
-        });
+        }));
       })));
     }
   }]);
 
   return PersonalManager;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"])));
-Object(mobx__WEBPACK_IMPORTED_MODULE_4__["decorate"])(PersonalManager, {
-  handleClick: mobx__WEBPACK_IMPORTED_MODULE_4__["action"]
+Object(mobx__WEBPACK_IMPORTED_MODULE_5__["decorate"])(PersonalManager, {
+  handleClick: mobx__WEBPACK_IMPORTED_MODULE_5__["action"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (PersonalManager); // .slice(0).reverse().map( etc.) copy le tableau en entrée, le retourne, et map notre fonction avec !
 
@@ -81063,7 +81109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
+/* harmony import */ var sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sharedComponents/ProjectsSelector */ "./src/shared/components/ProjectsSelector/index.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81081,6 +81128,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -81121,8 +81169,7 @@ function (_Component) {
 
   _createClass(Task, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log(Object(mobx__WEBPACK_IMPORTED_MODULE_4__["toJS"])(this.props.mainStore.activeProjectDetails));
+    value: function componentDidMount() {// console.log(toJS(this.props.mainStore.activeProjectDetails));
     }
   }, {
     key: "componentDidUpdate",
@@ -81157,7 +81204,7 @@ function (_Component) {
       var inputValue = document.getElementById("track-input--value-" + this.props.taskid);
       var inputComment = document.getElementById("track-input--comment-" + this.props.taskid);
       var inputTask = document.getElementById("track-input--task-" + this.props.taskid);
-      inputValue.value = this.props.value;
+      inputValue.value = Object(utils_time__WEBPACK_IMPORTED_MODULE_6__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit);
       inputComment.value = this.props.comment;
       inputTask.value = this.props.task;
     }
@@ -81166,7 +81213,7 @@ function (_Component) {
     value: function handleSubmit(e) {
       console.log("submit");
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // on lance la requête
 
       this.props.mainStore.updateTask(this.state.activeProject, this.props.taskid, fd); // const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
 
@@ -81243,7 +81290,7 @@ function (_Component) {
           className: "track-task"
         }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-value"
-        }, this.props.value, "\xA0", this.props.mainStore.unit == "hours" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_6__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit).toFixed(2), "\xA0", this.props.mainStore.unit == "hour" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-comment"
         }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-user"
@@ -81301,10 +81348,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
 /* harmony import */ var fetch_agent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fetch/agent */ "./src/shared/fetch/agent.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
-/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Project/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Dashboard/components/Project/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81334,7 +81382,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Project = Object(mobx_react__WEBPACK_IMPORTED_MODULE_8__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_8__["observer"])(
+
+var Project = Object(mobx_react__WEBPACK_IMPORTED_MODULE_9__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_9__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(Project, _Component);
@@ -81346,6 +81395,10 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Project).call(this, props));
     _this.state = {
+      timeSpent: 0,
+      timeTotal: _this.props.budget,
+      percentageConsumed: 0,
+      timeOverflow: false,
       height: window.innerHeight - 120
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -81369,13 +81422,12 @@ function (_Component) {
     }
   }, {
     key: "handleChange",
-    value: function handleChange() {
-      console.log("change");
+    value: function handleChange() {// console.log("change");
     }
   }, {
     key: "stats",
     value: function stats() {
-      var ft = Object(utils_budget__WEBPACK_IMPORTED_MODULE_5__["getFullTime"])(Object(mobx__WEBPACK_IMPORTED_MODULE_7__["toJS"])(this.props.mainStore.activeTrackedTime));
+      var ft = Object(utils_budget__WEBPACK_IMPORTED_MODULE_5__["getFullTime"])(Object(mobx__WEBPACK_IMPORTED_MODULE_8__["toJS"])(this.props.mainStore.activeTrackedTime));
       return ft;
     }
   }, {
@@ -81383,16 +81435,18 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var timeConsumed = Object(utils_budget__WEBPACK_IMPORTED_MODULE_5__["getPercent"])(this.stats(), this.props.mainStore.activeProjectDetails.budget);
-      var isTimeOver = timeConsumed > 100; // boolean (le budget est-il dépassé ?)
+      // const timeConsumed = getPercent(this.stats(), this.props.mainStore.activeProjectDetails.budget);
+      // const isTimeOver = timeConsumed > 100; // boolean (le budget est-il dépassé ?)
+      this.state.percentageConsumed = Object(utils_budget__WEBPACK_IMPORTED_MODULE_5__["getPercent"])(this.stats(), this.props.mainStore.activeProjectDetails.budget);
+      this.state.timeOverflow = this.state.percentageConsumed > 100 ? true : false;
+      var barColor = this.state.timeOverflow ? "bg-danger" : null;
+      var timeBasis = Math.pow(100, 2) / this.state.percentageConsumed;
+      var timeOver = (this.state.percentageConsumed - 100) * 100 / this.state.percentageConsumed;
+      console.log(this.state.percentageConsumed); // console.log(timeConsumed+"%");
+      // console.log(timeBasis+"/"+timeOver);
 
-      var barColor = timeOver ? "bg-danger" : null;
-      var timeBasis = Math.pow(100, 2) / timeConsumed;
-      var timeOver = (timeConsumed - 100) * 100 / timeConsumed;
-      console.log(timeConsumed + "%");
-      console.log(timeBasis + "/" + timeOver);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card project-details",
+        className: "card project-details " + (this.state.timeOverflow ? "time-overflow" : ""),
         style: {
           height: this.state.height + "px"
         }
@@ -81414,7 +81468,9 @@ function (_Component) {
         className: "project-details--budget-label"
       }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "project-details--budget"
-      }, this.props.mainStore.activeProjectDetails.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null))), !isTimeOver ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.mainStore.activeProjectDetails.budget, this.props.mainStore.unit), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "project-details--budget--unit"
+      }, this.props.mainStore.unit == "hour" ? "h." : "j.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null))), !this.state.timeOverflow ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress",
         "data-toggle": "tooltip",
         "data-placement": "top",
@@ -81423,7 +81479,7 @@ function (_Component) {
         className: "progress-bar",
         role: "progressbar",
         style: {
-          width: timeConsumed + "%"
+          width: this.state.percentageConsumed + "%"
         },
         "aria-valuenow": "25",
         "aria-valuemin": "0",
@@ -81434,7 +81490,7 @@ function (_Component) {
         "data-placement": "top",
         title: this.stats()
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "progress-bar bg-warning",
+        className: "progress-bar time-basis",
         role: "progressbar",
         style: {
           width: timeBasis + "%"
@@ -81443,7 +81499,7 @@ function (_Component) {
         "aria-valuemin": "0",
         "aria-valuemax": "100"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "progress-bar bg-danger",
+        className: "progress-bar time-over",
         role: "progressbar",
         style: {
           width: timeOver + "%"
@@ -81589,7 +81645,7 @@ function (_Component) {
         id: "main",
         className: "col-md-10"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
+        className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81601,15 +81657,17 @@ function (_Component) {
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
       }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-5"
+        className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: this.props.mainStore,
         key: 0
       })), this.props.mainStore.showProject ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-7"
+        className: "col-md-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_3__["default"], {
         key: 1
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a project")))))))));
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "project-selection--placeholder"
+      }, "Select a project")))))))));
     }
   }]);
 
@@ -82180,6 +82238,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var utils_defsConverter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utils/defsConverter */ "./src/shared/utils/defsConverter.js");
 /* harmony import */ var utils_budget__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/budget */ "./src/shared/utils/budget.js");
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -82199,6 +82258,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -82297,11 +82357,11 @@ function (_Component) {
         className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--spent"
-      }, this.state.timeSpent, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(this.state.timeSpent, this.props.mainStore.unit).toFixed(2), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
-      }, this.props.mainStore.unit == "hours" ? "heures" : "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.mainStore.unit == "hour" ? "heures" : "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--budget"
-      }, "sur ", this.props.budget, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "sur ", Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(this.props.budget, this.props.mainStore.unit).toFixed(2), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
       }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
@@ -82332,7 +82392,7 @@ function (_Component) {
           className: "badge task-percentage mr-2"
         }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(_this3.state.tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
-        }, _this3.state.tasks[t], " ", _this3.props.mainStore.unit == "hours" ? "heures" : "jours"))));
+        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(_this3.state.tasks[t], _this3.props.mainStore.unit).toFixed(2), " ", _this3.props.mainStore.unit == "hour" ? "heures" : "jours"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
       }));
@@ -82635,10 +82695,6 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("App is rendered");
-      console.log("isLoggedIn : " + this.props.authStore.isLoggedIn); // console.log("secret : "+this.props.authStore.sessionSecret);
-      // console.log(useCookies.get("login"));
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -82814,7 +82870,7 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.state.activeClient == null ? "Select a client" : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.activeClient == null ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.state.activeClient))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
@@ -82865,6 +82921,89 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./src/shared/components/ErrorBoundary/index.jsx":
+/*!*******************************************************!*\
+  !*** ./src/shared/components/ErrorBoundary/index.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ErrorBoundary = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ErrorBoundary, _React$Component);
+
+  function ErrorBoundary(props) {
+    var _this;
+
+    _classCallCheck(this, ErrorBoundary);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ErrorBoundary).call(this, props));
+    _this.state = {
+      hasError: false
+    };
+    return _this;
+  }
+
+  _createClass(ErrorBoundary, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, errorInfo) {
+      // You can also log the error to an error reporting service
+      console.log(error, errorInfo);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "text-muted"
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].error.main);
+      }
+
+      return this.props.children;
+    }
+  }], [{
+    key: "getDerivedStateFromError",
+    value: function getDerivedStateFromError(error) {
+      // Update state so the next render will show the fallback UI.
+      return {
+        hasError: true
+      };
+    }
+  }]);
+
+  return ErrorBoundary;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component)));
+/* harmony default export */ __webpack_exports__["default"] = (ErrorBoundary);
 
 /***/ }),
 
@@ -82936,8 +83075,7 @@ function (_Component) {
       var _this$props$routingSt = this.props.routingStore,
           location = _this$props$routingSt.location,
           push = _this$props$routingSt.push,
-          goBack = _this$props$routingSt.goBack; // console.log("MainNavigation is rendered");
-
+          goBack = _this$props$routingSt.goBack;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "",
         id: "main-navigation"
@@ -82951,7 +83089,7 @@ function (_Component) {
           return push('/overview');
         },
         name: "dashboard"
-      }, "Dashboard ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].navigation.dashboard, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }, "(current)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "main-nav-item"
@@ -82961,18 +83099,18 @@ function (_Component) {
           return push('/synthesis');
         },
         name: "synthesis"
-      }, "Synthesis ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].navigation.synthesis, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }, "(current)")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown admin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-secondary dropdown-toggle",
+        className: "btn dropdown-toggle",
         type: "button",
         id: "adminMenuButton",
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Connected as "), this.props.authStore.user.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].navigation.user.connected_as, " "), this.props.authStore.user.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "adminMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -82980,14 +83118,14 @@ function (_Component) {
         onClick: function onClick() {
           return push('/admin');
         }
-      }, "Admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].navigation.user.admin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-divider"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         onClick: function onClick() {
           return _this2.props.authStore.logout();
         }
-      }, "Logout"))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].navigation.user.logout))));
     }
   }]);
 
@@ -83099,13 +83237,6 @@ function (_Component) {
       var projectId = e.currentTarget.getAttribute("id"); // get the id
 
       var clientName = e.currentTarget.querySelector(".related-client").innerText;
-      console.log(clientName); // if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
-      //     projectId = e.currentTarget.parentNode.getAttribute("id");
-      //     // clientName = e.currentTarget
-      // } else {
-      //     projectId = e.currentTarget.getAttribute("id");
-      // }
-
       this.setState({
         activeProject: projectId,
         relatedClient: clientName
@@ -83124,18 +83255,13 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      // console.log(this.state.activeProject);
-      // const activeClient = this.props.mainStore.projectsDefinitions[0].client;
-      // const activeClient = this.props.mainStore.projectsDefinitions.filter(n => n._id === this.state.activeProject).client;
-      console.log("/////////");
       var darkClass;
 
       if (this.props.darkMode == "true") {
         darkClass = "dark-mode";
       } else {
         darkClass = "light-mode";
-      } // console.log(activeClient);
-
+      }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: darkClass
@@ -83148,7 +83274,7 @@ function (_Component) {
         "aria-expanded": "false"
       }, this.state.activeProject == null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "project-placeholder"
-      }, "Select a project") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.project_selector.placeholder) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "project-name"
@@ -83158,7 +83284,6 @@ function (_Component) {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, this.props.mainStore.projectsDefinitions.map(function (p) {
-        // console.log(p);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "dropdown-item",
           href: "#",
@@ -83284,8 +83409,8 @@ function (_Component) {
   _createClass(TaskSelector, [{
     key: "handleDropdownChange",
     value: function handleDropdownChange(e) {
-      e.preventDefault();
-      console.log(e); // on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
+      e.preventDefault(); // console.log(e);
+      // on point e.currentTarget pour obtenir l'élément qui a le handler, et pas l'enfant sur lequel on clicke (qui est e.target)
       // let projectId; // get the id
 
       this.props.mainStore.setActiveTaskInput(e.currentTarget.innerText);
@@ -83329,7 +83454,7 @@ function (_Component) {
         "aria-haspopup": "true",
         "aria-expanded": "false",
         "aria-disabled": AriaDisabledState
-      }, this.props.mainStore.activeTaskInput == null ? "Select task" : this.props.mainStore.activeTaskInput), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.activeTaskInput == null ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.new_task : this.props.mainStore.activeTaskInput), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "tasksList"
       }, tasks !== null && tasks.map(function (t) {
@@ -83344,14 +83469,14 @@ function (_Component) {
         name: "task",
         id: "task-input--task",
         type: "text",
-        placeholder: "New task",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.new_task,
         "aria-label": "Input",
         "data-parse": "number",
         className: "w-50 ml-3 mr-1"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary",
         onClick: this.submitNewTask
-      }, "Add")));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.task_selector.add)));
     }
   }]);
 
@@ -83395,7 +83520,7 @@ if(false) {}
 /*!***********************************!*\
   !*** ./src/shared/fetch/agent.js ***!
   \***********************************/
-/*! exports provided: login, lostPassword, resetPassword, fetchParameters, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchTracksDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
+/*! exports provided: login, lostPassword, resetPassword, fetchParameters, parametersUpdate, fetchClientsDefinitions, fetchProjectsDefinitions, fetchUsersDefinitions, fetchTracksDefinitions, fetchUser, userUpdate, controlCookie, fetchPersonalHistory, fetchProject, fetchProjectTrackedTime, projectNew, projectUpdate, projectDeleteTask, projectDelete, taskNew, taskUpdate, taskDelete, clientNew, clientUpdate, clientDelete */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83404,6 +83529,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lostPassword", function() { return lostPassword; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPassword", function() { return resetPassword; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchParameters", function() { return fetchParameters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parametersUpdate", function() { return parametersUpdate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchClientsDefinitions", function() { return fetchClientsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProjectsDefinitions", function() { return fetchProjectsDefinitions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersDefinitions", function() { return fetchUsersDefinitions; });
@@ -83502,6 +83628,17 @@ function fetchParameters() {
     return res.data;
   }).catch(function (error) {
     return console.log(error);
+  });
+  return result;
+}
+function parametersUpdate(id, value) {
+  var body = {
+    "value": value
+  };
+  var result = axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("".concat(API_ROOT, "/params/").concat(id), body).then(function (res) {
+    result = res;
+  }).catch(function (error) {
+    result = error;
   });
   return result;
 } // --------------------
@@ -83750,6 +83887,338 @@ function clientDelete(clientId) {
 
 /***/ }),
 
+/***/ "./src/shared/localisation/Strings.js":
+/*!********************************************!*\
+  !*** ./src/shared/localisation/Strings.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Strings; });
+function Strings() {
+  var AppStrings = {
+    "fr": {
+      "lang": "fr",
+      "day_short": "",
+      "hour_short": "",
+      "day": "",
+      "hour": "",
+      "error": {
+        "main": "Aïe, quelque chose est cassé…"
+      },
+      "components": {
+        "client_selector": {
+          "placeholder": ""
+        },
+        "project_selector": {
+          "placeholder": "Sélectionner un projet"
+        },
+        "task_selector": {
+          "select_task": "",
+          "new_task": "",
+          "add": ""
+        }
+      },
+      "navigation": {
+        "dashboard": "Vue d'ensemble",
+        "synthesis": "Synthèse",
+        "user": {
+          "connected_as": "",
+          "admin": "",
+          "logout": ""
+        }
+      },
+      "admin": {
+        "main": {
+          "edit_infos": "Modifier",
+          "sign_date": "Compte créé le ",
+          "edit": {
+            "first_name": "",
+            "second_name": "",
+            "email": "",
+            "update": "",
+            "cancel": ""
+          }
+        },
+        "clients": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_client": "",
+          "headers": {
+            "client": ""
+          },
+          "active_project": "",
+          "edit": "",
+          "delete": ""
+        },
+        "projects": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_project": "",
+          "headers": {
+            "client": "",
+            "project_desc": "",
+            "budget": "",
+            "tasks": ""
+          },
+          "active_project": "",
+          "edit": "",
+          "delete": "",
+          "edition": {
+            "update": "",
+            "cancel": "",
+            "delete_project": "",
+            "caution_message": ""
+          }
+        },
+        "users": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_project": "",
+          "headers": {
+            "user": "",
+            "role": ""
+          },
+          "active_project": "",
+          "select": {
+            "admin": "",
+            "user": ""
+          }
+        },
+        "params": {
+          "name": "",
+          "description": "",
+          "unit": {
+            "name": "",
+            "description": "",
+            "select": {
+              "day": "",
+              "hour": ""
+            }
+          },
+          "lang": {
+            "name": "",
+            "description": "",
+            "select": {
+              "fr": "",
+              "en": ""
+            }
+          }
+        }
+      },
+      "dashboard": {
+        "navigation": {
+          "search": "",
+          "add_client": ""
+        },
+        "personal_manager": {
+          "time_enter": "",
+          "add_time": "",
+          "write_comment": "",
+          "submit": "",
+          "task": {
+            "edit": "",
+            "delete": ""
+          }
+        },
+        "project": {
+          "select_project": "",
+          "budget": "",
+          "edit": "",
+          "delete": ""
+        }
+      },
+      "synthesis": {
+        "search": ""
+      }
+    },
+    "en": {
+      "lang": "en",
+      "day_short": "",
+      "hour_short": "",
+      "day": "",
+      "hour": "",
+      "error": {
+        "main": "Something went wrong here…"
+      },
+      "components": {
+        "client_selector": {
+          "placeholder": ""
+        },
+        "project_selector": {
+          "placeholder": "Select a project"
+        },
+        "task_selector": {
+          "select_task": "",
+          "new_task": "",
+          "add": ""
+        },
+        "add_project": {},
+        "add_client": {}
+      },
+      "navigation": {
+        "dashboard": "Dashboard",
+        "synthesis": "Synthesis",
+        "user": {
+          "connected_as": "",
+          "admin": "",
+          "logout": ""
+        }
+      },
+      "admin": {
+        "main": {
+          "edit_infos": "Edit infos",
+          "sign_date": "Signed on",
+          "edit": {
+            "first_name": "",
+            "second_name": "",
+            "email": "",
+            "update": "",
+            "cancel": ""
+          }
+        },
+        "clients": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_client": "",
+          "headers": {
+            "client": ""
+          },
+          "active_project": "",
+          "edit": "",
+          "delete": ""
+        },
+        "projects": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_project": "",
+          "headers": {
+            "client": "",
+            "project_desc": "",
+            "budget": "",
+            "tasks": ""
+          },
+          "active_project": "",
+          "edit": "",
+          "delete": "",
+          "edition": {
+            "update": "",
+            "cancel": "",
+            "delete_project": "",
+            "caution_message": ""
+          }
+        },
+        "users": {
+          "name": "",
+          "description": "",
+          "search": "",
+          "filter": {
+            "name": "filter",
+            "filter_name": "",
+            "filter_date_added": "",
+            "filter_role": ""
+          },
+          "add_project": "",
+          "headers": {
+            "user": "",
+            "role": ""
+          },
+          "active_project": "",
+          "select": {
+            "admin": "",
+            "user": ""
+          }
+        },
+        "params": {
+          "name": "",
+          "description": "",
+          "unit": {
+            "name": "",
+            "description": "",
+            "select": {
+              "day": "",
+              "hour": ""
+            }
+          },
+          "lang": {
+            "name": "",
+            "description": "",
+            "select": {
+              "fr": "",
+              "en": ""
+            }
+          }
+        }
+      },
+      "dashboard": {
+        "navigation": {
+          "search": "",
+          "add_client": ""
+        },
+        "personal_manager": {
+          "time_enter": "",
+          "add_time": "",
+          "write_comment": "",
+          "submit": "",
+          "task": {
+            "edit": "",
+            "delete": ""
+          }
+        },
+        "project": {
+          "select_project": "",
+          "budget": "",
+          "edit": "",
+          "delete": ""
+        }
+      },
+      "synthesis": {
+        "search": ""
+      }
+    }
+  };
+  return AppStrings;
+}
+
+/***/ }),
+
 /***/ "./src/shared/stores/authStore.js":
 /*!****************************************!*\
   !*** ./src/shared/stores/authStore.js ***!
@@ -83939,11 +84408,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
 /* harmony import */ var fetch_agent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fetch/agent */ "./src/shared/fetch/agent.js");
 /* harmony import */ var stores_authStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stores/authStore */ "./src/shared/stores/authStore.js");
+/* harmony import */ var localisation_Strings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! localisation/Strings */ "./src/shared/localisation/Strings.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -83960,8 +84431,9 @@ function () {
     this.pageDisplayed = "dashboard";
     this.isLoading = false;
     this.isLoadingProject = false;
-    this.unit = "hours";
-    this.lang = "FR";
+    this.unit = "hour";
+    this.lang = "fr";
+    this.appStrings = Object(localisation_Strings__WEBPACK_IMPORTED_MODULE_3__["default"])();
     this.showProject = false; // un projet est-il affiché ?
 
     this.activeProject = null; // le projet actif
@@ -84032,52 +84504,67 @@ function () {
       }));
     }
   }, {
+    key: "updateParameters",
+    value: function updateParameters(paramId, value) {
+      var _this2 = this;
+
+      fetch_agent__WEBPACK_IMPORTED_MODULE_1__["parametersUpdate"](paramId, value).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
+        _this2.loadParameters();
+
+        console.log("param updated"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
+        // this.loadProject(projectId) // relance le chargement du projet
+        // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+      })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
+        console.log(error);
+      })); // .finally(action(() => { this.isLoading = false; }));
+    }
+  }, {
     key: "loadPersonalHistory",
     value: function loadPersonalHistory() {
-      var _this2 = this;
+      var _this3 = this;
 
       // console.log("loading personal history…");
       // console.log(authStore.userId);
       // this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchPersonalHistory"](stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].userId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (history) {
         // console.log(history);
-        _this2.trackHistory = history;
+        _this3.trackHistory = history;
       })) // .catch(action((error) => {
       // 	console.log(error);
       // }))
       .finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this2.isLoading = false;
+        _this3.isLoading = false;
       }));
     }
   }, {
     key: "loadProject",
     value: function loadProject(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       // console.log("project is loading...");
       this.isLoadingProject = true; // console.log(id);
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProject"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (project) {
         // console.log(project.data);
-        _this3.activeProjectDetails = project.data;
+        _this4.activeProjectDetails = project.data;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this3.isLoadingProject = false;
+        _this4.isLoadingProject = false;
       }));
     }
   }, {
     key: "loadTrackedTime",
     value: function loadTrackedTime(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.isLoadingProject = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectTrackedTime"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracked) {
-        _this4.activeTrackedTime = tracked.data.message;
+        _this5.activeTrackedTime = tracked.data.message;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this4.isLoadingProject = false;
+        _this5.isLoadingProject = false;
       }));
     } // getTrackLengthForProject(){
     // 	return "ok";
@@ -84105,28 +84592,28 @@ function () {
   }, {
     key: "loadDefinitions",
     value: function loadDefinitions() {
-      var _this5 = this;
+      var _this6 = this;
 
       // this.isLoading = true;
       // console.log("ça recharge les defs !!!!!!!!!!!!");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchClientsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (clients) {
-        _this5.clientsDefinitions = clients;
+        _this6.clientsDefinitions = clients;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch clients over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchProjectsDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (projects) {
-        _this5.projectsDefinitions = projects;
+        _this6.projectsDefinitions = projects;
 
-        _this5.loadTracks(projects);
+        _this6.loadTracks(projects);
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("fetch projects over");
       }));
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUsersDefinitions"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (users) {
-        _this5.usersDefinitions = users;
+        _this6.usersDefinitions = users;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -84136,10 +84623,10 @@ function () {
   }, {
     key: "loadTracks",
     value: function loadTracks(projects) {
-      var _this6 = this;
+      var _this7 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchTracksDefinitions"](projects).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (tracks) {
-        _this6.tracksDefinitions = tracks;
+        _this7.tracksDefinitions = tracks;
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })).finally(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
@@ -84150,19 +84637,19 @@ function () {
   }, {
     key: "postNewTask",
     value: function postNewTask(projectId, formData) {
-      var _this7 = this;
+      var _this8 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskNew"](projectId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this7.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this7.loadProject(projectId); // relance le chargement du projet
+        _this8.loadProject(projectId); // relance le chargement du projet
 
 
-        _this7.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
 
-        _this7.loadDefinitions();
+        _this8.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84170,16 +84657,16 @@ function () {
   }, {
     key: "deleteTask",
     value: function deleteTask(projectId, trackId) {
-      var _this8 = this;
+      var _this9 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskDelete"](projectId, trackId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this8.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this9.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this8.loadProject(projectId); // relance le chargement du projet
+        _this9.loadProject(projectId); // relance le chargement du projet
 
 
-        _this8.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
+        _this9.loadTrackedTime(projectId); // et on relance le trackingtime du projet 
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -84188,16 +84675,16 @@ function () {
   }, {
     key: "updateTask",
     value: function updateTask(projectId, trackId, formData) {
-      var _this9 = this;
+      var _this10 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["taskUpdate"](projectId, trackId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this9.loadPersonalHistory(); // relance le chargement de l'historique perso
+        _this10.loadPersonalHistory(); // relance le chargement de l'historique perso
 
 
-        _this9.loadProject(projectId); // relance le chargement du projet
+        _this10.loadProject(projectId); // relance le chargement du projet
 
 
-        _this9.loadTrackedTime(projectId); // et on relance le trackingtime du projet
+        _this10.loadTrackedTime(projectId); // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
@@ -84207,10 +84694,10 @@ function () {
   }, {
     key: "postNewClient",
     value: function postNewClient(formData) {
-      var _this10 = this;
+      var _this11 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this10.loadDefinitions();
+        _this11.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84218,10 +84705,10 @@ function () {
   }, {
     key: "deleteClient",
     value: function deleteClient(clientId) {
-      var _this11 = this;
+      var _this12 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientDelete"](clientId).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this11.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
+        _this12.loadDefinitions(); // this.loadPersonalHistory() // relance le chargement de l'historique perso
         // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet 
 
@@ -84232,12 +84719,12 @@ function () {
   }, {
     key: "updateClient",
     value: function updateClient(clientId, formData) {
-      var _this12 = this;
+      var _this13 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["clientUpdate"](clientId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update client"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this12.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
+        _this13.loadDefinitions(); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
 
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
@@ -84248,13 +84735,13 @@ function () {
   }, {
     key: "updateUser",
     value: function updateUser(userId, formData, reloadActiveUser) {
-      var _this13 = this;
+      var _this14 = this;
 
       console.log(userId);
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["userUpdate"](userId, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         console.log("update user"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
 
-        _this13.loadDefinitions();
+        _this14.loadDefinitions();
 
         reloadActiveUser && stores_authStore__WEBPACK_IMPORTED_MODULE_2__["default"].getUserData(userId); // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
@@ -84266,10 +84753,10 @@ function () {
   }, {
     key: "postNewProject",
     value: function postNewProject(formData) {
-      var _this14 = this;
+      var _this15 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectNew"](formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this14.loadDefinitions();
+        _this15.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84277,10 +84764,10 @@ function () {
   }, {
     key: "updateProject",
     value: function updateProject(projectid, formData) {
-      var _this15 = this;
+      var _this16 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectUpdate"](projectid, formData).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this15.loadDefinitions();
+        _this16.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84288,10 +84775,10 @@ function () {
   }, {
     key: "deleteTaskInProject",
     value: function deleteTaskInProject(projectid, taskToDelete) {
-      var _this16 = this;
+      var _this17 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDeleteTask"](projectid, taskToDelete).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this16.loadDefinitions();
+        _this17.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84299,12 +84786,12 @@ function () {
   }, {
     key: "deleteProject",
     value: function deleteProject(projectid) {
-      var _this17 = this;
+      var _this18 = this;
 
       // console.log("delete proj");
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["projectDelete"](projectid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
         // console.log(formData);
-        _this17.loadDefinitions();
+        _this18.loadDefinitions();
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -84317,6 +84804,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   pageDisplayed: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoading: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   isLoadingProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+  appStrings: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   unit: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   lang: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
   showProject: mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
@@ -84340,6 +84828,7 @@ Object(mobx__WEBPACK_IMPORTED_MODULE_0__["decorate"])(MainStore, {
   loadTrackedTime: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadDefinitions: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadParameters: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+  updateParameters: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   loadTracks: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewTask: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
   postNewClient: mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
@@ -84525,6 +85014,7 @@ function readableDate(input) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return retrieveFormData; });
+/* harmony import */ var utils_time__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! utils/time */ "./src/shared/utils/time.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -84533,13 +85023,13 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+
 function retrieveFormData(form) {
   var userid = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  console.log("form");
+  var unit = arguments.length > 2 ? arguments[2] : undefined;
   var data = new FormData(form); // les données du formulaire
+  // console.log(form);
 
-  console.log(form);
-  console.log(userid);
   var reqBody = {};
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
@@ -84550,11 +85040,12 @@ function retrieveFormData(form) {
       var name = _step.value;
       var input = form.elements[name];
       var parserName = input.dataset.parse;
+      console.log(name);
 
       if (parserName) {
         var parser = inputParsers[parserName];
         var parsedValue = parser(data.get(name));
-        reqBody[name] = parsedValue; // la value
+        unit == "hour" ? reqBody[name] = parsedValue : reqBody[name] = parsedValue * 7; // la value
       } else {
         reqBody[name] = data.get(name); //là, on récupère comment et task
       }
@@ -84606,6 +85097,31 @@ function stringifyFormData(fd) {
     data[key] = value;
   });
   return JSON.stringify(data);
+}
+
+/***/ }),
+
+/***/ "./src/shared/utils/time.js":
+/*!**********************************!*\
+  !*** ./src/shared/utils/time.js ***!
+  \**********************************/
+/*! exports provided: convertToUnitValue */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToUnitValue", function() { return convertToUnitValue; });
+function convertToUnitValue(value, unitState) {
+  var valueConverted;
+  var workingDayLength = 7; // la longueur d'un jour de travail, en heures.
+
+  if (unitState == "hour") {
+    valueConverted = value;
+  } else {
+    valueConverted = value / 7;
+  }
+
+  return valueConverted;
 }
 
 /***/ }),

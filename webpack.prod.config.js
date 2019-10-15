@@ -72,6 +72,7 @@ module.exports = {
 	    helpers : path.resolve(__dirname, "src/shared/helpers/"),
 	    fetch : path.resolve(__dirname, "src/shared/fetch/"),
 	    stores : path.resolve(__dirname, "src/shared/stores/"),
+	    localisation : path.resolve(__dirname, "src/shared/localisation/"),
 	    sharedComponents : path.resolve(__dirname, "src/shared/components/"),
 	    externalJquery : path.resolve(__dirname, "node_modules/jquery/dist"), // les modules externes sont chargés dans src/index.js
 	    externalPopper : path.resolve(__dirname, "node_modules/popper.js/dist"),

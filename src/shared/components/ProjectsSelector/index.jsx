@@ -31,14 +31,6 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 	const projectId = e.currentTarget.getAttribute("id"); // get the id
 	const clientName = e.currentTarget.querySelector(".related-client").innerText;
 
-	console.log(clientName);
-	
-	// if(e.target.nodeName === "SPAN"){ // handle case where child is clicked
-	//     projectId = e.currentTarget.parentNode.getAttribute("id");
-	//     // clientName = e.currentTarget
-	// } else {
-	//     projectId = e.currentTarget.getAttribute("id");
-	// }
 	this.setState({
 	    activeProject: projectId,
 	    relatedClient: clientName
@@ -55,17 +47,13 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
     }
 
     render() {
-	// console.log(this.state.activeProject);
-	// const activeClient = this.props.mainStore.projectsDefinitions[0].client;
-	// const activeClient = this.props.mainStore.projectsDefinitions.filter(n => n._id === this.state.activeProject).client;
-	console.log("/////////");
+	
 	let darkClass;
 	if(this.props.darkMode == "true"){
 	    darkClass="dark-mode";
 	} else {
 	    darkClass="light-mode";
 	}
-	// console.log(activeClient);
 	
 	return (
 	    <div className={darkClass}>
@@ -76,7 +64,7 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		  aria-haspopup="true"
 		  aria-expanded="false">
 		  {this.state.activeProject == null ?
-		      <p className="project-placeholder">Select a project</p>
+		      <p className="project-placeholder">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.project_selector.placeholder}</p>
 		      :
 		      <div className="">
 			    <p className="project-name">{getProjectName(this.props.mainStore.projectsDefinitions, this.state.activeProject)}</p>
@@ -90,7 +78,6 @@ const ProjectsSelector = inject("mainStore")(observer(class ProjectsSelector ext
 		     aria-labelledby="dropdownMenuButton">
 		  {
 			 this.props.mainStore.projectsDefinitions.map(p => {
-			     // console.log(p);
 			     return  <a className="dropdown-item" href="#" key={p._id} id={p._id} onClick={this.handleDropdownChange}>{p.name}<div className="text-muted small related-client">{getClientName(this.props.mainStore.clientsDefinitions, p.client)}</div></a>;
 			 })
 		  }

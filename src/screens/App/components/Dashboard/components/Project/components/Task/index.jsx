@@ -6,6 +6,8 @@ import retrieveFormData from "utils/retrieveFormData";
 import {toJS} from "mobx";
 import {inject, observer} from "mobx-react";
 
+import {convertToUnitValue} from "utils/time";
+
 import ProjectsSelector from "sharedComponents/ProjectsSelector";
 
 const Task = inject("mainStore", "authStore")(observer(class Task extends Component {
@@ -31,7 +33,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
     }
 
     componentDidMount(){
-	console.log(toJS(this.props.mainStore.activeProjectDetails));
+	// console.log(toJS(this.props.mainStore.activeProjectDetails));
     }
 
     componentDidUpdate(){
@@ -57,7 +59,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	let inputComment = document.getElementById("track-input--comment-"+this.props.taskid);
 	let inputTask = document.getElementById("track-input--task-"+this.props.taskid);
 	
-	inputValue.value = this.props.value;
+	inputValue.value = convertToUnitValue(this.props.value, this.props.mainStore.unit);
 	inputComment.value = this.props.comment;
 	inputTask.value = this.props.task;
     }
@@ -65,7 +67,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
     handleSubmit(e){
 	console.log("submit");
 	e.preventDefault();
-	let fd = retrieveFormData(e.target, this.props.authStore.userId);
+	let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 	
 	// on lance la requête
 	this.props.mainStore.updateTask(this.state.activeProject, this.props.taskid, fd);
@@ -138,7 +140,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 		<tr className="track">
 		  <td className="track-task">{this.props.task}</td>
-		  <td className="track-value">{this.props.value}&nbsp;{this.props.mainStore.unit == "hours" ? "h." : "j." }</td>
+		  <td className="track-value">{convertToUnitValue(this.props.value, this.props.mainStore.unit).toFixed(2)}&nbsp;{this.props.mainStore.unit == "hour" ? "h." : "j." }</td>
 		  <td className="track-comment">{this.props.comment}</td>
 		  <td className="track-user">{getUserName(this.props.mainStore.usersDefinitions, this.props.user)}</td>
 		  <td className="track-date">{readableDate(this.props.date)}</td>

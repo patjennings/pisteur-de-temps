@@ -79,10 +79,10 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 	   <div className="manager">
 	      <nav>
 	         <div className="nav nav-tabs" id="nav-tab" role="tablist">
-	            <a className="nav-item nav-link w-25" id="nav-clients-tab" data-toggle="tab" href="#nav-clients" role="tab" aria-controls="nav-clients" aria-selected="false">Clients<br/><span className="text-muted">Gérer les clients</span></a>
-	            <a className="nav-item nav-link w-25 active" id="nav-projects-tab" data-toggle="tab" href="#nav-projects" role="tab" aria-controls="nav-projects" aria-selected="true">Projects<br/><span className="text-muted">Gérer et modifier les projets</span></a>
-	      <a className="nav-item nav-link w-25" id="nav-users-tab" data-toggle="tab" href="#nav-users" role="tab" aria-controls="nav-users" aria-selected="false">Users<br/><span className="text-muted">Gérer les utilisateurs</span></a>
-	      <a className="nav-item nav-link w-25" id="nav-params-tab" data-toggle="tab" href="#nav-params" role="tab" aria-controls="nav-params" aria-selected="false">Paramètres<br/><span className="text-muted">Réglages de l'application</span></a>
+	      <a className="nav-item nav-link w-25" id="nav-clients-tab" data-toggle="tab" href="#nav-clients" role="tab" aria-controls="nav-clients" aria-selected="false">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.name}<br/><span className="text-muted">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.description}</span></a>
+	            <a className="nav-item nav-link w-25 active" id="nav-projects-tab" data-toggle="tab" href="#nav-projects" role="tab" aria-controls="nav-projects" aria-selected="true">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.name}<br/><span className="text-muted">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.description}</span></a>
+	      <a className="nav-item nav-link w-25" id="nav-users-tab" data-toggle="tab" href="#nav-users" role="tab" aria-controls="nav-users" aria-selected="false">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.name}<br/><span className="text-muted">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.description}</span></a>
+	      <a className="nav-item nav-link w-25" id="nav-params-tab" data-toggle="tab" href="#nav-params" role="tab" aria-controls="nav-params" aria-selected="false">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.name}<br/><span className="text-muted">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.description}</span></a>
 	         </div>
 	       </nav>
 	       <div className="tab-content" id="nav-tabContent">
@@ -115,7 +115,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 				       <form onSubmit={this.handleSubmit}>
 				       <div className="row">
 				             <div className="col-4">
-						   <label htmlFor={"user-input--firstname-"+this.props.authStore.userId}>First name</label>
+						   <label htmlFor={"user-input--firstname-"+this.props.authStore.userId}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.first_name}</label>
 						  <input className="form-control"
 							     name="firstName"
 							     id={"user-input--firstname-"+this.props.authStore.userId}
@@ -123,7 +123,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 							     aria-label="Input"/>
 						 </div>
 						 <div className="col-4">
-						       <label htmlFor={"user-input--lastname-"+this.props.authStore.userId}>Second name</label>
+						       <label htmlFor={"user-input--lastname-"+this.props.authStore.userId}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_name}</label>
 						       <input className="form-control"
 								  name="lastName"
 								  id={"user-input--lastname-"+this.props.authStore.userId}
@@ -133,7 +133,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 					   </div>
 					   <div className="row">
 						 <div className="col-6">
-						       <label htmlFor={"user-input--email-"+this.props.authStore.userId}>Email</label>
+						       <label htmlFor={"user-input--email-"+this.props.authStore.userId}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.email}</label>
 						       <input className="form-control"
 								  name="email"
 								  id={"user-input--email-"+this.props.authStore.userId}
@@ -145,9 +145,9 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 					       <div className="row">
 						     <div className="col-6">
 							   <button
-								 className="btn btn-primary">Update</button>&nbsp;&nbsp;
+								 className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.update}</button>&nbsp;&nbsp;
 							       <button
-								     className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+								     className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_cancel}</button>
 							 </div>
 
 						   </div>
@@ -160,7 +160,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 						   <h3>{this.props.authStore.user.firstName} {this.props.authStore.user.lastName}</h3>
 						 </div>
 						 <div className="col-2">
-						       <button className="btn btn-light" type="button" onClick={this.editItem}>Edit infos</button>
+						       <button className="btn btn-light" type="button" onClick={this.editItem}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit_infos}</button>
 						     </div>
 					   </div>
 					   <div className="row">
@@ -171,7 +171,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 					       </div>
 					       <div className="row">
 						     <div className="col-6">
-							   <p className="text-muted">Signed on {this.props.authStore.user.date}</p>
+							   <p className="text-muted">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.sign_date} {this.props.authStore.user.date}</p>
 							 </div>
 
 						   </div>	   
@@ -184,21 +184,6 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 	    </div>
 	);
     }
-}))
-
-function adminData(){
-
-}
+}));
 
 export default Admin;
-
-
- // <p>{this.props.authStore.user.firstName}</p>
- // 	      <p>{this.props.authStore.user.lastName}</p>
- // 	      <h3>Related projects</h3>     
- // 	      <ul>
- // 	      	{this.props.authStore.user.projects.map(p => {
- // 	      	    return <li>{getProjectName(this.props.mainStore.projectsDefinitions, p)}</li>;
- // 	      	})}
- // 	      </ul>
-
