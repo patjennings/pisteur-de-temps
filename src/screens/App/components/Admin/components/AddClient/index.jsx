@@ -64,14 +64,14 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 			 id="client-input--name"
 			 name="name"
 			 type="text"
-			 placeholder="Client name"
+			 placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_placeholder}
 			 aria-label="Input" />
 		  </div>
 		  <div className="col-3">
 		    <button
-		      className="btn btn-primary">Create client</button>
+		      className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.create_client}</button>
 		    <button
-		      className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		      className="btn btn-light" onClick={this.props.onChange}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		  </div>
 		</div>
 		</form>

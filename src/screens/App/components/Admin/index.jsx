@@ -147,7 +147,7 @@ const Admin = inject("mainStore", "authStore")(observer(class Admin extends Comp
 							   <button
 								 className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.update}</button>&nbsp;&nbsp;
 							       <button
-								     className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_cancel}</button>
+								     className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 							 </div>
 
 						   </div>

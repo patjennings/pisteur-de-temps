@@ -17,18 +17,13 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 	// const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.mainStore.activeProject)).client;
 	
 	this.state = {
-	    // projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.mainStore.activeProject),
-	    // clientId: this.props.mainStore.activeProjectDetails.client,
-	    // clientName: getClientName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client),
-	    isEdited: false,
-	    // activeProject: this.props.mainStore.activeProject
+	    isEdited: false
 	};
 	
 	// binds
 	this.deleteItem = this.deleteItem.bind(this);
 	this.editItem = this.editItem.bind(this);
 	this.cancelEdit = this.cancelEdit.bind(this);
-	// this.setActiveProject = this.setActiveProject.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -63,11 +58,11 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
     }
     
     handleSubmit(e){
-	console.log("submit");
+	// console.log("submit");
 	e.preventDefault();
 	let fd = retrieveFormData(e.target, this.props.authStore.userId);
 
-	console.log(fd);
+	// console.log(fd);
 	
 	// on lance la requête
 	this.props.mainStore.updateClient(this.props.clientid, fd);
@@ -100,9 +95,9 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 		      </div>
 		      <div className="col-3">
 			<button
-			  className="btn btn-primary btn-sm">Update</button>&nbsp;
+			  className="btn btn-primary btn-sm">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.update}</button>&nbsp;
 			<button
-			  className="btn btn-light btn-sm" onClick={this.cancelEdit}>Cancel</button>
+			  className="btn btn-light btn-sm" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 
 		      </div>
 		    </div>
@@ -115,11 +110,11 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 		  <div className="row">
 		    <div className="col-9">
 		      {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)}&nbsp;&nbsp;
-		      {projectsNumber < 1 ? <span className="badge badge-light">No active project</span> : <span className="badge badge-warning">{projectsNumber} active projects</span>}
+		      {projectsNumber < 1 ? <span className="badge badge-light">No active project</span> : <span className="badge badge-warning">{projectsNumber} {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_projects}</span>}
 		    </div>
 		    <div className="col-3">
-		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
-		      {projectsNumber < 1 ? <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} >Delete</button> : <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} disabled>Delete</button>}
+		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.edit}</button>
+		      {projectsNumber < 1 ? <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} >Delete</button> : <button type="button" className="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem} disabled>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.delete}</button>}
 		      
 		    </div>
 		  </div>

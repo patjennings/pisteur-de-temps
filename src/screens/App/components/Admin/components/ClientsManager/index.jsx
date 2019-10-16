@@ -21,7 +21,7 @@ const ClientsManager = inject("mainStore", "authStore")(observer(class ClientsMa
 	this.changeOrder = this.changeOrder.bind(this);
     }
     changeOrder(){
-	console.log("sort !");
+	// console.log("sort !");
     }
 
     addClient(){
@@ -53,23 +53,23 @@ handleResize(){
   			       id={"user-input--name"}
   			       type="text"
   			       aria-label="Input"
-			       placeholder="Search"
+			       placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.search}
 			       onChange={this.handleChange}/>
 		      </div>
 		      <div className="col-5">
 			<div className="btn-group">
 			  <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    Filter
+			    {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.name}
 			  </button>
 			  <div className="dropdown-menu">
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">Name</a>
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">Date added</a>
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">Role</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_name}</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_date_added}</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_role}</a>
 			  </div>
 			</div>
 		      </div>
 		    <div className="col-3">
-		      <button className="btn btn-primary float-right" type="button" onClick={this.addClient}><i className="ico">plus</i>&nbsp;Add a client</button>
+		      <button className="btn btn-primary float-right" type="button" onClick={this.addClient}><i className="ico">plus</i>&nbsp;{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.add_client}</button>
 		      </div>
 		    </div>
 		    
@@ -79,7 +79,7 @@ handleResize(){
 		<div className="column-name">
 		  <div className="row">
 		    <div className="col-12">
-		      Client
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.headers.client}
 		    </div>
 		  </div>
 		</div>

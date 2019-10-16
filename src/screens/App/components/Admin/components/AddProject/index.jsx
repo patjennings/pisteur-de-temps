@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+caimport React, { Component } from 'react';
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import ClientsSelector from "sharedComponents/ClientsSelector";
 import ErrorBoundary from "sharedComponents/ErrorBoundary";
@@ -91,13 +91,13 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
   			  <input className="form-control"
   				 name="name"
   				 id="project-input--name"
-				 placeholder="The name"
+				 placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_placeholder}
   				 type="text"
   				 aria-label="Input"/>
   			  <textarea className="form-control"
   				    name="description"
   				    id={"project-input--description"}
-				    placeholder="Maybe you will nees some details"
+				    placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_placeholder}
   				    type="text"
   				    aria-label="Input"/>
   			</div>
@@ -105,7 +105,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
   			  <input className="form-control"
   				 name="budget"
   				 id={"project-input--budget"}
-				 placeholder="In days"
+				 placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_placeholder}
   				 type="text"
   				 aria-label="Input"/>
   			</div>
@@ -118,9 +118,9 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 		    
 		    <div className="col-4">
 		      <button
-			className="btn btn-primary">Create</button>&nbsp;
+			className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.create_project}</button>&nbsp;
 		    <button
-		      className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		      className="btn btn-light" onClick={this.props.onChange}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		    </div>
 		  </div>
 		  </form>

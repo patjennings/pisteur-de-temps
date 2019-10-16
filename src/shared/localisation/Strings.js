@@ -9,6 +9,9 @@ export default function Strings(){
 	      "error": {
 		  "main": "Aïe, quelque chose est cassé…"
 	      },
+	      "global": {
+		  "cancel": "Annuler"
+	      },
 	      "components": {
 		  "client_selector":{
 		      "placeholder": ""
@@ -85,7 +88,8 @@ export default function Strings(){
 		      },
 		      "active_project": "Project actif",
 		      "edit": "Modifier",
-		      "delete": "Supprimer"		      
+		      "delete": "Supprimer",
+		      "update": "Mettre à jour"
 		  },
 		  "projects": {
 		      "name": "Projets",
@@ -188,6 +192,9 @@ export default function Strings(){
 	      "error": {
 		  "main": "Something went wrong here…"
 	      },
+	      "global": {
+		  "cancel": "Annuler"
+	      },
 	      "components": {
 		  "client_selector":{
 		      "placeholder": ""
@@ -264,7 +271,8 @@ export default function Strings(){
 		      },
 		      "active_project": "active project",
 		      "edit": "Edit",
-		      "delete": "Delete"		      
+		      "delete": "Delete",
+		      "update": "Update"
 		  },
 		  "projects": {
 		      "name": "Projects",
