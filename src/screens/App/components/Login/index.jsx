@@ -59,8 +59,8 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	      
 	      <div className="row">
 		<div className="col-md-4 offset-md-4">
-		  <h3>This is a time tracker</h3>
-		  <p>Please login</p>
+		  <h3>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.title}</h3>
+		  <p>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.please_login}</p>
 		</div>
 	      </div>
 
@@ -68,24 +68,24 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 		<div className="row">
 		  <div className="col-md-4 offset-md-4">
 		    {this.props.authStore.hasErrors ? <div className="alert alert-danger" role="alert">
-			  Check your credentials...
+			  {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.check_credentials}
 		    </div> : null }
 		  </div>
 		</div>
 		<div className="row">
 		  <div className="col-md-4 offset-md-4">
-		    <label htmlFor="login--username">Username</label>
+		    <label htmlFor="login--username">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.username}</label>
 		    <input className="form-control w-100"
 			   name="username"
 			   id="login--username"
 			   type="text"
-			   placeholder="Enter your username"
+			   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.username_placeholder}
 			   aria-label="Input"/>
 		  </div>
 		</div>
 		<div className="row">
 		  <div className="col-md-4 offset-md-4">
-		    <label htmlFor="login--password">Password</label>
+		    <label htmlFor="login--password">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.password}</label>
 		    <input className="form-control w-100 "
 			   name="password"
 			   id="login--password"
@@ -96,7 +96,7 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 		<div className="row">
 		  <div className="col-md-4 offset-md-4">
 		    <button
-		      className="btn btn-primary">Sign in</button>
+		      className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.sign_in}</button>
 		  </div>
 		</div>
 		<div className="row">
@@ -104,14 +104,14 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 		    <div className="form-check">
 		      <input className="form-check-input" type="checkbox" value="" id="cookieCheck"/>
 		      <label className="form-check-label" htmlFor="cookieCheck">
-			Remember me
+			{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.remember_me}
 		      </label>
 		    </div>
 		  </div>
 		</div>
 		<div className="row">
 		  <div className="col-md-4 offset-md-4">
-		    <a onClick={() => push('/lost-password')}>Forgot your password</a>
+		    <a onClick={() => push('/lost-password')}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.forgot_password}</a>
 		  </div>
 		</div>
 	      </form>

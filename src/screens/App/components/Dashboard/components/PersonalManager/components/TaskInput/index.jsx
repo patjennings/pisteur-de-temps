@@ -81,11 +81,11 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 	return (
 	    <div className="card-header track-input container">
 	      {this.state.hasErrors ? <div className="alert alert-danger" role="alert">
-		    You need {this.state.errorOnTime ? "a time spent, " : null }{ this.state.errorOnTask ? "a task, " : null }{ this.state.errorOnProject ? "a related project " : null  }in order to complete
+		    {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.start} {this.state.errorOnTime ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.time_spent : null }{ this.state.errorOnTask ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.task : null }{ this.state.errorOnProject ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.related_project : null  }{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.end}
 	      </div> : null }
 	      <div className="row">
 		<div className="col-12">
-		  <h6>Add time</h6>
+		  <h6>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time}</h6>
 		</div>
 	      </div>
 	      <form onSubmit={this.handleSubmit}>
@@ -95,12 +95,12 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 			   name="value"
 			   id="track-input--value"
 			   type="text"
-			   placeholder="Time"
+			   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time_placeholder}
 			   aria-label="Input"
 			   data-parse="number"/>
 		  </div>
 		  <div className="col-2">
-		    <span className="track-input--unit"><h5>{this.props.mainStore.unit == "hour" ? "h." : "j." }</h5></span>
+		    <span className="track-input--unit"><h5>{this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short}</h5></span>
 		  </div>
 		  <div className="col-7">
 		    <ProjectsSelector onChange={this.setActiveProject} darkMode="true"/>
@@ -117,14 +117,14 @@ const TaskInput = inject("mainStore", "authStore")(observer(class TaskInput exte
 			      name="comment"
 			      id="track-input--comment"
 			      type="text"
-			      placeholder="Write a comment"
+							     placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment}
 			      aria-label="Input"/>
 		  </div>
 		</div>
 		<div className="row mb-3">
 		  <div className="col-12">
 		    <button
-		      className="btn btn-primary btn-block track-input--submit">Submit</button>
+							     className="btn btn-primary btn-block track-input--submit">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.submit}</button>
 		  </div>
 		</div>
 	      </form>

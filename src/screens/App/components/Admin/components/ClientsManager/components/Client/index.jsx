@@ -110,7 +110,7 @@ const Client = inject("mainStore", "authStore")(observer(class Client extends Co
 		  <div className="row">
 		    <div className="col-9">
 		      {getClientName(this.props.mainStore.clientsDefinitions, this.props.clientid)}&nbsp;&nbsp;
-		      {projectsNumber < 1 ? <span className="badge badge-light">No active project</span> : <span className="badge badge-warning">{projectsNumber} {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_projects}</span>}
+		      {projectsNumber < 1 ? <span className="badge badge-light">No active project</span> : <span className="badge badge-warning">{projectsNumber} {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_project}s</span>}
 		    </div>
 		    <div className="col-3">
 		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.edit}</button>

@@ -51,21 +51,21 @@ const LostPassword = inject("mainStore", "authStore", "routingStore")(observer(c
 		    {this.props.authStore.retrievalErrorMessage}
 	      </div> : null}
 	{!this.props.authStore.hasRetrievalError && this.state.emailSent ? <div className="alert alert-success" role="alert">
-		    Check your email
+		    {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.check_email}
 	      </div> : null}
 	
 	      <form onSubmit={this.handleSubmit}>
 		<div className="row">
 		  <div className="col">
-		    <label htmlFor="login--email">Enter your account email</label>
+		    <label htmlFor="login--email">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.enter_email}</label>
 		    <input className="form-control w-100"
 			   name="email"
 			   id="login--email"
 			   type="text"
-			   placeholder="Your email"
+			   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.enter_email_placeholder}
 			   aria-label="Input"/>
 		    <button
-		      className="btn btn-primary">Send email</button>
+		      className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.send_email}</button>
 		  </div>
 		</div>
 	      </form>

@@ -48,8 +48,8 @@ const PersonalManager = inject("mainStore", "authStore")(observer(class Personal
     }
     
     render() {
-	console.log("Personal Manager is rendered");
-	console.log(this.props.mainStore.trackHistory);
+	// console.log("Personal Manager is rendered");
+	// console.log(this.props.mainStore.trackHistory);
 
 	return (
 	    

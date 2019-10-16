@@ -79,9 +79,8 @@ const Project = inject("mainStore")(observer(class Project extends Component {
 		      <p className="project-details--description">{this.props.mainStore.activeProjectDetails.description}</p>
 		    </div>
 		    <div className="col-3">
-		      <p className="project-details--budget-label">Budget</p>
-		      <h4 className="project-details--budget">{convertToUnitValue(this.props.mainStore.activeProjectDetails.budget, this.props.mainStore.unit)}<span className="project-details--budget--unit">{this.props.mainStore.unit == "hour" ? "h." : "j."}</span></h4>
-		      <p>{/*{this.stats()}*/}</p>
+		      <p className="project-details--budget-label">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.budget}</p>
+		      <h4 className="project-details--budget">{convertToUnitValue(this.props.mainStore.activeProjectDetails.budget, this.props.mainStore.unit)}<span className="project-details--budget--unit">{this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day}s</span></h4>
 		    </div>
 		  </div>
 		  

@@ -29,7 +29,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 	
 	if (!this.state.errorOnName && !this.state.errorOnBudget){
-	    let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
+	    let fd = retrieveFormData(e.target, null, this.props.mainStore.unit);
 	    
 	    // on lance la requête
 	    this.props.mainStore.postNewProject(fd);
@@ -51,44 +51,44 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 	
 	return (
 	      <div className="project--input">
-		<h5>Add a project to {this.props.name}</h5>
+		<h5>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.title} {this.props.name}</h5>
 		<div className="">
 		  <form onSubmit={this.handleSubmit}>
-		    <label htmlFor="project-input--name">Project name</label>
+		    <label htmlFor="project-input--name">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_label}</label>
 		    
 		    <input className={"form-control "+nameAttr}
 			   id="project-input--name"
 			   name="name"
 			   type="text"
-			   placeholder="Project name"
+			   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_placeholder}
 			   aria-label="Input" />
-		    {this.state.errorOnName ? <div className="invalid-feedback">Please choose a name.</div> : null }
+		    {this.state.errorOnName ? <div className="invalid-feedback">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.error_name}</div> : null }
 		    
-		    <label htmlFor="project-input--description">Description</label>
+		    <label htmlFor="project-input--description">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_label}</label>
 		    <textarea className="form-control"
 			      id="project-input--description"
 			      name="description"
 			      type="text"
-			      placeholder="Enter a description"
+			      placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_placeholder}
 			      aria-label="Input" />
-		    <label htmlFor="project-input--budget">Budget</label>
+		    <label htmlFor="project-input--budget">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_label}</label>
 		    <input className={"form-control "+budgetAttr}
 			   id="project-input--budget"
 			   name="budget"
 			   type="text"
-			   placeholder="Give it a budget"
+			   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_placeholder}
 			   aria-label="Input"
 			   data-parse="number"/>
-		    {this.state.errorOnBudget ? <div className="invalid-feedback">Please choose a budget.</div> : null }
+		    {this.state.errorOnBudget ? <div className="invalid-feedback">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.error_budget}</div> : null }
 		    <input className="form-control"
 			   name="client"
 			   type="hidden"
 			   value={this.props.clientId}
 			   aria-label="Input" />
 		    <button
-		      className="btn btn-primary">Create project</button>
+		      className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.create_project}</button>
 		    <button
-		      className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		      className="btn btn-light" onClick={this.props.onChange}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		  </form>
 		</div>
 	      </div>

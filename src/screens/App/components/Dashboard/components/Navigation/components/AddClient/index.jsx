@@ -49,18 +49,18 @@ const AddClient = inject("mainStore")(observer(class AddClient extends Component
 	    <div className="client--input">
 	      <div className="">
 		<form onSubmit={this.handleSubmit}>
-		  <label htmlFor="client-input--name">Enter client name</label>
+		  <label htmlFor="client-input--name">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_label}</label>
 		  <input className={"form-control "+nameAttr}
 			 id="client-input--name"
 			 name="name"
 			 type="text"
-			 placeholder="Client name"
+			 placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_placeholder}
 			 aria-label="Input" />
-		  {this.state.errorOnName ? <div className="invalid-feedback">Please choose a name.</div> : null }
+		  {this.state.errorOnName ? <div className="invalid-feedback">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.error_name}</div> : null }
 		  <button
-		    className="btn btn-primary">Create client</button>
+		    className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.create_client}</button>
 		  <button
-		    className="btn btn-light" onClick={this.props.onChange}>Cancel</button>
+		    className="btn btn-light" onClick={this.props.onChange}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		</form>
 	      </div>
 	    </div>

@@ -82,7 +82,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
     }
     
     handleSubmit(e){
-	console.log("submit");
+	// console.log("submit");
 	e.preventDefault();
 	let fd = retrieveFormData(e.target, this.props.authStore.userId, this.props.mainStore.unit);
 
@@ -101,24 +101,10 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
     setActiveClient(c){
 	
 	this.setState({activeClient: c});
-
-	// console.log(c);
-	// console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
+	
     }
-    // getTracksNumber(){
-    // 	const trk = this.props.mainStore.loadTrackedTime(this.props.projectid);
-    // 	// console.log(toJS(this.props.mainStore.activeTrackedTime));
-    // 	// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>> "+trk.data.message.length);
-    // 	// this.setState({projectTracks: t})
-    // 	// console.log(this.props.mainStore.activeTrackedTime);
-    // 	// if(this.props.mainStore.activeTrackedTime)
-    // }
     
     render() {
-
-	// console.log("/////////// "+this.props.mainStore.activeTrackedTime);
-	// console.log(this.state.projectTracks);
-	// console.log(this.props.projectid);
 	
 	if(this.state.isEdited){
 	    return (
@@ -172,9 +158,9 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		  <div className="row">
 		    <div className="offset-8 col-4">
 		      <button
-			className="btn btn-primary">Update</button>&nbsp;&nbsp;
+		className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.update}</button>&nbsp;&nbsp;
 		    <button
-		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+		className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		    </div>
 		  </div>
 		  </form>
@@ -183,16 +169,16 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		    <div className="col-2">
 
 
-		      <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete project
+		    <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.delete_project}
 		    </button>
 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		      <div className="dropdown-divider"></div>
-		      <a className="dropdown-item" onClick={this.deleteProject}>Sure ?</a>
+		    <a className="dropdown-item" onClick={this.deleteProject}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.sure}</a>
 		    </div>
 	
 		    </div>
 		    <div className="col-10">
-		      {this.props.hasTracks && <div className="alert alert-danger" role="alert">Be careful, because all time tracked on this will be deleted. <strong>And this can't be undone.</strong></div> }
+		    {this.props.hasTracks && <div className="alert alert-danger" role="alert">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.caution_message}</div> }
 		    </div>
 		  </div>
 		  
@@ -216,7 +202,7 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		      {this.props.tasks.map(t => <button type="button" className="btn btn-light btn-sm">{t}</button> )}
 		    </div>
 		    <div className="col-1">
-		      <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >Edit</button>
+		    <button type="button" className="btn btn-light btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem} >{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edit}</button>
 		    </div>
 		  </div>
 		</li>

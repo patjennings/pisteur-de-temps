@@ -116,33 +116,33 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 	    return(
 		<li className="list-group-item track-history--item" id={this.props.id}>
 		  <form onSubmit={this.handleSubmit}>
-		   <label htmlFor="track-input--value">Enter time</label>
+		    <label htmlFor="track-input--value">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.time_enter}</label>
 		    <input className="form-control form-control-lg w-50"
 			   name="value"
 			   id={"track-input--value-"+this.props.id}
 			   type="text"
-			   placeholder="Time"
+			   placeholder=""
 			   aria-label="Input"
 			   data-parse="number"/>
-		    <label htmlFor="track-input--task">Task</label>
+		    <label htmlFor="track-input--task">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.task}</label>
 		    <input className="form-control w-100"
 			   readOnly
 			   name="task"
 			   id={"track-input--task-"+this.props.id}
 			   type="text"
-			   placeholder="Task description"
+			   placeholder=""
 			   aria-label="Input"/>
-		    <label htmlFor="track-input--comment">Comment</label>
+		    <label htmlFor="track-input--comment">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.comment_label}</label>
 		    <textarea className="form-control w-100"
 			      name="comment"
 			      id={"track-input--comment-"+this.props.id}
 			      type="text"
-			      placeholder="Write a comment"
+			      placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment}
 			      aria-label="Input"/>
 		    <button
-		      className="btn btn-primary">Update</button>
+		      className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.update}</button>
 		    <button
-		      className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+		      className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 		  </form>
 		  {/*<ProjectsSelector onChange={this.setActiveProject} activeProject={this.state.activeProject}/> */}
 		</li>
@@ -158,13 +158,13 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 		      <i className="ico ico-dots_v">dots_v</i>
 		    </button>
 		    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		      <a className="dropdown-item" href="#" onClick={this.editItem}>Éditer</a>
-		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>Supprimer</a>
+		      <a className="dropdown-item" href="#" onClick={this.editItem}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.edit}</a>
+		      <a className="dropdown-item" href="#" onClick={this.deleteItem}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.delete}</a>
 		    </div>
 		  </div>
 
 		  <div className="row">
-		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(taskValue)} <span className="item-value--unit">{this.props.mainStore.unit == "hour" ? "h." : "j." }</span></div></div>
+		    <div className="col-2 item-value"><div className="item-value--inner">{this.formatValue(taskValue)} <span className="item-value--unit">{this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short }</span></div></div>
 		    <div className="col-10 item-details">
 		      <h4 className="item-details--title">{this.props.task}</h4>
 		      <p className="item-details--description">{this.props.comment}</p>

@@ -78148,7 +78148,7 @@ function (_Component) {
           className: "badge badge-light"
         }, "No active project") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "badge badge-warning"
-        }, projectsNumber, " ", this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_projects)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, projectsNumber, " ", this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_project, "s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
@@ -78479,15 +78479,15 @@ function (_Component) {
       e.preventDefault();
       this.props.mainStore.updateParameters("unit", "day");
       var paramKey = e.currentTarget.parentNode.parentNode.getAttribute("id");
-      var paramValue = e.currentTarget.getAttribute("id");
-      console.log(paramKey + " : " + paramValue);
+      var paramValue = e.currentTarget.getAttribute("id"); // console.log(paramKey+" : "+paramValue);
+
       this.props.mainStore.updateParameters(paramKey, paramValue);
     }
   }, {
     key: "render",
     value: function render() {
       // console.log(this.state.search);
-      console.log("Paramètres chargés");
+      // console.log("Paramètres chargés");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "params-content pane-content",
         style: {
@@ -78499,9 +78499,9 @@ function (_Component) {
         className: "col-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "mb-0"
-      }, "Unit\xE9s de temps"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-muted"
-      }, "L'application indique par d\xE9faut les temps en heures. Vous pouvez modifier cette option et indiquer les temps en jours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown",
@@ -78513,7 +78513,7 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.props.mainStore.unit == "hour" ? "heures" : "jours"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.select.hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.select.day), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -78521,20 +78521,20 @@ function (_Component) {
         href: "#",
         onClick: this.handleDropdownChange,
         id: "hour"
-      }, "heures"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.select.hour), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.handleDropdownChange,
         id: "day"
-      }, "jours"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.unit.select.day))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "mb-0"
-      }, "Langue"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-muted"
-      }, "La langue utilis\xE9e dans l'application")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown",
@@ -78546,7 +78546,7 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.props.mainStore.lang == "fr" ? "Français" : "English"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.lang == "fr" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.select.fr : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.select.en), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",
         "aria-labelledby": "dropdownMenuButton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -78554,12 +78554,12 @@ function (_Component) {
         href: "#",
         onClick: this.handleDropdownChange,
         id: "fr"
-      }, "Fran\xE7ais"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.select.fr), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.handleDropdownChange,
         id: "en"
-      }, "English")))))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.params.lang.select.en)))))));
     }
   }]);
 
@@ -78704,7 +78704,7 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      console.log("submit");
+      // console.log("submit");
       e.preventDefault();
       var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // console.log(fd);
       // on lance la requête
@@ -78720,25 +78720,13 @@ function (_Component) {
     value: function setActiveClient(c) {
       this.setState({
         activeClient: c
-      }); // console.log(c);
-      // console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
-    } // getTracksNumber(){
-    // 	const trk = this.props.mainStore.loadTrackedTime(this.props.projectid);
-    // 	// console.log(toJS(this.props.mainStore.activeTrackedTime));
-    // 	// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>> "+trk.data.message.length);
-    // 	// this.setState({projectTracks: t})
-    // 	// console.log(this.props.mainStore.activeTrackedTime);
-    // 	// if(this.props.mainStore.activeTrackedTime)
-    // }
-
+      });
+    }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
-      // console.log(this.state.projectTracks);
-      // console.log(this.props.projectid);
       if (this.state.isEdited) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "project edited"
@@ -78805,10 +78793,10 @@ function (_Component) {
           className: "offset-8 col-4"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary"
-        }, "Update"), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.update), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-2"
@@ -78819,7 +78807,7 @@ function (_Component) {
           "data-toggle": "dropdown",
           "aria-haspopup": "true",
           "aria-expanded": "false"
-        }, "Delete project"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.delete_project), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dropdown-menu",
           "aria-labelledby": "dropdownMenuButton"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -78827,12 +78815,12 @@ function (_Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "dropdown-item",
           onClick: this.deleteProject
-        }, "Sure ?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.sure))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-10"
         }, this.props.hasTracks && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "alert alert-danger",
           role: "alert"
-        }, "Be careful, because all time tracked on this will be deleted. ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "And this can't be undone.")))));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edition.caution_message))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "project"
@@ -78862,7 +78850,7 @@ function (_Component) {
           "data-placement": "top",
           title: "Edit",
           onClick: this.editItem
-        }, "Edit"))));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.edit))));
       }
     }
   }]);
@@ -79027,24 +79015,24 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, "Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "name"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "date"
-      }, "Date added"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_date_added), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "role"
-      }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_role)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary float-right",
@@ -79052,19 +79040,19 @@ function (_Component) {
         onClick: this.addProject
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "ico"
-      }, "plus"), "\xA0Add a project")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "plus"), "\xA0", this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.add_project)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "column-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
-      }, "Client"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.client), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
-      }, "Project & description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.project_desc), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
-      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
-      }, "Tasks")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.tasks)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content",
         style: {
           height: this.state.height + "px"
@@ -79085,8 +79073,8 @@ function (_Component) {
         var srClient = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 
         var srClientNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
-
-        console.log(srProjectNoAccent); // console.log(sr);
+        // console.log(srProjectNoAccent);
+        // console.log(sr);
 
         if (srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Project__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -79169,23 +79157,13 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(User).call(this, props)); // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.mainStore.activeProject)).client;
 
     _this.state = {
-      // projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.mainStore.activeProject),
-      // clientId: this.props.mainStore.activeProjectDetails.client,
-      // clientName: getProjectName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client),
       isEdited: false,
-      isAdmin: _this.props.isAdmin // activeClient: this.props.clientid,
-      // hasTracks: null
-      // activeProject: this.props.mainStore.activeProject
-
+      isAdmin: _this.props.isAdmin
     }; // binds
-    // this.deleteItem = this.deleteItem.bind(this);
 
     _this.editItem = _this.editItem.bind(_assertThisInitialized(_this));
-    _this.cancelEdit = _this.cancelEdit.bind(_assertThisInitialized(_this)); // this.setActiveClient = this.setActiveClient.bind(this);
-
-    _this.changeRole = _this.changeRole.bind(_assertThisInitialized(_this)); // this.deleteProject = this.deleteProject.bind(this);
-    // this.getTracksNumber = this.getTracksNumber.bind(this);
-
+    _this.cancelEdit = _this.cancelEdit.bind(_assertThisInitialized(_this));
+    _this.changeRole = _this.changeRole.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -79205,48 +79183,23 @@ function (_Component) {
       this.setState({
         isEdited: false
       });
-    } // deleteItem(e){
-    // 	this.props.mainStore.deleteProject(this.props.projectid);
-    // }
-
+    }
   }, {
     key: "deleteUser",
     value: function deleteUser() {
-      // console.log("delete project");
       this.props.mainStore.deleteUser(this.props.projectid);
-    } // handleSubmit(e){
-    // 	// console.log("submit");
-    // 	e.preventDefault();
-    // 	let fd = retrieveFormData(e.target, this.props.authStore.userId);
-    // 	// console.log(fd);
-    // 	// on lance la requête
-    // 	// this.props.mainStore.updateProject(this.props.projectid, fd);
-    // 	// const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
-    // 	this.setState({
-    // 	    isEdited: false
-    // 	});	
-    // }
-
+    }
   }, {
     key: "setActiveClient",
     value: function setActiveClient(c) {
       this.setState({
         activeClient: c
-      }); // console.log(c);
-      // console.log(getClientName(this.props.mainStore.clientsDefinitions, c));
-    } // getTracksNumber(){
-    // 	const trk = this.props.mainStore.loadTrackedTime(this.props.projectid);
-    // 	// console.log(toJS(this.props.mainStore.activeTrackedTime));
-    // 	// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>> "+trk.data.message.length);
-    // 	// this.setState({projectTracks: t})
-    // 	// console.log(this.props.mainStore.activeTrackedTime);
-    // 	// if(this.props.mainStore.activeTrackedTime)
-    // }
-
+      });
+    }
   }, {
     key: "changeRole",
     value: function changeRole(e) {
-      console.log("//////////// " + this.props.userid);
+      // console.log("//////////// "+this.props.userid);
       var value = e.currentTarget.innerText == "Admin" ? true : false;
       var data = {
         "isAdmin": value
@@ -79261,7 +79214,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       // console.log("/////////// "+this.props.mainStore.activeTrackedTime);
-      console.log(this.state.isAdmin);
+      // console.log(this.state.isAdmin);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79272,7 +79225,7 @@ function (_Component) {
         className: "col-2"
       }, this.state.isAdmin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "badge badge-info"
-      }, "Admin") : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.select.admin) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group"
@@ -79282,19 +79235,19 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.state.isAdmin ? "Admin" : "User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.isAdmin ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.select.admin : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.select.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeRole,
         adm: "true"
-      }, "Admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.select.admin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeRole,
         adm: "false"
-      }, "User"))))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.select.user))))));
     }
   }]);
 
@@ -79396,8 +79349,7 @@ function (_Component) {
 
   _createClass(UsersManager, [{
     key: "changeOrder",
-    value: function changeOrder() {
-      console.log("sort !");
+    value: function changeOrder() {// console.log("sort !");
     }
   }, {
     key: "handleResize",
@@ -79433,7 +79385,7 @@ function (_Component) {
         id: "user-input--name",
         type: "text",
         "aria-label": "Input",
-        placeholder: "Search",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.search,
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
@@ -79445,32 +79397,32 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, "Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "name"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "date"
-      }, "Date added"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_date_added), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "role"
-      }, "Role"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_role))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "column-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
-      }, "User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.headers.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-4"
-      }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.headers.role)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content",
         style: {
           height: this.state.height + "px"
@@ -79904,21 +79856,21 @@ function (_Component) {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "client-input--name"
-      }, "Enter client name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control " + nameAttr,
         id: "client-input--name",
         name: "name",
         type: "text",
-        placeholder: "Client name",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_placeholder,
         "aria-label": "Input"
       }), this.state.errorOnName ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-feedback"
-      }, "Please choose a name.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.error_name) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Create client"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.create_client), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel"))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel))));
     }
   }]);
 
@@ -79999,7 +79951,7 @@ function (_Component) {
       budgetField.value == "" ? this.state.errorOnBudget = true : this.state.errorOnBudget = false;
 
       if (!this.state.errorOnName && !this.state.errorOnBudget) {
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId, this.props.mainStore.unit); // on lance la requête
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, null, this.props.mainStore.unit); // on lance la requête
 
         this.props.mainStore.postNewProject(fd);
         this.props.onChange();
@@ -80021,43 +79973,43 @@ function (_Component) {
       var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "project--input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Add a project to ", this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.title, " ", this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "project-input--name"
-      }, "Project name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control " + nameAttr,
         id: "project-input--name",
         name: "name",
         type: "text",
-        placeholder: "Project name",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_placeholder,
         "aria-label": "Input"
       }), this.state.errorOnName ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-feedback"
-      }, "Please choose a name.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.error_name) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "project-input--description"
-      }, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "form-control",
         id: "project-input--description",
         name: "description",
         type: "text",
-        placeholder: "Enter a description",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_placeholder,
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "project-input--budget"
-      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control " + budgetAttr,
         id: "project-input--budget",
         name: "budget",
         type: "text",
-        placeholder: "Give it a budget",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_placeholder,
         "aria-label": "Input",
         "data-parse": "number"
       }), this.state.errorOnBudget ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-feedback"
-      }, "Please choose a budget.") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.error_budget) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "client",
         type: "hidden",
@@ -80065,10 +80017,10 @@ function (_Component) {
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Create project"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.create_project), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel"))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel))));
     }
   }]);
 
@@ -80344,7 +80296,7 @@ function (_Component) {
       }, "cross_circle")) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control form-control-dark w-100 mb-4",
         type: "text",
-        placeholder: "Search",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.navigation.search,
         "aria-label": "Search",
         onChange: this.handleChange
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_addons_css_transition_group__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -80369,7 +80321,7 @@ function (_Component) {
         className: "btn btn-primary",
         type: "button",
         onClick: this.addClient
-      }, "Add a client")));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.navigation.add_client)));
     }
   }]);
 
@@ -80601,39 +80553,39 @@ function (_Component) {
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "track-input--value"
-        }, "Enter time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.time_enter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control form-control-lg w-50",
           name: "value",
           id: "track-input--value-" + this.props.id,
           type: "text",
-          placeholder: "Time",
+          placeholder: "",
           "aria-label": "Input",
           "data-parse": "number"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "track-input--task"
-        }, "Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "form-control w-100",
           readOnly: true,
           name: "task",
           id: "track-input--task-" + this.props.id,
           type: "text",
-          placeholder: "Task description",
+          placeholder: "",
           "aria-label": "Input"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "track-input--comment"
-        }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.comment_label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           className: "form-control w-100",
           name: "comment",
           id: "track-input--comment-" + this.props.id,
           type: "text",
-          placeholder: "Write a comment",
+          placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment,
           "aria-label": "Input"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary"
-        }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.update), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)));
       } else {
         // Component on read
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -80658,11 +80610,11 @@ function (_Component) {
           className: "dropdown-item",
           href: "#",
           onClick: this.editItem
-        }, "\xC9diter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.edit), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "dropdown-item",
           href: "#",
           onClick: this.deleteItem
-        }, "Supprimer"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.task.delete))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-2 item-value"
@@ -80670,7 +80622,7 @@ function (_Component) {
           className: "item-value--inner"
         }, this.formatValue(taskValue), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "item-value--unit"
-        }, this.props.mainStore.unit == "hour" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-10 item-details"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "item-details--title"
@@ -80849,11 +80801,11 @@ function (_Component) {
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
-      }, "You need ", this.state.errorOnTime ? "a time spent, " : null, this.state.errorOnTask ? "a task, " : null, this.state.errorOnProject ? "a related project " : null, "in order to complete") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.start, " ", this.state.errorOnTime ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.time_spent : null, this.state.errorOnTask ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.task : null, this.state.errorOnProject ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.related_project : null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.error.end) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Add time"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row mb-3"
@@ -80864,14 +80816,14 @@ function (_Component) {
         name: "value",
         id: "track-input--value",
         type: "text",
-        placeholder: "Time",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time_placeholder,
         "aria-label": "Input",
         "data-parse": "number"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "track-input--unit"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.mainStore.unit == "hour" ? "h." : "j."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-7"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ProjectsSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.setActiveProject,
@@ -80893,7 +80845,7 @@ function (_Component) {
         name: "comment",
         id: "track-input--comment",
         type: "text",
-        placeholder: "Write a comment",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment,
         "aria-label": "Input"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row mb-3"
@@ -80901,7 +80853,7 @@ function (_Component) {
         className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary btn-block track-input--submit"
-      }, "Submit")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.submit)))));
     }
   }]);
 
@@ -81011,8 +80963,8 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("Personal Manager is rendered");
-      console.log(this.props.mainStore.trackHistory);
+      // console.log("Personal Manager is rendered");
+      // console.log(this.props.mainStore.trackHistory);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card track-manager",
         style: {
@@ -81248,7 +81200,7 @@ function (_Component) {
           name: "task",
           id: "track-input--task-" + this.props.taskid,
           type: "text",
-          placeholder: "Task description",
+          placeholder: "",
           "aria-label": "Input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track-value mr-2"
@@ -81257,7 +81209,7 @@ function (_Component) {
           name: "value",
           id: "track-input--value-" + this.props.taskid,
           type: "text",
-          placeholder: "Time",
+          placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time_placeholder,
           "aria-label": "Input",
           "data-parse": "number"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81267,18 +81219,18 @@ function (_Component) {
           name: "comment",
           id: "track-input--comment-" + this.props.taskid,
           type: "text",
-          placeholder: "Write a comment",
+          placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment,
           "aria-label": "Input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track-update mr-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary"
-        }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.update)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "track-cancel"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light",
           onClick: this.cancelEdit
-        }, "Cancel")))))));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)))))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           className: "track"
@@ -81286,7 +81238,7 @@ function (_Component) {
           className: "track-task"
         }, this.props.task), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-value"
-        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_6__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit).toFixed(2), "\xA0", this.props.mainStore.unit == "hour" ? "h." : "j."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_6__["convertToUnitValue"])(this.props.value, this.props.mainStore.unit).toFixed(2), "\xA0", this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-comment"
         }, this.props.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "track-user"
@@ -81299,7 +81251,7 @@ function (_Component) {
           href: "#",
           "data-toggle": "tooltip",
           "data-placement": "top",
-          title: "Edit",
+          title: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.edit,
           onClick: this.editItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "ico ico-medium"
@@ -81310,7 +81262,7 @@ function (_Component) {
           href: "#",
           "data-toggle": "tooltip",
           "data-placement": "top",
-          title: "Delete",
+          title: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.delete,
           onClick: this.deleteItem
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "ico ico-medium ico-trash"
@@ -81462,11 +81414,11 @@ function (_Component) {
         className: "col-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "project-details--budget-label"
-      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.budget), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "project-details--budget"
       }, Object(utils_time__WEBPACK_IMPORTED_MODULE_7__["convertToUnitValue"])(this.props.mainStore.activeProjectDetails.budget, this.props.mainStore.unit), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "project-details--budget--unit"
-      }, this.props.mainStore.unit == "hour" ? "h." : "j.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null))), !this.state.timeOverflow ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day, "s")))), !this.state.timeOverflow ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress",
         "data-toggle": "tooltip",
         "data-placement": "top",
@@ -81625,7 +81577,7 @@ function (_Component) {
   _createClass(Dashboard, [{
     key: "render",
     value: function render() {
-      console.log("Dashboard is rendered");
+      // console.log("Dashboard is rendered");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_MainNavigation__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81633,7 +81585,7 @@ function (_Component) {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.loading_message) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_4__["default"], {
         key: 2
@@ -81652,7 +81604,7 @@ function (_Component) {
         transitionName: "fade",
         transitionEnterTimeout: 500,
         transitionLeaveTimeout: 300
-      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wait a minute") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.isLoading == true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.loading_message) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PersonalManager__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: this.props.mainStore,
@@ -81663,7 +81615,7 @@ function (_Component) {
         key: 1
       })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "project-selection--placeholder"
-      }, "Select a project")))))))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.select_project)))))))));
     }
   }]);
 
@@ -81803,7 +81755,7 @@ function (_Component) {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 offset-md-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This is a time tracker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please login"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.please_login))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -81812,18 +81764,18 @@ function (_Component) {
       }, this.props.authStore.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
-      }, "Check your credentials...") : null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.check_credentials) : null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 offset-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--username"
-      }, "Username"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control w-100",
         name: "username",
         id: "login--username",
         type: "text",
-        placeholder: "Enter your username",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.username_placeholder,
         "aria-label": "Input"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -81831,7 +81783,7 @@ function (_Component) {
         className: "col-md-4 offset-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--password"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.password), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control w-100 ",
         name: "password",
         id: "login--password",
@@ -81843,7 +81795,7 @@ function (_Component) {
         className: "col-md-4 offset-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Sign in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.sign_in))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 offset-md-4"
@@ -81857,7 +81809,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "form-check-label",
         htmlFor: "cookieCheck"
-      }, "Remember me")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.remember_me)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 offset-md-4"
@@ -81865,7 +81817,7 @@ function (_Component) {
         onClick: function onClick() {
           return push('/lost-password');
         }
-      }, "Forgot your password")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.forgot_password)))));
     }
   }]);
 
@@ -82003,7 +81955,7 @@ function (_Component) {
       }, this.props.authStore.retrievalErrorMessage) : null, !this.props.authStore.hasRetrievalError && this.state.emailSent ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-success",
         role: "alert"
-      }, "Check your email") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.check_email) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -82011,16 +81963,16 @@ function (_Component) {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--email"
-      }, "Enter your account email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.enter_email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control w-100",
         name: "email",
         id: "login--email",
         type: "text",
-        placeholder: "Your email",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.enter_email_placeholder,
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Send email")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].lost_password.send_email)))));
     }
   }]);
 
@@ -82355,9 +82307,9 @@ function (_Component) {
         className: "synthesis-card--spent"
       }, Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(this.state.timeSpent, this.props.mainStore.unit).toFixed(2), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
-      }, this.props.mainStore.unit == "hour" ? "heures" : "jours")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day, "s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "synthesis-card--budget"
-      }, "sur ", Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(this.props.budget, this.props.mainStore.unit).toFixed(2), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].synthesis.card.on, " ", Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(this.props.budget, this.props.mainStore.unit).toFixed(2), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "budget-unit"
       }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
@@ -82388,7 +82340,7 @@ function (_Component) {
           className: "badge task-percentage mr-2"
         }, Object(utils_budget__WEBPACK_IMPORTED_MODULE_4__["getPercent"])(_this3.state.tasks[t], _this3.state.timeTotal, true) + "%"), t, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "task-spent"
-        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(_this3.state.tasks[t], _this3.props.mainStore.unit).toFixed(2), " ", _this3.props.mainStore.unit == "hour" ? "heures" : "jours"))));
+        }, Object(utils_time__WEBPACK_IMPORTED_MODULE_5__["convertToUnitValue"])(_this3.state.tasks[t], _this3.props.mainStore.unit).toFixed(2), " ", _this3.props.mainStore.unit == "hour" ? _this3.props.mainStore.appStrings[_this3.props.mainStore.lang.toLowerCase()].hour : _this3.props.mainStore.appStrings[_this3.props.mainStore.lang.toLowerCase()].day, "s"))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
       }));
@@ -82528,7 +82480,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control form-control-dark w-100 mb-4 mt-4",
         type: "text",
-        placeholder: "Search",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].synthesis.search,
         "aria-label": "Search",
         onChange: this.handleChange
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82549,16 +82501,6 @@ function (_Component) {
         var srClient = cn.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 
         var srClientNoAccent = cnNoAccent.search(new RegExp(_this2.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
-        // console.log(this);
-        // const pTracks = ms.tracksDefinitions.find(item => item._id == p._id).message;
-        // this.props.mainStore.tracksDefinitions.map(item => {
-        //     // console.log(item);
-        //     if(item._id == p._id || item.message.length > 0){
-        // 	pTracks = item.message;
-        //     }
-        // });
-        // console.log(this.props.mainStore.tracksDefinitions);
-        // console.log(sr);
 
         if (srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -83897,54 +83839,69 @@ function Strings() {
   var AppStrings = {
     "fr": {
       "lang": "fr",
-      "day_short": "",
-      "hour_short": "",
-      "day": "",
-      "hour": "",
+      "day_short": "j.",
+      "hour_short": "h.",
+      "day": "jour",
+      "hour": "heure",
       "error": {
         "main": "Aïe, quelque chose est cassé…"
       },
       "global": {
-        "cancel": "Annuler"
+        "cancel": "Annuler",
+        "loading_message": "Attendez…"
       },
       "components": {
         "client_selector": {
-          "placeholder": ""
+          "placeholder": "Sélectionner un client"
         },
         "project_selector": {
           "placeholder": "Sélectionner un projet"
         },
         "task_selector": {
-          "select_task": "",
-          "new_task": "",
-          "add": ""
+          "select_task": "Sélectionner une tâche",
+          "new_task": "Nouvelle tâche",
+          "add": "Ajouter"
         },
         "add_project": {
-          "title": "",
-          "name_label": "",
-          "name_placeholder": "",
-          "desc_label": "",
-          "desc_placeholder": "",
-          "budget_label": "",
-          "budget_placeholder": "",
-          "create_project": "",
-          "cancel": ""
+          "title": "Ajouter un project",
+          "name_label": "Nom",
+          "name_placeholder": "Un nom pour ce projet",
+          "error_name": "Entrez un nom de projet",
+          "desc_label": "Description",
+          "desc_placeholder": "Quelques mots pour décrire le projet",
+          "budget_label": "Budget",
+          "budget_placeholder": "Quel temps alloué ?",
+          "error_budget": "Entrez un budget",
+          "create_project": "Créer le projet"
         },
         "add_client": {
-          "name_label": "",
-          "name_placeholder": "",
-          "create_client": "",
-          "cancel": ""
+          "name_label": "Nom",
+          "name_placeholder": "Un nom pour ce client",
+          "create_client": "Créer le client",
+          "error": "Veuillez choisir un nom"
         }
       },
       "login": {
-        "title": "",
-        "please_login": "",
-        "username": "",
-        "password": "",
-        "sign_in": "",
-        "remember_me": "",
-        "forgot_password": ""
+        "title": "Temps calcul. Gérer le temps",
+        "please_login": "Veuillez vous connecter",
+        "username": "Nom d'utilisateur",
+        "username_placeholder": "Entrez votre nom d'utilisateur",
+        "password": "Mot de passe",
+        "password_placeholder": "Et votre mot de passe",
+        "sign_in": "Se connecter",
+        "remember_me": "Se souvenir de moi",
+        "forgot_password": "Mot de passe oublié",
+        "check_credentials": "Vérifier vos informations de connexion"
+      },
+      "lost_password": {
+        "check_email": "Regardez votre boîte mail",
+        "enter_email": "Entrez votre adresse mail",
+        "enter_email_placeholder": "Votre adresse mail",
+        "send_email": "Envoyer l'email"
+      },
+      "reset_password": {
+        "enter_password": "Entrez un mot de passe",
+        "message_success": "Ok. Votre nouveau mot de passe devrait être actif maintenant."
       },
       "navigation": {
         "dashboard": "Vue d'ensemble",
@@ -83960,11 +83917,11 @@ function Strings() {
           "edit_infos": "Modifier",
           "sign_date": "Compte créé le ",
           "edit": {
-            "first_name": "",
-            "second_name": "",
-            "email": "",
-            "update": "",
-            "cancel": ""
+            "first_name": "Prénom",
+            "second_name": "Nom",
+            "email": "Email",
+            "update": "Mettre à jour",
+            "cancel": "Annuler"
           }
         },
         "clients": {
@@ -83981,7 +83938,7 @@ function Strings() {
           "headers": {
             "client": "Client"
           },
-          "active_project": "Project actif",
+          "active_project": "project actif",
           "edit": "Modifier",
           "delete": "Supprimer",
           "update": "Mettre à jour"
@@ -84009,7 +83966,8 @@ function Strings() {
             "update": "Mettre à jour",
             "cancel": "Annuler",
             "delete_project": "Supprimer le projet",
-            "caution_message": "Soyez prudent, car tout le temps enregistré sur ce projet sera effacé. Cette action ne peut pas être annulée."
+            "caution_message": "Soyez prudent, car tout le temps enregistré sur ce projet sera effacé. Cette action ne peut pas être annulée.",
+            "sure": "Sûr sûr ?"
           }
         },
         "users": {
@@ -84054,80 +84012,108 @@ function Strings() {
       },
       "dashboard": {
         "navigation": {
-          "search": "",
-          "add_client": ""
+          "search": "Rerchercher un projet",
+          "add_client": "Ajouter un client"
         },
         "personal_manager": {
-          "time_enter": "",
-          "add_time": "",
-          "write_comment": "",
-          "submit": "",
+          "time_enter": "Ajouter du temps",
+          "add_time": "Ajouter du temps",
+          "add_time_placeholder": "Temps",
+          "comment_label": "Commentaire",
+          "write_comment": "Ajouter un commentaire à cette tâche",
+          "submit": "Ajouter",
+          "error": {
+            "start": "Vous devez entrer ",
+            "time_spent": "un temps passé, ",
+            "task": "une tâche, ",
+            "related_project": "un projet, ",
+            "end": "pour ajouter du temps"
+          },
           "task": {
-            "edit": "",
-            "delete": ""
+            "edit": "Modifier",
+            "delete": "Supprimer",
+            "update": "Mettre à jour",
+            "time": "Temps",
+            "task": "Tâche",
+            "comment": "Commentaire"
           }
         },
         "project": {
-          "select_project": "",
-          "budget": "",
-          "edit": "",
-          "delete": ""
+          "select_project": "Sélectionner un projet",
+          "budget": "Budget",
+          "edit": "Modifier",
+          "delete": "Supprimer",
+          "update": "Mettre à jour"
         }
       },
       "synthesis": {
-        "search": ""
+        "search": "Rechercher un projet",
+        "card": {
+          "on": "sur"
+        }
       }
     },
     "en": {
       "lang": "en",
-      "day_short": "",
-      "hour_short": "",
-      "day": "",
-      "hour": "",
+      "day_short": "d.",
+      "hour_short": "h.",
+      "day": "day",
+      "hour": "hour",
       "error": {
         "main": "Something went wrong here…"
       },
       "global": {
-        "cancel": "Annuler"
+        "cancel": "Cancel",
+        "loading_message": "Wait a minute…"
       },
       "components": {
         "client_selector": {
-          "placeholder": ""
+          "placeholder": "Select a client"
         },
         "project_selector": {
           "placeholder": "Select a project"
         },
         "task_selector": {
-          "select_task": "",
-          "new_task": "",
-          "add": ""
+          "select_task": "Select a task",
+          "new_task": "Add a task",
+          "add": "Add"
         },
         "add_project": {
-          "title": "",
-          "name_label": "",
-          "name_placeholder": "",
-          "desc_label": "",
-          "desc_placeholder": "",
-          "budget_label": "",
-          "budget_placeholder": "",
-          "create_project": "",
-          "cancel": ""
+          "title": "Add a project",
+          "name_label": "Name",
+          "name_placeholder": "A name for this project",
+          "error_name": "Please choose a name",
+          "desc_label": "Description",
+          "desc_placeholder": "Describe this project in a few words",
+          "budget_label": "Budget",
+          "budget_placeholder": "Time dedicated",
+          "error_budget": "Please add a budget",
+          "create_project": "Create project"
         },
         "add_client": {
-          "name_label": "",
-          "name_placeholder": "",
-          "create_client": "",
-          "cancel": ""
+          "name_label": "Add a client",
+          "name_placeholder": "Name",
+          "create_client": "Create client",
+          "error_name": "Please choose a name"
         }
       },
       "login": {
-        "title": "",
-        "please_login": "",
-        "username": "",
-        "password": "",
-        "sign_in": "",
-        "remember_me": "",
-        "forgot_password": ""
+        "title": "Time tracker. Manage time spent.",
+        "please_login": "Please login",
+        "username": "Username",
+        "username_placeholder": "Your username",
+        "password": "Password",
+        "password_placeholder": "And your password",
+        "sign_in": "Sign in",
+        "remember_me": "Remember me",
+        "forgot_password": "Forgot password",
+        "check_credentials": "Check your connection informations."
+      },
+      "lost_password": {
+        "check_email": "Check your email",
+        "enter_email": "Enter email",
+        "enter_email_placeholder": "Your email",
+        "send_email": "Send email"
       },
       "navigation": {
         "dashboard": "Dashboard",
@@ -84143,11 +84129,11 @@ function Strings() {
           "edit_infos": "Edit infos",
           "sign_date": "Signed on",
           "edit": {
-            "first_name": "",
-            "second_name": "",
-            "email": "",
-            "update": "",
-            "cancel": ""
+            "first_name": "First name",
+            "second_name": "Second name",
+            "email": "Email",
+            "update": "Update",
+            "cancel": "Cancel"
           }
         },
         "clients": {
@@ -84192,7 +84178,8 @@ function Strings() {
             "update": "Update",
             "cancel": "Cancel",
             "delete_project": "Delete project",
-            "caution_message": "Be careful, because all time tracked on this will be deleted. And this can't be undone."
+            "caution_message": "Be careful, because all time tracked on this will be deleted. And this can't be undone.",
+            "sure": "Sure ?"
           }
         },
         "users": {
@@ -84221,8 +84208,8 @@ function Strings() {
             "name": "Time unit",
             "description": "Time is set in hour, by default. You can modify this, and see time entered on a day basis",
             "select": {
-              "day": "Day",
-              "hour": "Hour"
+              "day": "day",
+              "hour": "hour"
             }
           },
           "lang": {
@@ -84237,28 +84224,45 @@ function Strings() {
       },
       "dashboard": {
         "navigation": {
-          "search": "",
-          "add_client": ""
+          "search": "Search project",
+          "add_client": "Add a client"
         },
         "personal_manager": {
-          "time_enter": "",
-          "add_time": "",
-          "write_comment": "",
-          "submit": "",
+          "time_enter": "Enter time",
+          "add_time": "Enter time",
+          "add_time_placeholder": "Time",
+          "write_comment": "Write a comment",
+          "comment_label": "Comment",
+          "submit": "Submit time",
+          "error": {
+            "start": "You need ",
+            "time_spent": "a time spent, ",
+            "task": "a task, ",
+            "related_project": "a related project, ",
+            "end": " in order to enter time."
+          },
           "task": {
-            "edit": "",
-            "delete": ""
+            "edit": "Edit",
+            "delete": "Delete",
+            "update": "Update",
+            "time": "Time",
+            "task": "Task",
+            "comment": "Comment"
           }
         },
         "project": {
-          "select_project": "",
-          "budget": "",
-          "edit": "",
-          "delete": ""
+          "select_project": "Select a project",
+          "budget": "Budget",
+          "edit": "Edit",
+          "delete": "Delete",
+          "update": "Update"
         }
       },
       "synthesis": {
-        "search": ""
+        "search": "Search project",
+        "card": {
+          "on": "on"
+        }
       }
     }
   };

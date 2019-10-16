@@ -101,7 +101,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 				   name="task"
 				   id={"track-input--task-"+this.props.taskid}
 				   type="text"
-				   placeholder="Task description"
+				   placeholder=""
 				   aria-label="Input"/>  
 			  </div>
 			  <div className="track-value mr-2">
@@ -109,7 +109,7 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 				   name="value"
 				   id={"track-input--value-"+this.props.taskid}
 				   type="text"
-				   placeholder="Time"
+				   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.add_time_placeholder}
 				   aria-label="Input"
 				   data-parse="number"/>
 			  </div>
@@ -118,13 +118,13 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 				   name="comment"
 				   id={"track-input--comment-"+this.props.taskid}
 				   type="text"
-				   placeholder="Write a comment"
+				   placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.personal_manager.write_comment}
 				   aria-label="Input"/>
 			  </div>
 			  <div className="track-update mr-2">
-			    <button className="btn btn-primary">Update</button></div>
+			    <button className="btn btn-primary">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.update}</button></div>
 			  <div className="track-cancel">
-			    <button className="btn btn-light" onClick={this.cancelEdit}>Cancel</button>
+			    <button className="btn btn-light" onClick={this.cancelEdit}>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel}</button>
 			  </div>		    
 
 			</div>
@@ -140,15 +140,15 @@ const Task = inject("mainStore", "authStore")(observer(class Task extends Compon
 
 		<tr className="track">
 		  <td className="track-task">{this.props.task}</td>
-		  <td className="track-value">{convertToUnitValue(this.props.value, this.props.mainStore.unit).toFixed(2)}&nbsp;{this.props.mainStore.unit == "hour" ? "h." : "j." }</td>
+		  <td className="track-value">{convertToUnitValue(this.props.value, this.props.mainStore.unit).toFixed(2)}&nbsp;{this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour_short : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day_short }</td>
 		  <td className="track-comment">{this.props.comment}</td>
 		  <td className="track-user">{getUserName(this.props.mainStore.usersDefinitions, this.props.user)}</td>
 		  <td className="track-date">{readableDate(this.props.date)}</td>
 		  <td className="track-actions">
-		    <span><a className="track-edit" href="#" data-toggle="tooltip" data-placement="top" title="Edit" onClick={this.editItem}><i className="ico ico-medium">pen</i></a></span>
+		    <span><a className="track-edit" href="#" data-toggle="tooltip" data-placement="top" title={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.edit} onClick={this.editItem}><i className="ico ico-medium">pen</i></a></span>
 		  </td>
 		  <td className="track-actions">
-		    <span><a className="track-delete" href="#" data-toggle="tooltip" data-placement="top" title="Delete" onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a></span>
+		    <span><a className="track-delete" href="#" data-toggle="tooltip" data-placement="top" title={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.delete} onClick={this.deleteItem}><i className="ico ico-medium ico-trash">trash</i></a></span>
 		  </td>
 		  
 		</tr>

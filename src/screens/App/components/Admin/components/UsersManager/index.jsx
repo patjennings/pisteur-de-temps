@@ -15,15 +15,15 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 	this.state = {
 	    search: '',
 	    height: window.innerHeight - 420
-	}
+	};
     }
     changeOrder(){
-	console.log("sort !");
+	// console.log("sort !");
     }
     handleResize(){
 	this.setState({
 	    height: window.innerHeight - 420
-	})
+	});
     }
     handleChange(e){
 	this.setState({
@@ -46,18 +46,18 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
   			       id={"user-input--name"}
   			       type="text"
   			       aria-label="Input"
-			       placeholder="Search"
+			       placeholder={this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.search}
 			       onChange={this.handleChange}/>
 		      </div>
 		      <div className="col-6">
 			<div className="btn-group">
 			  <button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    Filter
+			    {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.name}
 			  </button>
 			  <div className="dropdown-menu">
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">Name</a>
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">Date added</a>
-			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">Role</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_name}</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_date_added}</a>
+			    <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.filter.filter_role}</a>
 			  </div>
 			</div>
 		      </div>
@@ -68,10 +68,10 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 		<div className="column-name">
 		  <div className="row">
 		    <div className="col-6">
-		      User
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.headers.user}
 		    </div>
 		    <div className="col-4">
-		      Role
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.users.headers.role}
 		    </div>		   
 		  </div>
 		</div>
@@ -91,10 +91,8 @@ const UsersManager = inject("mainStore", "authStore")(observer(class UsersManage
 		      const srlNoAccent = lnNoAccent.search(new RegExp(this.state.search, "i"));
 		      
 		      if(srf !== -1 || srl !== -1 || srfNoAccent !== -1 || srlNoAccent !== -1){
-			  return <User key={u._id} userid={u._id} firstName={u.firstName} lastName={u.lastName} isAdmin={u.isAdmin} isFirst={u.isFirst}/>			  
-		      }
-
-			  
+			  return <User key={u._id} userid={u._id} firstName={u.firstName} lastName={u.lastName} isAdmin={u.isAdmin} isFirst={u.isFirst}/>;
+		      }	  
 		  })}
                 </ul>
 	      </div>

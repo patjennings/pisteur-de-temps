@@ -58,17 +58,17 @@ handleResize(){
 		    <div className="col-5">
 		      <div className="btn-group">
 			<button type="button" className="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  Filter
+			  {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.name}
 			</button>
 			<div className="dropdown-menu">
-			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">Name</a>
-			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">Date added</a>
-			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">Role</a>
+			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="name">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_name}</a>
+			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="date">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_date_added}</a>
+			  <a className="dropdown-item" href="#" onClick={this.changeOrder} sort="role">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.filter.filter_role}</a>
 			</div>
 		      </div>
 		    </div>
 		    <div className="col-3">
-		      <button className="btn btn-primary float-right" type="button" onClick={this.addProject}><i className="ico">plus</i>&nbsp;Add a project</button>
+		      <button className="btn btn-primary float-right" type="button" onClick={this.addProject}><i className="ico">plus</i>&nbsp;{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.add_project}</button>
 		    </div>
 		  </div>
 		  
@@ -78,16 +78,16 @@ handleResize(){
 		<div className="column-name">
 		  <div className="row">
 		    <div className="col-2">
-		      Client
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.client}
 		    </div>
 		    <div className="col-4">
-		      Project & description
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.project_desc}
 		    </div>
 		    <div className="col-2">
-		      Budget
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.budget}
 		    </div>
 		    <div className="col-4">
-		      Tasks
+		      {this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.projects.headers.tasks}
 		    </div>
 		  </div>
 		</div>
@@ -106,14 +106,13 @@ handleResize(){
 		      const srClient = cn.search(new RegExp(this.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 		      const srClientNoAccent = cnNoAccent.search(new RegExp(this.state.search, "i")); // On checke si on affiche ou pas en fonction du champ de recherche sur le composant parent
 
-		      console.log(srProjectNoAccent);
+		      // console.log(srProjectNoAccent);
 		      
 		      // console.log(sr);
 		      if(srProject !== -1 || srClient !== -1 || srProjectNoAccent !== -1 || srClientNoAccent !== -1){
-			  return <Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks} tasks={p.tasks} currentSearch={this.state.search}/>
+			  return <Project key={p._id} projectid={p._id} clientid={p.client} description={p.description} budget={p.budget} hasTracks={p.hasTracks} tasks={p.tasks} currentSearch={this.state.search}/>;
+		      }	  
 		      }
-			  
-			      }
 			  )}
                 </ul>
 	      </div>

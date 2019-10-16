@@ -75,8 +75,8 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 		    <p className="synthesis-card--description">{this.props.description}</p>
 		  </div>
 		  <div className="col-md-4">
-		    <p className="synthesis-card--spent">{convertToUnitValue(this.state.timeSpent, this.props.mainStore.unit).toFixed(2)} <span className="budget-unit">{this.props.mainStore.unit == "hour" ? "heures" : "jours" }</span></p>
-		    <p className="synthesis-card--budget">sur {convertToUnitValue(this.props.budget, this.props.mainStore.unit).toFixed(2)} <span className="budget-unit"></span></p>
+		    <p className="synthesis-card--spent">{convertToUnitValue(this.state.timeSpent, this.props.mainStore.unit).toFixed(2)} <span className="budget-unit">{this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day }s</span></p>
+		    <p className="synthesis-card--budget">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].synthesis.card.on} {convertToUnitValue(this.props.budget, this.props.mainStore.unit).toFixed(2)} <span className="budget-unit"></span></p>
 		  </div>
 		</div>
 	      </div>
@@ -93,7 +93,7 @@ const Card = inject("mainStore")(observer(class Card extends Component {
 				  </div>
 			    </div>
 		            <div className="col-md-6">
-				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{convertToUnitValue(this.state.tasks[t], this.props.mainStore.unit).toFixed(2)} {this.props.mainStore.unit == "hour" ? "heures" : "jours" }</span></div>
+				  <div className="task-name"><span className="badge task-percentage mr-2">{getPercent(this.state.tasks[t], this.state.timeTotal, true)+"%"}</span>{t}<span className="task-spent">{convertToUnitValue(this.state.tasks[t], this.props.mainStore.unit).toFixed(2)} {this.props.mainStore.unit == "hour" ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].hour : this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].day }s</span></div>
 				</div>
 			</div>;
 		})}

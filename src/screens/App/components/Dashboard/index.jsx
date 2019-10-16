@@ -17,7 +17,7 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
     }
 
     render() {
-	console.log("Dashboard is rendered");
+	// console.log("Dashboard is rendered");
 	
 	return (
 	    
@@ -28,7 +28,7 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 	      <div id="wrapper" className="container-fluid">
 		<div className="row">
 		  
-		  {this.props.mainStore.isLoading == true ? <p>Wait a minute</p> :
+		  {this.props.mainStore.isLoading == true ? <p>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.loading_message}</p> :
 		      <div className="col-md-2">
 			    <Navigation key={2}/>
 			  </div>
@@ -43,7 +43,7 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 			    transitionName="fade"
 			    transitionEnterTimeout={500}
 			    transitionLeaveTimeout={300}>
-			    {this.props.mainStore.isLoading == true ? <p>Wait a minute</p> :
+			    {this.props.mainStore.isLoading == true ? <p>{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.loading_message}</p> :
 				<div className="col-md-4">
 				      <PersonalManager store={this.props.mainStore} key={0}/>
 				    </div>
@@ -53,20 +53,14 @@ const Dashboard = inject("mainStore")(observer(class Dashboard extends Component
 					  <Project key={1}/>
 					</div>
 					      :
-				    <div className="project-selection--placeholder">Select a project</div>}
+					<div className="project-selection--placeholder">{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].dashboard.project.select_project}</div>}
 			  </ReactCSSTransitionGroup>
 			</div>
 		      </div>
 		    </div>
 		  </div>
-
-		  
-		  
-		  
-		  
 		</div>
 	      </div>
-	      
 	    </div>
 	);
     }
