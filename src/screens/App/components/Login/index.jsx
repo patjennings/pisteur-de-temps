@@ -36,7 +36,7 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	if (!this.state.errorOnUsername && !this.state.errorOnPassword){
 	    this.state.hasErrors = false;
 	    
-	    let fd = retrieveFormData(event.target);
+	    let fd = retrieveFormData(event.target, null, null);
 	    this.props.authStore.logToApp(fd.username, fd.password, cookieChechboxValue);
 	}
 	

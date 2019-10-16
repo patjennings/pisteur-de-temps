@@ -1,4 +1,4 @@
-caimport React, { Component } from 'react';
+import React, { Component } from 'react';
 import {getUserName, getProjectName, getClientName} from 'utils/defsConverter';
 import ClientsSelector from "sharedComponents/ClientsSelector";
 import ErrorBoundary from "sharedComponents/ErrorBoundary";

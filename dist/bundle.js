@@ -77688,16 +77688,16 @@ function (_Component) {
         id: "client-input--name",
         name: "name",
         type: "text",
-        placeholder: "Client name",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.name_placeholder,
         "aria-label": "Input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Create client"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_client.create_client), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)))));
     }
   }]);
 
@@ -77877,14 +77877,14 @@ function (_Component) {
         className: "form-control",
         name: "name",
         id: "project-input--name",
-        placeholder: "The name",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.name_placeholder,
         type: "text",
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "form-control",
         name: "description",
         id: "project-input--description",
-        placeholder: "Maybe you will nees some details",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.desc_placeholder,
         type: "text",
         "aria-label": "Input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -77893,7 +77893,7 @@ function (_Component) {
         className: "form-control",
         name: "budget",
         id: "project-input--budget",
-        placeholder: "In days",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.budget_placeholder,
         type: "text",
         "aria-label": "Input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -77904,10 +77904,10 @@ function (_Component) {
         className: "col-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Create"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.add_project.create_project), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.props.onChange
-      }, "Cancel")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)))));
     }
   }]);
 
@@ -78045,17 +78045,12 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Client).call(this, props)); // const clid = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.props.mainStore.activeProject)).client;
 
     _this.state = {
-      // projectName: getProjectName(this.props.mainStore.projectsDefinitions, this.props.mainStore.activeProject),
-      // clientId: this.props.mainStore.activeProjectDetails.client,
-      // clientName: getClientName(this.props.mainStore.clientsDefinitions, this.props.mainStore.activeProjectDetails.client),
-      isEdited: false // activeProject: this.props.mainStore.activeProject
-
+      isEdited: false
     }; // binds
 
     _this.deleteItem = _this.deleteItem.bind(_assertThisInitialized(_this));
     _this.editItem = _this.editItem.bind(_assertThisInitialized(_this));
-    _this.cancelEdit = _this.cancelEdit.bind(_assertThisInitialized(_this)); // this.setActiveProject = this.setActiveProject.bind(this);
-
+    _this.cancelEdit = _this.cancelEdit.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -78099,10 +78094,10 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      console.log("submit");
+      // console.log("submit");
       e.preventDefault();
-      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId);
-      console.log(fd); // on lance la requête
+      var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_3__["default"])(e.target, this.props.authStore.userId); // console.log(fd);
+      // on lance la requête
 
       this.props.mainStore.updateClient(this.props.clientid, fd); // const cli = toJS(this.props.mainStore.projectsDefinitions.find(item => item._id == this.state.activeProject)).client;
 
@@ -78138,10 +78133,10 @@ function (_Component) {
           className: "col-3"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-primary btn-sm"
-        }, "Update"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.update), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-light btn-sm",
           onClick: this.cancelEdit
-        }, "Cancel")))));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel)))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "client"
@@ -78153,7 +78148,7 @@ function (_Component) {
           className: "badge badge-light"
         }, "No active project") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "badge badge-warning"
-        }, projectsNumber, " active projects")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, projectsNumber, " ", this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.active_projects)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-3"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
@@ -78162,7 +78157,7 @@ function (_Component) {
           "data-placement": "top",
           title: "Edit",
           onClick: this.editItem
-        }, "Edit"), projectsNumber < 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.edit), projectsNumber < 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
           className: "btn btn-danger btn-sm",
           "data-toggle": "tooltip",
@@ -78177,7 +78172,7 @@ function (_Component) {
           title: "Delete",
           onClick: this.deleteItem,
           disabled: true
-        }, "Delete"))));
+        }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.delete))));
       }
     }
   }]);
@@ -78284,8 +78279,7 @@ function (_Component) {
 
   _createClass(ClientsManager, [{
     key: "changeOrder",
-    value: function changeOrder() {
-      console.log("sort !");
+    value: function changeOrder() {// console.log("sort !");
     }
   }, {
     key: "addClient",
@@ -78331,7 +78325,7 @@ function (_Component) {
         id: "user-input--name",
         type: "text",
         "aria-label": "Input",
-        placeholder: "Search",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.search,
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-5"
@@ -78343,24 +78337,24 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, "Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "name"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "date"
-      }, "Date added"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_date_added), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         href: "#",
         onClick: this.changeOrder,
         sort: "role"
-      }, "Role")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.filter.filter_role)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary float-right",
@@ -78368,13 +78362,13 @@ function (_Component) {
         onClick: this.addClient
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "ico"
-      }, "plus"), "\xA0Add a client")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "plus"), "\xA0", this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.add_client)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "column-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
-      }, "Client")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.clients.headers.client)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "projects-content pane-content",
         style: {
           height: this.state.height + "px"
@@ -79755,7 +79749,7 @@ function (_Component) {
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.update), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-light",
         onClick: this.cancelEdit
-      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].admin.main.edit.second_cancel))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].global.cancel))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "personal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -81783,7 +81777,7 @@ function (_Component) {
 
       if (!this.state.errorOnUsername && !this.state.errorOnPassword) {
         this.state.hasErrors = false;
-        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target);
+        var fd = Object(utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__["default"])(event.target, null, null);
         this.props.authStore.logToApp(fd.username, fd.password, cookieChechboxValue);
       }
 
@@ -83910,6 +83904,9 @@ function Strings() {
       "error": {
         "main": "Aïe, quelque chose est cassé…"
       },
+      "global": {
+        "cancel": "Annuler"
+      },
       "components": {
         "client_selector": {
           "placeholder": ""
@@ -83986,7 +83983,8 @@ function Strings() {
           },
           "active_project": "Project actif",
           "edit": "Modifier",
-          "delete": "Supprimer"
+          "delete": "Supprimer",
+          "update": "Mettre à jour"
         },
         "projects": {
           "name": "Projets",
@@ -84089,6 +84087,9 @@ function Strings() {
       "error": {
         "main": "Something went wrong here…"
       },
+      "global": {
+        "cancel": "Annuler"
+      },
       "components": {
         "client_selector": {
           "placeholder": ""
@@ -84165,7 +84166,8 @@ function Strings() {
           },
           "active_project": "active project",
           "edit": "Edit",
-          "delete": "Delete"
+          "delete": "Delete",
+          "update": "Update"
         },
         "projects": {
           "name": "Projects",
