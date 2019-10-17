@@ -20,17 +20,16 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 	super(props);
 	this.loggerOut = this.loggerOut.bind(this);
     }
-    
 
     loggerOut(){
 	this.props.authStore.logout();
     }
 
     render() {
-	
+	console.log("app is rendered");
+	console.log(this.props.authStore.isLoggedIn);
 	return (
-
-	   <div className="app">
+	    <div className="app">
 	      <Route exact path="/" render={() => (
 		    this.props.authStore.isLoggedIn || this.props.authStore.sessionSecret == localStorage.secret ?
 		      <Dashboard /> : <Redirect to="/account" />
@@ -40,7 +39,7 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 			<Redirect to="/"/> : <Login/>
 		)} />
 		<Route path="/overview" render={() => (
-		   this.props.authStore.isLoggedIn || this.props.authStore.sessionSecret === localStorage.secret  ?
+		    this.props.authStore.isLoggedIn || this.props.authStore.sessionSecret === localStorage.secret  ?
 			<Dashboard/> : <Redirect to="/"/>
 		)} />
 		<Route path="/synthesis" render={() => (
@@ -54,7 +53,7 @@ const App = inject("mainStore", "authStore", "routingStore")(observer(class App 
 		<Route path="/reset-password" component={ResetPassword} />
 		<Route path="/lost-password" component={LostPassword} />
 		</div>
-	    
+		
 
 	);
     }

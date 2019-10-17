@@ -4,7 +4,6 @@ import {observer, inject} from "mobx-react";
 
 import retrieveFormData from "utils/retrieveFormData";
 
-
 import "./styles.scss";
 import "assets/styles/main.scss";
 
@@ -53,7 +52,6 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	
 	const { location, push, goBack } = this.props.routingStore;
 	
-	// console.log("Login is rendered");
 	return (
 	    <div className="container">
 	      

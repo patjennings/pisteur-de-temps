@@ -26,12 +26,7 @@ const stores = {
     routingStore
 }
 
-
-console.log(stores);
-
 const history = syncHistoryWithStore(browserHistory, routingStore);
-
-// console.log(customHistory);
 
 ReactDOM.render(
     <Provider {...stores}>

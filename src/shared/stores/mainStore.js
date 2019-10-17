@@ -60,7 +60,7 @@ export class MainStore{
     loadParameters(){
 	agent.fetchParameters()
 	    .then(action((parameters) => {
-		console.log(parameters);
+		// console.log(parameters);
 		// console.log(history);
 		this.unit = parameters.find(item => item._id == "unit").value;
 		this.lang = parameters.find(item => item._id == "lang").value;
@@ -74,7 +74,7 @@ export class MainStore{
 	agent.parametersUpdate(paramId, value)
 	    .then(action(() => {
 		this.loadParameters();
-		console.log("param updated");
+		// console.log("param updated");
 		// this.loadPersonalHistory() // relance le chargement de l'historique perso
 		// this.loadProject(projectId) // relance le chargement du projet
 		// this.loadTrackedTime(projectId) // et on relance le trackingtime du projet

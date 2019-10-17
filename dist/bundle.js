@@ -77541,9 +77541,7 @@ var stores = {
   authStore: stores_authStore__WEBPACK_IMPORTED_MODULE_6__["default"],
   routingStore: routingStore
 };
-console.log(stores);
-var history = Object(mobx_react_router__WEBPACK_IMPORTED_MODULE_4__["syncHistoryWithStore"])(browserHistory, routingStore); // console.log(customHistory);
-
+var history = Object(mobx_react_router__WEBPACK_IMPORTED_MODULE_4__["syncHistoryWithStore"])(browserHistory, routingStore);
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mobx_react__WEBPACK_IMPORTED_MODULE_8__["Provider"], stores, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Router"], {
   history: history
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_screens_App_index__WEBPACK_IMPORTED_MODULE_10__["default"], null))), document.getElementById('root'));
@@ -81747,8 +81745,7 @@ function (_Component) {
       var _this$props$routingSt = this.props.routingStore,
           location = _this$props$routingSt.location,
           push = _this$props$routingSt.push,
-          goBack = _this$props$routingSt.goBack; // console.log("Login is rendered");
-
+          goBack = _this$props$routingSt.goBack;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82111,10 +82108,10 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.errorOnPassword ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
-      }, "Please enter a password\u2026") : null, !this.state.errorOnPassword && this.state.passwordRenewed ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].reset_password.enter_password) : null, !this.state.errorOnPassword && this.state.passwordRenewed ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-success",
         role: "alert"
-      }, "New password is now active. Go on homepage, ands try it out !") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].reset_password.message_success) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -82122,16 +82119,16 @@ function (_Component) {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--password"
-      }, "Enter your new password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].reset_password.enter_new_password), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control w-100",
         name: "password",
         id: "login--password",
         type: "password",
-        placeholder: "New password",
+        placeholder: this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].reset_password.new_password,
         "aria-label": "Input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Submit new password")))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].reset_password.submit)))));
     }
   }]);
 
@@ -82633,6 +82630,8 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log("app is rendered");
+      console.log(this.props.authStore.isLoggedIn);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -83900,8 +83899,11 @@ function Strings() {
         "send_email": "Envoyer l'email"
       },
       "reset_password": {
-        "enter_password": "Entrez un mot de passe",
-        "message_success": "Ok. Votre nouveau mot de passe devrait être actif maintenant."
+        "enter_password": "Entrez un mot de pass",
+        "enter_new_password": "Entrez votre nouveau mot de passe",
+        "message_success": "Ok. Votre nouveau mot de passe est actif maintenant. Retournez sur l'accueil, et essayez-le.",
+        "new_password": "Nouveau mot de passe",
+        "submit": "Valider le nouveau mot de passe"
       },
       "navigation": {
         "dashboard": "Vue d'ensemble",
@@ -84108,6 +84110,13 @@ function Strings() {
         "remember_me": "Remember me",
         "forgot_password": "Forgot password",
         "check_credentials": "Check your connection informations."
+      },
+      "reset_password": {
+        "enter_password": "Enter a password",
+        "enter_new_password": "Enter your new password",
+        "message_success": "Ok, your new password is now active. Go on homepage, and try it out.",
+        "new_password": "New password",
+        "submit": "Submit new password"
       },
       "lost_password": {
         "check_email": "Check your email",
@@ -84324,11 +84333,11 @@ function () {
       var _this = this;
 
       var cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-      var ck = cookies.get('login');
-      console.log(cookies); // this.isLoading = true;
+      var ck = cookies.get('login'); // console.log(cookies);
+      // this.isLoading = true;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["controlCookie"](ck, "::ffff:127.0.0.1").then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
-        console.log(res);
+        // console.log(res);
         res.data.cookie == true ? console.log("cookie active") : console.log("no active cookie");
 
         if (res.data.cookie) {
@@ -84347,6 +84356,7 @@ function () {
     value: function logout() {
       this.isLoggedIn = false;
       this.userId = false;
+      this.user = {};
       localStorage.clear();
     }
   }, {
@@ -84383,8 +84393,7 @@ function () {
       // & set the new password via API
       this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["resetPassword"](newPassword, this.retrieveKey).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
-        _this3.isLoading = false;
-        console.log(res);
+        _this3.isLoading = false; // console.log(res);
       }));
     }
   }, {
@@ -84392,8 +84401,8 @@ function () {
     value: function getUserData(uid) {
       var _this4 = this;
 
-      this.isLoading = true;
-      console.log("fetch user data");
+      this.isLoading = true; // console.log("fetch user data");
+
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchUser"](uid).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
         _this4.user = res.data;
         _this4.isLoading = false;
@@ -84404,11 +84413,11 @@ function () {
     value: function logToApp(username, password, isCookieActive) {
       var _this5 = this;
 
-      console.log("try to log with ".concat(username, " and ").concat(password));
+      // console.log(`try to log with ${username} and ${password}`);
       this.isLoading = true;
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["login"](username, password, isCookieActive).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (res) {
         if (res.error === true) {
-          console.log("error while connecting");
+          // console.log("error while connecting");
           _this5.hasErrors = true;
         } else {
           _this5.hasErrors = false;
@@ -84540,8 +84549,8 @@ function () {
       var _this = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["fetchParameters"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (parameters) {
-        console.log(parameters); // console.log(history);
-
+        // console.log(parameters);
+        // console.log(history);
         _this.unit = parameters.find(function (item) {
           return item._id == "unit";
         }).value;
@@ -84561,11 +84570,11 @@ function () {
       var _this2 = this;
 
       fetch_agent__WEBPACK_IMPORTED_MODULE_1__["parametersUpdate"](paramId, value).then(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function () {
-        _this2.loadParameters();
-
-        console.log("param updated"); // this.loadPersonalHistory() // relance le chargement de l'historique perso
+        _this2.loadParameters(); // console.log("param updated");
+        // this.loadPersonalHistory() // relance le chargement de l'historique perso
         // this.loadProject(projectId) // relance le chargement du projet
         // this.loadTrackedTime(projectId) // et on relance le trackingtime du projet
+
       })).catch(Object(mobx__WEBPACK_IMPORTED_MODULE_0__["action"])(function (error) {
         console.log(error);
       })); // .finally(action(() => { this.isLoading = false; }));
@@ -85091,12 +85100,12 @@ function retrieveFormData(form) {
     for (var _iterator = data.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var name = _step.value;
       var input = form.elements[name];
-      var parserName = input.dataset.parse;
-      console.log(name);
+      var parserName = input.dataset.parse; // console.log(name);
 
       if (parserName) {
         var parser = inputParsers[parserName];
-        var parsedValue = parser(data.get(name));
+        var parsedValue = parser(data.get(name)); // reqBody[name] = parsedValue;
+
         unit == "hour" ? reqBody[name] = parsedValue : reqBody[name] = parsedValue * 7; // la value
       } else {
         reqBody[name] = data.get(name); //là, on récupère comment et task
@@ -85119,9 +85128,9 @@ function retrieveFormData(form) {
 
   if (userid !== null) {
     reqBody.user = userid; // et là, on récupère le user
-  }
+  } // console.log(reqBody);
 
-  console.log(reqBody);
+
   return reqBody;
 } // des méthodes pour parser ce qui vient des formulaires
 

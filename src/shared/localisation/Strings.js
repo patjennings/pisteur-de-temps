@@ -63,8 +63,11 @@ export default function Strings(){
 		  "send_email": "Envoyer l'email"
 	      },
 	      "reset_password": {
-		  "enter_password": "Entrez un mot de passe",
-		  "message_success": "Ok. Votre nouveau mot de passe devrait être actif maintenant.",
+		  "enter_password": "Entrez un mot de pass",
+		  "enter_new_password": "Entrez votre nouveau mot de passe",
+		  "message_success": "Ok. Votre nouveau mot de passe est actif maintenant. Retournez sur l'accueil, et essayez-le.",
+		  "new_password": "Nouveau mot de passe",
+		  "submit": "Valider le nouveau mot de passe"
 		  
 	      },
 	      "navigation": {
@@ -274,6 +277,13 @@ export default function Strings(){
 		  "forgot_password": "Forgot password",
 		  "check_credentials": "Check your connection informations."
 		  
+	      },
+	      "reset_password": {
+		  "enter_password": "Enter a password",
+		  "enter_new_password": "Enter your new password",
+		  "message_success": "Ok, your new password is now active. Go on homepage, and try it out.",
+		  "new_password": "New password",
+		  "submit": "Submit new password"		  
 	      },
 	      "lost_password": {
 		  "check_email": "Check your email",

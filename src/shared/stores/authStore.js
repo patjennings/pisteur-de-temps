@@ -26,13 +26,13 @@ export class AuthStore{
     checkLogged(){
 	const cookies = new Cookies();
 	const ck = cookies.get('login');
-	console.log(cookies);
+	// console.log(cookies);
 	// this.isLoading = true;
 
 	agent
 	    .controlCookie(ck, "::ffff:127.0.0.1")
 	    .then(action((res) => {
-		console.log(res);
+		// console.log(res);
 		res.data.cookie == true ? console.log("cookie active") : console.log("no active cookie");
 
 		if(res.data.cookie){
@@ -41,8 +41,6 @@ export class AuthStore{
 		    this.isLoggedIn = true;
 		    this.getUserData(res.data.data._id);
 		}
-		
-
 		this.isLoading = false;
 	    }))
     }
@@ -50,6 +48,7 @@ export class AuthStore{
     logout(){
 	this.isLoggedIn = false;
 	this.userId = false;
+	this.user = {}
 	localStorage.clear();
     }
 
@@ -85,14 +84,14 @@ export class AuthStore{
 	    .resetPassword(newPassword, this.retrieveKey)
 	    .then(action((res) => {
 		this.isLoading = false;
-		console.log(res);
+		// console.log(res);
 
 	    }))
     }
 
     getUserData(uid){
 	this.isLoading = true;
-	console.log("fetch user data");
+	// console.log("fetch user data");
 	agent
 	    .fetchUser(uid)
 	    .then(action((res) => {
@@ -102,13 +101,13 @@ export class AuthStore{
     }
 
     logToApp(username, password, isCookieActive){
-	console.log(`try to log with ${username} and ${password}`);
+	// console.log(`try to log with ${username} and ${password}`);
 	this.isLoading = true;
 	agent
 	    .login(username, password, isCookieActive)
 	    .then(action((res) => {
 		if(res.error === true){
-		    console.log("error while connecting");
+		    // console.log("error while connecting");
 		    this.hasErrors = true;
 		} else {
 		    this.hasErrors = false;
@@ -124,7 +123,6 @@ export class AuthStore{
 	    }))
     }
 }
-
 decorate(AuthStore, {
     retrieveKey: observable,
     isLoading: observable,
@@ -141,6 +139,5 @@ decorate(AuthStore, {
     logToApp: action,
     setRetrieveKey: action
 });
-
 
 export default new AuthStore();

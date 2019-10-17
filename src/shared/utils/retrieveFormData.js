@@ -9,11 +9,12 @@ export default function retrieveFormData(form, userid=null, unit){
 	const input = form.elements[name];
 	const parserName = input.dataset.parse;
 
-	console.log(name);
+	// console.log(name);
 
 	if(parserName){
 	    const parser = inputParsers[parserName];
 	    const parsedValue = parser(data.get(name));
+	    // reqBody[name] = parsedValue;
 	    unit == "hour" ? reqBody[name] = parsedValue : reqBody[name] = parsedValue*7; // la value
 	}
 	else{
@@ -24,7 +25,7 @@ export default function retrieveFormData(form, userid=null, unit){
 	reqBody.user = userid; // et là, on récupère le user
     }
 
-    console.log(reqBody);
+    // console.log(reqBody);
     return reqBody;
 }
 
