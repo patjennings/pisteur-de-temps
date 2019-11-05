@@ -10,7 +10,7 @@ var saltAndHash =      require("./utils/validation").saltAndHash;
 
 var generateKey = require("./utils/validation").generateKey;
 
-const APP_ROOT = "http://buxid.thomasguesnon.net";
+const APP_ROOT = "http://pisteurdetemps.thomasguesnon.net";
 
 module.exports = function(app){
 
