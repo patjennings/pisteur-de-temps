@@ -45,8 +45,8 @@ export default function Strings(){
 		  }
 	      },
 	      "login": {
-		  "title": "Temps calcul. Gérer le temps",
-		  "please_login": "Veuillez vous connecter",
+		  "title": "Pisteur de temps",
+		  "please_login": "Une application qui sert à retrouver la trace du temps passé. Connectez-vous pour commencer",
 		  "username": "Nom d'utilisateur",
 		  "username_placeholder": "Entrez votre nom d'utilisateur",
 		  "password": "Mot de passe",
@@ -266,8 +266,8 @@ export default function Strings(){
 		  }
 	      },
 	      "login": {
-		  "title": "Time tracker. Manage time spent.",
-		  "please_login": "Please login",
+		  "title": "Pisteur de temps",
+		  "please_login": "An app that helps retrieve the track of time spent",
 		  "username": "Username",
 		  "username_placeholder": "Your username",
 		  "password": "Password",
