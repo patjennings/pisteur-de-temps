@@ -1,7 +1,7 @@
 {
-    "name": "Buxid",
-    "version": "0.1.0",
-    "description": "Buxid is an app that helps vizualisig effort spent on projects",
+    "name": "PisteurDeTemps",
+    "version": "0.8.0",
+    "description": "PisteurDeTemps is an app that helps vizualisig effort spent on projects",
     "private": true,
     "dependencies": {
 	"@babel/cli": "^7.4.3",
