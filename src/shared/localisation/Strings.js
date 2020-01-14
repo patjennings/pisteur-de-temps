@@ -44,9 +44,9 @@ export default function Strings(){
 		      "error": "Veuillez choisir un nom"
 		  }
 	      },
-	      "login": {
+	      "login": {		  
 		  "title": "Pisteur de temps",
-		  "please_login": "Une application qui sert à retrouver la trace du temps passé. Connectez-vous pour commencer",
+		  "please_login": "Connectez-vous pour commencer",
 		  "username": "Nom d'utilisateur",
 		  "username_placeholder": "Entrez votre nom d'utilisateur",
 		  "password": "Mot de passe",
@@ -54,7 +54,8 @@ export default function Strings(){
 		  "sign_in": "Se connecter",
 		  "remember_me": "Se souvenir de moi",
 		  "forgot_password": "Mot de passe oublié",
-		  "check_credentials": "Vérifier vos informations de connexion"
+		  "check_credentials": "Vérifier vos informations de connexion",
+		  "demo_message": "Pour vous connecter à cette démo, les identifiants sont : nom d'utilisateur : demo / mot de passe : 0000"
 	      },
 	      "lost_password": {
 		  "check_email": "Regardez votre boîte mail",
@@ -267,7 +268,7 @@ export default function Strings(){
 	      },
 	      "login": {
 		  "title": "Pisteur de temps",
-		  "please_login": "An app that helps retrieve the track of time spent",
+		  "please_login": "Please log in",
 		  "username": "Username",
 		  "username_placeholder": "Your username",
 		  "password": "Password",
@@ -275,8 +276,8 @@ export default function Strings(){
 		  "sign_in": "Sign in",
 		  "remember_me": "Remember me",
 		  "forgot_password": "Forgot password",
-		  "check_credentials": "Check your connection informations."
-		  
+		  "check_credentials": "Check your connection informations.",
+		  "demo_message": "In order to connect to this demo, here are credentials : user name : demo / password : 0000"	  
 	      },
 	      "reset_password": {
 		  "enter_password": "Enter a password",

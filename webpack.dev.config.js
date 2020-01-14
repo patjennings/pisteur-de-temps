@@ -28,7 +28,7 @@ module.exports = {
 		]
             },
 	    {
-		test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+		test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
 		use: [{
                     loader: 'file-loader',
                     options: {
@@ -36,6 +36,10 @@ module.exports = {
 			outputPath: 'assets/fonts/'
                     }
 		}]
+            },
+	    {
+		test: /\.(jpe?g|png|gif|svg)$/i,
+		loader: 'file-loader?name=src/assets/images/[name].[ext]'
             }
 	]
     },

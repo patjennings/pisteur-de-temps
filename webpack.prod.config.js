@@ -33,14 +33,18 @@ module.exports = {
 		]
             },
 	    {
-		test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+		test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
 		use: [{
                     loader: 'file-loader',
                     options: {
-			name: '[name]?name=/assets/fonts/[name].[ext]&context=/assets/fonts',
+			name: '[name]?name=[path][name].[ext]&context=/src/assets/fonts',
 			outputPath: 'assets/fonts/'
                     }
 		}]
+            },
+	    {
+		test: /\.(jpe?g|png|gif|svg)$/i,
+		loader: 'file-loader?name=src/assets/images/[name].[ext]'
             }
 	]
     },
@@ -48,7 +52,7 @@ module.exports = {
     	// new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     	new CleanWebpackPlugin(),
     	new HtmlWebpackPlugin({
-    	    title: 'Buxid - An app for tracking time',
+    	    title: 'Pisteur de temps - An app for tracking time',
 	    template: 'index.template.ejs',
 	    inject: 'body',
     	}),

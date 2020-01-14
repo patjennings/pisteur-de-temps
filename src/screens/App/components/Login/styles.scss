@@ -1,0 +1,51 @@
+@import "assets/styles/colors";
+@import "assets/styles/_mixins";
+.login{
+    	display: flex; /* contexte sur le parent */
+	flex-direction: column; /* direction d'affichage verticale */
+	justify-content: center; /* alignement vertical */
+
+    .container{
+	display: flex; /* contexte sur le parent */
+	flex-direction: column; /* direction d'affichage verticale */
+	justify-content: center; /* alignement vertical */
+	// height: 80vh;
+	margin-top: 15vh;
+	padding: 32px 24px;
+	border-radius: 4px;
+	width: 360px;
+
+	background: white;
+
+	.row{
+	    margin-bottom: 16px;
+
+	    &.connection{
+		margin-bottom: 32px;
+	    }
+
+	    a, .form-check input, .form-check label{
+		cursor: pointer;
+	    }
+	}
+
+	
+    }
+    #demo-message{
+	// position: absolute;
+	margin: 8px;
+	border-radius: 4px;
+	// left: 8px;
+	padding: 16px 22px;
+	background: rgba(0,0,0,0.05);
+	// width: 100vw;
+	// margin: 0 auto;
+
+	code{
+	    background: white;
+	    padding: 1px 2px;
+	    border-radius: 2px;
+	    margin: 0 4px;
+	}
+    }
+}
