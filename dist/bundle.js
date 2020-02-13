@@ -15932,7 +15932,7 @@ exports.push([module.i, "/* FUNCTIONS */\n.fade-enter {\n  opacity: 0; }\n\n.fad
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* FUNCTIONS */\n.login {\n  display: flex;\n  /* contexte sur le parent */\n  flex-direction: column;\n  /* direction d'affichage verticale */\n  justify-content: center;\n  /* alignement vertical */ }\n  .login .container {\n    display: flex;\n    /* contexte sur le parent */\n    flex-direction: column;\n    /* direction d'affichage verticale */\n    justify-content: center;\n    /* alignement vertical */\n    margin-top: 15vh;\n    padding: 32px 24px;\n    border-radius: 4px;\n    width: 360px;\n    background: white; }\n    .login .container .row {\n      margin-bottom: 16px; }\n      .login .container .row.connection {\n        margin-bottom: 32px; }\n      .login .container .row a, .login .container .row .form-check input, .login .container .row .form-check label {\n        cursor: pointer; }\n  .login #demo-message {\n    margin: 8px;\n    border-radius: 4px;\n    padding: 16px 22px;\n    background: rgba(0, 0, 0, 0.05); }\n    .login #demo-message code {\n      background: white;\n      padding: 1px 2px;\n      border-radius: 2px;\n      margin: 0 4px; }\n", ""]);
 
 
 
@@ -77460,6 +77460,17 @@ module.exports = __webpack_require__.p + "assets/fonts/UDiconwebfont-Regular?nam
 
 /***/ }),
 
+/***/ "./src/assets/images/logo.svg":
+/*!************************************!*\
+  !*** ./src/assets/images/logo.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "src/assets/images/logo.svg";
+
+/***/ }),
+
 /***/ "./src/assets/styles/main.scss":
 /*!*************************************!*\
   !*** ./src/assets/styles/main.scss ***!
@@ -81666,10 +81677,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/index.module.js");
 /* harmony import */ var utils_retrieveFormData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils/retrieveFormData */ "./src/shared/utils/retrieveFormData.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Login/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles.scss */ "./src/screens/App/components/Login/styles.scss");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81692,6 +81703,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
+var logo = __webpack_require__(/*! assets/images/logo.svg */ "./src/assets/images/logo.svg");
 
 var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
@@ -81747,24 +81761,35 @@ function (_Component) {
           push = _this$props$routingSt.push,
           goBack = _this$props$routingSt.goBack;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "demo-message"
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.demo_message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.please_login))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "col-md-12 d-flex justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: logo,
+        height: "64"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12 d-flex justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.please_login))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12 "
       }, this.props.authStore.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.check_credentials) : null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12 "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--username"
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -81777,7 +81802,7 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12 "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "login--password"
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.password), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -81787,15 +81812,15 @@ function (_Component) {
         type: "password",
         "aria-label": "Input"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row connection"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary"
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.sign_in))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-check"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -81809,12 +81834,12 @@ function (_Component) {
       }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.remember_me)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-4 offset-md-4"
+        className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: function onClick() {
           return push('/lost-password');
         }
-      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.forgot_password)))));
+      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.forgot_password))))));
     }
   }]);
 
@@ -83881,8 +83906,8 @@ function Strings() {
         }
       },
       "login": {
-        "title": "Temps calcul. Gérer le temps",
-        "please_login": "Veuillez vous connecter",
+        "title": "Pisteur de temps",
+        "please_login": "Connectez-vous pour commencer",
         "username": "Nom d'utilisateur",
         "username_placeholder": "Entrez votre nom d'utilisateur",
         "password": "Mot de passe",
@@ -83890,7 +83915,8 @@ function Strings() {
         "sign_in": "Se connecter",
         "remember_me": "Se souvenir de moi",
         "forgot_password": "Mot de passe oublié",
-        "check_credentials": "Vérifier vos informations de connexion"
+        "check_credentials": "Vérifier vos informations de connexion",
+        "demo_message": "Pour vous connecter à cette démo, les identifiants sont : nom d'utilisateur : demo / mot de passe : 0000"
       },
       "lost_password": {
         "check_email": "Regardez votre boîte mail",
@@ -84100,8 +84126,8 @@ function Strings() {
         }
       },
       "login": {
-        "title": "Time tracker. Manage time spent.",
-        "please_login": "Please login",
+        "title": "Pisteur de temps",
+        "please_login": "Please log in",
         "username": "Username",
         "username_placeholder": "Your username",
         "password": "Password",
@@ -84109,7 +84135,8 @@ function Strings() {
         "sign_in": "Sign in",
         "remember_me": "Remember me",
         "forgot_password": "Forgot password",
-        "check_credentials": "Check your connection informations."
+        "check_credentials": "Check your connection informations.",
+        "demo_message": "In order to connect to this demo, here are credentials : user name : demo / password : 0000"
       },
       "reset_password": {
         "enter_password": "Enter a password",

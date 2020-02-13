@@ -37,9 +37,9 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
 
   script:
-    - scp -rp ./build/* patjennings@83.205.151.87:/var/www/pisteurdetemps.thomasguesnon.net
-    - scp -rp ./api/* patjennings@83.205.151.87:/var/www/pisteurdetemps.api.thomasguesnon.net
-    - scp -rp ./package.json patjennings@83.205.151.87:/var/www/pisteurdetemps.thomasguesnon.net
+    - scp -rp ./build/* patjennings@2.10.102.10:/var/www/pisteurdetemps.thomasguesnon.net
+    - scp -rp ./api/* patjennings@2.10.102.10:/var/www/pisteurdetemps.api.thomasguesnon.net
+    - scp -rp ./package.json patjennings@2.10.102.10:/var/www/pisteurdetemps.thomasguesnon.net
 
   only:
     - master
