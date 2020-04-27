@@ -60,6 +60,12 @@ Créer les collections dans la base `time-tracker`
 - tooltips
 - ~~ajouter du temps sur un projet~~
   - ~~configurer dropdown de add time~~
+- problème fenere ajout projet dans client (hors du viewport)
+- pouvoir entrer un projet sans temps
+- indiquer h ou j à côté du temps pour un nouveau projet
+- quand on sélectionne un projet à gauche, automatiqument renseigner le projet dans la fenêtre d'ajout de temps (bleue)
+- css sur la fenêtre d'ajout de tâche
+- automatiser deploiement sur staging et prod (avec sauvegarde des bdd sur chaque au préalable)
 
 ##### Task #####
 
