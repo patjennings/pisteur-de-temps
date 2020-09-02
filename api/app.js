@@ -7,13 +7,26 @@ var mongoOp =    require("./server/models/mongo"); // le modèle mongodb
 var cors = require("cors"); // cors permet de setup les headers pour effectuer des appels cross-domain
 
 var app = express();
+const whitleListDomain = ['http://localhost:3000', 'http://localhost', 'https://time.api.thomasguesnon.net'];
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'pug');
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(
+        origin: function(origin, callback){
+	// allow requests with no origin 
+	// (like mobile apps or curl requests)
+	if(!origin) return callback(null, true);
+	if(whitleListDomain.indexOf(origin) === -1){
+	    var msg = 'The CORS policy for this site does not ' +
+                'allow access from the specified Origin.';
+	    return callback(new Error(msg), false);
+	}
+	return callback(null, true);
+    }
+}));
 
 
 var sess = {
