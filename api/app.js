@@ -28,7 +28,7 @@ var sess = {
 
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = true // serve secure cookies
+    session.cookie.secure = true // serve secure cookies
     API_PORT = 4267;
 } else {
     API_PORT = 3000;
