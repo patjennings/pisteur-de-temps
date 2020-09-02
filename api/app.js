@@ -5,28 +5,18 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var mongoOp =    require("./server/models/mongo"); // le modèle mongodb
 var cors = require("cors"); // cors permet de setup les headers pour effectuer des appels cross-domain
+let API_PORT;
+
 
 var app = express();
-const whitleListDomain = ['http://localhost:3000', 'http://localhost', 'https://time.api.thomasguesnon.net'];
+// const whitleListDomain = ['http://localhost:3000', 'http://localhost', 'https://time.api.thomasguesnon.net'];
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'pug');
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors(
-        origin: function(origin, callback){
-	// allow requests with no origin 
-	// (like mobile apps or curl requests)
-	if(!origin) return callback(null, true);
-	if(whitleListDomain.indexOf(origin) === -1){
-	    var msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-	    return callback(new Error(msg), false);
-	}
-	return callback(null, true);
-    }
-}));
+app.use(cors());
 
 
 var sess = {
@@ -39,12 +29,15 @@ var sess = {
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
     sess.cookie.secure = true // serve secure cookies
+    API_PORT = 4267;
+} else {
+    API_PORT = 3000;
 }
 
 // app.use(session(sess))
 
 var routes = require("./server/routes.js")(app);
 
-var server = app.listen(3000, function () {
+var server = app.listen(API_PORT, function () {
     console.log("Listening on port %s...", server.address().port);
 });
