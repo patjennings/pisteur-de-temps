@@ -56,9 +56,6 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	
 	return (
 	    <div className="login">
-	      <div id="demo-message">
-		{this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.demo_message}
-	      </div>
 	      <div className="container">
 		
 		<div className="row">
