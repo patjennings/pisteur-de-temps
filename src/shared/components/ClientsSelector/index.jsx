@@ -35,6 +35,8 @@ const ClientsSelector = inject("mainStore")(observer(class ClientsSelector exten
     }
 
     render() {
+	console.log(this.state.activeClient);
+	console.log(this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector.placeholder);
 	
 	return (
 	    <div className="dropdown client-selector">
@@ -44,7 +46,7 @@ const ClientsSelector = inject("mainStore")(observer(class ClientsSelector exten
 		aria-haspopup="true"
 		aria-expanded="false">
 		{this.state.activeClient == null ?
-		    this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector :
+		    this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector.placeholder :
 		    <div className="">
 			  {getClientName(this.props.mainStore.clientsDefinitions, this.state.activeClient)}
 			</div>

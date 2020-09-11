@@ -10,7 +10,7 @@ import {inject, observer} from "mobx-react";
 import "./styles.scss";
 
 
-const AddProject = inject("mainStore")(observer(class AddProject extends Component {
+const AddProject = inject("mainStore", "authStore")(observer(class AddProject extends Component {
     constructor(props){
 	super(props);
 
@@ -64,8 +64,6 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
     render() {
 	const nameAttr = this.state.errorOnName ? "is-invalid" : null;
 	const budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
-
-	console.log(this.props.clientId);
 	
 	return (
 
@@ -78,7 +76,7 @@ const AddProject = inject("mainStore")(observer(class AddProject extends Compone
 		      <div className="row">  
   			<div className="col-2">
 			  <ErrorBoundary>
-  			    <ClientsSelector onChange={this.setActiveClient} activeClient={this.props.clientid}/>
+  			    <ClientsSelector onChange={this.setActiveClient} activeClient={null}/>
 			  </ErrorBoundary>
   			  <input className="form-control"
   				 id="project-input--client"

@@ -69190,7 +69190,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77791,7 +77791,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["inject"])("mainStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["observer"])(
+var AddProject = Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["inject"])("mainStore", "authStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["observer"])(
 /*#__PURE__*/
 function (_Component) {
   _inherits(AddProject, _Component);
@@ -77857,7 +77857,6 @@ function (_Component) {
     value: function render() {
       var nameAttr = this.state.errorOnName ? "is-invalid" : null;
       var budgetAttr = this.state.errorOnBudget ? "is-invalid" : null;
-      console.log(this.props.clientId);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "project--input"
       }, this.state.hasErrors ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -77872,7 +77871,7 @@ function (_Component) {
         className: "col-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ErrorBoundary__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(sharedComponents_ClientsSelector__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: this.setActiveClient,
-        activeClient: this.props.clientid
+        activeClient: null
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         id: "project-input--client",
@@ -81763,8 +81762,6 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "demo-message"
-      }, this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].login.demo_message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -82825,6 +82822,8 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log(this.state.activeClient);
+      console.log(this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector.placeholder);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown client-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -82832,7 +82831,7 @@ function (_Component) {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false"
-      }, this.state.activeClient == null ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.activeClient == null ? this.props.mainStore.appStrings[this.props.mainStore.lang.toLowerCase()].components.client_selector.placeholder : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, Object(utils_defsConverter__WEBPACK_IMPORTED_MODULE_2__["getClientName"])(this.props.mainStore.clientsDefinitions, this.state.activeClient))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-menu",

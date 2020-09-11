@@ -147,14 +147,10 @@ const Project = inject("mainStore", "authStore")(observer(class Project extends 
 		                      <button type="button" className="btn btn-info btn-sm" onClick={this.deleteTask}>x</button>
 		                  </div>
 			  )}
-
-		    
 		        </div>
 			<div className="col-1">
   			</div>
-			
-  		      </div>
-		  
+  		      </div>		  
 		  <div className="row">
 		    <div className="offset-8 col-4">
 		      <button
