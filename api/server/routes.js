@@ -4,13 +4,14 @@ var express =      require("express");
 var crypto =       require("crypto");
 var cookieParser = require("cookie-parser");
 var emailjs =   require("emailjs/email");
+const config = require('../../config');
 
 var validatePassword = require("./utils/validation").validatePassword;
 var saltAndHash =      require("./utils/validation").saltAndHash;
 
 var generateKey = require("./utils/validation").generateKey;
 
-const APP_ROOT = "http://pisteurdetemps.thomasguesnon.net";
+const APP_ROOT = config.app.url;
 
 module.exports = function(app){
 
@@ -65,7 +66,7 @@ module.exports = function(app){
 	res.render('app', {title: "App root"});
     })
     
-    app.post('/lost-password',  function(req, res){
+    app.post('/api/lost-password',  function(req, res){
 
 	var response = {};
 
@@ -135,7 +136,7 @@ module.exports = function(app){
     // find the document with the key
     // salt+hash the password, and save it in the db
 
-    app.post('/reset-password', function(req, res){
+    app.post('/api/reset-password', function(req, res){
 
 	var response = {};
 
@@ -170,7 +171,7 @@ module.exports = function(app){
     // ------------
     // On envoie une proposition de login + mdp
     // si ok avec la base, on retient le record, et on y ajoute la clef du cookie + l'ip
-    app.post("/login", function (req, res) {
+    app.post("/api/login", function (req, res) {
 	var response = {};
 	
 	const email = req.query.email;
@@ -217,7 +218,7 @@ module.exports = function(app){
     // COOKIES
     // ------------
     // checke si un cookie est actif, et retourne l'utilisateur associé
-    app.get("/cookie", function (req, res) {
+    app.get("/api/cookie", function (req, res) {
 	var response = {};
 	
 	const key = req.query.key;
@@ -238,7 +239,7 @@ module.exports = function(app){
     // ------------
     // PARAMS
     // ------------
-    app.get("/params", function (req, res) {
+    app.get("/api/params", function (req, res) {
 	var response = {};
 	// console.log("config");
 	models.params.find({}, function(err,data){
@@ -251,7 +252,7 @@ module.exports = function(app){
 	    res.json(response);
         });
     });
-    app.put("/params/:id", function (req, res) {
+    app.put("/api/params/:id", function (req, res) {
 	var response = {};
 	
 	models.params.findById(req.params.id, function(err,data){
@@ -277,7 +278,7 @@ module.exports = function(app){
     // ------------
     // USERS
     // ------------
-    app.get("/users", function (req, res) {
+    app.get("/api/users", function (req, res) {
 	var response = {};
 	models.users.find({},function(err,data){
             if(err) {
@@ -302,7 +303,7 @@ module.exports = function(app){
 	    res.json(response);
         });
     });
-    app.post("/users", function (req, res) {
+    app.post("/api/users", function (req, res) {
 	var db = new models.users(); // on créer ce nouvel objet models pour accéder au schéma
 	var response = {};
         // fetch email and password from REST request.
@@ -354,7 +355,7 @@ module.exports = function(app){
 	
 	
     });
-    app.get("/user/:id", function (req, res) {
+    app.get("/api/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -371,7 +372,7 @@ module.exports = function(app){
 	    res.json(response);
         });
     });
-    app.put("/user/:id", function (req, res) {
+    app.put("/api/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -420,7 +421,7 @@ module.exports = function(app){
 	    }
         });
     });
-    app.delete("/user/:id", function (req, res) {
+    app.delete("/api/user/:id", function (req, res) {
 	var response = {};
 	models.users.findById(req.params.id, function(err,data){
 	    if(err){
@@ -437,7 +438,7 @@ module.exports = function(app){
 	    res.send(response);
         });
     });
-    // app.get("/users/:id/projects", function (req, res) {
+    // app.get("/api/users/:id/projects", function (req, res) {
     // 	var response = [];
     // 	var projectIDs;
 
@@ -469,7 +470,7 @@ module.exports = function(app){
     // ------------
     // PROJECTS
     // ------------
-    app.get("/projects/", function (req, res) {
+    app.get("/api/projects/", function (req, res) {
 	var response = {};
 	models.projects.find({},function(err,data){
 	    if(err) {
@@ -496,7 +497,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.post("/projects/", function (req, res) {
+    app.post("/api/projects/", function (req, res) {
 	var db = new models.projects(); // on crée ce nouvel objet models pour accéder au schéma
 	var response = {};
 
@@ -518,7 +519,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.get("/projects/:id", function (req, res) {
+    app.get("/api/projects/:id", function (req, res) {
 	var response = {};
 	models.projects.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -534,7 +535,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.put("/projects/:id", function (req, res) {
+    app.put("/api/projects/:id", function (req, res) {
 	var response = {};
 	models.projects.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -576,7 +577,7 @@ module.exports = function(app){
 	    }
         });
     });
-    app.delete("/projects/:id", function (req, res) {
+    app.delete("/api/projects/:id", function (req, res) {
 
 
 	var response = {};
@@ -618,7 +619,7 @@ module.exports = function(app){
     });
 
     // tracked time
-    app.get("/projects/:id/trackedtime", function (req, res) {
+    app.get("/api/projects/:id/trackedtime", function (req, res) {
 	var response = {};
 	models.trackedTime.find({ relatedProject : req.params.id },function(err,data){
 	    if(err) {
@@ -629,7 +630,7 @@ module.exports = function(app){
 	    res.json(response);
 	});	
     });
-    app.post("/projects/:id/trackedtime", function (req, res) {
+    app.post("/api/projects/:id/trackedtime", function (req, res) {
 	// var proj = new models.projects();
 	var db = new models.trackedTime(); // on crée ce nouvel objet models pour accéder au schéma
 	var response = {};
@@ -675,7 +676,7 @@ module.exports = function(app){
 	res.json(response);
     });
     
-    app.get("/projects/:id/trackedtime/:trackid", function (req, res) {
+    app.get("/api/projects/:id/trackedtime/:trackid", function (req, res) {
 	var response = {};
 	
 	models.trackedTime.findById(req.params.trackid, function(err,data){
@@ -688,7 +689,7 @@ module.exports = function(app){
         });	
     });
 
-    app.put("/projects/:id/trackedtime/:trackid", function (req, res) {
+    app.put("/api/projects/:id/trackedtime/:trackid", function (req, res) {
 	var response = {};
 	var d = new Date(); // sert à renseigner la date de l'update
 	
@@ -725,7 +726,7 @@ module.exports = function(app){
 	    }
         });
     });
-    app.delete("/projects/:id/trackedtime/:trackid", function (req, res) {
+    app.delete("/api/projects/:id/trackedtime/:trackid", function (req, res) {
 	var response = {};
 	models.trackedTime.findById(req.params.trackid, function(err,data){
 	    if(err){
@@ -744,7 +745,7 @@ module.exports = function(app){
     });
 
     // obtenir tout le temps tracké pour un user
-    app.get("/user/:userid/trackedtime/", function (req, res) {
+    app.get("/api/user/:userid/trackedtime/", function (req, res) {
 	var response = {};
 
 	models.trackedTime.find({ relatedUser : req.params.userid },function(err,data){
@@ -761,7 +762,7 @@ module.exports = function(app){
     // ------------
     // CLIENTS
     // ------------
-    app.get("/clients/", function (req, res) {
+    app.get("/api/clients/", function (req, res) {
 	var response = {};
 	models.clients.find({},function(err,data){
 	    if(err) {
@@ -778,7 +779,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.post("/clients/", function (req, res) {
+    app.post("/api/clients/", function (req, res) {
 	var db = new models.clients();
 	var response = {};
 
@@ -798,7 +799,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.get("/clients/:id", function (req, res) {
+    app.get("/api/clients/:id", function (req, res) {
 	var response = {};
 	models.clients.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -810,7 +811,7 @@ module.exports = function(app){
 	    res.json(response);
 	});
     });
-    app.put("/clients/:id", function (req, res) {
+    app.put("/api/clients/:id", function (req, res) {
 	var response = {};
 	models.clients.findById(req.params.id, function(err,data){
 	    if(err) {
@@ -831,7 +832,7 @@ module.exports = function(app){
 	    }
         });
     });
-    app.delete("/clients/:id", function (req, res) {
+    app.delete("/api/clients/:id", function (req, res) {
 	var response = {};
 	models.clients.findById(req.params.id, function(err,data){
 	    if(err){

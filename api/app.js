@@ -1,4 +1,5 @@
 // var http = require('http');
+const config = require('../config');
 var express =    require("express");
 var session = require('express-session');
 var bodyParser = require("body-parser");
@@ -16,6 +17,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+// const { db: { host, port, name } } = config;
+// const { app: { port, url } } = config;
+// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+config.app.port);
+
 
 var sess = {
     secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
@@ -25,17 +30,17 @@ var sess = {
     cookie: { secure: true }
 }
 
-if (app.get('env') === 'production') {
-    app.set('trust proxy', 1) // trust first proxy
-    API_PORT = 4267;
-} else {
-    API_PORT = 3000;
-}
+// if (app.get('env') === 'production') {
+//     app.set('trust proxy', 1) // trust first proxy
+//     API_PORT = config.app.port;
+// } else {
+//     API_PORT = config.app.port;
+// }
 
 app.use(session(sess))
 
 var routes = require("./server/routes.js")(app);
 
-var server = app.listen(API_PORT, function () {
+var server = app.listen(config.app.port, function () {
     console.log("Listening on port %s...", server.address().port);
 });

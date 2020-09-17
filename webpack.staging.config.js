@@ -4,7 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const config = require('./config');
 
 module.exports = {
     entry: {
@@ -12,7 +12,7 @@ module.exports = {
     },
     mode: 'production',
     externals: {
-	'Config': JSON.stringify(process.env.NODE_ENV === 'production' ? require('./config.prod.json') : require('./config.dev.json'))
+	'Config': JSON.stringify(config)
     },
     module: {
 	rules: [
@@ -86,7 +86,7 @@ module.exports = {
 	extensions: ["*", ".js", ".jsx", ".scss"]
     },
     output: {
-	path: path.resolve(__dirname, "build/"),
+	path: path.resolve(__dirname, "build-staging/"),
 	publicPath: "/",
 	filename: "bundle-[hash].js"
     }

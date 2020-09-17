@@ -1,14 +1,16 @@
 const path = require("path");
 const webpack = require("webpack");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const config = require('./config');
 
 module.exports = {
     entry: {
 	main: ["@babel/polyfill", "./src/index.js"]
     },
-    mode: 'development',
-    watch: true,
-    devtool: 'source-map',
+    mode: 'production',
     externals: {
 	'Config': JSON.stringify(config)
     },
@@ -18,7 +20,9 @@ module.exports = {
 		test: /\.(js|jsx)$/,
 		exclude: /(node_modules|bower_components)/,
 		loader: "babel-loader",
-		options: { presets: ["@babel/env"] }
+		options: {
+		    presets: ["@babel/env"]
+		}
 	    },
 	    {
 		test: /\.scss$/,
@@ -44,6 +48,27 @@ module.exports = {
             }
 	]
     },
+    plugins: [
+    	// new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
+    	new CleanWebpackPlugin(),
+    	new HtmlWebpackPlugin({
+    	    title: 'Pisteur de temps - An app for tracking time',
+	    template: 'index.template.ejs',
+	    inject: 'body',
+    	}),
+	new webpack.DefinePlugin({
+	    "process.env": {
+		NODE_ENV: JSON.stringify("production"),
+	    },
+	}),
+    ],
+    optimization: {
+	minimizer: [
+	    new UglifyJSPlugin({
+		sourceMap: true
+	    }),
+	]	
+    },
     resolve: {
 	alias: {
 	    assets : path.resolve(__dirname, "src/assets/"),
@@ -56,14 +81,13 @@ module.exports = {
 	    externalJquery : path.resolve(__dirname, "node_modules/jquery/dist"), // les modules externes sont chargés dans src/index.js
 	    externalPopper : path.resolve(__dirname, "node_modules/popper.js/dist"),
 	    externalBootstrap : path.resolve(__dirname, "node_modules/bootstrap/dist/js")
-
 	},
 	// moduleDirectories: ["node_modules", "shared"],
 	extensions: ["*", ".js", ".jsx", ".scss"]
     },
     output: {
-	path: path.resolve(__dirname, "dist/"),
-	publicPath: "/dist/",
-	filename: "bundle.js"
+	path: path.resolve(__dirname, "build-production/"),
+	publicPath: "/",
+	filename: "bundle-[hash].js"
     }
 };

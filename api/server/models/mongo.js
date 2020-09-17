@@ -1,5 +1,6 @@
 var mongoose    =   require("mongoose");
-mongoose.connect('mongodb://localhost:27017/time', { useNewUrlParser: true });
+const config = require('../../../config');
+mongoose.connect('mongodb://'+config.db.host+':'+config.db.port.toString()+'/'+config.db.name, { useNewUrlParser: true });
 
 // create instance of Schema
 var mongoSchema = mongoose.Schema;

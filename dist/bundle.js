@@ -69190,7 +69190,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83531,7 +83531,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var API_ROOT = Config__WEBPACK_IMPORTED_MODULE_3___default.a.APIServerUrl; // --------------------
+var API_ROOT = Config__WEBPACK_IMPORTED_MODULE_3___default.a.app.url + ":" + Config__WEBPACK_IMPORTED_MODULE_3___default.a.app.port + "/" + Config__WEBPACK_IMPORTED_MODULE_3___default.a.app.api; // --------------------
 // Login
 // --------------------
 
@@ -85227,13 +85227,13 @@ module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 /***/ }),
 
 /***/ "Config":
-/*!***************************************************************!*\
-  !*** external "{\"APIServerUrl\":\"http://localhost:3000\"}" ***!
-  \***************************************************************/
+/*!**********************************************************************************************************************************************************!*\
+  !*** external "{\"app\":{\"port\":3000,\"url\":\"http://localhost\",\"api\":\"api\"},\"db\":{\"host\":\"localhost\",\"port\":27017,\"name\":\"time\"}}" ***!
+  \**********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = {"APIServerUrl":"http://localhost:3000"};
+module.exports = {"app":{"port":3000,"url":"http://localhost","api":"api"},"db":{"host":"localhost","port":27017,"name":"time"}};
 
 /***/ })
 

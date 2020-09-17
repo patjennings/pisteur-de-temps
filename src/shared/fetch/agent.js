@@ -3,7 +3,7 @@ import {getUserName, getClientName} from "utils/defsConverter";
 import {getFullTime, getPercent} from 'utils/budget';
 import Config from "Config";
 
-const API_ROOT = Config.APIServerUrl;
+const API_ROOT = Config.app.url+":"+Config.app.port+"/"+Config.app.api;
 
 // --------------------
 // Login

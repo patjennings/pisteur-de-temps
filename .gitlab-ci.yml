@@ -18,6 +18,7 @@ build:
     - npm install
   script:
     - npm run build
+    - npm run stage
   artifacts:
     name: "$CI_JOB_NAME"
     paths:
@@ -37,8 +38,12 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
 
   script:
-    - scp -rp ./build/* "$USER"@"$HOST":/var/www/time.thomasguesnon.net
-    - scp -rp ./api/* "$USER"@"$HOST":/var/www/time.api.thomasguesnon.net
+    - cp ./api ./build-production
+    - cp conf.js ./build-production
+    - cp ./api ./build-staging
+    - cp conf.js ./build-staging
+    - scp -rp ./build-production/* "$USER"@"$HOST":/var/www/time.thomasguesnon.net
+    - scp -rp ./build-staging/* "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
     - scp -rp ./package.json "$USER"@"$HOST":/var/www/time.thomasguesnon.net
     
   only:

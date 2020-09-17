@@ -49,10 +49,11 @@
     },
     "scripts": {
 	"start": "start-concurrently",
-	"start-webpack": "webpack --mode development --config ./webpack.dev.config.js",
-	"start-app": "node api/app.js --port 3000",
+	"start-webpack": "NODE_ENV=dev webpack --mode development --config ./webpack.dev.config.js",
+	"start-app": "NODE_ENV=dev node api/app.js",
 	"test": "echo \"Error: no test specified\" && exit 1",
-	"build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --profile --colors"
+	"build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+	"stage": "NODE_ENV=staging webpack --config ./webpack.staging.config.js --progress --profile --colors"
     },
     "browserslist": [
 	">0.2%",
