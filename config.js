@@ -4,7 +4,7 @@ const dev = {
     app: {
 	port: 3000,
 	url: "http://localhost",
-	api: "api"
+	apiUrl: "http://localhost:3000/api"
     },
     db: {
 	host: 'localhost',
@@ -17,7 +17,7 @@ const production = {
     app: {
 	port: 4267,
 	url : "https://time.thomasguesnon.net",
-	api: "api"
+	apiUrl: "https://time.thomasguesnon.net/api"
     },
     db: {
 	host: 'localhost',
@@ -30,7 +30,7 @@ const staging = {
     app: {
 	port: 5378,
 	url : "https://pisteurdetemps.thomasguesnon.net",
-	api: "api"
+	apiUrl: "https://pisteurdetemps.thomasguesnon.net/api"
     },
     db: {
 	host: 'localhost',

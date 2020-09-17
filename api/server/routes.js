@@ -26,7 +26,7 @@ module.exports = function(app){
     app.use("/scripts/jquery", express.static(path.resolve(".") + '/node_modules/jquery/dist')); 
 
     // serve static files built by React
-    process.env.NODE_ENV === "production" ? app.use(express.static(path.join(__dirname, "build"))) : null;
+    process.env.NODE_ENV === "production" ? app.use(express.static(path.resolve(".") + "/build")) : null;
     
     function nocache(req, res, next) {
 	console.log("NO CAAAACHE");
