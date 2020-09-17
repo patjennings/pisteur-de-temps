@@ -28,47 +28,48 @@ module.exports = function(app){
     // serve static files built by React
     process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging" ? app.use(express.static(path.resolve(".") + "/build")) : null;
 
-    
+
     function nocache(req, res, next) {
-	console.log("NO CAAAACHE");
-	console.log(process.env.NODE_ENV);
-	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-	res.header('Expires', '-1');
-	res.header('Pragma', 'no-cache');
-	next();
+        console.log("NO CAAAACHE");
+        console.log(process.env.NODE_ENV);
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        res.header('Expires', '-1');
+        res.header('Pragma', 'no-cache');
+        next();
     }
 
     app.get("/", nocache, function(req, res) {
-	// req.session.user = "thomas";
-	// on laisse react+mobx s'occuper du check du cookie, pour logger ou pas l'utilisateur
-	// on rend juste la coquille avec le #root
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+        // req.session.user = "thomas";                                                                                                                                 
+        // on laisse react+mobx s'occuper du check du cookie, pour logger ou pas l'utilisateur                                                                          
+        // on rend juste la coquille avec le #root                                                                                                                      
+        process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));
     });
 
-    // là pareil, on se contente de rendre le coquille
-    // sur ces urls
-    // reactrouter fait le boulot, ensuite, pour rendre les bons composants.
+    // là pareil, on se contente de rendre le coquille                                                                                                                  
+    // sur ces urls                                                                                                                                                     
+    // reactrouter fait le boulot, ensuite, pour rendre les bons composants.                                                                                            
     app.get('/overview', nocache, function(req, res) {
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "../..","build", "index.html"));
     });
     app.get('/account', nocache, function(req, res) {
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "../..","build", "index.html"));
     });
     app.get('/synthesis', nocache, function(req, res) {
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "../..","build", "index.html"));
     });
     app.get('/admin', nocache, function(req, res) {
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+        process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "../..","build", "index.html"));
     });
     app.get('/logout', nocache, function(req, res) {
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+        process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "../..","build", "index.html"));
     });
+
 
     // -----------------
     // LOST PASSWORD
     // -----------------
     app.get('/lost-password', nocache, function(req, res){
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));
     })
     
     app.post('/api/lost-password',  function(req, res){
@@ -130,7 +131,7 @@ module.exports = function(app){
     app.get('/reset-password', nocache, function(req, res){
 	// console.log(req.query.key);
 	// validate the password key
-	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));;
+	process.env.NODE_ENV === "dev" ? res.render('app', {title: "App root"}) : res.sendFile(path.join(__dirname, "build", "index.html"));
 	// res.json(req.query.key);
     })
 
