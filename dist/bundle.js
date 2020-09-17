@@ -81706,6 +81706,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var logo = __webpack_require__(/*! assets/images/logo.svg */ "./src/assets/images/logo.svg");
 
+console.log("development");
 var Login = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["inject"])("mainStore", "authStore", "routingStore")(Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(
 /*#__PURE__*/
 function (_Component) {
@@ -81761,7 +81762,7 @@ function (_Component) {
           goBack = _this$props$routingSt.goBack;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"

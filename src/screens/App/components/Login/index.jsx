@@ -9,6 +9,8 @@ import "./styles.scss";
 
 const logo = require('assets/images/logo.svg');
 
+console.log(process.env.NODE_ENV);
+
 const Login = inject("mainStore", "authStore", "routingStore")(observer(class Login extends Component {
     constructor(props){
 	super(props);
@@ -56,6 +58,7 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	
 	return (
 	    <div className="login">
+	      <p>{process.env.NODE_ENV}</p>
 	      <div className="container">
 		
 		<div className="row">
