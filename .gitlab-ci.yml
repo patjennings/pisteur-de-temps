@@ -22,12 +22,14 @@ build:
   artifacts:
     name: "$CI_JOB_NAME"
     paths:
-    - build/
+    - build-production/
+    - build-staging/
 
 deploy:
   stage: deploy
   dependencies:
-    - build
+    - build-production
+    - build-staging
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
