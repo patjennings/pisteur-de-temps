@@ -41,11 +41,11 @@ deploy:
   script:
     - scp -rp ./build-production/* "$USER"@"$HOST":/var/www/time.thomasguesnon.net
     - scp -rp ./api "$USER"@"$HOST":/var/www/time.thomasguesnon.net
-    - scp -rp ./conf.js "$USER"@"$HOST":/var/www/time.thomasguesnon.net
+    - scp -rp ./config.js "$USER"@"$HOST":/var/www/time.thomasguesnon.net
     - scp -rp ./package.json "$USER"@"$HOST":/var/www/time.thomasguesnon.net
     - scp -rp ./build-staging/* "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
     - scp -rp ./api "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
-    - scp -rp ./conf.js "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
+    - scp -rp ./config.js "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
     - scp -rp ./package.json "$USER"@"$HOST":/var/www/pisteurdetemps.thomasguesnon.net
     
   only:
