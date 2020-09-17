@@ -58,7 +58,6 @@ const Login = inject("mainStore", "authStore", "routingStore")(observer(class Lo
 	
 	return (
 	    <div className="login">
-	      <p>{process.env.NODE_ENV}</p>
 	      <div className="container">
 		
 		<div className="row">
