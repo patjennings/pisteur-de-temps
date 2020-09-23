@@ -72,7 +72,7 @@ export default function Strings(){
 		  
 	      },
 	      "navigation": {
-		  "dashboard": "Vue d'ensemble",
+		  "dashboard": "Temps passé",
 		  "synthesis": "Synthèse",
 		  "user": {
 		      "connected_as": "Connecté sous ",
@@ -293,7 +293,7 @@ export default function Strings(){
 		  "send_email": "Send email"
 	      },
 	      "navigation": {
-		  "dashboard": "Dashboard",
+		  "dashboard": "Tracked time",
 		  "synthesis": "Synthesis",
 		  "user": {
 		      "connected_as": "Connected as",
